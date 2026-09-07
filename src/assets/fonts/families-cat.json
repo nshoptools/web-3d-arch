@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "count": 30,
+  "families": [
+    {
+      "id": "alfaslabone",
+      "name": "Alfa Slab One",
+      "defaultFontId": "alfaslabone",
+      "fontIds": [
+        "alfaslabone"
+      ]
+    },
+    {
+      "id": "anton",
+      "name": "Anton",
+      "defaultFontId": "anton",
+      "fontIds": [
+        "anton"
+      ]
+    },
+    {
+      "id": "arizonia",
+      "name": "Arizonia",
+      "defaultFontId": "arizonia",
+      "fontIds": [
+        "arizonia"
+      ]
+    },
+    {
+      "id": "baloo2",
+      "name": "Baloo 2",
+      "defaultFontId": "baloo2",
+      "fontIds": [
+        "baloo2"
+      ]
+    },
+    {
+      "id": "bangers",
+      "name": "Bangers",
+      "defaultFontId": "bangers",
+      "fontIds": [
+        "bangers"
+      ]
+    },
+    {
+      "id": "bevietnampro",
+      "name": "Be Vietnam Pro",
+      "defaultFontId": "bevietnampro",
+      "fontIds": [
+        "bevietnampro",
+        "bevietnampro-normal-100",
+        "bevietnampro-italic-100",
+        "bevietnampro-normal-200",
+        "bevietnampro-italic-200",
+        "bevietnampro-normal-300",
+        "bevietnampro-italic-300",
+        "bevietnampro-italic-400",
+        "bevietnampro-normal-500",
+        "bevietnampro-italic-500",
+        "bevietnampro-normal-600",
+        "bevietnampro-italic-600",
+        "bevietnampro-italic-700",
+        "bevietnampro-normal-800",
+        "bevietnampro-italic-800",
+        "bevietnampro-normal-900",
+        "bevietnampro-italic-900",
+        "bevietnamprobold"
+      ]
+    },
+    {
+      "id": "bungee",
+      "name": "Bungee",
+      "defaultFontId": "bungee",
+      "fontIds": [
+        "bungee"
+      ]
+    },
+    {
+      "id": "carattere",
+      "name": "Carattere",
+      "defaultFontId": "carattere",
+      "fontIds": [
+        "carattere"
+      ]
+    },
+    {
+      "id": "cherrybombone",
+      "name": "Cherry Bomb One",
+      "defaultFontId": "cherrybombone",
+      "fontIds": [
+        "cherrybombone"
+      ]
+    },
+    {
+      "id": "coiny",
+      "name": "Coiny",
+      "defaultFontId": "coiny",
+      "fontIds": [
+        "coiny"
+      ]
+    },
+    {
+      "id": "comfortaa",
+      "name": "Comfortaa",
+      "defaultFontId": "comfortaa",
+      "fontIds": [
+        "comfortaa"
+      ]
+    },
+    {
+      "id": "dancingscript",
+      "name": "Dancing Script",
+      "defaultFontId": "dancingscript",
+      "fontIds": [
+        "dancingscript"
+      ]
+    },
+    {
+      "id": "fruktur",
+      "name": "Fruktur",
+      "defaultFontId": "fruktur",
+      "fontIds": [
+        "fruktur",
+        "fruktur-italic-400"
+      ]
+    },
+    {
+      "id": "greatvibes",
+      "name": "Great Vibes",
+      "defaultFontId": "greatvibes",
+      "fontIds": [
+        "greatvibes"
+      ]
+    },
+    {
+      "id": "inter",
+      "name": "Inter",
+      "defaultFontId": "inter",
+      "fontIds": [
+        "inter",
+        "inter-italic-400"
+      ]
+    },
+    {
+      "id": "lobster",
+      "name": "Lobster",
+      "defaultFontId": "lobster",
+      "fontIds": [
+        "lobster"
+      ]
+    },
+    {
+      "id": "merriweather",
+      "name": "Merriweather",
+      "defaultFontId": "merriweather",
+      "fontIds": [
+        "merriweather",
+        "merriweather-italic-400"
+      ]
+    },
+    {
+      "id": "montserrat",
+      "name": "Montserrat",
+      "defaultFontId": "montserrat",
+      "fontIds": [
+        "montserrat",
+        "montserrat-italic-400"
+      ]
+    },
+    {
+      "id": "nunito",
+      "name": "Nunito",
+      "defaultFontId": "nunito",
+      "fontIds": [
+        "nunito",
+        "nunito-italic-400"
+      ]
+    },
+    {
+      "id": "oswald",
+      "name": "Oswald",
+      "defaultFontId": "oswald",
+      "fontIds": [
+        "oswald"
+      ]
+    },
+    {
+      "id": "pacifico",
+      "name": "Pacifico",
+      "defaultFontId": "pacifico",
+      "fontIds": [
+        "pacifico"
+      ]
+    },
+    {
+      "id": "patrickhand",
+      "name": "Patrick Hand",
+      "defaultFontId": "patrickhand",
+      "fontIds": [
+        "patrickhand"
+      ]
+    },
+    {
+      "id": "pattaya",
+      "name": "Pattaya",
+      "defaultFontId": "pattaya",
+      "fontIds": [
+        "pattaya"
+      ]
+    },
+    {
+      "id": "playfairdisplay",
+      "name": "Playfair Display",
+      "defaultFontId": "playfairdisplay",
+      "fontIds": [
+        "playfairdisplay",
+        "playfairdisplay-italic-400"
+      ]
+    },
+    {
+      "id": "praise",
+      "name": "Praise",
+      "defaultFontId": "praise",
+      "fontIds": [
+        "praise"
+      ]
+    },
+    {
+      "id": "protestriot",
+      "name": "Protest Riot",
+      "defaultFontId": "protestriot",
+      "fontIds": [
+        "protestriot"
+      ]
+    },
+    {
+      "id": "quicksand",
+      "name": "Quicksand",
+      "defaultFontId": "quicksand",
+      "fontIds": [
+        "quicksand"
+      ]
+    },
+    {
+      "id": "storyscript",
+      "name": "Story Script",
+      "defaultFontId": "storyscript",
+      "fontIds": [
+        "storyscript"
+      ]
+    },
+    {
+      "id": "vinasans",
+      "name": "Vina Sans",
+      "defaultFontId": "vinasans",
+      "fontIds": [
+        "vinasans"
+      ]
+    },
+    {
+      "id": "yesevaone",
+      "name": "Yeseva One",
+      "defaultFontId": "yesevaone",
+      "fontIds": [
+        "yesevaone"
+      ]
+    }
+  ]
+}

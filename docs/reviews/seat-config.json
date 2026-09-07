@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-07",
+  "scope": "review",
+  "seats": {
+    "codex": {
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "fast_mode": false
+    },
+    "opus": {
+      "model": "opus",
+      "effort": "ultracode",
+      "fast_mode": false
+    },
+    "grok": {
+      "model": "grok-4.6",
+      "effort": "xhigh",
+      "command": ["grok", "-m", "grok-4.6", "--effort", "xhigh"]
+    }
+  },
+  "upgrade_policy": {
+    "check_before_each_review_round": true,
+    "adopt_verified_stronger_available_options": true,
+    "allow_silent_downgrade": false,
+    "record_sources_date_and_reason": true
+  }
+}

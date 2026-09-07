@@ -1,0 +1,2172 @@
+[
+  {
+    "id": "alfaslabone",
+    "name": "Alfa Slab One",
+    "family": "Alfa Slab One",
+    "file": "AlfaSlabOne.ttf",
+    "path": "ttf/AlfaSlabOne.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 734,
+    "fontRevision": 2.0,
+    "internalVersion": "Version 2.000",
+    "coverage": {
+      "unicodeCodepoints": 671,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 97376,
+    "sha256": "28664afa698a3393bd5a29eec750230a0645c5301d62200e5f2d3a027fb2299d",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/alfaslabone/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/alfaslabone/AlfaSlabOne-Regular.ttf",
+      "filename": "AlfaSlabOne-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "anton",
+    "name": "Anton",
+    "family": "Anton",
+    "file": "Anton.ttf",
+    "path": "ttf/Anton.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 2048,
+    "glyphCount": 1373,
+    "fontRevision": 2.115997314453125,
+    "internalVersion": "Version 2.116; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 978,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 170812,
+    "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/anton/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/anton/Anton-Regular.ttf",
+      "filename": "Anton-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "arizonia",
+    "name": "Arizonia",
+    "family": "Arizonia",
+    "file": "Arizonia.ttf",
+    "path": "ttf/Arizonia.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 652,
+    "fontRevision": 1.0099945068359375,
+    "internalVersion": "Version 1.010; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 588,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 126276,
+    "sha256": "8df1c10bc15d0aba145d4599c25cafad83db686d2cefa42619f069b6f1bbce62",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/arizonia/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/arizonia/Arizonia-Regular.ttf",
+      "filename": "Arizonia-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "baloo2",
+    "name": "Baloo 2",
+    "family": "Baloo 2",
+    "file": "Baloo2.ttf",
+    "path": "ttf/Baloo2.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 400.0,
+        "default": 400.0,
+        "max": 800.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 1601,
+    "fontRevision": 1.6999969482421875,
+    "internalVersion": "Version 1.700",
+    "coverage": {
+      "unicodeCodepoints": 856,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 683200,
+    "sha256": "d47a6852548059b1db49a1319d06d499d546c3fa2237cf9eee9c43c8abb025c2",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/baloo2/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/baloo2/Baloo2%5Bwght%5D.ttf",
+      "filename": "Baloo2[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bangers",
+    "name": "Bangers",
+    "family": "Bangers",
+    "file": "Bangers.ttf",
+    "path": "ttf/Bangers.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 597,
+    "fontRevision": 2.100006103515625,
+    "internalVersion": "Version 2.100; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.31]",
+    "coverage": {
+      "unicodeCodepoints": 557,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 93148,
+    "sha256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bangers/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bangers/Bangers-Regular.ttf",
+      "filename": "Bangers-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro",
+    "name": "Be Vietnam Pro",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro.ttf",
+    "path": "ttf/BeVietnamPro.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 132948,
+    "sha256": "cd1ef6e9d7db28ad5cdb88a65ccbe693870e60d340b791f349d248342b4fe4c3",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Regular.ttf",
+      "filename": "BeVietnamPro-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-100",
+    "name": "Be Vietnam Pro 100",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-Thin.ttf",
+    "path": "ttf/BeVietnamPro-Thin.ttf",
+    "style": "normal",
+    "weight": 100,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 127040,
+    "sha256": "3ff7cae0bdd4b2087fe24583d1137dc0a6ecfed96c62ee39955992fa1629176c",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Thin.ttf",
+      "filename": "BeVietnamPro-Thin.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-100",
+    "name": "Be Vietnam Pro 100 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-ThinItalic.ttf",
+    "path": "ttf/BeVietnamPro-ThinItalic.ttf",
+    "style": "italic",
+    "weight": 100,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 129556,
+    "sha256": "14c50e3d6c8980656681ede48068d12ae645c71b1eaa40ff14267d54a49c5c5a",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-ThinItalic.ttf",
+      "filename": "BeVietnamPro-ThinItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-200",
+    "name": "Be Vietnam Pro 200",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-ExtraLight.ttf",
+    "path": "ttf/BeVietnamPro-ExtraLight.ttf",
+    "style": "normal",
+    "weight": 200,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 134464,
+    "sha256": "3df1650399fd891967082bd2f78e1d87fe4eb82fc7bdbb7ab94ba8bda848caa1",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-ExtraLight.ttf",
+      "filename": "BeVietnamPro-ExtraLight.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-200",
+    "name": "Be Vietnam Pro 200 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-ExtraLightItalic.ttf",
+    "path": "ttf/BeVietnamPro-ExtraLightItalic.ttf",
+    "style": "italic",
+    "weight": 200,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 131492,
+    "sha256": "fc4410f0aa39430463f103463d27be5486c2018d11854f1733dd27be7348b41c",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-ExtraLightItalic.ttf",
+      "filename": "BeVietnamPro-ExtraLightItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-300",
+    "name": "Be Vietnam Pro 300",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-Light.ttf",
+    "path": "ttf/BeVietnamPro-Light.ttf",
+    "style": "normal",
+    "weight": 300,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 136772,
+    "sha256": "f0b7143edac3fd99960312706cfa51cbafec28e7afa6d4afbd08a73bb246af13",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Light.ttf",
+      "filename": "BeVietnamPro-Light.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-300",
+    "name": "Be Vietnam Pro 300 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-LightItalic.ttf",
+    "path": "ttf/BeVietnamPro-LightItalic.ttf",
+    "style": "italic",
+    "weight": 300,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 136084,
+    "sha256": "baeadf148ee2b6640d7910ebab99b01aaaf5eb009463bdf466ab2b43108389fd",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-LightItalic.ttf",
+      "filename": "BeVietnamPro-LightItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-400",
+    "name": "Be Vietnam Pro 400 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-Italic.ttf",
+    "path": "ttf/BeVietnamPro-Italic.ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 137244,
+    "sha256": "a33ebb3f68e0e260a7d3874d64259ad309971a2daf969e7ce5f444d70bce535f",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Italic.ttf",
+      "filename": "BeVietnamPro-Italic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-500",
+    "name": "Be Vietnam Pro 500",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-Medium.ttf",
+    "path": "ttf/BeVietnamPro-Medium.ttf",
+    "style": "normal",
+    "weight": 500,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 135980,
+    "sha256": "b60832bfa0fcd015158112c64d7e3fdad3b0c6287d1823f85a3103636e845268",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Medium.ttf",
+      "filename": "BeVietnamPro-Medium.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-500",
+    "name": "Be Vietnam Pro 500 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-MediumItalic.ttf",
+    "path": "ttf/BeVietnamPro-MediumItalic.ttf",
+    "style": "italic",
+    "weight": 500,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 138280,
+    "sha256": "b7d43a5f943048f7d4e49a080052acce1902f1eab07f4160299d84abab8119fa",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-MediumItalic.ttf",
+      "filename": "BeVietnamPro-MediumItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-600",
+    "name": "Be Vietnam Pro 600",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-SemiBold.ttf",
+    "path": "ttf/BeVietnamPro-SemiBold.ttf",
+    "style": "normal",
+    "weight": 600,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 136736,
+    "sha256": "bd8e27eb02720b9d91e59e4f10a90878643219f25ce6a8d9a4f06a8a88d3bb71",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-SemiBold.ttf",
+      "filename": "BeVietnamPro-SemiBold.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-600",
+    "name": "Be Vietnam Pro 600 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-SemiBoldItalic.ttf",
+    "path": "ttf/BeVietnamPro-SemiBoldItalic.ttf",
+    "style": "italic",
+    "weight": 600,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 134740,
+    "sha256": "f7dbf8a63f4b4a6f7d7f1f4f27443495d01475663bb8fe5cb1a6fc6740e82a27",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-SemiBoldItalic.ttf",
+      "filename": "BeVietnamPro-SemiBoldItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-700",
+    "name": "Be Vietnam Pro 700 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-BoldItalic.ttf",
+    "path": "ttf/BeVietnamPro-BoldItalic.ttf",
+    "style": "italic",
+    "weight": 700,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 137748,
+    "sha256": "a2a65bdf9b251beb3d658ae691889d71ce63c0290940c87ca60b449ceb0bdaee",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-BoldItalic.ttf",
+      "filename": "BeVietnamPro-BoldItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-800",
+    "name": "Be Vietnam Pro 800",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-ExtraBold.ttf",
+    "path": "ttf/BeVietnamPro-ExtraBold.ttf",
+    "style": "normal",
+    "weight": 800,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 139680,
+    "sha256": "44dbfa01553d227bec76ba6446c5618870a76a4a3297f41630dde859d0650d02",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-ExtraBold.ttf",
+      "filename": "BeVietnamPro-ExtraBold.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-800",
+    "name": "Be Vietnam Pro 800 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-ExtraBoldItalic.ttf",
+    "path": "ttf/BeVietnamPro-ExtraBoldItalic.ttf",
+    "style": "italic",
+    "weight": 800,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 138076,
+    "sha256": "b5544a50b74c3153f7aa68614cfaebbea924869e6d6fdfd4ec80decfdd7ff4cd",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-ExtraBoldItalic.ttf",
+      "filename": "BeVietnamPro-ExtraBoldItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-normal-900",
+    "name": "Be Vietnam Pro 900",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-Black.ttf",
+    "path": "ttf/BeVietnamPro-Black.ttf",
+    "style": "normal",
+    "weight": 900,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 142612,
+    "sha256": "dd0ec461782da7f4a58698b431a67c455ced7c09deb9c40d7b47e61975d3ffdb",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Black.ttf",
+      "filename": "BeVietnamPro-Black.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnampro-italic-900",
+    "name": "Be Vietnam Pro 900 Nghiêng",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamPro-BlackItalic.ttf",
+    "path": "ttf/BeVietnamPro-BlackItalic.ttf",
+    "style": "italic",
+    "weight": 900,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 140468,
+    "sha256": "d55266c614d1fb013a6661c5cd1d98f31f2e03418d83e90f509b210f452c0cdf",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-BlackItalic.ttf",
+      "filename": "BeVietnamPro-BlackItalic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bevietnamprobold",
+    "name": "Be Vietnam Pro Đậm",
+    "family": "Be Vietnam Pro",
+    "file": "BeVietnamProBold.ttf",
+    "path": "ttf/BeVietnamProBold.ttf",
+    "style": "normal",
+    "weight": 700,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 527,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 459,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 140300,
+    "sha256": "7f738fe5c43c8872807b20e2d30d42163618de8a4daf7f48a939adac32c16847",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bevietnampro/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bevietnampro/BeVietnamPro-Bold.ttf",
+      "filename": "BeVietnamPro-Bold.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "bungee",
+    "name": "Bungee",
+    "family": "Bungee",
+    "file": "Bungee.ttf",
+    "path": "ttf/Bungee.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 1063,
+    "fontRevision": 2.0,
+    "internalVersion": "Version 2.000",
+    "coverage": {
+      "unicodeCodepoints": 1082,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 118996,
+    "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/bungee/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/bungee/Bungee-Regular.ttf",
+      "filename": "Bungee-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "carattere",
+    "name": "Carattere",
+    "family": "Carattere",
+    "file": "Carattere.ttf",
+    "path": "ttf/Carattere.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 635,
+    "fontRevision": 1.0099945068359375,
+    "internalVersion": "Version 1.010; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 583,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 124884,
+    "sha256": "2ee075b50a75aeaea0d976d916b535fbcd423a684e97fe8536fd8f9efe905ae6",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/carattere/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/carattere/Carattere-Regular.ttf",
+      "filename": "Carattere-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "cherrybombone",
+    "name": "Cherry Bomb One",
+    "family": "Cherry Bomb One",
+    "file": "CherryBombOne.ttf",
+    "path": "ttf/CherryBombOne.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 1140,
+    "fontRevision": 4.100006103515625,
+    "internalVersion": "Version 4.100; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 873,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 214940,
+    "sha256": "9596c6793eb0335057d655b13751ce7ccb50ef0cd15cb52c58465fb62de2bb8f",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/cherrybombone/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/cherrybombone/CherryBombOne-Regular.ttf",
+      "filename": "CherryBombOne-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "coiny",
+    "name": "Coiny",
+    "family": "Coiny",
+    "file": "Coiny.ttf",
+    "path": "ttf/Coiny.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 805,
+    "fontRevision": 1.001007080078125,
+    "internalVersion": "Version 001.001",
+    "coverage": {
+      "unicodeCodepoints": 684,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 156520,
+    "sha256": "ef02d723a54abe4819bea54ea8b2ecf72d77d258010bb336cd4862a37705eac7",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/coiny/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/coiny/Coiny-Regular.ttf",
+      "filename": "Coiny-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "comfortaa",
+    "name": "Comfortaa",
+    "family": "Comfortaa",
+    "file": "Comfortaa.ttf",
+    "path": "ttf/Comfortaa.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 300.0,
+        "default": 400.0,
+        "max": 700.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 874,
+    "fontRevision": 3.1049957275390625,
+    "internalVersion": "Version 3.105",
+    "coverage": {
+      "unicodeCodepoints": 850,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 201756,
+    "sha256": "0fc3f45dc48b614db9c39181502544b37217ecbf8bee2fb35886992bc96c5bd3",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/comfortaa/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/comfortaa/Comfortaa%5Bwght%5D.ttf",
+      "filename": "Comfortaa[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "dancingscript",
+    "name": "Dancing Script",
+    "family": "Dancing Script",
+    "file": "DancingScript.ttf",
+    "path": "ttf/DancingScript.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 400.0,
+        "default": 400.0,
+        "max": 700.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 643,
+    "fontRevision": 2.001007080078125,
+    "internalVersion": "Version 2.001",
+    "coverage": {
+      "unicodeCodepoints": 559,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 133636,
+    "sha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/dancingscript/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/dancingscript/DancingScript%5Bwght%5D.ttf",
+      "filename": "DancingScript[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "fruktur",
+    "name": "Fruktur",
+    "family": "Fruktur",
+    "file": "Fruktur.ttf",
+    "path": "ttf/Fruktur.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 2048,
+    "glyphCount": 809,
+    "fontRevision": 1.00799560546875,
+    "internalVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 731,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 211180,
+    "sha256": "dcba901b5fe11c0b6c3e8d5eb1003339b2dd020e2fc3949014ed0d8ff87715e7",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/fruktur/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/fruktur/Fruktur-Regular.ttf",
+      "filename": "Fruktur-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "fruktur-italic-400",
+    "name": "Fruktur 400 Nghiêng",
+    "family": "Fruktur",
+    "file": "Fruktur-Italic.ttf",
+    "path": "ttf/Fruktur-Italic.ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 2048,
+    "glyphCount": 809,
+    "fontRevision": 1.00799560546875,
+    "internalVersion": "Version 1.008; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 731,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 210784,
+    "sha256": "2fc0cb26f0d1945202b6022ea68ac566826d19e64b461b640e9a1056f1f40218",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/fruktur/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/fruktur/Fruktur-Italic.ttf",
+      "filename": "Fruktur-Italic.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "greatvibes",
+    "name": "Great Vibes",
+    "family": "Great Vibes",
+    "file": "GreatVibes.ttf",
+    "path": "ttf/GreatVibes.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 2025,
+    "fontRevision": 1.102996826171875,
+    "internalVersion": "Version 1.103; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 1081,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 457588,
+    "sha256": "8d509802186f1b51572531ecf313e8098f9a5bfdfaca93f0c9b34467f9982d15",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/greatvibes/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/greatvibes/GreatVibes-Regular.ttf",
+      "filename": "GreatVibes-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "inter",
+    "name": "Inter",
+    "family": "Inter",
+    "file": "Inter.ttf",
+    "path": "ttf/Inter.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "opsz": {
+        "min": 14.0,
+        "default": 14.0,
+        "max": 32.0
+      },
+      "wght": {
+        "min": 100.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "opsz": 14.0,
+      "wght": 400
+    },
+    "unitsPerEm": 2048,
+    "glyphCount": 2933,
+    "fontRevision": 4.001007080078125,
+    "internalVersion": "Version 4.001;git-66647c0bb",
+    "coverage": {
+      "unicodeCodepoints": 2849,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 876576,
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/inter/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "filename": "Inter[opsz,wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "inter-italic-400",
+    "name": "Inter 400 Nghiêng",
+    "family": "Inter",
+    "file": "Inter-Italic[opsz,wght].ttf",
+    "path": "ttf/Inter-Italic[opsz,wght].ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "opsz": {
+        "min": 14.0,
+        "default": 14.0,
+        "max": 32.0
+      },
+      "wght": {
+        "min": 100.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "opsz": 14.0,
+      "wght": 400
+    },
+    "unitsPerEm": 2048,
+    "glyphCount": 2897,
+    "fontRevision": 4.001007080078125,
+    "internalVersion": "Version 4.001;git-66647c0bb",
+    "coverage": {
+      "unicodeCodepoints": 2813,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 906596,
+    "sha256": "acd98e64795781b2058f07b18475e0ecee2a0fe2b42a49e2f9e37d0d6bf66ce6",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/inter/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/inter/Inter-Italic%5Bopsz%2Cwght%5D.ttf",
+      "filename": "Inter-Italic[opsz,wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "lobster",
+    "name": "Lobster",
+    "family": "Lobster",
+    "file": "Lobster.ttf",
+    "path": "ttf/Lobster.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 1174,
+    "fontRevision": 2.0999908447265625,
+    "internalVersion": "Version 2.100",
+    "coverage": {
+      "unicodeCodepoints": 828,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 406076,
+    "sha256": "d6568e697fd50cedc0be04d8aae4127fe95add607e7bff954ca88604be80c205",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/lobster/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/lobster/Lobster-Regular.ttf",
+      "filename": "Lobster-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "merriweather",
+    "name": "Merriweather",
+    "family": "Merriweather",
+    "file": "Merriweather.ttf",
+    "path": "ttf/Merriweather.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 300.0,
+        "default": 300.0,
+        "max": 900.0
+      },
+      "wdth": {
+        "min": 87.0,
+        "default": 100.0,
+        "max": 112.0
+      },
+      "opsz": {
+        "min": 18.0,
+        "default": 18.0,
+        "max": 144.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400,
+      "wdth": 100.0,
+      "opsz": 18.0
+    },
+    "unitsPerEm": 2000,
+    "glyphCount": 2384,
+    "fontRevision": 2.100006103515625,
+    "internalVersion": "Version 2.100",
+    "coverage": {
+      "unicodeCodepoints": 1423,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 4628080,
+    "sha256": "d0ed0e359e396af7ad05e73dffd11a3a4c326ea0d0283c56bd9361cb2cc86a96",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/merriweather/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/merriweather/Merriweather%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "filename": "Merriweather[opsz,wdth,wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "merriweather-italic-400",
+    "name": "Merriweather 400 Nghiêng",
+    "family": "Merriweather",
+    "file": "Merriweather-Italic[opsz,wdth,wght].ttf",
+    "path": "ttf/Merriweather-Italic[opsz,wdth,wght].ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 300.0,
+        "default": 300.0,
+        "max": 900.0
+      },
+      "wdth": {
+        "min": 87.0,
+        "default": 100.0,
+        "max": 112.0
+      },
+      "opsz": {
+        "min": 18.0,
+        "default": 18.0,
+        "max": 144.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400,
+      "wdth": 100.0,
+      "opsz": 18.0
+    },
+    "unitsPerEm": 2000,
+    "glyphCount": 2381,
+    "fontRevision": 2.1009979248046875,
+    "internalVersion": "Version 2.101",
+    "coverage": {
+      "unicodeCodepoints": 1422,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 4591168,
+    "sha256": "f68a8f4989258679e4fbaf50aa42400132b5373c2d9d2514ba82ef6e85947a0b",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/merriweather/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/merriweather/Merriweather-Italic%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "filename": "Merriweather-Italic[opsz,wdth,wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "montserrat",
+    "name": "Montserrat",
+    "family": "Montserrat",
+    "file": "Montserrat.ttf",
+    "path": "ttf/Montserrat.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 100.0,
+        "default": 100.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 2747,
+    "fontRevision": 9.0,
+    "internalVersion": "Version 9.000",
+    "coverage": {
+      "unicodeCodepoints": 1312,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 744936,
+    "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/montserrat/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/montserrat/Montserrat%5Bwght%5D.ttf",
+      "filename": "Montserrat[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "montserrat-italic-400",
+    "name": "Montserrat 400 Nghiêng",
+    "family": "Montserrat",
+    "file": "Montserrat-Italic[wght].ttf",
+    "path": "ttf/Montserrat-Italic[wght].ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 100.0,
+        "default": 100.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 2791,
+    "fontRevision": 9.0,
+    "internalVersion": "Version 9.000",
+    "coverage": {
+      "unicodeCodepoints": 1312,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 762376,
+    "sha256": "51607f316bc020e59f03cbf51543eecffbea501c0b31d73e5b82927c5cca442c",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/montserrat/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/montserrat/Montserrat-Italic%5Bwght%5D.ttf",
+      "filename": "Montserrat-Italic[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "nunito",
+    "name": "Nunito",
+    "family": "Nunito",
+    "file": "Nunito.ttf",
+    "path": "ttf/Nunito.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 200.0,
+        "default": 200.0,
+        "max": 1000.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 1103,
+    "fontRevision": 3.6020050048828125,
+    "internalVersion": "Version 3.602",
+    "coverage": {
+      "unicodeCodepoints": 938,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 276932,
+    "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/nunito/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/nunito/Nunito%5Bwght%5D.ttf",
+      "filename": "Nunito[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "nunito-italic-400",
+    "name": "Nunito 400 Nghiêng",
+    "family": "Nunito",
+    "file": "Nunito-Italic[wght].ttf",
+    "path": "ttf/Nunito-Italic[wght].ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 200.0,
+        "default": 200.0,
+        "max": 1000.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 1103,
+    "fontRevision": 3.6020050048828125,
+    "internalVersion": "Version 3.602",
+    "coverage": {
+      "unicodeCodepoints": 938,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 281832,
+    "sha256": "b520cc871868b0acfca1beda875df7f4a44ebce914f8a89f83977fc9c09529c8",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/nunito/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/nunito/Nunito-Italic%5Bwght%5D.ttf",
+      "filename": "Nunito-Italic[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "oswald",
+    "name": "Oswald",
+    "family": "Oswald",
+    "file": "Oswald.ttf",
+    "path": "ttf/Oswald.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 200.0,
+        "default": 400.0,
+        "max": 700.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 883,
+    "fontRevision": 4.102996826171875,
+    "internalVersion": "Version 4.103;gftools[0.9.33.dev8+g029e19f]",
+    "coverage": {
+      "unicodeCodepoints": 850,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 172088,
+    "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/oswald/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/oswald/Oswald%5Bwght%5D.ttf",
+      "filename": "Oswald[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "pacifico",
+    "name": "Pacifico",
+    "family": "Pacifico",
+    "file": "Pacifico.ttf",
+    "path": "ttf/Pacifico.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 1533,
+    "fontRevision": 3.0009918212890625,
+    "internalVersion": "Version 3.001",
+    "coverage": {
+      "unicodeCodepoints": 805,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 329380,
+    "sha256": "5b6c0d5334a7bf77dea52b975c5a0c408878c0f7115ed5b6fb151f634b7bf701",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/pacifico/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/pacifico/Pacifico-Regular.ttf",
+      "filename": "Pacifico-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "patrickhand",
+    "name": "Patrick Hand",
+    "family": "Patrick Hand",
+    "file": "PatrickHand.ttf",
+    "path": "ttf/PatrickHand.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 728,
+    "fontRevision": 1.00299072265625,
+    "internalVersion": "Version 1.003;PS 001.003;hotconv 1.0.70;makeotf.lib2.5.58329; ttfautohint (v0.94.20-1c74) -l 8 -r 50 -G 200 -x 14 -w \"gGD\" -c -f",
+    "coverage": {
+      "unicodeCodepoints": 515,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 214772,
+    "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/patrickhand/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/patrickhand/PatrickHand-Regular.ttf",
+      "filename": "PatrickHand-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "pattaya",
+    "name": "Pattaya",
+    "family": "Pattaya",
+    "file": "Pattaya.ttf",
+    "path": "ttf/Pattaya.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 2048,
+    "glyphCount": 1171,
+    "fontRevision": 2.001007080078125,
+    "internalVersion": "Version 2.001",
+    "coverage": {
+      "unicodeCodepoints": 803,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 420092,
+    "sha256": "02b77f7f5b52e718a91230c8ea153bfe746e1d748dabded4e41d7e6765fa9889",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/pattaya/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/pattaya/Pattaya-Regular.ttf",
+      "filename": "Pattaya-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "playfairdisplay",
+    "name": "Playfair Display",
+    "family": "Playfair Display",
+    "file": "PlayfairDisplay.ttf",
+    "path": "ttf/PlayfairDisplay.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 400.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 1103,
+    "fontRevision": 1.2030029296875,
+    "internalVersion": "Version 1.203",
+    "coverage": {
+      "unicodeCodepoints": 659,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 300724,
+    "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/playfairdisplay/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/playfairdisplay/PlayfairDisplay%5Bwght%5D.ttf",
+      "filename": "PlayfairDisplay[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "playfairdisplay-italic-400",
+    "name": "Playfair Display 400 Nghiêng",
+    "family": "Playfair Display",
+    "file": "PlayfairDisplay-Italic[wght].ttf",
+    "path": "ttf/PlayfairDisplay-Italic[wght].ttf",
+    "style": "italic",
+    "weight": 400,
+    "category": "serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 400.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 1101,
+    "fontRevision": 1.2030029296875,
+    "internalVersion": "Version 1.203",
+    "coverage": {
+      "unicodeCodepoints": 659,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 278688,
+    "sha256": "a5e26dc5e2e77fb2803a0bf02fd4f81ee136ec8dea863ccdb0c59a263b21378b",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/playfairdisplay/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/playfairdisplay/PlayfairDisplay-Italic%5Bwght%5D.ttf",
+      "filename": "PlayfairDisplay-Italic[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "praise",
+    "name": "Praise",
+    "family": "Praise",
+    "file": "Praise.ttf",
+    "path": "ttf/Praise.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "handwriting",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 3314,
+    "fontRevision": 1.100006103515625,
+    "internalVersion": "Version 1.100; ttfautohint (v1.8.3)",
+    "coverage": {
+      "unicodeCodepoints": 587,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 694316,
+    "sha256": "1f9e88031638c7f3c238f5b44a9d745041b1620208a77ecbefb62b10b0ffb214",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/praise/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/praise/Praise-Regular.ttf",
+      "filename": "Praise-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "protestriot",
+    "name": "Protest Riot",
+    "family": "Protest Riot",
+    "file": "ProtestRiot.ttf",
+    "path": "ttf/ProtestRiot.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 588,
+    "fontRevision": 2.0050048828125,
+    "internalVersion": "Version 2.005; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 558,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 109708,
+    "sha256": "0e9f6679f106b5777bf609f6afbc1ee1233adaaa8b045cb5fbebfb1cedfbf732",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/protestriot/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/protestriot/ProtestRiot-Regular.ttf",
+      "filename": "ProtestRiot-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "quicksand",
+    "name": "Quicksand",
+    "family": "Quicksand",
+    "file": "Quicksand.ttf",
+    "path": "ttf/Quicksand.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 300.0,
+        "default": 300.0,
+        "max": 700.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 1000,
+    "glyphCount": 812,
+    "fontRevision": 3.0059967041015625,
+    "internalVersion": "Version 3.006",
+    "coverage": {
+      "unicodeCodepoints": 694,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 124824,
+    "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/quicksand/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/quicksand/Quicksand%5Bwght%5D.ttf",
+      "filename": "Quicksand[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "storyscript",
+    "name": "Story Script",
+    "family": "Story Script",
+    "file": "StoryScript.ttf",
+    "path": "ttf/StoryScript.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 699,
+    "fontRevision": 1.0,
+    "internalVersion": "Version 1.000; ttfautohint (v1.8.4.7-5d5b)",
+    "coverage": {
+      "unicodeCodepoints": 573,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 121544,
+    "sha256": "2988808654b44c902f0e3a1a0b31fc67398ea5a093888da30c014bc3329f7731",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/storyscript/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/storyscript/StoryScript-Regular.ttf",
+      "filename": "StoryScript-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "vinasans",
+    "name": "Vina Sans",
+    "family": "Vina Sans",
+    "file": "VinaSans.ttf",
+    "path": "ttf/VinaSans.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 578,
+    "fontRevision": 1.0019989013671875,
+    "internalVersion": "Version 1.002; ttfautohint (v1.8.4.7-5d5b);gftools[0.9.28]",
+    "coverage": {
+      "unicodeCodepoints": 462,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 93328,
+    "sha256": "aaab4634a39d8a9f51d97844822ae4cba4a64e0d24b26e88f7b5d401e954fe13",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/vinasans/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/vinasans/VinaSans-Regular.ttf",
+      "filename": "VinaSans-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  {
+    "id": "yesevaone",
+    "name": "Yeseva One",
+    "family": "Yeseva One",
+    "file": "YesevaOne.ttf",
+    "path": "ttf/YesevaOne.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "display",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": false,
+    "axes": {},
+    "defaultVariation": {},
+    "unitsPerEm": 1000,
+    "glyphCount": 666,
+    "fontRevision": 2.0,
+    "internalVersion": "Version 2.000",
+    "coverage": {
+      "unicodeCodepoints": 652,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 108016,
+    "sha256": "88362b33820f0011e163e67b1d570fecd442aa8c05eaac89d5162f9c40d9dac3",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/yesevaone/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/yesevaone/YesevaOne-Regular.ttf",
+      "filename": "YesevaOne-Regular.ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  }
+]

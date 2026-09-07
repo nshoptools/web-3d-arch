@@ -1,0 +1,3497 @@
+{
+  "unicodeVersion": "17.0",
+  "fontSha256": "de6c18832938afc99caf132b39d6a30a19bac7f2e812e28db2535b4608d27551",
+  "reason": "Does not shape to one nonempty glyph without missing/advancing leftover glyphs.",
+  "count": 155,
+  "items": [
+    {
+      "id": "1fae9",
+      "emoji": "🫩",
+      "name": "face with bags under eyes",
+      "codepoints": [
+        "1FAE9"
+      ],
+      "group": "Smileys & Emotion",
+      "subgroup": "face-sleepy",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1faea",
+      "emoji": "🫪",
+      "name": "distorted face",
+      "codepoints": [
+        "1FAEA"
+      ],
+      "group": "Smileys & Emotion",
+      "subgroup": "face-concerned",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1faef",
+      "emoji": "🫯",
+      "name": "fight cloud",
+      "codepoints": [
+        "1FAEF"
+      ],
+      "group": "Smileys & Emotion",
+      "subgroup": "emotion",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fac8",
+      "emoji": "🫈",
+      "name": "hairy creature",
+      "codepoints": [
+        "1FAC8"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-fantasy",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1f9d1-200d-1fa70",
+      "emoji": "🧑‍🩰",
+      "name": "ballet dancer",
+      "codepoints": [
+        "1F9D1",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1fa70",
+      "emoji": "🧑🏻‍🩰",
+      "name": "ballet dancer: light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1fa70",
+      "emoji": "🧑🏼‍🩰",
+      "name": "ballet dancer: medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1fa70",
+      "emoji": "🧑🏽‍🩰",
+      "name": "ballet dancer: medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1fa70",
+      "emoji": "🧑🏾‍🩰",
+      "name": "ballet dancer: medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1fa70",
+      "emoji": "🧑🏿‍🩰",
+      "name": "ballet dancer: dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1FA70"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        1340
+      ]
+    },
+    {
+      "id": "1f46f-1f3fb",
+      "emoji": "👯🏻",
+      "name": "people with bunny ears: light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        492
+      ]
+    },
+    {
+      "id": "1f46f-1f3fc",
+      "emoji": "👯🏼",
+      "name": "people with bunny ears: medium-light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        493
+      ]
+    },
+    {
+      "id": "1f46f-1f3fd",
+      "emoji": "👯🏽",
+      "name": "people with bunny ears: medium skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        494
+      ]
+    },
+    {
+      "id": "1f46f-1f3fe",
+      "emoji": "👯🏾",
+      "name": "people with bunny ears: medium-dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        495
+      ]
+    },
+    {
+      "id": "1f46f-1f3ff",
+      "emoji": "👯🏿",
+      "name": "people with bunny ears: dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        496
+      ]
+    },
+    {
+      "id": "1f46f-1f3fb-200d-2642-fe0f",
+      "emoji": "👯🏻‍♂️",
+      "name": "men with bunny ears: light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FB",
+        "200D",
+        "2642",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        492,
+        3,
+        83,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fc-200d-2642-fe0f",
+      "emoji": "👯🏼‍♂️",
+      "name": "men with bunny ears: medium-light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FC",
+        "200D",
+        "2642",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        493,
+        3,
+        83,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fd-200d-2642-fe0f",
+      "emoji": "👯🏽‍♂️",
+      "name": "men with bunny ears: medium skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FD",
+        "200D",
+        "2642",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        494,
+        3,
+        83,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fe-200d-2642-fe0f",
+      "emoji": "👯🏾‍♂️",
+      "name": "men with bunny ears: medium-dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FE",
+        "200D",
+        "2642",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        495,
+        3,
+        83,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3ff-200d-2642-fe0f",
+      "emoji": "👯🏿‍♂️",
+      "name": "men with bunny ears: dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FF",
+        "200D",
+        "2642",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        496,
+        3,
+        83,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fb-200d-2640-fe0f",
+      "emoji": "👯🏻‍♀️",
+      "name": "women with bunny ears: light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FB",
+        "200D",
+        "2640",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        492,
+        3,
+        82,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fc-200d-2640-fe0f",
+      "emoji": "👯🏼‍♀️",
+      "name": "women with bunny ears: medium-light skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FC",
+        "200D",
+        "2640",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        493,
+        3,
+        82,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fd-200d-2640-fe0f",
+      "emoji": "👯🏽‍♀️",
+      "name": "women with bunny ears: medium skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FD",
+        "200D",
+        "2640",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        494,
+        3,
+        82,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3fe-200d-2640-fe0f",
+      "emoji": "👯🏾‍♀️",
+      "name": "women with bunny ears: medium-dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FE",
+        "200D",
+        "2640",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        495,
+        3,
+        82,
+        3
+      ]
+    },
+    {
+      "id": "1f46f-1f3ff-200d-2640-fe0f",
+      "emoji": "👯🏿‍♀️",
+      "name": "women with bunny ears: dark skin tone",
+      "codepoints": [
+        "1F46F",
+        "1F3FF",
+        "200D",
+        "2640",
+        "FE0F"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        612,
+        496,
+        3,
+        82,
+        3
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1f430-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏻‍🐰‍🧑🏼",
+      "name": "people with bunny ears: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1f430-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏻‍🐰‍🧑🏽",
+      "name": "people with bunny ears: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1f430-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏻‍🐰‍🧑🏾",
+      "name": "people with bunny ears: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1f430-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏻‍🐰‍🧑🏿",
+      "name": "people with bunny ears: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1f430-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏼‍🐰‍🧑🏻",
+      "name": "people with bunny ears: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1f430-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏼‍🐰‍🧑🏽",
+      "name": "people with bunny ears: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1f430-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏼‍🐰‍🧑🏾",
+      "name": "people with bunny ears: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1f430-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏼‍🐰‍🧑🏿",
+      "name": "people with bunny ears: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1f430-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏽‍🐰‍🧑🏻",
+      "name": "people with bunny ears: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1f430-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏽‍🐰‍🧑🏼",
+      "name": "people with bunny ears: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1f430-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏽‍🐰‍🧑🏾",
+      "name": "people with bunny ears: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1f430-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏽‍🐰‍🧑🏿",
+      "name": "people with bunny ears: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1f430-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏾‍🐰‍🧑🏻",
+      "name": "people with bunny ears: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1f430-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏾‍🐰‍🧑🏼",
+      "name": "people with bunny ears: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1f430-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏾‍🐰‍🧑🏽",
+      "name": "people with bunny ears: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1f430-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏾‍🐰‍🧑🏿",
+      "name": "people with bunny ears: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1f430-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏿‍🐰‍🧑🏻",
+      "name": "people with bunny ears: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1f430-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏿‍🐰‍🧑🏼",
+      "name": "people with bunny ears: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1f430-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏿‍🐰‍🧑🏽",
+      "name": "people with bunny ears: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1f430-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏿‍🐰‍🧑🏾",
+      "name": "people with bunny ears: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        549,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1f430-200d-1f468-1f3fc",
+      "emoji": "👨🏻‍🐰‍👨🏼",
+      "name": "men with bunny ears: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1f430-200d-1f468-1f3fd",
+      "emoji": "👨🏻‍🐰‍👨🏽",
+      "name": "men with bunny ears: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1f430-200d-1f468-1f3fe",
+      "emoji": "👨🏻‍🐰‍👨🏾",
+      "name": "men with bunny ears: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1f430-200d-1f468-1f3ff",
+      "emoji": "👨🏻‍🐰‍👨🏿",
+      "name": "men with bunny ears: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1f430-200d-1f468-1f3fb",
+      "emoji": "👨🏼‍🐰‍👨🏻",
+      "name": "men with bunny ears: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1f430-200d-1f468-1f3fd",
+      "emoji": "👨🏼‍🐰‍👨🏽",
+      "name": "men with bunny ears: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1f430-200d-1f468-1f3fe",
+      "emoji": "👨🏼‍🐰‍👨🏾",
+      "name": "men with bunny ears: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1f430-200d-1f468-1f3ff",
+      "emoji": "👨🏼‍🐰‍👨🏿",
+      "name": "men with bunny ears: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1f430-200d-1f468-1f3fb",
+      "emoji": "👨🏽‍🐰‍👨🏻",
+      "name": "men with bunny ears: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1f430-200d-1f468-1f3fc",
+      "emoji": "👨🏽‍🐰‍👨🏼",
+      "name": "men with bunny ears: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1f430-200d-1f468-1f3fe",
+      "emoji": "👨🏽‍🐰‍👨🏾",
+      "name": "men with bunny ears: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1f430-200d-1f468-1f3ff",
+      "emoji": "👨🏽‍🐰‍👨🏿",
+      "name": "men with bunny ears: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1f430-200d-1f468-1f3fb",
+      "emoji": "👨🏾‍🐰‍👨🏻",
+      "name": "men with bunny ears: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1f430-200d-1f468-1f3fc",
+      "emoji": "👨🏾‍🐰‍👨🏼",
+      "name": "men with bunny ears: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1f430-200d-1f468-1f3fd",
+      "emoji": "👨🏾‍🐰‍👨🏽",
+      "name": "men with bunny ears: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1f430-200d-1f468-1f3ff",
+      "emoji": "👨🏾‍🐰‍👨🏿",
+      "name": "men with bunny ears: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1f430-200d-1f468-1f3fb",
+      "emoji": "👨🏿‍🐰‍👨🏻",
+      "name": "men with bunny ears: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1f430-200d-1f468-1f3fc",
+      "emoji": "👨🏿‍🐰‍👨🏼",
+      "name": "men with bunny ears: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1f430-200d-1f468-1f3fd",
+      "emoji": "👨🏿‍🐰‍👨🏽",
+      "name": "men with bunny ears: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1f430-200d-1f468-1f3fe",
+      "emoji": "👨🏿‍🐰‍👨🏾",
+      "name": "men with bunny ears: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        549,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1f430-200d-1f469-1f3fc",
+      "emoji": "👩🏻‍🐰‍👩🏼",
+      "name": "women with bunny ears: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1f430-200d-1f469-1f3fd",
+      "emoji": "👩🏻‍🐰‍👩🏽",
+      "name": "women with bunny ears: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1f430-200d-1f469-1f3fe",
+      "emoji": "👩🏻‍🐰‍👩🏾",
+      "name": "women with bunny ears: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1f430-200d-1f469-1f3ff",
+      "emoji": "👩🏻‍🐰‍👩🏿",
+      "name": "women with bunny ears: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1f430-200d-1f469-1f3fb",
+      "emoji": "👩🏼‍🐰‍👩🏻",
+      "name": "women with bunny ears: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1f430-200d-1f469-1f3fd",
+      "emoji": "👩🏼‍🐰‍👩🏽",
+      "name": "women with bunny ears: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1f430-200d-1f469-1f3fe",
+      "emoji": "👩🏼‍🐰‍👩🏾",
+      "name": "women with bunny ears: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1f430-200d-1f469-1f3ff",
+      "emoji": "👩🏼‍🐰‍👩🏿",
+      "name": "women with bunny ears: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1f430-200d-1f469-1f3fb",
+      "emoji": "👩🏽‍🐰‍👩🏻",
+      "name": "women with bunny ears: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1f430-200d-1f469-1f3fc",
+      "emoji": "👩🏽‍🐰‍👩🏼",
+      "name": "women with bunny ears: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1f430-200d-1f469-1f3fe",
+      "emoji": "👩🏽‍🐰‍👩🏾",
+      "name": "women with bunny ears: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1f430-200d-1f469-1f3ff",
+      "emoji": "👩🏽‍🐰‍👩🏿",
+      "name": "women with bunny ears: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1f430-200d-1f469-1f3fb",
+      "emoji": "👩🏾‍🐰‍👩🏻",
+      "name": "women with bunny ears: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1f430-200d-1f469-1f3fc",
+      "emoji": "👩🏾‍🐰‍👩🏼",
+      "name": "women with bunny ears: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1f430-200d-1f469-1f3fd",
+      "emoji": "👩🏾‍🐰‍👩🏽",
+      "name": "women with bunny ears: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1f430-200d-1f469-1f3ff",
+      "emoji": "👩🏾‍🐰‍👩🏿",
+      "name": "women with bunny ears: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1f430-200d-1f469-1f3fb",
+      "emoji": "👩🏿‍🐰‍👩🏻",
+      "name": "women with bunny ears: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1f430-200d-1f469-1f3fc",
+      "emoji": "👩🏿‍🐰‍👩🏼",
+      "name": "women with bunny ears: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1f430-200d-1f469-1f3fd",
+      "emoji": "👩🏿‍🐰‍👩🏽",
+      "name": "women with bunny ears: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1f430-200d-1f469-1f3fe",
+      "emoji": "👩🏿‍🐰‍👩🏾",
+      "name": "women with bunny ears: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1F430",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-activity",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        549,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1faef-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏻‍🫯‍🧑🏼",
+      "name": "people wrestling: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1faef-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏻‍🫯‍🧑🏽",
+      "name": "people wrestling: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1faef-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏻‍🫯‍🧑🏾",
+      "name": "people wrestling: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fb-200d-1faef-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏻‍🫯‍🧑🏿",
+      "name": "people wrestling: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1faef-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏼‍🫯‍🧑🏻",
+      "name": "people wrestling: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1faef-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏼‍🫯‍🧑🏽",
+      "name": "people wrestling: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1faef-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏼‍🫯‍🧑🏾",
+      "name": "people wrestling: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fc-200d-1faef-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏼‍🫯‍🧑🏿",
+      "name": "people wrestling: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1faef-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏽‍🫯‍🧑🏻",
+      "name": "people wrestling: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1faef-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏽‍🫯‍🧑🏼",
+      "name": "people wrestling: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1faef-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏽‍🫯‍🧑🏾",
+      "name": "people wrestling: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fd-200d-1faef-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏽‍🫯‍🧑🏿",
+      "name": "people wrestling: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1faef-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏾‍🫯‍🧑🏻",
+      "name": "people wrestling: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1faef-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏾‍🫯‍🧑🏼",
+      "name": "people wrestling: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1faef-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏾‍🫯‍🧑🏽",
+      "name": "people wrestling: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3fe-200d-1faef-200d-1f9d1-1f3ff",
+      "emoji": "🧑🏾‍🫯‍🧑🏿",
+      "name": "people wrestling: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1faef-200d-1f9d1-1f3fb",
+      "emoji": "🧑🏿‍🫯‍🧑🏻",
+      "name": "people wrestling: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1faef-200d-1f9d1-1f3fc",
+      "emoji": "🧑🏿‍🫯‍🧑🏼",
+      "name": "people wrestling: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1faef-200d-1f9d1-1f3fd",
+      "emoji": "🧑🏿‍🫯‍🧑🏽",
+      "name": "people wrestling: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f9d1-1f3ff-200d-1faef-200d-1f9d1-1f3fe",
+      "emoji": "🧑🏿‍🫯‍🧑🏾",
+      "name": "people wrestling: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F9D1",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F9D1",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        1292,
+        3,
+        0,
+        3,
+        1292
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1faef-200d-1f468-1f3fc",
+      "emoji": "👨🏻‍🫯‍👨🏼",
+      "name": "men wrestling: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1faef-200d-1f468-1f3fd",
+      "emoji": "👨🏻‍🫯‍👨🏽",
+      "name": "men wrestling: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1faef-200d-1f468-1f3fe",
+      "emoji": "👨🏻‍🫯‍👨🏾",
+      "name": "men wrestling: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fb-200d-1faef-200d-1f468-1f3ff",
+      "emoji": "👨🏻‍🫯‍👨🏿",
+      "name": "men wrestling: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1faef-200d-1f468-1f3fb",
+      "emoji": "👨🏼‍🫯‍👨🏻",
+      "name": "men wrestling: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1faef-200d-1f468-1f3fd",
+      "emoji": "👨🏼‍🫯‍👨🏽",
+      "name": "men wrestling: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1faef-200d-1f468-1f3fe",
+      "emoji": "👨🏼‍🫯‍👨🏾",
+      "name": "men wrestling: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fc-200d-1faef-200d-1f468-1f3ff",
+      "emoji": "👨🏼‍🫯‍👨🏿",
+      "name": "men wrestling: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1faef-200d-1f468-1f3fb",
+      "emoji": "👨🏽‍🫯‍👨🏻",
+      "name": "men wrestling: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1faef-200d-1f468-1f3fc",
+      "emoji": "👨🏽‍🫯‍👨🏼",
+      "name": "men wrestling: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1faef-200d-1f468-1f3fe",
+      "emoji": "👨🏽‍🫯‍👨🏾",
+      "name": "men wrestling: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fd-200d-1faef-200d-1f468-1f3ff",
+      "emoji": "👨🏽‍🫯‍👨🏿",
+      "name": "men wrestling: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1faef-200d-1f468-1f3fb",
+      "emoji": "👨🏾‍🫯‍👨🏻",
+      "name": "men wrestling: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1faef-200d-1f468-1f3fc",
+      "emoji": "👨🏾‍🫯‍👨🏼",
+      "name": "men wrestling: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1faef-200d-1f468-1f3fd",
+      "emoji": "👨🏾‍🫯‍👨🏽",
+      "name": "men wrestling: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3fe-200d-1faef-200d-1f468-1f3ff",
+      "emoji": "👨🏾‍🫯‍👨🏿",
+      "name": "men wrestling: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1faef-200d-1f468-1f3fb",
+      "emoji": "👨🏿‍🫯‍👨🏻",
+      "name": "men wrestling: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1faef-200d-1f468-1f3fc",
+      "emoji": "👨🏿‍🫯‍👨🏼",
+      "name": "men wrestling: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1faef-200d-1f468-1f3fd",
+      "emoji": "👨🏿‍🫯‍👨🏽",
+      "name": "men wrestling: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f468-1f3ff-200d-1faef-200d-1f468-1f3fe",
+      "emoji": "👨🏿‍🫯‍👨🏾",
+      "name": "men wrestling: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F468",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F468",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        605,
+        3,
+        0,
+        3,
+        605
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1faef-200d-1f469-1f3fc",
+      "emoji": "👩🏻‍🫯‍👩🏼",
+      "name": "women wrestling: light skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1faef-200d-1f469-1f3fd",
+      "emoji": "👩🏻‍🫯‍👩🏽",
+      "name": "women wrestling: light skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1faef-200d-1f469-1f3fe",
+      "emoji": "👩🏻‍🫯‍👩🏾",
+      "name": "women wrestling: light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fb-200d-1faef-200d-1f469-1f3ff",
+      "emoji": "👩🏻‍🫯‍👩🏿",
+      "name": "women wrestling: light skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FB",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1faef-200d-1f469-1f3fb",
+      "emoji": "👩🏼‍🫯‍👩🏻",
+      "name": "women wrestling: medium-light skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1faef-200d-1f469-1f3fd",
+      "emoji": "👩🏼‍🫯‍👩🏽",
+      "name": "women wrestling: medium-light skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1faef-200d-1f469-1f3fe",
+      "emoji": "👩🏼‍🫯‍👩🏾",
+      "name": "women wrestling: medium-light skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fc-200d-1faef-200d-1f469-1f3ff",
+      "emoji": "👩🏼‍🫯‍👩🏿",
+      "name": "women wrestling: medium-light skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FC",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1faef-200d-1f469-1f3fb",
+      "emoji": "👩🏽‍🫯‍👩🏻",
+      "name": "women wrestling: medium skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1faef-200d-1f469-1f3fc",
+      "emoji": "👩🏽‍🫯‍👩🏼",
+      "name": "women wrestling: medium skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1faef-200d-1f469-1f3fe",
+      "emoji": "👩🏽‍🫯‍👩🏾",
+      "name": "women wrestling: medium skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fd-200d-1faef-200d-1f469-1f3ff",
+      "emoji": "👩🏽‍🫯‍👩🏿",
+      "name": "women wrestling: medium skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FD",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1faef-200d-1f469-1f3fb",
+      "emoji": "👩🏾‍🫯‍👩🏻",
+      "name": "women wrestling: medium-dark skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1faef-200d-1f469-1f3fc",
+      "emoji": "👩🏾‍🫯‍👩🏼",
+      "name": "women wrestling: medium-dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1faef-200d-1f469-1f3fd",
+      "emoji": "👩🏾‍🫯‍👩🏽",
+      "name": "women wrestling: medium-dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3fe-200d-1faef-200d-1f469-1f3ff",
+      "emoji": "👩🏾‍🫯‍👩🏿",
+      "name": "women wrestling: medium-dark skin tone, dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FE",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FF"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1faef-200d-1f469-1f3fb",
+      "emoji": "👩🏿‍🫯‍👩🏻",
+      "name": "women wrestling: dark skin tone, light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FB"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1faef-200d-1f469-1f3fc",
+      "emoji": "👩🏿‍🫯‍👩🏼",
+      "name": "women wrestling: dark skin tone, medium-light skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FC"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1faef-200d-1f469-1f3fd",
+      "emoji": "👩🏿‍🫯‍👩🏽",
+      "name": "women wrestling: dark skin tone, medium skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FD"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1f469-1f3ff-200d-1faef-200d-1f469-1f3fe",
+      "emoji": "👩🏿‍🫯‍👩🏾",
+      "name": "women wrestling: dark skin tone, medium-dark skin tone",
+      "codepoints": [
+        "1F469",
+        "1F3FF",
+        "200D",
+        "1FAEF",
+        "200D",
+        "1F469",
+        "1F3FE"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-sport",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        606,
+        3,
+        0,
+        3,
+        606
+      ]
+    },
+    {
+      "id": "1fac6",
+      "emoji": "🫆",
+      "name": "fingerprint",
+      "codepoints": [
+        "1FAC6"
+      ],
+      "group": "People & Body",
+      "subgroup": "person-symbol",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1facd",
+      "emoji": "🫍",
+      "name": "orca",
+      "codepoints": [
+        "1FACD"
+      ],
+      "group": "Animals & Nature",
+      "subgroup": "animal-marine",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fabe",
+      "emoji": "🪾",
+      "name": "leafless tree",
+      "codepoints": [
+        "1FABE"
+      ],
+      "group": "Animals & Nature",
+      "subgroup": "plant-other",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fadc",
+      "emoji": "🫜",
+      "name": "root vegetable",
+      "codepoints": [
+        "1FADC"
+      ],
+      "group": "Food & Drink",
+      "subgroup": "food-vegetable",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1f6d8",
+      "emoji": "🛘",
+      "name": "landslide",
+      "codepoints": [
+        "1F6D8"
+      ],
+      "group": "Travel & Places",
+      "subgroup": "place-geographic",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fa8a",
+      "emoji": "🪊",
+      "name": "trombone",
+      "codepoints": [
+        "1FA8A"
+      ],
+      "group": "Objects",
+      "subgroup": "musical-instrument",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fa89",
+      "emoji": "🪉",
+      "name": "harp",
+      "codepoints": [
+        "1FA89"
+      ],
+      "group": "Objects",
+      "subgroup": "musical-instrument",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fa8e",
+      "emoji": "🪎",
+      "name": "treasure chest",
+      "codepoints": [
+        "1FA8E"
+      ],
+      "group": "Objects",
+      "subgroup": "money",
+      "emojiVersion": "17.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fa8f",
+      "emoji": "🪏",
+      "name": "shovel",
+      "codepoints": [
+        "1FA8F"
+      ],
+      "group": "Objects",
+      "subgroup": "tool",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    },
+    {
+      "id": "1fadf",
+      "emoji": "🫟",
+      "name": "splatter",
+      "codepoints": [
+        "1FADF"
+      ],
+      "group": "Symbols",
+      "subgroup": "other-symbol",
+      "emojiVersion": "16.0",
+      "shapedGlyphIds": [
+        0
+      ]
+    }
+  ]
+}

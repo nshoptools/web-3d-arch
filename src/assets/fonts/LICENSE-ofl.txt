@@ -1,0 +1,15 @@
+GIẤY PHÉP FONT CHỮ — web-3d-arch
+================================
+
+53 tệp TTF trong ttf/ là bản đầy đủ, nguyên byte từ google/fonts tại commit:
+5e35378e6bda803962ee6fd257e444a7d459660d
+
+Mỗi họ có toàn bộ OFL.txt gốc (gồm thông báo bản quyền và Reserved Font Name
+nếu có) trong licenses/<family>/OFL.txt. Khi phân phối phải kèm các tệp đó.
+Tệp này chỉ là chỉ dẫn; các OFL.txt nguyên bản là giấy phép của từng font.
+
+Có đủ các biến thể được khai báo trong METADATA.pb của 30 họ đã chọn, gồm
+18 kiểu Be Vietnam Pro và các kiểu nghiêng/variable do từng họ công bố.
+31 tên tệp cũ được giữ; dữ liệu font không subset, convert hay instantiate.
+Nguồn và hash từng tệp: ../assets-lock.json và fonts-cat.json.
+Chi tiết kiểm chứng: ../../../docs/assets/README.md (tính từ thư mục này).

@@ -1,0 +1,33 @@
+# LƯU Ý: KHÔNG bỏ qua src/assets/ (emoji, fonts, opentype).
+# Đặc tả đòi tái lập bằng chứng mà không cần tải mạng
+
+# Phụ thuộc
+node_modules/
+
+# Rác hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tạm thời
+*.log
+*.tmp
+.cache/
+
+# Bộ công cụ cài riêng cho kho, cài vào đây để không sử dụng PATH của máy này.
+.toolchain/
+
+# Thư mục phù du & Thư mục báo cáo trong quá trình phát triển
+tmp/*
+!tmp/reviews/
+tmp/reviews/*
+!tmp/reviews/README.md
+!tmp/reviews/grok/
+!tmp/reviews/opus/
+!tmp/reviews/codex/
+tmp/reviews/*/*
+!tmp/reviews/*/README.md
+!tmp/reviews/*/runs/
+tmp/reviews/*/runs/*
+!tmp/reviews/*/runs/.gitkeep
+report/

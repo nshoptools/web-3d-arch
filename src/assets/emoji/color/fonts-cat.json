@@ -1,0 +1,314 @@
+[
+  {
+    "id": "noto-colrv1-emojicompat",
+    "name": "Noto-COLRv1-emojicompat",
+    "family": "Noto Color Emoji",
+    "path": "fonts/Noto-COLRv1-emojicompat.ttf",
+    "file": "Noto-COLRv1-emojicompat.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "COLRv1",
+    "variant": "emojicompat",
+    "outlineFormat": "glyf+COLRv1-paint-graph",
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 1024,
+    "glyphCount": 41863,
+    "coverage": {
+      "unicodeCodepoints": 5490,
+      "fullyQualifiedEmoji": 3944,
+      "unicodeTestForms": 5225
+    },
+    "geometry": {
+      "source": "color-vector",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 5186052,
+    "sha256": "71ec2037f1a8c0f8654315498412fae4015f183afe0a109aafcd9f5602bc12f7",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/Noto-COLRv1-emojicompat.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "noto-colrv1-noflags",
+    "name": "Noto-COLRv1-noflags",
+    "family": "Noto Color Emoji",
+    "path": "fonts/Noto-COLRv1-noflags.ttf",
+    "file": "Noto-COLRv1-noflags.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "COLRv1",
+    "variant": "noflags",
+    "outlineFormat": "glyf+COLRv1-paint-graph",
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 1024,
+    "glyphCount": 24556,
+    "coverage": {
+      "unicodeCodepoints": 1463,
+      "fullyQualifiedEmoji": 3685,
+      "unicodeTestForms": 4966
+    },
+    "geometry": {
+      "source": "color-vector",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 2992136,
+    "sha256": "469e3b92d63cfc203789f8742f1835b8672c7b5995ab4a832f1699b712a5afcc",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/Noto-COLRv1-noflags.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "noto-colrv1",
+    "name": "Noto-COLRv1",
+    "family": "Noto Color Emoji",
+    "path": "fonts/Noto-COLRv1.ttf",
+    "file": "Noto-COLRv1.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "COLRv1",
+    "variant": "full",
+    "outlineFormat": "glyf+COLRv1-paint-graph",
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 1024,
+    "glyphCount": 41863,
+    "coverage": {
+      "unicodeCodepoints": 1499,
+      "fullyQualifiedEmoji": 3944,
+      "unicodeTestForms": 5225
+    },
+    "geometry": {
+      "source": "color-vector",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 4991984,
+    "sha256": "0ae57fe58645638523ba35f388d93739d292539a9acb84df5700c81b1e1a28d2",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/Noto-COLRv1.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "notocoloremoji-emojicompat",
+    "name": "NotoColorEmoji-emojicompat",
+    "family": "Noto Color Emoji",
+    "path": "fonts/NotoColorEmoji-emojicompat.ttf",
+    "file": "NotoColorEmoji-emojicompat.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "CBDT/CBLC",
+    "variant": "emojicompat",
+    "outlineFormat": null,
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 2048,
+    "glyphCount": 4027,
+    "coverage": {
+      "unicodeCodepoints": 5492,
+      "fullyQualifiedEmoji": 3944,
+      "unicodeTestForms": 5225
+    },
+    "geometry": {
+      "source": "bitmap",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 10866756,
+    "sha256": "94175873e4587ee8d1b3a5624d3b41e09939f0401df31a5508768ff9f944306f",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/NotoColorEmoji-emojicompat.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "notocoloremoji-flagsonly",
+    "name": "NotoColorEmoji-flagsonly",
+    "family": "Noto Color Emoji Flags",
+    "path": "fonts/NotoColorEmoji-flagsonly.ttf",
+    "file": "NotoColorEmoji-flagsonly.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "CBDT/CBLC",
+    "variant": "flagsonly",
+    "outlineFormat": null,
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 2048,
+    "glyphCount": 279,
+    "coverage": {
+      "unicodeCodepoints": 36,
+      "fullyQualifiedEmoji": 259,
+      "unicodeTestForms": 259
+    },
+    "geometry": {
+      "source": "bitmap",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 872840,
+    "sha256": "29779e6015811e747dfeafa418f4d3bd0824c5e045b5e489b359f7b69d0bb52c",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/NotoColorEmoji-flagsonly.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "notocoloremoji-noflags",
+    "name": "NotoColorEmoji-noflags",
+    "family": "Noto Color Emoji",
+    "path": "fonts/NotoColorEmoji-noflags.ttf",
+    "file": "NotoColorEmoji-noflags.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "CBDT/CBLC",
+    "variant": "noflags",
+    "outlineFormat": null,
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 2048,
+    "glyphCount": 3760,
+    "coverage": {
+      "unicodeCodepoints": 1475,
+      "fullyQualifiedEmoji": 3685,
+      "unicodeTestForms": 4966
+    },
+    "geometry": {
+      "source": "bitmap",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 9833416,
+    "sha256": "05349e4ae010a0a5b523c26c56bfbed17137259d67e963ac7687255915836c17",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/NotoColorEmoji-noflags.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "notocoloremoji",
+    "name": "NotoColorEmoji",
+    "family": "Noto Color Emoji",
+    "path": "fonts/NotoColorEmoji.ttf",
+    "file": "NotoColorEmoji.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "CBDT/CBLC",
+    "variant": "full",
+    "outlineFormat": null,
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 2048,
+    "glyphCount": 4027,
+    "coverage": {
+      "unicodeCodepoints": 1501,
+      "fullyQualifiedEmoji": 3944,
+      "unicodeTestForms": 5225
+    },
+    "geometry": {
+      "source": "bitmap",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 10673480,
+    "sha256": "72a635cb3d2f3524c51620cdde406b217204e8a6a06c6a096ff8ed4b5fd6e27b",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/NotoColorEmoji.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  },
+  {
+    "id": "notocoloremoji-windowscompatible",
+    "name": "NotoColorEmoji_WindowsCompatible",
+    "family": "Noto Color Emoji",
+    "path": "fonts/NotoColorEmoji_WindowsCompatible.ttf",
+    "file": "NotoColorEmoji_WindowsCompatible.ttf",
+    "style": "normal",
+    "weight": 400,
+    "variable": false,
+    "color": true,
+    "colorFormat": "CBDT/CBLC",
+    "variant": "windowscompatible",
+    "outlineFormat": null,
+    "internalVersion": "Version 2.051;GOOG;noto-emoji:20250818:e92753bfa55fd449e427d4d325f9c8c40408c74e",
+    "unitsPerEm": 2048,
+    "glyphCount": 4027,
+    "coverage": {
+      "unicodeCodepoints": 1501,
+      "fullyQualifiedEmoji": 3944,
+      "unicodeTestForms": 5225
+    },
+    "geometry": {
+      "source": "bitmap",
+      "requiresConversion": true,
+      "meshValidated": false
+    },
+    "bytes": 10682364,
+    "sha256": "19473341d23f8fdf90e91ffca381d727c43f7bc05b2758dec9687a58fbb81150",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "fonts/LICENSE"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/8998f5dd683424a73e2314a8c1f1e359c19e8742/fonts/NotoColorEmoji_WindowsCompatible.ttf",
+      "repository": "https://github.com/googlefonts/noto-emoji",
+      "commit": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+      "modified": false
+    }
+  }
+]

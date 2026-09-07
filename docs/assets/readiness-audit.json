@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "status": "ready-for-input-integration",
+  "originalFilesVerified": 19829,
+  "originalBytes": 306233293,
+  "textFamilies": 30,
+  "textFonts": 53,
+  "totalFontFiles": 62,
+  "legacyFontIdsAndOriginalHashesPreserved": 31,
+  "colorEmoji": 3944,
+  "monoEmoji": 3789,
+  "monoUnsupported": 155,
+  "alternateInputForms": 1272,
+  "standaloneComponents": 9,
+  "svgArtwork": 4336,
+  "artworkOutsideStandardPicker": 137,
+  "pngOriginals": 15312,
+  "reviewRooms": [
+    "grok",
+    "opus",
+    "codex"
+  ],
+  "environmentCheck": {
+    "status": "pass",
+    "pathsChecked": 22,
+    "rejected": [
+      "implicit seat",
+      "run path traversal",
+      "nested cache junction"
+    ],
+    "scope": "Environment/tool convention checks; not an operating system sandbox"
+  },
+  "gitOriginalBytesPreserved": true,
+  "assetAndRuleFilesNotIgnored": true,
+  "sourcePins": {
+    "googleFonts": "5e35378e6bda803962ee6fd257e444a7d459660d",
+    "notoColorEmoji": "8998f5dd683424a73e2314a8c1f1e359c19e8742",
+    "opentypejs": "2.0.0",
+    "harfbuzzjs": "1.6.1"
+  },
+  "evidenceSha256": {
+    "font-audit.json": "96fba9ac22d66a49353d90d924d1d344833cc741f7709fc424cfddb387f55278",
+    "opentype-audit.json": "679bd99023923e2c503c6d827ab10a2477cb9ea72abe3bcb0d6f2d4c12537115",
+    "color-emoji-audit.json": "289d71e904eb90708f7455e6c9f63c3bafea98279054dbec651d083ee3d0900d",
+    "input-runtime-audit.json": "509aef147be0bc93a287de4f8436393bdae4b2d0fc92bc953e7f9f41ce78a267",
+    "artwork-render-audit.json": "29d48c89f7ad574786d5c0efc5ae558fca3d3fba11d3cea48e5ddc0f715cb2b8"
+  },
+  "catalogSha256": {
+    "src/assets/emoji/collections.json": "358a3121a05f4edad3d87b2dba7a970d9e6eab4401408dfad1dbac9453e4dc62",
+    "src/assets/emoji/color/artwork-cat.json": "4f1cf4c8861c85b2b813b47b5af64915f17b4c7dec733fcab998322f65fa3c60",
+    "src/assets/emoji/color/components-cat.json": "8a8a3d688feafb5efddc76f89f69421d33ae32ed0f6f9b869542b631c2278c61",
+    "src/assets/emoji/color/emoji-cat.json": "636a9e9b365ca17263c9b86b15a711f8aa8a8f5fbfaead313890f31379d0a65c",
+    "src/assets/emoji/color/fonts-cat.json": "c58721b01632c14b92722082bc41deeb31f8157cfc6916df4f6790157457648d",
+    "src/assets/emoji/color/input-aliases.json": "b95016d44d40354edb7e4a7368b19416886e716e747e11cb5d08fd7127959ecd",
+    "src/assets/emoji/emoji-cat.json": "6b6c8cd5058ba58db483dc09d628cff3e7cce41479784b2f4970262f83ce483b",
+    "src/assets/emoji/fonts-cat.json": "349d0676f76dc7cd7eb6347b055e11ceb54ba0230a1f480e1efe73417a36c8ad",
+    "src/assets/fonts/families-cat.json": "5df32ec3143893827042b3cecebb572c03e3a5effd5e124111dda539c1fae962",
+    "src/assets/fonts/fonts-cat.json": "2aebf301de12a3119ef159d07fcc37e17ba61c42674512bbd4fb14b1540fe718"
+  },
+  "meshValidated": false,
+  "physicalPrintTested": false,
+  "scope": "Original assets, complete selected family variants, UI catalogs and JavaScript input extraction. 3D conversion, printer profiles, material mapping, slicer validation and physical prints remain application work."
+}

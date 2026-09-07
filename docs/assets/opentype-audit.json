@@ -1,0 +1,524 @@
+{
+  "status": "outline-extraction-pass",
+  "opentypeVersion": "2.0.0",
+  "originalAssetsHashed": 128,
+  "fonts": [
+    {
+      "id": "alfaslabone",
+      "glyphsChecked": 734,
+      "nonemptyGlyphs": 725,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "anton",
+      "glyphsChecked": 1373,
+      "nonemptyGlyphs": 1363,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "arizonia",
+      "glyphsChecked": 652,
+      "nonemptyGlyphs": 648,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "baloo2",
+      "glyphsChecked": 1601,
+      "nonemptyGlyphs": 1588,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bangers",
+      "glyphsChecked": 597,
+      "nonemptyGlyphs": 593,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "bevietnampro",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-100",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-100",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-200",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-200",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-300",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-300",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-400",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-500",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-500",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-600",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-600",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-700",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-800",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-800",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-normal-900",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnampro-italic-900",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bevietnamprobold",
+      "glyphsChecked": 527,
+      "nonemptyGlyphs": 523,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "bungee",
+      "glyphsChecked": 1063,
+      "nonemptyGlyphs": 1058,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "carattere",
+      "glyphsChecked": 635,
+      "nonemptyGlyphs": 630,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "cherrybombone",
+      "glyphsChecked": 1140,
+      "nonemptyGlyphs": 1131,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "coiny",
+      "glyphsChecked": 805,
+      "nonemptyGlyphs": 745,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "comfortaa",
+      "glyphsChecked": 874,
+      "nonemptyGlyphs": 870,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "dancingscript",
+      "glyphsChecked": 643,
+      "nonemptyGlyphs": 639,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "fruktur",
+      "glyphsChecked": 809,
+      "nonemptyGlyphs": 788,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "fruktur-italic-400",
+      "glyphsChecked": 809,
+      "nonemptyGlyphs": 788,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "greatvibes",
+      "glyphsChecked": 2025,
+      "nonemptyGlyphs": 2007,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "inter",
+      "glyphsChecked": 2933,
+      "nonemptyGlyphs": 2911,
+      "variationSamples": 7,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "inter-italic-400",
+      "glyphsChecked": 2897,
+      "nonemptyGlyphs": 2875,
+      "variationSamples": 7,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "lobster",
+      "glyphsChecked": 1174,
+      "nonemptyGlyphs": 1170,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "merriweather",
+      "glyphsChecked": 2384,
+      "nonemptyGlyphs": 2367,
+      "variationSamples": 9,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 61 lookupType: 6 - substFormat: 1 is not yet supported"
+      }
+    },
+    {
+      "id": "merriweather-italic-400",
+      "glyphsChecked": 2381,
+      "nonemptyGlyphs": 2364,
+      "variationSamples": 9,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 61 lookupType: 6 - substFormat: 1 is not yet supported"
+      }
+    },
+    {
+      "id": "montserrat",
+      "glyphsChecked": 2747,
+      "nonemptyGlyphs": 2737,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "montserrat-italic-400",
+      "glyphsChecked": 2791,
+      "nonemptyGlyphs": 2781,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "nunito",
+      "glyphsChecked": 1103,
+      "nonemptyGlyphs": 1094,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "nunito-italic-400",
+      "glyphsChecked": 1103,
+      "nonemptyGlyphs": 1094,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "oswald",
+      "glyphsChecked": 883,
+      "nonemptyGlyphs": 878,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "pacifico",
+      "glyphsChecked": 1533,
+      "nonemptyGlyphs": 1528,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "patrickhand",
+      "glyphsChecked": 728,
+      "nonemptyGlyphs": 722,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "pattaya",
+      "glyphsChecked": 1171,
+      "nonemptyGlyphs": 1167,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "playfairdisplay",
+      "glyphsChecked": 1103,
+      "nonemptyGlyphs": 1097,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "playfairdisplay-italic-400",
+      "glyphsChecked": 1101,
+      "nonemptyGlyphs": 1095,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "requires-external-shaper",
+        "reason": "substitutionType : 62 lookupType: 6 - substFormat: 2 is not yet supported"
+      }
+    },
+    {
+      "id": "praise",
+      "glyphsChecked": 3314,
+      "nonemptyGlyphs": 3309,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "protestriot",
+      "glyphsChecked": 588,
+      "nonemptyGlyphs": 586,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "quicksand",
+      "glyphsChecked": 812,
+      "nonemptyGlyphs": 803,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "storyscript",
+      "glyphsChecked": 699,
+      "nonemptyGlyphs": 697,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "vinasans",
+      "glyphsChecked": 578,
+      "nonemptyGlyphs": 576,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "yesevaone",
+      "glyphsChecked": 666,
+      "nonemptyGlyphs": 661,
+      "variationSamples": 0,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    },
+    {
+      "id": "notoemoji",
+      "glyphsChecked": 1891,
+      "nonemptyGlyphs": 1848,
+      "variationSamples": 5,
+      "directTextShaping": {
+        "status": "sample-renders"
+      }
+    }
+  ],
+  "emojiPathsChecked": 3789,
+  "emojiExcluded": 155,
+  "filledPathsMayOmitZ": true,
+  "contourClosureCheckedBy": "Z or coincident start/end",
+  "externalTextShapingRequired": [
+    "bangers",
+    "fruktur",
+    "fruktur-italic-400",
+    "greatvibes",
+    "inter",
+    "inter-italic-400",
+    "merriweather",
+    "merriweather-italic-400",
+    "nunito",
+    "nunito-italic-400",
+    "oswald",
+    "playfairdisplay-italic-400"
+  ],
+  "meshValidated": false
+}

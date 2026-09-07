@@ -1,0 +1,53 @@
+[
+  {
+    "id": "notoemoji",
+    "name": "Noto Emoji",
+    "family": "Noto Emoji",
+    "file": "NotoEmoji.ttf",
+    "path": "ttf/NotoEmoji.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "wght": {
+        "min": 300.0,
+        "default": 400.0,
+        "max": 700.0
+      }
+    },
+    "defaultVariation": {
+      "wght": 400
+    },
+    "unitsPerEm": 2048,
+    "glyphCount": 1891,
+    "fontRevision": 3.0019989013671875,
+    "internalVersion": "Version 3.002",
+    "coverage": {
+      "unicodeCodepoints": 1489
+    },
+    "sampleText": "😀 ❤️ 🇻🇳 👨‍👩‍👧‍👦",
+    "bytes": 1982596,
+    "sha256": "de6c18832938afc99caf132b39d6a30a19bac7f2e812e28db2535b4608d27551",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/notoemoji/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf",
+      "filename": "NotoEmoji[wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    },
+    "weightPresets": [
+      300,
+      400,
+      500,
+      600,
+      700
+    ]
+  }
+]

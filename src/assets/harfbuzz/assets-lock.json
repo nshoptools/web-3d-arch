@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "package": "harfbuzzjs",
+  "version": "1.6.1",
+  "sourceCommit": "8aa047b90387790b255b118cf45ad11691a38910",
+  "nativeSourceCommit": "36cb489cb02ce4b92099669ba9f9bea348eff93f",
+  "registry": "https://registry.npmjs.org/harfbuzzjs/1.6.1",
+  "tarball": "https://registry.npmjs.org/harfbuzzjs/-/harfbuzzjs-1.6.1.tgz",
+  "integrity": "sha512-+JeJmO+HzXjDwpfCOdGSyM2bNP8WzJNFKl/8TKivbInMYDtfRIuPIDLtnBNmQzcJw6GptbhHY6o5gaH6deCMEw==",
+  "archiveSha256": "dec3d3ff4005eff57acf1e2dfa669b06d50259e4c79c68c32ee3a53468b5cb86",
+  "files": [
+    {
+      "path": "LICENSE",
+      "archiveMember": "package/LICENSE",
+      "bytes": 1079,
+      "sha256": "5d09767b2cc476f08028b56d9384dc45061c5a3e90f9ad966e44addc8d26c8b1"
+    },
+    {
+      "path": "README.md",
+      "archiveMember": "package/README.md",
+      "bytes": 4164,
+      "sha256": "69545a1140a1f5b3227280aa5280d3d536131efcf595b8db1e7c2060ab9bf800"
+    },
+    {
+      "path": "dist/harfbuzz-subset.wasm",
+      "archiveMember": "package/dist/harfbuzz-subset.wasm",
+      "bytes": 622493,
+      "sha256": "6be44956ad4bc7f83383a7ac3a75c7ea739504ee5ee3e9dfbd65a849e9320242"
+    },
+    {
+      "path": "dist/harfbuzz.d.ts",
+      "archiveMember": "package/dist/harfbuzz.d.ts",
+      "bytes": 143,
+      "sha256": "cefebb8ca09735209697b49bbf0a87647882973e21c7cf145a40693df57dfca2"
+    },
+    {
+      "path": "dist/harfbuzz.js",
+      "archiveMember": "package/dist/harfbuzz.js",
+      "bytes": 31763,
+      "sha256": "ba43463df44851fd58211ef8c19aa7956965390857727ae867b70dc7b3682de1"
+    },
+    {
+      "path": "dist/harfbuzz.wasm",
+      "archiveMember": "package/dist/harfbuzz.wasm",
+      "bytes": 426620,
+      "sha256": "37777ced92a2ba10279c33e1dbacf08835ddcacc215b7fcb3131e558dd01ce71"
+    },
+    {
+      "path": "dist/index.d.mts",
+      "archiveMember": "package/dist/index.d.mts",
+      "bytes": 68646,
+      "sha256": "c4a91bcf50954270e4970db99f0ff4d9a907a31d8406576df8c5168f1b4580ee"
+    },
+    {
+      "path": "dist/index.mjs",
+      "archiveMember": "package/dist/index.mjs",
+      "bytes": 82693,
+      "sha256": "04ece1914c8720ad96257728119c1bf24088ee4ef3ab2a2ca688c9a4895d4e7e"
+    },
+    {
+      "path": "licenses/harfbuzz-COPYING",
+      "url": "https://raw.githubusercontent.com/harfbuzz/harfbuzz/36cb489cb02ce4b92099669ba9f9bea348eff93f/COPYING",
+      "bytes": 1971,
+      "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64"
+    },
+    {
+      "path": "package.json",
+      "archiveMember": "package/package.json",
+      "bytes": 1112,
+      "sha256": "87c9095de05f059ed1391a2fcdb0e03b130f61b528210947869af93539dcd5a6"
+    }
+  ]
+}

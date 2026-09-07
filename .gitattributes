@@ -1,0 +1,12 @@
+* text=auto
+*.mjs text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+# Preserve upstream text byte-for-byte for checksum verification on Windows.
+src/assets/** -text

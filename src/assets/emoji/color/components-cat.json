@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "unicodeVersion": "17.0",
+  "count": 9,
+  "items": [
+    {
+      "id": "1f3fb",
+      "emoji": "🏻",
+      "name": "light skin tone",
+      "codepoints": [
+        "1F3FB"
+      ],
+      "group": "Component",
+      "subgroup": "skin-tone",
+      "emojiVersion": "1.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 461,
+        "notocoloremoji": 487
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f3fb.svg",
+          "sha256": "72ae2a9bad935d312816bf10c3f878391eccb9409fd7e064a281f10da865b699",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 1,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f3fb.png",
+          "sha256": "ca8b2959109a11080c86f9d88f286729acec1404382827971f98490b26a63dcb",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f3fb.png",
+          "sha256": "0f1751db653702598959ed51711fea4774b827367d1d0da94792e022a01a88fd",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f3fb.png",
+          "sha256": "bead11e0c322bfb8b4410c3631f5f5e8bb94c7e255328946fa7729eab4b42f06",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f3fb.png",
+          "sha256": "514f5d1f72c8f548319020dce26d47204e835011ceecfc4fb5e97211d2a3a762",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f3fb.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f3fb.svg"
+    },
+    {
+      "id": "1f3fc",
+      "emoji": "🏼",
+      "name": "medium-light skin tone",
+      "codepoints": [
+        "1F3FC"
+      ],
+      "group": "Component",
+      "subgroup": "skin-tone",
+      "emojiVersion": "1.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 462,
+        "notocoloremoji": 488
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f3fc.svg",
+          "sha256": "68d77da86dc232c28e62747974d153748b4f258a24ced596a2427485a383810a",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 1,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f3fc.png",
+          "sha256": "5fd8588f594b75a22ef3e5c43fea85618164dfcfc1d2fb040f5f36199845bc49",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f3fc.png",
+          "sha256": "0c1a89a609fa0d8854563dff02c806d3e72e01f2ba7406cc6b44e5f7abcac716",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f3fc.png",
+          "sha256": "09c29872a9cc28fcb17348795c7de833f7be127b4b73ff464a8b2db501c6bb13",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f3fc.png",
+          "sha256": "a7ab0569499dbd3ce7b8e575d5942665e67ead6de6a298e4f82b98e97ca934df",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f3fc.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f3fc.svg"
+    },
+    {
+      "id": "1f3fd",
+      "emoji": "🏽",
+      "name": "medium skin tone",
+      "codepoints": [
+        "1F3FD"
+      ],
+      "group": "Component",
+      "subgroup": "skin-tone",
+      "emojiVersion": "1.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 463,
+        "notocoloremoji": 489
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f3fd.svg",
+          "sha256": "3f856716c761317694dd3060c4e66d85238ef19cc40dc754993063600150ae11",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 1,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f3fd.png",
+          "sha256": "98b9db8d32985228ee592e9fb4fa111e1c1a8703ee97a0ea3a9f9bf92a836fdf",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f3fd.png",
+          "sha256": "c75604884a49bd3cd8633f8abc742eb6a155be923705b72e5ddbdd0d66befac0",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f3fd.png",
+          "sha256": "e036cb5dd4ac7bcefda704b58166a252efceda46635e135a92488f4ec1611444",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f3fd.png",
+          "sha256": "363b31631bb77cd86d317585b415ccd92608501f4d41682c07bef05cd74799b3",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f3fd.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f3fd.svg"
+    },
+    {
+      "id": "1f3fe",
+      "emoji": "🏾",
+      "name": "medium-dark skin tone",
+      "codepoints": [
+        "1F3FE"
+      ],
+      "group": "Component",
+      "subgroup": "skin-tone",
+      "emojiVersion": "1.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 464,
+        "notocoloremoji": 490
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f3fe.svg",
+          "sha256": "976162a12e0d31e9bd12f666cb8ec3c85f09022ae048a89be63c7076f1be97aa",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 2,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f3fe.png",
+          "sha256": "e8c4e69256054e17ff3ad910199ab4ca2faa434a7fdeb1cdb705533dcfff8b40",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f3fe.png",
+          "sha256": "bc12f10449e13fdc0359ca8b8353235e9e926184fbccf386de646f6bdbb5132f",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f3fe.png",
+          "sha256": "a2687fdefc2d15209bdf3bb7fba4852a9f0987a784f3a45425421f08705de6d3",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f3fe.png",
+          "sha256": "3ca235f0aa9791cfef32faddbe7760ebc4f72fe6645afaea34b20aa30eaa115a",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f3fe.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f3fe.svg"
+    },
+    {
+      "id": "1f3ff",
+      "emoji": "🏿",
+      "name": "dark skin tone",
+      "codepoints": [
+        "1F3FF"
+      ],
+      "group": "Component",
+      "subgroup": "skin-tone",
+      "emojiVersion": "1.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 465,
+        "notocoloremoji": 491
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f3ff.svg",
+          "sha256": "15f93bd4362a906649f99c3d42f4711c7962f139f55fa2f6b96aea3069e367fe",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 1,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f3ff.png",
+          "sha256": "c1cd9ada0539fc4102d9b4cd910a76f725e0d561f82073d8d28e99ad46e448d6",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f3ff.png",
+          "sha256": "d23ba554dde71d811e3b8964a54e6334fe4b5fac7df915e168b6489d1c77a8f7",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f3ff.png",
+          "sha256": "a1e3804470e35bb0569d11190b5d8df2896bf6502be625fe162c61dad15b43d5",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f3ff.png",
+          "sha256": "d84d29b5bc7f22c52623307da1ccaff528304662b0d1f95fde0bc3d2faaa9533",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f3ff.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f3ff.svg"
+    },
+    {
+      "id": "1f9b0",
+      "emoji": "🦰",
+      "name": "red hair",
+      "codepoints": [
+        "1F9B0"
+      ],
+      "group": "Component",
+      "subgroup": "hair-style",
+      "emojiVersion": "11.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 2670,
+        "notocoloremoji": 1244
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f9b0.svg",
+          "sha256": "3fec72ec25d5e26c91cd3d6420f120e523fb4e58de2cb6f73b45415413d0708f",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 5,
+          "hasGradients": true,
+          "hasClipping": true,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f9b0.png",
+          "sha256": "e5ac855e745fa52d3a446e09572ec315eb453a3e3bf76e33669c88e68c710963",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f9b0.png",
+          "sha256": "0c0399fcefafc71f1428c9be15c03ec5019c58ea40ebbcff5cbda689a9c98b0c",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f9b0.png",
+          "sha256": "7c2eba29367ae20b6e86f87325a583c1d1724ed35e137a997f543317b44a100a",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f9b0.png",
+          "sha256": "be4c08401b4c01e26ee2be060d2298f080d90f45c9d12b69e141459b8b636b82",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f9b0.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f9b0.svg"
+    },
+    {
+      "id": "1f9b1",
+      "emoji": "🦱",
+      "name": "curly hair",
+      "codepoints": [
+        "1F9B1"
+      ],
+      "group": "Component",
+      "subgroup": "hair-style",
+      "emojiVersion": "11.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 2671,
+        "notocoloremoji": 1245
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f9b1.svg",
+          "sha256": "14ff3314d3ad9dfd2385a6058b79f5f8ec3f0fba8adebf92a4f3d147f5f8c252",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 41,
+          "hasGradients": true,
+          "hasClipping": false,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f9b1.png",
+          "sha256": "a3e69d00286237f29ef0305ddbd06087a796c713dd86896ac44251a6b01a256c",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f9b1.png",
+          "sha256": "bb9b9d80776f6c99b303bbdf7926d211c2fccd1fe5fe7f2f60de770e919e2df4",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f9b1.png",
+          "sha256": "89a9bbe4d1552f4452061bea8d8431dd7fbed382b3a0420b0d3b5bc9dfd90456",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f9b1.png",
+          "sha256": "b92bc723a0ea0e7e8a9e9268eb5c6478739f0dd15c2949a3462207a449af77a2",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f9b1.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f9b1.svg"
+    },
+    {
+      "id": "1f9b3",
+      "emoji": "🦳",
+      "name": "white hair",
+      "codepoints": [
+        "1F9B3"
+      ],
+      "group": "Component",
+      "subgroup": "hair-style",
+      "emojiVersion": "11.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 2673,
+        "notocoloremoji": 1247
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f9b3.svg",
+          "sha256": "441a628e96262ebb37006c5b56731d322044bc0bf9a97296e4b6ff1968cde0c5",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 4,
+          "hasGradients": true,
+          "hasClipping": true,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f9b3.png",
+          "sha256": "71486b7ed2dbdbfedd10ff721cc5ae90bea9540679371f956c796538761769ac",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f9b3.png",
+          "sha256": "5c582e4e63c2614efe93b5ea77aa455b790d4c0ebbac559f1b3b0558ed0c37f3",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f9b3.png",
+          "sha256": "1df4fb201f7537a25e9259c9e4d5fd6a5e79bccc1d7aa2c1affd8512a41994cb",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f9b3.png",
+          "sha256": "b095b158b755730249c10904311843109c9fcbc2a91687f74a0df94bd8bbe67b",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f9b3.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f9b3.svg"
+    },
+    {
+      "id": "1f9b2",
+      "emoji": "🦲",
+      "name": "bald",
+      "codepoints": [
+        "1F9B2"
+      ],
+      "group": "Component",
+      "subgroup": "hair-style",
+      "emojiVersion": "11.0",
+      "qualification": "component",
+      "glyphs": {
+        "noto-colrv1": 2672,
+        "notocoloremoji": 1246
+      },
+      "vectors": [
+        {
+          "path": "svg/emoji_u1f9b2.svg",
+          "sha256": "ec2a9e9455099edecb7289cacb5f340b377470024900dc622bd7c7490a390b48",
+          "viewBox": "0 0 128 128",
+          "intrinsicWidth": null,
+          "intrinsicHeight": null,
+          "shapeElements": 7,
+          "hasGradients": true,
+          "hasClipping": true,
+          "hasFilters": false,
+          "hasRasterImages": false,
+          "hasForeignObject": false,
+          "externalReferences": []
+        }
+      ],
+      "rasters": [
+        {
+          "path": "png/512/emoji_u1f9b2.png",
+          "sha256": "622a70ea3cf7660f91fb419a05e1a798601d3984e3e97ebaf44243c3ffc1ed64",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "path": "png/128/emoji_u1f9b2.png",
+          "sha256": "8f6008999faee79519ebb70ab775a7a4d4df6554cd73fd7b86ebbb4164a02207",
+          "width": 128,
+          "height": 128
+        },
+        {
+          "path": "png/72/emoji_u1f9b2.png",
+          "sha256": "ffe518a417eea2d8ac203b11a93553b9d14ba53a0b4ae4f853659fc7fd259ef0",
+          "width": 72,
+          "height": 72
+        },
+        {
+          "path": "png/32/emoji_u1f9b2.png",
+          "sha256": "6d2a4d21c6f52ff21a139c1fc37a265b728f8b5533e0e3a9f65f48ccc6de5179",
+          "width": 32,
+          "height": 32
+        }
+      ],
+      "preferredRasterPath": "png/128/emoji_u1f9b2.png",
+      "preferredGeometrySource": "svg",
+      "preferredVectorPath": "svg/emoji_u1f9b2.svg"
+    }
+  ]
+}

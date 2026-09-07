@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "defaultCollection": "noto-color-emoji",
+  "inputAliases": "color/input-aliases.json",
+  "componentCatalog": "color/components-cat.json",
+  "artworkCatalog": "color/artwork-cat.json",
+  "collections": [
+    {
+      "id": "noto-color-emoji",
+      "name": "Noto Emoji màu",
+      "style": "color",
+      "fontCatalog": "color/fonts-cat.json",
+      "emojiCatalog": "color/emoji-cat.json",
+      "defaultFontId": "noto-colrv1",
+      "count": 3944
+    },
+    {
+      "id": "noto-emoji-monochrome",
+      "name": "Noto Emoji đơn sắc",
+      "style": "monochrome",
+      "fontCatalog": "fonts-cat.json",
+      "emojiCatalog": "emoji-cat.json",
+      "defaultFontId": "notoemoji",
+      "count": 3789
+    }
+  ]
+}

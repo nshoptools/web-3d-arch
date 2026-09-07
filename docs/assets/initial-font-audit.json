@@ -1,0 +1,538 @@
+{
+  "originalCatalogEntries": 31,
+  "originalCatalogKeys": [
+    "file",
+    "name"
+  ],
+  "originalLicenseDeclaredSubset": true,
+  "replacedCount": 31,
+  "fonts": [
+    {
+      "id": "alfaslabone",
+      "file": "AlfaSlabOne.ttf",
+      "before": {
+        "bytes": 34396,
+        "sha256": "4a2bb3491f54e41b547822b893fc19c705f81ee27e03edbca638f06c803bac28",
+        "glyphs": 506,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 97376,
+        "sha256": "28664afa698a3393bd5a29eec750230a0645c5301d62200e5f2d3a027fb2299d",
+        "glyphs": 734,
+        "codepoints": 671
+      },
+      "replaced": true
+    },
+    {
+      "id": "anton",
+      "file": "Anton.ttf",
+      "before": {
+        "bytes": 31096,
+        "sha256": "1a4bbb2087eff34cc351f5bdf8b02a5360826e457fd6fcaebce0415e263699db",
+        "glyphs": 514,
+        "codepoints": 425
+      },
+      "after": {
+        "bytes": 170812,
+        "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+        "glyphs": 1373,
+        "codepoints": 978
+      },
+      "replaced": true
+    },
+    {
+      "id": "arizonia",
+      "file": "Arizonia.ttf",
+      "before": {
+        "bytes": 58392,
+        "sha256": "3be090181691b6aa04e0f52b9d22d77ff5e26f6dccfbd241c7657121b0d9ab13",
+        "glyphs": 486,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 126276,
+        "sha256": "8df1c10bc15d0aba145d4599c25cafad83db686d2cefa42619f069b6f1bbce62",
+        "glyphs": 652,
+        "codepoints": 588
+      },
+      "replaced": true
+    },
+    {
+      "id": "baloo2",
+      "file": "Baloo2.ttf",
+      "before": {
+        "bytes": 72448,
+        "sha256": "1d9201c9dd066000202dc279bdedfcb8648194f3a33b76195e85db6f10445c12",
+        "glyphs": 503,
+        "codepoints": 424
+      },
+      "after": {
+        "bytes": 683200,
+        "sha256": "d47a6852548059b1db49a1319d06d499d546c3fa2237cf9eee9c43c8abb025c2",
+        "glyphs": 1601,
+        "codepoints": 856
+      },
+      "replaced": true
+    },
+    {
+      "id": "bangers",
+      "file": "Bangers.ttf",
+      "before": {
+        "bytes": 43884,
+        "sha256": "b34a0ffde47fec67b7cdf1a8bf07ca0cbef836da368ca1a172a97be0f6cac638",
+        "glyphs": 470,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 93148,
+        "sha256": "4160a7311de9342674cce9160cde9fcbb30f48190397d86ff1b70b455af65824",
+        "glyphs": 597,
+        "codepoints": 557
+      },
+      "replaced": true
+    },
+    {
+      "id": "bevietnampro",
+      "file": "BeVietnamPro.ttf",
+      "before": {
+        "bytes": 55628,
+        "sha256": "b5caf9964d8dcba4b3aae0dfb824d79dd84ea6cdd08fe7fd890f554e55abf95f",
+        "glyphs": 416,
+        "codepoints": 387
+      },
+      "after": {
+        "bytes": 132948,
+        "sha256": "cd1ef6e9d7db28ad5cdb88a65ccbe693870e60d340b791f349d248342b4fe4c3",
+        "glyphs": 527,
+        "codepoints": 459
+      },
+      "replaced": true
+    },
+    {
+      "id": "bevietnamprobold",
+      "file": "BeVietnamProBold.ttf",
+      "before": {
+        "bytes": 55376,
+        "sha256": "c4cb24305619c60decd7f2048289b99aaae1608da6c08b081eac7ec8df28945d",
+        "glyphs": 416,
+        "codepoints": 387
+      },
+      "after": {
+        "bytes": 140300,
+        "sha256": "7f738fe5c43c8872807b20e2d30d42163618de8a4daf7f48a939adac32c16847",
+        "glyphs": 527,
+        "codepoints": 459
+      },
+      "replaced": true
+    },
+    {
+      "id": "bungee",
+      "file": "Bungee.ttf",
+      "before": {
+        "bytes": 53728,
+        "sha256": "cd670e6bdc8779e900922838dc8553bcc5f76aa0a35ab619de91c04112daad93",
+        "glyphs": 628,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 118996,
+        "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+        "glyphs": 1063,
+        "codepoints": 1082
+      },
+      "replaced": true
+    },
+    {
+      "id": "carattere",
+      "file": "Carattere.ttf",
+      "before": {
+        "bytes": 45256,
+        "sha256": "26b59185c55a9067b29b352bccc87797c8c10ec19695be65f2e9eca952f3dab2",
+        "glyphs": 469,
+        "codepoints": 420
+      },
+      "after": {
+        "bytes": 124884,
+        "sha256": "2ee075b50a75aeaea0d976d916b535fbcd423a684e97fe8536fd8f9efe905ae6",
+        "glyphs": 635,
+        "codepoints": 583
+      },
+      "replaced": true
+    },
+    {
+      "id": "cherrybombone",
+      "file": "CherryBombOne.ttf",
+      "before": {
+        "bytes": 50872,
+        "sha256": "a624dd3d0ef415e5013f96b2cb8b3cb721e44a931cc7ed51e73625968780e54a",
+        "glyphs": 450,
+        "codepoints": 420
+      },
+      "after": {
+        "bytes": 214940,
+        "sha256": "9596c6793eb0335057d655b13751ce7ccb50ef0cd15cb52c58465fb62de2bb8f",
+        "glyphs": 1140,
+        "codepoints": 873
+      },
+      "replaced": true
+    },
+    {
+      "id": "coiny",
+      "file": "Coiny.ttf",
+      "before": {
+        "bytes": 72436,
+        "sha256": "10f76ab422dc2d4b33db9e30d3857e4bf0151cc63ce925386223d95e602da18e",
+        "glyphs": 422,
+        "codepoints": 421
+      },
+      "after": {
+        "bytes": 156520,
+        "sha256": "ef02d723a54abe4819bea54ea8b2ecf72d77d258010bb336cd4862a37705eac7",
+        "glyphs": 805,
+        "codepoints": 684
+      },
+      "replaced": true
+    },
+    {
+      "id": "comfortaa",
+      "file": "Comfortaa.ttf",
+      "before": {
+        "bytes": 41232,
+        "sha256": "e91493fe6b53b505876bd68ea7aaafae7efe8ca339a43da2e65a807272b94294",
+        "glyphs": 478,
+        "codepoints": 424
+      },
+      "after": {
+        "bytes": 201756,
+        "sha256": "0fc3f45dc48b614db9c39181502544b37217ecbf8bee2fb35886992bc96c5bd3",
+        "glyphs": 874,
+        "codepoints": 850
+      },
+      "replaced": true
+    },
+    {
+      "id": "dancingscript",
+      "file": "DancingScript.ttf",
+      "before": {
+        "bytes": 61648,
+        "sha256": "1da870fb320e4fbc2b5e7bce10359cdfafc1654040b1b6e9ba889c24dd029bcf",
+        "glyphs": 464,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 133636,
+        "sha256": "21808625578fe8d8cd10cb684be546dca077b27cd03a53a2f1ec11dc743c924c",
+        "glyphs": 643,
+        "codepoints": 559
+      },
+      "replaced": true
+    },
+    {
+      "id": "fruktur",
+      "file": "Fruktur.ttf",
+      "before": {
+        "bytes": 122680,
+        "sha256": "1de1b7dc2e32c6d8fbf57a3eb71056f89313a9bdaaa24a67d25a91bbdf8e87ee",
+        "glyphs": 506,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 211180,
+        "sha256": "dcba901b5fe11c0b6c3e8d5eb1003339b2dd020e2fc3949014ed0d8ff87715e7",
+        "glyphs": 809,
+        "codepoints": 731
+      },
+      "replaced": true
+    },
+    {
+      "id": "greatvibes",
+      "file": "GreatVibes.ttf",
+      "before": {
+        "bytes": 67604,
+        "sha256": "ca8af47bed7857f749232ab7137ad839b8c68ab9401c7eb96b3713d521c70c25",
+        "glyphs": 606,
+        "codepoints": 421
+      },
+      "after": {
+        "bytes": 457588,
+        "sha256": "8d509802186f1b51572531ecf313e8098f9a5bfdfaca93f0c9b34467f9982d15",
+        "glyphs": 2025,
+        "codepoints": 1081
+      },
+      "replaced": true
+    },
+    {
+      "id": "inter",
+      "file": "Inter.ttf",
+      "before": {
+        "bytes": 63932,
+        "sha256": "234143419c03feb6a30d4163d564c23154d28b21c690b5dcf59517aea21ab777",
+        "glyphs": 601,
+        "codepoints": 425
+      },
+      "after": {
+        "bytes": 876576,
+        "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+        "glyphs": 2933,
+        "codepoints": 2849
+      },
+      "replaced": true
+    },
+    {
+      "id": "lobster",
+      "file": "Lobster.ttf",
+      "before": {
+        "bytes": 86408,
+        "sha256": "ef99bdd045ee98d91318004cb1aaeb49f32a10dbf0eaf9a6847a22cd8431db06",
+        "glyphs": 529,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 406076,
+        "sha256": "d6568e697fd50cedc0be04d8aae4127fe95add607e7bff954ca88604be80c205",
+        "glyphs": 1174,
+        "codepoints": 828
+      },
+      "replaced": true
+    },
+    {
+      "id": "merriweather",
+      "file": "Merriweather.ttf",
+      "before": {
+        "bytes": 222356,
+        "sha256": "f8badf49b2192ff735ae42aabbc797f4a022b06d6b44ac6a22750f0258528d27",
+        "glyphs": 544,
+        "codepoints": 424
+      },
+      "after": {
+        "bytes": 4628080,
+        "sha256": "d0ed0e359e396af7ad05e73dffd11a3a4c326ea0d0283c56bd9361cb2cc86a96",
+        "glyphs": 2384,
+        "codepoints": 1423
+      },
+      "replaced": true
+    },
+    {
+      "id": "montserrat",
+      "file": "Montserrat.ttf",
+      "before": {
+        "bytes": 49708,
+        "sha256": "7640afa404bb3edd849a2c9f9fce38734162e288105e1afadc55512effce499e",
+        "glyphs": 523,
+        "codepoints": 424
+      },
+      "after": {
+        "bytes": 744936,
+        "sha256": "0f7b311b2f3279e4eef9b2f968bcdbab6e28f4daeb1f049f4f278a902bcd82f7",
+        "glyphs": 2747,
+        "codepoints": 1312
+      },
+      "replaced": true
+    },
+    {
+      "id": "nunito",
+      "file": "Nunito.ttf",
+      "before": {
+        "bytes": 47320,
+        "sha256": "9568f4343e244b2ced782712308455b347f869788de7477011e3f7e163c55620",
+        "glyphs": 519,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 276932,
+        "sha256": "bb55a5ca5c2042335b3991af27c4d0705d0ef41cac6164ac737fd8f2a1e85207",
+        "glyphs": 1103,
+        "codepoints": 938
+      },
+      "replaced": true
+    },
+    {
+      "id": "oswald",
+      "file": "Oswald.ttf",
+      "before": {
+        "bytes": 36084,
+        "sha256": "5efe925746d02b3fee075632cdb732285d85670704459092dab917a57e358724",
+        "glyphs": 464,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 172088,
+        "sha256": "5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817",
+        "glyphs": 883,
+        "codepoints": 850
+      },
+      "replaced": true
+    },
+    {
+      "id": "pacifico",
+      "file": "Pacifico.ttf",
+      "before": {
+        "bytes": 74424,
+        "sha256": "f36acdad25251e49bf99163c3f3fd7cf135636b810d2bdc6674a6cdbf7c58610",
+        "glyphs": 672,
+        "codepoints": 421
+      },
+      "after": {
+        "bytes": 329380,
+        "sha256": "5b6c0d5334a7bf77dea52b975c5a0c408878c0f7115ed5b6fb151f634b7bf701",
+        "glyphs": 1533,
+        "codepoints": 805
+      },
+      "replaced": true
+    },
+    {
+      "id": "patrickhand",
+      "file": "PatrickHand.ttf",
+      "before": {
+        "bytes": 66720,
+        "sha256": "be6690211945a4441e2131bbce8c3f6223cabf8bea4bddeca91a9ccd7af8812b",
+        "glyphs": 433,
+        "codepoints": 424
+      },
+      "after": {
+        "bytes": 214772,
+        "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc",
+        "glyphs": 728,
+        "codepoints": 515
+      },
+      "replaced": true
+    },
+    {
+      "id": "pattaya",
+      "file": "Pattaya.ttf",
+      "before": {
+        "bytes": 94128,
+        "sha256": "4b74ab853ea4bfc37e3ac905811d181149b55b714ca6b55670a0661ab6693e47",
+        "glyphs": 439,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 420092,
+        "sha256": "02b77f7f5b52e718a91230c8ea153bfe746e1d748dabded4e41d7e6765fa9889",
+        "glyphs": 1171,
+        "codepoints": 803
+      },
+      "replaced": true
+    },
+    {
+      "id": "playfairdisplay",
+      "file": "PlayfairDisplay.ttf",
+      "before": {
+        "bytes": 70028,
+        "sha256": "28f86b7597cf65cf7b7886e77adb029b22d16c5c737ad27446457856ac5e697e",
+        "glyphs": 554,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 300724,
+        "sha256": "c40f2293766a503bc70cce9e512ef844a4ccb7cbcde792fe2ea31d191917d8d6",
+        "glyphs": 1103,
+        "codepoints": 659
+      },
+      "replaced": true
+    },
+    {
+      "id": "praise",
+      "file": "Praise.ttf",
+      "before": {
+        "bytes": 59292,
+        "sha256": "aa5b0cb5ba264f4bbf6feb699d6dacbedea6b6623d2dcc0634b4d6d7f2adbf4b",
+        "glyphs": 489,
+        "codepoints": 420
+      },
+      "after": {
+        "bytes": 694316,
+        "sha256": "1f9e88031638c7f3c238f5b44a9d745041b1620208a77ecbefb62b10b0ffb214",
+        "glyphs": 3314,
+        "codepoints": 587
+      },
+      "replaced": true
+    },
+    {
+      "id": "protestriot",
+      "file": "ProtestRiot.ttf",
+      "before": {
+        "bytes": 49288,
+        "sha256": "2cd363310e1299192e2618995028e885fcf2d9c059ad3f82be57fcca337c618a",
+        "glyphs": 460,
+        "codepoints": 420
+      },
+      "after": {
+        "bytes": 109708,
+        "sha256": "0e9f6679f106b5777bf609f6afbc1ee1233adaaa8b045cb5fbebfb1cedfbf732",
+        "glyphs": 588,
+        "codepoints": 558
+      },
+      "replaced": true
+    },
+    {
+      "id": "quicksand",
+      "file": "Quicksand.ttf",
+      "before": {
+        "bytes": 41212,
+        "sha256": "c61348831f5c2a7bf6d22112c095d2cc189983a65a1a907dc4e771a09cd7fea9",
+        "glyphs": 495,
+        "codepoints": 423
+      },
+      "after": {
+        "bytes": 124824,
+        "sha256": "39c9b64223561f56aaff6062a6f04063c4fc86809ad6768722c06614d977e1cc",
+        "glyphs": 812,
+        "codepoints": 694
+      },
+      "replaced": true
+    },
+    {
+      "id": "storyscript",
+      "file": "StoryScript.ttf",
+      "before": {
+        "bytes": 50976,
+        "sha256": "dc55b23b67ab6e50b5a946f4f31fa52a08cb9699cc57e7aa96faaa49e681a908",
+        "glyphs": 462,
+        "codepoints": 422
+      },
+      "after": {
+        "bytes": 121544,
+        "sha256": "2988808654b44c902f0e3a1a0b31fc67398ea5a093888da30c014bc3329f7731",
+        "glyphs": 699,
+        "codepoints": 573
+      },
+      "replaced": true
+    },
+    {
+      "id": "vinasans",
+      "file": "VinaSans.ttf",
+      "before": {
+        "bytes": 31288,
+        "sha256": "4174671272c22bf496b3be97c9b27445ee38d19b2a6b8a971a3647d025628046",
+        "glyphs": 439,
+        "codepoints": 392
+      },
+      "after": {
+        "bytes": 93328,
+        "sha256": "aaab4634a39d8a9f51d97844822ae4cba4a64e0d24b26e88f7b5d401e954fe13",
+        "glyphs": 578,
+        "codepoints": 462
+      },
+      "replaced": true
+    },
+    {
+      "id": "yesevaone",
+      "file": "YesevaOne.ttf",
+      "before": {
+        "bytes": 34236,
+        "sha256": "6ad863ebfca9e9fd3a69795911dcb4f251153cd0edb64ee9c23d354f81784163",
+        "glyphs": 432,
+        "codepoints": 413
+      },
+      "after": {
+        "bytes": 108016,
+        "sha256": "88362b33820f0011e163e67b1d570fecd442aa8c05eaac89d5162f9c40d9dac3",
+        "glyphs": 666,
+        "codepoints": 652
+      },
+      "replaced": true
+    }
+  ]
+}
