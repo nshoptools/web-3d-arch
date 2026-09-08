@@ -38,7 +38,7 @@
     "text-selector preservation",
     "UTF-16 cluster offsets"
   ],
-  "sourceModuleSha256": "455c6c227fb7ab5ae3610e1c89b7dce06190963a5091ac122574f37a2b1d5609",
+  "sourceModuleSha256": "3ee7992d9049e22b028df8b473e820db86f822bde8c8e66b4a5f97b0ea2f4e59",
   "meshValidated": false,
-  "scope": "Vendored JS/WASM with native HarfBuzz reference comparison, closed source curves and color paint extraction. No browser UI, color rasterizer or mesh exporter is implemented."
+  "scope": "Vendored JS/WASM with native HarfBuzz reference comparison, closed source curves and color paint extraction. This audit does not qualify browser UI, color rasterization or mesh export."
 }

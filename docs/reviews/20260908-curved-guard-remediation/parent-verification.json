@@ -1,0 +1,93 @@
+{
+  "at": "2026-09-08T12:20:36.707Z",
+  "verifiedFiles": [
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "sha256": "fee003365191ee21f108270b2e7d75edeb56984e27d63da370405a52882c36f4",
+      "bytes": 83855
+    },
+    {
+      "path": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+      "sha256": "e355c9110c729fc0dc629849d20aa05b84d8077acebc291d63902ac2d453537d",
+      "bytes": 12317
+    },
+    {
+      "path": "docs/curved-products/GUARD-RESOLUTION.md",
+      "sha256": "dc3f432b69388fecdd5224400e6c8753ff42687559a9e488e3d91768816f980b",
+      "bytes": 4771
+    },
+    {
+      "path": "tests/curved-guards/README.md",
+      "sha256": "b2c5e1ff009f4e00e5fb32bb4be74c4f9dcf8eb9c800c3478c250fa4e8db0d73",
+      "bytes": 3665
+    },
+    {
+      "path": "tests/curved-guards/controls.py",
+      "sha256": "77f3e723980e33b33a785c19248869545b8f73291371a2f3b2349eda4d61bdaa",
+      "bytes": 6387
+    },
+    {
+      "path": "tests/curved-guards/fixtures/lego-roof-oblique-slit-2nm.txt",
+      "sha256": "b86eb3113088dd908216776f8bf628302fb79f806bd3bf6b157a99c71cecdbf5",
+      "bytes": 467
+    },
+    {
+      "path": "tests/curved-guards/fixtures/lego-roof-oblique-slit-8nm.txt",
+      "sha256": "1213c42096ec3669b7671ede19fcec60bd3da29ff3e14f699a1708cc3a24085a",
+      "bytes": 467
+    },
+    {
+      "path": "tests/curved-guards/fixtures/roof-oblique-slit-2nm.txt",
+      "sha256": "f6530a24b75cc18c8fafccd9a41346786227eb93a7b3c74d52027d7f0d0fbeaa",
+      "bytes": 373
+    },
+    {
+      "path": "tests/curved-guards/fixtures/roof-oblique-slit-40nm.txt",
+      "sha256": "254d3edd21bd1473d6efe4968f29eb23c02d7b3d41d9a9d61cfa35eda20df0a8",
+      "bytes": 373
+    },
+    {
+      "path": "tests/curved-guards/fixtures/roof-oblique-slit-4nm.txt",
+      "sha256": "2ba098f4b47fe0964edc031aa47e9cb03d02812af2eb8c4b0822bd4208481c03",
+      "bytes": 373
+    },
+    {
+      "path": "tests/curved-guards/fixtures/roof-oblique-slit-8nm.txt",
+      "sha256": "75b84c5f3054560de12e98351966975d913687b662659e60073e44780b9ec99f",
+      "bytes": 373
+    },
+    {
+      "path": "tests/curved-guards/fixtures/strap-notch-1.txt",
+      "sha256": "dab1b2ea3650d6f2dec74b02d95a72d7afd084ae098019e44c61142bc852ad5e",
+      "bytes": 312
+    },
+    {
+      "path": "tests/curved-guards/inject.cmake",
+      "sha256": "664d39237507297c04a42201294a334a3645d74453793562179cd942e9ce0f66",
+      "bytes": 769
+    },
+    {
+      "path": "tests/curved-guards/mesh-audit.py",
+      "sha256": "1f51cfe9caef2b36715d1a89a80cabe568de3856d661c36cc6439c8fcd30741b",
+      "bytes": 2627
+    },
+    {
+      "path": "tests/curved-guards/prepared-probe.cpp",
+      "sha256": "9a5571cfc0a13a4b57e57000600a444695bb55cb2d2815b84f727259fc4f6330",
+      "bytes": 7881
+    },
+    {
+      "path": "tests/curved-guards/regression.py",
+      "sha256": "e17df8476b3f9a4432ddfb52e04c4e3b8c832d7333ae49fbabacf99228a2b98b",
+      "bytes": 6048
+    },
+    {
+      "path": "tests/curved-guards/run-corpus.mjs",
+      "sha256": "2ded0146bf72a5c2d694da2441b2dab82c86e8498e204cca12ffb0fcfbc6f749",
+      "bytes": 2520
+    }
+  ],
+  "sealSha256": "d473589bec8d4520a92c1ae2594b8f69045dbf4d21dbd113aca6f040f4b4631a",
+  "validation": "Exact17files+2preimages+4sealedreporthashes, not all historical evidence-index files",
+  "integration": "2productionfiles previously promoted after parentdiffinspection;15tests/docs now added; finalcombinedWASM build follows"
+}

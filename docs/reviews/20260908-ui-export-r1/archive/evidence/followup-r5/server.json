@@ -1,0 +1,12 @@
+{
+  "pid": 20092,
+  "address": {
+    "address": "127.0.0.1",
+    "family": "IPv4",
+    "port": 57935
+  },
+  "root": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\work\\browser-review",
+  "snapshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\work\\review-source",
+  "started": "2026-09-08T08:40:59.892Z",
+  "scope": "Captured AppShell and deferred AppBridge; no native exporter"
+}

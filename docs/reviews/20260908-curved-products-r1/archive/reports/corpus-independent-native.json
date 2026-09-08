@@ -1,0 +1,7045 @@
+{
+  "method": "Independent binary ARCH/APMS readers; exact integer chains for every source Z interval and transformed original artwork, declared parameter record equality, analytic four-style volumes; actual mesh every face/edge/part topology, independent volumes and bounding boxes. Mesh cuts require separate analytic guards/sections; this is not global mesh equivalence to smooth source.",
+  "results": [
+    {
+      "id": "emoji-charm-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 1735.3579524620216,
+        "expected": 1735.3579524620218,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.2,
+          "residuals": 0
+        },
+        {
+          "lo": 2.2,
+          "hi": 3.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3730,
+          "faces": 7460,
+          "edges": 11190,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 7.543481827118614e-05,
+          "volume_mm3": 1360.3439443055709,
+          "reported_volume_mm3": 1360.343944305571,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              0.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2404,
+          "faces": 4804,
+          "edges": 7206,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0001631997088296644,
+          "volume_mm3": 314.6261836009115,
+          "reported_volume_mm3": 314.6261836009113,
+          "volume_abs_delta": 1.7053025658242404e-13,
+          "bbox": [
+            [
+              -12.5,
+              -12.439903996884823,
+              0.0
+            ],
+            [
+              12.5,
+              12.439903996884823,
+              2.2
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.14420040092062,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 1.9895196601282805e-13,
+          "bbox": [
+            [
+              18.99990300089121,
+              -7.25,
+              0.0
+            ],
+            [
+              33.49990300089121,
+              7.25,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359206,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              19.99990300089121,
+              -6.25,
+              1.6
+            ],
+            [
+              32.49990300089121,
+              6.25,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.53665683746945,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              23.24990300089121,
+              -3.0,
+              4.6
+            ],
+            [
+              29.24990300089121,
+              3.0,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11063657889679062493",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15623193108984061434",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "10593598952586243256",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "10593598952586243256",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "10593598952586243256",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "a4d9f34ecc4eb145001501b209b8b364cd85c4091093d75f9eac70922c1e0578",
+      "total_triangles": 15572,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 1965.1543446023106,
+        "expected": 1965.1543446023106,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 3.0,
+          "residuals": 0
+        },
+        {
+          "lo": 3.0,
+          "hi": 3.8,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1438,
+          "faces": 2872,
+          "edges": 4308,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.993732550748973e-08,
+          "volume_mm3": 1789.8683239413283,
+          "reported_volume_mm3": 1789.8683239413283,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              0.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0001631997088296644,
+          "volume_mm3": 114.8981960348457,
+          "reported_volume_mm3": 114.89819603484595,
+          "volume_abs_delta": 2.5579538487363607e-13,
+          "bbox": [
+            [
+              -12.5,
+              -12.439903996884823,
+              3.0
+            ],
+            [
+              12.5,
+              12.439903996884823,
+              3.8
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.14420040092062,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 1.9895196601282805e-13,
+          "bbox": [
+            [
+              18.99990300089121,
+              -7.25,
+              0.0
+            ],
+            [
+              33.49990300089121,
+              7.25,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359206,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              19.99990300089121,
+              -6.25,
+              1.6
+            ],
+            [
+              32.49990300089121,
+              6.25,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.53665683746945,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              23.24990300089121,
+              -3.0,
+              4.6
+            ],
+            [
+              29.24990300089121,
+              3.0,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13879537660163294500",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "16281454182381438626",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "14771341637405725601",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "14771341637405725601",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "14771341637405725601",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "8e9941dd933436c01ba8097e8debddd7b1e3771087df6ca0f8314fae2e703a0d",
+      "total_triangles": 10864,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 1850.256148532166,
+        "expected": 1850.2561485321662,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.0,
+          "residuals": 0
+        },
+        {
+          "lo": 2.0,
+          "hi": 3.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1438,
+          "faces": 2876,
+          "edges": 4314,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.993732550748973e-08,
+          "volume_mm3": 1173.1162744487597,
+          "reported_volume_mm3": 1173.1162744487597,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              0.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              2.0
+            ]
+          ]
+        },
+        {
+          "vertices": 3441,
+          "faces": 6882,
+          "edges": 10323,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.977606286242208e-06,
+          "volume_mm3": 473.12930444901133,
+          "reported_volume_mm3": 473.1293044490112,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              2.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2356,
+          "faces": 4708,
+          "edges": 7062,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.0971165648730652e-05,
+          "volume_mm3": 143.62274504355742,
+          "reported_volume_mm3": 143.62274504355747,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -12.5,
+              -12.439903996884823,
+              2.0
+            ],
+            [
+              12.5,
+              12.439903996884823,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.14420040092062,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 1.9895196601282805e-13,
+          "bbox": [
+            [
+              18.99990300089121,
+              -7.25,
+              0.0
+            ],
+            [
+              33.49990300089121,
+              7.25,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359206,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              19.99990300089121,
+              -6.25,
+              1.6
+            ],
+            [
+              32.49990300089121,
+              6.25,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.53665683746945,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              23.24990300089121,
+              -3.0,
+              4.6
+            ],
+            [
+              29.24990300089121,
+              3.0,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "17978730511404957903",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "17978730511404957903",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13227550514693149589",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18432923539622654833",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18432923539622654833",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18432923539622654833",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "49b75a3147c4e96738417530fe27a75b7da5fdd45515032758cec55e5a5eb468",
+      "total_triangles": 17774,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 2467.008198042888,
+        "expected": 2467.008198042888,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 3.0,
+          "residuals": 0
+        },
+        {
+          "lo": 3.0,
+          "hi": 4.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1438,
+          "faces": 2872,
+          "edges": 4308,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.993732550748973e-08,
+          "volume_mm3": 1789.8683239413283,
+          "reported_volume_mm3": 1789.8683239413283,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              0.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 3430,
+          "faces": 6860,
+          "edges": 10290,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.0290032926195897e-05,
+          "volume_mm3": 473.1293044490114,
+          "reported_volume_mm3": 473.1293044490112,
+          "volume_abs_delta": 1.7053025658242404e-13,
+          "bbox": [
+            [
+              -13.999903000891209,
+              -13.939809001982212,
+              3.0
+            ],
+            [
+              13.999903000891209,
+              13.939809001982212,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0001631997088296644,
+          "volume_mm3": 143.6227450435574,
+          "reported_volume_mm3": 143.62274504355747,
+          "volume_abs_delta": 8.526512829121202e-14,
+          "bbox": [
+            [
+              -12.5,
+              -12.439903996884823,
+              3.0
+            ],
+            [
+              12.5,
+              12.439903996884823,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.14420040092062,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 1.9895196601282805e-13,
+          "bbox": [
+            [
+              18.99990300089121,
+              -7.25,
+              0.0
+            ],
+            [
+              33.49990300089121,
+              7.25,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359206,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              19.99990300089121,
+              -6.25,
+              1.6
+            ],
+            [
+              32.49990300089121,
+              6.25,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.53665683746945,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              23.24990300089121,
+              -3.0,
+              4.6
+            ],
+            [
+              29.24990300089121,
+              3.0,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17412662055690701718",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17412662055690701718",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "14478962821664084958",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17025986105228532991",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17025986105228532991",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17025986105228532991",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "692d2511cf2a05efd0be349fa4a376f871812adea1ece0aedb2887482dab10ad",
+      "total_triangles": 17724,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 2042.3925532144065,
+        "expected": 2042.3925532144065,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.0,
+          "residuals": 0
+        },
+        {
+          "lo": 1.0,
+          "hi": 1.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3368,
+          "faces": 6736,
+          "edges": 10104,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.016230172117677022,
+          "volume_mm3": 1674.7183405355465,
+          "reported_volume_mm3": 1674.7183405355454,
+          "volume_abs_delta": 1.1368683772161603e-12,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              7.0
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 367.67421272082174,
+          "reported_volume_mm3": 367.6742127208217,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              7.0
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              8.0
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581030279726,
+          "reported_volume_mm3": 79.48581030279726,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -2.850000001490116,
+              -2.850000001490116,
+              0.0
+            ],
+            [
+              2.850000001490116,
+              2.850000001490116,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928256589731,
+          "reported_volume_mm3": 48.769282565897306,
+          "volume_abs_delta": 7.105427357601002e-15,
+          "bbox": [
+            [
+              -3.0,
+              -3.0,
+              5.15
+            ],
+            [
+              3.0,
+              3.0,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1027,
+          "faces": 2050,
+          "edges": 3075,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00016756456051170322,
+          "volume_mm3": 2595.386459079079,
+          "reported_volume_mm3": 2595.3864590790804,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              26.199922005703925,
+              -23.35377,
+              0.0
+            ],
+            [
+              73.09976647570393,
+              23.35377,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.029869958758354187,
+          "volume_mm3": 4362.415746402867,
+          "reported_volume_mm3": 4362.415746402858,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              26.199922002851963,
+              -23.35377000272274,
+              1.5
+            ],
+            [
+              73.09976647794247,
+              23.35377000272274,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.018125000001,
+          "reported_volume_mm3": 1615.0181250000014,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              39.94984400570392,
+              -9.7,
+              1.5
+            ],
+            [
+              59.34984400570393,
+              9.7,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00887659564614296,
+          "volume_mm3": 2185.1983004209715,
+          "reported_volume_mm3": 2185.1983004209624,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              28.199922002851963,
+              -21.35377000272274,
+              1.5
+            ],
+            [
+              71.09976605325937,
+              21.35377000272274,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "10397122336798493915",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "12649839866847960574",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "9490632203383578840",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "9490632203383578840",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15250343262549169590",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15250343262549169590",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15250343262549169590",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15250343262549169590",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "ebfed33fcc5af44da314ce74fd419f57180ed0fef0a3520d7296764603421e80",
+      "total_triangles": 23194,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 2483.6016085063166,
+        "expected": 2483.6016085063166,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.6,
+          "residuals": 0
+        },
+        {
+          "lo": 1.6,
+          "hi": 2.2,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1024,
+          "faces": 2044,
+          "edges": 3066,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 8.248086970491508e-05,
+          "volume_mm3": 2262.997080888861,
+          "reported_volume_mm3": 2262.99708088886,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              7.0
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 220.60452763249293,
+          "reported_volume_mm3": 220.60452763249288,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              8.6
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              9.2
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581030279726,
+          "reported_volume_mm3": 79.48581030279726,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -2.850000001490116,
+              -2.850000001490116,
+              0.0
+            ],
+            [
+              2.850000001490116,
+              2.850000001490116,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928256589731,
+          "reported_volume_mm3": 48.769282565897306,
+          "volume_abs_delta": 7.105427357601002e-15,
+          "bbox": [
+            [
+              -3.0,
+              -3.0,
+              5.15
+            ],
+            [
+              3.0,
+              3.0,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1027,
+          "faces": 2050,
+          "edges": 3075,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00016756456051170322,
+          "volume_mm3": 2595.386459079079,
+          "reported_volume_mm3": 2595.3864590790804,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              26.199922005703925,
+              -23.35377,
+              0.0
+            ],
+            [
+              73.09976647570393,
+              23.35377,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.029869958758354187,
+          "volume_mm3": 4362.415746402867,
+          "reported_volume_mm3": 4362.415746402858,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              26.199922002851963,
+              -23.35377000272274,
+              1.5
+            ],
+            [
+              73.09976647794247,
+              23.35377000272274,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.018125000001,
+          "reported_volume_mm3": 1615.0181250000014,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              39.94984400570392,
+              -9.7,
+              1.5
+            ],
+            [
+              59.34984400570393,
+              9.7,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00887659564614296,
+          "volume_mm3": 2185.1983004209715,
+          "reported_volume_mm3": 2185.1983004209624,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              28.199922002851963,
+              -21.35377000272274,
+              1.5
+            ],
+            [
+              71.09976605325937,
+              21.35377000272274,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "16936211828070867548",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15138006915402232672",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 3,
+          "group": 0,
+          "provenance": "11510562322128172310",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 3,
+          "group": 0,
+          "provenance": "11510562322128172310",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18420147768981502234",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18420147768981502234",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18420147768981502234",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "18420147768981502234",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "2cf022031c9f7b83bdb80192778cb419f50a0afd2ce61623bd95d4009b5cd6e9",
+      "total_triangles": 18502,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 2262.9970808603616,
+        "expected": 2262.9970808603616,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 0.6000000000000001,
+          "residuals": 0
+        },
+        {
+          "lo": 0.6000000000000001,
+          "hi": 1.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1024,
+          "faces": 2044,
+          "edges": 3066,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 8.248086970491508e-05,
+          "volume_mm3": 848.6239053333231,
+          "reported_volume_mm3": 848.6239053333222,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              7.0
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              7.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3368,
+          "faces": 6736,
+          "edges": 10104,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.013526000082492828,
+          "volume_mm3": 1046.6989628347173,
+          "reported_volume_mm3": 1046.698962834716,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              7.6
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 367.6742127208217,
+          "reported_volume_mm3": 367.6742127208217,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              7.6
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581030279726,
+          "reported_volume_mm3": 79.48581030279726,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -2.850000001490116,
+              -2.850000001490116,
+              0.0
+            ],
+            [
+              2.850000001490116,
+              2.850000001490116,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928256589731,
+          "reported_volume_mm3": 48.769282565897306,
+          "volume_abs_delta": 7.105427357601002e-15,
+          "bbox": [
+            [
+              -3.0,
+              -3.0,
+              5.15
+            ],
+            [
+              3.0,
+              3.0,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1027,
+          "faces": 2050,
+          "edges": 3075,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00016756456051170322,
+          "volume_mm3": 2595.386459079079,
+          "reported_volume_mm3": 2595.3864590790804,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              26.199922005703925,
+              -23.35377,
+              0.0
+            ],
+            [
+              73.09976647570393,
+              23.35377,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.029869958758354187,
+          "volume_mm3": 4362.415746402867,
+          "reported_volume_mm3": 4362.415746402858,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              26.199922002851963,
+              -23.35377000272274,
+              1.5
+            ],
+            [
+              73.09976647794247,
+              23.35377000272274,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.018125000001,
+          "reported_volume_mm3": 1615.0181250000014,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              39.94984400570392,
+              -9.7,
+              1.5
+            ],
+            [
+              59.34984400570393,
+              9.7,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00887659564614296,
+          "volume_mm3": 2185.1983004209715,
+          "reported_volume_mm3": 2185.1983004209624,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              28.199922002851963,
+              -21.35377000272274,
+              1.5
+            ],
+            [
+              71.09976605325937,
+              21.35377000272274,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "14550023505002488704",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "14550023505002488704",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15704360935149518458",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12418704385703909780",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12418704385703909780",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15968984254749728130",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15968984254749728130",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15968984254749728130",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15968984254749728130",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "87248be1ce206913bdd778563ff822ceb3a5040df785f2310cfaf03ae550f7f9",
+      "total_triangles": 25238,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 3677.370256398088,
+        "expected": 3677.370256398088,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.6,
+          "residuals": 0
+        },
+        {
+          "lo": 1.6,
+          "hi": 2.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1024,
+          "faces": 2044,
+          "edges": 3066,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 8.248086970491508e-05,
+          "volume_mm3": 2262.997080888861,
+          "reported_volume_mm3": 2262.99708088886,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              7.0
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3368,
+          "faces": 6736,
+          "edges": 10104,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.013526000082492828,
+          "volume_mm3": 1046.6989628347164,
+          "reported_volume_mm3": 1046.6989628347162,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -21.199922002851963,
+              -21.10377000272274,
+              8.6
+            ],
+            [
+              21.199922002851963,
+              21.10377000272274,
+              9.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 367.6742127208214,
+          "reported_volume_mm3": 367.6742127208217,
+          "volume_abs_delta": 2.8421709430404007e-13,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              8.6
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              9.6
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581030279726,
+          "reported_volume_mm3": 79.48581030279726,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -2.850000001490116,
+              -2.850000001490116,
+              0.0
+            ],
+            [
+              2.850000001490116,
+              2.850000001490116,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928256589731,
+          "reported_volume_mm3": 48.769282565897306,
+          "volume_abs_delta": 7.105427357601002e-15,
+          "bbox": [
+            [
+              -3.0,
+              -3.0,
+              5.15
+            ],
+            [
+              3.0,
+              3.0,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1027,
+          "faces": 2050,
+          "edges": 3075,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00016756456051170322,
+          "volume_mm3": 2595.386459079079,
+          "reported_volume_mm3": 2595.3864590790804,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              26.199922005703925,
+              -23.35377,
+              0.0
+            ],
+            [
+              73.09976647570393,
+              23.35377,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.029869958758354187,
+          "volume_mm3": 4362.415746402867,
+          "reported_volume_mm3": 4362.415746402858,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              26.199922002851963,
+              -23.35377000272274,
+              1.5
+            ],
+            [
+              73.09976647794247,
+              23.35377000272274,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.018125000001,
+          "reported_volume_mm3": 1615.0181250000014,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              39.94984400570392,
+              -9.7,
+              1.5
+            ],
+            [
+              59.34984400570393,
+              9.7,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 2048,
+          "faces": 4096,
+          "edges": 6144,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00887659564614296,
+          "volume_mm3": 2185.1983004209715,
+          "reported_volume_mm3": 2185.1983004209624,
+          "volume_abs_delta": 9.094947017729282e-12,
+          "bbox": [
+            [
+              28.199922002851963,
+              -21.35377000272274,
+              1.5
+            ],
+            [
+              71.09976605325937,
+              21.35377000272274,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "9959912656780198400",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "9959912656780198400",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15580571388316850210",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11091406707179499674",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11091406707179499674",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11700964803748906195",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11700964803748906195",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11700964803748906195",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11700964803748906195",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "18d97ecd6709a3ed7bb83b06e50877951e2452247d2ed23c8c7d9baa321e81d8",
+      "total_triangles": 25238,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 3978.054178228585,
+        "expected": 3978.0541782285845,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.5999999999999999,
+          "residuals": 0
+        },
+        {
+          "lo": 1.5999999999999999,
+          "hi": 2.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3430,
+          "faces": 6860,
+          "edges": 10290,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 7.851479703890885e-05,
+          "volume_mm3": 3233.513901687623,
+          "reported_volume_mm3": 3233.5139016876233,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 744.5402765918675,
+          "reported_volume_mm3": 744.5402765918675,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              0.0
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              1.5999999999999999
+            ]
+          ]
+        },
+        {
+          "vertices": 482,
+          "faces": 960,
+          "edges": 1440,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.0568770722094965e-07,
+          "volume_mm3": 75.60899305912795,
+          "reported_volume_mm3": 75.60899305912771,
+          "volume_abs_delta": 2.4158453015843406e-13,
+          "bbox": [
+            [
+              -3.9999999999999982,
+              22.39173199981451,
+              0.0
+            ],
+            [
+              4.000000000000002,
+              30.39173199981451,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11043016073686028203",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13094822450704922504",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13494419056525996590",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "5acf54d20c6235c0b78c05920a5c17529dc16ce82b184461c0a919c7e472c855",
+      "total_triangles": 12504,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 4722.59445486717,
+        "expected": 4722.59445486717,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.4,
+          "residuals": 0
+        },
+        {
+          "lo": 2.4,
+          "hi": 3.2,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1086,
+          "faces": 2168,
+          "edges": 3252,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 4350.324316575425,
+          "reported_volume_mm3": 4350.324316575425,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 372.27013829593375,
+          "reported_volume_mm3": 372.2701382959339,
+          "volume_abs_delta": 1.7053025658242404e-13,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              2.4
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              3.2
+            ]
+          ]
+        },
+        {
+          "vertices": 474,
+          "faces": 948,
+          "edges": 1422,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00022439523505603937,
+          "volume_mm3": 75.60899289002764,
+          "reported_volume_mm3": 75.60899289002738,
+          "volume_abs_delta": 2.5579538487363607e-13,
+          "bbox": [
+            [
+              -3.9999999999999982,
+              23.72579734900494,
+              0.0
+            ],
+            [
+              4.000000000000002,
+              30.39173199981451,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13363088097774430164",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "12085032117970316266",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "9641142689595734669",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "b4e28657f2456f7f478aeb591b05b463be7978b3f664ce96c2dfd05471c8a852",
+      "total_triangles": 7800,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 4350.324316547877,
+        "expected": 4350.324316547877,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.4,
+          "residuals": 0
+        },
+        {
+          "lo": 1.4,
+          "hi": 2.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1086,
+          "faces": 2168,
+          "edges": 3252,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 2537.689184668998,
+          "reported_volume_mm3": 2537.6891846689978,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              1.4
+            ]
+          ]
+        },
+        {
+          "vertices": 3430,
+          "faces": 6860,
+          "edges": 10290,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.23354017982243e-05,
+          "volume_mm3": 1347.2974590365097,
+          "reported_volume_mm3": 1347.2974590365097,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              1.4
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 465.3376728699173,
+          "reported_volume_mm3": 465.33767286991724,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              1.4
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 494,
+          "faces": 988,
+          "edges": 1482,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00022439523505603937,
+          "volume_mm3": 75.60899289002762,
+          "reported_volume_mm3": 75.60899289002738,
+          "volume_abs_delta": 2.4158453015843406e-13,
+          "bbox": [
+            [
+              -3.9999999999999982,
+              23.72579734900494,
+              0.0
+            ],
+            [
+              4.000000000000002,
+              30.39173199981451,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "15157974636899707885",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "15157974636899707885",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "11445136761352223660",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "13426933220248984135",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "84180302489115c63975fe12cb5892f236db9938106754ac36d8cabd12d1da32",
+      "total_triangles": 14700,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 6162.959448442826,
+        "expected": 6162.959448442826,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.4,
+          "residuals": 0
+        },
+        {
+          "lo": 2.4,
+          "hi": 3.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1086,
+          "faces": 2168,
+          "edges": 3252,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 4350.324316575425,
+          "reported_volume_mm3": 4350.324316575425,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 3430,
+          "faces": 6860,
+          "edges": 10290,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.23354017982243e-05,
+          "volume_mm3": 1347.2974590365106,
+          "reported_volume_mm3": 1347.2974590365097,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              2.4
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 465.3376728699166,
+          "reported_volume_mm3": 465.33767286991724,
+          "volume_abs_delta": 6.252776074688882e-13,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              2.4
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 474,
+          "faces": 948,
+          "edges": 1422,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00022439523505603937,
+          "volume_mm3": 75.60899289002764,
+          "reported_volume_mm3": 75.60899289002738,
+          "volume_abs_delta": 2.5579538487363607e-13,
+          "bbox": [
+            [
+              -3.9999999999999982,
+              23.72579734900494,
+              0.0
+            ],
+            [
+              4.000000000000002,
+              30.39173199981451,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "14454990572831180178",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "14454990572831180178",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "9455305689950381705",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "17278601259770880073",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "7f5bb6cfc6e195519363fd11c8252ae07fbf72530ad7d6797d77176c1fc58b76",
+      "total_triangles": 14660,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 9778.486600292421,
+        "expected": 9778.486600292421,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 4.8,
+          "residuals": 0
+        },
+        {
+          "lo": 4.8,
+          "hi": 5.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 44402,
+          "faces": 88804,
+          "edges": 133206,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.036650852867638e-08,
+          "volume_mm3": 6793.0057003334905,
+          "reported_volume_mm3": 6793.005700333491,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3554,
+          "faces": 7104,
+          "edges": 10656,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.1465605267912232e-05,
+          "volume_mm3": 2122.9554554904034,
+          "reported_volume_mm3": 2122.9554554904034,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              0.0
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              4.8
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17742231437977671155",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "9652099242377055774",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "21dae6d06291ed812060e48921688ae5f1a8d1dd52f0bc40c8f1403120735e77",
+      "total_triangles": 95908,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 10523.026876931006,
+        "expected": 10523.026876931006,
+        "tolerance": 1.0523026876931006e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 5.6,
+          "residuals": 0
+        },
+        {
+          "lo": 5.6,
+          "hi": 6.3999999999999995,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 43156,
+          "faces": 86308,
+          "edges": 129462,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 9288.231294119829,
+          "reported_volume_mm3": 9288.231294119829,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 372.2701382959338,
+          "reported_volume_mm3": 372.2701382959337,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              5.6
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              6.3999999999999995
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11009445401210066536",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13212788514329028024",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "db15818a53509401475fe58f817694e83eaf2decc716fba35f8f2697d072dd3b",
+      "total_triangles": 90992,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 10150.756738611713,
+        "expected": 10150.756738611713,
+        "tolerance": 1.0150756738611714e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 4.6,
+          "residuals": 0
+        },
+        {
+          "lo": 4.6,
+          "hi": 5.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 43156,
+          "faces": 86308,
+          "edges": 129462,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 7475.596162315136,
+          "reported_volume_mm3": 7475.596162315137,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3416,
+          "faces": 6832,
+          "edges": 10248,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.2348481936644666e-05,
+          "volume_mm3": 1347.2974589347764,
+          "reported_volume_mm3": 1347.2974589347748,
+          "volume_abs_delta": 1.5916157281026244e-12,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              4.6
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 465.33767286991645,
+          "reported_volume_mm3": 465.33767286991724,
+          "volume_abs_delta": 7.958078640513122e-13,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              4.6
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              5.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12933825937967135255",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12933825937967135255",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "10952965597861978608",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "d5f7fd9c16db9aadd21a349c50bd0f3e4fe81f09b223e07a5d2f3831ea53b242",
+      "total_triangles": 97824,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 11963.391870506663,
+        "expected": 11963.391870506663,
+        "tolerance": 1.1963391870506664e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 5.6,
+          "residuals": 0
+        },
+        {
+          "lo": 5.6,
+          "hi": 6.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 43156,
+          "faces": 86308,
+          "edges": 129462,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9565031256506558e-08,
+          "volume_mm3": 9288.231294119829,
+          "reported_volume_mm3": 9288.231294119829,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              0.0
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3416,
+          "faces": 6832,
+          "edges": 10248,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.2348481936644666e-05,
+          "volume_mm3": 1347.2974589347762,
+          "reported_volume_mm3": 1347.2974589347748,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -23.99990300089121,
+              -23.89173199981451,
+              5.6
+            ],
+            [
+              23.99990300089121,
+              23.89173199981451,
+              6.6
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0005286686046573341,
+          "volume_mm3": 465.3376728699177,
+          "reported_volume_mm3": 465.33767286991724,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -22.5,
+              -22.3918270021677,
+              5.6
+            ],
+            [
+              22.5,
+              22.3918270021677,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17787028531389086253",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17787028531389086253",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15536354607081857203",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "be3b0db91ae6951e88e9f28bf73f06b10478a92887cca5c5334755833eb49724",
+      "total_triangles": 97824,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 14660.84546437108,
+        "expected": 14660.845464371077,
+        "tolerance": 1.4660845464371078e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 9.2,
+          "residuals": 0
+        },
+        {
+          "lo": 9.2,
+          "hi": 10.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 7082,
+          "faces": 14184,
+          "edges": 21276,
+          "components": 4,
+          "euler": -10,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.911855622082206e-11,
+          "volume_mm3": 10769.623281869975,
+          "reported_volume_mm3": 10769.623281869974,
+          "volume_abs_delta": 1.8189894035458565e-12,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              0.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 3248,
+          "faces": 6500,
+          "edges": 9750,
+          "components": 4,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 6.369930861844421e-05,
+          "volume_mm3": 3338.8035190585556,
+          "reported_volume_mm3": 3338.8035190585556,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              0.0
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              9.2
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "15764496217746905205",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13389074960503651733",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "13c8757f45e1451070e9123ae5192d334cfc6bdd8ca7458b7c32cc9208d81731",
+      "total_triangles": 20684,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 15249.124204760292,
+        "expected": 15249.124204760292,
+        "tolerance": 1.5249124204760293e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 10.0,
+          "residuals": 0
+        },
+        {
+          "lo": 10.0,
+          "hi": 10.8,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3834,
+          "faces": 7668,
+          "edges": 11502,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.911855622082206e-11,
+          "volume_mm3": 14402.566171105187,
+          "reported_volume_mm3": 14402.566171105187,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              0.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 294.13937017665745,
+          "reported_volume_mm3": 294.1393701766576,
+          "volume_abs_delta": 1.7053025658242404e-13,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              10.0
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              10.8
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "14034947215353950509",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "18425256603146222473",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "866b271b7409ff9ce241d14760d40b9994de08e5ebc8f150648232c4fbdef68e",
+      "total_triangles": 12352,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 14954.984834565686,
+        "expected": 14954.984834565685,
+        "tolerance": 1.4954984834565686e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 9.0,
+          "residuals": 0
+        },
+        {
+          "lo": 9.0,
+          "hi": 10.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3834,
+          "faces": 7668,
+          "edges": 11502,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.911855622082206e-11,
+          "volume_mm3": 12907.067687643426,
+          "reported_volume_mm3": 12907.067687643425,
+          "volume_abs_delta": 1.8189894035458565e-12,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              0.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              9.0
+            ]
+          ]
+        },
+        {
+          "vertices": 3832,
+          "faces": 7664,
+          "edges": 11496,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.700966122493926e-05,
+          "volume_mm3": 1127.8242707409402,
+          "reported_volume_mm3": 1127.824270740941,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              9.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 367.6742127208218,
+          "reported_volume_mm3": 367.6742127208217,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              9.0
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              10.0
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16492386685615527652",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16492386685615527652",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13632376535565384385",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "755bbe4fb6cb454284cffcce3447e3696394159d9e386d62e2299ab97d5ca8dd",
+      "total_triangles": 20016,
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 7,
+      "source_analytic_volume": {
+        "observed": 16450.483318022252,
+        "expected": 16450.483318022252,
+        "tolerance": 1.6450483318022253e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 10.0,
+          "residuals": 0
+        },
+        {
+          "lo": 10.0,
+          "hi": 11.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3834,
+          "faces": 7668,
+          "edges": 11502,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.911855622082206e-11,
+          "volume_mm3": 14402.566171105187,
+          "reported_volume_mm3": 14402.566171105187,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              0.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 3832,
+          "faces": 7664,
+          "edges": 11496,
+          "components": 4,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.700966122493926e-05,
+          "volume_mm3": 1127.8242707409397,
+          "reported_volume_mm3": 1127.824270740941,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -21.799883000552654,
+              -21.70373199880123,
+              10.0
+            ],
+            [
+              21.799883000552654,
+              21.70373199880123,
+              11.0
+            ]
+          ]
+        },
+        {
+          "vertices": 2344,
+          "faces": 4684,
+          "edges": 7026,
+          "components": 4,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00041772851889723683,
+          "volume_mm3": 367.67421272082174,
+          "reported_volume_mm3": 367.6742127208217,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -20.0,
+              -19.903846003115177,
+              10.0
+            ],
+            [
+              20.0,
+              19.903846003115177,
+              11.0
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16149737840516520031",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16149737840516520031",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "17520874893687384785",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "ff0bc5dae955cb7a63438a689bb51a157d53f941dec60893e939e57b7d068bad",
+      "total_triangles": 20016,
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 1506.2821328344162,
+        "expected": 1506.2821328344162,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.2,
+          "residuals": 0
+        },
+        {
+          "lo": 2.2,
+          "hi": 3.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 2256,
+          "faces": 4508,
+          "edges": 6762,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.321444647449989e-05,
+          "volume_mm3": 1021.2227901136802,
+          "reported_volume_mm3": 1021.2227901136802,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              0.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.21562283868261575,
+          "volume_mm3": 424.6715181991041,
+          "reported_volume_mm3": 424.6715181991041,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -10.800654001533985,
+              -12.5,
+              0.0
+            ],
+            [
+              10.800654001533985,
+              12.5,
+              2.2
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.1442004009209,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 8.526512829121202e-14,
+          "bbox": [
+            [
+              17.300557002425194,
+              -7.2499995008111,
+              0.0
+            ],
+            [
+              31.800557002425194,
+              7.2500004991889,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359223,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              18.300557002425194,
+              -6.2499995008111,
+              1.6
+            ],
+            [
+              30.800557002425194,
+              6.2500004991889,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.536656837469394,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              21.550557002425194,
+              -2.9999995008111,
+              4.6
+            ],
+            [
+              27.550557002425194,
+              3.0000004991889,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17476149945604882681",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "11396736759569778311",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17534192837769582330",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17534192837769582330",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17534192837769582330",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "9e2e0bf2cfde1fdb0101ef285e134129e21e3331a8491316a154c3b4535e41e1",
+      "total_triangles": 9372,
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 1815.1341460666417,
+        "expected": 1815.1341460666417,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 3.0,
+          "residuals": 0
+        },
+        {
+          "lo": 3.0,
+          "hi": 3.8,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1478,
+          "faces": 2952,
+          "edges": 4428,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.700134259184475e-06,
+          "volume_mm3": 1600.3203149306405,
+          "reported_volume_mm3": 1600.3203149306403,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              0.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.07840830497549663,
+          "volume_mm3": 154.42600661785613,
+          "reported_volume_mm3": 154.426006617856,
+          "volume_abs_delta": 1.4210854715202004e-13,
+          "bbox": [
+            [
+              -10.800654001533985,
+              -12.5,
+              3.0
+            ],
+            [
+              10.800654001533985,
+              12.5,
+              3.8
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.1442004009209,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 8.526512829121202e-14,
+          "bbox": [
+            [
+              17.300557002425194,
+              -7.2499995008111,
+              0.0
+            ],
+            [
+              31.800557002425194,
+              7.2500004991889,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359223,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              18.300557002425194,
+              -6.2499995008111,
+              1.6
+            ],
+            [
+              30.800557002425194,
+              6.2500004991889,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.536656837469394,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              21.550557002425194,
+              -2.9999995008111,
+              4.6
+            ],
+            [
+              27.550557002425194,
+              3.0000004991889,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11169386734872971867",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15921450080245244427",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11051308611019578955",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11051308611019578955",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "11051308611019578955",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "58f5776194de950183a170618cfa01237e5fd9c5b75438f5a5658d127993e7a1",
+      "total_triangles": 7816,
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 1660.708139450529,
+        "expected": 1660.708139450529,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.0,
+          "residuals": 0
+        },
+        {
+          "lo": 2.0,
+          "hi": 3.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1478,
+          "faces": 2956,
+          "edges": 4434,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.700134259184475e-06,
+          "volume_mm3": 1046.750935108301,
+          "reported_volume_mm3": 1046.7509351083008,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              0.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              2.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1904,
+          "faces": 3804,
+          "edges": 5706,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2143107045479273e-05,
+          "volume_mm3": 360.5368715500193,
+          "reported_volume_mm3": 360.5368715500193,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              2.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.09801038121937079,
+          "volume_mm3": 193.03250827232003,
+          "reported_volume_mm3": 193.03250827232006,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -10.800654001533985,
+              -12.5,
+              2.0
+            ],
+            [
+              10.800654001533985,
+              12.5,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.1442004009209,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 8.526512829121202e-14,
+          "bbox": [
+            [
+              17.300557002425194,
+              -7.2499995008111,
+              0.0
+            ],
+            [
+              31.800557002425194,
+              7.2500004991889,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359223,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              18.300557002425194,
+              -6.2499995008111,
+              1.6
+            ],
+            [
+              30.800557002425194,
+              6.2500004991889,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.536656837469394,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              21.550557002425194,
+              -2.9999995008111,
+              4.6
+            ],
+            [
+              27.550557002425194,
+              3.0000004991889,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17835688896223729425",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17835688896223729425",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "13718126705849708504",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15045898149674092112",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15045898149674092112",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15045898149674092112",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "af4d6091c4468ee7fa48fae1d84c1cfd5dfdfaeacbf3d1a89ae98dd9db26a5ba",
+      "total_triangles": 11624,
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 2214.277519267372,
+        "expected": 2214.277519267372,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 3.0,
+          "residuals": 0
+        },
+        {
+          "lo": 3.0,
+          "hi": 4.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1478,
+          "faces": 2952,
+          "edges": 4428,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.700134259184475e-06,
+          "volume_mm3": 1600.3203149306405,
+          "reported_volume_mm3": 1600.3203149306403,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              0.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              3.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1904,
+          "faces": 3804,
+          "edges": 5706,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2143107045479273e-05,
+          "volume_mm3": 360.53687155001927,
+          "reported_volume_mm3": 360.5368715500193,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -12.300555996596813,
+              -13.99991700053215,
+              3.0
+            ],
+            [
+              12.300557002425194,
+              13.99991799890995,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.09801038121937079,
+          "volume_mm3": 193.03250827232003,
+          "reported_volume_mm3": 193.03250827232006,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -10.800654001533985,
+              -12.5,
+              3.0
+            ],
+            [
+              10.800654001533985,
+              12.5,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 804,
+          "faces": 1604,
+          "edges": 2406,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0002680191497115424,
+          "volume_mm3": 250.1442004009209,
+          "reported_volume_mm3": 250.14420040092082,
+          "volume_abs_delta": 8.526512829121202e-14,
+          "bbox": [
+            [
+              17.300557002425194,
+              -7.2499995008111,
+              0.0
+            ],
+            [
+              31.800557002425194,
+              7.2500004991889,
+              1.6
+            ]
+          ]
+        },
+        {
+          "vertices": 504,
+          "faces": 1004,
+          "edges": 1506,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00030269170993357797,
+          "volume_mm3": 368.11724520359223,
+          "reported_volume_mm3": 368.1172452035923,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              18.300557002425194,
+              -6.2499995008111,
+              1.6
+            ],
+            [
+              30.800557002425194,
+              6.2500004991889,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 352,
+          "faces": 700,
+          "edges": 1050,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 56.536656837469394,
+          "reported_volume_mm3": 56.536656837469394,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              21.550557002425194,
+              -2.9999995008111,
+              4.6
+            ],
+            [
+              27.550557002425194,
+              3.0000004991889,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13942709008223769343",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13942709008223769343",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "9955360910875759733",
+          "color": 255
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15325377654113808387",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15325377654113808387",
+          "color": 808795135
+        },
+        {
+          "role": 6,
+          "slot": 2,
+          "group": 1,
+          "provenance": "15325377654113808387",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "ff9dc3936f83a9cec4e2cc505f307aac7dfd56968e60131e8d665c75e950e53b",
+      "total_triangles": 11620,
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 1721.0579731237954,
+        "expected": 1721.0579731237956,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.0,
+          "residuals": 0
+        },
+        {
+          "lo": 1.0,
+          "hi": 1.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1872,
+          "faces": 3740,
+          "edges": 5610,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.0003745293165521857,
+          "volume_mm3": 1226.8947408057977,
+          "reported_volume_mm3": 1226.894740805799,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              7.0
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1568170639811189,
+          "volume_mm3": 494.1632322968575,
+          "reported_volume_mm3": 494.163232296857,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              7.0
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              8.0
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581046395333,
+          "reported_volume_mm3": 79.48581046395331,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.849999502301216,
+              -2.849998999387026,
+              0.0
+            ],
+            [
+              2.850000500679016,
+              2.8500010035932064,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928257684964,
+          "reported_volume_mm3": 48.769282576849655,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.9999995008111,
+              -2.9999989978969097,
+              5.15
+            ],
+            [
+              3.0000004991889,
+              3.0000010021030903,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1098,
+          "faces": 2192,
+          "edges": 3288,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2320093972173728e-05,
+          "volume_mm3": 2341.809024170628,
+          "reported_volume_mm3": 2341.8090241706277,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              23.480967998631478,
+              -23.44990767,
+              0.0
+            ],
+            [
+              64.94290299863148,
+              23.44991204,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2188,
+          "faces": 4376,
+          "edges": 6564,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00248154289629407,
+          "volume_mm3": 4147.476953778733,
+          "reported_volume_mm3": 4147.476953778751,
+          "volume_abs_delta": 1.7280399333685637e-11,
+          "bbox": [
+            [
+              23.48096799850464,
+              -23.449907667934895,
+              1.5
+            ],
+            [
+              64.94290299713612,
+              23.449912041425705,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.0181250000019,
+          "reported_volume_mm3": 1615.018125000001,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              34.511935497820375,
+              -9.699998997896909,
+              1.5
+            ],
+            [
+              53.91193549782038,
+              9.70000100210309,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 1882,
+          "faces": 3764,
+          "edges": 5646,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.002171345839009242,
+          "volume_mm3": 2067.7284787719354,
+          "reported_volume_mm3": 2067.7284787719323,
+          "volume_abs_delta": 3.183231456205249e-12,
+          "bbox": [
+            [
+              25.48096799850464,
+              -21.44989462941885,
+              1.5
+            ],
+            [
+              62.942902997136116,
+              21.44989688694477,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12632958864882301380",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "17055751519689842960",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16119554289857703426",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16119554289857703426",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "16928729497981564280",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "16928729497981564280",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "16928729497981564280",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "16928729497981564280",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "047687117555ccc0672bfb6ea0a12bb93d2569d9ccb5a1b093b1179f99a50d11",
+      "total_triangles": 17160,
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 2314.0538518685025,
+        "expected": 2314.053851868502,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.6,
+          "residuals": 0
+        },
+        {
+          "lo": 1.6,
+          "hi": 2.2,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1094,
+          "faces": 2184,
+          "edges": 3276,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9695351995151498e-06,
+          "volume_mm3": 2017.5559124807714,
+          "reported_volume_mm3": 2017.55591248077,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              7.0
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.09409023838867128,
+          "volume_mm3": 296.4979393781146,
+          "reported_volume_mm3": 296.49793937811404,
+          "volume_abs_delta": 5.684341886080801e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              8.6
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              9.2
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581046395333,
+          "reported_volume_mm3": 79.48581046395331,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.849999502301216,
+              -2.849998999387026,
+              0.0
+            ],
+            [
+              2.850000500679016,
+              2.8500010035932064,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928257684964,
+          "reported_volume_mm3": 48.769282576849655,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.9999995008111,
+              -2.9999989978969097,
+              5.15
+            ],
+            [
+              3.0000004991889,
+              3.0000010021030903,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1098,
+          "faces": 2192,
+          "edges": 3288,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2320093972173728e-05,
+          "volume_mm3": 2341.809024170628,
+          "reported_volume_mm3": 2341.8090241706277,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              23.480967998631478,
+              -23.44990767,
+              0.0
+            ],
+            [
+              64.94290299863148,
+              23.44991204,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2188,
+          "faces": 4376,
+          "edges": 6564,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00248154289629407,
+          "volume_mm3": 4147.476953778733,
+          "reported_volume_mm3": 4147.476953778751,
+          "volume_abs_delta": 1.7280399333685637e-11,
+          "bbox": [
+            [
+              23.48096799850464,
+              -23.449907667934895,
+              1.5
+            ],
+            [
+              64.94290299713612,
+              23.449912041425705,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.0181250000019,
+          "reported_volume_mm3": 1615.018125000001,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              34.511935497820375,
+              -9.699998997896909,
+              1.5
+            ],
+            [
+              53.91193549782038,
+              9.70000100210309,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 1882,
+          "faces": 3764,
+          "edges": 5646,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.002171345839009242,
+          "volume_mm3": 2067.7284787719354,
+          "reported_volume_mm3": 2067.7284787719323,
+          "volume_abs_delta": 3.183231456205249e-12,
+          "bbox": [
+            [
+              25.48096799850464,
+              -21.44989462941885,
+              1.5
+            ],
+            [
+              62.942902997136116,
+              21.44989688694477,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13604108037115168015",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "10540662944916553337",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13891914882316498293",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13891914882316498293",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "12018641031063885185",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "12018641031063885185",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "12018641031063885185",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "12018641031063885185",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "324dc8cc593ad316fcf4d8b5de8bcdbd17e044a67c7b2ff10c5e9ff27b87b1a7",
+      "total_triangles": 15604,
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 2017.555912496149,
+        "expected": 2017.555912496149,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 0.6000000000000001,
+          "residuals": 0
+        },
+        {
+          "lo": 0.6000000000000001,
+          "hi": 1.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1094,
+          "faces": 2184,
+          "edges": 3276,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9695351995151498e-06,
+          "volume_mm3": 756.5834671802882,
+          "reported_volume_mm3": 756.5834671802885,
+          "volume_abs_delta": 3.410605131648481e-13,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              7.0
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              7.6
+            ]
+          ]
+        },
+        {
+          "vertices": 1872,
+          "faces": 3740,
+          "edges": 5610,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00031210772894563774,
+          "volume_mm3": 766.8092130036237,
+          "reported_volume_mm3": 766.8092130036246,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              7.6
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1568170639811189,
+          "volume_mm3": 494.16323229685725,
+          "reported_volume_mm3": 494.163232296857,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              7.6
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581046395333,
+          "reported_volume_mm3": 79.48581046395331,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.849999502301216,
+              -2.849998999387026,
+              0.0
+            ],
+            [
+              2.850000500679016,
+              2.8500010035932064,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928257684964,
+          "reported_volume_mm3": 48.769282576849655,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.9999995008111,
+              -2.9999989978969097,
+              5.15
+            ],
+            [
+              3.0000004991889,
+              3.0000010021030903,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1098,
+          "faces": 2192,
+          "edges": 3288,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2320093972173728e-05,
+          "volume_mm3": 2341.809024170628,
+          "reported_volume_mm3": 2341.8090241706277,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              23.480967998631478,
+              -23.44990767,
+              0.0
+            ],
+            [
+              64.94290299863148,
+              23.44991204,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2188,
+          "faces": 4376,
+          "edges": 6564,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00248154289629407,
+          "volume_mm3": 4147.476953778733,
+          "reported_volume_mm3": 4147.476953778751,
+          "volume_abs_delta": 1.7280399333685637e-11,
+          "bbox": [
+            [
+              23.48096799850464,
+              -23.449907667934895,
+              1.5
+            ],
+            [
+              64.94290299713612,
+              23.449912041425705,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.0181250000019,
+          "reported_volume_mm3": 1615.018125000001,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              34.511935497820375,
+              -9.699998997896909,
+              1.5
+            ],
+            [
+              53.91193549782038,
+              9.70000100210309,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 1882,
+          "faces": 3764,
+          "edges": 5646,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.002171345839009242,
+          "volume_mm3": 2067.7284787719354,
+          "reported_volume_mm3": 2067.7284787719323,
+          "volume_abs_delta": 3.183231456205249e-12,
+          "bbox": [
+            [
+              25.48096799850464,
+              -21.44989462941885,
+              1.5
+            ],
+            [
+              62.942902997136116,
+              21.44989688694477,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "18047573872399717219",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "18047573872399717219",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "17832708172550545784",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11493906443762188233",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11493906443762188233",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17082031478173039374",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17082031478173039374",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17082031478173039374",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 2,
+          "group": 1,
+          "provenance": "17082031478173039374",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "805109ba5d6b7057e6fd65289b0034fbb5c0ed1bfbc373743e88dcfe17c1bcf7",
+      "total_triangles": 19344,
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 3278.5283578062417,
+        "expected": 3278.5283578062417,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.6,
+          "residuals": 0
+        },
+        {
+          "lo": 1.6,
+          "hi": 2.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1094,
+          "faces": 2184,
+          "edges": 3276,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.9695351995151498e-06,
+          "volume_mm3": 2017.5559124807714,
+          "reported_volume_mm3": 2017.55591248077,
+          "volume_abs_delta": 1.3642420526593924e-12,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              7.0
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              8.6
+            ]
+          ]
+        },
+        {
+          "vertices": 1872,
+          "faces": 3740,
+          "edges": 5610,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00031210772894563774,
+          "volume_mm3": 766.8092130036248,
+          "reported_volume_mm3": 766.8092130036246,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -18.48096700012684,
+              -21.1998929977417,
+              8.6
+            ],
+            [
+              18.48096799850464,
+              21.19989500194788,
+              9.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1568170639811189,
+          "volume_mm3": 494.16323229685787,
+          "reported_volume_mm3": 494.163232296857,
+          "volume_abs_delta": 8.526512829121202e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              8.6
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              9.6
+            ]
+          ]
+        },
+        {
+          "vertices": 360,
+          "faces": 720,
+          "edges": 1080,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00021238275170115672,
+          "volume_mm3": 79.48581046395333,
+          "reported_volume_mm3": 79.48581046395331,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.849999502301216,
+              -2.849998999387026,
+              0.0
+            ],
+            [
+              2.850000500679016,
+              2.8500010035932064,
+              5.15
+            ]
+          ]
+        },
+        {
+          "vertices": 376,
+          "faces": 748,
+          "edges": 1122,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00020468031592413283,
+          "volume_mm3": 48.76928257684964,
+          "reported_volume_mm3": 48.769282576849655,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              -2.9999995008111,
+              -2.9999989978969097,
+              5.15
+            ],
+            [
+              3.0000004991889,
+              3.0000010021030903,
+              7.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1098,
+          "faces": 2192,
+          "edges": 3288,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2320093972173728e-05,
+          "volume_mm3": 2341.809024170628,
+          "reported_volume_mm3": 2341.8090241706277,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              23.480967998631478,
+              -23.44990767,
+              0.0
+            ],
+            [
+              64.94290299863148,
+              23.44991204,
+              1.5
+            ]
+          ]
+        },
+        {
+          "vertices": 2188,
+          "faces": 4376,
+          "edges": 6564,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00248154289629407,
+          "volume_mm3": 4147.476953778733,
+          "reported_volume_mm3": 4147.476953778751,
+          "volume_abs_delta": 1.7280399333685637e-11,
+          "bbox": [
+            [
+              23.48096799850464,
+              -23.449907667934895,
+              1.5
+            ],
+            [
+              64.94290299713612,
+              23.449912041425705,
+              16.950000000000003
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 64,
+          "edges": 96,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.741874999999998,
+          "volume_mm3": 1615.0181250000019,
+          "reported_volume_mm3": 1615.018125000001,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              34.511935497820375,
+              -9.699998997896909,
+              1.5
+            ],
+            [
+              53.91193549782038,
+              9.70000100210309,
+              10.350000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 1882,
+          "faces": 3764,
+          "edges": 5646,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.002171345839009242,
+          "volume_mm3": 2067.7284787719354,
+          "reported_volume_mm3": 2067.7284787719323,
+          "volume_abs_delta": 3.183231456205249e-12,
+          "bbox": [
+            [
+              25.48096799850464,
+              -21.44989462941885,
+              1.5
+            ],
+            [
+              62.942902997136116,
+              21.44989688694477,
+              11.150000000000002
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "13943972881683772790",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "13943972881683772790",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "16406354782824993630",
+          "color": 255
+        },
+        {
+          "role": 4,
+          "slot": 3,
+          "group": 0,
+          "provenance": "9673859039344848798",
+          "color": 808795135
+        },
+        {
+          "role": 4,
+          "slot": 3,
+          "group": 0,
+          "provenance": "9673859039344848798",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "10863419245899959457",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "10863419245899959457",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "10863419245899959457",
+          "color": 808795135
+        },
+        {
+          "role": 5,
+          "slot": 3,
+          "group": 1,
+          "provenance": "10863419245899959457",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "a5fb68bf4770da94d9e9bcc30720422a31e405eda32c692aca3be1925c7c7d2a",
+      "total_triangles": 19344,
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 3381.2125461539545,
+        "expected": 3381.2125461539536,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.5999999999999999,
+          "residuals": 0
+        },
+        {
+          "lo": 1.5999999999999999,
+          "hi": 2.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1904,
+          "faces": 3804,
+          "edges": 5706,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.24645993876882e-05,
+          "volume_mm3": 2380.532018243167,
+          "reported_volume_mm3": 2380.532018243167,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.28227061874023984,
+          "volume_mm3": 1000.6805278997225,
+          "reported_volume_mm3": 1000.6805278997224,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              0.0
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              1.5999999999999999
+            ]
+          ]
+        },
+        {
+          "vertices": 490,
+          "faces": 980,
+          "edges": 1470,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00026909260510143973,
+          "volume_mm3": 75.7341614912418,
+          "reported_volume_mm3": 75.73416149124184,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -3.9999995008110982,
+              23.80794422361616,
+              0.0
+            ],
+            [
+              4.000000499188902,
+              30.49991799890995,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13926747461669408633",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "17883802995783152373",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "17497212619713952092",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "984eee1c7f9bb28d46786cf0b5638c6f83b05c629b1b481daeba75f07015d468",
+      "total_triangles": 6340,
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 4381.89307404757,
+        "expected": 4381.89307404757,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.4,
+          "residuals": 0
+        },
+        {
+          "lo": 2.4,
+          "hi": 3.2,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1126,
+          "faces": 2248,
+          "edges": 3372,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 3881.5528100927504,
+          "reported_volume_mm3": 3881.552810092751,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.14113530937011998,
+          "volume_mm3": 500.3402639498614,
+          "reported_volume_mm3": 500.3402639498614,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              2.4
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              3.2
+            ]
+          ]
+        },
+        {
+          "vertices": 490,
+          "faces": 980,
+          "edges": 1470,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00026909260510143973,
+          "volume_mm3": 75.7341614912418,
+          "reported_volume_mm3": 75.73416149124184,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -3.9999995008110982,
+              23.80794422361616,
+              0.0
+            ],
+            [
+              4.000000499188902,
+              30.49991799890995,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "15057018672165813245",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "9854503933001142874",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "15884314505031194944",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "559da230f915f5d74f083ce7ff4bc33a957b6ec400c80718292a6c36de7b4841",
+      "total_triangles": 4784,
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 3881.552810100762,
+        "expected": 3881.5528101007617,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 1.4,
+          "residuals": 0
+        },
+        {
+          "lo": 1.4,
+          "hi": 2.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1126,
+          "faces": 2248,
+          "edges": 3372,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 2264.239139220771,
+          "reported_volume_mm3": 2264.239139220771,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              1.4
+            ]
+          ]
+        },
+        {
+          "vertices": 1904,
+          "faces": 3804,
+          "edges": 5706,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.164348202845961e-05,
+          "volume_mm3": 991.8883409346532,
+          "reported_volume_mm3": 991.888340934653,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              1.4
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.17641913671264992,
+          "volume_mm3": 625.4253299373265,
+          "reported_volume_mm3": 625.4253299373266,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              1.4
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 518,
+          "faces": 1036,
+          "edges": 1554,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00026909260510143973,
+          "volume_mm3": 75.7341614912418,
+          "reported_volume_mm3": 75.73416149124185,
+          "volume_abs_delta": 4.263256414560601e-14,
+          "bbox": [
+            [
+              -3.9999995008110982,
+              23.80794422361616,
+              0.0
+            ],
+            [
+              4.000000499188902,
+              30.49991799890995,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "16408249807372282254",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "16408249807372282254",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "10950034294370476014",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "9689946565858803488",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "0ffb66ee3be0b3b2186a1d8eeebc457fce40960ec6a717864faff830ec523480",
+      "total_triangles": 8644,
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 5498.866480976079,
+        "expected": 5498.866480976079,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 2.4,
+          "residuals": 0
+        },
+        {
+          "lo": 2.4,
+          "hi": 3.4,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 1126,
+          "faces": 2248,
+          "edges": 3372,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 3881.5528100927504,
+          "reported_volume_mm3": 3881.552810092751,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              2.4
+            ]
+          ]
+        },
+        {
+          "vertices": 1904,
+          "faces": 3804,
+          "edges": 5706,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.164348202845961e-05,
+          "volume_mm3": 991.8883409346521,
+          "reported_volume_mm3": 991.8883409346529,
+          "volume_abs_delta": 7.958078640513122e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              2.4
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.17641913671264992,
+          "volume_mm3": 625.4253299373265,
+          "reported_volume_mm3": 625.4253299373265,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              2.4
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 490,
+          "faces": 980,
+          "edges": 1470,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00026909260510143973,
+          "volume_mm3": 75.7341614912418,
+          "reported_volume_mm3": 75.73416149124184,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -3.9999995008110982,
+              23.80794422361616,
+              0.0
+            ],
+            [
+              4.000000499188902,
+              30.49991799890995,
+              2.4
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12738495494768994461",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "12738495494768994461",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "18423155985396930427",
+          "color": 255
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "15937122472094435208",
+          "color": 808795135
+        }
+      ],
+      "mesh_sha256": "0fbea514927fafe64acdb24c37898bb1e005122cf63ab97eebff271f37138743",
+      "total_triangles": 8588,
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 8556.61629295497,
+        "expected": 8556.61629295497,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 4.8,
+          "residuals": 0
+        },
+        {
+          "lo": 4.8,
+          "hi": 5.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 42330,
+          "faces": 84656,
+          "edges": 126984,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 9.486264138243648e-08,
+          "volume_mm3": 5018.276024313271,
+          "reported_volume_mm3": 5018.276024313274,
+          "volume_abs_delta": 3.637978807091713e-12,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 3502,
+          "faces": 7004,
+          "edges": 10506,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.460834109839366e-05,
+          "volume_mm3": 2683.68340385754,
+          "reported_volume_mm3": 2683.68340385754,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              0.0
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              4.8
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "11490788782412940155",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "16443737584892428517",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "4f0cc23122c6daa4830ccb26c4e1fa869baaf66141a618979342b2656646a13e",
+      "total_triangles": 91660,
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 9557.296820848585,
+        "expected": 9557.296820848585,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 5.6,
+          "residuals": 0
+        },
+        {
+          "lo": 5.6,
+          "hi": 6.3999999999999995,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 44180,
+          "faces": 88356,
+          "edges": 132534,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 8202.299692120672,
+          "reported_volume_mm3": 8202.299692120676,
+          "volume_abs_delta": 3.637978807091713e-12,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.14113530937011992,
+          "volume_mm3": 500.3402639498612,
+          "reported_volume_mm3": 500.34026394986114,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              5.6
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              6.3999999999999995
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11798047769419284931",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "12264426269807380680",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "12eb7990ebeb96e2863f5c0676c24b27fa0d84050ab5617717b14bbcfe883455",
+      "total_triangles": 89912,
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 9056.956556901778,
+        "expected": 9056.956556901778,
+        "tolerance": 1e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 4.6,
+          "residuals": 0
+        },
+        {
+          "lo": 4.6,
+          "hi": 5.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 44180,
+          "faces": 88356,
+          "edges": 132534,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 6584.986021235429,
+          "reported_volume_mm3": 6584.9860212354315,
+          "volume_abs_delta": 2.7284841053187847e-12,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 1902,
+          "faces": 3800,
+          "edges": 5700,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.164348202845961e-05,
+          "volume_mm3": 991.8883409479166,
+          "reported_volume_mm3": 991.8883409479167,
+          "volume_abs_delta": 1.1368683772161603e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              4.6
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.17641913671264992,
+          "volume_mm3": 625.4253299373268,
+          "reported_volume_mm3": 625.4253299373265,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              4.6
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              5.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "14123372051139226131",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "14123372051139226131",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "16015850588781006333",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "64414ae3647a72284ec110bc9b3cc1415a378e112b3eb76239c5ca465db61544",
+      "total_triangles": 93712,
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 10674.270227777095,
+        "expected": 10674.270227777095,
+        "tolerance": 1.0674270227777096e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 5.6,
+          "residuals": 0
+        },
+        {
+          "lo": 5.6,
+          "hi": 6.6,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 44180,
+          "faces": 88356,
+          "edges": 132534,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.5950281151422274e-08,
+          "volume_mm3": 8202.299692120672,
+          "reported_volume_mm3": 8202.299692120676,
+          "volume_abs_delta": 3.637978807091713e-12,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              0.0
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              5.6
+            ]
+          ]
+        },
+        {
+          "vertices": 1902,
+          "faces": 3800,
+          "edges": 5700,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.164348202845961e-05,
+          "volume_mm3": 991.8883409479175,
+          "reported_volume_mm3": 991.8883409479167,
+          "volume_abs_delta": 7.958078640513122e-13,
+          "bbox": [
+            [
+              -20.94107799977064,
+              -23.99991700053215,
+              5.6
+            ],
+            [
+              20.94107899814844,
+              23.99991799890995,
+              6.6
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.17641913671264992,
+          "volume_mm3": 625.4253299373269,
+          "reported_volume_mm3": 625.4253299373266,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -19.441175997257233,
+              -22.5,
+              5.6
+            ],
+            [
+              19.441175997257233,
+              22.5,
+              6.6
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "10980951740499020088",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "10980951740499020088",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "12878465372193058065",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "f981abb5acc0c12e3808093cb51e6266c184ae74391ad37e02f6ba0d4f0641a1",
+      "total_triangles": 93712,
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-chim",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 12983.913328012764,
+        "expected": 12983.913328012764,
+        "tolerance": 1.2983913328012765e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 9.2,
+          "residuals": 0
+        },
+        {
+          "lo": 9.2,
+          "hi": 10.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 4694,
+          "faces": 9396,
+          "edges": 14094,
+          "components": 2,
+          "euler": -4,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.2551095373164936e-09,
+          "volume_mm3": 8075.0212755976345,
+          "reported_volume_mm3": 8075.021275597634,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              0.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1402,
+          "faces": 2812,
+          "edges": 4218,
+          "components": 1,
+          "euler": -4,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.00042330874845915994,
+          "volume_mm3": 4424.676980140701,
+          "reported_volume_mm3": 4424.676980140701,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              0.0
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              9.2
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "16512574412010785876",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "16410552603892644515",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "4573a8ec94f93fe18b8772c3c53de9d206021980d2fbf851d1f8edb92a80c211",
+      "total_triangles": 12208,
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-noi",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 13774.574499672373,
+        "expected": 13774.574499672373,
+        "tolerance": 1.3774574499672374e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 10.0,
+          "residuals": 0
+        },
+        {
+          "lo": 10.0,
+          "hi": 10.8,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3292,
+          "faces": 6584,
+          "edges": 9876,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.2551095373164936e-09,
+          "volume_mm3": 12895.02884157582,
+          "reported_volume_mm3": 12895.02884157582,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              0.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1254536511848952,
+          "volume_mm3": 395.3305858374862,
+          "reported_volume_mm3": 395.33058583748596,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              10.0
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              10.8
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 3,
+          "group": 0,
+          "provenance": "13014361592564871382",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "15644197876219809105",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "4456fd473ed00128d9b1b66d142adab8167814d6b1206737991d1891b08da8c6",
+      "total_triangles": 8140,
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-phang",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 13379.243913842569,
+        "expected": 13379.243913842569,
+        "tolerance": 1.337924391384257e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 9.0,
+          "residuals": 0
+        },
+        {
+          "lo": 9.0,
+          "hi": 10.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3292,
+          "faces": 6584,
+          "edges": 9876,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.2551095373164936e-09,
+          "volume_mm3": 11557.104450192483,
+          "reported_volume_mm3": 11557.104450192483,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              0.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              9.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1940,
+          "faces": 3876,
+          "edges": 5814,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.950189471244812e-05,
+          "volume_mm3": 843.761159086479,
+          "reported_volume_mm3": 843.7611590864806,
+          "volume_abs_delta": 1.5916157281026244e-12,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              9.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1568170639811189,
+          "volume_mm3": 494.16323229685776,
+          "reported_volume_mm3": 494.163232296857,
+          "volume_abs_delta": 7.389644451905042e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              9.0
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              10.0
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13420412125647846409",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "13420412125647846409",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "9673662702436602963",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "69dfc7be103729c94f1158532ca591c5db550fc7cb0ef058e15a46c908a63b46",
+      "total_triangles": 12016,
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-phang2",
+      "source_verdict": 0,
+      "mechanics_verdict": 0,
+      "integer_bottom_boundary_residuals": 0,
+      "original_art_boundary_residuals": 0,
+      "input_source_contours": 2,
+      "source_analytic_volume": {
+        "observed": 14717.168305226825,
+        "expected": 14717.168305226827,
+        "tolerance": 1.4717168305226827e-06
+      },
+      "complete_source_z_intervals": [
+        {
+          "lo": 0.0,
+          "hi": 10.0,
+          "residuals": 0
+        },
+        {
+          "lo": 10.0,
+          "hi": 11.0,
+          "residuals": 0
+        }
+      ],
+      "parts": [
+        {
+          "vertices": 3292,
+          "faces": 6584,
+          "edges": 9876,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.2551095373164936e-09,
+          "volume_mm3": 12895.02884157582,
+          "reported_volume_mm3": 12895.02884157582,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              0.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              10.0
+            ]
+          ]
+        },
+        {
+          "vertices": 1940,
+          "faces": 3876,
+          "edges": 5814,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.950189471244812e-05,
+          "volume_mm3": 843.761159086479,
+          "reported_volume_mm3": 843.7611590864806,
+          "volume_abs_delta": 1.5916157281026244e-12,
+          "bbox": [
+            [
+              -19.08092799782753,
+              -21.79993899911642,
+              10.0
+            ],
+            [
+              19.08093000203371,
+              21.7999410033226,
+              11.0
+            ]
+          ]
+        },
+        {
+          "vertices": 778,
+          "faces": 1556,
+          "edges": 2334,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.1568170639811189,
+          "volume_mm3": 494.1632322968575,
+          "reported_volume_mm3": 494.163232296857,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -17.281046003103256,
+              -20.0,
+              10.0
+            ],
+            [
+              17.281046003103256,
+              20.0,
+              11.0
+            ]
+          ]
+        }
+      ],
+      "part_materials": [
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11822289002910180822",
+          "color": 808795135
+        },
+        {
+          "role": 0,
+          "slot": 2,
+          "group": 0,
+          "provenance": "11822289002910180822",
+          "color": 808795135
+        },
+        {
+          "role": 1,
+          "slot": 1,
+          "group": 0,
+          "provenance": "17876143468603648531",
+          "color": 255
+        }
+      ],
+      "mesh_sha256": "4ae6aa59a768034b58487bc1a47df16f8d360a1758fe4cbdfde4812d55e1fcf9",
+      "total_triangles": 12016,
+      "status": "pass"
+    }
+  ]
+}

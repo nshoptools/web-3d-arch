@@ -1,0 +1,15 @@
+{
+  "kind": "arch-online-policy-composition",
+  "version": 1,
+  "target": "src/integration/application.mjs",
+  "preimageSHA256": "b8081e838bf68b6f681344bbb0b7c3db3341e677f1c1b07d7c0f2cde158c3808",
+  "proposedSHA256": "4bd9200cf3a1b6dd1d4a0cd7f9e546526c44ec036bf404552c11d3b591dac910",
+  "patchSHA256": "80850c0e703c98079c13f388584c21afdfeb3dc4cdb2a1c44bfe3f5a854efe62",
+  "capturedAt": "2026-09-08T01:30:40.618Z",
+  "mode": "focused-patch-only-parent-owns-entry",
+  "preserves": [
+    "application.css import",
+    "host CSS class",
+    "parent adapters and real codecs"
+  ]
+}

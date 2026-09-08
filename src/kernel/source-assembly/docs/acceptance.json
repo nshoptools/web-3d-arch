@@ -1,0 +1,520 @@
+{
+  "schemaVersion": 1,
+  "sourceAbi": 1,
+  "sourceSemantics": 1,
+  "mechanicsAbi": 2,
+  "configuredReview": false,
+  "physicalFit": "unqualified",
+  "rows": [
+    {
+      "id": "noi",
+      "feature": "Raised colors, overrides and nominal Z",
+      "requirements": "MOD-03 / GEO-02",
+      "oracle": "264*2.4 + 200*.8 = 793.6 mm3; explicit 1.7/5.5/1.85 mm retained",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "style-0-rim-0",
+        "style-0-rim-1",
+        "override",
+        "nominal-0.16",
+        "nominal-0.2",
+        "nominal-0.25"
+      ],
+      "wasmCases": [
+        "style-0-rim-0",
+        "style-0-rim-1",
+        "override",
+        "nominal-0.16",
+        "nominal-0.2",
+        "nominal-0.25"
+      ]
+    },
+    {
+      "id": "chim",
+      "feature": "Recessed colored floor with intentional open well",
+      "requirements": "MOD-03 / GEO-02",
+      "oracle": "264*2.4 - 200*.8 = 473.6 mm3; probes above floor are empty",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "style-1-rim-0",
+        "style-1-rim-1",
+        "recess-layers-0.16",
+        "recess-layers-0.2",
+        "recess-layers-0.25"
+      ],
+      "wasmCases": [
+        "style-1-rim-0",
+        "style-1-rim-1",
+        "recess-layers-0.16",
+        "recess-layers-0.2",
+        "recess-layers-0.25"
+      ]
+    },
+    {
+      "id": "phang",
+      "feature": "Color mosaic inside body height",
+      "requirements": "MOD-03",
+      "oracle": "633.6 mm3 total, top at2.4 mm",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "style-2-rim-0",
+        "style-2-rim-1"
+      ],
+      "wasmCases": [
+        "style-2-rim-0",
+        "style-2-rim-1"
+      ]
+    },
+    {
+      "id": "phang2",
+      "feature": "Added flat color mosaic",
+      "requirements": "MOD-03",
+      "oracle": "897.6 mm3 total, top at3.4 mm",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "style-3-rim-0",
+        "style-3-rim-1",
+        "flat-layers-0.16",
+        "flat-layers-0.2",
+        "flat-layers-0.25"
+      ],
+      "wasmCases": [
+        "style-3-rim-0",
+        "style-3-rim-1",
+        "flat-layers-0.16",
+        "flat-layers-0.2",
+        "flat-layers-0.25"
+      ]
+    },
+    {
+      "id": "body",
+      "feature": "Silhouette, rounded/capsule, circle and square",
+      "requirements": "GEO-01 / MOD-03",
+      "oracle": "Analytic rectangle/capsule/circle area, three sizes and tolerances",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "circle-12-0.0002",
+        "circle-12-0.001",
+        "circle-12-0.002",
+        "circle-45-0.0002",
+        "circle-45-0.001",
+        "circle-45-0.002",
+        "circle-100-0.0002",
+        "circle-100-0.001",
+        "circle-100-0.002",
+        "body-round",
+        "body-silhouette",
+        "body-square",
+        "body-capsule",
+        "body-weld"
+      ],
+      "wasmCases": [
+        "circle-12-0.0002",
+        "circle-12-0.001",
+        "circle-12-0.002",
+        "circle-45-0.0002",
+        "circle-45-0.001",
+        "circle-45-0.002",
+        "circle-100-0.0002",
+        "circle-100-0.001",
+        "circle-100-0.002",
+        "body-round",
+        "body-silhouette",
+        "body-square",
+        "body-capsule",
+        "body-weld"
+      ]
+    },
+    {
+      "id": "holes",
+      "feature": "Original art holes and explicit body-hole policy",
+      "requirements": "GEO-01 / AT-020.3",
+      "oracle": "4 mm2 counter through all four modes; material/void probes",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "hole-0",
+        "hole-1",
+        "hole-style-1-0",
+        "hole-style-1-1",
+        "hole-style-2-0",
+        "hole-style-2-1",
+        "hole-style-3-0",
+        "hole-style-3-1"
+      ],
+      "wasmCases": [
+        "hole-0",
+        "hole-1",
+        "hole-style-1-0",
+        "hole-style-1-1",
+        "hole-style-2-0",
+        "hole-style-2-1",
+        "hole-style-3-0",
+        "hole-style-3-1"
+      ]
+    },
+    {
+      "id": "disconnected",
+      "feature": "Accents, weld and support-width proposals",
+      "requirements": "SRC-04 / GEO-01",
+      "oracle": "No accent deletion; explicit component erosion diagnostic/proposal",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "accent-preserved",
+        "body-weld"
+      ],
+      "wasmCases": [
+        "accent-preserved",
+        "body-weld"
+      ]
+    },
+    {
+      "id": "rim",
+      "feature": "Distinct support material and interval",
+      "requirements": "MOD-03",
+      "oracle": "264*.6 mm3 added only in defined additive modes; exact layer spans",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "style-0-rim-0",
+        "style-0-rim-1",
+        "style-1-rim-0",
+        "style-1-rim-1",
+        "style-2-rim-0",
+        "style-2-rim-1",
+        "style-3-rim-0",
+        "style-3-rim-1",
+        "rim-layers-0.16",
+        "rim-layers-0.2",
+        "rim-layers-0.25"
+      ],
+      "wasmCases": [
+        "style-0-rim-0",
+        "style-0-rim-1",
+        "style-1-rim-0",
+        "style-1-rim-1",
+        "style-2-rim-0",
+        "style-2-rim-1",
+        "style-3-rim-0",
+        "style-3-rim-1",
+        "rim-layers-0.16",
+        "rim-layers-0.2",
+        "rim-layers-0.25"
+      ]
+    },
+    {
+      "id": "bands-core",
+      "feature": "Material height bands and body-colored core",
+      "requirements": "MOD-03",
+      "oracle": "873.6 mm3; separate core/cap probes; no clamping of overrides",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "bands",
+        "core",
+        "inactive-override",
+        "cap-layers-0.16",
+        "cap-layers-0.2",
+        "cap-layers-0.25"
+      ],
+      "wasmCases": [
+        "bands",
+        "core",
+        "inactive-override",
+        "cap-layers-0.16",
+        "cap-layers-0.2",
+        "cap-layers-0.25"
+      ]
+    },
+    {
+      "id": "text",
+      "feature": "Prepared glyphs, text base and stepped support",
+      "requirements": "SRC-04 / MOD-02",
+      "oracle": "Analytic rounded base area; source subtraction; positive face contact",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "text-bed",
+        "text-on",
+        "text-step",
+        "text-nobase",
+        "text-layers",
+        "text-eyelet"
+      ],
+      "wasmCases": [
+        "text-bed",
+        "text-on",
+        "text-step",
+        "text-nobase",
+        "text-layers",
+        "text-eyelet"
+      ]
+    },
+    {
+      "id": "bed-text",
+      "feature": "Bed Z independent of body datum and preview",
+      "requirements": "SRC-04 / ABI-01",
+      "oracle": "Text/base min Z0, max1.4, group2 identity preview; tray collision rejected",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "bed-clicky",
+        "bed-charm-integral",
+        "bed-charm-separate",
+        "bed-tray-collision"
+      ],
+      "wasmCases": [
+        "bed-clicky",
+        "bed-charm-integral",
+        "bed-charm-separate",
+        "bed-tray-collision"
+      ]
+    },
+    {
+      "id": "schedule",
+      "feature": "First/regular and feature-relative spans",
+      "requirements": "GEO-02 / AT-021.2/.4",
+      "oracle": "h0=.27, h=.16/.20/.25; no vertex snap or input mutation",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "text-layers",
+        "first-layers-0.16",
+        "relative-layers-0.16",
+        "nominal-0.16",
+        "first-layers-0.2",
+        "relative-layers-0.2",
+        "nominal-0.2",
+        "first-layers-0.25",
+        "relative-layers-0.25",
+        "nominal-0.25"
+      ],
+      "wasmCases": [
+        "text-layers",
+        "first-layers-0.16",
+        "relative-layers-0.16",
+        "nominal-0.16",
+        "first-layers-0.2",
+        "relative-layers-0.2",
+        "nominal-0.2",
+        "first-layers-0.25",
+        "relative-layers-0.25",
+        "nominal-0.25"
+      ]
+    },
+    {
+      "id": "materials",
+      "feature": "User role/region values and provenance",
+      "requirements": "MOD-02",
+      "oracle": "User region wins; role overrides and uint64 source identity retained",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "color-overrides",
+        "stable-base",
+        "stable-reorder"
+      ],
+      "wasmCases": [
+        "color-overrides",
+        "stable-base",
+        "stable-reorder"
+      ]
+    },
+    {
+      "id": "contacts",
+      "feature": "Actual 3D contacts and exact shared source boundaries",
+      "requirements": "GEO-01 / AT-020.2",
+      "oracle": "8 mm2 vertical face and two100 mm2 horizontal contacts; disjoint Z not contact",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "contact-intervals",
+        "contact-analytic",
+        "indexed",
+        "large-slope-seam"
+      ],
+      "wasmCases": [
+        "contact-intervals",
+        "contact-analytic",
+        "indexed",
+        "large-slope-seam"
+      ]
+    },
+    {
+      "id": "products",
+      "feature": "Prepared source across five product executors",
+      "requirements": "MOD-01",
+      "oracle": "All four modes on all five products with normal supporting source footprints",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "product-0-style-0",
+        "product-0-style-1",
+        "product-0-style-2",
+        "product-0-style-3",
+        "product-1-style-0",
+        "product-1-style-1",
+        "product-1-style-2",
+        "product-1-style-3",
+        "product-2-style-0",
+        "product-2-style-1",
+        "product-2-style-2",
+        "product-2-style-3",
+        "product-3-style-0",
+        "product-3-style-1",
+        "product-3-style-2",
+        "product-3-style-3",
+        "product-4-style-0",
+        "product-4-style-1",
+        "product-4-style-2",
+        "product-4-style-3"
+      ],
+      "wasmCases": [
+        "product-0-style-0",
+        "product-0-style-1",
+        "product-0-style-2",
+        "product-0-style-3",
+        "product-1-style-0",
+        "product-1-style-1",
+        "product-1-style-2",
+        "product-1-style-3",
+        "product-2-style-0",
+        "product-2-style-1",
+        "product-2-style-2",
+        "product-2-style-3",
+        "product-3-style-0",
+        "product-3-style-1",
+        "product-3-style-2",
+        "product-3-style-3",
+        "product-4-style-0",
+        "product-4-style-1",
+        "product-4-style-2",
+        "product-4-style-3"
+      ]
+    },
+    {
+      "id": "bevel-groove",
+      "feature": "Source/slab preservation through existing feature executor",
+      "requirements": "MOD-03 / GEO-03",
+      "oracle": "Actual top profiles and groove radial oracle; final blind-bore wall guard is separate pending remediation",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "bevel-style-0",
+        "bevel-style-1",
+        "bevel-style-2",
+        "bevel-style-3",
+        "groove-section-0",
+        "groove-section-1"
+      ],
+      "wasmCases": [
+        "bevel-style-0",
+        "bevel-style-1",
+        "bevel-style-2",
+        "bevel-style-3",
+        "groove-section-0",
+        "groove-section-1"
+      ]
+    },
+    {
+      "id": "invalid",
+      "feature": "Typed invalid input, proposals, budgets and cancellation",
+      "requirements": "MOD-03 / ABI-01",
+      "oracle": "No partial source/mesh publication; input parameters stay unchanged",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "wrong-footprint",
+        "clicky-size-proposal",
+        "invalid-overlap",
+        "invalid-point-contact",
+        "invalid-raw-edge",
+        "invalid-stale",
+        "invalid-index",
+        "invalid-rim-floor",
+        "invalid-recess-floor",
+        "invalid-cap-depth",
+        "invalid-rounding",
+        "invalid-text-floating",
+        "invalid-text-outside",
+        "invalid-datum",
+        "budget-operations",
+        "budget-points",
+        "cancel-checkpoint"
+      ],
+      "wasmCases": [
+        "wrong-footprint",
+        "clicky-size-proposal",
+        "invalid-overlap",
+        "invalid-point-contact",
+        "invalid-raw-edge",
+        "invalid-stale",
+        "invalid-index",
+        "invalid-rim-floor",
+        "invalid-recess-floor",
+        "invalid-cap-depth",
+        "invalid-rounding",
+        "invalid-text-floating",
+        "invalid-text-outside",
+        "invalid-datum",
+        "budget-operations",
+        "budget-points",
+        "cancel-checkpoint"
+      ]
+    },
+    {
+      "id": "seeded",
+      "feature": "Reproducible numerical corner cases",
+      "requirements": "QA-01 / QA-04",
+      "oracle": "24 seed0x5a17c0de analytic size/height/pad combinations; per-case reproducers",
+      "status": "pass (component scope)",
+      "nativeCases": [
+        "seed-0",
+        "seed-1",
+        "seed-2",
+        "seed-3",
+        "seed-4",
+        "seed-5",
+        "seed-6",
+        "seed-7",
+        "seed-8",
+        "seed-9",
+        "seed-10",
+        "seed-11",
+        "seed-12",
+        "seed-13",
+        "seed-14",
+        "seed-15",
+        "seed-16",
+        "seed-17",
+        "seed-18",
+        "seed-19",
+        "seed-20",
+        "seed-21",
+        "seed-22",
+        "seed-23"
+      ],
+      "wasmCases": [
+        "seed-0",
+        "seed-1",
+        "seed-2",
+        "seed-3",
+        "seed-4",
+        "seed-5",
+        "seed-6",
+        "seed-7",
+        "seed-8",
+        "seed-9",
+        "seed-10",
+        "seed-11",
+        "seed-12",
+        "seed-13",
+        "seed-14",
+        "seed-15",
+        "seed-16",
+        "seed-17",
+        "seed-18",
+        "seed-19",
+        "seed-20",
+        "seed-21",
+        "seed-22",
+        "seed-23"
+      ]
+    }
+  ],
+  "limits": [
+    "minFeature component erosion does not certify every local neck",
+    "canonical opaque XY required; decoder/shaping/raster uncertainty stays upstream",
+    "root runtime/browser/exporter and physical qualification are separate",
+    "parent-reported mechanics findings001..007 pending bounded remediation after this source freeze"
+  ]
+}

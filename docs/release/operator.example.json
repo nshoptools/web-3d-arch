@@ -1,0 +1,45 @@
+{
+  "version": "arch-release-operator/1",
+  "package": {
+    "directory": "REPLACE_ABSOLUTE_IMMUTABLE_ARTIFACT_DIRECTORY",
+    "sha256": "REPLACE_CHECKED_RELEASE_MANIFEST_SHA256"
+  },
+  "origin": "https://REPLACE_REAL_REGISTERED_ORIGIN:8443",
+  "host": {
+    "bindAddress": "0.0.0.0",
+    "port": 8443,
+    "serviceWorker": false,
+    "runtimeDirectory": "REPLACE_OWN_RUN_HOST_RUNTIME_DIRECTORY"
+  },
+  "backend": {
+    "port": 9080,
+    "dataDirectory": "REPLACE_OWN_RUN_BACKEND_DATA_DIRECTORY",
+    "keysFile": "REPLACE_OWN_RUN_ORIGINAL_BACKEND_KEYS_FILE",
+    "oidcFile": "REPLACE_OWN_RUN_REGISTERED_OIDC_FILE",
+    "aiAdapters": ""
+  },
+  "tls": {
+    "keyFile": "REPLACE_OWN_RUN_TLS_KEY_PEM",
+    "certificateFile": "REPLACE_OWN_RUN_TLS_CHAIN_PEM"
+  },
+  "bootstrap": {
+    "issuer": "REPLACE_REGISTERED_OWNER_ISSUER",
+    "subject": "REPLACE_ACTUAL_OWNER_SUBJECT",
+    "policyFile": "REPLACE_OWN_RUN_APPROVED_POLICY_FILE"
+  },
+  "runtime": {
+    "version": "arch-backend-runtime/1",
+    "maintenance": {
+      "enabled": true,
+      "intervalMs": 300000,
+      "batchRows": 100,
+      "batchBytes": 33554432,
+      "maxBatchesPerTurn": 4,
+      "catchUpDelayMs": 25,
+      "failureDelayMs": 30000,
+      "maxClockStepMs": 300000,
+      "maxLagMs": 3600000
+    },
+    "shutdownGraceMs": 10000
+  }
+}

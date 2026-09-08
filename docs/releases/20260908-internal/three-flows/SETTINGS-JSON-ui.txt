@@ -1,0 +1,268 @@
+Bỏ qua thanh điều hướng, tới khung thiết kế
+W3
+web‑3d‑arch
+Bước 1 · Nguồn & màu
+đang mở
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Bước 2 · Mô hình 3D
+chưa có dự án
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Tìm nhanh
+Ctrl K
+Trực tuyến
+Tải nguồn
+Ctrl O
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Tạo dự án
+53bce713-414c-4462-962f-2f4e1b4443a4
+Ảnh nguồn
+Sản phẩm
+Lớp màu
+0
+— 0 vật liệu trong bảng màu
+Thông số
+Xuất file
+–
+— Chưa dựng lần nào, nên chưa có kết quả kiểm. Các đường xuất không cần lưới vẫn mở.
+Thư viện
+0
+— 0 dự án trong thư viện
+Ảnh nguồn
+
+Tải ảnh, tạo bằng AI, gõ chữ hoặc chọn emoji
+
+Gập bảng
+\
+Bắt đầu bằng một dự án
+
+Nguồn, thông số, màu và lưu đều thuộc về một dự án. Khi chưa có dự án nào đang mở, nhân từ chối các lệnh đó với mã PROJECT_REQUIRED, nên hãy chọn loại sản phẩm và tạo dự án trước.
+
+Loại sản phẩm
+Móc khóa — Tấm 2,5D có lỗ móc và gờ.
+Keycap — Trụ tương thích kiểu MX và khay switch.
+Dây đeo — Lỗ luồn dây và slot.
+Ngàm khối — Lưới lỗ ngàm, rãnh và tai gióng.
+Charm cài dép — Nút cài, cổ và vành.
+Loại sản phẩm quyết định bộ thông số và ràng buộc lắp ghép. Đổi lại sau được, và nhân sẽ hỏi trước khi đổi.
+Sau khi tạo xong, mở
+Tải tệp ảnh hoặc SVG
+Chọn emoji
+Gõ chữ
+Không mở gì, tôi tự chọn
+Chỉ là đường điều hướng: giao diện không tự gửi lệnh nguồn thay bạn.
+Tạo dự án
+Mở gói dự án đã có
+
+Gói cứu do chính ứng dụng này xuất ra (*.arch-project.zip). Nhân kiểm schema, đường dẫn, CRC và SHA-256 rồi mới tạo bản sao; hỏng ở bước nào thì không có dự án nào được tạo.
+
+Tải tệp
+Chọn tệp từ máy
+Ctrl O
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+
+Kéo thả tệp lên khung xem cũng được. Dán bằng Ctrl+V hoạt động khi con trỏ không ở trong một ô nhập.
+
+Dán: ADAPTER_CAPABILITY_REQUIRED
+
+Trần theo LIM-01: ảnh 32 MB, SVG 16 MB, lưới STL/OBJ 64 MB. Vượt trần bị từ chối trước khi ghi, trạng thái cũ được giữ nguyên.
+
+Tạo ảnh bằng AI
+Chữ
+8 thông số · 2 công tắc
+Chưa có chữ
+chưa chọn font
+
+Xem trước là bản dựng chữ do nhân trả về; đây không phải kết quả kiểm mesh.
+
+Nội dung chữ
+Tối đa 500 cụm ký tự Unicode. Chuỗi được giữ nguyên, không cắt đuôi ngầm.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Tìm font
+Chỉ font đang chọn được nạp. Danh mục lấy từ nhân.
+TEXT_CONTEXT
+Font
+chưa chọn — ngoài kết quả tìm
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Khối chữ
+8 thông số
+Đơn vị cỡ chữ
+Milimet (mm)
+Nhân đang hiển thị cỡ chữ là 10 mm. 1 pt = 25,4/72 mm; giao diện không tự quy đổi.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Cỡ chữ
+mm
+Miền 2–120 mm · bước 0,1
+Cỡ chữ là em-size, không phải chiều cao nét nhìn thấy. 1 pt = 25,4/72 mm.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Cao chữ
+lớp
+Miền 1–80 lớp · bước 1
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Rộng đế chữ
+mm
+Miền 0–40 mm · bước 0,1
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Dày đế chữ
+lớp
+Miền 1–60 lớp · bước 1
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Bo viền đế
+mm
+Miền 0–20 mm · bước 0,1
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Uốn cong
+°
+Miền -180–180 ° · bước 1
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Giãn chữ
+mm
+Miền -5–20 mm · bước 0,05
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Giãn dòng
+×
+Miền 0,5–4 × · bước 0,05
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+
+Các chiều cao tính theo lớp. Số mm tương ứng do nhân suy ra từ lịch lớp Z; giao diện không tự nhân số lớp với một chiều cao lớp giả định.
+
+Đế và mép
+2 công tắc
+Có đế đỡ chữ
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Bo mép chữ và đế
+Độc lập với bo mép trên của thân sản phẩm.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Chỗ đứng của khối chữ
+Vị trí X
+mm
+Ô số thay cho Shift+kéo. Nhân xử lý cả số và cử chỉ.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Vị trí Y
+mm
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Cách đặt khối chữ
+Trên mô hình
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Dùng chữ làm hình
+Tạo nguồn thiết kế từ khối chữ. Thay bằng ảnh sau này là một lệnh có hoàn tác.
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Bỏ chữ
+Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.
+Gỡ chữ và đế chữ; hoàn tác được.
+Emoji
+Tìm emoji
+Tìm được cả khi bỏ dấu; mọi từ trong ô tìm đều phải khớp.
+Ví dụ:
+trái tim
+la co
+mặt cười
+1F600
+ngôi sao
+Tất cả bộ nguồn
+Gần đây
+Yêu thích
+Lọc bớt mục đã đo là không nên in
+Mục chưa đo không bao giờ bị lọc.
+TEXT_CONTEXT
+Bộ nguồn thiếu mã sẽ báo thiếu; giao diện không thay bằng bộ khác hay hình tạm.
+
+Không có mục nào khớp. Thử bỏ bớt từ khóa hoặc đổi bộ nguồn.
+
+Hiện 0 / 0 mục
+‹
+Gập bảng thiết lập
+
+Khung ảnh nguồn. Mũi tên để dời khung nhìn, phím cộng và trừ để phóng, phím 0 để vừa khung. Công cụ Tô màu: Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu. Enter kết thúc và gửi thao tác, Backspace bỏ nút cuối của đường cong, Escape hủy thao tác đang vẽ. Nếu không dùng được con trỏ, dùng ô nhập tọa độ trong bảng công cụ.
+
+100%
+Chưa có ảnh nguồn để sửa
+
+Nhân chưa công bố project.sourceCanvas. Bảy công cụ sửa vùng chỉ chạy trên ảnh raster mà nhân đã chuẩn bị; giao diện không tự dựng ảnh thay cho nguồn của bạn.
+
+Chỉ số
+Công cụ
+Khung ảnh và tọa độ
+Gợi ý
+Vùng màu
+0
+Cỡ nguồn
+do nhân báo
+Nguồn
+chưa có
+Ảnh sửa
+chưa công bố
+Tô màu (B) — Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu.
+Tô màu — phím B
+B
+Vẽ nét (V) — Kéo một nét có bề rộng; giữ Shift để bám ngang/dọc/45°.
+Vẽ nét — phím V
+V
+Đường cong (U) — Bấm từng điểm nút; nhân nội suy đường cong qua các nút đó.
+Đường cong — phím U
+U
+Xóa (X) — Kéo một nét; gộp màu hoặc cắt thủng theo chế độ đang chọn.
+Xóa — phím X
+X
+Đường cắt (C) — Kéo một nét để xẻ vùng; giữ Shift để bám hướng.
+Đường cắt — phím C
+C
+Khung cắt (K) — Kéo từ góc này sang góc kia; chữ nhật hoặc elip, giữ phần trong hoặc ngoài.
+Khung cắt — phím K
+K
+Vá hở (H) — Bấm một điểm mồi trong lỗ cần vá; màu chọn tay hoặc lấy theo vùng bao.
+Vá hở — phím H
+H
+▾ Tùy chọn công cụ và khung ảnh
+Tô màu
+
+Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu.
+
+Chưa có vùng màu để chọn.
+Nhân chưa công bố vùng màu nào cho nguồn này, nên công cụ này chưa gửi được.
+Hoàn tác (0)
+Z
+Không còn bước nào để hoàn tác.
+Làm lại (0)
+Không còn bước nào để làm lại.
+Khung ảnh nguồn
+−
+100%
++
+Vừa khung
+100%
+←
+→
+↑
+↓
+Ảnh đang xem
+Bản hiện tại
+Bản trước khi sửa
+“Bản trước khi sửa” là ảnh raster của bản chuyển đổi trước lần sửa đầu tiên. Đó không phải byte gốc của tệp vector hay font: bản gốc đó do nhân giữ riêng.
+Nhập tọa độ bằng bàn phím
+
+Tọa độ theo pixel của ảnh nguồn, gốc ở góc trên bên trái. Đây là đường tương đương cho người không dùng được con trỏ.
+
+X (px ảnh)
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Y (px ảnh)
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Thêm điểm
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Áp dụng thao tác
+Thêm ít nhất một điểm trước khi áp dụng.
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Tách tầng
+Tách tầng chỉ có ở bước 2, sau khi đã dựng mô hình.
+Chưa mở dự án nào
+
+Nguồn, thông số và màu đều thuộc về một dự án. Nhân từ chối mọi lệnh nguồn với mã PROJECT_REQUIRED cho tới khi có một dự án đang mở, nên hãy bắt đầu từ đó.
+
+Tạo dự án và chọn loại sản phẩm
+Mở dự án đã lưu
+Kéo thả ảnh hoặc SVG vào khung này, dán bằng Ctrl+V, hoặc mở khu Ảnh nguồn để gõ chữ và chọn emoji.
+SVG màu
+Snapshot hiện tại không công bố đường xuất SVG của nguồn.
+Tạo dự án
+Ctrl ⏎
+Đã xong: Đã gửi bản gộp cài đặt.
+Đã gửi yêu cầu xuất cài đặt.

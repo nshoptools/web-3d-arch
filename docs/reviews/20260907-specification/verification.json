@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-08",
+  "specificationVersion": "1.0.1",
+  "status": "pass-for-declared-document-and-input-scope",
+  "baseline": {
+    "schemaVersion": 1,
+    "requestedSuite": "baseline",
+    "node": "v24.19.0",
+    "exitCode": 0,
+    "results": [
+      {
+        "suite": "specification",
+        "file": "tests/specification/specification.test.mjs",
+        "exitCode": 0,
+        "status": "pass",
+        "log": "tests-specification.tap"
+      },
+      {
+        "suite": "input",
+        "file": "tests/contracts/font-source.test.mjs",
+        "exitCode": 0,
+        "status": "pass",
+        "log": "tests-input.tap"
+      }
+    ],
+    "acceptance": {
+      "executedByThisRunner": false,
+      "reason": "Acceptance campaigns are planned, not executed by this runner.",
+      "status": "unverified",
+      "plannedCases": 40,
+      "plannedChecks": 113
+    },
+    "scope": "Only implemented baseline suites; not UI, mesh, slicer or physical-print certification"
+  },
+  "implementedTestCounts": {
+    "specification": 8,
+    "inputContract": 3,
+    "passed": 11,
+    "failed": 0,
+    "counting": "Unique implemented tests, not multiplied by repeated runs"
+  },
+  "sourceAudit": {
+    "command": "python -B tools/reviews/audit-spec-sources.py",
+    "exitCode": 0,
+    "report": "source-audit.json",
+    "files": 6,
+    "manifestHashesMatched": 6,
+    "scope": "Hash/parse/structure; the U1 negative mapping observation is confirmed, not promoted to slicer compatibility"
+  },
+  "selfContainedReplica": {
+    "schemaVersion": 1,
+    "method": "Copy explicit permanent inputs to a fresh ordinary directory, then execute baseline and source audit there",
+    "copiedFileCount": 105,
+    "absentBeforeExecution": [
+      "tmp",
+      "report",
+      ".toolchain",
+      ".git"
+    ],
+    "outputs": "Child runner creates its own isolated output directories after the absence check",
+    "sourceManifestSha256": "949c2e2af220edadb44caabaa2a63e5f39e2f6feea9fb1ff33309a5ac1daffa7",
+    "testScriptSha256": "32ed06f84c9f721e4cea4da3274aeeadc32ea15873eb7e00717d9a361abbd169",
+    "auditScriptSha256": "2d2d2470e07672a27ac555b8835bae759ccba94bfb8292f05e180f902d804e58",
+    "scope": "Document/input suites and structural data audit; no product, slicer or physical-print certification",
+    "baselineExitCode": 0,
+    "baseline": {
+      "schemaVersion": 1,
+      "requestedSuite": "baseline",
+      "node": "v24.19.0",
+      "exitCode": 0,
+      "results": [
+        {
+          "suite": "specification",
+          "file": "tests/specification/specification.test.mjs",
+          "exitCode": 0,
+          "status": "pass",
+          "log": "standalone-tests-specification.tap"
+        },
+        {
+          "suite": "input",
+          "file": "tests/contracts/font-source.test.mjs",
+          "exitCode": 0,
+          "status": "pass",
+          "log": "standalone-tests-input.tap"
+        }
+      ],
+      "acceptance": {
+        "plannedChecks": 113,
+        "status": "unverified",
+        "plannedCases": 40,
+        "executedByThisRunner": false,
+        "reason": "Acceptance campaigns are planned, not executed by this runner."
+      },
+      "scope": "Only implemented baseline suites; not UI, mesh, slicer or physical-print certification"
+    },
+    "auditExitCode": 0,
+    "audit": {
+      "pass": 6
+    },
+    "status": "pass",
+    "auditReport": "source-audit.json",
+    "auditMatchesPrimaryReport": true,
+    "reproduce": "tools/tests/verify-self-contained.ps1 -Seat codex -RunId <new-run-id>"
+  },
+  "missingInputProbe": {
+    "scope": "One missing mandatory fixture in a disposable replica",
+    "inputId": "u1-settings-v1",
+    "auditExitCode": 1,
+    "inputStatus": "fail",
+    "reason": "Mandatory packaged input unavailable",
+    "restoredIdenticalBytes": true,
+    "status": "pass"
+  },
+  "jsonParserProbes": {
+    "scope": "Audit parser, not application input pipeline",
+    "rejected": [
+      "duplicate JSON keys",
+      "NaN literal",
+      "1e999 numeric overflow"
+    ],
+    "accepted": "finite decimal 0.05",
+    "status": "pass"
+  },
+  "product": {
+    "requirements": 55,
+    "plannedCampaigns": 40,
+    "plannedChecks": 113,
+    "executed": 0,
+    "status": "unverified"
+  },
+  "finalDocumentCheck": {
+    "markdownFiles": 21,
+    "localLinksChecked": 86,
+    "status": "pass",
+    "scope": "Official specifications, complete edited review package, fixture guides and test guide"
+  },
+  "limitations": [
+    "Review seat configuration remains not fully verified",
+    "No application UI, mesh, AI-provider, slicer or physical-print validation",
+    "The publication revision is an editorial change, not an additional independent review approval"
+  ]
+}

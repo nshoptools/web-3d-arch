@@ -1,0 +1,27 @@
+{
+  "version": "arch-curved-guard-seal/1",
+  "status": "frozen",
+  "sealedAt": "2026-09-08T12:17:50.809Z",
+  "files": [
+    {
+      "path": "reports/checked-files.json",
+      "bytes": 7451,
+      "sha256": "4d58305244fdd7a0aff6fc11ee3200be49445ec127e578127106fd3d6a527c8a"
+    },
+    {
+      "path": "reports/authoritative-results.json",
+      "bytes": 33570,
+      "sha256": "1931992cd8b7d19b2a9f187ab29ed670c029b805a2c26620326bb10c2d312e4c"
+    },
+    {
+      "path": "reports/handoff.md",
+      "bytes": 4112,
+      "sha256": "4b637af644975884ee9138c59b4fc4a813c5fe8cdcb1e04c18627a110f925495"
+    },
+    {
+      "path": "reports/evidence-index.json",
+      "bytes": 217469,
+      "sha256": "f9ba139ca04fc5dde87adbc9c4d8d09a7945899351e9e368d1c1d960d27579c6"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "verdict": "pass",
+  "expected": "Actual ordinary keychain + SVG goes through compiled Worker/WASM and visible Three model to STL, independent mesh readback and current-revision receipt; explicit consent if proposed",
+  "actual": {
+    "model": {
+      "visibleRevision": 2,
+      "readouts": "Kích thước\n48 × 32 × 3,2 mm\nBộ phận\n3\nTam giác\n1.900\nKiểm mesh\nđã kiểm đạt"
+    },
+    "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+    "revision": 2,
+    "sha256": "ffb7a42dbb036c699e12f67653ac8dca21f3d7061f7529a65837bcbbd60ca810",
+    "byteLength": 95084,
+    "triangles": 1900,
+    "bounds": {
+      "min": [
+        -24,
+        -12.749999046325684,
+        0
+      ],
+      "max": [
+        24,
+        19.249998092651367,
+        3.200000047683716
+      ]
+    },
+    "mesh": {
+      "vertexCount": 950,
+      "faceCount": 1900,
+      "edgeCount": 2850,
+      "euler": 0,
+      "volume": 3752.9201799580555,
+      "area": 3048.157839069353,
+      "caps": {
+        "0": 1253.2167361072793,
+        "2.4000000953674316": 321.716813354897,
+        "3.200000047683716": 931.4999227523803
+      }
+    },
+    "receiptSHA256": "599302d31a1a269dd828a60bdc05893b7975adde43a4fa4839a590d26c800cdb",
+    "conditioning": {
+      "status": "not-proposed"
+    },
+    "projectIdentityBinding": "cross-checked against independent downloaded rescue in RESCUE-ZIP",
+    "qualificationLimit": "No added physical-fit, global-error or self-intersection proof from this independent reader"
+  },
+  "durationMs": 18714
+}

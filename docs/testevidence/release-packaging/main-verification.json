@@ -1,0 +1,31 @@
+{
+  "actualLocalHTTPS": true,
+  "browserConcurrency": 1,
+  "counts": {
+    "cancelled": 0,
+    "todo": 0,
+    "skipped": 0,
+    "pass": 46,
+    "tests": 46,
+    "fail": 0
+  },
+  "startedUtc": "2026-09-08T06:40:07.6700417Z",
+  "exitCode": 0,
+  "independentReview": false,
+  "syntax": true,
+  "actualModelEffortFastIndependentlyAttested": false,
+  "realDeployment": false,
+  "fullLibraryResources": 21391,
+  "node": "24.19.0",
+  "tapSha256": "4d317da0591af7dbe97b4684d07454fcdadc21aaeaa90ec51a720e1c2f65050c",
+  "syntheticEntryAndWasm": true,
+  "status": "passed",
+  "appComplete": false,
+  "playwright": "1.63.0",
+  "finishedUtc": "2026-09-08T06:48:14.5529377Z",
+  "previews": 7751,
+  "originalAssetBytes": 306260612,
+  "liveProviderCalls": 0,
+  "codeStableDuringRun": true,
+  "implementationOnly": true
+}

@@ -138,7 +138,7 @@ const report = {schemaVersion: 1, status: 'pass', harfbuzzjs: hbLock.version, ha
   negativeChecks: ['wrong font hash', 'missing glyph', 'unpaired surrogate', 'multiline run',
     'out of range axis', 'monochrome as color', 'text-selector preservation', 'UTF-16 cluster offsets'],
   sourceModuleSha256: sha256(read('src/input/font-source.mjs')), meshValidated: false,
-  scope: 'Vendored JS/WASM with native HarfBuzz reference comparison, closed source curves and color paint extraction. No browser UI, color rasterizer or mesh exporter is implemented.'};
+  scope: 'Vendored JS/WASM with native HarfBuzz reference comparison, closed source curves and color paint extraction. This audit does not qualify browser UI, color rasterization or mesh export.'};
 const target = local('docs/assets/input-runtime-audit.json');
 const serialized = JSON.stringify(report, null, 2) + '\n';
 if (process.argv.includes('--write')) fs.writeFileSync(target, serialized);

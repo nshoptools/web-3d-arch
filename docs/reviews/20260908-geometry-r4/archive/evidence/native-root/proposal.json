@@ -1,0 +1,147 @@
+{
+  "conditioning": {
+    "algorithm": "nearest-binary32-paired-edge-link-quotient/1",
+    "candidateTriangles": 4840,
+    "candidateVertices": 2424,
+    "candidateVolumeMm3": 14456.486695101785,
+    "collapsedEdges": 224,
+    "components": [
+      {
+        "edges": 3570,
+        "euler": 2,
+        "faces": 2380,
+        "orientation": 1,
+        "vertices": 1192,
+        "volumeMm3": 3034.692356813033
+      },
+      {
+        "edges": 3690,
+        "euler": 2,
+        "faces": 2460,
+        "orientation": 1,
+        "vertices": 1232,
+        "volumeMm3": 11421.794338288752
+      }
+    ],
+    "confirmed": false,
+    "contextHash": "e279b81150bcd2e0ee943fcb4792f54a45062694ff540bc4f8c37c30ad00eea8",
+    "geometryHash": "91551927999bd957db86f370f6055be41f740b0332d812ceed790be3828f26d7",
+    "hausdorffUpperBoundMm": 3.918571649315768e-6,
+    "maximumDisplacementMm": 3.9185716493157654e-6,
+    "proof": "affine original-triangle image; collapsed images covered by retained edges; full link condition; exact dyadic embedding predicates",
+    "proposalHash": "3af07fa0342b15d9b012916707ff1907a0aee3e76382523d11c644dc67d778b5",
+    "qualification": {
+      "ambientIsotopy": "unverified",
+      "materialPolicy": "union STL only; original material mapping retained",
+      "physicalFit": "unqualified",
+      "wholePipelineErrorBoundMm": null
+    },
+    "removedDegenerateFaceImages": 448,
+    "requestedLimitMm": 0.00001,
+    "requiresConfirmation": true,
+    "residentBytes": 285184,
+    "sourceTriangles": 5288,
+    "sourceVertices": 2648,
+    "version": "arch-final-float-conditioning/1",
+    "workLimit": 50000000,
+    "workUnits": 4081133,
+    "workingAdmissionBytes": 14589952
+  },
+  "confirmation": {
+    "optionsHash": "67730733d2617b5a6c5fe95edf23af47132196288a09d9568999820d15f8eb30",
+    "proposalHash": "3af07fa0342b15d9b012916707ff1907a0aee3e76382523d11c644dc67d778b5",
+    "sourceGeneration": 1,
+    "sourceHash": "db14ae7965a58f4392452b4fefd69514a765904fb38330a2e0592cd4299d6131",
+    "sourceRevision": "1",
+    "version": "arch-final-float-confirmation/1"
+  },
+  "materialMapping": [
+    {
+      "materialSource": 1,
+      "part": 0,
+      "rgba": 808795135,
+      "slot": 1,
+      "source": 0
+    },
+    {
+      "materialSource": 2,
+      "part": 1,
+      "rgba": 3762570495,
+      "slot": 1,
+      "source": 1
+    },
+    {
+      "materialSource": 3,
+      "part": 2,
+      "rgba": 864612095,
+      "slot": 1,
+      "source": 2
+    },
+    {
+      "materialSource": 4,
+      "part": 3,
+      "rgba": 808795135,
+      "slot": 1,
+      "source": 3
+    },
+    {
+      "materialSource": 5,
+      "part": 4,
+      "rgba": 808795135,
+      "slot": 1,
+      "source": 4
+    },
+    {
+      "materialSource": 6,
+      "part": 5,
+      "rgba": 1418102783,
+      "slot": 1,
+      "source": 6
+    },
+    {
+      "materialSource": 7,
+      "part": 6,
+      "rgba": 1418102783,
+      "slot": 1,
+      "source": 7
+    },
+    {
+      "materialSource": 8,
+      "part": 7,
+      "rgba": 1418102783,
+      "slot": 1,
+      "source": 8
+    },
+    {
+      "materialSource": 9,
+      "part": 8,
+      "rgba": 1418102783,
+      "slot": 1,
+      "source": 12
+    }
+  ],
+  "originalBoundsMm": [
+    -21.200000002980232,
+    -18.450000002980232,
+    0.0,
+    73.1000000089407,
+    18.450000002980232,
+    16.950000000000003
+  ],
+  "originalTransform": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "originalUnionVolumeMm3": 14456.486113098505,
+  "version": "arch-final-float-proposal/1"
+}

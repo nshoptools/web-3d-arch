@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "version": "slicer-profiles-v1",
+  "files": [
+    {
+      "path": "mau-3mf-bambu.js",
+      "sha256": "190f78c5e05e08d511edb42a5e65ff00f47cd60aa32b4aca34197fc3d11d22f9",
+      "bytes": 43485,
+      "origin": "Project-held internal reference fixture; bytes are identified by the SHA-256 in this record",
+      "received": "2026-09-07",
+      "rights": "user-provided for internal project review/testing; distribution of upstream settings/G-code unverified",
+      "variable": "MAU3MF_BAMBU",
+      "keyCount": 582,
+      "slicerVersionField": "02.08.02.60",
+      "printerModel": "Bambu Lab P1S",
+      "nozzleDiameter": [
+        "0.4"
+      ],
+      "filamentColour": [
+        "#76D9F4",
+        "#161616",
+        "#FF0080",
+        "#FF8040"
+      ],
+      "observedArrayLengths": {
+        "0": 6,
+        "1": 24,
+        "2": 67,
+        "4": 121,
+        "6": 2,
+        "8": 48,
+        "12": 1,
+        "16": 3
+      },
+      "verification": {
+        "literalJsonParsed": true,
+        "isComplete3mf": false,
+        "slicerRoundtrip": "unverified",
+        "physicalPrint": "unverified"
+      }
+    },
+    {
+      "path": "mau-3mf-u1.js",
+      "sha256": "e4070112c126244d2df6a0eff7295a2e3198a03b4025e49a686a5978bc490643",
+      "bytes": 25487,
+      "origin": "Project-held internal reference fixture; bytes are identified by the SHA-256 in this record",
+      "received": "2026-09-07",
+      "rights": "user-provided for internal project review/testing; distribution of upstream settings/G-code unverified",
+      "variable": "MAU3MF_U1",
+      "keyCount": 549,
+      "slicerVersionField": "2.2.1",
+      "printerModel": "Snapmaker U1",
+      "nozzleDiameter": [
+        "0.4",
+        "0.4",
+        "0.4",
+        "0.4"
+      ],
+      "filamentColour": [
+        "#FF0000",
+        "#0080FF",
+        "#FFFFFF",
+        "#000000"
+      ],
+      "observedArrayLengths": {
+        "0": 4,
+        "1": 7,
+        "2": 19,
+        "4": 125,
+        "8": 1,
+        "10": 1,
+        "16": 1
+      },
+      "verification": {
+        "literalJsonParsed": true,
+        "isComplete3mf": false,
+        "slicerRoundtrip": "unverified",
+        "physicalPrint": "unverified"
+      }
+    }
+  ],
+  "metadataRevision": 2,
+  "metadataUpdatedAt": "2026-09-08"
+}

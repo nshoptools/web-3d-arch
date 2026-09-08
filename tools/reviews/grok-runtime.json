@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "windows_verified_builds": [
+    {
+      "version": "1.0.13",
+      "build": "5e9a58528b76",
+      "sha256": "bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672",
+      "verified_at": "2026-09-07",
+      "evidence": "docs/reviews/GROK-WINDOWS-ISOLATION.md"
+    }
+  ]
+}

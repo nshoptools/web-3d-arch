@@ -1,0 +1,9 @@
+{
+  "buildId": "REPLACE_WITH_UNIQUE_RELEASE_ID",
+  "assets": [
+    { "url": "/index.html", "file": "index.html", "cache": "revalidate" },
+    { "url": "/assets/app-REPLACE.mjs", "file": "assets/app-REPLACE.mjs", "cache": "revalidate" },
+    { "url": "/assets/engine-REPLACE.wasm", "file": "assets/engine-REPLACE.wasm", "cache": "revalidate" }
+  ],
+  "navigations": { "/": "/index.html", "/settings": "/index.html" }
+}

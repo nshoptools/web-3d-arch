@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "kind": "durable-independent-review-extract",
+  "completedUtc": "2026-09-08T05:35:15.135579+00:00",
+  "originalReportSha256": "8e625de71a3d0b1c7abcff28ead1b357499f6a0fce8eb56293da12c3412a0447",
+  "originalVerdict": "needs-changes",
+  "releaseApproval": false,
+  "configuration": {
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "fastMode": false,
+    "cli": "0.153.4",
+    "binarySha256": "444A3F0008050605CAE73CD9B7A2DCAC61294062DFAAB56DD20430FD6498518B",
+    "verifiedUtc": "2026-09-08T04:59:06.3934979Z",
+    "processModelMatches": true,
+    "processEffortMax": true,
+    "processFastDisabled": true,
+    "effectiveFastFeature": "fast_mode                                stable             false",
+    "serverServiceTierTelemetry": "unavailable"
+  },
+  "reviewedRuntime": {
+    "mjsSha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+    "wasmSha256": "16080c207725662ab85215783b3e012e3195f5e9f835874bc0069d9421c98300"
+  },
+  "sourceManifestSha256": "ba1495ef171bf827b2b41dfb4c02be1ee2e185f23cadd811621df4adc68cbff7",
+  "findings": [
+    {
+      "id": "R3-F1",
+      "severity": "high",
+      "priority": "P1",
+      "classification": "code/root-integration",
+      "title": "Gate assembly bị caller thay thế ở đường final export",
+      "locations": [
+        {
+          "path": "src/core/engine-client.mjs",
+          "line": 262
+        },
+        {
+          "path": "src/core/engine-worker.mjs",
+          "line": 219
+        },
+        {
+          "path": "src/kernel/final-scene-export/rust/mod.rs",
+          "line": 44
+        }
+      ],
+      "requirement": "EXP-02 và final-scene-export/docs/API.md: parent bind trusted gate từ committed final snapshot; assembly chặn mọi format kể cả inspection.",
+      "trigger": "Charm/noi, charmGan=roi, charmRap=true; snapshot APMS.exportBlocked=true. Cùng snapshot/generation/mapping, request AFEX gates=0.",
+      "impact": "STL/ZIP/SVG được công bố dù productExportDescriptor từ chối PRODUCT_EXPORT_BLOCKED. Đây là thiếu ràng buộc ở parent; raw native API được thiết kế nhận input trusted.",
+      "measurements": {
+        "snapshotExportBlocked": true,
+        "descriptorError": "PRODUCT_EXPORT_BLOCKED",
+        "omittedGatePublishedFormats": [
+          "STL",
+          "material ZIP",
+          "section SVG"
+        ],
+        "stlVolumeMm3": 2805.613643587315,
+        "controlWithGate4": "ASSEMBLY_VIEW",
+        "sourceSnapshotUnchanged": true
+      },
+      "limits": "Không chứng minh source/mechanics INVALID xuất được; các diagnostic handle INVALID thử riêng không có snapshot, không có receipt, exporter trả NO_SNAPSHOT."
+    },
+    {
+      "id": "R3-F2",
+      "severity": "medium",
+      "priority": "P2",
+      "classification": "code/identity-integration",
+      "title": "Revision trùng nhau trong request không được so với revision thật của snapshot",
+      "locations": [
+        {
+          "path": "src/kernel/final-scene-export/rust/wire.rs",
+          "line": 69
+        },
+        {
+          "path": "src/kernel/final-scene-export/rust/mod.rs",
+          "line": 44
+        },
+        {
+          "path": "src/core/engine-worker.mjs",
+          "line": 219
+        }
+      ],
+      "requirement": "Exact committed source head/revision; AFEX API yêu cầu parent bind authority và companion phải nhận diện đúng artifact.",
+      "trigger": "Product snapshot revision1; AFEX revision=expectedRevision=9007199254741235, cùng generation và mapping thật.",
+      "impact": "Tạo STL có sourceProjectRevision sai. Kiểm chỉ so hai giá trị caller gửi với nhau; exact product head/request chưa được ràng buộc ở đường này.",
+      "measurements": {
+        "actualRevision": "1",
+        "claimedRevision": "9007199254741235",
+        "companionRevision": "9007199254741235",
+        "published": true,
+        "stlVolumeMm3": 5502.5204848004105,
+        "mismatchedRevisionControl": "STALE_REVISION",
+        "sourceSnapshotUnchanged": true
+      },
+      "limits": "Không làm biến đổi geometry; thiếu authority binding nằm ở tích hợp parent, không suy child raw API có trách nhiệm tự biết project."
+    },
+    {
+      "id": "R3-F3",
+      "severity": "low",
+      "priority": "P3",
+      "classification": "contract/typescript",
+      "title": "Khai báo TypeScript giữ mechanicsSemantics literal2 trong khi runtime là3",
+      "locations": [
+        {
+          "path": "src/core/product-operations.d.ts",
+          "line": 22
+        },
+        {
+          "path": "src/core/product-operations.mjs",
+          "line": 93
+        }
+      ],
+      "requirement": "Mechanics ABI2/semantics3, source ABI1/semantics2 và hợp đồng tích hợp có version đồng bộ.",
+      "trigger": "So khai báo Semantics.mechanicsSemantics:2 với getter và APMS offset148=3, offset152=2.",
+      "impact": "Consumer typed nhận discriminant sai; sourceSemantics chỉ rơi vào index signature unknown.",
+      "measurements": {
+        "declaredMechanicsSemantics": 2,
+        "actualMechanicsSemantics": 3,
+        "actualSourceSemantics": 2
+      },
+      "limits": "Static contract finding có runtime đối chứng; không chạy TypeScript compiler."
+    }
+  ],
+  "retainedLimits": [
+    "No new accepted false-positive found for R2 roof/datum in selected tests; finite probes do not prove every input.",
+    "Default clicky STL union fails float32 collision; serialization fails closed; release path remains open.",
+    "No full UI, imported CSG, PNG/3MF, slicer or physical fit qualification."
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "shown": "PRIVATE_A_UNSENT",
+  "calls": [
+    {
+      "id": 1,
+      "method": "queryFonts",
+      "input": "",
+      "pending": true
+    },
+    {
+      "id": 2,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        null,
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 3,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        "favorite",
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 4,
+      "method": "queryFonts",
+      "input": "",
+      "pending": true
+    },
+    {
+      "id": 5,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        null,
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 6,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        "favorite",
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 7,
+      "method": "dispatch",
+      "input": {
+        "type": "export.configure",
+        "id": "stl-union",
+        "projectRevision": 0,
+        "field": "filename",
+        "value": "PRIVATE_A_UNSENT"
+      },
+      "pending": true
+    }
+  ],
+  "project": "P2",
+  "account": "A"
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-07",
+  "scope": "Source audit findings, not slicer or physical-print qualification",
+  "samples": [
+    {
+      "path": "tests/fixtures/printing-reference/v1/u1-inconsistent-slots.3mf",
+      "sha256": "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece",
+      "kind": "project-3mf",
+      "geometryPayloadSha256": "67faa754111f2b0504e66b10897a60e10d09d2e5e121c54d7a1f735e7cad3265",
+      "geometryTwinOf": "bambu-project-reference-v1",
+      "slotMapping": "invalid",
+      "partExtruders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "configuredFilaments": 4,
+      "allowedUses": [
+        "reference-audit",
+        "expected-rejection",
+        "explicit-remap-experiment"
+      ],
+      "forbiddenUses": [
+        "golden-u1",
+        "physical-fit-proof"
+      ],
+      "slicerRoundtrip": "unverified",
+      "id": "u1-project-invalid-slots-v1"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/bambu-project.3mf",
+      "sha256": "361859e04e686452a60b7e9cc3104e7f4e173ca35979dd2311b1d6c27664ca75",
+      "kind": "project-3mf",
+      "geometryPayloadSha256": "67faa754111f2b0504e66b10897a60e10d09d2e5e121c54d7a1f735e7cad3265",
+      "slotMapping": "unverified-for-target-slicer",
+      "allowedUses": [
+        "reference-audit",
+        "adapter-experiment"
+      ],
+      "forbiddenUses": [
+        "golden-bambu-until-roundtrip",
+        "independent-second-geometry-case",
+        "physical-fit-proof"
+      ],
+      "slicerRoundtrip": "unverified",
+      "id": "bambu-project-reference-v1"
+    }
+  ],
+  "approvedSlicerGoldens": [],
+  "updatedAt": "2026-09-08"
+}

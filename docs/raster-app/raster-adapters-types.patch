@@ -1,0 +1,33 @@
+diff --git a/src/integration/raster-adapters.d.mts b/src/integration/raster-adapters.d.mts
+index 5902e78..4deef48 100644
+--- a/src/integration/raster-adapters.d.mts
++++ b/src/integration/raster-adapters.d.mts
+@@ -1,4 +1,16 @@
+ import type {RasterOptions,RasterLimits,RasterPacket,RenderOrigin,RuntimeResetOptions} from '../core/raster-operations.mjs';
++import type {ModelLease} from '../app/adapters.mjs';
++export type RasterRecipeControl=AppControl & {state:unknown;sourceContext?:SourceContext;assets:ReadonlyMap<string,Uint8Array>};
++export type RasterRecipeProposal={status:'proposal';sourceProposal:unknown};
++export interface ReadyRasterGeometry {
++ status:'ready';kind:'raster-source-geometry';sourceAssemblyRequired:true;
++ coordinateKind:28;unitMm:number;packet:RasterPacket;receipt:RasterApprovalReceipt;preparation:unknown;
++}
++/** A finished root product lease; a source packet does not satisfy this. */
++export type RasterProductModelLease=Omit<ModelLease,'release'> & {release():void|Promise<void>};
++export type RasterConsumerInput=ReadyRasterGeometry & {
++ readonly nativeSource:{readonly kind:'raster-token';readonly token:string;readonly epoch?:number};
++};
+ /** Controller allocates this before preparation; acceptance echoes the exact context. */
+ export interface SourceContext {
+  version:'arch-source-context/1';operation:'import'|'convert';id:string;revision:number;
+@@ -25,9 +37,8 @@ export interface RasterSourceAdapter {
+  convert(input:AppControl & {state:unknown;sourceContext:SourceContext;source:unknown;assets:ReadonlyMap<string,Uint8Array>;target:'raster'}):Promise<unknown>;
+  acceptProposal(input:AppControl & {sourceContext:SourceContext;confirmation:RasterConfirmation;source:unknown;assets:ReadonlyMap<string,Uint8Array>;acceptedAtRevision:number}):Promise<ApprovalAnswer>;
+  /** Missing/stale consent without sourceContext throws RASTER_SOURCE_CONVERSION_REQUIRED. */
+- prepareRecipe(input:AppControl & {state:unknown;sourceContext?:SourceContext;assets:ReadonlyMap<string,Uint8Array>}):Promise<
+-  {status:'proposal';sourceProposal:unknown}|{status:'ready';kind:'raster-source-geometry';sourceAssemblyRequired:true;coordinateKind:28;unitMm:number;packet:RasterPacket;receipt:RasterApprovalReceipt;preparation:unknown}
+- >;
++ prepareRecipe(input:RasterRecipeControl):Promise<RasterRecipeProposal|ReadyRasterGeometry>;
++ prepareRecipe<T extends RasterProductModelLease>(input:RasterRecipeControl,consume:(source:RasterConsumerInput)=>T|Promise<T>):Promise<T|RasterRecipeProposal>;
+  reset(options?:RuntimeResetOptions):Promise<void>;
+ }
+ export function rasterOptionsForState(state:unknown,policy?:{alpha?:RasterOptions['alpha'];palette?:RasterOptions['palette'];backgroundLabels?:number[];limits?:RasterLimits}):{options:RasterOptions;limits:RasterLimits};

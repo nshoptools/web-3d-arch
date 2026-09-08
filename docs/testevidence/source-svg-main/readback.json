@@ -1,0 +1,661 @@
+{
+  "version": "arch-source-svg-readback/1",
+  "reader": "Python stdlib XML + independent affine/winding arithmetic",
+  "checks": [
+    {
+      "name": "svg.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "svg.svg root",
+      "pass": true
+    },
+    {
+      "name": "svg.svg inert",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "original cubic/quadratic retained",
+      "pass": true
+    },
+    {
+      "name": "original hole retained",
+      "pass": true
+    },
+    {
+      "name": "recolored-excluded.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "recolored-excluded.svg root",
+      "pass": true
+    },
+    {
+      "name": "recolored-excluded.svg inert",
+      "pass": true
+    },
+    {
+      "name": "recolored-excluded.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "recolor and exclusion current",
+      "pass": true
+    },
+    {
+      "name": "recolored hole rings",
+      "pass": true
+    },
+    {
+      "name": "recolored analytic inside/hole original position",
+      "pass": true
+    },
+    {
+      "name": "recolored analytic area 18x28 minus 4x4",
+      "pass": true
+    },
+    {
+      "name": "raster.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "raster.svg root",
+      "pass": true
+    },
+    {
+      "name": "raster.svg inert",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "raster asymmetric top hole stays top",
+      "pass": true
+    },
+    {
+      "name": "raster bottom fill stays bottom",
+      "pass": true
+    },
+    {
+      "name": "raster bottom-left transparent exterior stays bottom-left",
+      "pass": true
+    },
+    {
+      "name": "text.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "text.svg root",
+      "pass": true
+    },
+    {
+      "name": "text.svg inert",
+      "pass": true
+    },
+    {
+      "name": "text.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg root",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg inert",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "emoji actual curves",
+      "pass": true
+    },
+    {
+      "name": "edited original retained without material fallback",
+      "pass": true
+    },
+    {
+      "name": "upstream blocker does not publish stale SVG",
+      "pass": true
+    },
+    {
+      "name": "actual erase changed working pixels",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg root",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg inert",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg-text-overlay.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "variable-latin-multiline-bend.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "variable-latin-multiline-bend.svg root",
+      "pass": true
+    },
+    {
+      "name": "variable-latin-multiline-bend.svg inert",
+      "pass": true
+    },
+    {
+      "name": "variable-latin-multiline-bend.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "variable-latin-multiline-bend.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "svg.svg root",
+      "pass": true
+    },
+    {
+      "name": "svg.svg inert",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "chromium svg hash",
+      "pass": true
+    },
+    {
+      "name": "text.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "text.svg root",
+      "pass": true
+    },
+    {
+      "name": "text.svg inert",
+      "pass": true
+    },
+    {
+      "name": "text.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "chromium text hash",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg root",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg inert",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "chromium emoji hash",
+      "pass": true
+    },
+    {
+      "name": "raster.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "raster.svg root",
+      "pass": true
+    },
+    {
+      "name": "raster.svg inert",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "chromium raster hash",
+      "pass": true
+    },
+    {
+      "name": "color.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "color.svg root",
+      "pass": true
+    },
+    {
+      "name": "color.svg inert",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "chromium color hash",
+      "pass": true
+    },
+    {
+      "name": "svg.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "svg.svg root",
+      "pass": true
+    },
+    {
+      "name": "svg.svg inert",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "firefox svg hash",
+      "pass": true
+    },
+    {
+      "name": "text.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "text.svg root",
+      "pass": true
+    },
+    {
+      "name": "text.svg inert",
+      "pass": true
+    },
+    {
+      "name": "text.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "firefox text hash",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg root",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg inert",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "firefox emoji hash",
+      "pass": true
+    },
+    {
+      "name": "raster.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "raster.svg root",
+      "pass": true
+    },
+    {
+      "name": "raster.svg inert",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "firefox raster hash",
+      "pass": true
+    },
+    {
+      "name": "color.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "color.svg root",
+      "pass": true
+    },
+    {
+      "name": "color.svg inert",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "firefox color hash",
+      "pass": true
+    },
+    {
+      "name": "svg.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "svg.svg root",
+      "pass": true
+    },
+    {
+      "name": "svg.svg inert",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "svg.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "webkit svg hash",
+      "pass": true
+    },
+    {
+      "name": "text.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "text.svg root",
+      "pass": true
+    },
+    {
+      "name": "text.svg inert",
+      "pass": true
+    },
+    {
+      "name": "text.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "webkit text hash",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg root",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg inert",
+      "pass": true
+    },
+    {
+      "name": "emoji.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "webkit emoji hash",
+      "pass": true
+    },
+    {
+      "name": "raster.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "raster.svg root",
+      "pass": true
+    },
+    {
+      "name": "raster.svg inert",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "raster.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "webkit raster hash",
+      "pass": true
+    },
+    {
+      "name": "color.svg byte budget",
+      "pass": true
+    },
+    {
+      "name": "color.svg root",
+      "pass": true
+    },
+    {
+      "name": "color.svg inert",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "color.svg finite path",
+      "pass": true
+    },
+    {
+      "name": "webkit color hash",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "status": "passed",
+  "qualification": "source artifact only; no review/mesh/slicer/fit claim"
+}

@@ -1,0 +1,35 @@
+{
+  "version": "final-three-frozen/1",
+  "at": "2026-09-08T12:55:44.6006607Z",
+  "entries": 109,
+  "verificationExit": 0,
+  "smokeExit": 0,
+  "passed": 3,
+  "bindings": [
+    {
+      "path": "reports/final-three-manifest.json",
+      "sha256": "998c5a40fa8b821c785c22124a67fbab72101fa554f59c0ca83761489fc42b37",
+      "bytes": 20063
+    },
+    {
+      "path": "reports/final-three-summary.json",
+      "sha256": "99d20fd6c520cf91a284f448901877466a08c5404c52cf7a64607d514840e2d2",
+      "bytes": 3695
+    },
+    {
+      "path": "reports/final-three-handoff.md",
+      "sha256": "59443a4a0e3986c3f7dfa4bf69adf1ae89427355c4c3dc3d23c28d8160847f02",
+      "bytes": 6858
+    }
+  ],
+  "humanPreviewActiveUnmodified": {
+    "origin": "https://127.0.0.1:63698",
+    "pid": 12544
+  },
+  "limitations": [
+    "Initialr1 startup failed before cases, retained",
+    "No float proposal on ordinary sample; consent branch not counted",
+    "Physical fit/slicer/global error unverified",
+    "Not configured independent review"
+  ]
+}

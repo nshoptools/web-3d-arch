@@ -1,0 +1,2277 @@
+{
+  "method": "Every mesh face classified against declared prism planes; integer directed edge chains split at all collinear endpoints, opposite seams canceled, patches compared in full with consistent orientation. Comparison-only grid embedding at <=1e-8 mm; manufacturing bytes unchanged. Independent part/material, all Z intervals, topology and volume readback. Finite proof per evaluated faceted prism, not arbitrary input proof.",
+  "results": [
+    {
+      "id": "partition-angled-mode0",
+      "parts": [
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 44.0,
+          "volume_mm3": 3696.0,
+          "reported_volume_mm3": 3696.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.3541019662496825,
+          "volume_mm3": 239.99999999999994,
+          "reported_volume_mm3": 239.99999999999991,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.0
+            ],
+            [
+              5.0,
+              10.0,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 12,
+          "faces": 20,
+          "edges": 30,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.990266799926754e-07,
+          "volume_mm3": 2.396106719260158e-05,
+          "reported_volume_mm3": 2.3961067199707018e-05,
+          "volume_abs_delta": 7.105437521996369e-15,
+          "bbox": [
+            [
+              -5.0,
+              -10.0,
+              4.0
+            ],
+            [
+              5.0000019967556,
+              10.0,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.3541019662496825,
+          "volume_mm3": 239.9999760389327,
+          "reported_volume_mm3": 239.9999760389327,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -4.9999980032444,
+              -10.0,
+              4.0
+            ],
+            [
+              20.0,
+              10.0,
+              4.6
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 20,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.6
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3
+          ],
+          "area_mm2": 800.0,
+          "boundary_residuals_against_footprint": 12
+        }
+      ],
+      "total_volume": 4176.0,
+      "status": "pass"
+    },
+    {
+      "id": "partition-angled-mode1",
+      "parts": [
+        {
+          "vertices": 24,
+          "faces": 48,
+          "edges": 72,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 9.98377799987793e-07,
+          "volume_mm3": 495.9999999999999,
+          "reported_volume_mm3": 495.9999999999999,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 19.00657780874821,
+          "volume_mm3": 1360.0,
+          "reported_volume_mm3": 1360.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              0.0
+            ],
+            [
+              5.0,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 12,
+          "faces": 20,
+          "edges": 30,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.394484519958496e-06,
+          "volume_mm3": 0.0001357793807936029,
+          "reported_volume_mm3": 0.00013577938079833984,
+          "volume_abs_delta": 4.736933501697793e-15,
+          "bbox": [
+            [
+              -5.0,
+              -10.0,
+              0.0
+            ],
+            [
+              5.0000019967556,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 19.00657780874821,
+          "volume_mm3": 1359.9998642206192,
+          "reported_volume_mm3": 1359.9998642206192,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -4.9999980032444,
+              -10.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              3.4
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 10,
+          "all_faces_checked": 48,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 20,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            3.4
+          ],
+          "active_slabs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.4,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 124.0,
+          "boundary_residuals_against_footprint": 8
+        }
+      ],
+      "total_volume": 3216.0,
+      "status": "pass"
+    },
+    {
+      "id": "partition-angled-mode2",
+      "parts": [
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 39.6,
+          "volume_mm3": 3326.4,
+          "reported_volume_mm3": 3326.4,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              3.6
+            ]
+          ]
+        },
+        {
+          "vertices": 24,
+          "faces": 48,
+          "edges": 72,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.993511199951171e-07,
+          "volume_mm3": 49.59999999999973,
+          "reported_volume_mm3": 49.59999999999998,
+          "volume_abs_delta": 2.4868995751603507e-13,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              3.6
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2360679774997894,
+          "volume_mm3": 160.0,
+          "reported_volume_mm3": 159.99999999999994,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              3.6
+            ],
+            [
+              5.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 12,
+          "faces": 20,
+          "edges": 30,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.993511199951171e-07,
+          "volume_mm3": 1.59740447938835e-05,
+          "reported_volume_mm3": 1.5974044799804688e-05,
+          "volume_abs_delta": 5.9211872059129755e-15,
+          "bbox": [
+            [
+              -5.0,
+              -10.0,
+              3.6
+            ],
+            [
+              5.0000019967556,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2360679774997894,
+          "volume_mm3": 159.99998402595523,
+          "reported_volume_mm3": 159.9999840259552,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -4.9999980032444,
+              -10.0,
+              3.6
+            ],
+            [
+              20.0,
+              10.0,
+              4.0
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 10,
+          "all_faces_checked": 48,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 20,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            3.6
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.6,
+            4
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 3696.0,
+      "status": "pass"
+    },
+    {
+      "id": "partition-angled-mode3",
+      "parts": [
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 44.0,
+          "volume_mm3": 3696.0,
+          "reported_volume_mm3": 3696.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 24,
+          "faces": 48,
+          "edges": 72,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.9935111999511757e-07,
+          "volume_mm3": 49.60000000000017,
+          "reported_volume_mm3": 49.60000000000004,
+          "volume_abs_delta": 1.3500311979441904e-13,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              4.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2360679774997916,
+          "volume_mm3": 160.0000000000001,
+          "reported_volume_mm3": 160.0000000000001,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.0
+            ],
+            [
+              5.0,
+              10.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 12,
+          "faces": 20,
+          "edges": 30,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.9935111999511757e-07,
+          "volume_mm3": 1.597404480691014e-05,
+          "reported_volume_mm3": 1.59740447998047e-05,
+          "volume_abs_delta": 7.105437521996369e-15,
+          "bbox": [
+            [
+              -5.0,
+              -10.0,
+              4.0
+            ],
+            [
+              5.0000019967556,
+              10.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 10,
+          "faces": 16,
+          "edges": 24,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.2360679774997916,
+          "volume_mm3": 159.99998402595526,
+          "reported_volume_mm3": 159.99998402595523,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              -4.9999980032444,
+              -10.0,
+              4.0
+            ],
+            [
+              20.0,
+              10.0,
+              4.4
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 10,
+          "all_faces_checked": 48,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 20,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 16,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 3.2444003039699965e-09
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.4
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 924.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 4065.6000000000004,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode0-rim0",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 6.0,
+          "volume_mm3": 3564.0,
+          "reported_volume_mm3": 3564.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.8999999999999995,
+          "volume_mm3": 220.1999999999999,
+          "reported_volume_mm3": 220.1999999999999,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.0
+            ],
+            [
+              0.0,
+              10.0,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.499999999999997,
+          "volume_mm3": 180.0,
+          "reported_volume_mm3": 179.99999999999994,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              4.0
+            ],
+            [
+              15.0,
+              10.0,
+              4.6
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.8999999999999995,
+          "volume_mm3": 7.200000000000054,
+          "reported_volume_mm3": 7.199999999999996,
+          "volume_abs_delta": 5.861977570020827e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              4.0
+            ],
+            [
+              20.0,
+              10.0,
+              4.6
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.6
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3
+          ],
+          "area_mm2": 679.0,
+          "boundary_residuals_against_footprint": 14
+        }
+      ],
+      "total_volume": 3971.4,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode0-rim1",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 6.0,
+          "volume_mm3": 3564.0,
+          "reported_volume_mm3": 3564.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 356.4000000000003,
+          "reported_volume_mm3": 356.4000000000003,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              4.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.8999999999999995,
+          "volume_mm3": 220.20000000000007,
+          "reported_volume_mm3": 220.19999999999993,
+          "volume_abs_delta": 1.4210854715202004e-13,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.4
+            ],
+            [
+              0.0,
+              10.0,
+              5.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.499999999999997,
+          "volume_mm3": 180.0,
+          "reported_volume_mm3": 179.99999999999994,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              4.4
+            ],
+            [
+              15.0,
+              10.0,
+              5.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.8999999999999995,
+          "volume_mm3": 7.200000000000063,
+          "reported_volume_mm3": 7.199999999999997,
+          "volume_abs_delta": 6.661338147750939e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              4.4
+            ],
+            [
+              20.0,
+              10.0,
+              5.0
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.4
+          ],
+          "active_slabs": [
+            1
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4.4,
+            5
+          ],
+          "active_slabs": [
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 679.0,
+          "boundary_residuals_against_footprint": 14
+        }
+      ],
+      "total_volume": 4327.8,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode1-rim0",
+      "parts": [
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.0,
+          "volume_mm3": 847.9999999999999,
+          "reported_volume_mm3": 847.9999999999999,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.1,
+          "volume_mm3": 1247.8,
+          "reported_volume_mm3": 1247.8,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              0.0
+            ],
+            [
+              0.0,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 25.5,
+          "volume_mm3": 1020.0,
+          "reported_volume_mm3": 1020.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              0.0
+            ],
+            [
+              15.0,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.1,
+          "volume_mm3": 40.800000000000026,
+          "reported_volume_mm3": 40.800000000000004,
+          "volume_abs_delta": 2.1316282072803006e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              3.4
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            3.4
+          ],
+          "active_slabs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.4,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 212.0,
+          "boundary_residuals_against_footprint": 16
+        }
+      ],
+      "total_volume": 3156.6,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode1-rim1",
+      "parts": [
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.0,
+          "volume_mm3": 847.9999999999999,
+          "reported_volume_mm3": 847.9999999999999,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 32,
+          "faces": 60,
+          "edges": 90,
+          "components": 2,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000001,
+          "volume_mm3": 271.6,
+          "reported_volume_mm3": 271.6,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              0.4
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.5,
+          "volume_mm3": 1101.0,
+          "reported_volume_mm3": 1101.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              0.4
+            ],
+            [
+              0.0,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 22.5,
+          "volume_mm3": 900.0,
+          "reported_volume_mm3": 900.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              0.4
+            ],
+            [
+              15.0,
+              10.0,
+              3.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.5,
+          "volume_mm3": 36.000000000000036,
+          "reported_volume_mm3": 36.00000000000001,
+          "volume_abs_delta": 2.842170943040401e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              0.4
+            ],
+            [
+              20.0,
+              10.0,
+              3.4
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 15,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            0.4
+          ],
+          "active_slabs": [
+            0,
+            1
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            0.4,
+            3.4
+          ],
+          "active_slabs": [
+            0,
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.4,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 212.0,
+          "boundary_residuals_against_footprint": 16
+        }
+      ],
+      "total_volume": 3156.6,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode2-rim0",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 5.4,
+          "volume_mm3": 3207.6000000000004,
+          "reported_volume_mm3": 3207.6000000000004,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              3.6
+            ]
+          ]
+        },
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 84.79999999999966,
+          "reported_volume_mm3": 84.79999999999997,
+          "volume_abs_delta": 3.126388037344441e-13,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              3.6
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 146.79999999999998,
+          "reported_volume_mm3": 146.79999999999998,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              3.6
+            ],
+            [
+              0.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.999999999999999,
+          "volume_mm3": 120.0,
+          "reported_volume_mm3": 119.99999999999999,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              3.6
+            ],
+            [
+              15.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 4.80000000000001,
+          "reported_volume_mm3": 4.799999999999999,
+          "volume_abs_delta": 1.0658141036401503e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              3.6
+            ],
+            [
+              20.0,
+              10.0,
+              4.0
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            3.6
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.6,
+            4
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 3564.0,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode2-rim1",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 4.800000000000001,
+          "volume_mm3": 2851.2000000000003,
+          "reported_volume_mm3": 2851.2000000000003,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              3.2
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 356.4,
+          "reported_volume_mm3": 356.3999999999999,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              3.2
+            ],
+            [
+              21.0,
+              11.0,
+              3.6
+            ]
+          ]
+        },
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 84.79999999999966,
+          "reported_volume_mm3": 84.79999999999997,
+          "volume_abs_delta": 3.126388037344441e-13,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              3.6
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 146.79999999999998,
+          "reported_volume_mm3": 146.79999999999998,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              3.6
+            ],
+            [
+              0.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 2.999999999999999,
+          "volume_mm3": 120.0,
+          "reported_volume_mm3": 119.99999999999999,
+          "volume_abs_delta": 1.4210854715202004e-14,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              3.6
+            ],
+            [
+              15.0,
+              10.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.5999999999999999,
+          "volume_mm3": 4.80000000000001,
+          "reported_volume_mm3": 4.799999999999999,
+          "volume_abs_delta": 1.0658141036401503e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              3.6
+            ],
+            [
+              20.0,
+              10.0,
+              4.0
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            3.2
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.2,
+            3.6
+          ],
+          "active_slabs": [
+            1
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            3.6,
+            4
+          ],
+          "active_slabs": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 3564.0,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode3-rim0",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 6.0,
+          "volume_mm3": 3564.0,
+          "reported_volume_mm3": 3564.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 84.80000000000011,
+          "reported_volume_mm3": 84.80000000000005,
+          "volume_abs_delta": 5.684341886080802e-14,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              4.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 146.8000000000001,
+          "reported_volume_mm3": 146.8000000000001,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.0
+            ],
+            [
+              0.0,
+              10.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.0000000000000027,
+          "volume_mm3": 120.0,
+          "reported_volume_mm3": 120.00000000000007,
+          "volume_abs_delta": 7.105427357601002e-14,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              4.0
+            ],
+            [
+              15.0,
+              10.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 4.799999999999945,
+          "reported_volume_mm3": 4.800000000000004,
+          "volume_abs_delta": 5.950795411990839e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              4.0
+            ],
+            [
+              20.0,
+              10.0,
+              4.4
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.4
+          ],
+          "active_slabs": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 3920.4,
+      "status": "pass"
+    },
+    {
+      "id": "partition-mode3-rim1",
+      "parts": [
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 6.0,
+          "volume_mm3": 3564.0,
+          "reported_volume_mm3": 3564.0,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              0.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 356.4000000000003,
+          "reported_volume_mm3": 356.4000000000003,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              4.0
+            ],
+            [
+              21.0,
+              11.0,
+              4.4
+            ]
+          ]
+        },
+        {
+          "vertices": 28,
+          "faces": 60,
+          "edges": 90,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 84.7999999999999,
+          "reported_volume_mm3": 84.80000000000008,
+          "volume_abs_delta": 1.8474111129762605e-13,
+          "bbox": [
+            [
+              -21.0,
+              -11.0,
+              4.4
+            ],
+            [
+              21.0,
+              11.0,
+              4.800000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 20,
+          "faces": 40,
+          "edges": 60,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 146.80000000000035,
+          "reported_volume_mm3": 146.80000000000018,
+          "volume_abs_delta": 1.7053025658242404e-13,
+          "bbox": [
+            [
+              -20.0,
+              -10.0,
+              4.4
+            ],
+            [
+              0.0,
+              10.0,
+              4.800000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 3.0000000000000027,
+          "volume_mm3": 120.00000000000023,
+          "reported_volume_mm3": 120.0000000000001,
+          "volume_abs_delta": 1.2789769243681803e-13,
+          "bbox": [
+            [
+              0.0,
+              -10.0,
+              4.4
+            ],
+            [
+              15.0,
+              10.0,
+              4.800000000000001
+            ]
+          ]
+        },
+        {
+          "vertices": 8,
+          "faces": 12,
+          "edges": 18,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.6000000000000005,
+          "volume_mm3": 4.800000000000076,
+          "reported_volume_mm3": 4.800000000000005,
+          "volume_abs_delta": 7.105427357601002e-14,
+          "bbox": [
+            [
+              17.0,
+              6.0,
+              4.4
+            ],
+            [
+              20.0,
+              10.0,
+              4.800000000000001
+            ]
+          ]
+        }
+      ],
+      "surface_proofs": [
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 0
+        },
+        {
+          "complete_planes": 13,
+          "all_faces_checked": 60,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 8.881784197001252e-16
+        },
+        {
+          "complete_planes": 12,
+          "all_faces_checked": 40,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 8.881784197001252e-16
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 8.881784197001252e-16
+        },
+        {
+          "complete_planes": 6,
+          "all_faces_checked": 12,
+          "directed_patch_boundary_residuals": 0,
+          "comparison_displacement_bound_mm": 8.881784197001252e-16
+        }
+      ],
+      "source_z_structure": [
+        {
+          "z": [
+            0,
+            4
+          ],
+          "active_slabs": [
+            0
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4,
+            4.4
+          ],
+          "active_slabs": [
+            1
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        },
+        {
+          "z": [
+            4.4,
+            4.800000000000001
+          ],
+          "active_slabs": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "area_mm2": 891.0,
+          "boundary_residuals_against_footprint": 0
+        }
+      ],
+      "total_volume": 4276.800000000001,
+      "status": "pass"
+    }
+  ]
+}

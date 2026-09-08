@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "lxml-6.1.2-cp313-cp313-win_amd64.whl",
+    "bytes": 4004117,
+    "sha256": "6cb0c87421946030b92b558be416852780a912454e3dcba0998e4497c9c588d5"
+  },
+  {
+    "filename": "networkx-3.6.1-py3-none-any.whl",
+    "bytes": 2068504,
+    "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+  },
+  {
+    "filename": "numpy-2.5.3-cp313-cp313-win_amd64.whl",
+    "bytes": 12560965,
+    "sha256": "71cad2b2a7451ab79d8f5e71b453485b6775963d5cf794179144a7463fe6e8ec"
+  },
+  {
+    "filename": "trimesh-4.12.2-py3-none-any.whl",
+    "bytes": 741043,
+    "sha256": "b5b5afa63c5272345f2858f7676bc8c217dc8a89f4fadf6193fe10a81b5ff2aa"
+  }
+]

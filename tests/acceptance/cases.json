@@ -1,0 +1,2806 @@
+{
+  "schemaVersion": 2,
+  "status": "planned-not-executed",
+  "scope": "Campaigns contain individual checks with independent verdicts; no product implementation was executed",
+  "cases": [
+    {
+      "id": "AT-001",
+      "requirements": [
+        "FND-01",
+        "FND-03"
+      ],
+      "title": "Năm loại sản phẩm, hai bước",
+      "prerequisites": "UI+nhân khả dụng",
+      "steps": [
+        "Tạo từng loại từ nguồn ảnh rồi nguồn chữ/emoji.",
+        "Đi 1→2→1 qua nút và phím trên cả 6 khu."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-001.1",
+          "requirements": [
+            "FND-01"
+          ],
+          "action": "Tạo từng loại từ nguồn ảnh rồi nguồn chữ/emoji.",
+          "expected": "Cả 5 loại có đường tạo hợp lệ; nguồn không bắt buộc phải là raster.",
+          "oracle": {
+            "tool": "Browser UI harness và domain inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu danh sách loại trong UI với manifest sản phẩm và project source kind.",
+            "threshold": "Cả 5 loại có đường tạo hợp lệ; nguồn không bắt buộc phải là raster.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-001.2",
+          "requirements": [
+            "FND-03"
+          ],
+          "action": "Đi 1→2→1 qua nút và phím trên cả 6 khu.",
+          "expected": "Project revision/source/edits không đổi chỉ vì điều hướng.",
+          "oracle": {
+            "tool": "Browser UI harness và domain inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So snapshot domain trước/sau; quan sát UI riêng với dữ liệu domain.",
+            "threshold": "Project revision/source/edits không đổi chỉ vì điều hướng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-002",
+      "requirements": [
+        "WEB-01",
+        "FND-02"
+      ],
+      "title": "Khởi động, offline và năng lực",
+      "prerequisites": "Build web trên Chromium/Firefox/WebKit, profile thử",
+      "steps": [
+        "Khởi động khi thiếu COI/SAB hoặc handshake lỗi.",
+        "Mở offline với tài nguyên đủ/thiếu và lease còn/hết hạn.",
+        "Cho auth trả redirect rồi login 200 thay navigation."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-002.1",
+          "requirements": [
+            "WEB-01"
+          ],
+          "action": "Khởi động khi thiếu COI/SAB hoặc handshake lỗi.",
+          "expected": "Hiện CORE_UNAVAILABLE; không chạy job dựng hoặc nhận mesh cũ là mới.",
+          "oracle": {
+            "tool": "Browser/Worker/network/cache harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Network/header capture cộng Worker message trace và ảnh màn hình.",
+            "threshold": "Hiện CORE_UNAVAILABLE; không chạy job dựng hoặc nhận mesh cũ là mới.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-002.2",
+          "requirements": [
+            "FND-02"
+          ],
+          "action": "Mở offline với tài nguyên đủ/thiếu và lease còn/hết hạn.",
+          "expected": "Chỉ năng lực có dữ liệu và quyền còn hiệu lực được dùng; hết hạn còn cứu dữ liệu.",
+          "oracle": {
+            "tool": "Browser/Worker/network/cache harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Chặn mạng thật trên profile test; kiểm request count bằng capture và tài nguyên theo hash.",
+            "threshold": "Chỉ năng lực có dữ liệu và quyền còn hiệu lực được dùng; hết hạn còn cứu dữ liệu.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-002.3",
+          "requirements": [
+            "WEB-01"
+          ],
+          "action": "Cho auth trả redirect rồi login 200 thay navigation.",
+          "expected": "Login/error không vào app-shell cache.",
+          "oracle": {
+            "tool": "Browser/Worker/network/cache harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc CacheStorage độc lập sau chuỗi redirect, đối chiếu response build marker.",
+            "threshold": "Login/error không vào app-shell cache.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-003",
+      "requirements": [
+        "SRC-01",
+        "VEC-01"
+      ],
+      "title": "Nhập nguồn không mất semantics",
+      "prerequisites": "Importer, corpus source có expected độc lập",
+      "steps": [
+        "Nhập raster EXIF/alpha và SVG; hủy thay nguồn.",
+        "Đọc SVG thiếu fill-rule, lỗ, clip lồng, transform và use.",
+        "Chuyển gradient/alpha và thử filter chưa hỗ trợ."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-003.1",
+          "requirements": [
+            "SRC-01"
+          ],
+          "action": "Nhập raster EXIF/alpha và SVG; hủy thay nguồn.",
+          "expected": "Nguồn bytes/hash được giữ, hủy không đổi project head.",
+          "oracle": {
+            "tool": "Source graph reader và reference raster/SVG corpus",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hash tệp gốc bằng công cụ độc lập rồi đọc asset store/head.",
+            "threshold": "Nguồn bytes/hash được giữ, hủy không đổi project head.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-003.2",
+          "requirements": [
+            "VEC-01"
+          ],
+          "action": "Đọc SVG thiếu fill-rule, lỗ, clip lồng, transform và use.",
+          "expected": "Đúng nonzero mặc định và tập vùng/clip của expected source graph.",
+          "oracle": {
+            "tool": "Source graph reader và reference raster/SVG corpus",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu graph chuẩn hóa với hình giải tích/nguồn SVG2, không lấy renderer làm mesh oracle.",
+            "threshold": "Đúng nonzero mặc định và tập vùng/clip của expected source graph.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-003.3",
+          "requirements": [
+            "VEC-01"
+          ],
+          "action": "Chuyển gradient/alpha và thử filter chưa hỗ trợ.",
+          "expected": "Không giản lược ngầm; chuyển đổi chỉ commit sau chấp nhận hoặc báo unsupported có tên.",
+          "oracle": {
+            "tool": "Source graph reader và reference raster/SVG corpus",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So provenance/graph trước sau lệnh accept/cancel và ảnh đối chiếu nguồn.",
+            "threshold": "Không giản lược ngầm; chuyển đổi chỉ commit sau chấp nhận hoặc báo unsupported có tên.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-004",
+      "requirements": [
+        "SRC-02"
+      ],
+      "title": "Bộ emoji và chuỗi",
+      "prerequisites": "Catalog pin và UI chooser",
+      "steps": [
+        "Tìm và chọn ZWJ/modifier/flag/keycap/FE0E/FE0F.",
+        "Đổi Noto màu/mono, gây thiếu asset/glyph."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-004.1",
+          "requirements": [
+            "SRC-02"
+          ],
+          "action": "Tìm và chọn ZWJ/modifier/flag/keycap/FE0E/FE0F.",
+          "expected": "Mã chuỗi đã chọn giữ nguyên toàn bộ code points.",
+          "oracle": {
+            "tool": "Unicode sequence/catalog inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So với Unicode literal sequence trong corpus, không suy từ hình thumbnail.",
+            "threshold": "Mã chuỗi đã chọn giữ nguyên toàn bộ code points.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-004.2",
+          "requirements": [
+            "SRC-02"
+          ],
+          "action": "Đổi Noto màu/mono, gây thiếu asset/glyph.",
+          "expected": "Không fallback nguồn khác hoặc font hệ thống ngầm.",
+          "oracle": {
+            "tool": "Unicode sequence/catalog inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc source hash/catalog collection ID và network requests.",
+            "threshold": "Không fallback nguồn khác hoặc font hệ thống ngầm.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-005",
+      "requirements": [
+        "SRC-03",
+        "AI-01",
+        "AI-04"
+      ],
+      "title": "Lượt AI dùng kết nối cá nhân",
+      "prerequisites": "Mock provider có ledger, hai member+owner",
+      "steps": [
+        "Mở tab AI rồi gửi prompt/ảnh bằng thao tác Tạo.",
+        "A/B dùng key riêng; key A hết quota, owner có key tốt.",
+        "Xem tạo/lỗi/kết quả và Chi phí của tôi."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-005.1",
+          "requirements": [
+            "SRC-03"
+          ],
+          "action": "Mở tab AI rồi gửi prompt/ảnh bằng thao tác Tạo.",
+          "expected": "Chỉ Tạo mới gửi nội dung sáng tác ra provider.",
+          "oracle": {
+            "tool": "Mock AI provider, server ledger và UI harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Mock provider ledger và capture payload; số request tạo trước Tạo bằng 0.",
+            "threshold": "Chỉ Tạo mới gửi nội dung sáng tác ra provider.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-005.2",
+          "requirements": [
+            "AI-01"
+          ],
+          "action": "A/B dùng key riêng; key A hết quota, owner có key tốt.",
+          "expected": "Không request nào của A dùng credential của B/owner.",
+          "oracle": {
+            "tool": "Mock AI provider, server ledger và UI harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Mock provider đối chiếu fingerprint test credential với actorId server đã xác thực.",
+            "threshold": "Không request nào của A dùng credential của B/owner.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-005.3",
+          "requirements": [
+            "AI-04"
+          ],
+          "action": "Xem tạo/lỗi/kết quả và Chi phí của tôi.",
+          "expected": "Provider/model/estimate/actual/unknown hiển thị đúng record của chính user.",
+          "oracle": {
+            "tool": "Mock AI provider, server ledger và UI harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So DOM có tên truy cập được với ledger độc lập, không đọc số từ cùng UI store làm expected.",
+            "threshold": "Provider/model/estimate/actual/unknown hiển thị đúng record của chính user.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-006",
+      "requirements": [
+        "SRC-04"
+      ],
+      "title": "Chữ, dấu và variation",
+      "prerequisites": "Font contract+Worker/UI, expected shaping records",
+      "steps": [
+        "Shape Việt NFC/NFD, nhiều dòng, bidi, variation axes.",
+        "Đổi mm↔pt và sửa 8 control/2 toggle ở hai vị trí.",
+        "Xóa font khỏi danh sách rồi mở dự án còn referenced."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-006.1",
+          "requirements": [
+            "SRC-04"
+          ],
+          "action": "Shape Việt NFC/NFD, nhiều dòng, bidi, variation axes.",
+          "expected": "Cluster/glyph placement đúng expected shaping corpus, không mất dấu/lỗ.",
+          "oracle": {
+            "tool": "HarfBuzz reference đã pin và font/project inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Expected records tạo độc lập từ HarfBuzz reference đã pin và kiểm source font hash.",
+            "threshold": "Cluster/glyph placement đúng expected shaping corpus, không mất dấu/lỗ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-006.2",
+          "requirements": [
+            "SRC-04"
+          ],
+          "action": "Đổi mm↔pt và sửa 8 control/2 toggle ở hai vị trí.",
+          "expected": "Hai UI cùng tham số domain; đổi đơn vị không đổi em-size.",
+          "oracle": {
+            "tool": "HarfBuzz reference đã pin và font/project inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc domain snapshot và kiểm 1 pt=25.4/72 mm bằng decimal reference.",
+            "threshold": "Hai UI cùng tham số domain; đổi đơn vị không đổi em-size.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-006.3",
+          "requirements": [
+            "SRC-04"
+          ],
+          "action": "Xóa font khỏi danh sách rồi mở dự án còn referenced.",
+          "expected": "Dự án dùng đúng font bytes cũ.",
+          "oracle": {
+            "tool": "HarfBuzz reference đã pin và font/project inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hash font trong project package/store; không dùng tên font hoặc ảnh preview làm expected.",
+            "threshold": "Dự án dùng đúng font bytes cũ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-007",
+      "requirements": [
+        "MOD-01",
+        "ACC-03"
+      ],
+      "title": "Preset, đổi loại và ưu tiên cài đặt",
+      "prerequisites": "Project history, hai users, modeDefaults của danh mục parameters-core-v1",
+      "steps": [
+        "Đổi loại rồi quay lại sau chỉnh strapD/baseH và màu tay.",
+        "Áp preset thưa và đổi personal defaults rồi mở dự án cũ.",
+        "Owner rút rồi khôi phục provider đã được user chọn."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-007.1",
+          "requirements": [
+            "MOD-01"
+          ],
+          "action": "Đổi loại rồi quay lại sau chỉnh strapD/baseH và màu tay.",
+          "expected": "Overrides theo loại và nguồn được phục hồi; một undo đảo cả lần đổi.",
+          "oracle": {
+            "tool": "Project history/policy harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So snapshot trước/sau và nhật ký transaction độc lập với widget.",
+            "threshold": "Overrides theo loại và nguồn được phục hồi; một undo đảo cả lần đổi.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-007.2",
+          "requirements": [
+            "ACC-03"
+          ],
+          "action": "Áp preset thưa và đổi personal defaults rồi mở dự án cũ.",
+          "expected": "Snapshot cũ thắng mặc định mới; preset không màu không đổi màu.",
+          "oracle": {
+            "tool": "Project history/policy harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Diff project manifest đã lưu với bản mở lại, theo tập field được preset khai.",
+            "threshold": "Snapshot cũ thắng mặc định mới; preset không màu không đổi màu.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-007.3",
+          "requirements": [
+            "ACC-03"
+          ],
+          "action": "Owner rút rồi khôi phục provider đã được user chọn.",
+          "expected": "Giữ giá trị gốc; policy-blocked chặn request mới, không tự fallback/rebuild.",
+          "oracle": {
+            "tool": "Project history/policy harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Server policy revision, network count và project hash; đối chiếu cả UI lý do.",
+            "threshold": "Giữ giá trị gốc; policy-blocked chặn request mới, không tự fallback/rebuild.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-008",
+      "requirements": [
+        "MOD-02"
+      ],
+      "title": "Vùng, vật liệu, vai và override",
+      "prerequisites": "Segmentation+semantic IDs+UI",
+      "steps": [
+        "Bấm NỀN trên vùng màu vừa chạm biên vừa có lỗ trong.",
+        "Chọn override vai/khối/khe rồi rebuild và reset.",
+        "Split/merge vùng có override và tạo khe trùng màu khác."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-008.1",
+          "requirements": [
+            "MOD-02"
+          ],
+          "action": "Bấm NỀN trên vùng màu vừa chạm biên vừa có lỗ trong.",
+          "expected": "Chỉ thành phần nền nối biên bị loại.",
+          "oracle": {
+            "tool": "Region/provenance oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So tập vùng/topology với fixture giải tích có thành phần cùng màu tách rời.",
+            "threshold": "Chỉ thành phần nền nối biên bị loại.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-008.2",
+          "requirements": [
+            "MOD-02"
+          ],
+          "action": "Chọn override vai/khối/khe rồi rebuild và reset.",
+          "expected": "Auto không đè user; reset chỉ xóa override được chọn.",
+          "oracle": {
+            "tool": "Region/provenance oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc origin/semantic IDs/provenance trước sau từng lệnh.",
+            "threshold": "Auto không đè user; reset chỉ xóa override được chọn.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-008.3",
+          "requirements": [
+            "MOD-02"
+          ],
+          "action": "Split/merge vùng có override và tạo khe trùng màu khác.",
+          "expected": "Orphan và trùng khe hiện rõ, không tự gán/remap.",
+          "oracle": {
+            "tool": "Region/provenance oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu bảng ID mapping độc lập với provenance nguồn và project diff.",
+            "threshold": "Orphan và trùng khe hiện rõ, không tự gán/remap.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-009",
+      "requirements": [
+        "MOD-03"
+      ],
+      "title": "Field schema và ràng buộc",
+      "prerequisites": "Schema chính thức sau O-02; catalog tham chiếu",
+      "steps": [
+        "Kiểm từng field và control của 11 nhóm, chữ và override.",
+        "Thử min/max/bước, ẩn/hiện, auto 0 và dependency.",
+        "Nạp impVox=0.25 rồi chuyển sang mesh boolean."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-009.1",
+          "requirements": [
+            "MOD-03"
+          ],
+          "action": "Kiểm từng field và control của 11 nhóm, chữ và override.",
+          "expected": "Mỗi field có schema/đường truy cập; hai nút Áp dụng cùng command ID.",
+          "oracle": {
+            "tool": "Independent schema/decimal validator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So tập ID đầy đủ với bản tham chiếu và field-level disposition đã duyệt sau O-02.",
+            "threshold": "Mỗi field có schema/đường truy cập; hai nút Áp dụng cùng command ID.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-009.2",
+          "requirements": [
+            "MOD-03"
+          ],
+          "action": "Thử min/max/bước, ẩn/hiện, auto 0 và dependency.",
+          "expected": "Giá trị hidden còn nguyên; lỗi không finite/ngoài miền không commit.",
+          "oracle": {
+            "tool": "Independent schema/decimal validator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Decimal domain/grid validator độc lập và project head trước/sau.",
+            "threshold": "Giá trị hidden còn nguyên; lỗi không finite/ngoài miền không commit.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-009.3",
+          "requirements": [
+            "MOD-03"
+          ],
+          "action": "Nạp impVox=0.25 rồi chuyển sang mesh boolean.",
+          "expected": "Không ánh xạ 0.25 thành tolerance 0.25 ngầm; cần lựa chọn mới.",
+          "oracle": {
+            "tool": "Independent schema/decimal validator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc migration dry-run với replace-capability, byte bản cũ và commit mới có xác nhận.",
+            "threshold": "Không ánh xạ 0.25 thành tolerance 0.25 ngầm; cần lựa chọn mới.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-010",
+      "requirements": [
+        "EDT-01"
+      ],
+      "title": "Bảy đường sửa và undo",
+      "prerequisites": "2D editor và oracle vùng giải tích",
+      "steps": [
+        "Thực hiện B/V/U/X/C/K/H và các chế độ giữ/cắt/gộp.",
+        "Kéo một nét rồi undo/redo, gây hết ngân sách history."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-010.1",
+          "requirements": [
+            "EDT-01"
+          ],
+          "action": "Thực hiện B/V/U/X/C/K/H và các chế độ giữ/cắt/gộp.",
+          "expected": "Mỗi công cụ làm đúng tập vùng mong đợi, giữ lỗ và provenance liên quan.",
+          "oracle": {
+            "tool": "Analytic region oracle và command history harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Dùng polygon giải tích theo từng chế độ, so diện tích/holes thay vì snapshot UI tự sinh.",
+            "threshold": "Mỗi công cụ làm đúng tập vùng mong đợi, giữ lỗ và provenance liên quan.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-010.2",
+          "requirements": [
+            "EDT-01"
+          ],
+          "action": "Kéo một nét rồi undo/redo, gây hết ngân sách history.",
+          "expected": "Một nét là một transaction; cảnh báo trước rút ngắn lịch sử.",
+          "oracle": {
+            "tool": "Analytic region oracle và command history harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đếm transaction và diff domain, so trạng thái trước nét/sau undo bằng canonical snapshot.",
+            "threshold": "Một nét là một transaction; cảnh báo trước rút ngắn lịch sử.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-011",
+      "requirements": [
+        "EDT-02"
+      ],
+      "title": "Điều hướng và nguồn gốc",
+      "prerequisites": "UI thật có mouse/touch/pen hoặc thiết bị mô phỏng được ghi",
+      "steps": [
+        "Zoom/pan/pinch, bật xem nguồn rồi tắt.",
+        "Vẽ cùng bề rộng vector ở hai zoom; bút có/không pressure."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-011.1",
+          "requirements": [
+            "EDT-02"
+          ],
+          "action": "Zoom/pan/pinch, bật xem nguồn rồi tắt.",
+          "expected": "Xem nguồn không sửa thiết kế và trở về đúng khung cũ.",
+          "oracle": {
+            "tool": "Pointer event replay và geometry reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So transform/view state và project content hashes độc lập.",
+            "threshold": "Xem nguồn không sửa thiết kế và trở về đúng khung cũ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-011.2",
+          "requirements": [
+            "EDT-02"
+          ],
+          "action": "Vẽ cùng bề rộng vector ở hai zoom; bút có/không pressure.",
+          "expected": "Nét giữ đơn vị thiết kế; không pressure dùng hệ số 1.",
+          "oracle": {
+            "tool": "Pointer event replay và geometry reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đo outline mm sau export và so input pressure events đã ghi.",
+            "threshold": "Nét giữ đơn vị thiết kế; không pressure dùng hệ số 1.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-012",
+      "requirements": [
+        "VIEW-01"
+      ],
+      "title": "Scene và transform",
+      "prerequisites": "Viewer, mesh snapshot, file reader",
+      "steps": [
+        "Dời camera/nền, đổi góc/Fit rồi xuất.",
+        "Dời chữ/gờ/lưới bằng kéo và bằng ô số.",
+        "Mất context và cho job cũ hoàn tất sau job mới."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-012.1",
+          "requirements": [
+            "VIEW-01"
+          ],
+          "action": "Dời camera/nền, đổi góc/Fit rồi xuất.",
+          "expected": "View transform không đổi tọa độ file.",
+          "oracle": {
+            "tool": "Viewer/Worker fault harness và export reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Reader tệp độc lập so bounds/vertices canonical trước sau camera move.",
+            "threshold": "View transform không đổi tọa độ file.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-012.2",
+          "requirements": [
+            "VIEW-01"
+          ],
+          "action": "Dời chữ/gờ/lưới bằng kéo và bằng ô số.",
+          "expected": "Hai cách cho cùng design transform và undo được.",
+          "oracle": {
+            "tool": "Viewer/Worker fault harness và export reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So domain matrices và scene final, không dùng camera matrix làm oracle.",
+            "threshold": "Hai cách cho cùng design transform và undo được.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-012.3",
+          "requirements": [
+            "VIEW-01"
+          ],
+          "action": "Mất context và cho job cũ hoàn tất sau job mới.",
+          "expected": "Viewer phục hồi từ snapshot hợp lệ; không publish generation cũ.",
+          "oracle": {
+            "tool": "Viewer/Worker fault harness và export reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Worker event sequence cộng renderer resource recreation trace.",
+            "threshold": "Viewer phục hồi từ snapshot hợp lệ; không publish generation cũ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-013",
+      "requirements": [
+        "EXP-01",
+        "OUT-01"
+      ],
+      "title": "Bảy đường xuất và đọc lại",
+      "prerequisites": "Exporters và reader/slicer được truyền rõ đường dẫn/version",
+      "steps": [
+        "Xuất bảy đường theo capability; đọc lại từng định dạng.",
+        "Serialize và validate cấu trúc 3MF trước dùng slicer.",
+        "Mở, slice, xem lớp/vật liệu bằng từng slicer/version đích."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-013.1",
+          "requirements": [
+            "EXP-01"
+          ],
+          "action": "Xuất bảy đường theo capability; đọc lại từng định dạng.",
+          "expected": "File có units/bounds/normals/material mapping đúng phạm vi.",
+          "oracle": {
+            "tool": "3MF schema/reader độc lập và binary slicer đích",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Reader độc lập writer và so analytical geometry; PNG chỉ kiểm view, SVG nguồn chỉ kiểm source.",
+            "threshold": "File có units/bounds/normals/material mapping đúng phạm vi.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-013.2",
+          "requirements": [
+            "OUT-01"
+          ],
+          "action": "Serialize và validate cấu trúc 3MF trước dùng slicer.",
+          "expected": "ZIP/XML/relationships/material references hợp lệ; fixture U1 lỗi không là golden.",
+          "oracle": {
+            "tool": "3MF schema/reader độc lập và binary slicer đích",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "3MF reader/schema validator khác writer; đối chiếu sample-qualification.json và hashes.",
+            "threshold": "ZIP/XML/relationships/material references hợp lệ; fixture U1 lỗi không là golden.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-013.3",
+          "requirements": [
+            "OUT-01"
+          ],
+          "action": "Mở, slice, xem lớp/vật liệu bằng từng slicer/version đích.",
+          "expected": "Đạt từng slicer riêng; thiếu tool hoặc mẫu sạch là unverified, không fail hình học.",
+          "oracle": {
+            "tool": "3MF schema/reader độc lập và binary slicer đích",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Binary slicer đích pin version, preview lớp/log/screenshot và bounds/material table; gate G5.",
+            "threshold": "Đạt từng slicer riêng; thiếu tool hoặc mẫu sạch là unverified, không fail hình học.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ],
+      "inputPolicy": {
+        "qualification": "docs/reviews/20260907-specification/sample-qualification.json",
+        "slicerGolden": "Mẫu sạch theo đúng slicer/version, đã xét quyền/hash/metadata; chưa có thì unverified.",
+        "forbiddenGoldenSha256": [
+          "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece"
+        ]
+      }
+    },
+    {
+      "id": "AT-014",
+      "requirements": [
+        "EXP-02"
+      ],
+      "title": "Cửa chặn và xuất kiểm tra",
+      "prerequisites": "Export preflight, crafted bad meshes",
+      "steps": [
+        "Kích hoạt từng cửa chặn đúng capability và stale revision.",
+        "Cho mesh lỗi nhưng serializer trung tính hợp lệ.",
+        "Dùng U1 extruder 1..6 với chỉ 4 filament."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-014.1",
+          "requirements": [
+            "EXP-02"
+          ],
+          "action": "Kích hoạt từng cửa chặn đúng capability và stale revision.",
+          "expected": "Không sinh artifact sai hoặc một phần; lỗi có ID và đường sửa.",
+          "oracle": {
+            "tool": "Export preflight harness và independent format reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đếm publish artifact và so registry preflight với trạng thái đầu vào tạo độc lập.",
+            "threshold": "Không sinh artifact sai hoặc một phần; lỗi có ID và đường sửa.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-014.2",
+          "requirements": [
+            "EXP-02"
+          ],
+          "action": "Cho mesh lỗi nhưng serializer trung tính hợp lệ.",
+          "expected": "Diagnostic export giữ verdict/warning, không có nhãn sẵn sàng in.",
+          "oracle": {
+            "tool": "Export preflight harness và independent format reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Reader artifact cùng report; kiểm nhãn và không dùng verdict của generator làm expected.",
+            "threshold": "Diagnostic export giữ verdict/warning, không có nhãn sẵn sàng in.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-014.3",
+          "requirements": [
+            "EXP-02"
+          ],
+          "action": "Dùng U1 extruder 1..6 với chỉ 4 filament.",
+          "expected": "MATERIAL_SLOT_MISMATCH chặn project U1 hỏng; chỉ remap có xác nhận hoặc xuất trung tính.",
+          "oracle": {
+            "tool": "Export preflight harness và independent format reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đếm và giải tham chiếu metadata bằng parser độc lập; thử 3MF và STL riêng.",
+            "threshold": "MATERIAL_SLOT_MISMATCH chặn project U1 hỏng; chỉ remap có xác nhận hoặc xuất trung tính.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-015",
+      "requirements": [
+        "DAT-01",
+        "STO-01"
+      ],
+      "title": "Crash-consistent commit",
+      "prerequisites": "Isolated test browser/process, crash harness, storage backends",
+      "steps": [
+        "Kill tại put/manifest/head/cleanup ít nhất 20 lần mỗi backend/browser.",
+        "Inject stale ack, thiếu asset và crash cleanup.",
+        "Mở hai user cùng projectId và một user ở hai schema version."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-015.1",
+          "requirements": [
+            "DAT-01"
+          ],
+          "action": "Kill tại put/manifest/head/cleanup ít nhất 20 lần mỗi backend/browser.",
+          "expected": "Khôi phục commit đã ack cuối hoặc thế hệ lùi hash hợp lệ.",
+          "oracle": {
+            "tool": "Isolated process crash harness và storage inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Journal ack trace ngoài process bị kill và đọc lại manifest/assets bằng inspector độc lập.",
+            "threshold": "Khôi phục commit đã ack cuối hoặc thế hệ lùi hash hợp lệ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-015.2",
+          "requirements": [
+            "STO-01"
+          ],
+          "action": "Inject stale ack, thiếu asset và crash cleanup.",
+          "expected": "Không publish head thiếu byte hoặc trộn generation.",
+          "oracle": {
+            "tool": "Isolated process crash harness và storage inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So head atomic và dependency hashes; đối chiếu với tập fault injection đã ghi.",
+            "threshold": "Không publish head thiếu byte hoặc trộn generation.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-015.3",
+          "requirements": [
+            "DAT-01",
+            "STO-01"
+          ],
+          "action": "Mở hai user cùng projectId và một user ở hai schema version.",
+          "expected": "User khác không tranh lock; cùng user/project chỉ một writer kể cả migration.",
+          "oracle": {
+            "tool": "Isolated process crash harness và storage inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Web Lock inspector và ghi thử từ các context riêng, không chỉ xem nhãn read-only.",
+            "threshold": "User khác không tranh lock; cùng user/project chỉ một writer kể cả migration.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-016",
+      "requirements": [
+        "DAT-02"
+      ],
+      "title": "Import ZIP và mirror",
+      "prerequisites": "ZIP importer, quota fault injection, profiles riêng",
+      "steps": [
+        "Xuất rồi nhập ZIP chứa font, lưới và nguồn màu.",
+        "Nhập ZIP traversal, thiếu font, CRC/hash sai hoặc quá trần.",
+        "Mất quota hoặc quyền thư mục mirror giữa backup."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-016.1",
+          "requirements": [
+            "DAT-02"
+          ],
+          "action": "Xuất rồi nhập ZIP chứa font, lưới và nguồn màu.",
+          "expected": "Mọi referenced asset có đúng bytes/hash và schema.",
+          "oracle": {
+            "tool": "ZIP reader khác writer và quota injector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc ZIP bằng reader độc lập, giải tất cả tham chiếu; source hashes từ manifest gốc.",
+            "threshold": "Mọi referenced asset có đúng bytes/hash và schema.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-016.2",
+          "requirements": [
+            "DAT-02"
+          ],
+          "action": "Nhập ZIP traversal, thiếu font, CRC/hash sai hoặc quá trần.",
+          "expected": "Không có commit dở và không ghi ra ngoài vùng dữ liệu được phép.",
+          "oracle": {
+            "tool": "ZIP reader khác writer và quota injector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Giám sát output paths cùng project head trước/sau; đếm expanded bytes trước cấp phát.",
+            "threshold": "Không có commit dở và không ghi ra ngoài vùng dữ liệu được phép.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-016.3",
+          "requirements": [
+            "DAT-02"
+          ],
+          "action": "Mất quota hoặc quyền thư mục mirror giữa backup.",
+          "expected": "Commit local còn nguyên; không báo backup thành công.",
+          "oracle": {
+            "tool": "ZIP reader khác writer và quota injector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu mirror hash/ack với local head và UI trạng thái.",
+            "threshold": "Commit local còn nguyên; không báo backup thành công.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-017",
+      "requirements": [
+        "DAT-03"
+      ],
+      "title": "Quản lý kho và tìm nhanh",
+      "prerequisites": "Registry search+storage+profiles",
+      "steps": [
+        "Gộp/thay settings, mở record hỏng và xuất thô.",
+        "Tìm nhiều từ không dấu, mở field ẩn, xóa hai bước/Esc."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-017.1",
+          "requirements": [
+            "DAT-03"
+          ],
+          "action": "Gộp/thay settings, mở record hỏng và xuất thô.",
+          "expected": "Record lỗi vẫn cứu được; không secret trong JSON.",
+          "oracle": {
+            "tool": "Settings/schema/registry inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Byte diff/export scan với canary secret và schema validator riêng.",
+            "threshold": "Record lỗi vẫn cứu được; không secret trong JSON.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-017.2",
+          "requirements": [
+            "DAT-03"
+          ],
+          "action": "Tìm nhiều từ không dấu, mở field ẩn, xóa hai bước/Esc.",
+          "expected": "Tìm đúng registry entry; không xóa trước xác nhận đúng scope.",
+          "oracle": {
+            "tool": "Settings/schema/registry inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu tập command/parameter ID và storage record count sau từng thao tác.",
+            "threshold": "Tìm đúng registry entry; không xóa trước xác nhận đúng scope.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-018",
+      "requirements": [
+        "LIM-01"
+      ],
+      "title": "Ngưỡng và bảo vệ tài nguyên",
+      "prerequisites": "Limit harness và budget thực tế được ghi",
+      "steps": [
+        "Thử dưới/bằng/trên mỗi trần byte, pixel, ZIP entry và mesh.",
+        "Nhập chữ đúng/vượt 500 grapheme và font trong gói vượt trần."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-018.1",
+          "requirements": [
+            "LIM-01"
+          ],
+          "action": "Thử dưới/bằng/trên mỗi trần byte, pixel, ZIP entry và mesh.",
+          "expected": "Reject trước cấp phát vượt budget; oracle quá trần là unverified.",
+          "oracle": {
+            "tool": "Boundary input generator và allocation monitor",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Bộ tạo kích thước độc lập cộng memory/allocation trace và actual byte counters.",
+            "threshold": "Reject trước cấp phát vượt budget; oracle quá trần là unverified.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-018.2",
+          "requirements": [
+            "LIM-01"
+          ],
+          "action": "Nhập chữ đúng/vượt 500 grapheme và font trong gói vượt trần.",
+          "expected": "Không cắt giữa chuỗi; không bỏ font để nhận gói.",
+          "oracle": {
+            "tool": "Boundary input generator và allocation monitor",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Unicode grapheme reference và kiểm exact input/output bytes/hash.",
+            "threshold": "Không cắt giữa chuỗi; không bỏ font để nhận gói.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-019",
+      "requirements": [
+        "ARC-01"
+      ],
+      "title": "Spike native và WASM",
+      "prerequisites": "Toolchain sau O-01, source corpus",
+      "steps": [
+        "Build native rồi WASM từ toolchain và dependency đã pin.",
+        "Kiểm import graph và processor khai remote ở v1."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-019.1",
+          "requirements": [
+            "ARC-01"
+          ],
+          "action": "Build native rồi WASM từ toolchain và dependency đã pin.",
+          "expected": "ABI/linker hoạt động trên cùng nguồn; kết quả trong bound.",
+          "oracle": {
+            "tool": "Pinned native/WASM build và independent mesh reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Manifest build/version cộng reader/oracle riêng cho cùng SVG có lỗ.",
+            "threshold": "ABI/linker hoạt động trên cùng nguồn; kết quả trong bound.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-019.2",
+          "requirements": [
+            "ARC-01"
+          ],
+          "action": "Kiểm import graph và processor khai remote ở v1.",
+          "expected": "UI không làm boolean/shaping; remote không tự kích hoạt.",
+          "oracle": {
+            "tool": "Pinned native/WASM build và independent mesh reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Static dependency graph và registry activation test, không dùng mock làm bằng chứng kernel.",
+            "threshold": "UI không làm boolean/shaping; remote không tự kích hoạt.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-020",
+      "requirements": [
+        "GEO-01"
+      ],
+      "title": "Chung biên, lỗ và topology",
+      "prerequisites": "Kernel+oracle độc lập",
+      "steps": [
+        "Dựng rectangle-hole.svg trong corpus-v1.",
+        "Dựng shared-seam.svg trong corpus-v1.",
+        "Boolean/offset nested holes, đỉnh lặp và nguồn tự cắt."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-020.1",
+          "requirements": [
+            "GEO-01"
+          ],
+          "action": "Dựng rectangle-hole.svg trong corpus-v1.",
+          "expected": "Diện tích vùng là 184 mm², một lỗ và một thành phần.",
+          "oracle": {
+            "tool": "Analytic area/mesh topology oracle khác generator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Công thức 20×10−4×4 độc lập, đọc vùng/file xuất và bound pipeline được khai trước.",
+            "threshold": "Diện tích vùng là 184 mm², một lỗ và một thành phần.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-020.2",
+          "requirements": [
+            "GEO-01"
+          ],
+          "action": "Dựng shared-seam.svg trong corpus-v1.",
+          "expected": "Hai vùng 100 mm² mỗi vùng, tổng 200 và seam 10 mm.",
+          "oracle": {
+            "tool": "Analytic area/mesh topology oracle khác generator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Công thức hai hình chữ nhật; so shared edge coordinates và giao nội thất bằng oracle khác generator.",
+            "threshold": "Hai vùng 100 mm² mỗi vùng, tổng 200 và seam 10 mm.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-020.3",
+          "requirements": [
+            "GEO-01"
+          ],
+          "action": "Boolean/offset nested holes, đỉnh lặp và nguồn tự cắt.",
+          "expected": "Không mất lỗ/dấu ngầm; topology và sign theo kết quả giải tích.",
+          "oracle": {
+            "tool": "Analytic area/mesh topology oracle khác generator",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Vertex-link/edge/intersection reader độc lập trên artifact cuối, không chỉ cờ manifold.",
+            "threshold": "Không mất lỗ/dấu ngầm; topology và sign theo kết quả giải tích.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ],
+      "fixtures": [
+        {
+          "path": "tests/fixtures/corpus-v1/rectangle-hole.svg",
+          "sha256": "07e2d061680bffe7915f733c40a3ea6bb6ed28de119d997a38947ead4bb55187",
+          "expected": {
+            "area_mm2": 184,
+            "components": 1,
+            "holes": 1,
+            "oracle": "20*10 - 4*4; geometry not yet executed"
+          }
+        },
+        {
+          "path": "tests/fixtures/corpus-v1/shared-seam.svg",
+          "sha256": "6deec001cb76b5d9c998d259ef9a8c84e3dfcf6b4f353e912ece3788bcbf5648",
+          "expected": {
+            "total_area_mm2": 200,
+            "per_material_area_mm2": [
+              100,
+              100
+            ],
+            "shared_seam_mm": 10,
+            "oracle": "two analytic rectangles; geometry not yet executed"
+          }
+        }
+      ]
+    },
+    {
+      "id": "AT-021",
+      "requirements": [
+        "GEO-02"
+      ],
+      "title": "Sai số, scale và first layer",
+      "prerequisites": "Kernel/layer schema/independent math reference",
+      "steps": [
+        "Quantize ties, transform vượt miền, float output lớn.",
+        "Đặt n=12 từ bàn, h0=0.16 và h=0.20.",
+        "Đổi P1S→U1 có h0=0.25 rồi undo.",
+        "Giữ nominal 2.40 mm khi h0=0.16/h=0.20."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-021.1",
+          "requirements": [
+            "GEO-02"
+          ],
+          "action": "Quantize ties, transform vượt miền, float output lớn.",
+          "expected": "Mỗi khâu có bound; overflow không commit; tổng thiếu bound là unverified.",
+          "oracle": {
+            "tool": "Decimal math reference và signed geometry measurement",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Decimal/arbitrary-precision reference và signed distance trên artifact, dùng fixture được khóa trước đo.",
+            "threshold": "Mỗi khâu có bound; overflow không commit; tổng thiếu bound là unverified.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-021.2",
+          "requirements": [
+            "GEO-02"
+          ],
+          "action": "Đặt n=12 từ bàn, h0=0.16 và h=0.20.",
+          "expected": "Cao độ bằng 2.36 mm trong bound; thickness từ datum dùng hiệu z.",
+          "oracle": {
+            "tool": "Decimal math reference và signed geometry measurement",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Oracle decimal 0.16+11×0.20 và z(n1)−z(n0), độc lập widget/kernel.",
+            "threshold": "Cao độ bằng 2.36 mm trong bound; thickness từ datum dùng hiệu z.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-021.3",
+          "requirements": [
+            "GEO-02"
+          ],
+          "action": "Đổi P1S→U1 có h0=0.25 rồi undo.",
+          "expected": "Layers n=12 đổi 2.36→2.45 chỉ sau xác nhận; undo phục hồi schedule.",
+          "oracle": {
+            "tool": "Decimal math reference và signed geometry measurement",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc project schedule/hash và đo height file; oracle decimal cho hai schedule.",
+            "threshold": "Layers n=12 đổi 2.36→2.45 chỉ sau xác nhận; undo phục hồi schedule.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-021.4",
+          "requirements": [
+            "GEO-02"
+          ],
+          "action": "Giữ nominal 2.40 mm khi h0=0.16/h=0.20.",
+          "expected": "Giữ 2.40 mm, báo signed deviation; không tự thành 12 lớp.",
+          "oracle": {
+            "tool": "Decimal math reference và signed geometry measurement",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So nominal value và nearest/floor/ceil theo decimal schedule, không lấy chip UI làm expected.",
+            "threshold": "Giữ 2.40 mm, báo signed deviation; không tự thành 12 lớp.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-022",
+      "requirements": [
+        "GEO-03"
+      ],
+      "title": "Coupon và fit vật thật",
+      "prerequisites": "Máy in, coupon, phần cứng và thiết bị đo phù hợp",
+      "steps": [
+        "In coupon bốn họ và seam trên ít nhất ba ngày mỗi cấu hình.",
+        "Đánh giá lực lắp, nứt/lỏng và bền với tiêu chí đã khóa trước in."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-022.1",
+          "requirements": [
+            "GEO-03"
+          ],
+          "action": "In coupon bốn họ và seam trên ít nhất ba ngày mỗi cấu hình.",
+          "expected": "Có raw measurements, n, dụng cụ và uncertainty theo đúng máy/vật liệu/phần cứng.",
+          "oracle": {
+            "tool": "Dụng cụ đo và protocol coupon thực",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Dụng cụ đo vật thật đã kiểm hiệu chuẩn; số đo g-code/mesh không thay số đo vật in.",
+            "threshold": "Có raw measurements, n, dụng cụ và uncertainty theo đúng máy/vật liệu/phần cứng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-022.2",
+          "requirements": [
+            "GEO-03"
+          ],
+          "action": "Đánh giá lực lắp, nứt/lỏng và bền với tiêu chí đã khóa trước in.",
+          "expected": "Verdict chỉ cho đúng cấu hình đã đo; không gán fit cho máy lạ.",
+          "oracle": {
+            "tool": "Dụng cụ đo và protocol coupon thực",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Thử cơ học/đo lực trực tiếp theo protocol có ngưỡng định trước O-03, không fit theo cảm giác sau khi thấy kết quả.",
+            "threshold": "Verdict chỉ cho đúng cấu hình đã đo; không gán fit cho máy lạ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-023",
+      "requirements": [
+        "ABI-01"
+      ],
+      "title": "Ownership và race",
+      "prerequisites": "Native/WASM sanitizers và concurrency harness phù hợp",
+      "steps": [
+        "Pin/grow/release/cancel đồng thời, publish generation muộn.",
+        "Truyền i64 vượt Number safe integer qua wasm32/native."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-023.1",
+          "requirements": [
+            "ABI-01"
+          ],
+          "action": "Pin/grow/release/cancel đồng thời, publish generation muộn.",
+          "expected": "Không UAF/torn snapshot hoặc dùng buffer quá lifetime.",
+          "oracle": {
+            "tool": "Target-appropriate sanitizers, concurrency và ABI byte inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Sanitizer/concurrency harness phù hợp từng target và host trace đọc memory độc lập.",
+            "threshold": "Không UAF/torn snapshot hoặc dùng buffer quá lifetime.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-023.2",
+          "requirements": [
+            "ABI-01"
+          ],
+          "action": "Truyền i64 vượt Number safe integer qua wasm32/native.",
+          "expected": "Không mất bit và đúng layout đã pin.",
+          "oracle": {
+            "tool": "Target-appropriate sanitizers, concurrency và ABI byte inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "BigInt/arbitrary-precision test vector và byte-layout inspector, không round qua JS Number.",
+            "threshold": "Không mất bit và đúng layout đã pin.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-024",
+      "requirements": [
+        "UI-01",
+        "UI-03"
+      ],
+      "title": "Bố cục và overlay",
+      "prerequisites": "UI thật, ảnh và keyboard inspection",
+      "steps": [
+        "Mở sáu khu qua hai bước ở rỗng/bận/lỗi.",
+        "Chồng toolbar/tooltip/popup/drawer/info và gập panel."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-024.1",
+          "requirements": [
+            "UI-01"
+          ],
+          "action": "Mở sáu khu qua hai bước ở rỗng/bận/lỗi.",
+          "expected": "Đủ đường truy cập control, Hủy còn hoạt động khi busy.",
+          "oracle": {
+            "tool": "Browser automation, hit-test và kiểm nhìn thật",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Browser automation cộng kiểm nhìn thật và tập command IDs ngoài UI.",
+            "threshold": "Đủ đường truy cập control, Hủy còn hoạt động khi busy.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-024.2",
+          "requirements": [
+            "UI-03"
+          ],
+          "action": "Chồng toolbar/tooltip/popup/drawer/info và gập panel.",
+          "expected": "Không target bị nuốt hoặc overlay che đường đóng/lưu.",
+          "oracle": {
+            "tool": "Browser automation, hit-test và kiểm nhìn thật",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hit-test/keyboard traversal và screenshot đo trên browser thật, kiểm stacking contexts.",
+            "threshold": "Không target bị nuốt hoặc overlay che đường đóng/lưu.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-025",
+      "requirements": [
+        "UI-02",
+        "UI-04",
+        "UI-06"
+      ],
+      "title": "Trợ năng và responsive",
+      "prerequisites": "Browser/device matrix, a11y tool và người kiểm nhìn thật",
+      "steps": [
+        "Đo chữ/controls ở mọi nền, state, opacity và gradient.",
+        "Dùng palette/control compact bằng keyboard và zoom 200%.",
+        "Thử 320 px, các boundary±1 và fractional zoom, màn thấp/keyboard."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-025.1",
+          "requirements": [
+            "UI-02"
+          ],
+          "action": "Đo chữ/controls ở mọi nền, state, opacity và gradient.",
+          "expected": "Contrast đạt 4.5:1 chữ thường, 3:1 chữ lớn/UI áp dụng.",
+          "oracle": {
+            "tool": "WCAG color/target/layout measurements và screen reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Color sampling sau compositing và WCAG contrast calculator độc lập với token khai báo.",
+            "threshold": "Contrast đạt 4.5:1 chữ thường, 3:1 chữ lớn/UI áp dụng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-025.2",
+          "requirements": [
+            "UI-04"
+          ],
+          "action": "Dùng palette/control compact bằng keyboard và zoom 200%.",
+          "expected": "Nhãn/scope đọc được, target không chồng, không mất control.",
+          "oracle": {
+            "tool": "WCAG color/target/layout measurements và screen reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Computed metrics cộng nhìn thật/screen reader; token px nhường ngưỡng đọc và thao tác.",
+            "threshold": "Nhãn/scope đọc được, target không chồng, không mất control.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-025.3",
+          "requirements": [
+            "UI-06"
+          ],
+          "action": "Thử 320 px, các boundary±1 và fractional zoom, màn thấp/keyboard.",
+          "expected": "Mỗi width đúng một layout; reflow và focus không bị che.",
+          "oracle": {
+            "tool": "WCAG color/target/layout measurements và screen reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Range assertions trên computed layout cộng kiểm nhìn thật và safe-area/keyboard scenarios.",
+            "threshold": "Mỗi width đúng một layout; reflow và focus không bị che.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-026",
+      "requirements": [
+        "UI-05"
+      ],
+      "title": "Phím tắt và modal",
+      "prerequisites": "UI keyboard+screen reader",
+      "steps": [
+        "Gõ trong input/select/contenteditable/IME rồi dùng phím C ở hai bước.",
+        "Mở modal lồng, Escape và đóng bằng keyboard."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-026.1",
+          "requirements": [
+            "UI-05"
+          ],
+          "action": "Gõ trong input/select/contenteditable/IME rồi dùng phím C ở hai bước.",
+          "expected": "Không bắt ký tự đang nhập; C đúng scope bước.",
+          "oracle": {
+            "tool": "Keyboard/composition trace và accessibility inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Keyboard/composition event trace và domain command log.",
+            "threshold": "Không bắt ký tự đang nhập; C đúng scope bước.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-026.2",
+          "requirements": [
+            "UI-05"
+          ],
+          "action": "Mở modal lồng, Escape và đóng bằng keyboard.",
+          "expected": "Chỉ lớp trên đóng, focus trở về đúng trigger.",
+          "oracle": {
+            "tool": "Keyboard/composition trace và accessibility inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Accessibility tree và activeElement từ browser, kiểm bằng screen reader.",
+            "threshold": "Chỉ lớp trên đóng, focus trở về đúng trigger.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-027",
+      "requirements": [
+        "SEC-01"
+      ],
+      "title": "Input và mạng không tin cậy",
+      "prerequisites": "Security harness, network capture, hostile fixtures",
+      "steps": [
+        "Nhập SVG script/fetch/XXE/recursive use và JSON prototype pollution.",
+        "Gọi API từ origin khác và provider endpoint/redirect private IP.",
+        "Làm parser font/mesh lỗi khi dự án đang có dữ liệu."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-027.1",
+          "requirements": [
+            "SEC-01"
+          ],
+          "action": "Nhập SVG script/fetch/XXE/recursive use và JSON prototype pollution.",
+          "expected": "Không thực thi hoặc gọi mạng ngoài policy.",
+          "oracle": {
+            "tool": "Hostile-input harness và network/process capture",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Network/process capture và canary object properties trong môi trường thử cô lập.",
+            "threshold": "Không thực thi hoặc gọi mạng ngoài policy.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-027.2",
+          "requirements": [
+            "SEC-01"
+          ],
+          "action": "Gọi API từ origin khác và provider endpoint/redirect private IP.",
+          "expected": "CSRF/SSRF bị từ chối trước side effect.",
+          "oracle": {
+            "tool": "Hostile-input harness và network/process capture",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Server request log đã loại secret và mock internal endpoint ghi 0 request trái phép.",
+            "threshold": "CSRF/SSRF bị từ chối trước side effect.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-027.3",
+          "requirements": [
+            "SEC-01"
+          ],
+          "action": "Làm parser font/mesh lỗi khi dự án đang có dữ liệu.",
+          "expected": "Dự án cũ nguyên vẹn, lỗi không leak secret/nguồn riêng.",
+          "oracle": {
+            "tool": "Hostile-input harness và network/process capture",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hash head/assets trước sau và canary scan trên log/error response.",
+            "threshold": "Dự án cũ nguyên vẹn, lỗi không leak secret/nguồn riêng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-028",
+      "requirements": [
+        "LIC-01"
+      ],
+      "title": "Nguồn và nghĩa vụ",
+      "prerequisites": "Assets lock+licenses+release manifest",
+      "steps": [
+        "Đối chiếu catalog/lock/files/licenses của release.",
+        "Thêm derivative hoặc profile chưa rõ quyền vào candidate release."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-028.1",
+          "requirements": [
+            "LIC-01"
+          ],
+          "action": "Đối chiếu catalog/lock/files/licenses của release.",
+          "expected": "Mỗi asset có revision/hash/quyền đúng nguồn; không subset thay bản gốc.",
+          "oracle": {
+            "tool": "Independent hash/license/release inventory",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hasher và license inventory kiểm độc lập với nhãn verified trong catalog.",
+            "threshold": "Mỗi asset có revision/hash/quyền đúng nguồn; không subset thay bản gốc.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-028.2",
+          "requirements": [
+            "LIC-01"
+          ],
+          "action": "Thêm derivative hoặc profile chưa rõ quyền vào candidate release.",
+          "expected": "Derivative có recipe; nguồn chưa rõ quyền không được phân phối.",
+          "oracle": {
+            "tool": "Independent hash/license/release inventory",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Diff release manifest/attribution với giấy phép gốc đã đọc, không đoán theo tên thư viện.",
+            "threshold": "Derivative có recipe; nguồn chưa rõ quyền không được phân phối.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-029",
+      "requirements": [
+        "ACC-01"
+      ],
+      "title": "Mời, role và thu hồi",
+      "prerequisites": "Identity server,test clock,owner+A+B",
+      "steps": [
+        "Dùng invite hai lần/hết hạn và member gọi admin.",
+        "Suspend/reactivate/revoke rồi gọi request đã xác thực cũ.",
+        "Xóa/hạ owner cuối hoặc chuyển owner không re-auth."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-029.1",
+          "requirements": [
+            "ACC-01"
+          ],
+          "action": "Dùng invite hai lần/hết hạn và member gọi admin.",
+          "expected": "Chỉ invite hợp lệ một lần, admin chỉ owner.",
+          "oracle": {
+            "tool": "Identity test clock và DB/audit inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Test clock và server auth/audit events, kiểm DB membership độc lập.",
+            "threshold": "Chỉ invite hợp lệ một lần, admin chỉ owner.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-029.2",
+          "requirements": [
+            "ACC-01"
+          ],
+          "action": "Suspend/reactivate/revoke rồi gọi request đã xác thực cũ.",
+          "expected": "Request mới bị từ chối theo authVersion mới.",
+          "oracle": {
+            "tool": "Identity test clock và DB/audit inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Server log/version và mock provider đếm không có job mới sau thu hồi.",
+            "threshold": "Request mới bị từ chối theo authVersion mới.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-029.3",
+          "requirements": [
+            "ACC-01"
+          ],
+          "action": "Xóa/hạ owner cuối hoặc chuyển owner không re-auth.",
+          "expected": "Không mất owner cuối và không chuyển quyền trái luồng.",
+          "oracle": {
+            "tool": "Identity test clock và DB/audit inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "DB role invariant và audit event, không chỉ toast UI.",
+            "threshold": "Không mất owner cuối và không chuyển quyền trái luồng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-030",
+      "requirements": [
+        "ACC-02",
+        "ACC-03"
+      ],
+      "title": "Quyền ngang tài khoản",
+      "prerequisites": "Server/DB/object store với2 member+owner",
+      "steps": [
+        "A đọc/sửa/list/search/delete tài nguyên B và owner thử key B.",
+        "Đổi ownerId/credentialId/jobId và dùng signed URL sai người/hết TTL.",
+        "Đẩy vượt quota cloud/settings/rate với hai request đua."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-030.1",
+          "requirements": [
+            "ACC-02"
+          ],
+          "action": "A đọc/sửa/list/search/delete tài nguyên B và owner thử key B.",
+          "expected": "Không response nào tiết lộ nội dung/secret B.",
+          "oracle": {
+            "tool": "Server/DB/object-store authorization and quota harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Database/object-store access trace và test canary assets, kiểm mọi endpoint đã liệt kê.",
+            "threshold": "Không response nào tiết lộ nội dung/secret B.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-030.2",
+          "requirements": [
+            "ACC-02"
+          ],
+          "action": "Đổi ownerId/credentialId/jobId và dùng signed URL sai người/hết TTL.",
+          "expected": "Scope được suy từ phiên; URL bị từ chối đúng policy.",
+          "oracle": {
+            "tool": "Server/DB/object-store authorization and quota harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Server auth decision và clock-controlled URL requests với resource canaries.",
+            "threshold": "Scope được suy từ phiên; URL bị từ chối đúng policy.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-030.3",
+          "requirements": [
+            "ACC-03"
+          ],
+          "action": "Đẩy vượt quota cloud/settings/rate với hai request đua.",
+          "expected": "Reject đúng chiều, tính cả stage và không mất dữ liệu đã commit.",
+          "oracle": {
+            "tool": "Server/DB/object-store authorization and quota harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Server byte/object/rate counters độc lập với client UI và đọc hash dữ liệu cũ.",
+            "threshold": "Reject đúng chiều, tính cả stage và không mất dữ liệu đã commit.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-031",
+      "requirements": [
+        "ACC-04"
+      ],
+      "title": "Đổi user và offline lease",
+      "prerequisites": "Clock/offline/logout harness,private/shared device mode",
+      "steps": [
+        "Logout private với ba dự án, chỉ một có backup.",
+        "Chọn shared rồi logout khi hai dự án chưa backup.",
+        "Login B sau A và cho callback A tới muộn.",
+        "Hết lease hoặc lùi đồng hồ quá 5 phút khi offline."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-031.1",
+          "requirements": [
+            "ACC-04"
+          ],
+          "action": "Logout private với ba dự án, chỉ một có backup.",
+          "expected": "Cả ba còn bytes local; UI không truy cập user cũ sau logout.",
+          "oracle": {
+            "tool": "Offline/logout clock harness và store inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đọc store/head bằng harness riêng và kiểm UI session, không đồng nhất khóa UI với xóa byte.",
+            "threshold": "Cả ba còn bytes local; UI không truy cập user cũ sau logout.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-031.2",
+          "requirements": [
+            "ACC-04"
+          ],
+          "action": "Chọn shared rồi logout khi hai dự án chưa backup.",
+          "expected": "Không xóa hai dự án nếu chưa backup hoặc xác nhận xóa vĩnh viễn có danh sách.",
+          "oracle": {
+            "tool": "Offline/logout clock harness và store inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hash inventory trước/sau; diễn tập cancel, export xong và explicit delete riêng.",
+            "threshold": "Không xóa hai dự án nếu chưa backup hoặc xác nhận xóa vĩnh viễn có danh sách.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-031.3",
+          "requirements": [
+            "ACC-04"
+          ],
+          "action": "Login B sau A và cho callback A tới muộn.",
+          "expected": "Không dữ liệu/job result A gắn vào B.",
+          "oracle": {
+            "tool": "Offline/logout clock harness và store inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Canary result theo ownerId cộng Worker/UI memory state inspector.",
+            "threshold": "Không dữ liệu/job result A gắn vào B.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-031.4",
+          "requirements": [
+            "ACC-04"
+          ],
+          "action": "Hết lease hoặc lùi đồng hồ quá 5 phút khi offline.",
+          "expected": "Không gia hạn lease; chuyển cứu dữ liệu, API luôn cần auth server.",
+          "oracle": {
+            "tool": "Offline/logout clock harness và store inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Clock injection với server-signed timestamp và monotonic trace; ghi giới hạn client tampering.",
+            "threshold": "Không gia hạn lease; chuyển cứu dữ liệu, API luôn cần auth server.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-032",
+      "requirements": [
+        "AI-02"
+      ],
+      "title": "Vòng đời secret",
+      "prerequisites": "Test credentials,network/database/storage inspection",
+      "steps": [
+        "Lưu key rồi inspect DB/browser/ZIP/bundle/log/error.",
+        "Rotate/revoke key khi job đang chạy và bắt đầu job mới.",
+        "Đổi endpoint/redirect sang private host."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-032.1",
+          "requirements": [
+            "AI-02"
+          ],
+          "action": "Lưu key rồi inspect DB/browser/ZIP/bundle/log/error.",
+          "expected": "Chỉ ciphertext trong DB; secret không ở nơi cấm và không trả lại đầy đủ.",
+          "oracle": {
+            "tool": "Canary secret scanner và provider mock",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Canary credential scanner trên artifact/response và DB đọc độc lập, không đưa key thật vào report.",
+            "threshold": "Chỉ ciphertext trong DB; secret không ở nơi cấm và không trả lại đầy đủ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-032.2",
+          "requirements": [
+            "AI-02"
+          ],
+          "action": "Rotate/revoke key khi job đang chạy và bắt đầu job mới.",
+          "expected": "Job mới không dùng credential version đã thu hồi.",
+          "oracle": {
+            "tool": "Canary secret scanner và provider mock",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Mock provider fingerprints và server credential lookup audit.",
+            "threshold": "Job mới không dùng credential version đã thu hồi.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-032.3",
+          "requirements": [
+            "AI-02"
+          ],
+          "action": "Đổi endpoint/redirect sang private host.",
+          "expected": "Không gửi key ra endpoint ngoài allowlist.",
+          "oracle": {
+            "tool": "Canary secret scanner và provider mock",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Network capture và mock endpoint ghi 0 leaked-credential requests.",
+            "threshold": "Không gửi key ra endpoint ngoài allowlist.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-033",
+      "requirements": [
+        "AI-03"
+      ],
+      "title": "Idempotency và ngân sách",
+      "prerequisites": "Mock provider có đếmcharges,clock,concurrency+failure injection",
+      "steps": [
+        "Double-click/reload/retry cùng operationId hoặc payload khác.",
+        "Hai request đồng thời tranh cùng ngân sách còn lại.",
+        "Timeout sau submit trên provider không idempotency/status API.",
+        "Qua kỳ mới với unknown cũ rồi nhận settlement muộn.",
+        "Còn tiền nhưng hết concurrency/byte, rồi hủy job."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-033.1",
+          "requirements": [
+            "AI-03"
+          ],
+          "action": "Double-click/reload/retry cùng operationId hoặc payload khác.",
+          "expected": "Một operation không gửi lại trái luật; payload khác cùng key bị từ chối.",
+          "oracle": {
+            "tool": "Concurrent provider/ledger fault harness và decimal reference",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Mock provider đếm charges/request IDs; server dedup record độc lập client.",
+            "threshold": "Một operation không gửi lại trái luật; payload khác cùng key bị từ chối.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-033.2",
+          "requirements": [
+            "AI-03"
+          ],
+          "action": "Hai request đồng thời tranh cùng ngân sách còn lại.",
+          "expected": "Reservation atomic; tổng giữ chỗ không vượt trần cùng đơn vị/kỳ.",
+          "oracle": {
+            "tool": "Concurrent provider/ledger fault harness và decimal reference",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Concurrent server trace và phép cộng decimal trên ledger snapshot.",
+            "threshold": "Reservation atomic; tổng giữ chỗ không vượt trần cùng đơn vị/kỳ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-033.3",
+          "requirements": [
+            "AI-03"
+          ],
+          "action": "Timeout sau submit trên provider không idempotency/status API.",
+          "expected": "Unknown không ghi 0 và không tự gửi lại.",
+          "oracle": {
+            "tool": "Concurrent provider/ledger fault harness và decimal reference",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Mock provider đã ghi charge nhưng cắt response; đếm retry network bằng capture.",
+            "threshold": "Unknown không ghi 0 và không tự gửi lại.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-033.4",
+          "requirements": [
+            "AI-03"
+          ],
+          "action": "Qua kỳ mới với unknown cũ rồi nhận settlement muộn.",
+          "expected": "Hold thuộc kỳ gốc, kỳ mới không bị trừ lại; không xóa nghĩa vụ chưa đối soát.",
+          "oracle": {
+            "tool": "Concurrent provider/ledger fault harness và decimal reference",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Test clock cộng ledger per-period sums độc lập và late-response injection.",
+            "threshold": "Hold thuộc kỳ gốc, kỳ mới không bị trừ lại; không xóa nghĩa vụ chưa đối soát.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-033.5",
+          "requirements": [
+            "AI-03"
+          ],
+          "action": "Còn tiền nhưng hết concurrency/byte, rồi hủy job.",
+          "expected": "Lỗi nêu đúng chiều; hủy không hứa hoàn tiền.",
+          "oracle": {
+            "tool": "Concurrent provider/ledger fault harness và decimal reference",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Đối chiếu từng counter theo đơn vị và charge thực trong mock provider.",
+            "threshold": "Lỗi nêu đúng chiều; hủy không hứa hoàn tiền.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-034",
+      "requirements": [
+        "EXT-01",
+        "EXT-04",
+        "ARC-01"
+      ],
+      "title": "Thêm capability qua registry",
+      "prerequisites": "Module boundaries+registry implementation",
+      "steps": [
+        "Thêm importer/exporter test vào artifact build có registry.",
+        "Nạp project nhúng script hoặc module lạ.",
+        "Đăng ký processor remote khi chưa có ADR/consent/quota."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-034.1",
+          "requirements": [
+            "EXT-01",
+            "EXT-04"
+          ],
+          "action": "Thêm importer/exporter test vào artifact build có registry.",
+          "expected": "Capability xuất hiện với preflight/schema đúng mà không sửa switch tên hãng.",
+          "oracle": {
+            "tool": "Build registry và dependency inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Static build manifest và UI command list, module test ship trong build chứ không tải từ project.",
+            "threshold": "Capability xuất hiện với preflight/schema đúng mà không sửa switch tên hãng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-034.2",
+          "requirements": [
+            "EXT-01"
+          ],
+          "action": "Nạp project nhúng script hoặc module lạ.",
+          "expected": "Không eval; thiếu module có lý do/read-only.",
+          "oracle": {
+            "tool": "Build registry và dependency inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Process/network capture và project raw-byte preservation check.",
+            "threshold": "Không eval; thiếu module có lý do/read-only.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-034.3",
+          "requirements": [
+            "ARC-01",
+            "EXT-01"
+          ],
+          "action": "Đăng ký processor remote khi chưa có ADR/consent/quota.",
+          "expected": "Không kích hoạt remote trái điều kiện v1.",
+          "oracle": {
+            "tool": "Build registry và dependency inspector",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Registry activation result và network request count bằng 0.",
+            "threshold": "Không kích hoạt remote trái điều kiện v1.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-035",
+      "requirements": [
+        "EXT-02"
+      ],
+      "title": "Job và artifact",
+      "prerequisites": "Job runtime+artifact store+fault harness",
+      "steps": [
+        "Cancel/fail/stale revision và lỗi giữa publish artifact.",
+        "Đổi byte artifact sau commit và chạy validator trả unverified."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-035.1",
+          "requirements": [
+            "EXT-02"
+          ],
+          "action": "Cancel/fail/stale revision và lỗi giữa publish artifact.",
+          "expected": "Không lộ artifact nửa ghi hoặc result sai owner/revision.",
+          "oracle": {
+            "tool": "Job/event/artifact fault harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Fault injection với store/head inspector và event sequence độc lập timestamps client.",
+            "threshold": "Không lộ artifact nửa ghi hoặc result sai owner/revision.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-035.2",
+          "requirements": [
+            "EXT-02"
+          ],
+          "action": "Đổi byte artifact sau commit và chạy validator trả unverified.",
+          "expected": "Hash mismatch phát hiện; job state không thay verdict kiểm chứng.",
+          "oracle": {
+            "tool": "Job/event/artifact fault harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Independent SHA-256 reader và report schema kiểm hai trường trạng thái riêng.",
+            "threshold": "Hash mismatch phát hiện; job state không thay verdict kiểm chứng.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-036",
+      "requirements": [
+        "EXT-03"
+      ],
+      "title": "Migration và ID split/merge",
+      "prerequisites": "Two app/schema versions,project snapshots",
+      "steps": [
+        "Migrate old→new, mở version mới bằng app cũ và missing module.",
+        "Split/merge có override, đổi impVox và datum Z.",
+        "Crash migration hoặc update WASM giữa job."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-036.1",
+          "requirements": [
+            "EXT-03"
+          ],
+          "action": "Migrate old→new, mở version mới bằng app cũ và missing module.",
+          "expected": "Copy-on-write/read-only giữ byte gốc, không bỏ field lạ rồi lưu đè.",
+          "oracle": {
+            "tool": "Two-version migration/crash harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Frozen project versions/hashes và diff trước sau; tool versions phải khai khi thực thi.",
+            "threshold": "Copy-on-write/read-only giữ byte gốc, không bỏ field lạ rồi lưu đè.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-036.2",
+          "requirements": [
+            "EXT-03"
+          ],
+          "action": "Split/merge có override, đổi impVox và datum Z.",
+          "expected": "Orphan và replacement cần lựa chọn; không map số ngầm.",
+          "oracle": {
+            "tool": "Two-version migration/crash harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Source provenance graph và migration dry-run field dispositions, kiểm undo/rollback.",
+            "threshold": "Orphan và replacement cần lựa chọn; không map số ngầm.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-036.3",
+          "requirements": [
+            "EXT-03"
+          ],
+          "action": "Crash migration hoặc update WASM giữa job.",
+          "expected": "Không trộn version và phục hồi được bản đã commit.",
+          "oracle": {
+            "tool": "Two-version migration/crash harness",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Pinned two-build harness cộng storage crash trace, không so timestamp ZIP như geometry.",
+            "threshold": "Không trộn version và phục hồi được bản đã commit.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-037",
+      "requirements": [
+        "EXP-03"
+      ],
+      "title": "Bed polygon và placement",
+      "prerequisites": "Bedfixtures,layout/exportadapter",
+      "steps": [
+        "Đặt part qua bed tròn/lõm/vùng cấm, xoay/lật và giới hạn Z.",
+        "Chọn custom profile chưa đo hoặc U1 có mapping hỏng.",
+        "Đổi máy có lịch lớp khác và di chuyển camera."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-037.1",
+          "requirements": [
+            "EXP-03"
+          ],
+          "action": "Đặt part qua bed tròn/lõm/vùng cấm, xoay/lật và giới hạn Z.",
+          "expected": "Kiểm footprint thật sau transform, không chỉ bbox.",
+          "oracle": {
+            "tool": "Independent bed polygon/placement oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Polygon containment/intersection oracle độc lập và analytical bed fixtures.",
+            "threshold": "Kiểm footprint thật sau transform, không chỉ bbox.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-037.2",
+          "requirements": [
+            "EXP-03"
+          ],
+          "action": "Chọn custom profile chưa đo hoặc U1 có mapping hỏng.",
+          "expected": "Không nhãn tương thích; project mapping hỏng bị chặn đúng cửa.",
+          "oracle": {
+            "tool": "Independent bed polygon/placement oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Profile qualification manifest và giải tham chiếu filament độc lập với số nozzle.",
+            "threshold": "Không nhãn tương thích; project mapping hỏng bị chặn đúng cửa.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-037.3",
+          "requirements": [
+            "EXP-03"
+          ],
+          "action": "Đổi máy có lịch lớp khác và di chuyển camera.",
+          "expected": "Đổi máy có diff schedule; camera không đổi print placement.",
+          "oracle": {
+            "tool": "Independent bed polygon/placement oracle",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Project schedule/placement hashes và reader tệp xuất độc lập.",
+            "threshold": "Đổi máy có diff schedule; camera không đổi print placement.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-038",
+      "requirements": [
+        "EXT-05"
+      ],
+      "title": "Cổng phát hành và backup",
+      "prerequisites": "Release manifest,ops environment,test backup",
+      "steps": [
+        "Phát hành khi thiếu O-01/05/06 hoặc chưa có coupon.",
+        "Restore settings backup và rollback app."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-038.1",
+          "requirements": [
+            "EXT-05"
+          ],
+          "action": "Phát hành khi thiếu O-01/05/06 hoặc chưa có coupon.",
+          "expected": "Chặn đúng capability/claim; thiếu coupon không cấm viết mã.",
+          "oracle": {
+            "tool": "Release gate auditor và restore drill",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Release checklist liên kết bằng chứng từng gate, không lấy số test tổng thay gate.",
+            "threshold": "Chặn đúng capability/claim; thiếu coupon không cấm viết mã.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-038.2",
+          "requirements": [
+            "EXT-05"
+          ],
+          "action": "Restore settings backup và rollback app.",
+          "expected": "RPO≤24 giờ, RTO≤8 giờ trên môi trường đã khai; dữ liệu local không bị hứa cloud RPO.",
+          "oracle": {
+            "tool": "Release gate auditor và restore drill",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Timestamp backup/restore logs đo từ hệ thống ngoài app và hash dữ liệu sau restore.",
+            "threshold": "RPO≤24 giờ, RTO≤8 giờ trên môi trường đã khai; dữ liệu local không bị hứa cloud RPO.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-039",
+      "requirements": [
+        "QA-01",
+        "QA-02",
+        "QA-03",
+        "QA-04"
+      ],
+      "title": "Tính trung thực của nghiệm thu",
+      "prerequisites": "Test runner,fixture manifest,specification validation",
+      "steps": [
+        "Tổng hợp check pass/fail/thiếu tool và ca từ chối unsupported.",
+        "Đổi hash corpus hoặc dùng hai gói cùng mesh làm hai geometry cases.",
+        "Đối chiếu các chiến dịch bắt buộc với môi trường/case evidence.",
+        "Xóa check link/threshold hoặc chép oracle generic cho mọi ca."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-039.1",
+          "requirements": [
+            "QA-01"
+          ],
+          "action": "Tổng hợp check pass/fail/thiếu tool và ca từ chối unsupported.",
+          "expected": "Giữ verdict từng check; tổng fail=1 ưu tiên, thiếu bằng chứng=2.",
+          "oracle": {
+            "tool": "Specification/result-record validator và synthetic outcomes",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Tập kết quả nhân tạo định trước và kiểm exit code thật của tiến trình runner.",
+            "threshold": "Giữ verdict từng check; tổng fail=1 ưu tiên, thiếu bằng chứng=2.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-039.2",
+          "requirements": [
+            "QA-02"
+          ],
+          "action": "Đổi hash corpus hoặc dùng hai gói cùng mesh làm hai geometry cases.",
+          "expected": "Phát hiện drift và không tăng độ độc lập do đổi vỏ slicer.",
+          "oracle": {
+            "tool": "Specification/result-record validator và synthetic outcomes",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Hasher độc lập và nhóm theo mesh payload hash, không theo tên file.",
+            "threshold": "Phát hiện drift và không tăng độ độc lập do đổi vỏ slicer.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-039.3",
+          "requirements": [
+            "QA-03"
+          ],
+          "action": "Đối chiếu các chiến dịch bắt buộc với môi trường/case evidence.",
+          "expected": "Thiếu browser/slicer/physical không được ghi pass cho scope đó.",
+          "oracle": {
+            "tool": "Specification/result-record validator và synthetic outcomes",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Ma trận môi trường đã khai so record evidence/version/input hashes thực tế.",
+            "threshold": "Thiếu browser/slicer/physical không được ghi pass cho scope đó.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-039.4",
+          "requirements": [
+            "QA-04"
+          ],
+          "action": "Xóa check link/threshold hoặc chép oracle generic cho mọi ca.",
+          "expected": "Kiểm đặc tả từ chối record thiếu; không nhận có chuỗi oracle là đủ.",
+          "oracle": {
+            "tool": "Specification/result-record validator và synthetic outcomes",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Schema/ID/bidirectional mapping validator, kiểm thêm các invariant số độc lập đã nêu.",
+            "threshold": "Kiểm đặc tả từ chối record thiếu; không nhận có chuỗi oracle là đủ.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "AT-040",
+      "requirements": [
+        "GEO-04"
+      ],
+      "title": "CSG giữa slab và lưới nhập",
+      "prerequisites": "Kernel, importer và oracle mesh độc lập sau O-01/O-02; năm loại sản phẩm",
+      "steps": [
+        "Union hộp A=[0,10]³ và B=[5,15]×[0,10]².",
+        "Subtract B khỏi A và thêm rời B ở ngoài A.",
+        "Dùng lưới hở, tiếp xúc điểm/cạnh và hai đích hòa.",
+        "Thử trên cả 5 loại với hai vật liệu và rebuild mất target.",
+        "Xuất SVG section sau CSG khi section mesh chưa hỗ trợ."
+      ],
+      "expected": "Mỗi check có verdict riêng; tổng hợp theo QA-01, không dùng một tick cho mọi khẳng định.",
+      "status": "unverified",
+      "evidence": [],
+      "checks": [
+        {
+          "id": "AT-040.1",
+          "requirements": [
+            "GEO-04"
+          ],
+          "action": "Union hộp A=[0,10]³ và B=[5,15]×[0,10]².",
+          "expected": "Thể tích union 1500 mm³ trong bound đã khai.",
+          "oracle": {
+            "tool": "Analytic CSG volume và independent topology/section reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Công thức 1000+1000−500, đo signed volume từ file bằng oracle khác boolean writer.",
+            "threshold": "Thể tích union 1500 mm³ trong bound đã khai.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-040.2",
+          "requirements": [
+            "GEO-04"
+          ],
+          "action": "Subtract B khỏi A và thêm rời B ở ngoài A.",
+          "expected": "Subtract 500 mm³; thêm rời giữ hai part và transform.",
+          "oracle": {
+            "tool": "Analytic CSG volume và independent topology/section reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Công thức tích kích thước giải tích và reader scene object/volume độc lập.",
+            "threshold": "Subtract 500 mm³; thêm rời giữ hai part và transform.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-040.3",
+          "requirements": [
+            "GEO-04"
+          ],
+          "action": "Dùng lưới hở, tiếp xúc điểm/cạnh và hai đích hòa.",
+          "expected": "CSG lỗi không commit; đích hòa chọn semantic ID theo metric đã khai.",
+          "oracle": {
+            "tool": "Analytic CSG volume và independent topology/section reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Topology/volume/contact-area oracle độc lập với Manifold result flag và head hash trước sau.",
+            "threshold": "CSG lỗi không commit; đích hòa chọn semantic ID theo metric đã khai.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-040.4",
+          "requirements": [
+            "GEO-04"
+          ],
+          "action": "Thử trên cả 5 loại với hai vật liệu và rebuild mất target.",
+          "expected": "Không tự gộp màu, orphan không gán lại ngẫu nhiên.",
+          "oracle": {
+            "tool": "Analytic CSG volume và independent topology/section reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "Scene material/provenance mapping và kiểm giao vật liệu sau boolean.",
+            "threshold": "Không tự gộp màu, orphan không gán lại ngẫu nhiên.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        },
+        {
+          "id": "AT-040.5",
+          "requirements": [
+            "GEO-04"
+          ],
+          "action": "Xuất SVG section sau CSG khi section mesh chưa hỗ trợ.",
+          "expected": "Báo unsupported, không xuất slab trước CSG như scene cuối.",
+          "oracle": {
+            "tool": "Analytic CSG volume và independent topology/section reader",
+            "toolVersion": null,
+            "readiness": "unverified",
+            "method": "So capability diagnostics và section geometry đọc độc lập nếu đường này đã triển khai.",
+            "threshold": "Báo unsupported, không xuất slab trước CSG như scene cuối.",
+            "independence": "Expected được định từ nguồn/điều khoản và phép đo nêu trên; không đọc cờ tự khai của generator làm expected."
+          },
+          "status": "unverified",
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}

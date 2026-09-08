@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-07",
+  "configurationFile": "docs/reviews/seat-config.json",
+  "codex": {
+    "role": "editor/coordinator",
+    "configurationVerified": false,
+    "reason": "Effort and fast-mode runtime metadata unavailable"
+  },
+  "opus": {
+    "rounds": [
+      {
+        "result": {
+          "subtype": "success",
+          "is_error": false,
+          "num_turns": 34,
+          "session_id": "6b2a69e0-d1e3-4ffe-97bb-7384877e9278"
+        },
+        "init": {
+          "model": "claude-opus-5",
+          "claude_code_version": "2.1.263",
+          "fast_mode_state": "off",
+          "tools": [
+            "Glob",
+            "Grep",
+            "Read",
+            "WebFetch",
+            "WebSearch"
+          ]
+        },
+        "usageModels": [
+          "claude-opus-5",
+          "claude-haiku-4-5-20251001"
+        ],
+        "round": 1
+      },
+      {
+        "result": {
+          "subtype": "success",
+          "is_error": false,
+          "num_turns": 19,
+          "session_id": "6b2a69e0-d1e3-4ffe-97bb-7384877e9278"
+        },
+        "init": {
+          "model": "claude-opus-5",
+          "claude_code_version": "2.1.263",
+          "fast_mode_state": "off",
+          "tools": [
+            "Glob",
+            "Grep",
+            "Read"
+          ]
+        },
+        "usageModels": [
+          "claude-opus-5"
+        ],
+        "round": 2
+      }
+    ],
+    "configurationVerified": false,
+    "requested": {
+      "model": "opus",
+      "effort": "ultracode",
+      "fast": false
+    },
+    "reason": "Workflow unavailable in allowed toolset; flags alone do not prove full Ultracode"
+  },
+  "grok": {
+    "reason": "Returned usage model grok-4.6-build equivalence not documented",
+    "rounds": [
+      {
+        "result": {
+          "stopReason": "end_turn",
+          "num_turns": 9,
+          "sessionId": "01a07c8f-4f8d-7412-a6b3-7e79cd7e86b1"
+        },
+        "usageModels": [
+          "grok-4.6-build"
+        ],
+        "round": 1
+      },
+      {
+        "result": {
+          "stopReason": "end_turn",
+          "num_turns": 12,
+          "sessionId": "01a07c8f-4f8d-7412-a6b3-7e79cd7e86b1"
+        },
+        "usageModels": [
+          "grok-4.6-build"
+        ],
+        "round": 2
+      }
+    ],
+    "session": {
+      "current_model_id": "grok-4.6",
+      "reasoning_effort": "xhigh"
+    },
+    "launcher": {
+      "entry": "tools/reviews/start-grok.ps1",
+      "autoUpdate": false,
+      "binarySha256": "bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672",
+      "subagents": false,
+      "cliVersion": "1.0.13"
+    },
+    "configurationVerified": false,
+    "requested": {
+      "model": "grok-4.6",
+      "effort": "xhigh"
+    }
+  },
+  "publicationRevision": 2,
+  "publicationDate": "2026-09-08",
+  "scope": "Sanitized observations embedded here; no external log files are needed to read this record"
+}

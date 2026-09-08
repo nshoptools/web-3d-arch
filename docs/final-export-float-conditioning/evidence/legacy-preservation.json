@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "records": [
+    {
+      "path": "src/kernel/src/abi.rs",
+      "sha256": "b3912faa071abd2b1b64d2ae7cd7be271c0f29ef406891426a06e43c644270a8",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/Cargo.toml",
+      "sha256": "c46a822b96c35116668ae3cd2ed2c24984527f002aa43471039ccbbf20f10f91",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/Cargo.lock",
+      "sha256": "3c2dade86bfba5df4b9a1cbb37164af4f9fcd47b09dcdc69a0c4a163849fe532",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/build.rs",
+      "sha256": "76b9f86f4f639d9c4d714f58450c1ed369b72cfcab20c5b35b7f78bcc69aa47d",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/native/CMakeLists.txt",
+      "sha256": "4af8e1632bf718ee9ef4a9e384ad4eca6e41d86bde2ceabce6b728bff5d741aa",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/wire.rs",
+      "sha256": "41097ab119b906fc177d3317aca7111580904a6d8cb97574cdf9875baf39bfd6",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/final_scene_export.cpp",
+      "sha256": "613b8d88f80df6d395aac152219f30618f0054c43e18d37d23783926b014a874",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/final_scene_export.h",
+      "sha256": "0f6a2b5433b6632829d3ac2914308673699a9a0b5d3c5a0ca6d4d7c6991ac503",
+      "status": "verbatim"
+    },
+    {
+      "path": "tests/kernel/final-export-rpc.test.mjs",
+      "sha256": "15cec067d6ee59e796a5727823f73e8ff70a7f03cf7333abe7f8be63f303f517",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/mod.rs",
+      "originalPrefixBytes": 6637,
+      "sha256": "6714136ceb2987f5c406ee2f0c3a0170b16d73015405d60f768580897b943568",
+      "status": "original prefix verbatim"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/encode.rs",
+      "originalPrefixBytes": 14393,
+      "sha256": "2ba1ee4c62beefd9bbd9e651602e8e71f67fd3d34521080b06f89b3b75478918",
+      "status": "original prefix verbatim"
+    },
+    {
+      "path": "src/core/engine-client.mjs",
+      "section": "finalExport method",
+      "sha256": "964cbdf72e1a189ad0e3d4d49a841c74ed37fd3e145bad312cfb03ea48a00318",
+      "status": "verbatim"
+    },
+    {
+      "path": "src/core/engine-worker.mjs",
+      "section": "export-final dispatch branch",
+      "sha256": "87df750087c3a325a7653722d79300e9cb859955bb6068b80700b4ac79d6c877",
+      "status": "verbatim"
+    }
+  ],
+  "mainPreimagesStillCurrent": true
+}

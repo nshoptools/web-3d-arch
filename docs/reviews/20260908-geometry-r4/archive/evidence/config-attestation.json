@@ -1,0 +1,78 @@
+{
+  "at": "2026-09-08T08:14:43.311Z",
+  "sessionId": "01a08013-a98a-7ee3-8a6e-537b26d65f4b",
+  "metadataPath": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-geometry-review-r4\\cache\\codex-home\\sessions\\2026\\09\\08\\rollout-2026-09-08T15-12-47-01a08013-a98a-7ee3-8a6e-537b26d65f4b.jsonl",
+  "selectedMetadata": [
+    {
+      "type": "session_meta",
+      "timestamp": "2026-09-08T08:12:47.477Z",
+      "id": "01a08013-a98a-7ee3-8a6e-537b26d65f4b",
+      "cwd": "D:\\VoSon\\Code\\web-3d-arch",
+      "originator": "Codex Desktop",
+      "cli_version": "0.153.4",
+      "source": "exec",
+      "model_provider": "openai"
+    },
+    {
+      "type": "turn_context",
+      "timestamp": "2026-09-08T08:12:51.597Z",
+      "turn_id": "01a08013-aa0b-7692-ad52-ec12b1464cde",
+      "cwd": "D:\\VoSon\\Code\\web-3d-arch",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "collaboration_mode": {
+        "mode": "default",
+        "model": "gpt-6-astra",
+        "reasoning_effort": "max"
+      }
+    }
+  ],
+  "launch": {
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "fast": false,
+    "version": "codex-cli 0.153.4",
+    "binarySha256": "444A3F0008050605CAE73CD9B7A2DCAC61294062DFAAB56DD20430FD6498518B",
+    "args": [
+      "exec",
+      "--ignore-user-config",
+      "--color",
+      "never",
+      "-C",
+      "D:\\VoSon\\Code\\web-3d-arch",
+      "-m",
+      "gpt-6-astra",
+      "-c",
+      "model_reasoning_effort=\"max\"",
+      "-c",
+      "service_tier=\"default\"",
+      "-c",
+      "features.fast_mode=false",
+      "-c",
+      "approval_policy=\"never\"",
+      "-s",
+      "danger-full-access",
+      "--json",
+      "-o",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-geometry-review-r4\\reports\\response.md",
+      "-"
+    ],
+    "status": "requested; verify actual session metadata"
+  },
+  "effectiveFastMode": "fast_mode                                stable             false",
+  "scope": "Model/effort: selected actual session_meta/turn_context fields. Fast off: launch and matching live command line service_tier=default and features.fast_mode=false, plus supplied effective-feature listing. No server-side billing/service-tier receipt independently inspected. Only metadata records selected; auth and raw event log not consulted.",
+  "actualCliVersion": "codex-cli 0.153.4",
+  "actualCliSha256": "444a3f0008050605cae73cd9b7a2dcac61294062dfaab56dd20430fd6498518b",
+  "officialSources": [
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "checkedAt": "2026-09-08",
+      "summary": "Astra model supports max; no stronger available configuration established."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/speed",
+      "checkedAt": "2026-09-08",
+      "summary": "Fast selection has feature and service-tier configuration."
+    }
+  ]
+}

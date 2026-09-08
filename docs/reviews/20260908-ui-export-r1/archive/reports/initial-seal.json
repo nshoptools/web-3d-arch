@@ -1,0 +1,19 @@
+{
+  "schema": "arch-independent-review-seal/1",
+  "at": "2026-09-08T09:00:25.616Z",
+  "initialFiles": [
+    {
+      "path": "reports/initial-findings.json",
+      "sha256": "53e9ec99c102330c0ca885d9d45c2b02cf444fe918f01180e3b1d58ab1d80169",
+      "bytes": 36085
+    },
+    {
+      "path": "reports/initial-review.md",
+      "sha256": "e078fb98d831e69f0e3fb8311d995230717e96f76e11996cadd7e86e1c03ada2",
+      "bytes": 30592
+    }
+  ],
+  "authorConclusionsRead": false,
+  "otherReviewerConclusionsRead": false,
+  "sourceManifest": "56949f2cd695ed86b206306f3f60113f25ba10788327c99c3e10751329924cac"
+}

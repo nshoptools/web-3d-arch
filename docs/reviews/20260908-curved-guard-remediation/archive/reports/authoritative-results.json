@@ -1,0 +1,1065 @@
+{
+  "version": "arch-curved-guard-results/1",
+  "status": "bounded-remediation-tested-with-documented-limits",
+  "scope": "Implementation and self-test, actual prepared-source child ABI native + Node-WASM. No independent-review or app-producer reachability claim.",
+  "tests": [
+    {
+      "name": "original-baseline",
+      "target": "native",
+      "exit": 0,
+      "passed": 7,
+      "total": 7,
+      "report": {
+        "path": "evidence/guard-baseline-native/summary.json",
+        "bytes": 16120,
+        "sha256": "b374c665de95f73895f692f3db6c869cbc7c35e329ebdf7152e809676cc58ffd"
+      }
+    },
+    {
+      "name": "original-fixed",
+      "target": "native",
+      "exit": 0,
+      "passed": 7,
+      "total": 7,
+      "report": {
+        "path": "evidence/guard-final-r5-native/summary.json",
+        "bytes": 9833,
+        "sha256": "bad6d744f657a1835862bc451cd48c259c58c15fb085420b229523430d418ae8"
+      }
+    },
+    {
+      "name": "adjacent-controls",
+      "target": "native",
+      "exit": 0,
+      "passed": 10,
+      "total": 10,
+      "report": {
+        "path": "evidence/guard-controls-bounded-r5-native/summary.json",
+        "bytes": 24489,
+        "sha256": "ac51c83cb86b1dca4a8ecfde163a779ec92c0e5964ad3f163fdd41ab0852a8f3"
+      }
+    },
+    {
+      "name": "core-oracles",
+      "target": "native",
+      "exit": 0,
+      "passed": 40,
+      "total": 40,
+      "report": {
+        "path": "reports/core-native-r5-oracles.json",
+        "bytes": 65225,
+        "sha256": "fb54707d44aac1bf44f4a13a02294ed32ba33441dcedd56df7c98ff0ed227aef"
+      }
+    },
+    {
+      "name": "core-builds",
+      "target": "native",
+      "exit": 0,
+      "passed": 40,
+      "total": 40,
+      "report": {
+        "path": "evidence/core-native-r5/summary.json",
+        "bytes": 15347,
+        "sha256": "bd0a48f9d123e54af3bcbdd497018d9a66ae75ce3b53bed1f7edd491aaaa7888"
+      }
+    },
+    {
+      "name": "supplementary-r2-guards",
+      "target": "native",
+      "exit": 1,
+      "passed": 18,
+      "total": 22,
+      "report": {
+        "path": "reports/curved-r2-native.json",
+        "bytes": 13504,
+        "sha256": "13e7d8ccbd2c55a764d2f2e57ee67685c1aef4b518ed0a4fe6ea4f248996d66b"
+      },
+      "failures": [
+        {
+          "id": "r2-material-hole",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":78,\"message\":\"STRAP_CHAMFER_LATERAL_BREAKOUT\"}]\n\n1 !== 0\n\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:17:10)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:32:61\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-material-islands",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":78,\"message\":\"STRAP_CHAMFER_LATERAL_BREAKOUT\"}]\n\n1 !== 0\n\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:17:10)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:32:61\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-roof-gap",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":74,\"message\":\"FINAL_GUARD_SOURCE_BOUNDARY_UNVERIFIED\"}]\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:18:18)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:33:36\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-floor-gap",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":74,\"message\":\"FINAL_GUARD_SOURCE_BOUNDARY_UNVERIFIED\"}]\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:18:18)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:33:36\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        }
+      ],
+      "qualification": "Two prior negatives still refuse with changed diagnostics; two previously accepted hole/island cases now conservatively unsupported. Original assertions unchanged."
+    },
+    {
+      "name": "original-baseline",
+      "target": "wasm",
+      "exit": 0,
+      "passed": 7,
+      "total": 7,
+      "report": {
+        "path": "evidence/guard-baseline-wasm/summary.json",
+        "bytes": 16266,
+        "sha256": "b5d7c8adbef278774ba6a7e24ec19a8a5e38096bfa7dd0aa84efe73b720da069"
+      }
+    },
+    {
+      "name": "original-fixed",
+      "target": "wasm",
+      "exit": 0,
+      "passed": 7,
+      "total": 7,
+      "report": {
+        "path": "evidence/guard-final-r5-wasm/summary.json",
+        "bytes": 9918,
+        "sha256": "cfa686da7f967e4d6a92e83360e29a1397e7f0b47fced31b72cdcd4335cac2b3"
+      }
+    },
+    {
+      "name": "adjacent-controls",
+      "target": "wasm",
+      "exit": 0,
+      "passed": 10,
+      "total": 10,
+      "report": {
+        "path": "evidence/guard-controls-bounded-r5-wasm/summary.json",
+        "bytes": 24505,
+        "sha256": "0354a40896a7c86bae4a76809d0e237dea24126ee481da9beca7c53714a162c8"
+      }
+    },
+    {
+      "name": "core-oracles",
+      "target": "wasm",
+      "exit": 0,
+      "passed": 40,
+      "total": 40,
+      "report": {
+        "path": "reports/core-wasm-r5-oracles.json",
+        "bytes": 65217,
+        "sha256": "0606d1e3870ad5e0577da3d12f11333af190712407610404ccc7d3f48cad4f74"
+      }
+    },
+    {
+      "name": "core-builds",
+      "target": "wasm",
+      "exit": 0,
+      "passed": 40,
+      "total": 40,
+      "report": {
+        "path": "evidence/core-wasm-r5/summary.json",
+        "bytes": 15312,
+        "sha256": "d34e33f5bb4dc705336f9f9d8ff409315c8aa69610f8f3fcdf8b24dd017b9a4a"
+      }
+    },
+    {
+      "name": "supplementary-r2-guards",
+      "target": "wasm",
+      "exit": 1,
+      "passed": 18,
+      "total": 22,
+      "report": {
+        "path": "reports/curved-r2-wasm.json",
+        "bytes": 13504,
+        "sha256": "13e7d8ccbd2c55a764d2f2e57ee67685c1aef4b518ed0a4fe6ea4f248996d66b"
+      },
+      "failures": [
+        {
+          "id": "r2-material-hole",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":78,\"message\":\"STRAP_CHAMFER_LATERAL_BREAKOUT\"}]\n\n1 !== 0\n\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:17:10)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:32:61\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-material-islands",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":78,\"message\":\"STRAP_CHAMFER_LATERAL_BREAKOUT\"}]\n\n1 !== 0\n\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:17:10)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:32:61\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-roof-gap",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":74,\"message\":\"FINAL_GUARD_SOURCE_BOUNDARY_UNVERIFIED\"}]\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:18:18)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:33:36\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        },
+        {
+          "id": "r2-floor-gap",
+          "error": "AssertionError [ERR_ASSERTION]: [{\"code\":100,\"fieldId\":0,\"message\":\"PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility\"},{\"code\":101,\"fieldId\":0,\"message\":\"ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified\"},{\"code\":1,\"fieldId\":74,\"message\":\"FINAL_GUARD_SOURCE_BOUNDARY_UNVERIFIED\"}]\n    at test (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:18:18)\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-curved-guard-remediation-r1/work/curved-guard/tests/curved-products/r2-guards.mjs:33:36\n    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)\n    at async node:internal/modules/esm/loader:643:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+        }
+      ],
+      "qualification": "Two prior negatives still refuse with changed diagnostics; two previously accepted hole/island cases now conservatively unsupported. Original assertions unchanged."
+    },
+    {
+      "name": "in-flight-cancellation",
+      "target": "native",
+      "exit": 0,
+      "passed": 3,
+      "total": 3,
+      "report": {
+        "path": "evidence/cancel-native.log",
+        "bytes": 66,
+        "sha256": "abec343afb6deab8f7c75d17156ec2d4bd7e5c1afd1710ed2cded98061914731"
+      }
+    }
+  ],
+  "binaries": [
+    {
+      "path": "work/build-native/Release/prepared_guard_probe.exe",
+      "bytes": 883712,
+      "sha256": "5987eaab71dfc072a65a3969552af300f40c5ff3e1b3c9ee361629994a32a4db"
+    },
+    {
+      "path": "work/build-native/Release/curved_fixture.exe",
+      "bytes": 904192,
+      "sha256": "cc39d5228a8ce4fdbd7050144924f8bc11ceebab6f838af393e85cdcc40820cc"
+    },
+    {
+      "path": "work/build-wasm/prepared_guard_probe.js",
+      "bytes": 85361,
+      "sha256": "d14713dcd81d622aa68c2ffde329b8ce8eb9c8acc86d40ce2b39ad8584bf9d2b"
+    },
+    {
+      "path": "work/build-wasm/prepared_guard_probe.wasm",
+      "bytes": 1023137,
+      "sha256": "eb9b6b56d45856aa408456b80727f56ec81891c554a697f9307874cb8a1bac3b"
+    },
+    {
+      "path": "work/build-wasm/curved_fixture.js",
+      "bytes": 85465,
+      "sha256": "df2ac57dca199b83badddabecc55b7829ac778dba62f88fdb838a3295d5617b8"
+    },
+    {
+      "path": "work/build-wasm/curved_fixture.wasm",
+      "bytes": 1030401,
+      "sha256": "2f36e2aa9bf2fea414e9e3f00f841110085e8cd36d36d3c67bb444cebce21940"
+    }
+  ],
+  "sourceAssemblyAtSeal": {
+    "tested": {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 39427,
+      "sha256": "0ad9d95ccea037f5f767f914502b54bf1c209c0076e4c42404c1c12f2bdd658c"
+    },
+    "currentMain": {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 41158,
+      "sha256": "6bd6e78bd951f019c87ead96cc389d9dbfc14315946223038e9cf94556881f32"
+    },
+    "testedCurrentMain": false
+  },
+  "positiveBranchEvidence": [
+    {
+      "target": "native",
+      "id": "strap-slit-positive-roof",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_STRAP_GUARD RAW_ENVELOPE: unsimplified complete-footprint residual Z bounds; manufacturing untouched; backend numeric resolution still applies"
+      ],
+      "guards": [
+        {
+          "id": "guard:strap:roof-floor",
+          "dimensions": [
+            0.9999999,
+            0.009999899999999787,
+            1e-7,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "target": "native",
+      "id": "lego-slit-positive-roof",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_CAVITY_GUARDS: raw roof bounds first; contact-cleanup fallback has conditional source-resolution admission; walls/openings retain backend query policy; no all-input full-volume proof"
+      ],
+      "guards": [
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:0",
+          "dimensions": [
+            3,
+            6,
+            0.00999989999999995,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        }
+      ]
+    },
+    {
+      "target": "native",
+      "id": "strap-solid-split",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_STRAP_GUARD RAW_ENVELOPE: unsimplified complete-footprint residual Z bounds; manufacturing untouched; backend numeric resolution still applies"
+      ],
+      "guards": [
+        {
+          "id": "guard:strap:roof-floor",
+          "dimensions": [
+            0.9999999,
+            0.9999999,
+            1e-7,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "target": "native",
+      "id": "lego-solid-split",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_CAVITY_GUARDS: raw roof bounds first; contact-cleanup fallback has conditional source-resolution admission; walls/openings retain backend query policy; no all-input full-volume proof"
+      ],
+      "guards": [
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        }
+      ]
+    },
+    {
+      "target": "wasm",
+      "id": "strap-slit-positive-roof",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_STRAP_GUARD RAW_ENVELOPE: unsimplified complete-footprint residual Z bounds; manufacturing untouched; backend numeric resolution still applies"
+      ],
+      "guards": [
+        {
+          "id": "guard:strap:roof-floor",
+          "dimensions": [
+            0.9999999,
+            0.009999899999999787,
+            1e-7,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "target": "wasm",
+      "id": "lego-slit-positive-roof",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_CAVITY_GUARDS: raw roof bounds first; contact-cleanup fallback has conditional source-resolution admission; walls/openings retain backend query policy; no all-input full-volume proof"
+      ],
+      "guards": [
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:0",
+          "dimensions": [
+            3,
+            6,
+            0.00999989999999995,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        }
+      ]
+    },
+    {
+      "target": "wasm",
+      "id": "strap-solid-split",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_STRAP_GUARD RAW_ENVELOPE: unsimplified complete-footprint residual Z bounds; manufacturing untouched; backend numeric resolution still applies"
+      ],
+      "guards": [
+        {
+          "id": "guard:strap:roof-floor",
+          "dimensions": [
+            0.9999999,
+            0.9999999,
+            1e-7,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "target": "wasm",
+      "id": "lego-solid-split",
+      "verdict": 0,
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "FINAL_CAVITY_GUARDS: raw roof bounds first; contact-cleanup fallback has conditional source-resolution admission; walls/openings retain backend query policy; no all-input full-volume proof"
+      ],
+      "guards": [
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:-1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:0:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:1:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:-1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:0",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        },
+        {
+          "id": "guard:wall-roof:mech:lego:bore:2:1",
+          "dimensions": [
+            3,
+            6,
+            3,
+            0.8,
+            0,
+            1e-7
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": {
+    "clipperCanonicalTree": "6316dc4c346683b329f362b78d9d2c324ad628175716f1ccd280c12d305a62cb",
+    "manifoldRevision": "0edd9d54876f3135e431575214dd6d8a72866fee"
+  },
+  "deferred": [
+    "12 curved variants",
+    "full child resource/regression matrix",
+    "root/browser integration",
+    "all-input numeric proof"
+  ],
+  "retainedFailures": [
+    "raw-only experiments refused ordinary defaults",
+    "temporary diagnostic compile error (corrected before final)",
+    "baseline-control expectation assumption corrected explicitly",
+    "core oracle first invocation missing CURVED_CORPUS; error reports retained; only oracle rerun with correct environment",
+    "supplementary R2 18/22 assertions pass per target as detailed above"
+  ]
+}

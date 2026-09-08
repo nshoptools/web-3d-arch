@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://arch.example.invalid:8443",
+  "bindAddress": "0.0.0.0",
+  "port": 8443,
+  "backendPort": 9080,
+  "webroot": "C:/REPLACE/approved-release/public",
+  "manifestPath": "C:/REPLACE/approved-release/public-manifest.json",
+  "tlsKeyPath": "C:/REPLACE/runtime/private/tls-key.pem",
+  "tlsCertPath": "C:/REPLACE/runtime/private/tls-chain.pem",
+  "serviceWorker": false,
+  "immutableMaxAge": 31536000,
+  "hstsSeconds": 31536000,
+  "maxAssetBytes": 67108864,
+  "maxPublicBytes": 536870912,
+  "maxRequestBytes": 32500000,
+  "maxResponseBytes": 32500000,
+  "maxConcurrent": 16,
+  "maxConnections": 128,
+  "requestDeadlineMs": 30000,
+  "upstreamDeadlineMs": 35000
+}

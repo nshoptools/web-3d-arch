@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "production": [
+    {
+      "path": "src/integration/export-adapters.mjs",
+      "beforeSha256": "c3ca4a17c5605bc3b2e579842c497e8a553a51433abf5e8f02ab4467fd882013",
+      "afterSha256": "8620efcabbe9a9d1bafc5fb81467667ebaba204f75b3c5d03f08aeab78ceb223",
+      "currentMainSha256": "c3ca4a17c5605bc3b2e579842c497e8a553a51433abf5e8f02ab4467fd882013",
+      "currentMainStillMatchesPreimage": true,
+      "apply": "preimage-checked focused patch"
+    },
+    {
+      "path": "src/integration/export-adapters.d.mts",
+      "beforeSha256": "e529174ca3bc203862afe5e75acbaf0adbffe47a7b42cd6c8301f2feb90ecb6d",
+      "afterSha256": "50ba172f15fabf10952083b3515886d828fe144d3b587585572a98cf7c16310e",
+      "currentMainSha256": "e529174ca3bc203862afe5e75acbaf0adbffe47a7b42cd6c8301f2feb90ecb6d",
+      "currentMainStillMatchesPreimage": true,
+      "apply": "preimage-checked focused patch"
+    },
+    {
+      "path": "src/core/engine-worker.mjs",
+      "beforeSha256": "26949583f22ee020dfc1d15abf632c5d210899a2fa41b11ead9367a2088267c6",
+      "afterSha256": "37cef6662783ddff1d4daad885f2ba38856fa3eb6c58e9889ec7de02ad521b2d",
+      "currentMainSha256": "26949583f22ee020dfc1d15abf632c5d210899a2fa41b11ead9367a2088267c6",
+      "currentMainStillMatchesPreimage": true,
+      "apply": "focused outer-catch hunk only; preserve concurrent runtime/source/probe/CSG hooks"
+    }
+  ]
+}

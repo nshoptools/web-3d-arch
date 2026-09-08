@@ -1,0 +1,175 @@
+{
+  "labels": [
+    1,
+    2
+  ],
+  "graph": {
+    "vertices": [
+      {
+        "id": 0,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "id": 1,
+        "x": 1,
+        "y": 0
+      },
+      {
+        "id": 2,
+        "x": 2,
+        "y": 0
+      },
+      {
+        "id": 3,
+        "x": 0,
+        "y": 1
+      },
+      {
+        "id": 4,
+        "x": 1,
+        "y": 1
+      },
+      {
+        "id": 5,
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "edges": [
+      {
+        "id": 0,
+        "from": 0,
+        "to": 1,
+        "left_label": 0,
+        "right_label": 1,
+        "left_region": null,
+        "right_region": 0
+      },
+      {
+        "id": 1,
+        "from": 1,
+        "to": 2,
+        "left_label": 0,
+        "right_label": 2,
+        "left_region": null,
+        "right_region": 1
+      },
+      {
+        "id": 2,
+        "from": 3,
+        "to": 4,
+        "left_label": 1,
+        "right_label": 0,
+        "left_region": 0,
+        "right_region": null
+      },
+      {
+        "id": 3,
+        "from": 4,
+        "to": 5,
+        "left_label": 2,
+        "right_label": 0,
+        "left_region": 1,
+        "right_region": null
+      },
+      {
+        "id": 4,
+        "from": 0,
+        "to": 3,
+        "left_label": 1,
+        "right_label": 0,
+        "left_region": 0,
+        "right_region": null
+      },
+      {
+        "id": 5,
+        "from": 1,
+        "to": 4,
+        "left_label": 2,
+        "right_label": 1,
+        "left_region": 1,
+        "right_region": 0
+      },
+      {
+        "id": 6,
+        "from": 2,
+        "to": 5,
+        "left_label": 0,
+        "right_label": 2,
+        "left_region": null,
+        "right_region": 1
+      }
+    ]
+  },
+  "regions": [
+    {
+      "id": 0,
+      "label": 1,
+      "pixel_count": 1,
+      "bounds_px": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "touches_border": true,
+      "loops": [
+        {
+          "edges": [
+            {
+              "edge": 0,
+              "reversed": false
+            },
+            {
+              "edge": 5,
+              "reversed": false
+            },
+            {
+              "edge": 2,
+              "reversed": true
+            },
+            {
+              "edge": 4,
+              "reversed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": 2,
+      "pixel_count": 1,
+      "bounds_px": [
+        1,
+        0,
+        2,
+        1
+      ],
+      "touches_border": true,
+      "loops": [
+        {
+          "edges": [
+            {
+              "edge": 1,
+              "reversed": false
+            },
+            {
+              "edge": 6,
+              "reversed": false
+            },
+            {
+              "edge": 3,
+              "reversed": true
+            },
+            {
+              "edge": 5,
+              "reversed": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

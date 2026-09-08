@@ -1,0 +1,3476 @@
+{
+  "at": "2026-09-08T08:28:56.991Z",
+  "sourceManifest": "56949f2cd695ed86b206306f3f60113f25ba10788327c99c3e10751329924cac",
+  "packages": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vite": "8.2.2",
+    "typescript": "7.0.2",
+    "playwright": "1.63.0"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "checks": [
+        {
+          "id": "L01",
+          "name": "raw decimal and text drafts retain first-dirty revision and current rejection",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "errorMm",
+                  "value": "0,006000000 tail"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 3,
+                  "field": "filename",
+                  "value": "Đồ án / <không sửa>"
+                },
+                "pending": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "L02",
+          "name": "late success preserves newer text and its starting revision",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Draft A"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Draft AB"
+                },
+                "pending": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "L03",
+          "name": "current success releases base and external publication updates clean field",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Saved"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 2,
+                  "field": "filename",
+                  "value": "New"
+                },
+                "pending": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "L04",
+          "name": "new draft suppresses old shared confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:21:181\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:20:1)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L04.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-2-d39ddc3e",
+                  "tone": "error",
+                  "text": "Confirmation OLD_DRAFT",
+                  "at": "2026-09-08T08:28:52.589Z",
+                  "code": "REVIEW_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-3-3cff5936",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "Conversion OLD_DRAFT",
+                    "changes": [
+                      "Change geometry for OLD_DRAFT"
+                    ],
+                    "retry": {
+                      "type": "proposal.accept",
+                      "id": "OLD_DRAFT",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "REVIEW_REFUSAL",
+                      "message": "Confirmation OLD_DRAFT",
+                      "severity": "error"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: Conversion OLD_DRAFT",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Old"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "New unsent"
+                },
+                "pending": true
+              }
+            ],
+            "notifications": [],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nConversion OLD_DRAFT\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nChange geometry for OLD_DRAFT\nMã đề xuất\nOLD_DRAFT\nMã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.\nLỗi\nREVIEW_REFUSAL\nConfirmation OLD_DRAFT\n\nChưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.\n\nMở nhật ký và chẩn đoán\n\nĐóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhận\nÁp dụng thay đổi\nCần xác nhận: Conversion OLD_DRAFT"
+          }
+        },
+        {
+          "id": "L05",
+          "name": "Escape suppresses old shared confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:24:231\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:23:1)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L05.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-4-17926b35",
+                  "tone": "error",
+                  "text": "Confirmation ESCAPED",
+                  "at": "2026-09-08T08:28:53.087Z",
+                  "code": "REVIEW_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-5-21577fe1",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "Conversion ESCAPED",
+                    "changes": [
+                      "Change geometry for ESCAPED"
+                    ],
+                    "retry": {
+                      "type": "proposal.accept",
+                      "id": "ESCAPED",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "REVIEW_REFUSAL",
+                      "message": "Confirmation ESCAPED",
+                      "severity": "error"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: Conversion ESCAPED",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "errorMm",
+                  "value": "0.009"
+                },
+                "pending": false
+              }
+            ],
+            "notifications": [],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nConversion ESCAPED\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nChange geometry for ESCAPED\nMã đề xuất\nESCAPED\nMã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.\nLỗi\nREVIEW_REFUSAL\nConfirmation ESCAPED\n\nChưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.\n\nMở nhật ký và chẩn đoán\n\nĐóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhận\nÁp dụng thay đổi\nCần xác nhận: Conversion ESCAPED"
+          }
+        },
+        {
+          "id": "L06",
+          "name": "same-value numeric Enter cancels and releases the revision fence",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n7 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:27:131\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:26:1)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L06.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 4,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 4,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "errorMm",
+                  "value": "0.004"
+                },
+                "pending": true
+              }
+            ],
+            "notifications": [
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 4
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 4\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 4\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)"
+          }
+        },
+        {
+          "id": "L07",
+          "name": "same-value text Enter and numeric blur cancel drafts",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n6 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:30:134\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:29:1)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L07.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 2,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 2,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              }
+            ],
+            "notifications": [
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 2
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 2\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 2\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)"
+          }
+        },
+        {
+          "id": "L08",
+          "name": "concurrent fields keep independent refusals",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Name"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Name"
+                },
+                "pending": false
+              },
+              {
+                "id": 9,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "errorMm",
+                  "value": "0.008"
+                },
+                "pending": false
+              }
+            ],
+            "text": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nTEXT_CURRENT\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nNUMBER_CURRENT\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nTEXT_CURRENT"
+          }
+        },
+        {
+          "id": "L09",
+          "name": "conditional field removal suppresses refused confirmation",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-11-63cd7e2e",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho cài đặt của một đường xuất đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T08:28:54.639Z",
+                  "code": "ANSWER_SUPERSEDED"
+                },
+                {
+                  "id": "log-10-c7e00156",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.configure đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T08:28:54.639Z",
+                  "code": "ANSWER_SUPERSEDED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            }
+          }
+        },
+        {
+          "id": "L10-project",
+          "name": "pending confirmation suppressed across project ABA",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-13-4e7b8fed",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho cài đặt của một đường xuất thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T08:28:54.903Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-12-1b8e9f46",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.configure đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T08:28:54.903Z",
+                  "code": "ANSWER_SUPERSEDED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "notifications": [
+              {
+                "account": "A",
+                "project": "P2",
+                "revision": 0
+              },
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "L10-account",
+          "name": "pending confirmation suppressed across account ABA",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-15-131066b9",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho cài đặt của một đường xuất thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T08:28:55.071Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-14-851dd398",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.configure thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T08:28:55.071Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "notifications": [
+              {
+                "account": "B",
+                "project": "P1",
+                "revision": 0
+              },
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 0
+              }
+            ]
+          }
+        },
+        {
+          "id": "L11-project",
+          "name": "dirty draft does not migrate into a different project",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'PRIVATE_A_UNSENT'\n- 'Published B'\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:43:259\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:41:41)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L11-project.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P2",
+                "name": "Other context",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Published B",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "PRIVATE_A_UNSENT"
+                },
+                "pending": true
+              }
+            ],
+            "notifications": [
+              {
+                "account": "A",
+                "project": "P2",
+                "revision": 0
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)"
+          }
+        },
+        {
+          "id": "L11-account",
+          "name": "dirty draft does not migrate into a different account",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'PRIVATE_A_UNSENT'\n- 'Published B'\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:43:259\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:41:41)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L11-account.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "B",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Other context",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Published B",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "PRIVATE_A_UNSENT"
+                },
+                "pending": true
+              }
+            ],
+            "notifications": [
+              {
+                "account": "B",
+                "project": "P1",
+                "revision": 0
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)"
+          }
+        },
+        {
+          "id": "L12-project",
+          "name": "already-open conversion consent retired across project ABA",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:46:315\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:45:41)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L12-project.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-16-f81276a2",
+                  "tone": "error",
+                  "text": "Confirmation OPEN_CONSENT",
+                  "at": "2026-09-08T08:28:55.780Z",
+                  "code": "REVIEW_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-17-c906591e",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "Conversion OPEN_CONSENT",
+                    "changes": [
+                      "Change geometry for OPEN_CONSENT"
+                    ],
+                    "retry": {
+                      "type": "proposal.accept",
+                      "id": "OPEN_CONSENT",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "REVIEW_REFUSAL",
+                      "message": "Confirmation OPEN_CONSENT",
+                      "severity": "error"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: Conversion OPEN_CONSENT",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "stl-union",
+                "pending": false
+              }
+            ],
+            "notifications": [
+              {
+                "account": "A",
+                "project": "P2",
+                "revision": 0
+              },
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 0
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nConversion OPEN_CONSENT\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nChange geometry for OPEN_CONSENT\nMã đề xuất\nOPEN_CONSENT\nMã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.\nLỗi\nREVIEW_REFUSAL\nConfirmation OPEN_CONSENT\n\nChưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.\n\nMở nhật ký và chẩn đoán\n\nĐóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhận\nÁp dụng thay đổi\nCần xác nhận: Conversion OPEN_CONSENT"
+          }
+        },
+        {
+          "id": "L12-account",
+          "name": "already-open conversion consent retired across account ABA",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:46:315\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:45:41)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L12-account.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-18-0e3a3eb9",
+                  "tone": "error",
+                  "text": "Confirmation OPEN_CONSENT",
+                  "at": "2026-09-08T08:28:56.117Z",
+                  "code": "REVIEW_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-19-4f82263e",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "Conversion OPEN_CONSENT",
+                    "changes": [
+                      "Change geometry for OPEN_CONSENT"
+                    ],
+                    "retry": {
+                      "type": "proposal.accept",
+                      "id": "OPEN_CONSENT",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "REVIEW_REFUSAL",
+                      "message": "Confirmation OPEN_CONSENT",
+                      "severity": "error"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: Conversion OPEN_CONSENT",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "stl-union",
+                "pending": false
+              }
+            ],
+            "notifications": [
+              {
+                "account": "B",
+                "project": "P1",
+                "revision": 0
+              },
+              {
+                "account": "A",
+                "project": "P1",
+                "revision": 0
+              }
+            ],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nConversion OPEN_CONSENT\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nChange geometry for OPEN_CONSENT\nMã đề xuất\nOPEN_CONSENT\nMã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.\nLỗi\nREVIEW_REFUSAL\nConfirmation OPEN_CONSENT\n\nChưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.\n\nMở nhật ký và chẩn đoán\n\nĐóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhận\nÁp dụng thay đổi\nCần xác nhận: Conversion OPEN_CONSENT"
+          }
+        },
+        {
+          "id": "L13",
+          "name": "inspection intent and conversion acceptance require explicit actions",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "stl-union",
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "proposal.accept",
+                  "id": "EXPLICIT",
+                  "confirmed": true
+                },
+                "pending": true
+              }
+            ],
+            "dialogs": [
+              {
+                "id": "dlg-21-3a492af5",
+                "spec": {
+                  "kind": "confirm",
+                  "title": "Conversion EXPLICIT",
+                  "changes": [
+                    "Change geometry for EXPLICIT"
+                  ],
+                  "retry": {
+                    "type": "proposal.accept",
+                    "id": "EXPLICIT",
+                    "confirmed": true
+                  },
+                  "diagnostic": {
+                    "code": "REVIEW_REFUSAL",
+                    "message": "Confirmation EXPLICIT",
+                    "severity": "error"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "L14",
+          "name": "late older response cannot replace newer confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'OLDER' !== 'NEWEST'\n\n    at file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:53:270\n    at async check (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:9:162)\n    at async cases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/cases.mjs:52:1)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:1",
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\lifecycle-r1\\chromium-L14.png",
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-26-e67990e8",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho cài đặt của một đường xuất đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T08:28:56.610Z",
+                  "code": "ANSWER_SUPERSEDED"
+                },
+                {
+                  "id": "log-24-b4408c09",
+                  "tone": "error",
+                  "text": "Confirmation OLDER",
+                  "at": "2026-09-08T08:28:56.610Z",
+                  "code": "REVIEW_REFUSAL"
+                },
+                {
+                  "id": "log-22-c208476c",
+                  "tone": "error",
+                  "text": "Confirmation NEWEST",
+                  "at": "2026-09-08T08:28:56.596Z",
+                  "code": "REVIEW_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-25-8081f0ee",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "Conversion OLDER",
+                    "changes": [
+                      "Change geometry for OLDER"
+                    ],
+                    "retry": {
+                      "type": "proposal.accept",
+                      "id": "OLDER",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "REVIEW_REFUSAL",
+                      "message": "Confirmation OLDER",
+                      "severity": "error"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: Conversion OLDER",
+              "alert": ""
+            },
+            "snapshot": {
+              "contractVersion": "0.3",
+              "environment": "prototype",
+              "version": "Independent frontend fixture / captured source",
+              "online": true,
+              "capabilities": [
+                {
+                  "id": "project.write",
+                  "available": true
+                },
+                {
+                  "id": "ai.generate",
+                  "available": true
+                }
+              ],
+              "session": {
+                "status": "signed-in",
+                "user": {
+                  "id": "A",
+                  "name": "Test A",
+                  "email": "a@example.invalid",
+                  "role": "owner"
+                },
+                "deviceMode": "private"
+              },
+              "project": {
+                "id": "P1",
+                "name": "Test P1",
+                "revision": 0,
+                "savedRevision": 0,
+                "product": "keychain",
+                "visibleModelRevision": 0,
+                "visibleModelStale": false,
+                "step": 2,
+                "source": null,
+                "parameters": [],
+                "materials": [],
+                "text": {
+                  "text": "",
+                  "fontId": "",
+                  "sizeMm": "10",
+                  "heightLayers": "1",
+                  "baseWidthMm": "0",
+                  "baseThicknessLayers": "0",
+                  "baseRadiusMm": "0",
+                  "bend": "0",
+                  "letterSpacing": "0",
+                  "lineSpacing": "1",
+                  "baseEnabled": false,
+                  "bevelEnabled": false,
+                  "asSource": false,
+                  "xMm": "0",
+                  "yMm": "0",
+                  "placement": "on-model",
+                  "sizeUnit": "mm",
+                  "sizeDisplay": "10"
+                },
+                "canUndo": false,
+                "canRedo": false,
+                "sourceCanvas": null,
+                "history": {
+                  "undoCount": 0,
+                  "redoCount": 0,
+                  "payloadBytes": 0,
+                  "truncated": false
+                },
+                "importedMesh": {
+                  "present": false,
+                  "unappliedFields": []
+                },
+                "selection": null,
+                "blocks": [],
+                "stats": {
+                  "materialCount": 0,
+                  "verdict": "unverified"
+                }
+              },
+              "job": null,
+              "diagnostics": [],
+              "library": [],
+              "exports": [
+                {
+                  "id": "stl-union",
+                  "label": "STL hợp nhất",
+                  "extension": "stl",
+                  "enabled": true,
+                  "verdict": "unverified",
+                  "prerequisite": "matching-model",
+                  "configuration": {
+                    "projectRevision": 0,
+                    "fields": [
+                      {
+                        "id": "filename",
+                        "label": "Tên tệp",
+                        "kind": "text",
+                        "value": "Mô hình",
+                        "enabled": true,
+                        "hint": "Nhập tên nguyên văn."
+                      },
+                      {
+                        "id": "errorMm",
+                        "label": "Sai số hình học",
+                        "kind": "number",
+                        "value": "0.004",
+                        "unit": "mm",
+                        "min": "0.000001",
+                        "max": "1",
+                        "step": "0.000001",
+                        "enabled": true,
+                        "hint": "Giá trị tính bằng milimét."
+                      },
+                      {
+                        "id": "inspection",
+                        "label": "Xuất để kiểm tra",
+                        "kind": "boolean",
+                        "value": false,
+                        "enabled": true,
+                        "hint": "Bật rõ ràng để xuất kết quả chưa đạt."
+                      },
+                      {
+                        "id": "orientation",
+                        "label": "Hướng chế tạo",
+                        "kind": "select",
+                        "value": "up",
+                        "options": [
+                          {
+                            "value": "up",
+                            "label": "Hoa văn hướng lên"
+                          },
+                          {
+                            "value": "down",
+                            "label": "Lật hoa văn xuống và đặt đáy trên bàn"
+                          }
+                        ],
+                        "enabled": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aiProviders": [
+                {
+                  "id": "synthetic",
+                  "label": "Synthetic provider (no network)",
+                  "connected": true,
+                  "models": [
+                    {
+                      "id": "m",
+                      "label": "Controlled model",
+                      "supportsReference": true,
+                      "qualities": [],
+                      "sizes": []
+                    }
+                  ],
+                  "currency": "USD",
+                  "spent": "0",
+                  "reserved": "0",
+                  "budget": "1",
+                  "available": true,
+                  "credential": {
+                    "label": "Synthetic test credential",
+                    "masked": "none",
+                    "status": "test",
+                    "lastChecked": null
+                  }
+                }
+              ],
+              "printer": {
+                "id": null,
+                "label": "None",
+                "filamentSlots": 1,
+                "qualified": false
+              },
+              "settings": [],
+              "editor": {
+                "tool": "paint",
+                "colorMaterialId": null,
+                "cutMode": "merge",
+                "strokeWidthPx": "1",
+                "healAuto": false,
+                "healAllGaps": false,
+                "healThresholdMm": "0"
+              },
+              "aiJobs": [],
+              "aiBudget": {
+                "revision": 0,
+                "limits": []
+              },
+              "printers": [],
+              "policy": null,
+              "storage": {
+                "usedBytes": 0,
+                "quotaBytes": null,
+                "estimate": true
+              },
+              "exportReceipts": []
+            },
+            "calls": [
+              {
+                "id": 1,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 2,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 3,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 4,
+                "method": "queryFonts",
+                "input": "",
+                "pending": true
+              },
+              {
+                "id": 5,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  null,
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 6,
+                "method": "queryEmoji",
+                "input": [
+                  "",
+                  "favorite",
+                  0
+                ],
+                "pending": true
+              },
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "First"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Second"
+                },
+                "pending": false
+              },
+              {
+                "id": 9,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Second"
+                },
+                "pending": true
+              }
+            ],
+            "notifications": [],
+            "html": "Bỏ qua thanh điều hướng, tới khung thiết kế\nW3\nweb‑3d‑arch\nBước 1 · Nguồn & màu\nquay lại được\nBước 2 · Mô hình 3D\nđang mở\nTìm nhanh\nCtrl K\nTrực tuyến\nTải nguồn\nCtrl O\nXuất file\nTest A\nẢnh nguồn\nSản phẩm\nLớp màu\n0\n— 0 vật liệu trong bảng màu\nThông số\nXuất file\n?\n— Kết quả dựng: chưa kiểm\nThư viện\n0\n— 0 dự án trong thư viện\nXuất file\n\n3MF, STL, SVG và PNG\n\nGập bảng\n\\\nMáy in cho bản xuất\nchưa gắn ID máy\nNone · 1 khe filament\nhồ sơ chưa kiểm\nMáy in đang chọn\nChưa gắn ID máy — máy in chung\nDanh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.\nNhân chưa công bố năng lực này trong snapshot hiện tại.\nMở cài đặt máy in và hiệu chuẩn\nCài đặt xuất là một lần sửa dự án\n\nLưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.\n\nMô hình đang hiển thị dựng từ bản sửa 0, khớp bản sửa hiện tại.\n\ndự án ở bản sửa 0\nnhân không có lượt xử lý nào đang chạy\nSTL hợp nhất\nstl\nchưa kiểm\nstl-union\ncần mô hình khớp bản sửa\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nNhập tên nguyên văn.\nSai số hình học · errorMm\nmm\nGiá trị tính bằng milimét.\nMiền 0.000001–1 mm · bước 0.000001 mm\nXuất để kiểm tra\nBật rõ ràng để xuất kết quả chưa đạt.\ninspection\nHướng chế tạo · orientation\nHoa văn hướng lên\nLật hoa văn xuống và đặt đáy trên bàn\n\nThiết lập ở đây thuộc riêng đường xuất “STL hợp nhất”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.\n\nHồ sơ kết quả xuất\n0 hồ sơ\n\nĐây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\n\nCó hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n\nPhiên này chưa có lượt xuất nào được ghi\n\nHồ sơ xuất hiện sau khi nhân chạy xong một lượt xuất và trả về hồ sơ cho nó.\n\nĐiều kiện và cửa chặn xuất\n1 điều kiện · 7 mã\n\nSTL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.\n\n‹\nGập bảng thiết lập\nChỉ số\nKhung xem\nGợi ý\nKích thước\n0 × 0 × 0 mm\nBộ phận\n0\nTam giác\n0\nKiểm mesh\nchưa kiểm\n▾ Khung xem\nVừa khung\nF\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nLưới\nG\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn từ trên\nT\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNghiêng\nI\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nNhìn trước\nP\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nGiữa bàn\nC\nNhân chưa công bố năng lực viewport.center-bed trong snapshot hiện tại.\nĐo\nM\nNhân chưa công bố năng lực này trong snapshot hiện tại. Ô số và lệnh dựng vẫn dùng được.\nKhối đang chọn\n— không chọn khối nào\nCùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.\nNhân chưa công bố khối nào trong bản dựng hiện tại.\nChi tiết khối\nNhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.\nKhông có WebGL: tắt chọn khối, đo và xuất PNG. Dựng và xuất hình học vẫn chạy.\nThế hệ tài liệu 0\nMô hình đang vẽ: bản sửa 0\nTách tầng\nKhung thiết kế đang trống\n\nBa lối bắt đầu. Kéo thả tệp vào khung này cũng được.\n\nTải nguồn\nChọn emoji\nGõ chữ\nXoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.\nQuay lại\nXuất (1 lựa chọn)\nConversion OLDER\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nChange geometry for OLDER\nMã đề xuất\nOLDER\nMã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.\nLỗi\nREVIEW_REFUSAL\nConfirmation OLDER\n\nChưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.\n\nMở nhật ký và chẩn đoán\n\nĐóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhận\nÁp dụng thay đổi\nCần xác nhận: Conversion OLDER"
+          }
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\work\\browser-profiles\\lifecycle-r1\\chromium"
+    }
+  ]
+}

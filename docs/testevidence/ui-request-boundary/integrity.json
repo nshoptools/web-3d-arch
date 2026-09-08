@@ -1,0 +1,18 @@
+{
+  "version": "arch-ui-request-evidence-integrity/1",
+  "r1SourceFilesVerified": 75,
+  "r1TestFilesVerified": 10,
+  "r2SourceFilesVerified": 75,
+  "executedR2TestFilesVerified": 10,
+  "sourceChanges": [
+    "src/ui/ai/AIGenerateDialog.tsx",
+    "src/ui/core/bridge.tsx"
+  ],
+  "testChanges": [
+    "tests/ui/request-boundary/browser-cases.mjs",
+    "tests/ui/request-boundary/harness.tsx"
+  ],
+  "r2RawResultSha256": "db19c27ba31c7f88a880a85c010dfa51305f8c5bb10548175117fdb7317f33f7",
+  "productionFilesWritten": 0,
+  "qualifiedIndependentReview": false
+}

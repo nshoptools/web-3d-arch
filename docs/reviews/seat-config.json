@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-07",
+  "updated_at": "2026-09-08",
   "scope": "review",
   "seats": {
     "codex": {
@@ -9,19 +9,33 @@
       "fast_mode": false
     },
     "opus": {
+      "invocations_enabled": false,
+      "disabled_reason": "Project owner instructed on 2026-09-08 to stop using Opus after plan quota exhaustion; Hub, Codex and Grok continue. Do not reactivate without a new owner instruction.",
       "model": "opus",
-      "effort": "ultracode",
-      "fast_mode": false
+      "effort": "max",
+      "fast_mode": false,
+      "scope": "all-project-invocations-including-development-review-resume-fork-and-subagents",
+      "command": ["pwsh", "-NoProfile", "-File", "tools/agents/start-opus.ps1"],
+      "user_constraints": {
+        "recorded_at": "2026-09-08",
+        "do_not_invoke": true,
+        "required_effort": "max",
+        "required_fast_mode": false,
+        "change_requires_new_user_instruction": true
+      }
     },
     "grok": {
       "model": "grok-4.6",
       "effort": "xhigh",
-      "command": ["grok", "-m", "grok-4.6", "--effort", "xhigh"]
+      "command": ["pwsh", "-NoProfile", "-File", "tools/reviews/start-grok.ps1"],
+      "runtime_config": "tools/reviews/grok-runtime.json",
+      "isolation_guide": "docs/reviews/GROK-WINDOWS-ISOLATION.md"
     }
   },
   "upgrade_policy": {
     "check_before_each_review_round": true,
     "adopt_verified_stronger_available_options": true,
+    "preserve_explicit_user_constraints": true,
     "allow_silent_downgrade": false,
     "record_sources_date_and_reason": true
   }

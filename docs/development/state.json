@@ -1,0 +1,1905 @@
+{
+  "version": 25,
+  "updatedAt": "2026-09-08T16:05:43.986991+00:00",
+  "releaseReady": false,
+  "phase": "CSG225 promoted after4 actual browser flows; canonical build/package in progress",
+  "agents": {
+    "aiAdapters": {
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "role": "implementation",
+      "run": "20260908-ai-adapters-wave1",
+      "status": "integrated",
+      "previous": "58 parent integration tests passed; production xAI opt-in, no real inference/charges"
+    },
+    "ui": {
+      "seat": "Grok",
+      "role": "implementation",
+      "run": "20260908-ui-grok-wave1",
+      "status": "Stopped under urgent owner freeze;68UIfiles verified,16changes promoted from inherited UI plus Grok CSS, parent account-settings labels retained. Main typecheck pass;42focusedUI checks pass across3engines.",
+      "previous": {
+        "seat": "Opus",
+        "role": "implementation",
+        "run": "20260908-ui-wave11",
+        "status": "Historical stopped Opus source retained as seed; never resume without new owner instruction.",
+        "previous": "UI2 880 mock browser checks passed; main integrated, contract0.3 and real 2D gesture UI assigned"
+      }
+    },
+    "storage": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "role": "implementation",
+      "run": "20260908-storage-wave1",
+      "status": "integrated-parent-verified",
+      "previous": "3 domain/history +160 browser assertions pass;1OPFS unavailable; selected fallback retained explicitly"
+    },
+    "raster": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "role": "implementation",
+      "run": "20260908-raster-wave2",
+      "status": "wave2-integrated; unified runtime delta running",
+      "previous": "116 checked wave1 files integrated;43 native tests per profile, common smoothing/default paths and WASM assigned"
+    },
+    "printing": {
+      "id": "01a07d79-76e8-7620-8ad0-b77a95bebcf0",
+      "role": "implementation",
+      "run": "20260908-printing-wave2",
+      "status": "integrated-parent-native-node-three-browser-oracles-pass",
+      "previous": "49 checked files integrated; analytic native/WASM/browser/readback+Bambu dryslice self-tests; unified-module link assigned, U1CLI unverified"
+    },
+    "mechanics": {
+      "id": "01a07d7c-753d-7bf2-aeca-164ae27f89d9",
+      "role": "implementation",
+      "run": "20260908-mechanics-wave2",
+      "status": "R1 remediation integrated23 changedfiles;parent422native+422WASM,22domain,3cancel,2270parts;R2 identifies2more P1 blockers",
+      "previous": "wave1 checked candidate; native/WASM135 scenarios incl typed unsupported, finishing default lego/chamfer/fillet paths"
+    },
+    "host": {
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "role": "implementation",
+      "run": "20260908-host-wave1",
+      "status": "integrated-parent-tested-24of25-first-run-and-failed-group-rerun-pass"
+    },
+    "controller": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-app-ui-contract-followup",
+      "role": "implementation",
+      "status": "18 UI contract files+formats integrated; parent35Node/types+30selectedbrowserchecks passed",
+      "contract": "0.3"
+    },
+    "textSource": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-text-source-wave1",
+      "role": "implementation",
+      "status": "29 files integrated; application catalog/render binding running",
+      "previous": "Editing main verified:76Node,76portable checks+17RPC per3browserWorkers; text/emoji source adapter running"
+    },
+    "kernelConditioning": {
+      "status": "7 product files integrated; root native/WASM builds passed; production proposal/runtime wiring still open",
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "run": "20260908-kernel-conditioning-wave1",
+      "role": "implementation"
+    },
+    "meshImport": {
+      "status": "frozen STL/OBJ candidate delivered; parent integration pending;3MF import deferred; general CSG not implemented",
+      "id": "01a07d79-76e8-7620-8ad0-b77a95bebcf0",
+      "run": "20260908-mesh-import-wave1",
+      "role": "implementation"
+    },
+    "rasterRuntime": {
+      "status": "12 root entries integrated; parent native/WASM builds and native probe passed",
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-raster-runtime-wave1",
+      "role": "implementation"
+    },
+    "sourceAssembly": {
+      "status": "integrated; parent140native+140WASM,13bridges each,13domain;140parity and992meshpart oracles passed",
+      "id": "01a07d7c-753d-7bf2-aeca-164ae27f89d9",
+      "run": "20260908-source-assembly-wave1",
+      "role": "implementation"
+    },
+    "productRuntime": {
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "run": "20260908-product-runtime-wave1",
+      "role": "implementation",
+      "status": "30 checked delivery files+focusedRPC integrated; mainnative/WASMbuilds,8Nodegroups,3actualbrowsermatrices and6spatialoracle targets passed; R2 blockers remain"
+    },
+    "onlinePolicy": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-app-online-policy-wave1",
+      "role": "implementation",
+      "status": "21 product/test +6docs/composition integrated;parent25Node+42browser and160storage pass,WebKit OPFS unavailable"
+    },
+    "rasterApp": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-raster-app-wave1",
+      "role": "implementation",
+      "status": "Root facade and real compositor implemented; source composition actual SVG/text/color/raster consent+replay+retirement pass3engines"
+    },
+    "textApp": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-text-app-wave1",
+      "role": "implementation",
+      "status": "Private renderer MessagePort wired through root worker; real colored COLRv1/cancel/retire/restart passed3engines, no DOM canvas; source composition pass3engines"
+    },
+    "backendRecovery": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-backend-recovery-wave1",
+      "role": "implementation",
+      "status": "22checked deltaentries integrated,schema4; parent80/80passed,syntax andcodeStabletrue; independentreviewunavailable"
+    },
+    "finalSceneExport": {
+      "id": "01a07d7c-753d-7bf2-aeca-164ae27f89d9",
+      "run": "20260908-final-scene-export-wave1",
+      "role": "implementation",
+      "status": "43checked files+root linked. Parent112native+112WASM/parity pass,3rootRPCengines pass (Firefox navigation timeout then focused rerun pass). App7formats pending"
+    },
+    "sourceApproval": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-source-approval-alignment",
+      "role": "implementation",
+      "status": "12sourceadoption entries integrated; parent45Node/types+6selectedbrowser cases pass; originalreceipt/online loss guarded. WebKit long rasterPreparation GC test remains unresolved"
+    },
+    "mechanicsSourceR2": {
+      "id": "01a07d79-76e8-7620-8ad0-b77a95bebcf0",
+      "run": "20260908-mechanics-source-remediation-r2",
+      "role": "implementation",
+      "status": "33checkedfiles plus strictroot metadata integrated; native/WASM build pass; both root R2 negatives and valid controls pass; independent R3 active, no release closure"
+    },
+    "productApp": {
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "run": "20260908-product-app-wave1",
+      "role": "implementation",
+      "status": "Eightfiles integrated; strict semantic upgrade and actual source-context/adoption composition in fresh follow-up"
+    },
+    "browserDiagnosis": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-browser-storage-worker-r1",
+      "role": "implementation-diagnosis",
+      "status": "Complete; five harness files integrated; controlled long/short IDB and exact synthetic TLS SPKI causal evidence; parent Node/types/9browser and UI5 actual E2E3engine pass"
+    },
+    "rasterTestPromotion": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-raster-app-test-promotion",
+      "role": "implementation",
+      "status": "34 durable tests/docs integrated plus actual adapter types; main25Nodegroups and25each3Workers pass before latest original-render dependency retention change"
+    },
+    "aiImagePipeline": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-ai-image-pipeline-wave1",
+      "role": "implementation",
+      "status": "36checked B03 deltafiles integrated,schema5; parent112/112 syntax/codeStable pass, no live paidprovider/invoice"
+    },
+    "sourceAdoption": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "role": "implementation",
+      "run": "20260908-source-adoption-wave1",
+      "status": "Optional bounded prepareAdoption hook and initial render asset reference retention in progress"
+    },
+    "sourceLibrary": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-source-library-wave1",
+      "role": "implementation",
+      "status": "1763manifestverified/1762permanentfilesintegrated. Main17Node+types pass;62fonts/7751PNGpreviews/21391assets. Full deployed transport binding pending"
+    },
+    "runtimeOps": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "role": "implementation",
+      "run": "20260908-runtime-ops-wave1",
+      "status": "Foreground bounded maintenance, explicit lifecycle/config/backup/recovery runbooks in progress"
+    },
+    "importedCSG": {
+      "id": "01a07d79-76e8-7620-8ad0-b77a95bebcf0",
+      "role": "implementation",
+      "run": "20260908-imported-csg-wave1",
+      "status": "Assigned general actual mesh CSG extending frozen STL/OBJ parser, no two-box-only certification"
+    },
+    "exportApp": {
+      "id": "01a07d7c-753d-7bf2-aeca-164ae27f89d9",
+      "role": "implementation",
+      "run": "20260908-export-app-root-integration",
+      "status": "Old ordinary15files main; executable float28 candidate frozen with98selftestNode and actual3browserRPC; current-main rebase and corrected owned-bytes runtime validation assigned, not yet main."
+    },
+    "uiRequestBoundary": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-ui-request-boundary-verification",
+      "role": "test-engineering",
+      "status": "21test/doc files integrated;10Node/types/41per3engine pass on exactmainr2; worker moved to float32 export conditioning"
+    },
+    "productSourceBridge": {
+      "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
+      "run": "20260908-product-source-root-integration",
+      "role": "implementation",
+      "status": "Fresh root integration of probe/material adoption/ASFR/datum and raster erase-reconversion active; earlier46file candidate not yet main. Qualification-only replay explicitly not accepted as complete integration."
+    },
+    "webkitHistory": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-webkit-history-performance-r1",
+      "role": "diagnosis-implementation",
+      "status": "Batch existing pins integrated2files; worker48Node and60distinctbrowsercases pass after5fixturecorrections; bothWebKit20historybudget22commitprovenance scenarios pass. Fresh main60-case matrix active; latency still high."
+    },
+    "runtimeOperations": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-runtime-ops-wave1",
+      "role": "implementation",
+      "status": "97candidateverified,24permanentdelta integrated; fresh main136/136 pass with unchangedschema5"
+    },
+    "releasePackaging": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-release-packaging-wave1",
+      "role": "implementation",
+      "status": "38 final files promoted after157checked; excluded2delivery-only docs; parent actual main46/46 pass, syntax and stablebytes; synthetic entry/WASM42, not product release"
+    },
+    "finalSceneEvidence": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-final-scene-evidence-wave1",
+      "role": "implementation",
+      "status": "Actual independent mesh validator and trusted finalScene provider in progress"
+    },
+    "floatConditioning": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-final-export-float-conditioning",
+      "role": "implementation",
+      "status": "36 exact files integrated; production and separate instrumented unified Modules built.16 native Rust unit tests,43 native checks/file oracle,4 production and7 instrumented integration groups pass. Independent R4 active; global error/fit unverified."
+    },
+    "printingApp": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-printing-app-wave1",
+      "role": "implementation",
+      "status": "19 checked files integrated; parent33/33 syntax/types stablebytes and actual3browserRPC plus12Pythonreadbacks pass. Authored analytic scenes; real app finalscene/profile UI joining still pending."
+    },
+    "sourceSVGExport": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "role": "implementation",
+      "run": "20260908-source-svg-export-wave1",
+      "status": "17files integrated; parent26Node/types,5source families each3engines and163Python readbacks passed on prior production pair; original evidence retained."
+    },
+    "nativeSourceCorrectness": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-native-source-correctness-wave1",
+      "role": "implementation",
+      "status": "41files integrated; parent17native root checks+334oracles,3Node+3actualWorkers passed. Final float native43+independent readback+4production integration groups passed on ASFR pair. Corrected owned-bytes wrapper now separately verified."
+    },
+    "curvedProducts": {
+      "id": "01a07d7c-753d-7bf2-aeca-164ae27f89d9",
+      "run": "20260908-native-curved-products-wave1",
+      "role": "implementation",
+      "status": "110files integrated after199candidate hashes and exact main preimages. Author52native/WASM cases pass including22oldrefusals; Boole cross-author main validation and parent unified native/WASM rebuild active. Independent review active."
+    },
+    "printerLibrary": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-printer-library-hardening",
+      "role": "implementation",
+      "status": "18files/hunks integrated; parent29functional plus3existing ACC03 checks passed; opaque account/settings capture keys, bounded verified profile JSON. Opus profile UI pending."
+    },
+    "productAcceptance": {
+      "id": "01a07d30-d905-7060-b57e-6beeb4afcea8",
+      "run": "20260908-product-acceptance-wave1",
+      "role": "integration-validation",
+      "status": "Actual compiled baseline artifact with real product entry, backend/SQLite/localOIDC and root Worker handed off for whole product/UX tests. No synthetic extrusion recipe accepted."
+    },
+    "applicationBuilder": {
+      "id": "01a07dc2-545e-7a80-b1c3-4c6c147ba7a8",
+      "run": "20260908-product-release-builder",
+      "role": "implementation",
+      "status": "26tool/test/doc files integrated after26candidate/39evidence hashes and absent main preimages. Self39Node,compiledWorker3,network6,shell1pass; parent39Node rerun active. Actual frozen baseline package ready; source changes need a new package."
+    },
+    "curvedGuardRemediation": {
+      "id": "01a07d3c-8852-7030-bb05-e7d4e0b7ddb9",
+      "run": "20260908-curved-guard-remediation-r1",
+      "role": "implementation",
+      "status": "Assigned2 independent initial review findings: P1 full-volume roof guard may erase positive oblique slit residual;P2 mm concave strap notch lateral breakout. Parent inspected implicated code; exact locked-dependency reproduction/remediation pending."
+    }
+  },
+  "reviews": [
+    {
+      "seat": "Opus",
+      "run": "20260908-foundation-review-r1",
+      "status": "completed-needs-fixes",
+      "scope": "Frozen pre-SVG native geometry, ABI, snapshots and initial UI contract",
+      "runtime": "claude-opus-5; ultracode/xhigh with Workflow; fast off",
+      "disposition": "docs/reviews/20260908-foundation/README.md; 22 findings assessed; several remain open"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-backend-review-r1",
+      "status": "rejected-by-automatic-filter",
+      "runtime": "gpt-6-astra/max; fast_mode false from effective feature check",
+      "scope": "frozen backend before production adapters",
+      "result": "32 snapshot tests passed, then Codex possible cybersecurity risk filter ended turn; no review conclusion"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-mechanics-review-r1",
+      "status": "completed-needs-fixes",
+      "scope": "Independent native mathematics/functionality and parameter adapter;82cases",
+      "runtime": "gpt-6-astra/max;CLI0.153.4;fastfeaturefalse;no server tier telemetry",
+      "disposition": "docs/reviews/20260908-mechanics/README.md;2P1+5P2 assessed and remediation assigned"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-mechanics-review-r2",
+      "status": "complete-needs-fixes",
+      "runtime": "gpt-6-astra/max,CLI0.153.4,actual turn metadata and fastfeaturefalse verified;server tier telemetry absent",
+      "findings": "2P1 accepted/reproduced by parent native;docs/reviews/20260908-mechanics/R2-ADJUDICATION.md",
+      "disposition": "Seven R1 findings closed within exact original scope;2new P1 accepted/reproduced and assigned; no release certification"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-geometry-review-r3",
+      "role": "independent-review",
+      "status": "complete-needs-fixes; R2 corrected independently; F1/F2/F3 accepted and parent-verified fixed; default clicky float32 release path open",
+      "verifiedRuntime": "gpt-6-astra/max, fastfeaturefalse CLI0.153.4 actualturncontext; no servertiertelemetry",
+      "snapshotFiles": 469,
+      "snapshotManifestSha256": "ba1495ef171bf827b2b41dfb4c02be1ee2e185f23cadd811621df4adc68cbff7",
+      "scope": "mechanics3/source2/root product/final scene exports; own independent findings before R2 comparison"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-geometry-review-r4",
+      "status": "complete-bounded-no-findings",
+      "scope": "float conditioning/material-union/runtime authority",
+      "adjudication": "docs/reviews/20260908-geometry-r4/adjudication.json"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-ui-export-review-r1",
+      "status": "8accepted;1-4parentverifiedfixed plus3newparentconsentdefects fixed;5-8assignedfreshOpusUI10",
+      "adjudication": "docs/reviews/20260908-ui-export-r1/adjudication.json",
+      "artifactMismatch": "final launcher response changed after manifest; 303/304match, initial reports and evidence verified"
+    },
+    {
+      "seat": "Codex",
+      "run": "20260908-mesh-checker-review-r1",
+      "status": "complete-bounded-no-substantiated-findings",
+      "adjudication": "../reviews/20260908-mesh-checker-r1/adjudication.json",
+      "sourceFiles": 702,
+      "evidenceFilesChecked": 135,
+      "evidenceFilesRetained": 133,
+      "integrityDiscrepancies": 0,
+      "limits": "No global union/source equivalence, whole-pipeline error, wholeapp, arbitrary design intent, worst-case performance, slicer or fit claim."
+    }
+  ],
+  "activeTasks": [
+    {
+      "owner": "parent",
+      "task": "canonical production build, exact package, final UI verification and handover"
+    },
+    {
+      "owner": "Halley",
+      "task": "bounded vector-mm editor closure",
+      "run": "20260908-vector-edit-closure"
+    },
+    {
+      "owner": "Ohm",
+      "task": "exact historical negative-NFD overlay closure",
+      "run": "20260908-negative-nfd-closure"
+    }
+  ],
+  "criticalOpen": [
+    "Full v1 is not accepted; CSG controller adoption/current-generated replay remains gated. Durable checked candidate patches are in docs/pending/imported-csg.",
+    "Some NFD/font/overlay and full COLRv1-to-product cases remain refused or unqualified; retain original inputs and explicit capability limits.",
+    "Production TLS/OIDC/owner configuration absent; local preview identity and certificates are synthetic fixtures. No production deployment or paid AI usage proof.",
+    "Whole application requirement matrix, worst-case resource/latency and final independent release review incomplete. Backend independent route was automatically rejected; not retried.",
+    "Mechanical source-resolution fallback is conditional, not a universal geometry guarantee; supplementary18/22 assertions include2changednegativecodes+2conservativeunsupportedhole/islandinputs.",
+    "Target slicer/profile and physical fit require separate qualification; no certified fit label."
+  ],
+  "kernelEvidence": {
+    "nativeAnalyticPassed": 4,
+    "nativeFfiTestsPassed": 7,
+    "cppEmscriptenSmokePassed": true,
+    "wasmNodeTestsPassed": 3,
+    "browserWorkerTestsPassed": 3,
+    "browserEngines": [
+      "Chromium",
+      "Firefox",
+      "WebKit"
+    ],
+    "svgParserTestsPassed": 35,
+    "nativeSvgFixturesObserved": 2,
+    "currentSvgWasmTestsPassed": 7,
+    "scope": "Analytic mesh/STL oracles, Worker/SAB/leases/cancel/generation/COI; no claim for full product UX, general error bound or storage recovery",
+    "latestRun": "20 groups passed: native/oracles, SVG native-WASM parity, three browser Worker STL exports, full53font Node shaping/outline/variation and COLRv1",
+    "harfbuzz": {
+      "nodeParityTests": 3,
+      "existingInputTests": 3,
+      "browserWorkersPassed": [
+        "Chromium",
+        "Firefox",
+        "WebKit"
+      ],
+      "scope": "All53textfonts default/min/max axes with3Vietnamese samples match original on native/WASM; COLRv1 web graph parity and3browser memorygrowth checks; not full text-to-print"
+    },
+    "nativeHarfBuzzParityTests": 2,
+    "nativeHarfBuzzCatalogExpansion": "passed:53fonts x3variation configurations x3samples;5COLRv1emoji shape sequences",
+    "sourceReproducibility": "3808 HarfBuzz originalfiles compared with pinned archive, safe extraction recipe added",
+    "linkFreshness": "passed: own C++archive rewrite caused Cargo relink with unchangedbytes",
+    "sourceAssembly": {
+      "native": 140,
+      "wasm": 140,
+      "bridgePerPlatform": 13,
+      "domain": 13,
+      "parity": 140,
+      "oracleMeshParts": 992,
+      "maxVolumeDeltaMm3": 1.8189894035458565e-12,
+      "maxBBoxDeltaMm": 0,
+      "maxSectionDelta": 0
+    },
+    "rasterRuntime": "root native and WASM -Printing -TestFixtures builds passed;12 native fixture families+11negative checks pass",
+    "mechanicsRemediation": {
+      "native": 422,
+      "wasm": 422,
+      "domain": 22,
+      "cancellationNative": 3,
+      "parity": 422,
+      "oracleParts": 2270,
+      "maxVolumeDeltaMm3": 1.8189894035458565e-12,
+      "maxBBoxDeltaMm": 0,
+      "maxSectionDelta": 0,
+      "scope": "Prior R1 remediation cases;does not cover two newly reproduced R2 blockers"
+    },
+    "productRuntime": {
+      "builds": "main native/WASM unified Printing passed",
+      "nodeGroupsPassed": 8,
+      "nativeDefaults": 5,
+      "nativeSVGMatrix": 20,
+      "nativeRasterMatrix": 20,
+      "nativeSpecial": 4,
+      "browser": {
+        "engines": 3,
+        "modelsPerEngine": 46,
+        "passed": true
+      },
+      "scope": "Self/integration proof; R2 source/mechanics P1 still open",
+      "spatialOracles": [
+        {
+          "target": "native-product",
+          "models": 25,
+          "parts": 135,
+          "passed": true
+        },
+        {
+          "target": "native-raster-product",
+          "models": 20,
+          "parts": 110,
+          "passed": true
+        },
+        {
+          "target": "node-wasm-product",
+          "models": 40,
+          "parts": 220,
+          "passed": true
+        },
+        {
+          "target": "browser-product/chromium",
+          "models": 45,
+          "parts": 245,
+          "passed": true
+        },
+        {
+          "target": "browser-product/firefox",
+          "models": 45,
+          "parts": 245,
+          "passed": true
+        },
+        {
+          "target": "browser-product/webkit",
+          "models": 45,
+          "parts": 245,
+          "passed": true
+        }
+      ]
+    },
+    "combinedRootRPC": {
+      "tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "run": "20260908-root-rpc-sem3-r1",
+      "scope": "Printing/raster/text/source-composition real shared root3engines; actual default alpha128/initialrenderer+font asset retention",
+      "wasmSha256": "16080c207725662ab85215783b3e012e3195f5e9f835874bc0069d9421c98300"
+    },
+    "rootColorRPC": {
+      "engines": 3,
+      "passed": 3,
+      "scope": "Vietnamese+actual COLRv1 sequences, exact private port only when needed, no DOM canvas, cooperative cancel and own initialization retirement"
+    },
+    "currentRoot": {
+      "mechanicsAbi": 2,
+      "mechanicsSemantics": 3,
+      "sourceAbi": 1,
+      "sourceSemantics": 2,
+      "datumExtension": 1,
+      "mjsSha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+      "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+      "nativeAndWasmBuild": true,
+      "rootR2Groups": 3,
+      "productNodeGroups": 8,
+      "productBrowserEngines": 3,
+      "modelsPerEngine": 46
+    },
+    "finalSceneExport": {
+      "nativeCases": 112,
+      "wasmCases": 112,
+      "parityCases": 112,
+      "meshOracleParts": 128,
+      "maxVolumeDeltaMm3": 0,
+      "maxBBoxDeltaMm": 0,
+      "maxSectionAreaDeltaMm2": 0,
+      "nativeOwnership": 23,
+      "wasmOwnership": 25,
+      "nativeCancel": 5,
+      "rootRPCEngines": 3,
+      "scope": "Trusted fixture gates in exporter tests; actual full app gate qualification pending"
+    },
+    "exportAuthority": {
+      "nodeGroups": 2,
+      "browserGroups": 6,
+      "engines": 3,
+      "nativeAndWasmBuild": true,
+      "artifact": "docs/reviews/20260908-geometry-r3/parent-verification.json"
+    }
+  },
+  "backendEvidence": {
+    "tests": 136,
+    "passed": 136,
+    "failed": 0,
+    "scope": "Main B03/B05/B11 HTTP/SQLite/BYOK/recovery/PNG-JPEG/foreground lifecycle and settlement retention; synthetic providers, no real invoice",
+    "productionAI": "xai-imagine explicit opt-in; no live inference or invoice verification",
+    "review": "automatic-filter rejection, no independent conclusion",
+    "syntaxPassed": true,
+    "codeStableDuringRun": true,
+    "schema": 5,
+    "run": "20260908-backend-b11-main-r1"
+  },
+  "domainEvidence": {
+    "parentTestsPassed": 25,
+    "multiUndoIssue": "storage snapshot-restore history branching:3 main integration tests and160browser assertions passed"
+  },
+  "viewportEvidence": {
+    "browsers": [
+      "Chromium",
+      "Firefox",
+      "WebKit"
+    ],
+    "tests": 3,
+    "checksPerEngine": 18,
+    "scope": "real SVG via Worker/WASM, Three picking including hole, immutable snapshot,resize,camera,resourcecounts,teardown",
+    "fullApp": false,
+    "png": {
+      "engines": 3,
+      "checksPerEngine": 9,
+      "existingChecksPerEngine": 18,
+      "pass": true,
+      "run": "20260908-viewport-png-r2",
+      "scope": "Actual WebGL coloredframe/dimensions/idlekey/staleview/cancel/accessidentity/hidden/assembly; source SVG Worker mesh, no fullapp"
+    }
+  },
+  "editingEvidence": {
+    "nodeChecks": 76,
+    "browserPortableChecksPerEngine": 76,
+    "browserTransportRequestsPerEngine": 17,
+    "browserEngines": 3,
+    "types": "pass",
+    "scope": "main integrated editing component, not full UI gesture/persistence flow"
+  },
+  "storageEvidence": {
+    "browserAssertionsPassed": 160,
+    "browserAssertionsFailed": 0,
+    "unavailableCapabilities": [
+      {
+        "engine": "WebKit Windows",
+        "backend": "OPFS",
+        "observed": "zero-byte readback afterwrite"
+      }
+    ],
+    "fallbackPolicy": [
+      "unsupported",
+      "verification-failed"
+    ],
+    "nodeDomainHistoryTestsPassed": 3,
+    "physicalCrashProof": false,
+    "batchPins": {
+      "nodeWorker": 48,
+      "parentBrowserPass": 60,
+      "parentBrowserFail": 0,
+      "unavailable": 1,
+      "exitCode": 2,
+      "run": "20260908-storage-batch-main",
+      "scope": "12cases x5supportedbrowser/backendcombinations; WebKitOPFS unavailable explicitly, IDBfallback supported"
+    }
+  },
+  "printingEvidence": {
+    "compatibility": "13 tests pass",
+    "U1TargetSlicer": "unverified: confinement",
+    "independentReaders": "19 unified +8 compatibility artifacts pass analytic trimesh and .NET XSD",
+    "node": "7 unified behavior groups pass",
+    "fullG5": "unverified",
+    "native": "3 unified lib3MF artifacts; generation and leases pass",
+    "physicalFit": "unverified",
+    "browser": "7 groups each Chromium/Firefox/WebKit; one WASM instantiation",
+    "rpc": "3engines pass actual core+Bambu RPC, cancellation/failure/leases and request capture before initialization; unsupported clone/shared-memory inputs rejected without disturbing in-flight init"
+  },
+  "appEvidence": {
+    "application": "UI5 actual HTTPS initial SVG+edit/undo/save/reopen/STL flow passed3engines, UI types pass. Test fixture recipe, not full product acceptance",
+    "releaseReady": false,
+    "controllerNodeTests": 35,
+    "navigationFix": "view step no longer changes manufacturing revision; successful build selects step2",
+    "screenshotCsp": "WebKit Playwright1.63 injects literal body {} during screenshot; strict production CSP blocks tool mutation. Zero application CSP/console errors before capture, exact capture footprint checked separately.",
+    "controllerPortability": "main17Node+types+9selectedbrowsercases per3engines passed from new stage",
+    "editing": "Actual UI SVG conversion/erase pointer/undo/save/reopen:Chromium+Firefox r11 andWebKit r13 passed; original retained and one history step",
+    "hostLayout": "full-page composition host explicit100dvh, independently scrolling sidebar",
+    "webkitTestRoute": "WebKit Playwright routes owned blob images; harness now permits exact same-origin HTTPS/blob and continues blocking external origins. Production CSP unchanged.",
+    "uiFollowup": "UI5 async gesture identity/failed-image recovery integrated; UI6 final contract and6late async families assigned",
+    "controllerBrowserTests": 42,
+    "onlinePolicy": "Production online-only fallback is branded/fresh/exact HTTPS exchange, in-memory; mutation/CAS/preflight/reset boundaries tested. Default signed-offline retained.",
+    "onlineE2E": "Controlled synthetic TLS test-harness cause resolved; exact certificate SPKI Chromium test scope, production CSP/COI unchanged; UI5r2 all3engines pass",
+    "textRPC": "3engines pass root textOperation actual Vietnamese preview, request capture, unchanged old mesh on source failure, cooperative cancel during font fetch without Worker replacement (r4)",
+    "rasterRPC": "3engines pass exact graph copies, analytical hole+832mm3 source, approval rejection, root registry no generation reset, cancel, reset/retired token cannot affect replacement Worker",
+    "sourceAlignment": "Parent short-profile runner Node/types and3sourcecases per3engines pass; 259/260-character LevelDB boundary causally reproduced",
+    "controllerUIContract": "Parent35Node+types and10selectedbrowsercases per3engines passed; proposal discard ownership, visible stale revision, per-export prerequisites and original SVG/source editing/alignment regression",
+    "textAdapter": {
+      "node": 45,
+      "core": 14,
+      "browserPerEngine": 46,
+      "browserCorePerEngine": 14,
+      "engines": 3,
+      "WebKitColorFallback": "Root actual capability-specific private MessagePort qualified with real COLRv1, same-Worker cancellation and font/port retirement"
+    },
+    "sourceComposition": {
+      "engines": 3,
+      "passed": 3,
+      "scope": "Real SVG/text/color/raster adapters; default application alpha threshold128 and initial source/font/renderer provenance retention;3engines pass. Full storage/UI/product path pending",
+      "originalDependenciesRetained": true
+    },
+    "sourceAdoption": {
+      "node": 45,
+      "types": "pass",
+      "selectedBrowserCases": 6,
+      "engines": 3,
+      "stage": "1788843781167-024bad92-5359-4d5f-a0c7-215081fdfe1c",
+      "initialFailure": "Stage omitted B03 .cjs JPEG codec; exact dependency extension fixed then rerun pass"
+    },
+    "noMeshProposal": {
+      "nodeGroups": 3,
+      "status": "pass",
+      "scope": "Actual root clicky auto-size proposal with domain-valid size28/offset0, exact native acknowledgement, one history commit and fresh rebuild; Node memory CAS store/source fixture, not full browser product adoption"
+    },
+    "uiRequestBoundary": {
+      "node": 10,
+      "types": "pass",
+      "browserPerEngine": 41,
+      "engines": 3,
+      "source": "main r2 exact captured hashes",
+      "baselineFailures": 3,
+      "scope": "Actual React UI/hooks with explicit synthetic bridge; no backend/paid provider calls",
+      "durableEvidence": "docs/testevidence/ui-request-boundary/README.md",
+      "parentFreshRun": "20260908-ui-boundary-main",
+      "parentExitCode": 0
+    },
+    "sourceLibraryMain": {
+      "node": 17,
+      "types": "pass",
+      "decodedPNGs": 16913,
+      "uniqueDeploymentAssets": 21391,
+      "browserChecksPerEngine": 21,
+      "engines": 3,
+      "originalFontAndAssetHashes": true,
+      "scope": "Real catalog/materializer/original-font previews, not final geometry"
+    },
+    "exportControls": {
+      "node": 8,
+      "passed": 8,
+      "failed": 0,
+      "run": "20260908-app-preparation-r1",
+      "latest": "node-r2.log",
+      "scope": "Real controller/history with labelled synthetic exporter; includes cancel during prepared-output confirmation, no late download or receipt."
+    },
+    "preparation": {
+      "node": 7,
+      "passed": 7,
+      "failed": 0,
+      "run": "20260908-app-preparation-r1",
+      "latest": "node-r2.log",
+      "types": true,
+      "scope": "Same visible lease/ticket, distinct evidence verdict, cancellation/newbuild, owned source inputs, coalescing, access retirement and invalid-source printer refresh; synthetic geometry, no wholeapp qualification."
+    },
+    "productionComposition": {
+      "status": "actual-providers-and-entry-integrated-runtime-build-pending",
+      "files": [
+        "src/integration/product-entry.mjs",
+        "src/integration/release-bootstrap.mjs",
+        "src/main.mjs",
+        "index.html"
+      ],
+      "runtimeIntegrityWired": true,
+      "bootstrapNode": 9,
+      "readyRegression": 1,
+      "wholeProductFlow": false
+    },
+    "ui7": {
+      "run": "20260908-ui-wave7",
+      "promotedFiles": 6,
+      "parentAlgorithmCorrections": [
+        "first dirty revision retained across keystrokes",
+        "draft fence reset only on owned clear",
+        "new draft survives late success"
+      ],
+      "nodeGroups": 10,
+      "checksPerBrowser": 48,
+      "browsers": 3,
+      "coverage": "Cumulative: old41 and6 new passed Chromium/WebKit r1; corrected checkbox harness all7 passed r2. Firefox fresh full48 passed r3 with private loopback proxy disabled.",
+      "fixtureScope": "Actual React components with explicit bridge fixtures; not complete product-native application",
+      "independentReview": "active",
+      "sourcePins": [
+        {
+          "path": "src/ui/components/Fields.tsx",
+          "bytes": 19225,
+          "sha256": "c99c519c9d7c4f6c770cf60c75d8a97434d96f4fb4b7c2b6cfb4bb7cf398a9bb"
+        },
+        {
+          "path": "src/ui/sections/ExportConfiguration.tsx",
+          "bytes": 10283,
+          "sha256": "477b35fa8e816d55213f2515f16b312f70aef79779cf65f74216037ec8c3b7cc"
+        },
+        {
+          "path": "src/ui/sections/ExportSection.tsx",
+          "bytes": 15233,
+          "sha256": "745b57fb28196f6fb06813ba34430f61c28814840c53a2ce190aa3a9b369bf5e"
+        },
+        {
+          "path": "src/ui/sections/ExportReceipts.tsx",
+          "bytes": 9358,
+          "sha256": "55e14050650e9616c8027bd70a940b3f08c7057f59e520c0bbac34d3e46911ff"
+        },
+        {
+          "path": "src/ui/core/export-config.ts",
+          "bytes": 3361,
+          "sha256": "b50a545100318d086a104c4da78d717dd004901ef0b76173fcad36d1ad4ed35b"
+        },
+        {
+          "path": "src/ui/dialogs/confirm-effect.ts",
+          "bytes": 3067,
+          "sha256": "926aad7a40f1b952374cadc28a195a7ac6209e4c2017f8a8b3e0f66938c683ee"
+        },
+        {
+          "path": "src/ui/styles/components.css",
+          "bytes": 23795,
+          "sha256": "99eac663efec583c3cb1959b1e01103ca3f80911ed8c8e83f483c331a99c61c4"
+        },
+        {
+          "path": "tests/ui/request-boundary/export-cases.mjs",
+          "bytes": 5370,
+          "sha256": "604c435abab4edd532321012b469abae4941d38a0399ce2ce29be4af6c533628"
+        },
+        {
+          "path": "tests/ui/request-boundary/run.mjs",
+          "bytes": 4636,
+          "sha256": "2412ea82ca5f30c9800e7ba8475458cd4c9632f17d50be631df897ca647c075c"
+        }
+      ]
+    },
+    "uiConsent": {
+      "at": "2026-09-08T09:40:33.154Z",
+      "implementationOnly": true,
+      "independentReviewerCasesReused": true,
+      "lifecycle": [
+        {
+          "engine": "chromium",
+          "version": "153.0.8010.12",
+          "checks": 21,
+          "pass": 21
+        },
+        {
+          "engine": "firefox",
+          "version": "155.0",
+          "checks": 21,
+          "pass": 21
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "checks": 21,
+          "pass": 21
+        }
+      ],
+      "boundary": [
+        {
+          "engine": "chromium",
+          "checks": 48,
+          "pass": 48
+        },
+        {
+          "engine": "firefox",
+          "checks": 48,
+          "pass": 48
+        },
+        {
+          "engine": "webkit",
+          "checks": 48,
+          "pass": 48
+        }
+      ],
+      "node": 10,
+      "types": true,
+      "closedWithinScope": [
+        "UI-R1-01",
+        "UI-R1-02",
+        "UI-R1-03",
+        "UI-R1-04"
+      ],
+      "remaining": [
+        "UI-R1-05",
+        "UI-R1-06",
+        "UI-R1-07",
+        "UI-R1-08"
+      ],
+      "noWholeAppProof": true,
+      "sourceManifest": "e85c52d079d0648647ddae0b25e49918b5fc54ab3178cfa7ccba9e8e5b498a13",
+      "harnessCorrection": "L11 excludes read-only catalog queries from zero-command assertion; independently checks no old private draft in any call.",
+      "sources": {
+        "version": "arch-ui-consent-input/1",
+        "at": "2026-09-08T09:29:29.96Z",
+        "files": [
+          {
+            "path": "src/contracts/app-bridge.ts",
+            "capturedPath": "inputs/source/src/contracts/app-bridge.ts",
+            "bytes": 14863,
+            "sha256": "4e4eaa7e3ab221c6c87fd6fce76420746a4aef52c1f8c4998352921392ce29ee"
+          },
+          {
+            "path": "src/contracts/product-material.d.mts",
+            "capturedPath": "inputs/source/src/contracts/product-material.d.mts",
+            "bytes": 659,
+            "sha256": "4efba1e2765420beeec4b0df97e270e54e019315f5b35c20462983f84ea20de2"
+          },
+          {
+            "path": "src/contracts/product-material.mjs",
+            "capturedPath": "inputs/source/src/contracts/product-material.mjs",
+            "bytes": 2053,
+            "sha256": "d46a12d500b1d9f5d6ed859938849e37dd9b87371849da0fc4c2b3b4e77f238b"
+          },
+          {
+            "path": "src/ui/account/AccountDialogs.tsx",
+            "capturedPath": "inputs/source/src/ui/account/AccountDialogs.tsx",
+            "bytes": 64615,
+            "sha256": "a072e2109660132f7d77e4a8330a6720e8fc78f018294dade92c4f59711ec3a6"
+          },
+          {
+            "path": "src/ui/account/AccountMenu.tsx",
+            "capturedPath": "inputs/source/src/ui/account/AccountMenu.tsx",
+            "bytes": 4366,
+            "sha256": "c30b0d7561804bb08592839f3b5092758351d350ce9b5e2724875299ecdfbf50"
+          },
+          {
+            "path": "src/ui/account/SettingsDialog.tsx",
+            "capturedPath": "inputs/source/src/ui/account/SettingsDialog.tsx",
+            "bytes": 15905,
+            "sha256": "9de2b98863bd61d4f2f045c7e9be984aeb8d65a202d999b4ef9ad0628ea04d19"
+          },
+          {
+            "path": "src/ui/ai/AIGenerateDialog.tsx",
+            "capturedPath": "inputs/source/src/ui/ai/AIGenerateDialog.tsx",
+            "bytes": 33366,
+            "sha256": "75f4afca00fbd820d765d320bc7f88236de3e751ce92d33c90a74409dab9108d"
+          },
+          {
+            "path": "src/ui/AppShell.tsx",
+            "capturedPath": "inputs/source/src/ui/AppShell.tsx",
+            "bytes": 10563,
+            "sha256": "5013a705d32f164d0f97a4ed6764853fc2794779d6a08227cf5b75061b021c92"
+          },
+          {
+            "path": "src/ui/auth/AuthDialogs.tsx",
+            "capturedPath": "inputs/source/src/ui/auth/AuthDialogs.tsx",
+            "bytes": 11268,
+            "sha256": "3292c94553c9e73670d1016e2a9859e7e081515ddd755c013cd5d3b64085a2fb"
+          },
+          {
+            "path": "src/ui/components/Button.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Button.tsx",
+            "bytes": 2568,
+            "sha256": "cb7cc92fad344e68a0a7dd08be5321623c1190e7b04e51fd295aa7d9a0225590"
+          },
+          {
+            "path": "src/ui/components/Dialog.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Dialog.tsx",
+            "bytes": 2065,
+            "sha256": "925d8e9c06471a91de587dc929eb4138e92f0942457d0c7e44af6348c1113837"
+          },
+          {
+            "path": "src/ui/components/Feedback.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Feedback.tsx",
+            "bytes": 5098,
+            "sha256": "58c1eac04a32996d3534a16700449b701f8133739134f6e16899ea3e0633ef97"
+          },
+          {
+            "path": "src/ui/components/Fields.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Fields.tsx",
+            "bytes": 19380,
+            "sha256": "bf94d9ba46685af4d01c227dba1b05ceb676073a2ff1be42f69d2cd064320ec7"
+          },
+          {
+            "path": "src/ui/components/Group.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Group.tsx",
+            "bytes": 1330,
+            "sha256": "be826350b41e14b3ca0df5e8599a0c7cab8990b30e3c565f06e5c5b6c160f0fc"
+          },
+          {
+            "path": "src/ui/components/Icon.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Icon.tsx",
+            "bytes": 5465,
+            "sha256": "acb1260ffbc76d06433fd56a453da0a7d26a065fa52d59d512aa557fb63181cc"
+          },
+          {
+            "path": "src/ui/components/Menu.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Menu.tsx",
+            "bytes": 5021,
+            "sha256": "2b170ba0a6b39d964fef6b8e80406dcddcfd891e5d5746b07293bb0db5bb3b0d"
+          },
+          {
+            "path": "src/ui/components/Tooltip.tsx",
+            "capturedPath": "inputs/source/src/ui/components/Tooltip.tsx",
+            "bytes": 1722,
+            "sha256": "8a057cf375bbf461a729d35ed8ee6d2e4f8bac5db82d425ab26a475a80f2d1b9"
+          },
+          {
+            "path": "src/ui/core/bridge.tsx",
+            "capturedPath": "inputs/source/src/ui/core/bridge.tsx",
+            "bytes": 15058,
+            "sha256": "83cf342c22541fb575ad6c4e89c51ff43c4e6dd4f471596fb46e635bf8ba3143"
+          },
+          {
+            "path": "src/ui/core/dom.ts",
+            "capturedPath": "inputs/source/src/ui/core/dom.ts",
+            "bytes": 1827,
+            "sha256": "a0512cc84b883853b7a07c7ba7d44a749b7626add799475c6a385d09100ba870"
+          },
+          {
+            "path": "src/ui/core/export-config.ts",
+            "capturedPath": "inputs/source/src/ui/core/export-config.ts",
+            "bytes": 3361,
+            "sha256": "b50a545100318d086a104c4da78d717dd004901ef0b76173fcad36d1ad4ed35b"
+          },
+          {
+            "path": "src/ui/core/file-dialog.ts",
+            "capturedPath": "inputs/source/src/ui/core/file-dialog.ts",
+            "bytes": 1414,
+            "sha256": "e7abfcf4ffb4f065215263f55123d6c2498c4d4f3fd698bc9e2634f8b079ed88"
+          },
+          {
+            "path": "src/ui/core/identity.ts",
+            "capturedPath": "inputs/source/src/ui/core/identity.ts",
+            "bytes": 4797,
+            "sha256": "21760803bd1b0927137d6061efc3878a2b6b4a32bbe9119cf42b8d60c2458f7b"
+          },
+          {
+            "path": "src/ui/core/project-gate.ts",
+            "capturedPath": "inputs/source/src/ui/core/project-gate.ts",
+            "bytes": 1176,
+            "sha256": "8321874b5503e1b2c8cd8582e0d23f1042f8186a41417d1c6832318bd8342e9d"
+          },
+          {
+            "path": "src/ui/core/project-state.ts",
+            "capturedPath": "inputs/source/src/ui/core/project-state.ts",
+            "bytes": 8101,
+            "sha256": "8514d5001869c34393e624dac3faa8ab6bbf3efaae2efc802eb5c0d68fdeeb13"
+          },
+          {
+            "path": "src/ui/core/registry.ts",
+            "capturedPath": "inputs/source/src/ui/core/registry.ts",
+            "bytes": 14194,
+            "sha256": "3a945d65f5d77e69aaca5c4044a7c5c8b932b2fd61a924bc2b0391d9ad42f965"
+          },
+          {
+            "path": "src/ui/core/request-context.ts",
+            "capturedPath": "inputs/source/src/ui/core/request-context.ts",
+            "bytes": 2572,
+            "sha256": "a5f8e20929d309898a8a1964aedb29066b9276d4ef99b6a9206ad4c8421546b0"
+          },
+          {
+            "path": "src/ui/core/request-owner.ts",
+            "capturedPath": "inputs/source/src/ui/core/request-owner.ts",
+            "bytes": 6037,
+            "sha256": "765613e73fa00cb0ef893e5cf1f0abde2f06b20d3962cc0bb48cf1ad76660baa"
+          },
+          {
+            "path": "src/ui/core/step-nav.ts",
+            "capturedPath": "inputs/source/src/ui/core/step-nav.ts",
+            "bytes": 7674,
+            "sha256": "d42f73650433e7dfba1315693b9d11d43f45908c1dcf83051012a3f4f9617db8"
+          },
+          {
+            "path": "src/ui/core/text.ts",
+            "capturedPath": "inputs/source/src/ui/core/text.ts",
+            "bytes": 6764,
+            "sha256": "fca8e449a4fa5675672e0b8d71ed258fa150f58bb79b224fe1e1ca665e64f715"
+          },
+          {
+            "path": "src/ui/core/ui-state.tsx",
+            "capturedPath": "inputs/source/src/ui/core/ui-state.tsx",
+            "bytes": 13049,
+            "sha256": "3df356679b74a58444f3c7afd28cd3036511c9b50113e13e286cdb0c72fdda57"
+          },
+          {
+            "path": "src/ui/core/useFocusTrap.ts",
+            "capturedPath": "inputs/source/src/ui/core/useFocusTrap.ts",
+            "bytes": 6111,
+            "sha256": "79fe624936c4cb0268bde4b0e96ee1a2fdde28718cd86925516d028660cff0d6"
+          },
+          {
+            "path": "src/ui/core/useMediaQuery.ts",
+            "capturedPath": "inputs/source/src/ui/core/useMediaQuery.ts",
+            "bytes": 1129,
+            "sha256": "8e89ea3ac762ad433592b63243769c534fe816bc9b5d89962492b4d4b49283b3"
+          },
+          {
+            "path": "src/ui/core/useShortcuts.ts",
+            "capturedPath": "inputs/source/src/ui/core/useShortcuts.ts",
+            "bytes": 2493,
+            "sha256": "5be62b667afcd449126fc1d41b6e836ef64185c6f223905fe9443924c20f75da"
+          },
+          {
+            "path": "src/ui/css.d.ts",
+            "capturedPath": "inputs/source/src/ui/css.d.ts",
+            "bytes": 107,
+            "sha256": "5b015a2717d5986c4931c0887d7908f8cd1ace835216ac3eb5e0e9e4d2938131"
+          },
+          {
+            "path": "src/ui/dialogs/confirm-effect.ts",
+            "capturedPath": "inputs/source/src/ui/dialogs/confirm-effect.ts",
+            "bytes": 3067,
+            "sha256": "926aad7a40f1b952374cadc28a195a7ac6209e4c2017f8a8b3e0f66938c683ee"
+          },
+          {
+            "path": "src/ui/dialogs/CoreDialogs.tsx",
+            "capturedPath": "inputs/source/src/ui/dialogs/CoreDialogs.tsx",
+            "bytes": 25955,
+            "sha256": "d5e03ff70ec4319b7621343830c1894f07b9eb13c2ad15f17ccbac24151371b1"
+          },
+          {
+            "path": "src/ui/dialogs/DialogHost.tsx",
+            "capturedPath": "inputs/source/src/ui/dialogs/DialogHost.tsx",
+            "bytes": 3154,
+            "sha256": "a331180e894127621b8cd2df99bfa540457debcb3f11e50779bc6d0a3b2a8683"
+          },
+          {
+            "path": "src/ui/emoji/EmojiPicker.tsx",
+            "capturedPath": "inputs/source/src/ui/emoji/EmojiPicker.tsx",
+            "bytes": 13146,
+            "sha256": "40900afe4423b0958b7f0980728cc83b3a071a1b18f27b91cb905aad31009f7a"
+          },
+          {
+            "path": "src/ui/index.tsx",
+            "capturedPath": "inputs/source/src/ui/index.tsx",
+            "bytes": 1375,
+            "sha256": "c413bed84ed84e1a06abec2343c0824c6d78e4f5b74da7e9b2079c7ecda98e72"
+          },
+          {
+            "path": "src/ui/layout/NextBar.tsx",
+            "capturedPath": "inputs/source/src/ui/layout/NextBar.tsx",
+            "bytes": 4067,
+            "sha256": "3b06d22db9637f4c389a78f2cac7508b41a220b767f977025e43289f6968c18f"
+          },
+          {
+            "path": "src/ui/layout/Panel.tsx",
+            "capturedPath": "inputs/source/src/ui/layout/Panel.tsx",
+            "bytes": 4202,
+            "sha256": "f191492946836a52847b66396b7b6eac03de316497f6ca6a3f9170ae8dce5df6"
+          },
+          {
+            "path": "src/ui/layout/section-nav.ts",
+            "capturedPath": "inputs/source/src/ui/layout/section-nav.ts",
+            "bytes": 3257,
+            "sha256": "9fe4f3e60141b807c4a4a3c3bb9f968bc115ee919ecc07414401590dd3f9b141"
+          },
+          {
+            "path": "src/ui/layout/SectionTabs.tsx",
+            "capturedPath": "inputs/source/src/ui/layout/SectionTabs.tsx",
+            "bytes": 4314,
+            "sha256": "b89020cacf323f529d1b393de9624a7f10b946e7a582a9ec8f10ea07018358f1"
+          },
+          {
+            "path": "src/ui/layout/TopBar.tsx",
+            "capturedPath": "inputs/source/src/ui/layout/TopBar.tsx",
+            "bytes": 5804,
+            "sha256": "0a05ec7447b29bca6341df6a9ef1c850b462fa9058a920880a83d5d863a6db16"
+          },
+          {
+            "path": "src/ui/search/QuickSearch.tsx",
+            "capturedPath": "inputs/source/src/ui/search/QuickSearch.tsx",
+            "bytes": 11263,
+            "sha256": "2dd05b168b97ee2aaa8b06517bedb009f8c70295307060d87d1806127d7a583a"
+          },
+          {
+            "path": "src/ui/sections/CreateProjectCard.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/CreateProjectCard.tsx",
+            "bytes": 8938,
+            "sha256": "0f0d1b71b37257d2b31ec7da2341dd26fa6e8ab5898ed21949a00eb7e633308e"
+          },
+          {
+            "path": "src/ui/sections/ExportConfiguration.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ExportConfiguration.tsx",
+            "bytes": 10463,
+            "sha256": "1aad67776c3a605f994abeb727ee11de05496a7c52341589fd4193d634f63cbe"
+          },
+          {
+            "path": "src/ui/sections/ExportReceipts.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ExportReceipts.tsx",
+            "bytes": 9358,
+            "sha256": "55e14050650e9616c8027bd70a940b3f08c7057f59e520c0bbac34d3e46911ff"
+          },
+          {
+            "path": "src/ui/sections/ExportSection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ExportSection.tsx",
+            "bytes": 15233,
+            "sha256": "745b57fb28196f6fb06813ba34430f61c28814840c53a2ce190aa3a9b369bf5e"
+          },
+          {
+            "path": "src/ui/sections/LibrarySection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/LibrarySection.tsx",
+            "bytes": 15312,
+            "sha256": "e34532a6981263e3d43c88cda535bd3c5bbf0fe4a91cdc7fed9510d363e3459b"
+          },
+          {
+            "path": "src/ui/sections/MaterialsSection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/MaterialsSection.tsx",
+            "bytes": 11011,
+            "sha256": "3536d95b19f692689d2885c595d2e24f625ed487a9ab7a3e763c3e368c07efbc"
+          },
+          {
+            "path": "src/ui/sections/ParameterRow.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ParameterRow.tsx",
+            "bytes": 5253,
+            "sha256": "ac454777b70b9e5aef0ed6fcb3c221cf3c562d29260c8d4cfb69ec09baf57c9e"
+          },
+          {
+            "path": "src/ui/sections/ParametersSection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ParametersSection.tsx",
+            "bytes": 9910,
+            "sha256": "27217a3c3d73ce478c7af7f4e9f1e14694029cc9d60e6411689c6f511c8cf88a"
+          },
+          {
+            "path": "src/ui/sections/PrinterPicker.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/PrinterPicker.tsx",
+            "bytes": 2570,
+            "sha256": "1bfc3fb34c70fe857518cfe8ea7eede2947839ed99962817ea012fff6803d6c6"
+          },
+          {
+            "path": "src/ui/sections/ProductSection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/ProductSection.tsx",
+            "bytes": 12729,
+            "sha256": "1ef2351e2b0d0cb998b508fd4ed75d0364c239dbd8ef0295e4fab226929d34f4"
+          },
+          {
+            "path": "src/ui/sections/SourceSection.tsx",
+            "capturedPath": "inputs/source/src/ui/sections/SourceSection.tsx",
+            "bytes": 8204,
+            "sha256": "aae0c862edf862925d5db49f259b381d85e065607d85cf57a0069ff73689fd95"
+          },
+          {
+            "path": "src/ui/stage/BlockPopup.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/BlockPopup.tsx",
+            "bytes": 8363,
+            "sha256": "a3b18b0ab37bacaa525c72d5ae5bcabb6ed43a619ef6f1e3c7619e45f644057b"
+          },
+          {
+            "path": "src/ui/stage/canvas-math.ts",
+            "capturedPath": "inputs/source/src/ui/stage/canvas-math.ts",
+            "bytes": 5236,
+            "sha256": "e6d9a9b8e9d8c25b15c16a4cdd5febbaac09b40e1c28ea2c189d6a14788eb324"
+          },
+          {
+            "path": "src/ui/stage/source-canvas-state.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/source-canvas-state.tsx",
+            "bytes": 36060,
+            "sha256": "275b985b8f661e4904096847636bb3a1993bde8d2869c235d482ca17001bd0a6"
+          },
+          {
+            "path": "src/ui/stage/SourceCanvas.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/SourceCanvas.tsx",
+            "bytes": 31795,
+            "sha256": "b52a0a6f3f1f14c76c5913abe61a5a73e479d8ada527a722e801e971bca22dab"
+          },
+          {
+            "path": "src/ui/stage/Stage.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/Stage.tsx",
+            "bytes": 18772,
+            "sha256": "a672f209683d4b126f40e6a845f6ab0e6cb682d9d22adba07f0296bc45f62d89"
+          },
+          {
+            "path": "src/ui/stage/StageHints.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/StageHints.tsx",
+            "bytes": 1637,
+            "sha256": "ddefdbd8b08fa7b16f9926887903d8b8ad809754f7f373f3afff75d33ec1d8dd"
+          },
+          {
+            "path": "src/ui/stage/Tools2D.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/Tools2D.tsx",
+            "bytes": 24708,
+            "sha256": "fc811962923e9875a82a048f4e5b14b6c20302d1f6e44c4c3177e1dcf049be56"
+          },
+          {
+            "path": "src/ui/stage/View3D.tsx",
+            "capturedPath": "inputs/source/src/ui/stage/View3D.tsx",
+            "bytes": 6274,
+            "sha256": "608208a775fc7769bb25ec11b127ae867d881e740e2d7349b7bd91b4db3541c0"
+          },
+          {
+            "path": "src/ui/styles/base.css",
+            "capturedPath": "inputs/source/src/ui/styles/base.css",
+            "bytes": 4963,
+            "sha256": "5a0f9ab076cd46c9bbf4d72b2edd319478159381e763ac8403e2a3332c32491d"
+          },
+          {
+            "path": "src/ui/styles/components.css",
+            "capturedPath": "inputs/source/src/ui/styles/components.css",
+            "bytes": 23795,
+            "sha256": "99eac663efec583c3cb1959b1e01103ca3f80911ed8c8e83f483c331a99c61c4"
+          },
+          {
+            "path": "src/ui/styles/layout.css",
+            "capturedPath": "inputs/source/src/ui/styles/layout.css",
+            "bytes": 24625,
+            "sha256": "2a6826dbc0a28a804ace6da2d50773f5a07c7321e86d114997a6c0586d8eaf25"
+          },
+          {
+            "path": "src/ui/styles/tokens.css",
+            "capturedPath": "inputs/source/src/ui/styles/tokens.css",
+            "bytes": 4844,
+            "sha256": "d15e8a88e060a5a44ccc1d2aebb893ec65f3f962e2abd11307f6f5fd00133c8c"
+          },
+          {
+            "path": "src/ui/text/TextControls.tsx",
+            "capturedPath": "inputs/source/src/ui/text/TextControls.tsx",
+            "bytes": 12249,
+            "sha256": "929c3478d26ebe06bef73212a6d662ca50f21f71fc587d136e3d6cf4c02e812e"
+          },
+          {
+            "path": "tests/ui/export-consent/cases.mjs",
+            "capturedPath": "work/h/cases.mjs",
+            "bytes": 10394,
+            "sha256": "72410b2e11b804d5667c9d048f35f16b8d490eb952fcf02f7e8ce784ad8bf272"
+          },
+          {
+            "path": "tests/ui/export-consent/deferred-bridge.ts",
+            "capturedPath": "work/h/deferred-bridge.ts",
+            "bytes": 4183,
+            "sha256": "a07a8c728513b78762ae6faab9103b5f3eaf7f7a6ff3140a7e2a7207f6996111"
+          },
+          {
+            "path": "tests/ui/export-consent/extra-cases.mjs",
+            "capturedPath": "work/h/extra-cases.mjs",
+            "bytes": 11765,
+            "sha256": "373abdd64490258d19b1248f61e3b8b69e0b428d827ef26ad3608a13b16795ec"
+          },
+          {
+            "path": "tests/ui/export-consent/followup-cases.mjs",
+            "capturedPath": "work/h/followup-cases.mjs",
+            "bytes": 3585,
+            "sha256": "04fd4df5a3a756b8ba1c24afd75bf28a1afb9b24def3f14a1c768e83d4f46ff6"
+          },
+          {
+            "path": "tests/ui/export-consent/harness.tsx",
+            "capturedPath": "work/h/harness.tsx",
+            "bytes": 4374,
+            "sha256": "fc37b8393021f5d52d18222ee8c28482bd3ea815a2e9e953d20528279570fd8f"
+          },
+          {
+            "path": "tests/ui/export-consent/index.html",
+            "capturedPath": "work/h/index.html",
+            "bytes": 371,
+            "sha256": "7ca9c4f28a42e53c5f21ea1533da9ba453a6ed06768f1178e9ccaee508803d7d"
+          },
+          {
+            "path": "tests/ui/export-consent/keyboard-cases.mjs",
+            "capturedPath": "work/h/keyboard-cases.mjs",
+            "bytes": 2827,
+            "sha256": "1ce9a9fc1498ee4ede6871676c620215ac263d8aff2ebf3b8113294f6ba96b02"
+          },
+          {
+            "path": "tests/ui/export-consent/readability-cases.mjs",
+            "capturedPath": "work/h/readability-cases.mjs",
+            "bytes": 1874,
+            "sha256": "ab882b5a1729366db00628f44106f352f594384b2449d9c125dcefd0eb8de81e"
+          },
+          {
+            "path": "tests/ui/export-consent/run.mjs",
+            "capturedPath": "work/h/run.mjs",
+            "bytes": 4657,
+            "sha256": "ecec4e8af35a59ed687f9c57ec99d6df0e0d555c53f475683d42217f9fd78676"
+          },
+          {
+            "path": "tests/ui/export-consent/support.mjs",
+            "capturedPath": "work/h/support.mjs",
+            "bytes": 2546,
+            "sha256": "439c1fa31c8e5a63519b6955ee780f7169aff364d8029857b3927f191a23f7b3"
+          }
+        ]
+      }
+    },
+    "sourceSVGMain": {
+      "node": 26,
+      "types": true,
+      "browsers": 3,
+      "sourceFamiliesPerBrowser": 5,
+      "independentReadback": 163,
+      "durableEvidence": "docs/testevidence/source-svg-main/verification.json"
+    },
+    "finalSceneMain": {
+      "node": 43,
+      "types": true,
+      "browsers": 3,
+      "productsPerBrowser": 5,
+      "durableEvidence": "docs/testevidence/final-scene-main/verification.json"
+    }
+  },
+  "mechanicsReview": {
+    "P1": 2,
+    "run": "20260908-mechanics-review-r1",
+    "verifiedRuntime": "gpt-6-astra/max, CLI fast feature false; no server-side tier telemetry",
+    "scope": "independent native mathematics/functionality and parameter adapter",
+    "cases": 82,
+    "P2": 5,
+    "status": "complete-needs-fixes",
+    "adjudication": "docs/reviews/20260908-mechanics/README.md"
+  },
+  "evidenceDocument": "docs/development/integration-evidence-20260908.md",
+  "releasePackagingEvidence": {
+    "actualLocalHTTPS": true,
+    "browserConcurrency": 1,
+    "counts": {
+      "cancelled": 0,
+      "todo": 0,
+      "skipped": 0,
+      "pass": 46,
+      "tests": 46,
+      "fail": 0
+    },
+    "startedUtc": "2026-09-08T06:40:07.6700417Z",
+    "exitCode": 0,
+    "independentReview": false,
+    "syntax": true,
+    "actualModelEffortFastIndependentlyAttested": false,
+    "realDeployment": false,
+    "fullLibraryResources": 21391,
+    "node": "24.19.0",
+    "tapSha256": "4d317da0591af7dbe97b4684d07454fcdadc21aaeaa90ec51a720e1c2f65050c",
+    "syntheticEntryAndWasm": true,
+    "status": "passed",
+    "appComplete": false,
+    "playwright": "1.63.0",
+    "finishedUtc": "2026-09-08T06:48:14.5529377Z",
+    "previews": 7751,
+    "originalAssetBytes": 306260612,
+    "liveProviderCalls": 0,
+    "codeStableDuringRun": true,
+    "implementationOnly": true
+  },
+  "printingAppEvidence": {
+    "independentReview": false,
+    "finishedUtc": "2026-09-08T07:25:15.9766865Z",
+    "playwright": "1.63.0",
+    "browserConcurrency": 1,
+    "version": "arch-printing-app-tests/1",
+    "actualParentRPC": true,
+    "actualModelEffortFastNotAttested": true,
+    "independentReadback": true,
+    "startedUtc": "2026-09-08T07:24:40.0279835Z",
+    "actualUnifiedModule": true,
+    "status": "passed",
+    "node": "24.19.0",
+    "rootPrintingCapabilityBitAbsent": true,
+    "network": "explicit loopback whitelist",
+    "readbackFiles": 12,
+    "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+    "moduleSha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+    "codeStableDuringRun": true,
+    "counts": {
+      "cancelled": 0,
+      "fail": 0,
+      "tests": 33,
+      "todo": 0,
+      "skipped": 0,
+      "pass": 33
+    },
+    "tapSha256": "f10b97596dfb9f9c69c26250dd9477b0e4e78a62e12e5d817ace80eeefba811a",
+    "targetSlicer": "unverified",
+    "types": true,
+    "implementationOnly": true,
+    "physicalFit": "unqualified",
+    "syntax": true,
+    "negativeReaderControls": 1,
+    "syntheticSceneAuthority": true
+  },
+  "productSourceEvidence": {
+    "mainInitialGroups": 42,
+    "materialBoundaryGroups": 5,
+    "mainFullNodeModels": 59,
+    "explicitNegatives": 24,
+    "nativeCurvedRefusals": 22,
+    "browserModelsPerEngine": 43,
+    "browsers": 3,
+    "colorBrowserStatus": "One default COLRv1 model per Chromium/Firefox/WebKit passed; all3 engines complete.",
+    "runtimeWasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+    "independentReview": false,
+    "portablePreparation": true,
+    "initialBrowserHarnessFailure": "Excluded repository-local node_modules link was rejected before exclusion; fixed no traversal/serving of excluded path. Fresh3engines pass."
+  },
+  "rootFloatEvidence": {
+    "production": {
+      "physicalFit": "unqualified",
+      "version": "arch-final-float-parent-tests/1",
+      "passed": true,
+      "finishedAt": "2026-09-08T08:06:39.9864617Z",
+      "tapSha256": "4dd80491b73870b4558a10bffbb7b880c142fd2031d33da32adb5baba7f4474a",
+      "binaryInputs": [
+        {
+          "bytes": 138932,
+          "sha256": "950225880c23476f9a6523111ac5a33aebb24f1d89bfa1d8f60bff1b1cc1c375",
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.mjs"
+        },
+        {
+          "bytes": 5752782,
+          "sha256": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd",
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.wasm"
+        },
+        {
+          "bytes": 3732480,
+          "sha256": "90eeda56b6f2927307700caab72fa07dd44bea337c46050f30702c82d356deae",
+          "path": "tmp/reviews/codex/runs/20260908-root-float-main-r1/work/rust-target/release/final-float-native-tests.exe"
+        }
+      ],
+      "fileOracle": true,
+      "nativeProbe": true,
+      "mode": "Production",
+      "independentSeatReview": false,
+      "counts": {
+        "skipped": 0,
+        "fail": 0,
+        "todo": 0,
+        "cancelled": 0,
+        "pass": 4,
+        "tests": 4
+      },
+      "wholePipelineBound": "unverified"
+    },
+    "instrumented": {
+      "counts": {
+        "todo": 0,
+        "pass": 7,
+        "cancelled": 0,
+        "skipped": 0,
+        "tests": 7,
+        "fail": 0
+      },
+      "nativeProbe": true,
+      "wholePipelineBound": "unverified",
+      "independentSeatReview": false,
+      "physicalFit": "unqualified",
+      "tapSha256": "a8a6b663a4758a77b6ab343658c1421cb092fd599fbbb3727a33f072a0ec869e",
+      "passed": true,
+      "binaryInputs": [
+        {
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.mjs",
+          "bytes": 139272,
+          "sha256": "fd944a38a6cdcb7944d8d290850d0cf87f94ebdcb90c83b459ab3565a2411267"
+        },
+        {
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.wasm",
+          "bytes": 5779724,
+          "sha256": "5be43fa184772190a0a76eb7baac18b28fc821c4e64ba934ea0c344fa9963953"
+        },
+        {
+          "path": "tmp/reviews/codex/runs/20260908-root-float-main-r1/work/rust-target/release/final-float-native-tests.exe",
+          "bytes": 3732480,
+          "sha256": "90eeda56b6f2927307700caab72fa07dd44bea337c46050f30702c82d356deae"
+        }
+      ],
+      "fileOracle": true,
+      "finishedAt": "2026-09-08T08:07:41.1497134Z",
+      "mode": "Instrumented",
+      "version": "arch-final-float-parent-tests/1"
+    },
+    "nativeRustGroups": 16,
+    "nativeChecks": 43,
+    "independentReview": "completed bounded no substantiated defect, docs/reviews/20260908-geometry-r4/README.md",
+    "runtimeProduction": {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.wasm",
+      "bytes": 5752782,
+      "sha256": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd"
+    },
+    "runtimeInstrumented": {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.wasm",
+      "bytes": 5779724,
+      "sha256": "5be43fa184772190a0a76eb7baac18b28fc821c4e64ba934ea0c344fa9963953"
+    },
+    "limits": [
+      "local bound relative to captured native union only",
+      "ambient isotopy and whole source pipeline error unverified",
+      "physical fit and target slicer unqualified"
+    ],
+    "authorityRegression": {
+      "node": 2,
+      "browserRPC": 6,
+      "status": "passed",
+      "scope": "R3immutable assembly/revision guards under float-enabled root; not new ASFR binary qualification"
+    }
+  },
+  "activeIndependentReviews": [
+    {
+      "run": "20260908-curved-products-review-r1",
+      "scope": "3native child fixes for curved source partition, active-band strap caps and LEGO full-volume clearance",
+      "status": "active",
+      "manifest": "0b0a12030d0c9dede1ceacc80f2721ec43bc31d7078b1c0831779f9ce7f50cf9",
+      "sourceFiles": 218,
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "fast": false,
+      "attestation": "Actual read-only SQLite session metadata gpt-6-astra/max CLI0.153.4 plus effective Fastfeaturefalse and explicit flags verified; server tier not attested"
+    }
+  ],
+  "nativeSourceIntegration": {
+    "files": 41,
+    "modified": 10,
+    "manifest": "9c7fe173de6b749e430f77926d46e560458e3ee7344fbc5d531a10c96ef4a0c4",
+    "status": "promoted and parent native/Node/Worker checks passed",
+    "selfTest": {
+      "native": 334,
+      "root": 17,
+      "node": 3,
+      "browser": 3,
+      "svg": 7
+    },
+    "independentReview": false,
+    "parentTest": {
+      "rootNative": 17,
+      "nativeOracles": 334,
+      "node": 3,
+      "browserEngines": 3,
+      "finalFloatNative": 43,
+      "finalFloatProductionGroups": 4
+    }
+  },
+  "opusInvocationPolicy": {
+    "effectiveDate": "2026-09-08",
+    "model": "opus",
+    "effort": "max",
+    "fastMode": false,
+    "ultracode": false,
+    "scope": "all subsequent project invocations including development/review/resume/fork/subagents",
+    "requestedBy": "project owner",
+    "configuration": "../reviews/seat-config.json",
+    "enforcement": "../../tools/agents/start-opus.ps1",
+    "validation": {
+      "syntax": "pass",
+      "failClosedCases": 4,
+      "scope": "launcher configuration, not runtime model execution"
+    },
+    "historicalCallsPreserved": true,
+    "enabled": false,
+    "doNotInvoke": true,
+    "reason": "Latest project owner instruction: Opus plan exhausted, stop all Opus use; Hub/Codex/Grok continue, no automatic quota-reset resumption."
+  },
+  "runtimeOwnedBytes": {
+    "status": "Parent13Node+13scenarios each3actualWorkers passed on64c5/b67d; new currentcurved pair native/WASM builds exit0, runtime rerun next",
+    "defect": "Previous generated wrappers ignored supplied wasmBinary, refetched WASM and used instantiateStreaming. Old geometry outcomes remain geometry observations; old owned-bytes proof is invalid.",
+    "changes": [
+      "../../tools/kernel/module-incoming-api.json",
+      "../../tools/kernel/build.ps1",
+      "../../src/core/runtime-integrity.mjs"
+    ],
+    "wrapperSha256": "64c5f89e2ee8fecda371436f907faf83e9120c41e11089979bd011bc8a197ed2",
+    "wasmSha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+    "buildReceiptSha256": "171daf4a7bcb16836970ace1634217ed8aeb6d986da4ad2ef0963abb1a991f42",
+    "observed": {
+      "actualInstantiateBytesPinned": true,
+      "wasmFetchesPerEpoch": 1,
+      "instancesPerEpoch": 1,
+      "instantiateStreamingCalls": 0,
+      "rootABI": 2,
+      "sourceFrameABI": 1
+    },
+    "limits": [
+      "Host retains verified immutable buffers; this is not arbitrary-host browser SRI.",
+      "This pair predates integrated curved child changes; new current-source pair build active."
+    ]
+  },
+  "uiConsentR2": {
+    "status": "parent integrated and verified",
+    "changes": [
+      "awaitingConfirmation is a pending action, not invalid input",
+      "Enter then blur does not submit identical draft twice; new edit and explicit Enter remain possible",
+      "superseded export outcome logs exactly once without payload"
+    ],
+    "evidence": {
+      "followupRun": "20260908-ui-confirmation-fixed-r2",
+      "casesPerEngine": 9,
+      "lifecycleRun": "20260908-ui-consent-r2-regression",
+      "lifecycleCasesPerEngine": 21,
+      "boundaryRun": "20260908-ui-boundary-r2-regression",
+      "boundaryCasesPerEngine": 48,
+      "nodeGroups": 10,
+      "engines": 3
+    },
+    "retainedFailures": "Initial baseline reproduced pending-as-invalid, duplicate Enter/blur and duplicate logs; first attempted edit stopped before writing. Corrected test-prefix observation documented; failed artifacts retained.",
+    "opusFollowup": "Prepared exact parent-before/after patch packet for next UI10 continuation; never overwrite these complex algorithm fixes with old UI markup."
+  },
+  "curvedProductsIntegration": {
+    "files": 110,
+    "checkedCandidateFiles": 199,
+    "manifest": "c30d5750e336093de8051b63c027f11876506b4f73b72ab1af73f9c8ae28f6ae",
+    "status": "main promoted; parent unified builds and cross-author52case native/WASM validation active",
+    "productionFiles": 3,
+    "selftest": {
+      "originalCases": 40,
+      "variantCases": 12,
+      "nativeAndWasm": true,
+      "maximumSurfaceDifferenceMm": 5.0884469795445387e-11
+    },
+    "independentReview": "20260908-curved-products-review-r1",
+    "unifiedBuild": {
+      "native": "exit0",
+      "wasm": "exit0",
+      "pins": {
+        "module": {
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-curved-owned-r3/arch-kernel.mjs",
+          "bytes": 139291,
+          "sha256": "64c5f89e2ee8fecda371436f907faf83e9120c41e11089979bd011bc8a197ed2"
+        },
+        "wasm": {
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-curved-owned-r3/arch-kernel.wasm",
+          "bytes": 5807077,
+          "sha256": "f14689439108be1abfd6db77c06d758e08b172980313efe905d3a6d6d196287e"
+        },
+        "receipt": {
+          "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/curved-owned-r3-build-receipt.json",
+          "bytes": 3518,
+          "sha256": "f18343cea5f75cd8fe12a2e33f7052695a15b20ab4af7e0664e9b4a8ba470cb3"
+        }
+      },
+      "runtime": "pending"
+    }
+  },
+  "actualProductArtifact": {
+    "status": "immutable baseline packaged and actual compiled runtime tested; whole product acceptance active; not current-source release after subsequent changes",
+    "releaseManifestSha256": "1147ad94ad005ffdb5f2524e4d9e6ada71778f3cc84c1b3cf590b2165c3b621f",
+    "preparedSha256": "136b8b90a35e4007a6e110db7a2737d73eb25f12c8b33fc9b44b595fb333d2e9",
+    "publicAssets": 21414,
+    "bytes": 360390873,
+    "databaseSchema": 5,
+    "licenseNotices": 172,
+    "frontendFiles": 17,
+    "compiledWorkers": 4,
+    "runtimeOwnedBytesEngines": 3,
+    "qualification": "shell/runtime evidence does not qualify five products, source workflows, slicer or physical fit"
+  },
+  "applicationBuilderParent": {
+    "unit": 33,
+    "receipt": 6,
+    "status": "passed",
+    "firstFailure": "Receipt suite initially omitted explicit APPLICATION_BUILD_INPUT; stopped before tests. Retained failed log, reran6 with pinned input."
+  },
+  "coordination": {
+    "hub": "scope, scheduling, evidence adjudication, independent-review milestones and release decision",
+    "codex": "backend/domain/native/complex UI algorithms, integration and QA",
+    "grok": "Source frozen and integrated; process stopped",
+    "opus": "Disabled; no invocation",
+    "status": "Active closure of remaining required functionality; Opus prohibited; preview retained.",
+    "lastUpdated": "2026-09-08T15:05:12.6181289Z"
+  },
+  "currentValidationLimits": [
+    "Full v1 is not accepted; CSG controller adoption/current-generated replay remains gated. Durable checked candidate patches are in docs/pending/imported-csg.",
+    "Some NFD/font/overlay and full COLRv1-to-product cases remain refused or unqualified; retain original inputs and explicit capability limits.",
+    "Production TLS/OIDC/owner configuration absent; local preview identity and certificates are synthetic fixtures. No production deployment or paid AI usage proof.",
+    "Whole application requirement matrix, worst-case resource/latency and final independent release review incomplete. Backend independent route was automatically rejected; not retried.",
+    "Mechanical source-resolution fallback is conditional, not a universal geometry guarantee; supplementary18/22 assertions include2changednegativecodes+2conservativeunsupportedhole/islandinputs.",
+    "Target slicer/profile and physical fit require separate qualification; no certified fit label."
+  ],
+  "curvedCrossAuthorValidation": {
+    "version": "arch-parent-curved-validation/1",
+    "at": "2026-09-08T11:38:53.285Z",
+    "sealSha256": "fe102381af5d365f33be00fc96fd965746a86fd33135b71c96b4e4281e2eac9d",
+    "checkedReports": 12,
+    "checkedEvidence": 3988,
+    "scope": {
+      "nativeModels": 52,
+      "wasmModels": 52,
+      "parity": 52,
+      "surfaceControls": 7,
+      "nativeCancellation": 3,
+      "mainInputFilesMatched": 224,
+      "mainPromotedEntriesMatched": 110,
+      "privateClipperMatchesOriginalLock": true
+    },
+    "independentReview": false,
+    "productionChanges": 0,
+    "findingsDoNotOverride": "Separate independent review reports two guard defects; finite cross-author corpus passes do not close those findings.",
+    "dependency": "SharedClipper canonical files unchanged but280extra googletest files cause strictpreflightrefusal; private223file archive+carrypatch exact6316dc tree built. Unmodified check.ps1 -SkipBuild with explicit configure wrapper; zero shared changes."
+  },
+  "curvedIndependentReview": {
+    "status": "Two demonstrated defects accepted after canonicalnativeWASMreproduction;boundedfixintegrated",
+    "archive": "docs/reviews/20260908-curved-products-r1/README.md",
+    "releaseClearance": false
+  },
+  "handover": {
+    "updatedAt": "2026-09-08T12:56:25.147Z",
+    "releaseClass": "internal-evaluation",
+    "fullV1Accepted": false,
+    "ownerDirection": "Finish and hand over promptly; freeze new scope, preserve limits and incomplete CSG work.",
+    "roles": "Hub coordinates; Codex backend/kernel/integration/verification; Grok UI. Opus prohibited.",
+    "sourceRootIntegration": {
+      "promoted": 58,
+      "verifiedCandidate": 65,
+      "evidencePins": 241,
+      "limitations": [
+        "BeVietnamPro NFD SUPPORT_REGULARIZATION_BOUND",
+        "Inter negative overlay RAW_EDGE_UNDER_TWO_GRID_UNITS",
+        "COLRv1 final full build unqualified"
+      ]
+    },
+    "settingsExport": {
+      "finalIntegratedNodeGroups": 2,
+      "passed": 2,
+      "backend": "actual HTTP/SQLite isolated local identity"
+    },
+    "rescueInventory": {
+      "passed": 25,
+      "failed": 0,
+      "unavailable": "WebKit OPFS; IDB fallback checked",
+      "regression": "Concurrent1or3commits during byte capture, verify captured selectedmanifest andoriginalassets remain coherent"
+    },
+    "ui": {
+      "focusedPassed": 42,
+      "failed": 0,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "independentReview": false,
+      "mainMatchesCapture": true,
+      "evidence": "docs/testevidence/ui-handover/parent-verification.json"
+    },
+    "geometry": {
+      "originalRefusalsPerTarget": 7,
+      "positiveControlsPerTarget": 10,
+      "coreBuildsPerTarget": 40,
+      "meshOraclesPerTarget": 40,
+      "supplementaryAssertionsPerTarget": {
+        "passed": 18,
+        "total": 22
+      },
+      "review": "docs/reviews/20260908-curved-products-r1/README.md",
+      "remediation": "docs/reviews/20260908-curved-guard-remediation/README.md"
+    },
+    "canonicalEngine": {
+      "module": {
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-handover-r4/arch-kernel.mjs",
+        "bytes": 139735,
+        "sha256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828"
+      },
+      "wasm": {
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-handover-r4/arch-kernel.wasm",
+        "bytes": 5813742,
+        "sha256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c"
+      },
+      "receipt": {
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/handover-r4-build-receipt.json",
+        "bytes": 3619,
+        "sha256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17"
+      }
+    },
+    "package": {
+      "status": "packaged-and-verified",
+      "directory": "report/release/20260908-internal",
+      "sha256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+      "preparedDirectory": "report/build/20260908-internal",
+      "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+      "input": "report/preview/20260908-internal/input.json",
+      "inputSHA256": "3ee43aa58efddfb937886696ec1b965cb44196988bf0a239dff02584aa65677b"
+    },
+    "finalActualUI": {
+      "status": "3targetedflowspass",
+      "engine": "Chromium-visible",
+      "scope": [
+        "ordinarykeychaintoSTL",
+        "settingsJSON",
+        "rescueZIP"
+      ],
+      "parentDownloadedBytesReadback": true,
+      "runtimeIssues": 0,
+      "firstAttempt": "Headless10s navigation timeout beforecases; visible rerun retained originaldeadlines. No causalstartupfixclaim."
+    },
+    "preview": {
+      "status": "running-human-window",
+      "origin": "https://127.0.0.1:57088",
+      "pid": 31600,
+      "launcher": "tools/preview/start.ps1",
+      "guide": "docs/HANDOVER.md",
+      "identity": "synthetic-local-test-member",
+      "stop": "Close the dedicated Chromium preview window; ownservicescleanuprecord follows"
+    },
+    "status": "delivered-internal-evaluation",
+    "report": "docs/releases/20260908-internal/README.md",
+    "compiledWorkers": {
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "passed": 3,
+      "scope": "Actual owned-byte init, duplicate and tamperedbytesrefusal"
+    },
+    "portableShell": {
+      "passed": 1,
+      "scope": "ActualcompiledHTTPSUIwithsyntheticOIDC andPNGWorker"
+    }
+  },
+  "csgIntegrationCheckpoint": {
+    "at": "2026-09-08T14:26:45.955Z",
+    "document": "docs/pending/csg-integration-20260908/README.md",
+    "manifestSHA256": "f9b099955a3a46b7443febd48ea893185d04a796c77b694269e85249d5b93063",
+    "candidateFiles": 190,
+    "mainProductPromoted": false,
+    "rootCases": {
+      "passed": 5,
+      "total": 5
+    },
+    "ordinaryNfd": {
+      "before": "SUPPORT_REGULARIZATION_BOUND",
+      "afterParts": 9,
+      "afterContours": 12,
+      "scope": "captured numeric SVG/request in combined root; not fresh UI text acceptance"
+    },
+    "controller": {
+      "executed": 1,
+      "passed": 0,
+      "notRun": 2,
+      "blockedAt": "MESH_POST_CSG_OR_TOPOLOGY_BLOCKED after input approval; no CSG commit"
+    },
+    "review": {
+      "seat": "Grok",
+      "model": "grok-4.6",
+      "effort": "xhigh",
+      "runtimeVerified": true,
+      "method": "static code review",
+      "releasePass": false
+    },
+    "tests": {
+      "types": true,
+      "focusedController": 5
+    },
+    "pending": [
+      "Diagnose native gate versus represented-triangle checker on saved CSG case",
+      "Resolve main-body target ambiguity and complete actual apply/cancel/replay/undo",
+      "Complete import-as-part and remaining GEO-04 domain acceptance",
+      "Build production module and new artifact only after acceptance"
+    ],
+    "previewReopened": {
+      "origin": "https://127.0.0.1:57088",
+      "pid": 31600,
+      "launcherPid": 14112,
+      "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+      "purpose": "Local synthetic signed OIDC test member, not group deployment"
+    }
+  },
+  "closure20260908": {
+    "promotedFiles": 225,
+    "promotionReceiptSHA256": "3114eaf12cc59a089cdfb0883d9a57ed35c2dbdce72c3e6e0f58e3a2861c6b7b",
+    "actualCsgCasesPassed": 4,
+    "wasmImportAsPartCasesPassed": 21,
+    "colorProductCasesPassed": 1,
+    "productionPair": {
+      "module": "c843f337f4ad6a67f5de7fc7a861fb51650437dd3c13c64604cdccf92b4075a4",
+      "wasm": "62284897a08fc6669ec18b3e7dc2d17f0d6b74b157fa1e9434b5fc38e311a684"
+    },
+    "retainedEvidence": "docs/reviews/20260908-csg-closure/manifest.json",
+    "independentReview": "Grok4.6/xhigh source-only, independently concluded; adjudicated README; no blanket release approval",
+    "newArtifact": "canonical build/package pending; old internal artifact stays immutable",
+    "remaining": [
+      "vector-mm editor implementation",
+      "historical Inter NFD overlay current-cohort verification",
+      "automatic most-contact CSG target mode",
+      "current artifact G4 functional/account/offline/resource evidence",
+      "real operator TLS/OIDC/owner inputs"
+    ]
+  }
+}

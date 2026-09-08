@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "qualification": "implementation remediation; parent adjudication pending",
+  "rows": [
+    {
+      "id": "MECH-R1-001",
+      "feature": "Final walls, roof and intentional flexure",
+      "oracle": "Rejected reviewed bevel/groove/charm cases; measured near-boundary controls, roof gap and thin roof; shared hollow bosses and late tabs preserve openings",
+      "status": "regressions pass",
+      "native": [
+        "001-lego-bevel-invalid-39",
+        "001-lego-bevel-invalid-39.500002",
+        "001-lego-bevel-invalid-40",
+        "001-lego-bevel-invalid-41.09",
+        "001-lego-bevel-invalid-41.099998",
+        "001-lego-bevel-valid-41.100002",
+        "001-lego-bevel-valid-41.11",
+        "001-lego-bevel-valid-42",
+        "001-lego-bevel-valid-49",
+        "001-lego-profile-invalid-0",
+        "001-lego-profile-valid-0",
+        "001-lego-profile-invalid-2",
+        "001-lego-profile-valid-2",
+        "001-lego-groove-0.6",
+        "001-lego-groove-2.3",
+        "001-lego-groove-2.35",
+        "001-lego-groove-3",
+        "001-charm-wide-pin-25",
+        "001-charm-wide-pin-29.89",
+        "001-charm-wide-pin-29.91",
+        "001-charm-wide-pin-32",
+        "001-charm-original-control",
+        "001-roof-gap",
+        "001-roof-skin-0.000001",
+        "001-roof-skin-0.02",
+        "001-roof-skin-0.2",
+        "001-flexure-hollow-0-0.001",
+        "001-flexure-hollow-0-0.0005",
+        "001-flexure-hollow-0-0.0001",
+        "001-flexure-hollow-1-0.001",
+        "001-flexure-hollow-1-0.0005",
+        "001-flexure-hollow-1-0.0001",
+        "001-final-source-colors",
+        "001-final-source-prepared",
+        "001-final-source-hole",
+        "001-final-source-islands",
+        "001-flexure-hollow-tab-opening"
+      ],
+      "wasm": [
+        "001-lego-bevel-invalid-39",
+        "001-lego-bevel-invalid-39.500002",
+        "001-lego-bevel-invalid-40",
+        "001-lego-bevel-invalid-41.09",
+        "001-lego-bevel-invalid-41.099998",
+        "001-lego-bevel-valid-41.100002",
+        "001-lego-bevel-valid-41.11",
+        "001-lego-bevel-valid-42",
+        "001-lego-bevel-valid-49",
+        "001-lego-profile-invalid-0",
+        "001-lego-profile-valid-0",
+        "001-lego-profile-invalid-2",
+        "001-lego-profile-valid-2",
+        "001-lego-groove-0.6",
+        "001-lego-groove-2.3",
+        "001-lego-groove-2.35",
+        "001-lego-groove-3",
+        "001-charm-wide-pin-25",
+        "001-charm-wide-pin-29.89",
+        "001-charm-wide-pin-29.91",
+        "001-charm-wide-pin-32",
+        "001-charm-original-control",
+        "001-roof-gap",
+        "001-roof-skin-0.000001",
+        "001-roof-skin-0.02",
+        "001-roof-skin-0.2",
+        "001-flexure-hollow-0-0.001",
+        "001-flexure-hollow-0-0.0005",
+        "001-flexure-hollow-0-0.0001",
+        "001-flexure-hollow-1-0.001",
+        "001-flexure-hollow-1-0.0005",
+        "001-flexure-hollow-1-0.0001",
+        "001-final-source-colors",
+        "001-final-source-prepared",
+        "001-final-source-hole",
+        "001-final-source-islands",
+        "001-flexure-hollow-tab-opening"
+      ]
+    },
+    {
+      "id": "MECH-R1-002",
+      "feature": "Imported-mesh enable scope",
+      "oracle": "All five enabled cases reject unsupported with zero mesh; disabled controls construct",
+      "status": "regressions pass",
+      "native": [
+        "002-import-enabled-0",
+        "002-import-disabled-0",
+        "002-import-enabled-1",
+        "002-import-disabled-1",
+        "002-import-enabled-2",
+        "002-import-disabled-2",
+        "002-import-enabled-3",
+        "002-import-disabled-3",
+        "002-import-enabled-4",
+        "002-import-disabled-4"
+      ],
+      "wasm": [
+        "002-import-enabled-0",
+        "002-import-disabled-0",
+        "002-import-enabled-1",
+        "002-import-disabled-1",
+        "002-import-enabled-2",
+        "002-import-disabled-2",
+        "002-import-enabled-3",
+        "002-import-disabled-3",
+        "002-import-enabled-4",
+        "002-import-disabled-4"
+      ]
+    },
+    {
+      "id": "MECH-R1-003",
+      "feature": "Nominal MM datum/reference binding",
+      "oracle": "Exact review adapter/packed-byte/recipe reproducer; native matching face/reference checks. Adapter preservation is inherited from source bridge",
+      "status": "regressions pass",
+      "native": [
+        "003-review-mm-datum",
+        "003-mm-wrong-reference",
+        "003-mm-wrong-face"
+      ],
+      "wasm": [
+        "003-review-mm-datum",
+        "003-mm-wrong-reference",
+        "003-mm-wrong-face"
+      ]
+    },
+    {
+      "id": "MECH-R1-004",
+      "feature": "Integer nearest span parity",
+      "oracle": "Integer .16/.20/.25 schedules, odd/even span ties and original reference35 reproduce domain recommendations without moving geometry",
+      "status": "regressions pass",
+      "native": [
+        "004-nearest-0.2-0.2-6",
+        "004-nearest-0.2-0.2-7",
+        "004-nearest-0.27-0.16-6",
+        "004-nearest-0.27-0.16-7",
+        "004-nearest-0.16-0.2-6",
+        "004-nearest-0.16-0.2-7",
+        "004-nearest-0.25-0.25-6",
+        "004-nearest-0.25-0.25-7"
+      ],
+      "wasm": [
+        "004-nearest-0.2-0.2-6",
+        "004-nearest-0.2-0.2-7",
+        "004-nearest-0.27-0.16-6",
+        "004-nearest-0.27-0.16-7",
+        "004-nearest-0.16-0.2-6",
+        "004-nearest-0.16-0.2-7",
+        "004-nearest-0.25-0.25-6",
+        "004-nearest-0.25-0.25-7"
+      ]
+    },
+    {
+      "id": "MECH-R1-005",
+      "feature": "One physical meaning per datum",
+      "oracle": "Old body-bottom skirt binding rejected; separate datum11 works at bed and elevated start",
+      "status": "regressions pass",
+      "native": [
+        "005-skirt-old-body-datum",
+        "005-skirt-bed-0",
+        "005-skirt-bed-11",
+        "005-skirt-elevated"
+      ],
+      "wasm": [
+        "005-skirt-old-body-datum",
+        "005-skirt-bed-0",
+        "005-skirt-bed-11",
+        "005-skirt-elevated"
+      ]
+    },
+    {
+      "id": "MECH-R1-006",
+      "feature": "Integer parameter domain before cast",
+      "oracle": "3.9 steps rejected;3 and4 explicit geometry steps retained; complete scope/quantum metadata compared to domain",
+      "status": "regressions pass",
+      "native": [
+        "006-steps-fractional",
+        "006-steps-integer-3",
+        "006-steps-integer-4"
+      ],
+      "wasm": [
+        "006-steps-fractional",
+        "006-steps-integer-3",
+        "006-steps-integer-4"
+      ]
+    },
+    {
+      "id": "MECH-R1-007",
+      "feature": "Inactive MX collar",
+      "oracle": "Zero collar retains diameters4/6/11; active collar above socket accepted, intersecting narrow collar rejected",
+      "status": "regressions pass",
+      "native": [
+        "007-no-collar-4",
+        "007-no-collar-6",
+        "007-no-collar-11",
+        "007-collar-above-socket",
+        "007-collar-intersects-socket"
+      ],
+      "wasm": [
+        "007-no-collar-4",
+        "007-no-collar-6",
+        "007-no-collar-11",
+        "007-collar-above-socket",
+        "007-collar-intersects-socket"
+      ]
+    }
+  ],
+  "additional": [
+    "OBS01 explicit auto stored zero",
+    "seed0x00120269:12 near-boundary cases",
+    "199 baseline +140 source cases native/WASM"
+  ],
+  "limitations": [
+    "No physical/slicer/strength/fit claim",
+    "Local guard query budget at most1e-7 mm; not an exact-arithmetic arbitrary-CSG certificate",
+    "Planar shared topology is not 3D contact proof",
+    "Unaligned nominal datum conversion unavailable, reference UINT32_MAX; host must honor sentinel",
+    "Imported mesh executor remains parent-owned and unsupported here"
+  ]
+}

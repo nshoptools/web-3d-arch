@@ -1,0 +1,16 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {join} from 'node:path';import {pathToFileURL} from 'node:url';
+import {runUnifiedChecks} from './unified-checks.mjs';
+import {fixtureProfile} from './profile-fixtures.mjs';
+import {sha256} from '../src/contracts.mjs';
+const run=process.env.PROJECT_REVIEW_RUN,repo=process.env.PROJECT_ROOT;
+const modulePath=process.env.ARCH_WASM_MODULE??join(run,'work/module/arch-kernel.mjs');
+const factory=(await import(pathToFileURL(modulePath))).default;
+const hb=await import(pathToFileURL(join(repo,'src/input/harfbuzz-engine.mjs')));
+const module=await factory({wasmBinary:await readFile(modulePath.replace(/\.mjs$/,'.wasm'))});
+const profiles={bambu:await fixtureProfile(repo,'bambu'),u1:await fixtureProfile(repo,'u1')};
+const sourceHashes=[{id:'src/kernel/src/lib.rs',sha256:await sha256(await readFile(join(repo,'src/kernel/src/lib.rs')))}];
+const result=await runUnifiedChecks(module,profiles,hb,new Uint8Array(await readFile(join(repo,'src/assets/fonts/ttf/Inter.ttf'))),sourceHashes);
+const out=join(run,'evidence/unified-node');await mkdir(out,{recursive:true});
+for(const f of result.files)await writeFile(join(out,f.name),f.bytes);
+delete result.files;await writeFile(join(out,'records.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));

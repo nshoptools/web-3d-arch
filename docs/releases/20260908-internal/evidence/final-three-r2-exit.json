@@ -1,0 +1,7 @@
+{
+  "mode": "exactly-three-final-flows",
+  "engine": "chromium-visible",
+  "exit": 0,
+  "sourcePins": "work/final-smoke-r2/source-pins.json",
+  "inputSHA256": "3ee43aa58efddfb937886696ec1b965cb44196988bf0a239dff02584aa65677b"
+}

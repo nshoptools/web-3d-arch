@@ -1,0 +1,1302 @@
+{
+  "schemaVersion": 1,
+  "candidateVersion": "arch-raster-edit/1",
+  "scope": "standalone pixel core; implementation, not independent review",
+  "fixtureProvenance": {
+    "source": "Synthetic analytic RGBA fixtures authored for web-3d-arch in this candidate",
+    "rights": "Project-authored internal test data; no third-party artwork",
+    "oracle": "Hand-specified pixel grids, analytic arithmetic and separate dense polynomial curve evaluation"
+  },
+  "counts": {
+    "sourceFiles": 7,
+    "testFiles": 10,
+    "documents": 3,
+    "analyticGridFixtures": 44,
+    "portableChecks": 76
+  },
+  "files": [
+    {
+      "path": "docs/editing/ACCEPTANCE.md",
+      "bytes": 6214,
+      "sha256": "667227e8588950d82214ea4d6e0152c048ea35b6ec4c826ab508e7a0ca2f3631"
+    },
+    {
+      "path": "docs/editing/ADR-001-raster-semantics.md",
+      "bytes": 13494,
+      "sha256": "82297ea92589c4729804cee20634c76f44bfa43ca0da9fd6cb23d81bf874306e"
+    },
+    {
+      "path": "docs/editing/API.md",
+      "bytes": 7284,
+      "sha256": "45b8bbd9575688b01558da6d01c9226669579eff06cb5836af7c4c8ba776ab7d"
+    },
+    {
+      "path": "src/editing/contract.mjs",
+      "bytes": 12535,
+      "sha256": "9db8639a65d1a40c810cab8432bd397dc5e4b6010b0c45f1b20fff5ffa34d3b8"
+    },
+    {
+      "path": "src/editing/editor.mjs",
+      "bytes": 6719,
+      "sha256": "40236e17422d34783a4841b1e849de830cfc67de18b13e07ceaa625623209ca4"
+    },
+    {
+      "path": "src/editing/history.mjs",
+      "bytes": 6471,
+      "sha256": "712015431619a1ed1292ed7bafd072376a74e8f6cdb74aa0254c72f24f75adf5"
+    },
+    {
+      "path": "src/editing/index.d.mts",
+      "bytes": 5889,
+      "sha256": "8e9e17d646d159fad6bd0cfe24166b82c7cca6f0b2637ab396dcf8732a0760b2"
+    },
+    {
+      "path": "src/editing/index.mjs",
+      "bytes": 272,
+      "sha256": "f3ab27a30918a95d12e076f7c39dcbb2f87728b98bf9334c65b924cab62b9f8f"
+    },
+    {
+      "path": "src/editing/raster.mjs",
+      "bytes": 13203,
+      "sha256": "edf2acc1908898b404ca5393842ab074f47cfa645885b38a50253172628c3563"
+    },
+    {
+      "path": "src/editing/worker.mjs",
+      "bytes": 2537,
+      "sha256": "a09de27d4fd05fb81308ebdbeeaac3e8b3e03196fbf70d09e104ec5f2d08f457"
+    },
+    {
+      "path": "tests/editing/browser.test.mjs",
+      "bytes": 7817,
+      "sha256": "3302ccb134e0f058ba48cf8ca33401dadea2a8c68d605118c7411360a3f4c00d"
+    },
+    {
+      "path": "tests/editing/core.test.mjs",
+      "bytes": 141,
+      "sha256": "5a87b6207775a71ee241dccd511d3f7afa42a35a317b5ec529f3d95cca1aee3c"
+    },
+    {
+      "path": "tests/editing/fixture-worker.mjs",
+      "bytes": 254,
+      "sha256": "2cf496ed6f809e744fa3eecd36265363afedd71d73b3b94635568981ba95f9d0"
+    },
+    {
+      "path": "tests/editing/fixtures.mjs",
+      "bytes": 8406,
+      "sha256": "f6f478bdfc53dd809d8f377a91f73c0be778110a555f145df2aecdbeea6a7d77"
+    },
+    {
+      "path": "tests/editing/manifest.mjs",
+      "bytes": 3822,
+      "sha256": "04a9a3f4afba3e334220c6f579857698b6e6846d9161c64e119ddb8f7d4407ac"
+    },
+    {
+      "path": "tests/editing/protocol-scenarios.mjs",
+      "bytes": 4144,
+      "sha256": "9aeb70016604bce612f24298f7072103f453a83ea85a0a7db92b6d286635b851"
+    },
+    {
+      "path": "tests/editing/run.ps1",
+      "bytes": 1711,
+      "sha256": "7547be84d4151af7efce77076bc314e4eef7724cf91f2adad480fa830fc1a114"
+    },
+    {
+      "path": "tests/editing/suite.mjs",
+      "bytes": 21794,
+      "sha256": "a17b6b7882fdd2e7c60985cbe7a96dde0d10a8febbb3dc422b2ec51e4979464a"
+    },
+    {
+      "path": "tests/editing/tsconfig.json",
+      "bytes": 258,
+      "sha256": "3fa29e904ac057370efc4d522e2493fada437e5058833042f21af408ffc3a8b1"
+    },
+    {
+      "path": "tests/editing/typecheck.mts",
+      "bytes": 1129,
+      "sha256": "dcbedce7d6dd36cbbfb8ded6af64f40116ce0f19d28f7f5405cee394298d9846"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "paint isolated region retains hole and one-pixel accent",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "0797beed8322eaddb2ad79c2b196e4b2c7e514567041b370a8167c21ebedfd61"
+      },
+      "expected": {
+        "rgbaSha256": "dd1b7a8cd2e5f5172a17bce7afb8c9a7e20171d9b1c13e75177f2825148c6d4b",
+        "imageSha256": "9f5cc7cb7733e823a6b00766fd7efa09cc92a96f1fc7697e7b800ed3629eaa5d"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "id": "paint transparent background leaves enclosed hole",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "c70929d61e64f3d57f0e24f1de1aa9a77239522164cf24c6b0d65d418fd6ed9d"
+      },
+      "expected": {
+        "rgbaSha256": "6dbe88e7e472e280ca09555c5c7b2790041cc4f26631f571294e19a6b3607261",
+        "imageSha256": "21540d08e59b03bc1f784498b92baa2cab27ff15e8719c8573122979d7664fe8"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "paint four-connectivity does not join diagonal islands",
+      "input": {
+        "width": 2,
+        "height": 2,
+        "rgbaSha256": "a3f88d09da9750faf72f8be6a33d2415a349499c3b262b7be9b7d310407af170"
+      },
+      "expected": {
+        "rgbaSha256": "b52cf64af449ee042ad40b02dcfcd25cfca78d6a1052281a3665f8f875503a10",
+        "imageSha256": "6344d850fc2b7877ee8c27bb81a0015c17fd04e1711b3824d549f0350e0b0549"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "id": "paint explicit eight-connectivity",
+      "input": {
+        "width": 2,
+        "height": 2,
+        "rgbaSha256": "a3f88d09da9750faf72f8be6a33d2415a349499c3b262b7be9b7d310407af170"
+      },
+      "expected": {
+        "rgbaSha256": "d1b271861fb1b5297469424d266131a68e1bdb3b51e2cb2037c7e85d9f9bc2c4",
+        "imageSha256": "44ba0b93e3486cd50157053362aa12c065a1f598fd2ff8f724407fbe289c8d54"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": 0,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ],
+        "connectivity": 8
+      }
+    },
+    {
+      "id": "paint multiple seeds is one gesture",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "dae84c8108089dbf758e9b1543bce99d2008841c8775d6b140c4abbecd0a6632"
+      },
+      "expected": {
+        "rgbaSha256": "1d93eef6a4c3af01c81bd566ad7620731ac205aface702504421496db20fea81",
+        "imageSha256": "4b27c35af243c7bde4ce394a7edb2b8a2260eb2f37379fd0b8c4aff59b692611"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "paint outside seed is no-op without edge clamp",
+      "input": {
+        "width": 2,
+        "height": 1,
+        "rgbaSha256": "42af801193fad22a2c6b98d9fe22f22d9c00f8f927539f65d98a41178fa31142"
+      },
+      "expected": {
+        "rgbaSha256": "42af801193fad22a2c6b98d9fe22f22d9c00f8f927539f65d98a41178fa31142",
+        "imageSha256": "a4cb79d8344d31e6dfe31ea0f7538f433d4e912a9b52939de0a003cc6be77eec"
+      },
+      "command": {
+        "tool": "paint",
+        "seeds": [
+          {
+            "x": -1,
+            "y": 0
+          }
+        ],
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line clipped through both sides",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+      },
+      "expected": {
+        "rgbaSha256": "df8eddaa1fc043ea4a934fe905984b6905004a9e98f6f274ad8d5b26a3468bb7",
+        "imageSha256": "f67f14d2d650138b26e2dbfd778b45772c71a783f54ccfcd9debaa5504f14639"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": -40,
+            "y": 1.5
+          },
+          {
+            "x": 40,
+            "y": 1.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line diagonal pixel centers",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "7cbfbbe0d7fac2eaadb7cad83b804cf230a0c44869837f0861ac2f153e86d9b9",
+        "imageSha256": "bc3f523fab8f9deeac1d0325e626bca4b0f96bca49853849a38704b6d4f156b6"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 4.5,
+            "y": 4.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line single round dab width 2 inclusive circle boundary",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "fe482163010c03336a0348b4e624d9728c2f2e70410f1676a622a1502982ec59",
+        "imageSha256": "2694035504ff44dadef8f209f324e6f93841e8e0fd1b90084578067f71ca956b"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 2.5,
+            "y": 2.5
+          }
+        ],
+        "width": 2,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line square brush width 2",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "c8f695cb6aa082e8305f782bd69e855966c53aef4a81fb782b38704f261a9605",
+        "imageSha256": "cd1a664d002ebe6e09251ef65ea7d48ec61bfdbcca50c2dd486dc40bface1ab9"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 2.5,
+            "y": 2.5
+          }
+        ],
+        "width": 2,
+        "brush": "square",
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line no pressure uses one times width",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "fe482163010c03336a0348b4e624d9728c2f2e70410f1676a622a1502982ec59",
+        "imageSha256": "2694035504ff44dadef8f209f324e6f93841e8e0fd1b90084578067f71ca956b"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 2.5,
+            "y": 2.5
+          }
+        ],
+        "width": 2,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line pressure zero is 0.4 times width",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "da45c2d5bd8a754dcfd32a411ddcd95c1c70e893459466c82253bce9b9ac7d09",
+        "imageSha256": "f974d701b6f65dcc9574815687bc80f3186e6fde01ed64472f410f3869baabbe"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 2.5,
+            "y": 2.5,
+            "pressure": 0
+          }
+        ],
+        "width": 2,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line pressure one is 1.6 times width",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "c8f695cb6aa082e8305f782bd69e855966c53aef4a81fb782b38704f261a9605",
+        "imageSha256": "cd1a664d002ebe6e09251ef65ea7d48ec61bfdbcca50c2dd486dc40bface1ab9"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 2.5,
+            "y": 2.5,
+            "pressure": 1
+          }
+        ],
+        "width": 2,
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line Shift horizontal projection",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+      },
+      "expected": {
+        "rgbaSha256": "1b75eeff57bd938e59ac080018c4e9e624693f9fe8cd9abfc8d03474c9da200e",
+        "imageSha256": "79f60dcd5934bfb036eef3020d6786a719d0bddc62642c2823cc066be63262dd"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 4.5,
+            "y": 1.5
+          }
+        ],
+        "snap": "45",
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "line self crossing union composites once",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "cd00e292c5970d3c5e2f0ffa5171e555bc46bfc4faddfb4a418b6840b86e79a3"
+      },
+      "expected": {
+        "rgbaSha256": "15c6db821f04ca67c2ae438a4f3de16c913bd96dfd0ec5550cce9ec85f7c4278",
+        "imageSha256": "cb45108106ec4d5fc8d1723624ba8fca2866e317127fc6231d9e1923ca86a96e"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 4.5,
+            "y": 4.5
+          },
+          {
+            "x": 4.5,
+            "y": 0.5
+          },
+          {
+            "x": 0.5,
+            "y": 4.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          128
+        ]
+      }
+    },
+    {
+      "id": "line duplicate points do not accumulate opacity",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      "expected": {
+        "rgbaSha256": "0d21fff02dde907133d8c4ae3957883c5537f6aea9196432281c03c28ea1b2df",
+        "imageSha256": "9262be25126ca11a8e468dc824f6f80fb349aba0370325f891b0ecdf84737be0"
+      },
+      "command": {
+        "tool": "line",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 2.5,
+            "y": 0.5
+          },
+          {
+            "x": 2.5,
+            "y": 0.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          128
+        ]
+      }
+    },
+    {
+      "id": "curve default collinear interpolation",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "5dcc1b5872dd9ff1c234501f1fefda01f664164e1583c3e1bb3dbea47588ab31"
+      },
+      "expected": {
+        "rgbaSha256": "df8eddaa1fc043ea4a934fe905984b6905004a9e98f6f274ad8d5b26a3468bb7",
+        "imageSha256": "f67f14d2d650138b26e2dbfd778b45772c71a783f54ccfcd9debaa5504f14639"
+      },
+      "command": {
+        "tool": "curve",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 1.5
+          },
+          {
+            "x": 2.5,
+            "y": 1.5
+          },
+          {
+            "x": 4.5,
+            "y": 1.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "curve one point is a dab",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      "expected": {
+        "rgbaSha256": "eb921b644d7b69cacd09540382a2f0269796bb00c8b39543f174bdf024e381d9",
+        "imageSha256": "7b6d17df99ef7d845010c67d3757efe58ce46b15e2a1ffc89898e758e8582cc6"
+      },
+      "command": {
+        "tool": "curve",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 0.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "curve two points are a line",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      "expected": {
+        "rgbaSha256": "8cc181e45b163468cc6ef77025f676f673fa35a85e77e74f2961d5fd6f6434f2",
+        "imageSha256": "606f08527dcd905be5da7cfa0e47ea388aa5c77312079a44db957d283b59d3ef"
+      },
+      "command": {
+        "tool": "curve",
+        "points": [
+          {
+            "x": 0.5,
+            "y": 0.5
+          },
+          {
+            "x": 2.5,
+            "y": 0.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "curve all duplicate points",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b"
+      },
+      "expected": {
+        "rgbaSha256": "83d5ff46fc52054f46e6c783a290ba92b2ed4b6e391c65be2c69155efb501bba",
+        "imageSha256": "5abbc3f4c9f1b48c872d950023602e39ac3e6ad50c4462d12cfb833ff17ef4bd"
+      },
+      "command": {
+        "tool": "curve",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 0.5
+          },
+          {
+            "x": 1.5,
+            "y": 0.5
+          },
+          {
+            "x": 1.5,
+            "y": 0.5
+          }
+        ],
+        "color": [
+          255,
+          0,
+          0,
+          128
+        ]
+      }
+    },
+    {
+      "id": "erase default hole mode",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "1d5d8d0381af6e24a87dac11b8f882a96a22e4215cadd2b282a24642662cc0d8"
+      },
+      "expected": {
+        "rgbaSha256": "9721642b5fa1f05c25d9842d437354b00efa1f9c88ef0139d2841c3f2e325fa1",
+        "imageSha256": "c373d1e8585adc849ebcc8cc79be0b3620ccd149dd51f99d8f4bbf7a6caf66fb"
+      },
+      "command": {
+        "tool": "erase",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 1.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "erase explicit merge preserves transparent holes",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "9721642b5fa1f05c25d9842d437354b00efa1f9c88ef0139d2841c3f2e325fa1"
+      },
+      "expected": {
+        "rgbaSha256": "2aabb88bb17173effaf59d6f309077d4594b5f3c2d90afbcd6adf14bcfa851fd",
+        "imageSha256": "4ca2378af63b60a729a5c158339cc12a7d6025190857c34fc8ff3bf0ee13c7d4"
+      },
+      "command": {
+        "tool": "erase",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 1.5
+          }
+        ],
+        "width": 2,
+        "mode": "merge",
+        "color": [
+          0,
+          0,
+          255,
+          255
+        ]
+      }
+    },
+    {
+      "id": "erase auto boundary tie uses lexicographic RGBA",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "8d9ab8f345c142d38b1c08623f2efb90346a38262de0173358e57f1a58f48266"
+      },
+      "expected": {
+        "rgbaSha256": "9a91acf50657efc88aada191fbcadacc6cdb669aa4c43dae45c88b9fd53d0c44",
+        "imageSha256": "e66160d07eac8007ec5ab089050caf555f29bce4208f317444fe2729ab1ae907"
+      },
+      "command": {
+        "tool": "erase",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 1.5
+          }
+        ],
+        "mode": "merge"
+      }
+    },
+    {
+      "id": "cut default line separates two islands",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "52f75c8e82fcba378278b74fedabd66153217c22d4b04504dbae4d19834ab03b"
+      },
+      "expected": {
+        "rgbaSha256": "767830295c7a4fd69796590f64176311faf368cf879b006e61c6acc4449ef943",
+        "imageSha256": "f10ef9321e9c9bba7728e335746a725309fa8402c4f58b5b1ebb9187d1f9be2e"
+      },
+      "command": {
+        "tool": "cut",
+        "points": [
+          {
+            "x": 2.5,
+            "y": -1
+          },
+          {
+            "x": 2.5,
+            "y": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "cut merge mode recolors only stripe",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "52f75c8e82fcba378278b74fedabd66153217c22d4b04504dbae4d19834ab03b"
+      },
+      "expected": {
+        "rgbaSha256": "21ba5cc248e666fe0417ae53e8125f03d2c17da6e9dd0dd1ef534c7a194b1ccc",
+        "imageSha256": "cf9f77e0b69c1bfb992e428d1a01cdf6c0de80ea94f0cd8ffc83a0ac89d0f3eb"
+      },
+      "command": {
+        "tool": "cut",
+        "points": [
+          {
+            "x": 2.5,
+            "y": -1
+          },
+          {
+            "x": 2.5,
+            "y": 4
+          }
+        ],
+        "mode": "merge",
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "crop rectangle keep inside",
+      "input": {
+        "width": 4,
+        "height": 4,
+        "rgbaSha256": "fec0f57de0b19bc7dacb5b0fc3de7b56fc68dfdbeeebc8f9f4c506bf6e821c77"
+      },
+      "expected": {
+        "rgbaSha256": "d3741dcd83012d11962b5db4deb9c479eb8d5d50757d53e7108f35731a6cb99e",
+        "imageSha256": "106cae89fcd1433a55f8620fd39453a776fa59e071b6e07c2f40dac01f9a9f5a"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 1,
+          "y": 1
+        },
+        "to": {
+          "x": 3,
+          "y": 3
+        }
+      }
+    },
+    {
+      "id": "crop rectangle keep outside with reversed corners",
+      "input": {
+        "width": 4,
+        "height": 4,
+        "rgbaSha256": "fec0f57de0b19bc7dacb5b0fc3de7b56fc68dfdbeeebc8f9f4c506bf6e821c77"
+      },
+      "expected": {
+        "rgbaSha256": "7bbbaba56cfa1957c4bbd1220dc92ad29a319e47fd399bd0cc3214bc892cd177",
+        "imageSha256": "50aeb89b2adf0b17948615aa325f0dc6f722fbad3a67c86cf858f6cf585291f6"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 3,
+          "y": 3
+        },
+        "to": {
+          "x": 1,
+          "y": 1
+        },
+        "keep": "outside"
+      }
+    },
+    {
+      "id": "crop ellipse inclusive boundary",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "1f529583c49db52e0275c8780007e16883a6b5d8f634481693cc1037c4bf77d1"
+      },
+      "expected": {
+        "rgbaSha256": "3c57a37af0974f49ce75cfac0a8cf221a50e719d579ae12349e57fa63f1ef281",
+        "imageSha256": "bdb8ea563bffbd6e33a6699f3053922c6b52b1dba2db87cd6cf9d4ad06c49d5d"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "to": {
+          "x": 4.5,
+          "y": 4.5
+        },
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "crop ellipse keep outside",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "1f529583c49db52e0275c8780007e16883a6b5d8f634481693cc1037c4bf77d1"
+      },
+      "expected": {
+        "rgbaSha256": "25831f2ad0f922d2e173106d41bc6fc3b4753b58bd9ea4690cb14ce8e8e6e0db",
+        "imageSha256": "bafe144e7b2fd7d917b5fbf74697919bdb383b24bbde79cd0893330ce3803e43"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "to": {
+          "x": 4.5,
+          "y": 4.5
+        },
+        "shape": "ellipse",
+        "keep": "outside"
+      }
+    },
+    {
+      "id": "crop Shift square anchored to drag start",
+      "input": {
+        "width": 4,
+        "height": 4,
+        "rgbaSha256": "fec0f57de0b19bc7dacb5b0fc3de7b56fc68dfdbeeebc8f9f4c506bf6e821c77"
+      },
+      "expected": {
+        "rgbaSha256": "d3741dcd83012d11962b5db4deb9c479eb8d5d50757d53e7108f35731a6cb99e",
+        "imageSha256": "106cae89fcd1433a55f8620fd39453a776fa59e071b6e07c2f40dac01f9a9f5a"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 1,
+          "y": 1
+        },
+        "to": {
+          "x": 3,
+          "y": 2
+        },
+        "square": true
+      }
+    },
+    {
+      "id": "crop fractional bounds and clipping",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "1d5d8d0381af6e24a87dac11b8f882a96a22e4215cadd2b282a24642662cc0d8"
+      },
+      "expected": {
+        "rgbaSha256": "c3b6d448680f5a3f460a0bb5fa19cf500817e9d06f038211b51aa5bf40ec923c",
+        "imageSha256": "4c61d3cfa15cc7f9087ac8bcc136b0f6e1d8aa3f5f35f2f42f321909fc0c2273"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": -10,
+          "y": -10
+        },
+        "to": {
+          "x": 1.5,
+          "y": 1.5
+        }
+      }
+    },
+    {
+      "id": "crop zero area no-op",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "8cc181e45b163468cc6ef77025f676f673fa35a85e77e74f2961d5fd6f6434f2"
+      },
+      "expected": {
+        "rgbaSha256": "8cc181e45b163468cc6ef77025f676f673fa35a85e77e74f2961d5fd6f6434f2",
+        "imageSha256": "606f08527dcd905be5da7cfa0e47ea388aa5c77312079a44db957d283b59d3ef"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 1,
+          "y": 0
+        },
+        "to": {
+          "x": 1,
+          "y": 1
+        }
+      }
+    },
+    {
+      "id": "crop merge keeps canvas and alpha",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "1d5d8d0381af6e24a87dac11b8f882a96a22e4215cadd2b282a24642662cc0d8"
+      },
+      "expected": {
+        "rgbaSha256": "c30e320717327dd2969eb19adcffbd94ad4c7d20e6e343bd2189005f001f8aef",
+        "imageSha256": "c35014865c00b6aac835b21b62795ed14718192298eb166ce7db81fe75476bd0"
+      },
+      "command": {
+        "tool": "crop",
+        "from": {
+          "x": 1,
+          "y": 1
+        },
+        "to": {
+          "x": 2,
+          "y": 2
+        },
+        "mode": "merge",
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "heal enclosed one-pixel hole auto",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "9721642b5fa1f05c25d9842d437354b00efa1f9c88ef0139d2841c3f2e325fa1"
+      },
+      "expected": {
+        "rgbaSha256": "1d5d8d0381af6e24a87dac11b8f882a96a22e4215cadd2b282a24642662cc0d8",
+        "imageSha256": "38c81a11d17ec18f4e75102d98fbb1ff5c9309b020da16f24873ca00f21b29cb"
+      },
+      "command": {
+        "tool": "heal",
+        "seeds": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "heal explicit color leaves other hole and tiny accent",
+      "input": {
+        "width": 5,
+        "height": 5,
+        "rgbaSha256": "e47631bc10e893ab3ef5d1cf1d2b35da773f4753c11e134e1d86c55349f153a7"
+      },
+      "expected": {
+        "rgbaSha256": "64fee537ace59f42823fae3551878af42edd2ca3d2fa9c74ef404afdca6a4071",
+        "imageSha256": "58eca9b754e1d562888f8d2b14324983d1dd8ced6119cc5ca1fe5e16dd599e02"
+      },
+      "command": {
+        "tool": "heal",
+        "seeds": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ],
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "heal two holes choose each enclosing color",
+      "input": {
+        "width": 7,
+        "height": 3,
+        "rgbaSha256": "06e1bb3388fb2b24cc40523230678e900a225e1d768070cfa80d3408b424231b"
+      },
+      "expected": {
+        "rgbaSha256": "ca8a3db5391b4162e8c022936c5348e18adf5203cfbbfe94f78b93b6f0624d07",
+        "imageSha256": "aee2ad2bc45d71b0d6bc9bff33f6002ff6d27fa185494fe257919bb980127009"
+      },
+      "command": {
+        "tool": "heal",
+        "seeds": [
+          {
+            "x": 1,
+            "y": 1
+          },
+          {
+            "x": 5,
+            "y": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "heal boundary tie",
+      "input": {
+        "width": 3,
+        "height": 3,
+        "rgbaSha256": "6bebeab3ef25a65ae5a091212e44dc6b91734df7a55cb6e96be9e89a4591f56d"
+      },
+      "expected": {
+        "rgbaSha256": "9a91acf50657efc88aada191fbcadacc6cdb669aa4c43dae45c88b9fd53d0c44",
+        "imageSha256": "e66160d07eac8007ec5ab089050caf555f29bce4208f317444fe2729ab1ae907"
+      },
+      "command": {
+        "tool": "heal",
+        "seeds": [
+          {
+            "x": 1,
+            "y": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "heal brush targets only transparency",
+      "input": {
+        "width": 3,
+        "height": 2,
+        "rgbaSha256": "45ba97f306f6179e5956ff312de291d00372684309b016e5d7be96762cef94ab"
+      },
+      "expected": {
+        "rgbaSha256": "4e75aa5e0bd0930011d664c1be4ebd9e23023d028680766d23c1b8f0883e317a",
+        "imageSha256": "99416387b37f347663aecea916790b1eaea19a1c8027c708fa2d82ed3fb216f2"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "brush",
+        "points": [
+          {
+            "x": 1.5,
+            "y": 0.5
+          }
+        ],
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "heal exterior only when explicitly allowed",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "02b3bff3238cbdef68c9db5eb02ea2fabc7d4f5ec8b06d6ea41baa0522581b9b"
+      },
+      "expected": {
+        "rgbaSha256": "11e5259f1dbe5788b267800d10ce780a148692a47ad0555f698461d16e2d3feb",
+        "imageSha256": "4e684b8701f96dc415502318dfc20faf1f79a968891b014b48c021a8d1e0096c"
+      },
+      "command": {
+        "tool": "heal",
+        "seeds": [
+          {
+            "x": 2,
+            "y": 0
+          }
+        ],
+        "allowExterior": true,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "heal all narrow gaps nearest endpoint and ties",
+      "input": {
+        "width": 10,
+        "height": 1,
+        "rgbaSha256": "114688bfd30fc9f36bd9b1d2ef968780611140ecdc921b7cafc2e71bafc0579c"
+      },
+      "expected": {
+        "rgbaSha256": "22026fb507f0f9abe303cf4b545b464b99184d3a119c451f031cfc7a605555b7",
+        "imageSha256": "39dd8f86d079392bb2002a1117b2c068fd852ff65578e7bf045a3e015765d814"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "all-gaps",
+        "maxGapPx": 3,
+        "pixelSizeMm": 0.1
+      }
+    },
+    {
+      "id": "heal all gaps threshold skips wider runs",
+      "input": {
+        "width": 8,
+        "height": 1,
+        "rgbaSha256": "8499ad0253fefdc229239e695b842969d7cfe8218fd75af20f10bf9fa1077f23"
+      },
+      "expected": {
+        "rgbaSha256": "70b53fc3515907d20fff05db0fae87c790102dc7082aeb61bb0ab50cdeda8f6a",
+        "imageSha256": "0796af7f80444e4d977f9e4b0a1555b8113a185fca276c0198cc80e8d821b277"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "all-gaps",
+        "maxGapPx": 1,
+        "pixelSizeMm": 0.1
+      }
+    },
+    {
+      "id": "heal all gaps vertical pass",
+      "input": {
+        "width": 1,
+        "height": 4,
+        "rgbaSha256": "ec7c496d26600526d222d6ca19829609dbe79e6f28d0bc979bbb029f9692328f"
+      },
+      "expected": {
+        "rgbaSha256": "8d72937ab1fafaa0d1281a009bb3561ebc48ae557657b3d48c7f5a788b46a660",
+        "imageSha256": "08fa99b87467086c0a5466a835ed6b5e84e64b1a156db29afe0214608e3dee09"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "all-gaps",
+        "maxGapPx": 2,
+        "pixelSizeMm": 0.2
+      }
+    },
+    {
+      "id": "heal all gaps explicit color",
+      "input": {
+        "width": 3,
+        "height": 1,
+        "rgbaSha256": "014b83a2cd0dd59cc792524a2ad3c509c504beaf4bf537285f4a17748e45bb16"
+      },
+      "expected": {
+        "rgbaSha256": "66843ae5761077ba7eed93ef8377e8c050533757c00dcb37bf6e1d3e0f74868d",
+        "imageSha256": "ba45df07803f9005645c06e308eb6718bf5964afd979b3a0f4f0c8640430c7af"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "all-gaps",
+        "maxGapPx": 1,
+        "pixelSizeMm": 0.1,
+        "color": [
+          0,
+          255,
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "id": "heal all gaps never deletes an opaque accent",
+      "input": {
+        "width": 5,
+        "height": 3,
+        "rgbaSha256": "778c2d023eb8a3c276c6413b352e84e7a91a7915d6ceff7acf813d80d7c56fd0"
+      },
+      "expected": {
+        "rgbaSha256": "778c2d023eb8a3c276c6413b352e84e7a91a7915d6ceff7acf813d80d7c56fd0",
+        "imageSha256": "fb0d2fba9f00387ef216620fa790aa54d28789013266a80e1734d54f7bb12e4d"
+      },
+      "command": {
+        "tool": "heal",
+        "method": "all-gaps",
+        "maxGapPx": 4,
+        "pixelSizeMm": 0.1
+      }
+    }
+  ]
+}

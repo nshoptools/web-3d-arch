@@ -1,0 +1,65 @@
+{
+  "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+  "sourceSemantics": 2,
+  "scope": "Synthetic state/source only; no mesh JSON, private users, fonts or external media",
+  "files": [
+    {
+      "expectedSnapshot": "qualifiable",
+      "legacyUnionSTL": "qualifiable",
+      "product": "keychain",
+      "sha256": "b687fd7bc92f911049859c270403b991452cc27d768dced6f656351caf724631",
+      "physicalFit": "unqualified",
+      "source": "project-authored two-color holed SVG; actual native prepareBindings",
+      "bytes": 26133,
+      "path": "keychain.json",
+      "globalPipelineError": "unverified"
+    },
+    {
+      "expectedSnapshot": "qualifiable",
+      "legacyUnionSTL": "INVALID_SERIALIZATION:STL_FLOAT_COLLISION",
+      "product": "clicky",
+      "sha256": "54859e3a89fb8949938af941dc0be49f45bcd9a02bdfe0bbe5ad487626559153",
+      "physicalFit": "unqualified",
+      "source": "project-authored two-color holed SVG; actual native prepareBindings",
+      "bytes": 26133,
+      "path": "clicky.json",
+      "globalPipelineError": "unverified"
+    },
+    {
+      "expectedSnapshot": "qualifiable",
+      "legacyUnionSTL": "qualifiable",
+      "product": "strap",
+      "sha256": "b7ea527d8e2b01b1ba27b52aa87143dd692abb40387ddb80e3cc64e7be5b0cad",
+      "physicalFit": "unqualified",
+      "source": "project-authored two-color holed SVG; actual native prepareBindings",
+      "bytes": 26130,
+      "path": "strap.json",
+      "globalPipelineError": "unverified"
+    },
+    {
+      "expectedSnapshot": "qualifiable",
+      "legacyUnionSTL": "qualifiable",
+      "product": "lego",
+      "sha256": "fd7c564b824b58a837ce71c61b80fce3ac8b9e5164b379e14fb7e744e97e31f1",
+      "physicalFit": "unqualified",
+      "source": "project-authored two-color holed SVG; actual native prepareBindings",
+      "bytes": 26129,
+      "path": "lego.json",
+      "globalPipelineError": "unverified"
+    },
+    {
+      "expectedSnapshot": "qualifiable",
+      "legacyUnionSTL": "qualifiable",
+      "product": "charm",
+      "sha256": "ec2e6a038d6f2be0f41290470baee98a62e97bb299d2c05cdeb8a8bde56f80fc",
+      "physicalFit": "unqualified",
+      "source": "project-authored two-color holed SVG; actual native prepareBindings",
+      "bytes": 26130,
+      "path": "charm.json",
+      "globalPipelineError": "unverified"
+    }
+  ],
+  "version": "arch-final-scene-fixtures/2",
+  "mechanicsSemantics": 3,
+  "mappingProvenance": "Ledger included in the synthetic committed source-adoption fixture before native build; no allocation during describe/export. Full ledger canonical SHA-256 digest added before the modeled adoption build; see version1 preimages."
+}

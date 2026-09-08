@@ -1,0 +1,33 @@
+{
+  "version": "arch-cldr-source-lock/1",
+  "project": "Unicode CLDR JSON",
+  "release": "48.2.0",
+  "repository": "https://github.com/unicode-org/cldr-json",
+  "tag": "48.2.0",
+  "commit": "bb334e8d6250c9363e957e131bf7e6d08ec72f91",
+  "releaseReference": "https://cldr.unicode.org/downloads/cldr-48",
+  "license": "Unicode-3.0",
+  "files": [
+    {
+      "file": "vi.json",
+      "sourcePath": "cldr-json/cldr-annotations-full/annotations/vi/annotations.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/bb334e8d6250c9363e957e131bf7e6d08ec72f91/cldr-json/cldr-annotations-full/annotations/vi/annotations.json",
+      "bytes": 434393,
+      "sha256": "a0a8d4c3d6fc52d843e0d69051fb025a27bce6aee2b3eade5a1488b6dd9adffd"
+    },
+    {
+      "file": "derived-vi.json",
+      "sourcePath": "cldr-json/cldr-annotations-derived-full/annotationsDerived/vi/annotations.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/bb334e8d6250c9363e957e131bf7e6d08ec72f91/cldr-json/cldr-annotations-derived-full/annotationsDerived/vi/annotations.json",
+      "bytes": 757001,
+      "sha256": "2af5588927fb68bb01aedd28aa2947aa77d31374a53bd008844d426b6ba2f062"
+    },
+    {
+      "file": "LICENSE",
+      "sourcePath": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/bb334e8d6250c9363e957e131bf7e6d08ec72f91/LICENSE",
+      "bytes": 2033,
+      "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+    }
+  ]
+}

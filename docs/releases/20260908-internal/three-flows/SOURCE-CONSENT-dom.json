@@ -1,0 +1,21 @@
+{
+  "before": {
+    "observation": {
+      "csp": [],
+      "styles": []
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "scrollHeight": 900
+    },
+    "step": "1",
+    "readouts": "Vùng màu\n0\nCỡ nguồn\ndo nhân báo\nNguồn\nchưa có\nẢnh sửa\nchưa công bố",
+    "exports": []
+  },
+  "afterCapture": {
+    "csp": [],
+    "styles": []
+  }
+}

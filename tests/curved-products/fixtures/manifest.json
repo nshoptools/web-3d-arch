@@ -1,0 +1,652 @@
+{
+  "version": 1,
+  "scope": "40 recorded requests on actual committed Inter O and selected Noto monochrome grinning face outlines; original production ARCH1/APRQ bytes, compressed losslessly",
+  "module": {
+    "mjs": "950225880c23476f9a6523111ac5a33aebb24f1d89bfa1d8f60bff1b1cc1c375",
+    "wasm": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd"
+  },
+  "provenance": "PSB-03 source-node-final recorded states, independently recaptured with matching production core; IDs, parameter origins, binding hashes and source provenance are retained in APRQ",
+  "geometryExpectation": "All 40 normal requests must publish and pass independent dimensions/topology/source preservation oracles. No physical fit qualification.",
+  "files": [
+    {
+      "path": "emoji-charm-chim.aprq.gz",
+      "output": "emoji-charm-chim.aprq",
+      "bytes": 17781,
+      "sha256": "5ea91cc10a5b053bfc843a0e71c55f79c31a9e0545cadb3e4144a354b12de799",
+      "compressedBytes": 3939,
+      "compressedSha256": "9e52559ad6f2c84768fce37b241521e981314416f8fe6e3ff5f2e2d2c4c80959"
+    },
+    {
+      "path": "emoji-charm-chim.arch.gz",
+      "output": "emoji-charm-chim.arch",
+      "bytes": 154936,
+      "sha256": "75198baf573cc8f693270132cafd0f973c3b2d9817cbf39ea54597a9b5eedda8",
+      "compressedBytes": 55279,
+      "compressedSha256": "8d9b7c41bd4567ede210648ea0a4820a1384205b8f7dba60f4f852061a828daa"
+    },
+    {
+      "path": "emoji-charm-noi.aprq.gz",
+      "output": "emoji-charm-noi.aprq",
+      "bytes": 17763,
+      "sha256": "eb8cf819c44d6786706d782fc6387373f5642729341c8790e4251bf9a70a7519",
+      "compressedBytes": 3935,
+      "compressedSha256": "4ea8963b98829fd8315595361eed2c46ab70bcf18022b607d4a88026832c4354"
+    },
+    {
+      "path": "emoji-charm-noi.arch.gz",
+      "output": "emoji-charm-noi.arch",
+      "bytes": 154936,
+      "sha256": "602f8973b9a163dcb24d216039a958334ed3cee967e94d000452c9cf0952ef3f",
+      "compressedBytes": 55279,
+      "compressedSha256": "6c8223007f75cf06f3b840d66e6798657dad63b9e41bdc19f4208fbcc62bedfd"
+    },
+    {
+      "path": "emoji-charm-phang.aprq.gz",
+      "output": "emoji-charm-phang.aprq",
+      "bytes": 17782,
+      "sha256": "9b7e6dadf68b7a9d298bcd2ae4f66a6536363bf9d701305fbb8f4fcef98e01bb",
+      "compressedBytes": 3931,
+      "compressedSha256": "0b7b5b5fbc022694a8321cf4958d1dc822763c7c636ca695324fadc16a1e641f"
+    },
+    {
+      "path": "emoji-charm-phang.arch.gz",
+      "output": "emoji-charm-phang.arch",
+      "bytes": 154936,
+      "sha256": "c9fdf9630f1ee54d4cfde2854ade66ae3eee28709d33dea70be1808761ade80c",
+      "compressedBytes": 55279,
+      "compressedSha256": "0008497c4c30fcb8f02a5326e17368626422a242ccd72a83cf0a23c715472856"
+    },
+    {
+      "path": "emoji-charm-phang2.aprq.gz",
+      "output": "emoji-charm-phang2.aprq",
+      "bytes": 17779,
+      "sha256": "079959ef93ec8ffeeafe85d613f7947073fa74a4e4e36da1df4c8be399bc432c",
+      "compressedBytes": 3939,
+      "compressedSha256": "f5459e347ee85158571507aaaf0cb9759bfcda544dcb47295b0fc87eb8a755e5"
+    },
+    {
+      "path": "emoji-charm-phang2.arch.gz",
+      "output": "emoji-charm-phang2.arch",
+      "bytes": 154936,
+      "sha256": "754fcce570af379fd410d171afa9ef1e7865fff2291bab8c49dbf8a51d91e748",
+      "compressedBytes": 55279,
+      "compressedSha256": "cce483996ce5afe7263fa882f68f8176b4beff64cc44e21e9dff14bba64c5e7a"
+    },
+    {
+      "path": "emoji-clicky-chim.aprq.gz",
+      "output": "emoji-clicky-chim.aprq",
+      "bytes": 21210,
+      "sha256": "293f4e19c4932d8976f8f92aad138b9c68da228ddfd894feca6d0f1f9190fca3",
+      "compressedBytes": 4360,
+      "compressedSha256": "46d2078cc08c2313af4df90fc87d3701a8424358c0223e1e9a636636331997e0"
+    },
+    {
+      "path": "emoji-clicky-chim.arch.gz",
+      "output": "emoji-clicky-chim.arch",
+      "bytes": 154936,
+      "sha256": "c6459cd5c28a0d9bfc0fd8f452237a71c5ba68755f723b3a14cd21582841e780",
+      "compressedBytes": 55279,
+      "compressedSha256": "eb9b715e3b26ac508495321e44c6f455cb3a6cb89122e2a5c3604dd5c7e2acd3"
+    },
+    {
+      "path": "emoji-clicky-noi.aprq.gz",
+      "output": "emoji-clicky-noi.aprq",
+      "bytes": 21211,
+      "sha256": "33854ac0f6d75b5fa7f41433a6e9872ff932473111a3975aa9ab5353c00997e3",
+      "compressedBytes": 4353,
+      "compressedSha256": "1d6931fb59877f7b7d55f470423f1946f676185e9d38bb1c7f6cc8d26d6b2f7b"
+    },
+    {
+      "path": "emoji-clicky-noi.arch.gz",
+      "output": "emoji-clicky-noi.arch",
+      "bytes": 154936,
+      "sha256": "3b90d3d5c73ef80e87827d2aa31701f71caec0c38b6a02f0f820123ffe23cf2b",
+      "compressedBytes": 55279,
+      "compressedSha256": "4f183fd10e84e5c6f08c7580081295f7b1ca344ecbac46ec67c42aea7a416365"
+    },
+    {
+      "path": "emoji-clicky-phang.aprq.gz",
+      "output": "emoji-clicky-phang.aprq",
+      "bytes": 21207,
+      "sha256": "17d132399452142b292af5e860ba4b364d0c04e22f53c9f09039ba5a5aa6838a",
+      "compressedBytes": 4362,
+      "compressedSha256": "b1fea4de65a76aa10955101fc7d3a3a456617d9617799c775999de7ebda9685b"
+    },
+    {
+      "path": "emoji-clicky-phang.arch.gz",
+      "output": "emoji-clicky-phang.arch",
+      "bytes": 154936,
+      "sha256": "91fcb3a0262818153ad147e9675d528ac008ac803894fcaf7fdb89634fcca285",
+      "compressedBytes": 55279,
+      "compressedSha256": "0b2c1e399e7bbe4c1f83d47e108b0672e737c6cc5060fcdb0e8d326ee56336e6"
+    },
+    {
+      "path": "emoji-clicky-phang2.aprq.gz",
+      "output": "emoji-clicky-phang2.aprq",
+      "bytes": 21209,
+      "sha256": "b669e1ef694d5d51d6cdf9af8b8dbd57b24089ef74c47abcf65540b317fef251",
+      "compressedBytes": 4351,
+      "compressedSha256": "ba7692eb6ab3f4db1f427271d384f1d9d5b8fe976b5540f939a723bf93fe9f99"
+    },
+    {
+      "path": "emoji-clicky-phang2.arch.gz",
+      "output": "emoji-clicky-phang2.arch",
+      "bytes": 154936,
+      "sha256": "eff0284c52fd956e747c4ac97fb56bf28342ab366ad49b2daf7228f8a5eb28ff",
+      "compressedBytes": 55279,
+      "compressedSha256": "4a208f54642139eae112c86068db5981e9373ee887ddb0236d83cf004254c395"
+    },
+    {
+      "path": "emoji-keychain-chim.aprq.gz",
+      "output": "emoji-keychain-chim.aprq",
+      "bytes": 17140,
+      "sha256": "a07ac104378bd70a7a4801a35598d94307a0cc72e735c0680b9ce8ee74993a3a",
+      "compressedBytes": 3889,
+      "compressedSha256": "69f189f9eb44b8821c8712999194ee0d53228d39fc151a14ee984a7f5e19d6f4"
+    },
+    {
+      "path": "emoji-keychain-chim.arch.gz",
+      "output": "emoji-keychain-chim.arch",
+      "bytes": 154936,
+      "sha256": "41fe3586595ad2e3847202624e76ce3040a1b3aa4f121fa2f15a3f7524f3c94a",
+      "compressedBytes": 55279,
+      "compressedSha256": "e8a7fc827d97d0172eae531865166be63aeb41e0fbe9ecd70ff9489e68d60a33"
+    },
+    {
+      "path": "emoji-keychain-noi.aprq.gz",
+      "output": "emoji-keychain-noi.aprq",
+      "bytes": 17143,
+      "sha256": "cb5549138d3bc767a8fc4231074e8e3e72a2874b45b353cab84157e467e7dac7",
+      "compressedBytes": 3874,
+      "compressedSha256": "94955aef107795dcf727eed54bfe8ffb4e17a5d3322bfd29c1b5b8f4f8ffe59f"
+    },
+    {
+      "path": "emoji-keychain-noi.arch.gz",
+      "output": "emoji-keychain-noi.arch",
+      "bytes": 154936,
+      "sha256": "ba83bf8efa4cf98be80ae0aafe8630dd95b697228d09186a2ae9f05d674eccf4",
+      "compressedBytes": 55279,
+      "compressedSha256": "e1545f72f925463dd16ae7a96d68d5b5fdc73ee86a4688a765501832c8e9c787"
+    },
+    {
+      "path": "emoji-keychain-phang.aprq.gz",
+      "output": "emoji-keychain-phang.aprq",
+      "bytes": 17141,
+      "sha256": "6b373248fde25c7b4b6aa4e76ee0b56e9b4856cca621571a4df65bc5de319647",
+      "compressedBytes": 3891,
+      "compressedSha256": "9be0ee963202adbf11535bbd32382a37787d885a19176007e0db2674823ef525"
+    },
+    {
+      "path": "emoji-keychain-phang.arch.gz",
+      "output": "emoji-keychain-phang.arch",
+      "bytes": 154936,
+      "sha256": "95f292a5933052acbad13666ec35dad3275ad6a4c11a3824d87aa625da3c3160",
+      "compressedBytes": 55279,
+      "compressedSha256": "133a7d3f4e6e7f3ec36ea2eaab5d38b2d3a532ffd61de5ef4ef9b33dd0047067"
+    },
+    {
+      "path": "emoji-keychain-phang2.aprq.gz",
+      "output": "emoji-keychain-phang2.aprq",
+      "bytes": 17151,
+      "sha256": "730be57835e33bbc217a70e570e7b92452fba584a98f1213580cf16a2242f669",
+      "compressedBytes": 3888,
+      "compressedSha256": "0ea38936d1ffb37159f399b0e7a4a77443f2a88128bb556c86268b36db693fb4"
+    },
+    {
+      "path": "emoji-keychain-phang2.arch.gz",
+      "output": "emoji-keychain-phang2.arch",
+      "bytes": 154936,
+      "sha256": "4968e951a2babfca5ead8f6eb50599cdac60ea0256e592848356b4a74f697004",
+      "compressedBytes": 55279,
+      "compressedSha256": "2c7f00956ac643783da72c8a2739844aee8caf2ec287e359184f6dd495cc9df4"
+    },
+    {
+      "path": "emoji-lego-chim.aprq.gz",
+      "output": "emoji-lego-chim.aprq",
+      "bytes": 18385,
+      "sha256": "70361b0b65188c5ab4703abe4ba0e5ba9bdf94161c49eb5623180a7966731be9",
+      "compressedBytes": 4010,
+      "compressedSha256": "5841beb2ddbc1622d44ccca28730daa95c4eff774d3eb0404632f3debfddea2d"
+    },
+    {
+      "path": "emoji-lego-chim.arch.gz",
+      "output": "emoji-lego-chim.arch",
+      "bytes": 154936,
+      "sha256": "6a993aebd6fc5ca08d254abd3ebb7be37aac59a6b3286747ef3db5d613bf6a16",
+      "compressedBytes": 55279,
+      "compressedSha256": "027f955a79171acc1e55f49146956286c4c9935e57e8256dd2f5d27289e584c7"
+    },
+    {
+      "path": "emoji-lego-noi.aprq.gz",
+      "output": "emoji-lego-noi.aprq",
+      "bytes": 18384,
+      "sha256": "adee569b3cc0b01fca51da27eef28622cf8399dd0de04b303ae78629f1b6d087",
+      "compressedBytes": 4008,
+      "compressedSha256": "d75a005f34ba27d17897f085d1f73576be0080cea902a5662b5185a22b3b7c28"
+    },
+    {
+      "path": "emoji-lego-noi.arch.gz",
+      "output": "emoji-lego-noi.arch",
+      "bytes": 154936,
+      "sha256": "947b9e1e72f144a649f5546211525ce7ccf90e7466ae08a83e1f8690018af1e2",
+      "compressedBytes": 55279,
+      "compressedSha256": "1f3af6f0558ceda139aa9afdb6a31e13e585beffa0678dc45dd0e6133678e7b6"
+    },
+    {
+      "path": "emoji-lego-phang.aprq.gz",
+      "output": "emoji-lego-phang.aprq",
+      "bytes": 18390,
+      "sha256": "c22cdf7947ba78f63c1f764ce5fdcce36d62d74b957760b84211d66a42759ef8",
+      "compressedBytes": 4010,
+      "compressedSha256": "5c70658e34931442c390545f2ef70ba7f2649a4b638a0b086ecc25643a12fc1a"
+    },
+    {
+      "path": "emoji-lego-phang.arch.gz",
+      "output": "emoji-lego-phang.arch",
+      "bytes": 154936,
+      "sha256": "c4736f60dfba871e6809a5684c78eace01c66d4394ac0016d5585f7e43618b6e",
+      "compressedBytes": 55279,
+      "compressedSha256": "a37005f81d9bba140144090524ea67e43b9900ff3645aebe84f18a412793fc49"
+    },
+    {
+      "path": "emoji-lego-phang2.aprq.gz",
+      "output": "emoji-lego-phang2.aprq",
+      "bytes": 18391,
+      "sha256": "4bd43b93677b6e83ad1275dff51b1efd1b1de04b6d72bc6d8a8b883bdf973bf2",
+      "compressedBytes": 4011,
+      "compressedSha256": "49c11d94762ed1aea168140aeda3aebb82e679e4a2d98496850833a5720fb74a"
+    },
+    {
+      "path": "emoji-lego-phang2.arch.gz",
+      "output": "emoji-lego-phang2.arch",
+      "bytes": 154936,
+      "sha256": "77517f572579a1dd894f82a0e8fefc76c5c60b998d95ef9cf7353ce986d16b56",
+      "compressedBytes": 55279,
+      "compressedSha256": "991f36d03ca00c2056273246bd5349f1393a8c96147b2d1cf86a88d20fadf244"
+    },
+    {
+      "path": "emoji-strap-chim.aprq.gz",
+      "output": "emoji-strap-chim.aprq",
+      "bytes": 17391,
+      "sha256": "5b9ae2a16175d331337d71bc9904f95a21c8008de4fb165bfcfe064a0eb75456",
+      "compressedBytes": 3887,
+      "compressedSha256": "655191e3691a4050d29fab1b44191e98e540763f7670b7ee04e612bf9dd12f7d"
+    },
+    {
+      "path": "emoji-strap-chim.arch.gz",
+      "output": "emoji-strap-chim.arch",
+      "bytes": 154936,
+      "sha256": "c3de45e3f4bc232f71544bae22069b9c3ffb23e3d5edaec01827236d500b3b3f",
+      "compressedBytes": 55279,
+      "compressedSha256": "6255bb7d7c066636014c977bc9d9e21e1250ad4c4f102358e7144c7aad637230"
+    },
+    {
+      "path": "emoji-strap-noi.aprq.gz",
+      "output": "emoji-strap-noi.aprq",
+      "bytes": 17388,
+      "sha256": "a5aa7f585039edebcaeb001bf72f1784b1eeceec15ee7917cc981a3cc49c1207",
+      "compressedBytes": 3890,
+      "compressedSha256": "83f64d12d532a9aa20209ca3124a28924a2c92076bba361f3e0f302568d2d50a"
+    },
+    {
+      "path": "emoji-strap-noi.arch.gz",
+      "output": "emoji-strap-noi.arch",
+      "bytes": 154936,
+      "sha256": "a08db55d8b2e7f83f35e8ce325c6fb5883ab389689f28b163e89a12a37574be8",
+      "compressedBytes": 55279,
+      "compressedSha256": "c6b94b7ac64ae66521498f9f1b758505a10a894c13825bc69336fb6a81781e83"
+    },
+    {
+      "path": "emoji-strap-phang.aprq.gz",
+      "output": "emoji-strap-phang.aprq",
+      "bytes": 17389,
+      "sha256": "c58d7efd2fcf0655c9a711dcec13c4beaae4177765f4a38d93b6c7527128446b",
+      "compressedBytes": 3887,
+      "compressedSha256": "0337ac160f43f888d91585e1768b2029c2086d4b7e6202fc366542c88c6d8329"
+    },
+    {
+      "path": "emoji-strap-phang.arch.gz",
+      "output": "emoji-strap-phang.arch",
+      "bytes": 154936,
+      "sha256": "7a5bb7211a2252559a44d4b540fa135554929e19b1a8eba5096ac290c4b8607b",
+      "compressedBytes": 55279,
+      "compressedSha256": "ab81ad96bed388589e784771db58e073a450af98d8e27ff4bf4669313b8ff499"
+    },
+    {
+      "path": "emoji-strap-phang2.aprq.gz",
+      "output": "emoji-strap-phang2.aprq",
+      "bytes": 17391,
+      "sha256": "18e59346a24a0e0617e62dd64e86afd03391598b5b86f49fc59a63e0dfb50741",
+      "compressedBytes": 3890,
+      "compressedSha256": "f6dcd9058909969f9f3b019bf73236eb46b24750f4f87c9033c3098162c5fc4d"
+    },
+    {
+      "path": "emoji-strap-phang2.arch.gz",
+      "output": "emoji-strap-phang2.arch",
+      "bytes": 154936,
+      "sha256": "21ddb649baffee07d60c8504a45b031edb20d981f76614d401cede226d49d692",
+      "compressedBytes": 55279,
+      "compressedSha256": "f8c8e6c63227857a431452710538a4971f8d5ddd75e45fd108a60527e0ce5525"
+    },
+    {
+      "path": "text-charm-chim.aprq.gz",
+      "output": "text-charm-chim.aprq",
+      "bytes": 17775,
+      "sha256": "49fe2d76ef43afc8a8b0a87ed21d1a7182abccb66a73a333eb1a6e61e273db98",
+      "compressedBytes": 3935,
+      "compressedSha256": "6cffc270d0b6f4b48b01facc17b407ada59a4f0ee821394a5497edcfc5ce8287"
+    },
+    {
+      "path": "text-charm-chim.arch.gz",
+      "output": "text-charm-chim.arch",
+      "bytes": 51548,
+      "sha256": "0e492e434c1e31717b9a9a309cfe0de6cae64251451a2869e2d2df10642cc7f7",
+      "compressedBytes": 17967,
+      "compressedSha256": "009708e49c2523d88eb9723ab94623044dc6322d19647799350492e26a0b3711"
+    },
+    {
+      "path": "text-charm-noi.aprq.gz",
+      "output": "text-charm-noi.aprq",
+      "bytes": 17773,
+      "sha256": "9be27a06e80a94e20bc7c93b2d855452074913c2bd13b9d0da4558301d79aafc",
+      "compressedBytes": 3933,
+      "compressedSha256": "c4b607b03b0537f1e384ba183f240d3c8a520a98180a6faf5f3dede6e1d5529a"
+    },
+    {
+      "path": "text-charm-noi.arch.gz",
+      "output": "text-charm-noi.arch",
+      "bytes": 51548,
+      "sha256": "0638db0fdb13f5a523ed4c1bb0da2571da736a4047d82c796a8c01842a847aa0",
+      "compressedBytes": 17968,
+      "compressedSha256": "847aecd844e6aa5d8ec7ffe3676f7a97eceadc2b90022b70ea061e75a14e136f"
+    },
+    {
+      "path": "text-charm-phang.aprq.gz",
+      "output": "text-charm-phang.aprq",
+      "bytes": 17781,
+      "sha256": "81d44ccd6aaa4f1b1ee12412baf50847213045f9607855a2bff79a8c3ed50564",
+      "compressedBytes": 3942,
+      "compressedSha256": "2c3179188077c69dbbda352d6fe8fab0933b521bc49a5036f4ab3c1b7b98f925"
+    },
+    {
+      "path": "text-charm-phang.arch.gz",
+      "output": "text-charm-phang.arch",
+      "bytes": 51548,
+      "sha256": "f16709e9268bfa84ce14aef6aa2ea497e84cb2405f1b661fdad7cac0fbe942f6",
+      "compressedBytes": 17965,
+      "compressedSha256": "0e5b1b2da44148663b8805691b76329bbce309dfd8b01a20670fefc2c2973e7d"
+    },
+    {
+      "path": "text-charm-phang2.aprq.gz",
+      "output": "text-charm-phang2.aprq",
+      "bytes": 17779,
+      "sha256": "23a3717b89e156fa82f08e547b3a2ba516a398a3b1c5435302b0f4cc9e71ad4a",
+      "compressedBytes": 3932,
+      "compressedSha256": "dab0e6e2f07ec2c0c39fce73dad1f87f53d99a242064253e3b68f6f72a529e01"
+    },
+    {
+      "path": "text-charm-phang2.arch.gz",
+      "output": "text-charm-phang2.arch",
+      "bytes": 51548,
+      "sha256": "a9d66620f6cca74d3bf6ca1ddc6732124cd3e4a29615ce806e7b5b7fc1d30cd5",
+      "compressedBytes": 17966,
+      "compressedSha256": "59b8375d65ce8d74ac21ff816788c7ead9a98ad271c69cbd58dd060b442cd44f"
+    },
+    {
+      "path": "text-clicky-chim.aprq.gz",
+      "output": "text-clicky-chim.aprq",
+      "bytes": 21207,
+      "sha256": "272d5291bbad495b69b8bc8a681ac6a52b731872dad299e15be89ebacd90eac0",
+      "compressedBytes": 4357,
+      "compressedSha256": "008b88da8edf6bada0c64e93b225a46c2ca5b8b4944f202c4afb830c99c3e5a4"
+    },
+    {
+      "path": "text-clicky-chim.arch.gz",
+      "output": "text-clicky-chim.arch",
+      "bytes": 51548,
+      "sha256": "f406586307c3ecac0d512b2e89f7ecfa41035b38ebc7cb281241fddaceb0f32d",
+      "compressedBytes": 17964,
+      "compressedSha256": "cbc1f5dac535f0596378ce563d1dd76d1146e862a817cf5610f68f7bdf29179e"
+    },
+    {
+      "path": "text-clicky-noi.aprq.gz",
+      "output": "text-clicky-noi.aprq",
+      "bytes": 21210,
+      "sha256": "51fde712673dadaf47863a429fe42aed753fd49a52c16f542479587ddae1a494",
+      "compressedBytes": 4351,
+      "compressedSha256": "318335dcc5a88c357ef83c9a72d89ad852de6a97eef254923cfac08cdb21fbdd"
+    },
+    {
+      "path": "text-clicky-noi.arch.gz",
+      "output": "text-clicky-noi.arch",
+      "bytes": 51548,
+      "sha256": "af640203d8d493518b7861238d20fbd4a6ded4b6aa0e87e65f3449a74ecb8ab4",
+      "compressedBytes": 17966,
+      "compressedSha256": "d709f79c3d74b4a189a08096eedb40c2bb80176505054a2913ff6d4aa3634e18"
+    },
+    {
+      "path": "text-clicky-phang.aprq.gz",
+      "output": "text-clicky-phang.aprq",
+      "bytes": 21208,
+      "sha256": "2daa901f50b0f5175a6ba5bff6d8c88c4d0522a316f4cfc212986f219582048c",
+      "compressedBytes": 4352,
+      "compressedSha256": "55cd40be5a28fb1234555c534dff6de08c03e5a3135beb08828cd827c4704390"
+    },
+    {
+      "path": "text-clicky-phang.arch.gz",
+      "output": "text-clicky-phang.arch",
+      "bytes": 51548,
+      "sha256": "99f94b12697b411ff4b0d45e724f0a6d836c74dbc341190b6496b57d5581b84f",
+      "compressedBytes": 17964,
+      "compressedSha256": "484c2face4cb6452f4d4316e06ec9b93a32ab26b09e4e360d734525d70670bb6"
+    },
+    {
+      "path": "text-clicky-phang2.aprq.gz",
+      "output": "text-clicky-phang2.aprq",
+      "bytes": 21211,
+      "sha256": "a81937caef78b2c0c4a62bd8f38203fd259efaaa7d5796f6abd0b0b5a5321f27",
+      "compressedBytes": 4350,
+      "compressedSha256": "7c355e09a1d7fab0d8589f2adaf45217fc891e85f423dfb5642590957ae933a7"
+    },
+    {
+      "path": "text-clicky-phang2.arch.gz",
+      "output": "text-clicky-phang2.arch",
+      "bytes": 51548,
+      "sha256": "8e6d246e4c35402518dd78f79d14e9aae8d39885d98dc1053b9c0f7454d46d35",
+      "compressedBytes": 17967,
+      "compressedSha256": "d7355dec19b04fb05f5ad28dd81c00acb87323962db4b0d58121b8a7a6dfcdac"
+    },
+    {
+      "path": "text-keychain-chim.aprq.gz",
+      "output": "text-keychain-chim.aprq",
+      "bytes": 17147,
+      "sha256": "f7b10385660c4a73981ce30668d5968a0b35d9d2989d379f06a0561e74bb772c",
+      "compressedBytes": 3886,
+      "compressedSha256": "86391470f4987a0bd5e55bc6ab55f85bc08baf697e43d8d95c2d4b05c92fe32c"
+    },
+    {
+      "path": "text-keychain-chim.arch.gz",
+      "output": "text-keychain-chim.arch",
+      "bytes": 51548,
+      "sha256": "9310ca4cde6690f6358c7f7c2a8f2a288013905c4fda7e10a53736f8f8581100",
+      "compressedBytes": 17965,
+      "compressedSha256": "3651107a0ecac20146bcb11cd4abda0ddb56b7ccb4987300ae5d62a92de7e828"
+    },
+    {
+      "path": "text-keychain-noi.aprq.gz",
+      "output": "text-keychain-noi.aprq",
+      "bytes": 17145,
+      "sha256": "bce8f43235f1e226cecd347f4f90bc93c4c9305fddead891038e4f3e1d0ab751",
+      "compressedBytes": 3876,
+      "compressedSha256": "d5a7b1d0357a4656393edcc9f63b4186081f3a7b139d722f74a9f59818dce39b"
+    },
+    {
+      "path": "text-keychain-noi.arch.gz",
+      "output": "text-keychain-noi.arch",
+      "bytes": 51548,
+      "sha256": "59983657e039cdd72370678fb5e62e8e41a9c03a59f574f3489613905fbea599",
+      "compressedBytes": 17963,
+      "compressedSha256": "233bfbf04ab31922fed4d6727bc7d3e5173b5f52ecd676e773e2ef552ccd0efa"
+    },
+    {
+      "path": "text-keychain-phang.aprq.gz",
+      "output": "text-keychain-phang.aprq",
+      "bytes": 17144,
+      "sha256": "608c7a72996b6b09db15054427af83aa817ff1fe6dba12eca154b972ec476498",
+      "compressedBytes": 3878,
+      "compressedSha256": "69869d3aa998c1cb43f7844f820513476ce702f08397859e6ffcc19435a6c374"
+    },
+    {
+      "path": "text-keychain-phang.arch.gz",
+      "output": "text-keychain-phang.arch",
+      "bytes": 51548,
+      "sha256": "32515f79ed8e0e70bc65548193478582626e0d2a5ceb29b3336bae5d60a99b1b",
+      "compressedBytes": 17967,
+      "compressedSha256": "0a625e7aa8acc3ab7a8be16db8f227ebe6bc3c8882163ee08b48b654aceac3b8"
+    },
+    {
+      "path": "text-keychain-phang2.aprq.gz",
+      "output": "text-keychain-phang2.aprq",
+      "bytes": 17145,
+      "sha256": "3ba0559e261f1ec601fdf7fa8b455d9dafb6b7e06946aa0b4d9f1879eec4f702",
+      "compressedBytes": 3880,
+      "compressedSha256": "bb308c8bdeee0e4fa39f710818efacca77ab26dfab81b336abcfdb85ed54cfbd"
+    },
+    {
+      "path": "text-keychain-phang2.arch.gz",
+      "output": "text-keychain-phang2.arch",
+      "bytes": 51548,
+      "sha256": "13d26e5f65a79faf596954a320facddd01800ecd3aefbe72abc17afd26eb24c0",
+      "compressedBytes": 17966,
+      "compressedSha256": "170542e2d4fdd155b711300c6fd0f519f1875a4a21e21eefe520b2c6049f7f19"
+    },
+    {
+      "path": "text-lego-chim.aprq.gz",
+      "output": "text-lego-chim.aprq",
+      "bytes": 18389,
+      "sha256": "71ce4ed6e66399c82da1ff5f44b884ac20dcfcc6401be529d0ddee5126b201bf",
+      "compressedBytes": 4007,
+      "compressedSha256": "be2a37c01845d52f3e0cee96f0a147dff9d9a0fba9f87c0e91bacbcf61e16730"
+    },
+    {
+      "path": "text-lego-chim.arch.gz",
+      "output": "text-lego-chim.arch",
+      "bytes": 51548,
+      "sha256": "21da936dae0b2f2dfd32c032cf9e053b03697337a231790e46b4a9383690c440",
+      "compressedBytes": 17966,
+      "compressedSha256": "dd5f38569c5d077e8f134dd7655f13295dc2493b705b0a6ffadafad30b520efe"
+    },
+    {
+      "path": "text-lego-noi.aprq.gz",
+      "output": "text-lego-noi.aprq",
+      "bytes": 18388,
+      "sha256": "f4d0e07e78379c02799e13de1daf00912e044936a91818817fa240fcca84c4f7",
+      "compressedBytes": 4007,
+      "compressedSha256": "b1a07655e0bfcc30523231bed4df79954ee0ed1e875d4c61ebf62b29bc3cad03"
+    },
+    {
+      "path": "text-lego-noi.arch.gz",
+      "output": "text-lego-noi.arch",
+      "bytes": 51548,
+      "sha256": "14c56a7e29d25084eacdc59036ae5374d1f729128501c1ff3772029df177bed7",
+      "compressedBytes": 17966,
+      "compressedSha256": "7cd127db23ae3696f20a5ed7ff9f584ab5fd1cd2381d0407fd51cea01a6c9457"
+    },
+    {
+      "path": "text-lego-phang.aprq.gz",
+      "output": "text-lego-phang.aprq",
+      "bytes": 18388,
+      "sha256": "b5bfb09009dc7a3fdd2b407953c96deaf00c27db02bad5cbfd69f3818e2b4880",
+      "compressedBytes": 4013,
+      "compressedSha256": "2a3dc17e57f39b6836c9ecb3c66924e890f5c25754a7ab143738e283b5a17918"
+    },
+    {
+      "path": "text-lego-phang.arch.gz",
+      "output": "text-lego-phang.arch",
+      "bytes": 51548,
+      "sha256": "3e0a2b89c0725f3023a2935725fed3870faf3ca4f5c6fd59dd2f51c41dc425d0",
+      "compressedBytes": 17967,
+      "compressedSha256": "019c01f30f5c1f4f5945b306fa7952d4e321f5bd59e00c524f5946db8af024bc"
+    },
+    {
+      "path": "text-lego-phang2.aprq.gz",
+      "output": "text-lego-phang2.aprq",
+      "bytes": 18387,
+      "sha256": "68b1306af28448489be13fbf6a41f7cc83861af7d4763be6a17fadd5b30029ec",
+      "compressedBytes": 4021,
+      "compressedSha256": "804d1b9bdc9f742ae497f68649e4d57d0db601ad700627b7a9df13561db8ec9b"
+    },
+    {
+      "path": "text-lego-phang2.arch.gz",
+      "output": "text-lego-phang2.arch",
+      "bytes": 51548,
+      "sha256": "a23b3e6fc8d0de99ad176f4013324667126acee47b4b824ea2ca1dffa8f42964",
+      "compressedBytes": 17966,
+      "compressedSha256": "9916a9f27e9a1873e57d8b033b54112b1107a5431b0f06a3d157f963f33e9718"
+    },
+    {
+      "path": "text-strap-chim.aprq.gz",
+      "output": "text-strap-chim.aprq",
+      "bytes": 17385,
+      "sha256": "839272e4adff652f77c1504c25fffdea0fadb14b3823ef97a98795aab8225231",
+      "compressedBytes": 3888,
+      "compressedSha256": "495a664bad1e737f6261f72de57da2a909ca343218a3907bb694f3c6d7d85511"
+    },
+    {
+      "path": "text-strap-chim.arch.gz",
+      "output": "text-strap-chim.arch",
+      "bytes": 51548,
+      "sha256": "be576792832d44c0357c0c18971a3f60eb4a538b8a7872f5681b028274ba0d73",
+      "compressedBytes": 17968,
+      "compressedSha256": "9aeb62e74ba2f0d7cb26ab3a89237ecbb7da2acdc85b654bb48c844588d7143b"
+    },
+    {
+      "path": "text-strap-noi.aprq.gz",
+      "output": "text-strap-noi.aprq",
+      "bytes": 17385,
+      "sha256": "c1dbc9217031fc93ed85714cf52268921c721c421cd8e481642bebc61312806d",
+      "compressedBytes": 3880,
+      "compressedSha256": "6e41c801d0f1accc8482d5951d70361c7b7dd545172e1378ae417ead321437d1"
+    },
+    {
+      "path": "text-strap-noi.arch.gz",
+      "output": "text-strap-noi.arch",
+      "bytes": 51548,
+      "sha256": "2f4a18ace0d0faad971bb84ff60d23ecdf44d8dd787707908e061d072e1ae3e9",
+      "compressedBytes": 17968,
+      "compressedSha256": "65ca1f7ae2b133dc893494b0a951f104498970188973f15ac85bcf484c39aa73"
+    },
+    {
+      "path": "text-strap-phang.aprq.gz",
+      "output": "text-strap-phang.aprq",
+      "bytes": 17382,
+      "sha256": "311d3d7eb2a4122fbf3dfcf5cf37b71f41d7e1c3c15832573168ff0a081fe390",
+      "compressedBytes": 3886,
+      "compressedSha256": "9c633eead71b6816d6dc91bc04365f4d0a278c071eba31062aba636bf132156e"
+    },
+    {
+      "path": "text-strap-phang.arch.gz",
+      "output": "text-strap-phang.arch",
+      "bytes": 51548,
+      "sha256": "ad0b64766f611339db55be2d0b57f6746c85d179a3695afd9413734cfed93f23",
+      "compressedBytes": 17966,
+      "compressedSha256": "ba301d22dfe4b2dbfd536eb3e5cd737b6c9a9f8957a629b7f6b0d283918fba86"
+    },
+    {
+      "path": "text-strap-phang2.aprq.gz",
+      "output": "text-strap-phang2.aprq",
+      "bytes": 17388,
+      "sha256": "c69cb7eb810de2482b09b5b55f828e7a823166572f07ee89a79af3414c89081d",
+      "compressedBytes": 3895,
+      "compressedSha256": "625a3ce85ab151278aa08d841fc8e712489ffd799c1db8b428f81a8c2447f5c0"
+    },
+    {
+      "path": "text-strap-phang2.arch.gz",
+      "output": "text-strap-phang2.arch",
+      "bytes": 51548,
+      "sha256": "402d29eb2e89e7b10d07d0a322f7ee0891ad5892227eaaa6461bee19d6655cf9",
+      "compressedBytes": 17966,
+      "compressedSha256": "19bce3cba3b0a57fb0f73f514a36640efb86992d77133e6221ffbb30c1d378ab"
+    }
+  ]
+}

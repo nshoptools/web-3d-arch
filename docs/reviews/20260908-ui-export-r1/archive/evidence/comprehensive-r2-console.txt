@@ -1,0 +1,84 @@
+chromium PASS L01: raw decimal and text drafts retain first-dirty revision and current rejection
+chromium PASS L02: late success preserves newer text and its starting revision
+chromium PASS L03: current success releases base and external publication updates clean field
+chromium FAIL L04: new draft suppresses old shared confirmation
+chromium FAIL L05: Escape suppresses old shared confirmation
+chromium FAIL L06: same-value numeric Enter cancels and releases the revision fence
+chromium PASS L07: same-value text Enter and numeric blur cancel drafts
+chromium PASS L08: concurrent fields keep independent refusals
+chromium PASS L09: conditional field removal suppresses refused confirmation
+chromium PASS L10-project: pending confirmation suppressed across project ABA
+chromium PASS L10-account: pending confirmation suppressed across account ABA
+chromium FAIL L11-project: dirty draft does not migrate into a different project
+chromium FAIL L11-account: dirty draft does not migrate into a different account
+chromium FAIL L12-project: already-open conversion consent retired across project ABA
+chromium FAIL L12-account: already-open conversion consent retired across account ABA
+chromium PASS L13: inspection intent and conversion acceptance require explicit actions
+chromium FAIL L14: late older response cannot replace newer confirmation
+chromium PASS R01: optional, empty and historical receipts preserve declared facts
+chromium PASS R02: receipt reordering retains download ID and metadata refusals remain reachable
+chromium PASS R03: removed receipt and account ABA drop late errors and confirmation bodies
+chromium PASS R04: renderer export identifies the stale visible model and leaves revision intact
+chromium PASS K01: keyboard config controls preserve literal values and bound errors
+chromium FAIL K02: mobile Escape discards only the field draft before closing its drawer
+chromium PASS V01-320-14: export controls and long receipts reflow at 320px / 14px app text
+chromium PASS V01-320-28: export controls and long receipts reflow at 320px / 28px app text
+chromium PASS V01-1280-28: export controls and long receipts reflow at 1280px / 28px app text
+chromium FAIL K03: published disabled controls have a keyboard-reachable reason
+chromium FAIL K04: numeric limits and unit are associated with the input for assistive reading
+firefox PASS L01: raw decimal and text drafts retain first-dirty revision and current rejection
+firefox PASS L02: late success preserves newer text and its starting revision
+firefox PASS L03: current success releases base and external publication updates clean field
+firefox FAIL L04: new draft suppresses old shared confirmation
+firefox FAIL L05: Escape suppresses old shared confirmation
+firefox FAIL L06: same-value numeric Enter cancels and releases the revision fence
+firefox PASS L07: same-value text Enter and numeric blur cancel drafts
+firefox PASS L08: concurrent fields keep independent refusals
+firefox PASS L09: conditional field removal suppresses refused confirmation
+firefox PASS L10-project: pending confirmation suppressed across project ABA
+firefox PASS L10-account: pending confirmation suppressed across account ABA
+firefox FAIL L11-project: dirty draft does not migrate into a different project
+firefox FAIL L11-account: dirty draft does not migrate into a different account
+firefox FAIL L12-project: already-open conversion consent retired across project ABA
+firefox FAIL L12-account: already-open conversion consent retired across account ABA
+firefox PASS L13: inspection intent and conversion acceptance require explicit actions
+firefox FAIL L14: late older response cannot replace newer confirmation
+firefox PASS R01: optional, empty and historical receipts preserve declared facts
+firefox PASS R02: receipt reordering retains download ID and metadata refusals remain reachable
+firefox PASS R03: removed receipt and account ABA drop late errors and confirmation bodies
+firefox PASS R04: renderer export identifies the stale visible model and leaves revision intact
+firefox PASS K01: keyboard config controls preserve literal values and bound errors
+firefox FAIL K02: mobile Escape discards only the field draft before closing its drawer
+firefox PASS V01-320-14: export controls and long receipts reflow at 320px / 14px app text
+firefox PASS V01-320-28: export controls and long receipts reflow at 320px / 28px app text
+firefox PASS V01-1280-28: export controls and long receipts reflow at 1280px / 28px app text
+firefox FAIL K03: published disabled controls have a keyboard-reachable reason
+firefox FAIL K04: numeric limits and unit are associated with the input for assistive reading
+webkit PASS L01: raw decimal and text drafts retain first-dirty revision and current rejection
+webkit PASS L02: late success preserves newer text and its starting revision
+webkit PASS L03: current success releases base and external publication updates clean field
+webkit FAIL L04: new draft suppresses old shared confirmation
+webkit FAIL L05: Escape suppresses old shared confirmation
+webkit FAIL L06: same-value numeric Enter cancels and releases the revision fence
+webkit PASS L07: same-value text Enter and numeric blur cancel drafts
+webkit PASS L08: concurrent fields keep independent refusals
+webkit PASS L09: conditional field removal suppresses refused confirmation
+webkit PASS L10-project: pending confirmation suppressed across project ABA
+webkit PASS L10-account: pending confirmation suppressed across account ABA
+webkit FAIL L11-project: dirty draft does not migrate into a different project
+webkit FAIL L11-account: dirty draft does not migrate into a different account
+webkit FAIL L12-project: already-open conversion consent retired across project ABA
+webkit FAIL L12-account: already-open conversion consent retired across account ABA
+webkit PASS L13: inspection intent and conversion acceptance require explicit actions
+webkit FAIL L14: late older response cannot replace newer confirmation
+webkit PASS R01: optional, empty and historical receipts preserve declared facts
+webkit PASS R02: receipt reordering retains download ID and metadata refusals remain reachable
+webkit PASS R03: removed receipt and account ABA drop late errors and confirmation bodies
+webkit PASS R04: renderer export identifies the stale visible model and leaves revision intact
+webkit PASS K01: keyboard config controls preserve literal values and bound errors
+webkit FAIL K02: mobile Escape discards only the field draft before closing its drawer
+webkit PASS V01-320-14: export controls and long receipts reflow at 320px / 14px app text
+webkit PASS V01-320-28: export controls and long receipts reflow at 320px / 28px app text
+webkit PASS V01-1280-28: export controls and long receipts reflow at 1280px / 28px app text
+webkit FAIL K03: published disabled controls have a keyboard-reachable reason
+webkit FAIL K04: numeric limits and unit are associated with the input for assistive reading

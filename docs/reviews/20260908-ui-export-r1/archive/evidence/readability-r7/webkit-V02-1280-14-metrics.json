@@ -1,0 +1,42 @@
+{
+  "label": "Hướng chế tạo · orientation",
+  "labelWidth": 0,
+  "labelHeight": 433.40625,
+  "labelFont": "13px",
+  "firstWord": "Hướng",
+  "firstWordRects": [
+    {
+      "x": 108,
+      "y": 317.328125,
+      "width": 9.2294921875,
+      "height": 17
+    },
+    {
+      "x": 108,
+      "y": 336.171875,
+      "width": 7.642578125,
+      "height": 17
+    },
+    {
+      "x": 108,
+      "y": 355.015625,
+      "width": 7.76318359375,
+      "height": 17
+    },
+    {
+      "x": 108,
+      "y": 373.859375,
+      "width": 7.35693359375,
+      "height": 17
+    },
+    {
+      "x": 108,
+      "y": 392.703125,
+      "width": 7.6552734375,
+      "height": 17
+    }
+  ],
+  "controlWidth": 265,
+  "controlFont": "14px",
+  "panelWidth": 344
+}

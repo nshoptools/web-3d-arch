@@ -1,0 +1,4 @@
+{"status":"replanning-relocated-input","publicCopy":false}
+{"status":"independent-plan-matches-immutable-release","sha256":"720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898"}
+{"status":"all-artifact-public-and-private-file-pins-verified","files":21647,"sha256":"720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898"}
+{"status":"final-plan-binding-verified","prepared":"D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal","preparedSHA256":"029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6","artifact":"D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal","artifactSHA256":"720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898","input2":"D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal-input2.json","input2SHA256":"a3ed76ea8ca91c45681310d9051e31dc4b13b994ddf1b5ef349d4aa053261c46","compiledWorkerRerun":false,"publicRecopy":false}

@@ -1,0 +1,504 @@
+{
+  "schema": "arch-independent-geometry-review/1",
+  "reviewer": "codex",
+  "runId": "20260908-geometry-review-r4",
+  "sealedAt": "2026-09-08T08:42:21.763Z",
+  "initialFindingsSealedBeforeOtherConclusions": true,
+  "otherReviewerOrAuthorConclusionsRead": false,
+  "source": {
+    "snapshot": "work/review-source",
+    "manifest": "inputs/source-manifest.json",
+    "manifestSha256": "34b54a85cfe723c28973c987ea2510164d93b2431b6baadc0e5b092e84791a57",
+    "filesVerified": 652,
+    "sourceUnchanged": true
+  },
+  "configuration": {
+    "required": {
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "fast": false
+    },
+    "actual": {
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "fastClientConfiguration": false,
+      "cliVersion": "0.153.4",
+      "sessionId": "01a08013-a98a-7ee3-8a6e-537b26d65f4b"
+    },
+    "seatConfigDate": "2026-09-07",
+    "officialSourceCheckDate": "2026-09-08",
+    "strongerVerifiedAvailableConfigurationEstablished": false,
+    "evidence": [
+      {
+        "path": "evidence/config-attestation.json",
+        "sha256": "15513107f77c6477a9c540f4c89b5100f86ad9f8deb0b7594c0a424a2b90d145"
+      },
+      {
+        "path": "evidence/live-process-config.json",
+        "sha256": "498546ca0e647d50e879f0abf547ea72f127c56a340919a6fe4deb646a93c36a"
+      },
+      {
+        "path": "evidence/launch.json",
+        "sha256": "853872a797f8919f9152b9d09e6bfef12748bd3094ce6d714f8009edf4db3fa3"
+      },
+      {
+        "path": "evidence/effective-features.txt",
+        "sha256": "f8f6e1b85bb90379a8724ae53b6b9769bd8b2095fc2b308fd37659418dce0ff8"
+      },
+      {
+        "path": "inputs/seat-source-check.json",
+        "sha256": "9bb3631beea3eea302fe29a3d6d3c21af1af06c4268c6de795c0a6c9c97530d0"
+      }
+    ],
+    "attestationScope": "Actual session metadata establishes model/effort/CLI; matching live command and effective feature list establish client Fast off. No server-side service-tier receipt inspected. Only selected session metadata fields extracted; auth and evidence/events.jsonl not consulted."
+  },
+  "disposition": "No substantiated in-scope defects found; bounded review, not general geometry or release qualification.",
+  "findings": [],
+  "highValueChecks": [
+    {
+      "id": "C01",
+      "topic": "Immutable snapshot",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [],
+      "trigger": "Hash all manifest entries before and after work.",
+      "expected": "All source bytes match the supplied manifest.",
+      "observed": "652/652 match at both boundaries; no source or main edits.",
+      "uncertainty": "File identity only, not independent root build provenance.",
+      "evidence": [
+        {
+          "path": "evidence/snapshot-integrity-start.json",
+          "sha256": "657e1227cf61c6055729ea39302c1c2b3939fe21c84831b40a1975187bce17a6"
+        },
+        {
+          "path": "evidence/snapshot-integrity-end.json",
+          "sha256": "6b0557e01502a33c3cb6474793aae62ded336c9b03195dbb8c3cfa027bb594a8"
+        }
+      ]
+    },
+    {
+      "id": "C02",
+      "topic": "Source/options/proposal seals",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 225,
+          "lineEnd": 266
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 19,
+          "lineEnd": 83
+        }
+      ],
+      "trigger": "Recompute SHA; repeat prepare; change filename/materialSource/workLimit and confirmation fields; mutate borrowed original/candidate/correspondence buffers then restore.",
+      "expected": "Identical context yields identical hashes; altered context fails or yields new hashes; no pre-confirmation file.",
+      "observed": "Independent source and complete AFCP hashes match. Changed settings bind distinct proposal hashes. Original-buffer changes reject STALE_CONTEXT; candidate/correspondence changes reject BUFFER_CHANGED. Prepare publishes no final-output file.",
+      "uncertainty": "Serial ABI contract. Descriptor equality does not supply UI consent or application CAS.",
+      "evidence": [
+        {
+          "path": "evidence/independent-runtime.json",
+          "sha256": "40d51e367df9434348866c697f863e7cbb9f39dd03061a0a750033b62ae1c3fa"
+        },
+        {
+          "path": "evidence/native-root/result.json",
+          "sha256": "2e1b98f9ffa5cbf6cf36447eb6b1f56e08d514c920a6f0f22d23b03af27bcf15"
+        },
+        {
+          "path": "evidence/production-workers.tap",
+          "sha256": "3c9693365ed94bc33372e82f1a7a24f23ec2bfe8b36b531c26b0c950be493174"
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "topic": "Assembly/revision authority",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/mod.rs",
+          "lineStart": 25,
+          "lineEnd": 35
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 26,
+          "lineEnd": 45
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 66,
+          "lineEnd": 83
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/geometry_runtime.rs",
+          "lineStart": 17,
+          "lineEnd": 51
+        },
+        {
+          "snapshotPath": "src/kernel/src/abi/product_runtime.rs",
+          "lineStart": 25,
+          "lineEnd": 37
+        },
+        {
+          "snapshotPath": "src/core/engine-client.mjs",
+          "lineStart": 272,
+          "lineEnd": 306
+        }
+      ],
+      "trigger": "Read back/prepare assembly clicky; forge matching caller revision/expectedRevision 99; submit copied client reader.",
+      "expected": "Root immutable Payload restrictions remain mandatory.",
+      "observed": "ASSEMBLY_VIEW, STALE_REVISION and SNAPSHOT_LEASE_OWNERSHIP rejections. Readback repeats Pin::new before publication; confirm pins and rehashes retained source. Readback returns a final-output lease rather than publishing a root snapshot. No bypass found.",
+      "uncertainty": "Actual clicky/assembly fixtures exercised; current application context after export and account/project CAS are outside scope.",
+      "evidence": [
+        {
+          "path": "evidence/native-root/result.json",
+          "sha256": "2e1b98f9ffa5cbf6cf36447eb6b1f56e08d514c920a6f0f22d23b03af27bcf15"
+        },
+        {
+          "path": "evidence/float-workers/chromium.json",
+          "sha256": "038c47c108a3f69be0cefc4e4ee9189188e8a35ced0513c8c2c341e71ba64514"
+        },
+        {
+          "path": "evidence/float-workers/firefox.json",
+          "sha256": "6a4d6e1b86a947314d74f0b580220fbf499d0b4cd302239e6bcaaaaa194c2ec5"
+        },
+        {
+          "path": "evidence/float-workers/webkit.json",
+          "sha256": "34d89533162faece291d8124542857203ad8a1f702d23628f57df54cbbdd4918"
+        }
+      ]
+    },
+    {
+      "id": "C04",
+      "topic": "Copies/leases/epochs/shared Module",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/float-runtime.mjs",
+          "lineStart": 20,
+          "lineEnd": 45
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 42,
+          "lineEnd": 46
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 85,
+          "lineEnd": 90
+        },
+        {
+          "snapshotPath": "src/core/engine-client.mjs",
+          "lineStart": 156,
+          "lineEnd": 189
+        },
+        {
+          "snapshotPath": "src/core/engine-client.mjs",
+          "lineStart": 297,
+          "lineEnd": 306
+        },
+        {
+          "snapshotPath": "src/core/engine-worker.mjs",
+          "lineStart": 13,
+          "lineEnd": 31
+        },
+        {
+          "snapshotPath": "src/core/engine-worker.mjs",
+          "lineStart": 211,
+          "lineEnd": 260
+        }
+      ],
+      "trigger": "Grow real WASM memory; edit defensive views; retain files through source/proposal release; retire/restart worker; mix output handle kinds.",
+      "expected": "Owned copies/leases survive expected lifetimes; stale/forged/cross-kind handles fail; retired release does not start a Worker.",
+      "observed": "All checked native, Node and three production-browser cases satisfy these requirements. Worker routes use one injected root Module; test processes intentionally use separate copies.",
+      "uncertainty": "Registry statistics corroborate these runs, not arbitrary raw-pointer safety or allocator/RSS bounds.",
+      "evidence": [
+        {
+          "path": "evidence/independent-runtime.json",
+          "sha256": "40d51e367df9434348866c697f863e7cbb9f39dd03061a0a750033b62ae1c3fa"
+        },
+        {
+          "path": "evidence/instrumented-runtime.tap",
+          "sha256": "aa63556f94b47dd0da6dee5a20526b06cbcf0cbdcb2ee8ea66f9ee928288e5ec"
+        },
+        {
+          "path": "evidence/production-workers.tap",
+          "sha256": "3c9693365ed94bc33372e82f1a7a24f23ec2bfe8b36b531c26b0c950be493174"
+        }
+      ]
+    },
+    {
+      "id": "C05",
+      "topic": "Budget/cancel",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 19,
+          "lineEnd": 31
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/float_runtime.rs",
+          "lineStart": 56,
+          "lineEnd": 83
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/geometry_runtime.rs",
+          "lineStart": 44,
+          "lineEnd": 51
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 128,
+          "lineEnd": 129
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 269,
+          "lineEnd": 307
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/mod.rs",
+          "lineStart": 13,
+          "lineEnd": 45
+        }
+      ],
+      "trigger": "Malformed registered wire, displacement/work limits, proposal/output caps, pre-cancel, native mid-proof observer and Worker confirm cancellation.",
+      "expected": "Inputs consumed, typed failures, no canceled publication, existing leases retained.",
+      "observed": "43 supplied native assertions passed, including cancellation during proof at progress >=870. Mixed ordinary/readback output cap and Worker cancellation passed; observed root counters return to zero.",
+      "uncertainty": "Working memory is an admission model. Work units do not bound all native CSG CPU time, worst-case RSS or wall-clock time.",
+      "evidence": [
+        {
+          "path": "evidence/native-prerequisite.log",
+          "sha256": "15c7fd3f7385d5b7cb4a724128fd333480a418b93c923fdd5d74e95b47609f11"
+        },
+        {
+          "path": "evidence/native-root/result.json",
+          "sha256": "2e1b98f9ffa5cbf6cf36447eb6b1f56e08d514c920a6f0f22d23b03af27bcf15"
+        },
+        {
+          "path": "evidence/independent-runtime.json",
+          "sha256": "40d51e367df9434348866c697f863e7cbb9f39dd03061a0a750033b62ae1c3fa"
+        },
+        {
+          "path": "evidence/production-workers.tap",
+          "sha256": "3c9693365ed94bc33372e82f1a7a24f23ec2bfe8b36b531c26b0c950be493174"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "topic": "Ordinary final export",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 17,
+          "lineEnd": 43
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 93,
+          "lineEnd": 119
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/mod.rs",
+          "lineStart": 46,
+          "lineEnd": 78
+        },
+        {
+          "snapshotPath": "src/core/engine-worker.mjs",
+          "lineStart": 245,
+          "lineEnd": 260
+        }
+      ],
+      "trigger": "Export analytic union before/after readback, failures and output-cap pressure; ordinary export default clicky.",
+      "expected": "Successful ordinary bytes stay identical; legacy collision rejection remains.",
+      "observed": "Analytic 1500 mm3 union STL and complete metadata remain identical. Default clicky remains INVALID_SERIALIZATION:STL_FLOAT_COLLISION natively, mapped to INVALID_SERIALIZATION at Worker API.",
+      "uncertainty": "Union STL success/failure checked, not every legacy material ZIP/SVG option.",
+      "evidence": [
+        {
+          "path": "evidence/independent-runtime.json",
+          "sha256": "40d51e367df9434348866c697f863e7cbb9f39dd03061a0a750033b62ae1c3fa"
+        },
+        {
+          "path": "evidence/native-root/result.json",
+          "sha256": "2e1b98f9ffa5cbf6cf36447eb6b1f56e08d514c920a6f0f22d23b03af27bcf15"
+        },
+        {
+          "path": "evidence/production-workers.tap",
+          "sha256": "3c9693365ed94bc33372e82f1a7a24f23ec2bfe8b36b531c26b0c950be493174"
+        }
+      ]
+    },
+    {
+      "id": "C07",
+      "topic": "Binary64 full material identity",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/geometry_runtime.rs",
+          "lineStart": 6,
+          "lineEnd": 40
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/native/final_scene_export.cpp",
+          "lineStart": 149,
+          "lineEnd": 185
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/float-runtime.mjs",
+          "lineStart": 48,
+          "lineEnd": 62
+        }
+      ],
+      "trigger": "16 tuple/order combinations, boundary materialSource values and slot 65535; edit returned bytes and repeat.",
+      "expected": "Union iff full (slot,RGBA,materialSource) agrees; preserve memberships/interiors; no f32 conversion or pass verdict.",
+      "observed": "Correct grouping and memberships in all cases. Exact integer determinants give 1500 mm3 merged volume or two 1000 mm3 groups with analytic 500 mm3 overlap. Source unchanged; owned copies stable. Production material ARCH retains non-f32 coordinates and equals native bytes.",
+      "uncertainty": "CSG and overlap warnings are not an independent mesh checker or proof of equivalence to future exporter settings.",
+      "evidence": [
+        {
+          "path": "evidence/independent-runtime.json",
+          "sha256": "40d51e367df9434348866c697f863e7cbb9f39dd03061a0a750033b62ae1c3fa"
+        },
+        {
+          "path": "evidence/float-node/material-overlap.json",
+          "sha256": "136fea262f200287c967778d90011ef54801dd495f1b4925a3ed0d3abe54639c"
+        },
+        {
+          "path": "evidence/production-workers.tap",
+          "sha256": "3c9693365ed94bc33372e82f1a7a24f23ec2bfe8b36b531c26b0c950be493174"
+        }
+      ]
+    },
+    {
+      "id": "C08",
+      "topic": "Exact triangle contacts",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 161,
+          "lineEnd": 210
+        }
+      ],
+      "trigger": "24,000 deterministic pairs: spatial/coplanar, zero/one/two shared vertices, winding permutations and bounded large integer transforms.",
+      "expected": "Match independent exact rational polygon clipping and segment-plane oracle excluding allowed shared simplex.",
+      "observed": "Zero mismatches; six categories of 4000, seed 20260908.",
+      "uncertainty": "Finite differential corpus, not exhaustive i128 proof. Standalone harness compiles unchanged captured math with cancellation stubbed; no native CSG.",
+      "evidence": [
+        {
+          "path": "evidence/triangle-oracle.json",
+          "sha256": "b08e42aa10f98f5ca757b704a6b91ede294656c2258047ea3d3d03e350127ddd"
+        },
+        {
+          "path": "work/triangle-oracle.py",
+          "sha256": "6f6d83a7c6db7373b16462e8f2dfb0f17fdf77dd95fb3e7f26bcd87f1a53d2cc"
+        },
+        {
+          "path": "work/triangle-corpus.jsonl",
+          "sha256": "f50ce30530484f5b4b37c6200f2156ff0004bc3b36225e42b19265e660d4960a"
+        },
+        {
+          "path": "work/math-probe/src/main.rs",
+          "sha256": "f17a51d0f3972dc718a4a70aa0f2a854bb8affc77e4fe3de51238708d60dbf30"
+        }
+      ]
+    },
+    {
+      "id": "C09",
+      "topic": "Difficult surfaces/topology",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 141,
+          "lineEnd": 159
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 269,
+          "lineEnd": 307
+        }
+      ],
+      "trigger": "14 synthetic cases: inverse subdivisions, ties/above-tie, aliases, three-point clusters, tetrahedron counterexample, separated/nested/interpenetrating/AABB-overlap components, nonedge collision, exponent span, embedded torus.",
+      "expected": "Supported contractions preserve topology; unsupported/intersecting surfaces fail typed.",
+      "observed": "14/14 expected outcomes. Embedded torus accepted at Euler 0 with 64 vertices/128 faces. Nested/overlapping AABBs reject COMPONENT_RELATION_UNPROVEN; intersecting components reject SELF_INTERSECTION.",
+      "uncertainty": "Abstract source topology and final embedding are checked, not original-source embedding or the swept deformation.",
+      "evidence": [
+        {
+          "path": "evidence/surface-oracle.json",
+          "sha256": "71c9fcf88ab994c8f22fc8bb41dc5e974320d91add82f32e57c8fe6ba202f078"
+        },
+        {
+          "path": "work/surface-oracle.py",
+          "sha256": "dac1d53f05e341fc67eb1feb45cf24c372a167020d794fffef95786bc13de244"
+        },
+        {
+          "path": "work/surface-corpus.json",
+          "sha256": "7ee70f701fe88a72325441467e4698b610429e584147981273765e01f1655d9b"
+        }
+      ]
+    },
+    {
+      "id": "C10",
+      "topic": "Surface displacement",
+      "status": "no_issue_in_reviewed_scope",
+      "severity": null,
+      "sourceReferences": [
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 283,
+          "lineEnd": 305
+        },
+        {
+          "snapshotPath": "src/kernel/final-scene-export/rust/encode.rs",
+          "lineStart": 259,
+          "lineEnd": 266
+        }
+      ],
+      "trigger": "Exhaust default source/retained/removed face correspondence and STL corners; exact rational squared-distance check on accepted synthetic cases.",
+      "expected": "Affine face correspondence and removed-image coverage support the outward vertex bound over the entire surface.",
+      "observed": "Default 2648 vertices/5288 faces -> 2424/4840 after 224 contractions and 448 removed faces; measured 3.9185716493157654e-6 mm <= upper bound 3.918571649315768e-6 mm. Accepted synthetic cases also satisfy exact rational bounds.",
+      "uncertainty": "Local bidirectional Hausdorff bound to captured native union only; no upstream SVG/grid/boolean, volume-error, ambient-isotopy, fit or slicer guarantee.",
+      "evidence": [
+        {
+          "path": "evidence/float-file-oracle.json",
+          "sha256": "f561b6c2bc13b3e4078e4ce46ddfddf8620b2dfe0a4cf79c6cff240e02642517"
+        },
+        {
+          "path": "evidence/file-oracle.log",
+          "sha256": "c739fd095a050cf4329c501270e8c4d933ae660fea225f94ab54700d275f435e"
+        },
+        {
+          "path": "evidence/surface-oracle.json",
+          "sha256": "71c9fcf88ab994c8f22fc8bb41dc5e974320d91add82f32e57c8fe6ba202f078"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Supplied source-pinned native and production/instrumented WASM binaries used; no independent root rebuild. Only the pure-math reviewer harness was independently compiled.",
+    "Finite tests and code reasoning do not prove general geometry correctness. Original-source embedding/qualification are separate prerequisites.",
+    "Local bound is relative to captured native post-CSG/pose union; upstream SVG/grid/boolean error, volume error, ambient isotopy, physical fit and slicers remain unqualified.",
+    "Only paired collision edges and bounded exponent/work/component relationships supported; nested or overlapping component AABBs fail closed.",
+    "UI consent/current application CAS, backend/accounts, all legacy ZIP/SVG settings, all source/product families and real printers are outside scope."
+  ],
+  "executionNotes": [
+    "Order preserved: native prerequisite -> file/correspondence oracle -> production Worker parity.",
+    "Browser harness only adapts snapshot routing, read-only dependency resolution and profiles under work/cache.",
+    "Reviewer harness setup errors were corrected inside the room: incomplete vendor checksum route replaced with private Cargo cache/index; missing Vec type annotations fixed; floating accumulated-volume assertion replaced with exact integer determinant verification. These are not product findings.",
+    "Helper shell commands blocked before execution were retried with safe file operations in the room; no escalation or unresolved approval block."
+  ]
+}

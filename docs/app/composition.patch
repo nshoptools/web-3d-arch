@@ -1,0 +1,33 @@
+diff --git a/src/integration/application.mjs b/src/integration/application.mjs
+index 20a788c6..f4bf6582 100644
+--- a/src/integration/application.mjs
++++ b/src/integration/application.mjs
+@@ -11,7 +11,7 @@ import './application.css';
+ export function mountApplication({element,origin=location.origin,deviceId,moduleURL,
+   engineWorkerURL,editingWorkerURL,pngWorkerURL,selectRecipe,sourceExtension,engineIdentity,
+   exportExtension,printing,mirror,purge,storagePolicy,download,
+-  allowAuthenticatedLeaseResponse=false,navigate,fetchImpl}={}){
++  leasePolicy='signed-offline',navigate,fetchImpl}={}){
+   if(!(element instanceof HTMLElement))throw new Error('APP_HOST_REQUIRED');
+   const ownedHostClass=!element.classList.contains('arch-application-host');
+   element.classList.add('arch-application-host');
+@@ -31,15 +31,15 @@ export function mountApplication({element,origin=location.origin,deviceId,module
+       const settled=await Promise.allSettled(operations.map(async action=>action()));
+       if(settled.some(r=>r.status==='rejected'))throw new Error('PRIVATE_RESET_FAILED');
+     }};
+-  controller=createAppController({origin,deviceId,adapters,storagePolicy,allowAuthenticatedLeaseResponse,
++  controller=createAppController({origin,deviceId,adapters,storagePolicy,leasePolicy,
+     ...(navigate?{navigate}:{}),...(fetchImpl?{fetchImpl}:{})});
+   const unmount=mountApp(element,controller);
+   const onOffline=()=>controller.setOnline(false);
+   const onOnline=()=>{controller.setOnline(true);void controller.initialize();};
+   window.addEventListener('offline',onOffline);window.addEventListener('online',onOnline);
+   const initialized=controller.initialize();
+-  let disposed=false;
+-  return {controller,initialized,dispose(){if(disposed)return;disposed=true;
++  let disposal=null;
++  return {controller,initialized,dispose(){if(disposal)return disposal;
+     window.removeEventListener('offline',onOffline);window.removeEventListener('online',onOnline);
+-    unmount();controller.dispose();if(ownedHostClass)element.classList.remove('arch-application-host');}};
++    unmount();disposal=controller.dispose();if(ownedHostClass)element.classList.remove('arch-application-host');return disposal;}};
+ }

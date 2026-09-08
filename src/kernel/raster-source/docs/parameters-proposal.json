@@ -1,0 +1,153 @@
+{
+  "semanticsVersion": "raster-parameters-proposal-v2",
+  "status": "implementation-proposal-not-catalog-approval",
+  "catalogPath": "docs/specs/parameters-reference.json",
+  "catalogSha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+  "catalogSchemaVersion": 2,
+  "catalogStatus": "audited-catalog-pending-semantic-validation",
+  "catalogFields": [
+    {
+      "id": "k",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Số màu (số filament)",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        2,
+        16
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": false,
+      "apChoLoai": "tất cả",
+      "macDinh": 4
+    },
+    {
+      "id": "res",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Độ phân giải xử lý",
+      "kieu": "s",
+      "donVi": null,
+      "mien": [
+        "360",
+        "520",
+        "720",
+        "960",
+        "1280"
+      ],
+      "buoc": null,
+      "bamLopIn": false,
+      "nangCao": false,
+      "apChoLoai": "tất cả",
+      "macDinh": "520"
+    },
+    {
+      "id": "smooth",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Làm phẳng mảng màu",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        0,
+        6
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": true,
+      "apChoLoai": "tất cả",
+      "macDinh": 3
+    },
+    {
+      "id": "minA",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Gộp mảng vụn",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        0,
+        100
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": true,
+      "apChoLoai": "tất cả",
+      "macDinh": 5
+    },
+    {
+      "id": "denoise",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Khử nhiễu ảnh",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        0,
+        3
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": true,
+      "apChoLoai": "tất cả",
+      "macDinh": 1
+    },
+    {
+      "id": "eps",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Độ mượt đường viền",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        0,
+        100
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": true,
+      "apChoLoai": "tất cả",
+      "macDinh": 35
+    },
+    {
+      "id": "tension",
+      "nhom": "Màu & chi tiết",
+      "nhan": "Bo cong",
+      "kieu": "r",
+      "donVi": null,
+      "mien": [
+        0,
+        100
+      ],
+      "buoc": 1,
+      "bamLopIn": false,
+      "nangCao": true,
+      "apChoLoai": "tất cả",
+      "macDinh": 65
+    }
+  ],
+  "operationalDefaults": {
+    "k": 4,
+    "res": 520,
+    "smooth": 3,
+    "minA": 5,
+    "denoise": 1,
+    "eps": 35,
+    "tension": 65
+  },
+  "meaning": {
+    "tension": "integer 0..100; quadratic corner reach cap tension/200 processing pixels and at most quarter each incident segment L-infinity length; zero bypass",
+    "eps": "integer 0..100; maximum L-infinity simplification deviation eps/200 processing pixels, rounded down to 2^-20 pixel lattice; monotone finite-chord capsule; zero bypass",
+    "denoise": "0..3 simultaneous 3x3 lower-median opaque-neighbor RGB passes; no alpha occupancy change",
+    "k": "Maximum opaque palette colors 2..16; material count can be 0 or 1; transparent is never a material",
+    "minA": "Integer processed-pixel area threshold; strict-less-than, one snapshot merge into adjacent region already >= threshold; no transparent targets",
+    "res": "Actual longest pixel edge cap, one of 360/520/720/960/1280; no upsampling; ties-even other dimension",
+    "smooth": "0..6 synchronous shared-chain binomial passes; pinned endpoints/viewport/junctions/component anchors; actual maximum displacement bound"
+  },
+  "geometryScope": "Processing pixel footprint is not a source geometry or printer-fit error bound; parent owns shared-ID physical quantization and extrusion",
+  "constraints": {
+    "algorithm": "shared-chains-binomial-monotone-capsule-quadratic-v1",
+    "retry": "all geometric strengths attenuated by 2^-n, n=0..12, starting from immutable raw chains; requests retained",
+    "fallback": "explicit topology-constrained identity after 13 rejected trials; requires confirmation",
+    "certificate": "exact i128 intersections/overlap, pins, cyclic junction order, loop orientation, full disconnected nesting and preserved face incidence",
+    "flattening": "1/1024 processing pixels L-infinity plus <=32 dyadic rounding units; max depth16",
+    "semanticsJustification": "docs/geometry-semantics.md",
+    "physicalQuantization": "parent applies shared global 1nm ties-even once, then revalidates topology"
+  }
+}

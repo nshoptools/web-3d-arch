@@ -1,0 +1,85 @@
+--- a/tools/kernel/build.ps1
++++ b/tools/kernel/build.ps1
+@@ -4,16 +4,41 @@
+   [ValidateSet('codex','opus','grok')][string]$Seat='codex',
+   [Parameter(Mandatory)][string]$RunId,
+   [Parameter(Mandatory)][ValidateSet('native','wasm')][string]$Target,
+-  [switch]$TestFixtures
++  [switch]$TestFixtures,
++  [string]$PrintingSource,
++  [string]$PreparedDependencyRoot,
++  [string]$Lib3mfSource
+ )
+ $ErrorActionPreference='Stop'
+ . (Join-Path $PSScriptRoot '../development/env.ps1') -Seat $Seat -RunId $RunId
++$env:CARGO_HOME=Join-Path $env:PROJECT_REVIEW_RUN 'cache/cargo'
++$env:CARGO_NET_OFFLINE='true'
++$env:ARCH_PRINTING_ENABLED=''
+ $kernelRoot=Join-Path $env:PROJECT_ROOT 'src/kernel'
+ $kernelManifold=Join-Path $env:PROJECT_ROOT '.toolchain/manifold'
+ $kernelClipper=Join-Path $env:PROJECT_ROOT '.toolchain/clipper2-derived'
+ $kernelHarfBuzz=Join-Path $env:PROJECT_ROOT '.toolchain/harfbuzz-original'
++if($PrintingSource){
++  # Source preparation is separate/offline. Keep configure writes in own copies.
++  foreach($kernelInput in @($PrintingSource,$PreparedDependencyRoot,$Lib3mfSource)){
++    if(-not $kernelInput){throw 'Printing requires explicit prepared source paths'}
++    $kernelResolved=[IO.Path]::GetFullPath($kernelInput)
++    if(-not $kernelResolved.StartsWith($env:PROJECT_REVIEW_RUN+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Printing/dependency source must be inside own run'}
++    $kernelAncestor=$kernelResolved
++    while($kernelAncestor -ne $env:PROJECT_REVIEW_RUN){
++      if((Get-Item -LiteralPath $kernelAncestor).Attributes -band [IO.FileAttributes]::ReparsePoint){throw 'Printing input link refused'}
++      $kernelAncestor=Split-Path -Parent $kernelAncestor
++    }
++  }
++  $kernelManifold=Join-Path $PreparedDependencyRoot 'manifold'
++  $kernelClipper=Join-Path $PreparedDependencyRoot 'clipper2-derived'
++  $kernelHarfBuzz=Join-Path $PreparedDependencyRoot 'harfbuzz-original'
++  python -B (Join-Path $PrintingSource 'tools/verify-unified-inputs.py')
++  if($LASTEXITCODE -ne 0){throw 'Prepared printing dependency verification failed'}
++  $env:ARCH_PRINTING_ENABLED='1'
++}
+ if(-not (Test-Path -LiteralPath (Join-Path $kernelClipper 'CPP/CMakeLists.txt'))){throw 'Run tools/kernel/prepare-clipper.ps1 with your seat/run first'}
+-if((git -C $kernelManifold rev-parse HEAD).Trim() -ne '0edd9d54876f3135e431575214dd6d8a72866fee'){throw 'Unexpected Manifold revision'}
++if(-not $PrintingSource -and (git -C $kernelManifold rev-parse HEAD).Trim() -ne '0edd9d54876f3135e431575214dd6d8a72866fee'){throw 'Unexpected Manifold revision'}
+ $kernelCargo=Join-Path $env:PROJECT_ROOT '.toolchain/cargo/bin/cargo.exe'
+ $kernelBuild=Join-Path $env:PROJECT_REVIEW_RUN "work/$Target-build"
+ $env:ARCH_NATIVE_BUILD=$kernelBuild
+@@ -21,13 +46,18 @@
+ $kernelBuildLog=Join-Path $env:PROJECT_REVIEW_RUN "evidence/$Target-build.log"
+ $kernelRustLog=Join-Path $env:PROJECT_REVIEW_RUN "evidence/$Target-rust.log"
+ $kernelConfigure=@('-S',(Join-Path $kernelRoot 'native'),'-B',$kernelBuild,"-DARCH_MANIFOLD_SOURCE=$kernelManifold","-DARCH_CLIPPER2_SOURCE=$kernelClipper","-DARCH_HARFBUZZ_SOURCE=$kernelHarfBuzz",'-DARCH_NATIVE_SMOKE=OFF')
++if($PrintingSource){
++  $kernelConfigure+=@("-DARCH_PRINTING_SOURCE=$PrintingSource","-DARCH_LIB3MF_SOURCE=$Lib3mfSource",
++    '-DFETCHCONTENT_FULLY_DISCONNECTED=ON','-DFETCHCONTENT_UPDATES_DISCONNECTED=ON',
++    '-DCMAKE_POLICY_VERSION_MINIMUM=3.5','-DCMAKE_EXPORT_COMPILE_COMMANDS=ON')
++}
+ if($Target -eq 'native'){
+   $kernelConfigure+=@('-G','Visual Studio 18 2026')
+   $kernelConfigure+="-DARCH_FONT_PROBE=$(if($TestFixtures){'ON'}else{'OFF'})"
+   $env:RUSTFLAGS=''
+   $kernelRustArgs=@('+1.98.1','build','--release')
+ }else{
+-  $kernelConfigure+=@('-G','Ninja',"-DCMAKE_MAKE_PROGRAM=$env:PROJECT_ROOT/.toolchain/ninja/bin/ninja.exe","-DCMAKE_TOOLCHAIN_FILE=$env:EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_CXX_FLAGS=-pthread -fexceptions')
++  $kernelConfigure+=@('-G','Ninja',"-DCMAKE_MAKE_PROGRAM=$env:PROJECT_ROOT/.toolchain/ninja/bin/ninja.exe","-DCMAKE_TOOLCHAIN_FILE=$env:EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_FLAGS=-pthread','-DCMAKE_CXX_FLAGS=-pthread -fexceptions')
+   $env:RUSTFLAGS='-C panic=abort -C target-feature=+atomics,+bulk-memory,+mutable-globals'
+   $env:EMCC_CFLAGS='-pthread -fexceptions'
+   $env:CARGO_TARGET_DIR=Join-Path $env:PROJECT_REVIEW_RUN 'work/rust-nightly-target'
+@@ -37,7 +67,7 @@
+ if($LASTEXITCODE -ne 0){Get-Content -LiteralPath $kernelConfigureLog -Tail 20;throw 'Kernel configure failed'}
+ & $env:CMAKE --build $kernelBuild --config Release --parallel 6 *> $kernelBuildLog
+ if($LASTEXITCODE -ne 0){Get-Content -LiteralPath $kernelBuildLog -Tail 20;throw 'Kernel C++ build failed'}
+-$kernelRustArgs+=@('--manifest-path',(Join-Path $kernelRoot 'Cargo.toml'),'--locked')
++$kernelRustArgs+=@('--manifest-path',(Join-Path $kernelRoot 'Cargo.toml'),'--locked','--offline')
+ if($TestFixtures){$kernelRustArgs+=@('--features','test-fixtures')}
+ & $kernelCargo @kernelRustArgs *> $kernelRustLog
+ if($LASTEXITCODE -ne 0){Get-Content -LiteralPath $kernelRustLog -Tail 25;throw 'Kernel Rust build failed'}
+@@ -53,7 +83,8 @@
+   if($LASTEXITCODE -ne 0){throw 'Cannot read validated HarfBuzz export surface'}
+   $kernelFunctions+=@($kernelHbExports | ConvertFrom-Json)
+   $kernelFunctions+=@('_malloc','_free')
+-  $kernelExport=ConvertTo-Json -InputObject $kernelFunctions -Compress
++  if($PrintingSource){$kernelFunctions+=@(Get-Content -LiteralPath (Join-Path $PrintingSource 'cmake/unified-exports.json') -Raw | ConvertFrom-Json)}
++  $kernelExport=ConvertTo-Json -InputObject @($kernelFunctions | Select-Object -Unique) -Compress
+   $kernelLinkLog=Join-Path $env:PROJECT_REVIEW_RUN 'evidence/wasm-module-link.log'
+   python -B "$env:EMSDK/upstream/emscripten/em++.py" (Join-Path $env:CARGO_TARGET_DIR 'wasm32-unknown-emscripten/release/libarch_kernel.a') -o $kernelModule --no-entry -O2 -pthread -fexceptions -sWASM_BIGINT=1 -sMODULARIZE=1 -sEXPORT_ES6=1 -sALLOW_TABLE_GROWTH=1 -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=67108864 -sMAXIMUM_MEMORY=1073741824 -sSTACK_SIZE=4194304 "-sEXPORTED_FUNCTIONS=$kernelExport" '-sEXPORTED_RUNTIME_METHODS=["HEAPU8","HEAP32","HEAPU16","HEAPU32","HEAPF32","addFunction","removeFunction","stackAlloc","stackSave","stackRestore"]' *> $kernelLinkLog
+   if($LASTEXITCODE -ne 0){Get-Content -LiteralPath $kernelLinkLog -Tail 15;throw 'Kernel WASM link failed'}

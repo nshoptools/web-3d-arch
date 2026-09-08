@@ -1,0 +1,44 @@
+[
+  {
+    "path": "src/kernel/src/abi.rs",
+    "beforeSha256": "5c2c5decb4b9f34506403f9ba544608f2fd29ada948576d321d44a28f2740b47",
+    "before": "pub(crate) mod raster_runtime;",
+    "after": "pub(crate) mod raster_runtime;\n#[path=\"../final-scene-export/rust/mod.rs\"]\npub(crate) mod final_scene_export;"
+  },
+  {
+    "path": "src/kernel/src/lib.rs",
+    "beforeSha256": "be0b979f05f5524e6a4f30db1f00a03a7a17fca3aff27cb4db6658f0dc959451",
+    "before": "pub use abi::raster_runtime::*;",
+    "after": "pub use abi::raster_runtime::*;\npub use abi::final_scene_export::*;"
+  },
+  {
+    "path": "src/kernel/native/CMakeLists.txt",
+    "beforeSha256": "c5bca7dac0d187311c1dceb3afabefae3119e10d891728759e27f31261fe1f8c",
+    "before": "add_subdirectory(\"${CMAKE_CURRENT_SOURCE_DIR}/../source-assembly\" source-assembly)",
+    "after": "add_subdirectory(\"${CMAKE_CURRENT_SOURCE_DIR}/../source-assembly\" source-assembly)\nadd_subdirectory(\"${CMAKE_CURRENT_SOURCE_DIR}/../final-scene-export\" final-scene-export)"
+  },
+  {
+    "path": "src/kernel/build.rs",
+    "beforeSha256": "c53eaa5723a1ca7dfa61034014cbfcf19c8feb953eb7a7481532eb5926ee10a9",
+    "before": "\"Release\", \"source-assembly/Release\"",
+    "after": "\"Release\", \"final-scene-export/Release\", \"source-assembly/Release\""
+  },
+  {
+    "path": "src/kernel/build.rs",
+    "beforeSha256": "deebd88269d5504fd1ac30f4810197ea2924ab0cc6dcc6aae7d8c22b71434bf3",
+    "before": "&[\"\", \"source-assembly\"",
+    "after": "&[\"\", \"final-scene-export\", \"source-assembly\""
+  },
+  {
+    "path": "src/kernel/build.rs",
+    "beforeSha256": "a69cb5b13d5fbf0b962b64d51edab1e946c9351cf83e308e2e9318fb94650437",
+    "before": "[\"arch_geometry\", \"arch_source_assembly\"",
+    "after": "[\"arch_final_scene_export\", \"arch_geometry\", \"arch_source_assembly\""
+  },
+  {
+    "path": "src/kernel/Cargo.toml",
+    "beforeSha256": "23a789096bcb268bcf0bfb2d7801e4f6064bde5a6fa88ed508d65506b3ee5648",
+    "before": "[features]",
+    "after": "[[example]]\nname = \"final-export-probe\"\npath = \"final-scene-export/tests/native_probe.rs\"\nrequired-features = [\"test-fixtures\"]\n\n[features]"
+  }
+]

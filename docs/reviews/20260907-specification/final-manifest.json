@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-08",
+  "specificationVersion": "1.0.1",
+  "scope": "Current permanent publication, fixtures and validation tools; excludes this manifest itself; not a hash claim about earlier reviewer snapshots",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 730,
+      "sha256": "e9a353e088e56ede4aeb044647c794cab315ef1ffa6d6daccb3cf7d1c7aa3041"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 7988,
+      "sha256": "72c880703bfed2eb36d2eff16c04bde5b7a27162187e597ab6802cde53258da3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1395,
+      "sha256": "a38260315812d7489d782dd9f85e71ff3fee31acd8ba7eefb727188a051b9897"
+    },
+    {
+      "path": "docs/development/README.md",
+      "bytes": 6123,
+      "sha256": "9b6cf485abd5359a3c6180a9ee74eb6547e0510981634b83e5e7c879b86a0245"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/README.md",
+      "bytes": 6573,
+      "sha256": "4063817adea1295789260bc794eeffece39c0ccb8d92e7c63dbd2dac664f8ddd"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/disposition-round1.md",
+      "bytes": 7634,
+      "sha256": "7039f0d765c9313e70ff385fe84462f81198490e621c6966d08beb0a15ba9f02"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/disposition-round2.md",
+      "bytes": 5265,
+      "sha256": "c87c0399e174ed5d2894f063b132a69516f58a58f80f05bd002274e5e41e5b48"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/editor-round1.md",
+      "bytes": 1367,
+      "sha256": "cf31e3321c5c3d49a9e1d357dd386989a1490a1145e71e1e75040d73cbed4d61"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/grok-round1.md",
+      "bytes": 4365,
+      "sha256": "ff82eeba6f4edfd57ed292210db039fe628f5aa79ea18dbb048decc722764510"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/grok-round2.md",
+      "bytes": 2997,
+      "sha256": "212b023e7dc43170d2af6532ccd22ee7a43fb949e79bff55c519dec1e4665209"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/opus-round1.md",
+      "bytes": 4524,
+      "sha256": "933fc3713f512e5d71af8fc3a3eac4bba4c51905ce11cf2ab62e3fbc30040abe"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/opus-round2.md",
+      "bytes": 3358,
+      "sha256": "ea362c4c5947a2ced7e0a70ad0a1e5aed563df1bd74c11c01d4dbce407f4da2f"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/parameter-audit.json",
+      "bytes": 847,
+      "sha256": "0052e41433ebda5752b23beb2395e6e8470429317fb42215a8a79be904db420f"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/sample-qualification.json",
+      "bytes": 1746,
+      "sha256": "543e8cc2b74adc634e45c49ef4a54ad7e58e0c3d1f29a47238ab5d60b063f74b"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/seat-evidence.json",
+      "bytes": 3013,
+      "sha256": "733e5c48a0015c37152ad53c5fef069d98c00239000e9158e08c88ee0d07bcab"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/source-audit.json",
+      "bytes": 15714,
+      "sha256": "76e58db3b80bfb0abe6e6939efaf086cb8b1524caa1b898365fbe015de351da0"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/source-audit.md",
+      "bytes": 6216,
+      "sha256": "1302737328f0cde9b3cf54766633cf4e25f2684b764c0be6b1d5fa7822a7685e"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/standalone-tests-input.tap",
+      "bytes": 769,
+      "sha256": "999e6c8f15b4fdf90c25fb266b8f74551ed33ff9b987796f7605e7bf5a99f48f"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/standalone-tests-specification.tap",
+      "bytes": 2121,
+      "sha256": "f73026da9a83c4e2c78dd1b85ea0bfc35fea3c6f086064a56b87a55b85cf62b4"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/tests-input.tap",
+      "bytes": 769,
+      "sha256": "b770202606f2cb131b2e93fc336b5706259345cdc0d3f024f3067e4225873096"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/tests-specification.tap",
+      "bytes": 2122,
+      "sha256": "1162765370620ba69d558d7d8cd34dd46c31d16e6af28602417df1b4a28187c1"
+    },
+    {
+      "path": "docs/reviews/20260907-specification/verification.json",
+      "bytes": 4848,
+      "sha256": "9b5a734c9ea11b41656153223a27cac0c0cde99c299597923c86ea3919e6bfb2"
+    },
+    {
+      "path": "docs/reviews/GROK-WINDOWS-ISOLATION.md",
+      "bytes": 11977,
+      "sha256": "40f9d29b0446d4d0d0bc79b4eed31dfb32d90fdf5a9170da8f0eef46b10e6fe4"
+    },
+    {
+      "path": "docs/reviews/grok-isolation-verification.json",
+      "bytes": 2497,
+      "sha256": "cf69ec935f1ab73e7269a1f4fb45910bea64b45779faef3a86361d03d40baed3"
+    },
+    {
+      "path": "docs/specs/01-chuc-nang.md",
+      "bytes": 25899,
+      "sha256": "380a3acee82d765fb2a976b5aefd252a0d5dd43f8f4057d5b1be562d69f46122"
+    },
+    {
+      "path": "docs/specs/02-giao-dien.md",
+      "bytes": 12420,
+      "sha256": "c11941f66b2296cbbc275bc8cd799e7feb1a2c6b9f09cda631a4589d721267dc"
+    },
+    {
+      "path": "docs/specs/03-ky-thuat.md",
+      "bytes": 28928,
+      "sha256": "3608208ccb37b1e2521c71fec07e644da53e1cd1d14bbcda8ae0a09821fac157"
+    },
+    {
+      "path": "docs/specs/04-nghiem-thu.md",
+      "bytes": 9624,
+      "sha256": "82df989bb710cc895df65f050e1883d2db3d277786f76058922edc3548715899"
+    },
+    {
+      "path": "docs/specs/05-quyet-dinh-va-truy-vet.md",
+      "bytes": 11191,
+      "sha256": "7979086f8e82bdb6e851dd7cc1b4ac6e950a347749e5d6b9515dd85cb45dcbf1"
+    },
+    {
+      "path": "docs/specs/06-danh-muc-thong-so.md",
+      "bytes": 8396,
+      "sha256": "4e337f428be436513f9260d7a902a5b6217d61a295ca566c13666c276dcdce19"
+    },
+    {
+      "path": "docs/specs/07-nguoi-dung-va-ai.md",
+      "bytes": 17116,
+      "sha256": "ab71053116b7bebe94929827ea77815e480f81227e966c09cd207ea1ffd76468"
+    },
+    {
+      "path": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "bytes": 9726,
+      "sha256": "818ce7a5da1a32227fa35eb28b72d3f0a24a99f2c1212fe53e21770dc958e588"
+    },
+    {
+      "path": "docs/specs/README.md",
+      "bytes": 3740,
+      "sha256": "b1ce54c06b58ad246b52c9ec665d645f4c497e33c0ce5e2b11d731a2c71acd15"
+    },
+    {
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee"
+    },
+    {
+      "path": "docs/specs/requirements.json",
+      "bytes": 21988,
+      "sha256": "070db3cc10ad95bf01b2fd3ac494d7e230a38ec17c6c86a569a3d080f56d7e3f"
+    },
+    {
+      "path": "docs/specs/source-manifest.json",
+      "bytes": 2722,
+      "sha256": "949c2e2af220edadb44caabaa2a63e5f39e2f6feea9fb1ff33309a5ac1daffa7"
+    },
+    {
+      "path": "docs/specs/traceability.json",
+      "bytes": 19242,
+      "sha256": "e901183b7ac4f29fa9369b41922f761db9bf48da06ffeb4d43b68b810184cbe2"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "bytes": 887,
+      "sha256": "dd23e3b11896fd6a801b68b81fab94a6c2c8b4322dedd4c25f817a6170f6c239"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 6023,
+      "sha256": "d88c27cc0fa8e3b1263016341f2a95cfe18eac8b98d5e7c44a9961ec34ed8c2b"
+    },
+    {
+      "path": "tests/acceptance/cases.json",
+      "bytes": 133863,
+      "sha256": "49902e115992325a2dfa543eacb530755aadfd82957dc10fc93fb368d10cc080"
+    },
+    {
+      "path": "tests/contracts/font-source.test.mjs",
+      "bytes": 2347,
+      "sha256": "5e1311d417a603d9c4fe0343f4a5eba6b76880b5c16f691b0bac3286d7ae030c"
+    },
+    {
+      "path": "tests/fixtures/corpus-v1/manifest.json",
+      "bytes": 1507,
+      "sha256": "78ff9f2bedf1e8f48ca458845f63314054dc7165fa15ba2d4cbd8244175338b8"
+    },
+    {
+      "path": "tests/fixtures/corpus-v1/rectangle-hole.svg",
+      "bytes": 168,
+      "sha256": "07e2d061680bffe7915f733c40a3ea6bb6ed28de119d997a38947ead4bb55187"
+    },
+    {
+      "path": "tests/fixtures/corpus-v1/shared-seam.svg",
+      "bytes": 177,
+      "sha256": "6deec001cb76b5d9c998d259ef9a8c84e3dfcf6b4f353e912ece3788bcbf5648"
+    },
+    {
+      "path": "tests/fixtures/corpus-v1/text-samples.json",
+      "bytes": 469,
+      "sha256": "9a8c80bd2454dd6e76f1f015a04181732a213d26b14ab1bb7d293f2d3d2a55fe"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/README.md",
+      "bytes": 1716,
+      "sha256": "2cdf21691553a69590ed432d6b2bd2545844e57987a80ae3ab031383306de4c1"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/bambu-project.3mf",
+      "bytes": 11726478,
+      "sha256": "361859e04e686452a60b7e9cc3104e7f4e173ca35979dd2311b1d6c27664ca75"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/manifest.json",
+      "bytes": 2067,
+      "sha256": "b074303e2e62ed739d2b016ff074e5a2859e7074ecd7a5425f1a3c45116e461f"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/printer-beds.json",
+      "bytes": 643081,
+      "sha256": "56a95d16b537feb3b806ea7d6b8d99aa75311a4764acaa0075a34665a8ed795d"
+    },
+    {
+      "path": "tests/fixtures/printing-reference/v1/u1-inconsistent-slots.3mf",
+      "bytes": 11695870,
+      "sha256": "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece"
+    },
+    {
+      "path": "tests/fixtures/slicer-profiles/v1/README.md",
+      "bytes": 1204,
+      "sha256": "91dfc0543673081e47ccbd1aab29a08d2d9e35d9a4c82c60dfa4d5df4de6824a"
+    },
+    {
+      "path": "tests/fixtures/slicer-profiles/v1/manifest.json",
+      "bytes": 2375,
+      "sha256": "6982e404e8f22d5bfdd4b1792f03f413d8c91fe2b2f24089083475e79b183d69"
+    },
+    {
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-bambu.js",
+      "bytes": 43485,
+      "sha256": "190f78c5e05e08d511edb42a5e65ff00f47cd60aa32b4aca34197fc3d11d22f9"
+    },
+    {
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-u1.js",
+      "bytes": 25487,
+      "sha256": "e4070112c126244d2df6a0eff7295a2e3198a03b4025e49a686a5978bc490643"
+    },
+    {
+      "path": "tests/specification/specification.test.mjs",
+      "bytes": 12400,
+      "sha256": "32ed06f84c9f721e4cea4da3274aeeadc32ea15873eb7e00717d9a361abbd169"
+    },
+    {
+      "path": "tools/project-env.ps1",
+      "bytes": 3709,
+      "sha256": "5f9bc3bc729e50f6a293c94d5d0a3ae19ed3f1c02a79e55436ac716791925d06"
+    },
+    {
+      "path": "tools/reviews/audit-spec-sources.py",
+      "bytes": 11432,
+      "sha256": "2d2d2470e07672a27ac555b8835bae759ccba94bfb8292f05e180f902d804e58"
+    },
+    {
+      "path": "tools/tests/run.ps1",
+      "bytes": 3302,
+      "sha256": "0dd5d1214bdd7f758348392b88dee82971882951c09dac6e2e94dc97f1aaab62"
+    },
+    {
+      "path": "tools/tests/verify-self-contained.ps1",
+      "bytes": 5780,
+      "sha256": "c5797c79efb45908256228d6eb5f8387a274d23fbcdcd3281f98af46f905a849"
+    }
+  ],
+  "editorialUpdates": [
+    {
+      "date": "2026-09-08",
+      "reason": "Record owner-assigned implementation responsibilities and startup sequence, with repository entry points",
+      "paths": [
+        "AGENTS.md",
+        "README.md",
+        "docs/development/README.md"
+      ]
+    }
+  ]
+}

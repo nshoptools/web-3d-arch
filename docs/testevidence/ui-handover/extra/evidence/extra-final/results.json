@@ -1,0 +1,1668 @@
+{
+  "at": "2026-09-08T12:21:46.492Z",
+  "sourceManifest": "f1756404c0df7b160a220e7c9a989c85decdd8531b9c335c5ae00f9e6323f247",
+  "implementationOnly": true,
+  "scope": "Actual React with controlled bridge; independent reviewer cases reused by parent, no native/backend qualification",
+  "packages": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vite": "8.2.2",
+    "typescript": "7.0.2",
+    "playwright": "1.63.0"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "checks": [
+        {
+          "id": "R01",
+          "name": "optional, empty and historical receipts preserve declared facts",
+          "pass": true,
+          "observed": {
+            "receipts": [
+              {
+                "id": "R0",
+                "formatId": "captured-format-R0",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R0.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "pass",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R1",
+                "formatId": "captured-format-R1",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R1.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "fail",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R2",
+                "formatId": "captured-format-R2",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R2.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unverified",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R3",
+                "formatId": "captured-format-R3",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R3.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unsupported",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              }
+            ],
+            "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-R01.png",
+            "accessibility": "- paragraph: \"Đây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\"\n- paragraph: Có hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n- list:\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\n    - code: captured-format-R0\n    - text: \"đã kiểm đạt lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\n    - code: captured-format-R1\n    - text: \"kiểm không đạt lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\n    - code: captured-format-R2\n    - text: \"chưa kiểm lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\n    - code: captured-format-R3\n    - text: \"chưa hỗ trợ lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\"': Tải hồ sơ (JSON)"
+          }
+        },
+        {
+          "id": "R02",
+          "name": "receipt reordering retains download ID and metadata refusals remain reachable",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.receipt",
+                  "id": "A"
+                },
+                "pending": false
+              }
+            ],
+            "blockedDescription": "_r_7h_"
+          }
+        },
+        {
+          "id": "R03",
+          "name": "removed receipt and account ABA drop late errors and confirmation bodies",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-5-d969d9ff",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:19:30.513Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-4-286a05dc",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:19:30.513Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-3-18081528",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:19:30.305Z",
+                  "code": "ANSWER_SUPERSEDED"
+                },
+                {
+                  "id": "log-2-6faa25bf",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:19:30.305Z",
+                  "code": "ANSWER_SUPERSEDED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            }
+          }
+        },
+        {
+          "id": "R04",
+          "name": "renderer export identifies the stale visible model and leaves revision intact",
+          "pass": true,
+          "observed": {
+            "text": "Ảnh chụp mô hình\npng\nchưa kiểm\npng-renderer\ncần khung xem đang chạy\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\n⚠ Ảnh chụp lấy đúng mô hình đang hiển thị, và mô hình đó thuộc bản dựng cũ. Tệp này không phải hình của thiết kế hiện tại.",
+            "calls": [
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "png-renderer",
+                "pending": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "K01",
+          "name": "keyboard config controls preserve literal values and bound errors",
+          "pass": true,
+          "observed": {
+            "described": {
+              "label": "Tên tệp · filename",
+              "invalid": "true",
+              "descriptions": [
+                "Nhập tên nguyên văn.",
+                "KEYBOARD_VALIDATION"
+              ]
+            },
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Mô hình Bàn phím"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "inspection",
+                  "value": true
+                },
+                "pending": true
+              },
+              {
+                "id": 9,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "orientation",
+                  "value": "down"
+                },
+                "pending": true
+              }
+            ],
+            "selectAccessibility": "- combobox \"Hướng chế tạo · orientation\":\n  - option \"Hoa văn hướng lên\" [selected]\n  - option \"Lật hoa văn xuống và đặt đáy trên bàn\""
+          }
+        },
+        {
+          "id": "K02",
+          "name": "mobile Escape discards only the field draft before closing its drawer",
+          "pass": true,
+          "observed": {}
+        },
+        {
+          "id": "V01-320-14",
+          "name": "export controls and long receipts reflow at 320px / 14px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-14-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-14-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-14-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 24,
+                    "right": 296,
+                    "width": 272
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-14-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-320-28",
+          "name": "export controls and long receipts reflow at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 24,
+                    "right": 296,
+                    "width": 272
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-320-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-1280-28",
+          "name": "export controls and long receipts reflow at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-1280-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-1280-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-1280-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 97,
+                    "right": 394,
+                    "width": 297
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\chromium-V01-1280-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "K03",
+          "name": "published disabled controls have a keyboard-reachable reason",
+          "pass": true,
+          "observed": {
+            "states": [
+              {
+                "id": "filename",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r7_-hint _r_r7_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "errorMm",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r9_-hint _r_r9_-unit _r_r9_-reason _r_r9_-note-range",
+                "focusableReason": true
+              },
+              {
+                "id": "inspection",
+                "disabled": false,
+                "readOnly": false,
+                "tabIndex": 0,
+                "description": "_r_rb_-hint _r_rb_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "orientation",
+                "disabled": false,
+                "tabIndex": 0,
+                "description": "_r_rd_-reason",
+                "focusableReason": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "K04",
+          "name": "numeric limits and unit are associated with the input for assistive reading",
+          "pass": true,
+          "observed": {
+            "details": {
+              "name": "Sai số hình học · errorMm",
+              "description": "mm Miền 0.000001–1 mm · bước 0.000001 mm",
+              "ariaMin": null,
+              "ariaMax": null
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\p\\extra-final-c"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "checks": [
+        {
+          "id": "R01",
+          "name": "optional, empty and historical receipts preserve declared facts",
+          "pass": true,
+          "observed": {
+            "receipts": [
+              {
+                "id": "R0",
+                "formatId": "captured-format-R0",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R0.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "pass",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R1",
+                "formatId": "captured-format-R1",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R1.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "fail",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R2",
+                "formatId": "captured-format-R2",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R2.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unverified",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R3",
+                "formatId": "captured-format-R3",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R3.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unsupported",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              }
+            ],
+            "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-R01.png",
+            "accessibility": "- paragraph: \"Đây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\"\n- paragraph: Có hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n- list:\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\n    - code: captured-format-R0\n    - text: \"đã kiểm đạt lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\n    - code: captured-format-R1\n    - text: \"kiểm không đạt lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\n    - code: captured-format-R2\n    - text: \"chưa kiểm lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\n    - code: captured-format-R3\n    - text: \"chưa hỗ trợ lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\"': Tải hồ sơ (JSON)"
+          }
+        },
+        {
+          "id": "R02",
+          "name": "receipt reordering retains download ID and metadata refusals remain reachable",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.receipt",
+                  "id": "A"
+                },
+                "pending": false
+              }
+            ],
+            "blockedDescription": "_r_7h_"
+          }
+        },
+        {
+          "id": "R03",
+          "name": "removed receipt and account ABA drop late errors and confirmation bodies",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-5-de8560e6",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:21:01.931Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-4-a8cfae89",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:21:01.931Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-3-fa7acf66",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:21:01.744Z",
+                  "code": "ANSWER_SUPERSEDED"
+                },
+                {
+                  "id": "log-2-796f921a",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:21:01.744Z",
+                  "code": "ANSWER_SUPERSEDED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            }
+          }
+        },
+        {
+          "id": "R04",
+          "name": "renderer export identifies the stale visible model and leaves revision intact",
+          "pass": true,
+          "observed": {
+            "text": "Ảnh chụp mô hình\npng\nchưa kiểm\npng-renderer\ncần khung xem đang chạy\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\n⚠ Ảnh chụp lấy đúng mô hình đang hiển thị, và mô hình đó thuộc bản dựng cũ. Tệp này không phải hình của thiết kế hiện tại.",
+            "calls": [
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "png-renderer",
+                "pending": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "K01",
+          "name": "keyboard config controls preserve literal values and bound errors",
+          "pass": true,
+          "observed": {
+            "described": {
+              "label": "Tên tệp · filename",
+              "invalid": "true",
+              "descriptions": [
+                "Nhập tên nguyên văn.",
+                "KEYBOARD_VALIDATION"
+              ]
+            },
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Mô hình Bàn phím"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "inspection",
+                  "value": true
+                },
+                "pending": true
+              },
+              {
+                "id": 9,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "orientation",
+                  "value": "down"
+                },
+                "pending": true
+              }
+            ],
+            "selectAccessibility": "- combobox \"Hướng chế tạo · orientation\":\n  - option \"Hoa văn hướng lên\" [selected]\n  - option \"Lật hoa văn xuống và đặt đáy trên bàn\""
+          }
+        },
+        {
+          "id": "K02",
+          "name": "mobile Escape discards only the field draft before closing its drawer",
+          "pass": true,
+          "observed": {}
+        },
+        {
+          "id": "V01-320-14",
+          "name": "export controls and long receipts reflow at 320px / 14px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-14-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-14-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-14-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 23.433334350585938,
+                    "right": 296.9166717529297,
+                    "width": 273.48333740234375
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-14-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-320-28",
+          "name": "export controls and long receipts reflow at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 34.149993896484375,
+                    "right": 286.1999969482422,
+                    "width": 252.0500030517578
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 0.7166595458984375,
+                    "right": 319.6333465576172,
+                    "client": 319,
+                    "scroll": 319
+                  },
+                  "row": {
+                    "left": 23.433334350585938,
+                    "right": 296.9166717529297,
+                    "width": 273.48333740234375
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-320-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-1280-28",
+          "name": "export controls and long receipts reflow at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417.2833251953125,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 107.43333435058594,
+                    "right": 383.8500213623047,
+                    "width": 276.41668701171875
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-1280-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417.2833251953125,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 107.43333435058594,
+                    "right": 383.8500213623047,
+                    "width": 276.41668701171875
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-1280-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417.2833251953125,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 107.43333435058594,
+                    "right": 383.8500213623047,
+                    "width": 276.41668701171875
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-1280-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417.2833251953125,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 96.71665954589844,
+                    "right": 394.56666564941406,
+                    "width": 297.8500061035156
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\firefox-V01-1280-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "K03",
+          "name": "published disabled controls have a keyboard-reachable reason",
+          "pass": true,
+          "observed": {
+            "states": [
+              {
+                "id": "filename",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r7_-hint _r_r7_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "errorMm",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r9_-hint _r_r9_-unit _r_r9_-reason _r_r9_-note-range",
+                "focusableReason": true
+              },
+              {
+                "id": "inspection",
+                "disabled": false,
+                "readOnly": false,
+                "tabIndex": 0,
+                "description": "_r_rb_-hint _r_rb_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "orientation",
+                "disabled": false,
+                "tabIndex": 0,
+                "description": "_r_rd_-reason",
+                "focusableReason": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "K04",
+          "name": "numeric limits and unit are associated with the input for assistive reading",
+          "pass": true,
+          "observed": {
+            "details": {
+              "name": "Sai số hình học · errorMm",
+              "description": "mm Miền 0.000001–1 mm · bước 0.000001 mm",
+              "ariaMin": null,
+              "ariaMax": null
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\p\\extra-final-f"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "checks": [
+        {
+          "id": "R01",
+          "name": "optional, empty and historical receipts preserve declared facts",
+          "pass": true,
+          "observed": {
+            "receipts": [
+              {
+                "id": "R0",
+                "formatId": "captured-format-R0",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R0.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "pass",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R1",
+                "formatId": "captured-format-R1",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R1.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "fail",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R2",
+                "formatId": "captured-format-R2",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R2.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unverified",
+                "inspection": false,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              },
+              {
+                "id": "R3",
+                "formatId": "captured-format-R3",
+                "filename": "Đồ án tiếng Việt — mẫu kiểm tra — R3.stl",
+                "byteLength": 2097153,
+                "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+                "projectRevision": 0,
+                "createdAt": "2026-09-08T08:00:00.000Z",
+                "verdict": "unsupported",
+                "inspection": true,
+                "warnings": [
+                  "Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm."
+                ],
+                "metadataAvailable": true
+              }
+            ],
+            "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-R01.png",
+            "accessibility": "- paragraph: \"Đây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.\"\n- paragraph: Có hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.\n- list:\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\n    - code: captured-format-R0\n    - text: \"đã kiểm đạt lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R0.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\n    - code: captured-format-R1\n    - text: \"kiểm không đạt lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R1.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\n    - code: captured-format-R2\n    - text: \"chưa kiểm lượt xuất thường 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R2.stl\"': Tải hồ sơ (JSON)\n  - listitem:\n    - text: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\n    - code: captured-format-R3\n    - text: \"chưa hỗ trợ lượt xuất để kiểm tra 2,1 MB bản sửa 0 15:00 8/9/26 Byte thực: 2.097.153 · thời điểm nhân ghi: 2026-09-08T08:00:00.000Z SHA-256 của tệp 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef\"\n    - list \"Cảnh báo của Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\":\n      - listitem: \"⚠ Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.\"\n    - 'button \"Tải hồ sơ kết quả: Đồ án tiếng Việt — mẫu kiểm tra — R3.stl\"': Tải hồ sơ (JSON)"
+          }
+        },
+        {
+          "id": "R02",
+          "name": "receipt reordering retains download ID and metadata refusals remain reachable",
+          "pass": true,
+          "observed": {
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.receipt",
+                  "id": "A"
+                },
+                "pending": false
+              }
+            ],
+            "blockedDescription": "_r_7h_"
+          }
+        },
+        {
+          "id": "R03",
+          "name": "removed receipt and account ABA drop late errors and confirmation bodies",
+          "pass": true,
+          "observed": {
+            "state": {
+              "section": "export",
+              "panelCollapsed": false,
+              "drawerOpen": true,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-5-dec08c87",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:21:39.508Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-4-9f70ebcf",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt thuộc tài khoản hoặc dự án khác đã về sau khi màn hình đã chuyển ngữ cảnh. Giao diện không hiển thị và không ghi lại nội dung của nó. Việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận; giao diện không kết luận nó đã hủy hay không có.",
+                  "at": "2026-09-08T12:21:39.508Z",
+                  "code": "ANSWER_FOR_OTHER_CONTEXT"
+                },
+                {
+                  "id": "log-3-3d615d78",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho hồ sơ kết quả của một lượt xuất đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:21:39.279Z",
+                  "code": "ANSWER_SUPERSEDED"
+                },
+                {
+                  "id": "log-2-f1e1f24b",
+                  "tone": "info",
+                  "text": "Một câu trả lời cho lệnh export.receipt đã về sau khi yêu cầu đó không còn là yêu cầu đang hiển thị. Câu trả lời bị bỏ qua, không phải là lỗi; việc đã gửi vẫn nằm ở nhân đúng như nhân ghi nhận.",
+                  "at": "2026-09-08T12:21:39.279Z",
+                  "code": "ANSWER_SUPERSEDED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": ""
+            }
+          }
+        },
+        {
+          "id": "R04",
+          "name": "renderer export identifies the stale visible model and leaves revision intact",
+          "pass": true,
+          "observed": {
+            "text": "Ảnh chụp mô hình\npng\nchưa kiểm\npng-renderer\ncần khung xem đang chạy\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\n⚠ Ảnh chụp lấy đúng mô hình đang hiển thị, và mô hình đó thuộc bản dựng cũ. Tệp này không phải hình của thiết kế hiện tại.",
+            "calls": [
+              {
+                "id": 7,
+                "method": "exportFile",
+                "input": "png-renderer",
+                "pending": false
+              }
+            ]
+          }
+        },
+        {
+          "id": "K01",
+          "name": "keyboard config controls preserve literal values and bound errors",
+          "pass": true,
+          "observed": {
+            "described": {
+              "label": "Tên tệp · filename",
+              "invalid": "true",
+              "descriptions": [
+                "Nhập tên nguyên văn.",
+                "KEYBOARD_VALIDATION"
+              ]
+            },
+            "calls": [
+              {
+                "id": 7,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "filename",
+                  "value": "Mô hình Bàn phím"
+                },
+                "pending": false
+              },
+              {
+                "id": 8,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "inspection",
+                  "value": true
+                },
+                "pending": true
+              },
+              {
+                "id": 9,
+                "method": "dispatch",
+                "input": {
+                  "type": "export.configure",
+                  "id": "stl-union",
+                  "projectRevision": 0,
+                  "field": "orientation",
+                  "value": "down"
+                },
+                "pending": true
+              }
+            ],
+            "selectAccessibility": "- combobox \"Hướng chế tạo · orientation\":\n  - option \"Hoa văn hướng lên\" [selected]\n  - option \"Lật hoa văn xuống và đặt đáy trên bàn\""
+          }
+        },
+        {
+          "id": "K02",
+          "name": "mobile Escape discards only the field draft before closing its drawer",
+          "pass": true,
+          "observed": {}
+        },
+        {
+          "id": "V01-320-14",
+          "name": "export controls and long receipts reflow at 320px / 14px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-14-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-14-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-14-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 24,
+                    "right": 296,
+                    "width": 272
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-14-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-320-28",
+          "name": "export controls and long receipts reflow at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 35,
+                    "right": 285,
+                    "width": 250
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 1,
+                    "right": 319,
+                    "client": 318,
+                    "scroll": 318
+                  },
+                  "row": {
+                    "left": 24,
+                    "right": 296,
+                    "width": 272
+                  },
+                  "bad": [],
+                  "viewport": 320,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-320-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "V01-1280-28",
+          "name": "export controls and long receipts reflow at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "observations": [
+              {
+                "selector": "[data-export-field=\"filename\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-1280-28-0.png"
+              },
+              {
+                "selector": "[data-export-field=\"errorMm\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-1280-28-1.png"
+              },
+              {
+                "selector": "[data-export-field=\"orientation\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 108,
+                    "right": 383,
+                    "width": 275
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-1280-28-2.png"
+              },
+              {
+                "selector": "[data-export-receipt=\"LONG\"]",
+                "metrics": {
+                  "panel": {
+                    "left": 74,
+                    "right": 417,
+                    "client": 343,
+                    "scroll": 343
+                  },
+                  "row": {
+                    "left": 97,
+                    "right": 394,
+                    "width": 297
+                  },
+                  "bad": [],
+                  "viewport": 1280,
+                  "scale": 1
+                },
+                "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\evidence\\extra-final\\webkit-V01-1280-28-3.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "K03",
+          "name": "published disabled controls have a keyboard-reachable reason",
+          "pass": true,
+          "observed": {
+            "states": [
+              {
+                "id": "filename",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r7_-hint _r_r7_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "errorMm",
+                "disabled": false,
+                "readOnly": true,
+                "tabIndex": 0,
+                "description": "_r_r9_-hint _r_r9_-unit _r_r9_-reason _r_r9_-note-range",
+                "focusableReason": true
+              },
+              {
+                "id": "inspection",
+                "disabled": false,
+                "readOnly": false,
+                "tabIndex": 0,
+                "description": "_r_rb_-hint _r_rb_-reason",
+                "focusableReason": true
+              },
+              {
+                "id": "orientation",
+                "disabled": false,
+                "tabIndex": 0,
+                "description": "_r_rd_-reason",
+                "focusableReason": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "K04",
+          "name": "numeric limits and unit are associated with the input for assistive reading",
+          "pass": true,
+          "observed": {
+            "details": {
+              "name": "Sai số hình học · errorMm",
+              "description": "mm Miền 0.000001–1 mm · bước 0.000001 mm",
+              "ariaMin": null,
+              "ariaMax": null
+            }
+          }
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-extra\\p\\extra-final-w"
+    }
+  ]
+}

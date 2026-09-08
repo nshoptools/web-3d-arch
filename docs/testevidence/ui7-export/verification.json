@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "at": "2026-09-08T08:24:22.162Z",
+  "run": "20260908-ui-wave7",
+  "promotedFiles": 6,
+  "parentAlgorithmCorrections": [
+    "first dirty revision retained across keystrokes",
+    "draft fence reset only on owned clear",
+    "new draft survives late success"
+  ],
+  "nodeGroups": 10,
+  "checksPerBrowser": 48,
+  "browsers": 3,
+  "coverage": "Cumulative: old41 and6 new passed Chromium/WebKit r1; corrected checkbox harness all7 passed r2. Firefox fresh full48 passed r3 with private loopback proxy disabled.",
+  "fixtureScope": "Actual React components with explicit bridge fixtures; not complete product-native application",
+  "independentReview": "active",
+  "sourcePins": [
+    {
+      "path": "src/ui/components/Fields.tsx",
+      "bytes": 19225,
+      "sha256": "c99c519c9d7c4f6c770cf60c75d8a97434d96f4fb4b7c2b6cfb4bb7cf398a9bb"
+    },
+    {
+      "path": "src/ui/sections/ExportConfiguration.tsx",
+      "bytes": 10283,
+      "sha256": "477b35fa8e816d55213f2515f16b312f70aef79779cf65f74216037ec8c3b7cc"
+    },
+    {
+      "path": "src/ui/sections/ExportSection.tsx",
+      "bytes": 15233,
+      "sha256": "745b57fb28196f6fb06813ba34430f61c28814840c53a2ce190aa3a9b369bf5e"
+    },
+    {
+      "path": "src/ui/sections/ExportReceipts.tsx",
+      "bytes": 9358,
+      "sha256": "55e14050650e9616c8027bd70a940b3f08c7057f59e520c0bbac34d3e46911ff"
+    },
+    {
+      "path": "src/ui/core/export-config.ts",
+      "bytes": 3361,
+      "sha256": "b50a545100318d086a104c4da78d717dd004901ef0b76173fcad36d1ad4ed35b"
+    },
+    {
+      "path": "src/ui/dialogs/confirm-effect.ts",
+      "bytes": 3067,
+      "sha256": "926aad7a40f1b952374cadc28a195a7ac6209e4c2017f8a8b3e0f66938c683ee"
+    },
+    {
+      "path": "src/ui/styles/components.css",
+      "bytes": 23795,
+      "sha256": "99eac663efec583c3cb1959b1e01103ca3f80911ed8c8e83f483c331a99c61c4"
+    },
+    {
+      "path": "tests/ui/request-boundary/export-cases.mjs",
+      "bytes": 5370,
+      "sha256": "604c435abab4edd532321012b469abae4941d38a0399ce2ce29be4af6c533628"
+    },
+    {
+      "path": "tests/ui/request-boundary/run.mjs",
+      "bytes": 4636,
+      "sha256": "2412ea82ca5f30c9800e7ba8475458cd4c9632f17d50be631df897ca647c075c"
+    }
+  ],
+  "releaseReady": false
+}

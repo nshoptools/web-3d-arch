@@ -1,0 +1,34 @@
+TAP version 13
+# Subtest: printing ready proof validates exact ABI tuple and retires with its epoch
+ok 1 - printing ready proof validates exact ABI tuple and retires with its epoch
+  ---
+  duration_ms: 5.3535
+  type: 'test'
+  ...
+# Subtest: same-module identity and versioned wire defensive checks
+ok 2 - same-module identity and versioned wire defensive checks
+  ---
+  duration_ms: 9.3382
+  type: 'test'
+  ...
+# Subtest: material union keeps distinct identities and positive overlap for checker
+ok 3 - material union keeps distinct identities and positive overlap for checker
+  ---
+  duration_ms: 32.6432
+  type: 'test'
+  ...
+# Subtest: registered allocations, fresh memory views, retained outputs, source authority and default clicky
+ok 4 - registered allocations, fresh memory views, retained outputs, source authority and default clicky
+  ---
+  duration_ms: 1763.3018
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2077.1184

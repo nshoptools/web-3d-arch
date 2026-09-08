@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "source": "src/assets/harfbuzz/dist/index.mjs",
+  "sourceSha256": "04ece1914c8720ad96257728119c1bf24088ee4ef3ab2a2ca688c9a4895d4e7e",
+  "nativeRevision": "36cb489cb02ce4b92099669ba9f9bea348eff93f",
+  "output": "src/input/harfbuzz-engine.mjs",
+  "outputSha256": "2deed8c6b84f72061c2c443d81c719bf23be9505c6b0170d7089228544a97b16",
+  "changes": [
+    "explicit initializeHarfBuzz(engine), one module/heap",
+    "dynamic Module view proxy maps published HB functions",
+    "copy bounded UTF-8 result before browser TextDecoder; does not copy mesh"
+  ],
+  "license": "src/assets/harfbuzz/LICENSE"
+}

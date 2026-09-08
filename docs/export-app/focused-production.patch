@@ -1,0 +1,289 @@
+diff --git a/src/integration/export-adapters.mjs b/src/integration/export-adapters.mjs
+index 999171eb..17826b84 100644
+--- a/src/integration/export-adapters.mjs
++++ b/src/integration/export-adapters.mjs
+@@ -24,6 +24,13 @@ const REASONS=Object.freeze({
+  STALE_REVISION:'The model belongs to another project revision. Build and apply the current revision.',
+  MODEL_LEASE_RETIRED:'This model is no longer current. Build or select a current model and export again.',
+  FINAL_SCENE_EVIDENCE_UNVERIFIED:'The final model has no complete validation evidence. Provide its source and final-scene validation record.',
++ STL_FLOAT_COLLISION:'Distinct final vertices collapse to the same STL float32 coordinate. This STL cannot be serialized safely; rebuild after correcting the geometry.',
++ FLOAT_PROPOSAL_RETIRED:'This export proposal was retired. Prepare a proposal from the current model again.',
++ FLOAT_PROPOSAL_CONSUMED:'This proposal has already been confirmed. Prepare another export to produce another file.',
++ FLOAT_CONFIRM_BUSY:'Confirmation of this proposal is already running.',
++ FLOAT_CONFIRM_CONTROL:'Confirmation must use the original export ticket and a live control.',
++ FLOAT_PROPOSAL_METADATA:'The runtime proposal does not match this export request. No conditioned file was published.',
++ SECTION_SUBGRID_RAW_EDGE:'This exact final section has an edge below the supported two-grid-unit minimum. Choose a supported section or correct the geometry.',
+  FINAL_SCHEDULE_EVIDENCE_UNVERIFIED:'The model has no matching record of the layer schedule used to build it. Rebuild with the committed schedule.',
+  MESH_INSPECTION_REQUIRED:'Final mesh checks failed or are unverified. Choose export for inspection to retain those warnings.',
+  PRINTING_INSPECTION_REQUIRED:'This slicer project route is available for inspection. Slicer roundtrip and physical print qualification are unverified.',
+@@ -200,10 +207,72 @@ function nativeOptions(f,o,e){
+   ...(s?{sectionMode:s.mode==='single'?0:1,z0:s.mode==='single'?s.zMm:s.startMm,z1:s.mode==='single'?s.zMm:s.endMm,step:s.mode==='single'?0:s.stepMm,side:s.side==='front'?0:1,color:s.color==='black'?0:1,units:s.units==='mm'?0:1}:{})};
+ }
+ 
++const FLOAT_POLICY_VERSION='arch-app-float-proposal-policy/1';
++function floatAvailable(client){return client?.serviceCapabilities?.finalFloat===true&&
++ ['prepareFinalFloat','confirmFinalFloat','releaseFinalFloat'].every(k=>typeof client[k]==='function');}
++function floatEligible(s,f){return f.nativeFormat===1&&!s.options.inspection&&s.evidence.meshVerdict==='pass'&&floatAvailable(s.record.client);}
++function floatDescriptor(opaque,s,command,policy){
++ need(opaque?.version==='arch-final-float-proposal/1'&&typeof opaque.release==='function'&&typeof opaque.view==='function','FLOAT_PROPOSAL_METADATA');
++ const metadata=copy(opaque.metadata),confirmation=copy(opaque.confirmation);json(metadata);json(confirmation);
++ need(utf8.encode(json(metadata)).length<=65536,'FLOAT_PROPOSAL_METADATA');
++ const fields=['version','proposalHash','sourceHash','sourceGeneration','sourceRevision','optionsHash'];
++ need(Object.keys(confirmation).length===fields.length&&fields.every(k=>Object.hasOwn(confirmation,k))&&
++  confirmation.version==='arch-final-float-confirmation/1'&&HASH.test(confirmation.proposalHash)&&HASH.test(confirmation.optionsHash)&&
++  confirmation.sourceHash===s.evidence.snapshotSha256&&confirmation.sourceGeneration===s.record.root.generation&&confirmation.sourceRevision===String(s.a.revision),'FLOAT_PROPOSAL_METADATA');
++ need(metadata.version===opaque.version&&json(metadata.confirmation)===json(confirmation)&&json(metadata.materialMapping)===json(command.mapping),'FLOAT_PROPOSAL_METADATA');
++ const c=metadata.conditioning;
++ need(c?.version==='arch-final-float-conditioning/1'&&c.requiresConfirmation===true&&c.confirmed===false&&c.proposalHash===confirmation.proposalHash&&HASH.test(c.geometryHash)&&HASH.test(c.contextHash),'FLOAT_PROPOSAL_METADATA');
++ need([c.maximumDisplacementMm,c.hausdorffUpperBoundMm,c.requestedLimitMm].every(n=>Number.isFinite(n)&&n>0)&&c.maximumDisplacementMm<=c.hausdorffUpperBoundMm&&c.hausdorffUpperBoundMm<=policy.maximumDisplacementMm&&c.requestedLimitMm===policy.maximumDisplacementMm,'FLOAT_PROPOSAL_METADATA');
++ need([c.sourceVertices,c.sourceTriangles,c.candidateVertices,c.candidateTriangles,c.collapsedEdges,c.removedDegenerateFaceImages,c.workUnits,c.workLimit].every(n=>Number.isSafeInteger(n)&&n>0)&&
++  c.sourceVertices<=65536&&c.sourceTriangles<=131072&&c.candidateVertices+c.collapsedEdges===c.sourceVertices&&c.candidateTriangles+c.removedDegenerateFaceImages===c.sourceTriangles&&c.workLimit===policy.workLimit&&c.workUnits<=c.workLimit,'FLOAT_PROPOSAL_METADATA');
++ need(c.qualification?.wholePipelineErrorBoundMm===null&&c.qualification?.physicalFit==='unqualified'&&c.qualification?.ambientIsotopy==='unverified','FLOAT_PROPOSAL_METADATA');
++ return {metadata,confirmation:Object.freeze(confirmation),changes:Object.freeze([
++  `Điều chỉnh hình học chỉ cho tệp STL: tối đa ${c.maximumDisplacementMm} mm; cận Hausdorff ${c.hausdorffUpperBoundMm} mm so với lưới union gốc.`,
++  `${c.collapsedEdges} cạnh được co; ${c.removedDegenerateFaceImages} ảnh mặt suy biến được loại. Tam giác: ${c.sourceTriangles} → ${c.candidateTriangles}.`,
++  'Nguồn, mô hình và vật liệu dự án được giữ nguyên. Cận sai số toàn quy trình, ambient isotopy, slicer và độ lắp thực tế chưa được xác minh.',
++ ])};
++}
++async function nativeReadback(result,s,f,command,hash,check){
++ const bytes=ownedBytes(result?.bytes),metadata=copy(result.metadata);json(metadata);
++ const expected={1:'stl-union',2:'stl-material-zip',3:'svg-final-section'}[f.nativeFormat];
++ need(metadata.schema==='arch-final-export/1'&&metadata.format===expected&&metadata.sourceSnapshotGeneration===s.record.root.generation&&metadata.sourceSnapshotSha256===hash&&metadata.sourceProjectRevision===String(s.a.revision),'FINAL_OUTPUT_IDENTITY');
++ const mapping=command.mapping.map(m=>({part:m.part,slot:m.slot,colorRGBA:m.rgba.toString(16).padStart(8,'0'),sourceIndex:m.source,materialSourceId:m.materialSource}));
++ need(json(metadata.mapping)===json(mapping),'FINAL_OUTPUT_MAPPING');
++ const mimeType={1:'model/stl',2:'application/zip',3:'image/svg+xml'}[f.nativeFormat];
++ need(metadata.download?.filename===s.options.filename&&metadata.download.bytes===bytes.length&&metadata.download.mime===mimeType,'FINAL_OUTPUT_DESCRIPTOR');
++ need(await sha256(bytes)===metadata.download.sha256,'FINAL_OUTPUT_HASH');check();
++ if(f.nativeFormat===1)stlStructure(bytes);
++ if(f.nativeFormat===2){
++  const entries=readZip(bytes,{...ZIP_LIMITS,archive:MAX_BYTES,entry:MAX_BYTES,total:MAX_BYTES,entries:257}),embedded=entries.get('manifest.json');
++  need(embedded&&embedded.length<=2*MB,'FINAL_ZIP_MANIFEST');const manifest=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(embedded));
++  const {download,...expectedManifest}=metadata;need(json(manifest)===json(expectedManifest),'FINAL_ZIP_MANIFEST');
++  need(Array.isArray(metadata.files)&&entries.size===metadata.files.length+1,'FINAL_ZIP_FILES');
++  for(const file of metadata.files){const b=entries.get(file.name);need(b&&b.length===file.bytes,'FINAL_ZIP_FILES');stlStructure(b);need(await sha256(b)===file.sha256,'FINAL_ZIP_HASH');check();}
++ }
++ if(f.nativeFormat===3)need(svgDocument(bytes).documentElement.getAttribute('data-scope')==='final-post-csg-section','FINAL_SECTION_SCOPE');
++ return {bytes,metadata,mimeType};
++}
++async function applicationArtifact({bytes,mimeType,metadata,result,s,f,ticket,check,conditioning}){
++ const digest=await sha256(bytes);check();
++ const warnings=[...(s.options.filename!==JSON.parse(s.raw).filename?['Filename path characters were replaced.']:[]),...(s.evidence&&s.evidence.meshVerdict!=='pass'?['Mesh verdict: '+s.evidence.meshVerdict+'. Inspection only.']:[]),...(f.adapterId?['Slicer roundtrip and physical print are unverified; inspection package only.']:[]),...(f.id==='png-viewport'&&s.provider.displayedRevision!==s.a.revision?['PNG shows displayed revision '+s.provider.displayedRevision+', not current revision '+s.a.revision+'.']:[]),...(metadata.warnings??[]),...(result?.report?.warnings??[]),...(conditioning?['Conditioning applies only to the export derivative. Whole-pipeline error, ambient isotopy, slicer and physical fit remain unverified.']:[])];
++ const artifact={version:EXPORT_APP_VERSION,ticket,bytes,mimeType,filename:s.options.filename,metadata:{schema:'arch-app-export/1',formatId:f.id,projectId:s.a.projectId,revision:s.a.revision,headHash:s.a.headHash,options:copy(s.options),bytes:bytes.length,sha256:digest,warnings,
++  qualification:{mesh:conditioning?'unverified':s.evidence?.meshVerdict??'not-applicable',...(conditioning?{sourceMesh:s.evidence.meshVerdict}:{}),slicer:'unverified',physical:'unverified',inspection:s.options.inspection},
++  ...(s.evidence?{semanticParts:copy(s.evidence.parts),sourceHashes:copy(s.evidence.sourceHashes),sceneProvenance:copy(s.evidence.provenance??{}),...(s.evidence.projectScheduleHash?{projectScheduleHash:s.evidence.projectScheduleHash}:{}),...(s.record.client.serviceCapabilities?.geometryVersions?{geometryVersions:copy(s.record.client.serviceCapabilities.geometryVersions)}:{})}:{}),service:metadata,...(result?.report?{serviceReport:copy(result.report)}:{}),...(conditioning?{conditioning:copy(conditioning)}:{})}};
++ json(artifact.metadata);check();return artifact;
++}
++
+ /** Pure application composition over the parent's existing runtime and leases. */
+ export function createExportAdapters({operation,kernelLeases,context,finalScene,sourceSnapshot,viewport,printing,options=(id,c)=>c.exportOptions?.[id]}={}){
+  need(typeof operation==='function'&&kernelLeases instanceof WeakMap&&typeof context==='function'&&typeof options==='function','EXPORT_BINDINGS');
+- let epoch={},disposed=false;const jobs=new Set();
++ let epoch={},disposed=false,serializationFailures=new WeakMap();const jobs=new Set();
++ const failureKey=s=>({sessionKey:s.a.sessionKey,headHash:s.a.headHash,userId:s.a.userId,projectId:s.a.projectId,revision:s.a.revision,state:s.stateStamp,options:json(s.options),evidence:json(s.evidence)});
++ function recordedFailure(s,f){
++  const prior=s.record&&serializationFailures.get(s.record)?.get(f.id);if(!prior)return;
++  const now=failureKey(s);if(Object.keys(now).every(k=>now[k]===prior.identity[k])){
++   if(prior.code==='STL_FLOAT_COLLISION'&&floatEligible(s,f))return;
++   fail(prior.code,undefined,{gateId:'INVALID_SERIALIZATION',formatId:f.id,snapshotSha256:s.evidence.snapshotSha256});
++  }
++ }
+  function capture(f,input){
+   need(!disposed,'EXPORT_ADAPTER_DISPOSED');const c=context(),a=authority(c);
+   need(input.state?.revision===a.revision,'STALE_REVISION');
+@@ -224,7 +293,8 @@ export function createExportAdapters({operation,kernelLeases,context,finalScene,
+     if(Object.values(schedule.sources).includes('profile'))need(schedule.profileId===provider.printerProfile.payload.id,'PRINTING_PROJECT_PROFILE_MISMATCH');}
+   }else if(f.prerequisite==='committed-source')provider=sourceDescriptor(c,sourceSnapshot);
+   else {need(input.renderer?.available===true,'VIEWPORT_UNAVAILABLE');provider=frameDescriptor(c,viewport);}
+-  return {c,a,stateStamp:json(c.state),raw:json(raw),options:o,evidence:evidence?copy(evidence):null,provider:provider?copy(provider):null,record,model:input.model,epoch};
++  const s={c,a,stateStamp:json(c.state),raw:json(raw),options:o,evidence:evidence?copy(evidence):null,provider:provider?copy(provider):null,record,model:input.model,epoch};
++  recordedFailure(s,f);return s;
+  }
+  function guard(s,f,input,signal){
+   need(!signal.aborted,'CANCELLED');need(s.epoch===epoch&&!disposed,'PRIVATE_RESET');
+@@ -244,36 +314,71 @@ export function createExportAdapters({operation,kernelLeases,context,finalScene,
+    try{const s=capture(f,input);return {...base,enabled:true,verdict:f.adapterId?'unverified':s.evidence?.meshVerdict??'unverified'};}
+    catch(e){return {...base,enabled:false,verdict:e.details?.verdict??'unverified',reasonCode:e.code??'EXPORT_BINDING_FAILED',reason:e.message||'Export binding unavailable.'};}});},
+   async export(input){
+-   need(input?.version===EXPORT_APP_VERSION&&input.ticket&&typeof input.signal?.addEventListener==='function'&&typeof input.signal?.removeEventListener==='function'&&typeof input.onProgress==='function','ADAPTER_CONTROL');
+-   need(!input.signal.aborted,'CANCELLED');const f=EXPORT_FORMATS.find(x=>x.id===input.formatId);need(f,'UNSUPPORTED_EXPORTER');need(input.prerequisite===f.prerequisite,'EXPORT_PREREQUISITE');
++   const inputSignal=input?.signal;
++   need(input?.version===EXPORT_APP_VERSION&&input.ticket&&typeof inputSignal?.addEventListener==='function'&&typeof inputSignal?.removeEventListener==='function'&&typeof input.onProgress==='function','ADAPTER_CONTROL');
++   need(!inputSignal.aborted,'CANCELLED');const f=EXPORT_FORMATS.find(x=>x.id===input.formatId);need(f,'UNSUPPORTED_EXPORTER');need(input.prerequisite===f.prerequisite,'EXPORT_PREREQUISITE');
+    need(jobs.size<1,'EXPORT_BUSY');const s=capture(f,input);
+    need(input.ticket.userId===s.a.userId&&input.ticket.projectId===s.a.projectId&&input.ticket.revision===s.a.revision,'EXPORT_TICKET');
+-   const ticket=copy(input.ticket),abort=new AbortController(),cancel=()=>abort.abort();jobs.add(abort);input.signal.addEventListener('abort',cancel,{once:true});
++   const ticket=Object.freeze(copy(input.ticket)),abort=new AbortController();
++   let opaque=null,transferred=false,retired=false,phase='preparing',cleaned=false,releaseOpaque=null;
++   const cleanup=()=>{if(cleaned)return;cleaned=true;inputSignal.removeEventListener('abort',cancel);jobs.delete(job);};
++   const retire=()=>{if(retired)return;retired=true;abort.abort();try{if(opaque)releaseOpaque(opaque);}finally{cleanup();}};
++   const cancel=()=>{abort.abort();if(transferred)retire();},job={abort:cancel};
++   jobs.add(job);inputSignal.addEventListener('abort',cancel,{once:true});
+    const control={version:EXPORT_APP_VERSION,ticket,signal:abort.signal,onProgress:input.onProgress},check=()=>guard(s,f,input,abort.signal);
++   const prepareProposal=async(command,hash)=>{
++    need(floatEligible(s,f),'STL_FLOAT_COLLISION');
++    const policy=Object.freeze({version:1,maximumDisplacementMm:Math.min(s.options.errorMm,.00001),workLimit:50_000_000});
++    releaseOpaque=s.record.client.releaseFinalFloat.bind(s.record.client);
++    opaque=await operation(control,(client,generation)=>{check();need(client===s.record.client,'MODEL_LEASE_RETIRED');return client.prepareFinalFloat(s.record.root,copy(command),policy,{generation});});
++    check();need(floatEligible(s,f),'FINAL_FLOAT_UNAVAILABLE');const captured=floatDescriptor(opaque,s,command,policy);
++    need(await sha256(s.record.root.bytes().slice())===hash,'FINAL_SCENE_HASH');check();
++    phase='prepared';
++    const proposal=Object.freeze({status:'prepared-proposal',version:EXPORT_APP_VERSION,ticket,proposalHash:captured.confirmation.proposalHash,changes:captured.changes,
++     async confirm(nextControl){
++      // Duplicate calls must not cancel a confirmation already in flight.
++      need(!retired,'FLOAT_PROPOSAL_RETIRED');need(phase!=='confirming','FLOAT_CONFIRM_BUSY');need(phase==='prepared','FLOAT_PROPOSAL_CONSUMED');
++      phase='confirming';let removeConfirmAbort=()=>{};
++      try{
++       const confirmSignal=nextControl?.signal;
++       need(nextControl?.version===EXPORT_APP_VERSION&&nextControl.ticket&&json(nextControl.ticket)===json(ticket)&&typeof confirmSignal?.addEventListener==='function'&&typeof confirmSignal?.removeEventListener==='function'&&typeof nextControl.onProgress==='function','FLOAT_CONFIRM_CONTROL');
++       need(!confirmSignal.aborted,'CANCELLED');confirmSignal.addEventListener('abort',cancel,{once:true});removeConfirmAbort=()=>confirmSignal.removeEventListener('abort',cancel);
++       check();need(floatEligible(s,f),'FINAL_FLOAT_UNAVAILABLE');
++       need(json(opaque.confirmation)===json(captured.confirmation)&&json(opaque.metadata)===json(captured.metadata),'FLOAT_PROPOSAL_METADATA');
++       need(await sha256(s.record.root.bytes().slice())===hash,'FINAL_SCENE_HASH');check();
++       const confirmControl={version:EXPORT_APP_VERSION,ticket,signal:abort.signal,onProgress:nextControl.onProgress};
++       const result=await operation(confirmControl,(client,generation)=>{check();need(client===s.record.client,'MODEL_LEASE_RETIRED');return client.confirmFinalFloat(opaque,captured.confirmation,{generation});});check();
++       const readback=await nativeReadback(result,s,f,command,hash,check);
++       need(json(readback.metadata.floatConditioning)===json({...captured.metadata.conditioning,confirmed:true})&&readback.metadata.errorLedger?.floatConditioningHausdorffUpperBoundMm===captured.metadata.conditioning.hausdorffUpperBoundMm,'FLOAT_CONFIRM_OUTPUT');
++       need(await sha256(s.record.root.bytes().slice())===hash,'FINAL_SCENE_HASH');check();
++       const artifact=await applicationArtifact({...readback,result,s,f,ticket,check,conditioning:{status:'explicitly-confirmed',confirmation:captured.confirmation,policy:{version:FLOAT_POLICY_VERSION,conditioningVersion:policy.version,maximumDisplacementMm:policy.maximumDisplacementMm,workLimit:policy.workLimit},proposalMetadata:captured.metadata}});
++       check();phase='consumed';return artifact;
++      }catch(error){retire();if(typeof error?.code==='string')throw error;throw new ExportAdapterError('INVALID_SERIALIZATION');}
++      finally{removeConfirmAbort();}
++     },release:retire});
++    check();transferred=true;return proposal;
++   };
+    let resource=null,receipt=null,published;
+    try{
+     check();input.onProgress({stage:'export-validate',progress:null});let result,bytes,mimeType,metadata,changes=[];
+     if(s.record){
+      const hash=await sha256(s.record.root.bytes().slice());check();need(hash===s.evidence.snapshotSha256,'FINAL_SCENE_HASH');
+      if(f.nativeFormat){const command=nativeOptions(f,s.options,s.evidence);
+-      result=await operation(control,(client,generation)=>{check();need(client===s.record.client,'MODEL_LEASE_RETIRED');return client.finalExport(s.record.root,command,{generation});});check();
+-      bytes=ownedBytes(result?.bytes);metadata=copy(result.metadata);json(metadata);
+-      const expected={1:'stl-union',2:'stl-material-zip',3:'svg-final-section'}[f.nativeFormat];
+-      need(metadata.schema==='arch-final-export/1'&&metadata.format===expected&&metadata.sourceSnapshotGeneration===s.record.root.generation&&metadata.sourceSnapshotSha256===hash&&metadata.sourceProjectRevision===String(s.a.revision),'FINAL_OUTPUT_IDENTITY');
+-      const expectedMapping=command.mapping.map(m=>({part:m.part,slot:m.slot,colorRGBA:m.rgba.toString(16).padStart(8,'0'),sourceIndex:m.source,materialSourceId:m.materialSource}));
+-      need(json(metadata.mapping)===json(expectedMapping),'FINAL_OUTPUT_MAPPING');
+-      mimeType={1:'model/stl',2:'application/zip',3:'image/svg+xml'}[f.nativeFormat];
+-      need(metadata.download?.filename===s.options.filename&&metadata.download.bytes===bytes.length&&metadata.download.mime===mimeType,'FINAL_OUTPUT_DESCRIPTOR');
+-      need(await sha256(bytes)===metadata.download.sha256,'FINAL_OUTPUT_HASH');check();
+-      if(f.nativeFormat===1)stlStructure(bytes);
+-      if(f.nativeFormat===2){
+-       const entries=readZip(bytes,{...ZIP_LIMITS,archive:MAX_BYTES,entry:MAX_BYTES,total:MAX_BYTES,entries:257}),embedded=entries.get('manifest.json');
+-       need(embedded&&embedded.length<=2*MB,'FINAL_ZIP_MANIFEST');const manifest=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(embedded));
+-       const {download,...expectedManifest}=metadata;need(json(manifest)===json(expectedManifest),'FINAL_ZIP_MANIFEST');
+-       need(Array.isArray(metadata.files)&&entries.size===metadata.files.length+1,'FINAL_ZIP_FILES');
+-       for(const file of metadata.files){const b=entries.get(file.name);need(b&&b.length===file.bytes,'FINAL_ZIP_FILES');stlStructure(b);need(await sha256(b)===file.sha256,'FINAL_ZIP_HASH');check();}
+-      }
+-      if(f.nativeFormat===3)need(svgDocument(bytes).documentElement.getAttribute('data-scope')==='final-post-csg-section','FINAL_SECTION_SCOPE');
++      try{result=await operation(control,(client,generation)=>{check();need(client===s.record.client,'MODEL_LEASE_RETIRED');return client.finalExport(s.record.root,command,{generation});});}
++      catch(error){
++       // Only exact native geometry/serialization findings are sticky. A stale,
++       // cancelled, resource-limited or malformed-service job cannot poison a route.
++       const match=/^(?:INVALID_SERIALIZATION:)?(STL_FLOAT_COLLISION|SECTION_SUBGRID_RAW_EDGE)$/.exec(error?.message??'');
++       if(match&&match[0]===error.message&&[match[1],'INVALID_SERIALIZATION'].includes(error?.code)&&((f.nativeFormat<3&&match[1]==='STL_FLOAT_COLLISION')||(f.nativeFormat===3&&match[1]==='SECTION_SUBGRID_RAW_EDGE'))){
++        check();need(await sha256(s.record.root.bytes().slice())===hash,'FINAL_SCENE_HASH');check();
++        let entries=serializationFailures.get(s.record);if(!entries){entries=new Map();serializationFailures.set(s.record,entries);}
++        entries.set(f.id,{code:match[1],identity:failureKey(s)});
++        if(match[1]==='STL_FLOAT_COLLISION'&&floatEligible(s,f))return await prepareProposal(command,hash);
++        recordedFailure(s,f);
++       }
++       throw error;
++      }check();
++      ({bytes,metadata,mimeType}=await nativeReadback(result,s,f,command,hash,check));
+      }else{
+       const p=s.provider,{profile}=await validateProfile(p.printerProfile,f.adapterId);check();
+       await validateSchedule(p.schedule,p.printerProfile);check();validateMaterials(p.materialTable,profile);
+@@ -303,21 +408,17 @@ export function createExportAdapters({operation,kernelLeases,context,finalScene,
+      receipt=await viewport.capture(copy(s.provider),{...control,context:{...s.a,state:copy(s.c.state)}});check();bytes=ownedBytes(receipt?.bytes,80*MB);
+      need(receipt.key===s.provider.key&&receipt.frameKey===s.provider.frameKey,'PNG_FRAME_STALE');pngHeader(bytes,s.provider);mimeType='image/png';metadata={frame:s.provider};
+     }
+-    const digest=await sha256(bytes);check();
+-    const warnings=[...(s.options.filename!==JSON.parse(s.raw).filename?['Filename path characters were replaced.']:[]),...(s.evidence&&s.evidence.meshVerdict!=='pass'?['Mesh verdict: '+s.evidence.meshVerdict+'. Inspection only.']:[]),...(f.adapterId?['Slicer roundtrip and physical print are unverified; inspection package only.']:[]),...(f.id==='png-viewport'&&s.provider.displayedRevision!==s.a.revision?['PNG shows displayed revision '+s.provider.displayedRevision+', not current revision '+s.a.revision+'.']:[]),...(metadata.warnings??[]),...(result?.report?.warnings??[])];
+-    const artifact={version:EXPORT_APP_VERSION,ticket,bytes,mimeType,filename:s.options.filename,metadata:{schema:'arch-app-export/1',formatId:f.id,projectId:s.a.projectId,revision:s.a.revision,headHash:s.a.headHash,options:copy(s.options),bytes:bytes.length,sha256:digest,warnings,
+-     qualification:{mesh:s.evidence?.meshVerdict??'not-applicable',slicer:'unverified',physical:'unverified',inspection:s.options.inspection},
+-     ...(s.evidence?{semanticParts:copy(s.evidence.parts),sourceHashes:copy(s.evidence.sourceHashes),sceneProvenance:copy(s.evidence.provenance??{}),...(s.evidence.projectScheduleHash?{projectScheduleHash:s.evidence.projectScheduleHash}:{}),...(s.record.client.serviceCapabilities?.geometryVersions?{geometryVersions:copy(s.record.client.serviceCapabilities.geometryVersions)}:{})}:{}),service:metadata,...(result?.report?{serviceReport:copy(result.report)}:{})}};
+-    json(artifact.metadata);check();published=changes.length?{status:'proposal',artifact,changes}:artifact;
++    const artifact=await applicationArtifact({bytes,mimeType,metadata,result,s,f,ticket,check});published=changes.length?{status:'proposal',artifact,changes}:artifact;
+    }finally{
+     // Never release ModelLease or its primary root lease. Providers alone own
+     // these temporary receipts, including on abort or failed readback.
+-    try{await receipt?.release?.();}finally{try{await resource?.release?.();}finally{input.signal.removeEventListener('abort',cancel);jobs.delete(abort);}}
++    if(transferred){try{check();}catch(error){retire();throw error;}}
++    else {try{await receipt?.release?.();}finally{try{await resource?.release?.();}finally{if(opaque)retire();else cleanup();}}}
+    }
+    // Cleanup may be asynchronous and may itself retire the session/frame.
+    check();return published;
+   },
+-  reset(){epoch={};for(const job of jobs)job.abort();},
++  reset(){epoch={};serializationFailures=new WeakMap();for(const job of jobs)job.abort();},
+   dispose(){disposed=true;adapter.reset();},
+  };
+  const execute=adapter.export;
+diff --git a/src/integration/export-adapters.d.mts b/src/integration/export-adapters.d.mts
+index 0aca1ac5..5c01296f 100644
+--- a/src/integration/export-adapters.d.mts
++++ b/src/integration/export-adapters.d.mts
+@@ -29,11 +29,27 @@ export interface ApplicationContext {
+ }
+ export interface RootLease {readonly id:number;readonly generation:number;readonly epoch:number;bytes():Uint8Array}
+ export interface ServiceArtifact {bytes:Uint8Array;metadata:Data;report?:Data}
++export interface FinalFloatConfirmation {
++ readonly version:'arch-final-float-confirmation/1';readonly proposalHash:string;
++ readonly sourceHash:string;readonly sourceGeneration:number;
++ readonly sourceRevision:string;readonly optionsHash:string;
++}
++/** Exact opaque object supplied by the shared EngineClient; never project JSON. */
++export interface FinalFloatLease {
++ readonly version:'arch-final-float-proposal/1';readonly metadata:Data;
++ readonly confirmation:FinalFloatConfirmation;
++ view(kind:number):Float64Array|Uint32Array;release():void;
++}
++export interface FinalFloatPolicy {version:1;maximumDisplacementMm:number;workLimit:number}
+ export interface SharedEngineClient {
+  readonly disposed?:boolean;
+- readonly serviceCapabilities?:{finalExport?:boolean;geometryVersions?:Record<string,number>};
++ readonly epoch?:number;
++ readonly serviceCapabilities?:{finalExport?:boolean;finalFloat?:boolean;geometryVersions?:Record<string,number>};
+  finalExport(lease:RootLease,options:Record<string,unknown>,control:{generation:number}):Promise<ServiceArtifact>;
+  export3MF(lease:RootLease,request:Record<string,unknown>,control:{generation:number;format:'project'}):Promise<ServiceArtifact>;
++ prepareFinalFloat?(lease:RootLease,options:Record<string,unknown>,policy:FinalFloatPolicy,control:{generation:number}):Promise<FinalFloatLease>;
++ confirmFinalFloat?(proposal:FinalFloatLease,descriptor:FinalFloatConfirmation,control:{generation:number}):Promise<ServiceArtifact>;
++ releaseFinalFloat?(proposal:FinalFloatLease):void;
+ }
+ export interface KernelRecord {root:RootLease;client:SharedEngineClient}
+ export type CommonOperation=<T>(control:Control,invoke:(client:SharedEngineClient,generation:number)=>Promise<T>)=>Promise<T>;
+@@ -96,8 +112,17 @@ export interface ExportBindings {
+  options?<K extends FormatId>(id:K,context:ApplicationContext):FormatOptions[K]|undefined;
+ }
+ export interface ApplicationArtifact extends ExportArtifact {metadata:Data}
++/** No bytes before explicit confirmation. Keep original Control live until retirement. */
++export interface PreparedExportProposal {
++ readonly status:'prepared-proposal';readonly version:typeof EXPORT_APP_VERSION;
++ readonly ticket:Control['ticket'];readonly proposalHash:string;
++ /** Runtime array is frozen; mutable declaration matches the parent's public contract. */
++ readonly changes:string[];
++ readonly bytes?:never;readonly artifact?:never;
++ confirm(control:Control):Promise<ApplicationArtifact>;release():void;
++}
+ export interface ApplicationExporter extends Omit<ExportAdapter,'export'> {
+- export(input:Parameters<ExportAdapter['export']>[0]):Promise<ApplicationArtifact|{status:'proposal';artifact:ApplicationArtifact;changes:string[]}>;
++ export(input:Parameters<ExportAdapter['export']>[0]):Promise<ApplicationArtifact|{status:'proposal';artifact:ApplicationArtifact;changes:string[]}|PreparedExportProposal>;
+  reset():void;dispose():void;
+ }
+ export const EXPORT_FORMATS:readonly (Pick<ExportFormat,'id'|'label'|'extension'|'prerequisite'>&{id:FormatId;nativeFormat?:1|2|3;adapterId?:VendorId})[];
+diff --git a/src/core/engine-worker.mjs b/src/core/engine-worker.mjs
+index bb6ec47d..a9326b04 100644
+--- a/src/core/engine-worker.mjs
++++ b/src/core/engine-worker.mjs
+@@ -349,5 +349,10 @@ self.onmessage=async({data})=>{
+       published=0;
+       }finally{if(published)engine._arch_snapshot_release(published);completeRootJob();}
+     }
+-  }catch(error){failure(data.requestId??null,error.code||error.message||'ENGINE_FAILURE',error.proposal??null);}
++  }catch(error){
++    // Preserve only these final-file diagnostics; every other RPC/error keeps its existing code.
++    const finalReason=data.type==='export-final'&&error.code==='INVALID_SERIALIZATION'&&
++      /^INVALID_SERIALIZATION:(STL_FLOAT_COLLISION|SECTION_SUBGRID_RAW_EDGE)$/.exec(error.message??'');
++    failure(data.requestId??null,finalReason&&finalReason[0]===error.message?finalReason[1]:error.code||error.message||'ENGINE_FAILURE',error.proposal??null);
++  }
+ };

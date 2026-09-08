@@ -1,0 +1,365 @@
+{
+  "version": "arch-native-source-preservation/1",
+  "status": "pass",
+  "rawGuardByteIdentical": true,
+  "rawGuardSha256": "bc13ca5e4146e67b7648c435605d7432fe9929e44d917f48ae9bbbb167bd4160",
+  "rawBranchIdenticalExceptVectorDeclarationMove": true,
+  "downstreamPaintSeamsMeshByteIdentical": true,
+  "downstreamSha256": "0fee96ae1519b6c27e0cf3b71752ca3bab34f2ee1c9a2bf4a3ceb1463bc15944",
+  "preservedFiles": [
+    {
+      "group": "main",
+      "path": "src/kernel/build.rs",
+      "bytes": 2659,
+      "sha256": "76b9f86f4f639d9c4d714f58450c1ed369b72cfcab20c5b35b7f78bcc69aa47d"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/Cargo.lock",
+      "bytes": 15180,
+      "sha256": "3c2dade86bfba5df4b9a1cbb37164af4f9fcd47b09dcdc69a0c4a163849fe532"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/Cargo.toml",
+      "bytes": 969,
+      "sha256": "c46a822b96c35116668ae3cd2ed2c24984527f002aa43471039ccbbf20f10f91"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/CMakeLists.txt",
+      "bytes": 996,
+      "sha256": "13a6ab4dad70634ea77d14b02501e28d6df8a3452aac7cdbed0a1c605a2d294e"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/docs/acceptance.json",
+      "bytes": 8579,
+      "sha256": "a71f8f2cb4c35d3feca8dae48a45c85b3be20f104ffa70cb26f7349920b82f1c"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/docs/ACCEPTANCE.md",
+      "bytes": 3788,
+      "sha256": "71f920b92168914d2cbfbf33fd1b290fc9cb8f2516867c532968f06e8833a8ba"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/docs/API-EARLY.md",
+      "bytes": 5559,
+      "sha256": "a580ddae94dcfc074767fb82dbd14a1523128fb5dcfb12fd4de2c8af33c86663"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/docs/API.md",
+      "bytes": 13986,
+      "sha256": "77b509adbbd333bc80c7fda02b3fad6f82e94e804e11ff2b930a2cfb0b71e42a"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/docs/DECISIONS.md",
+      "bytes": 6862,
+      "sha256": "694a6699d8970888aa916b1828ae0dddfa40e3f16184f59ba0c5722c2c80d0b0"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/float-runtime.d.mts",
+      "bytes": 5039,
+      "sha256": "e3c62e2d0836e4ab0073d9f33f301c0b9723879fc482a5c078e34e1cf5efc493"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/float-runtime.mjs",
+      "bytes": 6707,
+      "sha256": "7e1678066302082002abdcbabaecfd3c2cb977030bcbed7c1b46609928321b45"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/hooks/preimages.json",
+      "bytes": 1477,
+      "sha256": "c702d6ce132f7aefbfb33e8ba24e653635d9b04f2bbba97ff9ca710e67fb0746"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/hooks/README.md",
+      "bytes": 2374,
+      "sha256": "6ada62e2f71d8823b88b16e140edc45c6fb1f16583f6b584ffdf0995ee4fd224"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/hooks/root-hooks.json",
+      "bytes": 2153,
+      "sha256": "15e665787ad028bfbd796f9f689b24595237524e0c55d67ffa5c075bff1d0ed4"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/licenses/clipper2-LICENSE.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/licenses/manifold-LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/licenses/README.md",
+      "bytes": 1801,
+      "sha256": "a946ce03fb49e607f6840d468351eef05c30b7b718db419591895ee0238b8917"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/exports.json",
+      "bytes": 604,
+      "sha256": "7f4d1bdda5ac7d9c8df4bdc2e0abe98549c0dbb148d887dc7dbceed22cf4ce66"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/final-export-runtime.h",
+      "bytes": 1220,
+      "sha256": "d51a6822110fb6fb0e624758bbbc5b2aa7e26c1d1d05c5988ec0d1da3c943e48"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/final-float-runtime.h",
+      "bytes": 1386,
+      "sha256": "c5c931692e694635ebcd50875508b64d6eafada6ab71300ecb008916929ff8a5"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/final-scene-geometry-runtime.h",
+      "bytes": 1028,
+      "sha256": "5a74ee827af8f53f2e88fe9cf71e8edc4c8bd6fac76626bfd16089e57928bf00"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/final_scene_export.cpp",
+      "bytes": 19349,
+      "sha256": "613b8d88f80df6d395aac152219f30618f0054c43e18d37d23783926b014a874"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/native/final_scene_export.h",
+      "bytes": 3467,
+      "sha256": "0f6a2b5433b6632829d3ac2914308673699a9a0b5d3c5a0ca6d4d7c6991ac503"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/pins/dependency-sources.json",
+      "bytes": 179456,
+      "sha256": "44c2b44f96e1bc1c3bf8b8926216feb9c851452df0522b6a4c3595451feccce3"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/pins/root-toolchain-lock.json",
+      "bytes": 2464,
+      "sha256": "8170330745859ac69880285b2b83a3ed42619ad38f761033f44cfa22caa51095"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/README.md",
+      "bytes": 3267,
+      "sha256": "42b64c25d956242ceb3d4addbe63e8c775555e3a3370b6ee5f0e2a2d0e386ed6"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/runtime-helper.mjs",
+      "bytes": 3927,
+      "sha256": "92b856d0447ad866286bb0cbfc7d38e18b57e91f3fd2d3298bd3c90d2e9f79a6"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/encode.rs",
+      "bytes": 45035,
+      "sha256": "70278e5d5416b3d07e082a31cd817b7997b939aef18b9c80e85ad1774347dce8"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/float_runtime.rs",
+      "bytes": 10832,
+      "sha256": "d9984563d61aeaee4ed39b2d1873470524dfea4d7a21bb064dae9757fee7eddf"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/float_tests.rs",
+      "bytes": 5335,
+      "sha256": "17bc891c4e94213e25dda5e0341cbdef61e0f31ffac6ffe4c41cc15910cf3224"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/geometry_runtime.rs",
+      "bytes": 6910,
+      "sha256": "b59c787c857a89cb5e59f0ddaac3d24f68da161a295fcff1e67f93fd3d205c9b"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/mod.rs",
+      "bytes": 6735,
+      "sha256": "b54074a191919c563402589d78742420a6ccfe93f8d9c2db5cdbfa1c3c2e0b47"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/test_fixture.rs",
+      "bytes": 1478,
+      "sha256": "1a8230c9e91b64122b081f0170a2be30df07dca944aadaa43bc4b6dd510540cd"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/rust/wire.rs",
+      "bytes": 8538,
+      "sha256": "41097ab119b906fc177d3317aca7111580904a6d8cb97574cdf9875baf39bfd6"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/browser-worker.mjs",
+      "bytes": 1577,
+      "sha256": "c84312aa1e781053b5e9337ad0f47d15cbd72e5dae028a0d268a369d7762ce76"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/browser.mjs",
+      "bytes": 6110,
+      "sha256": "7dd76c5f160f7558c1eec8ee4fa8592df092a2f6725a935b10b994149f6cbaaa"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/cases.mjs",
+      "bytes": 8720,
+      "sha256": "26b7f740aee072c4af26b897da5887be0043030cacaff162faebad8bfb392a09"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/fixture.cpp",
+      "bytes": 3391,
+      "sha256": "bd66af8f7f4cc3071c1bbec1c4b2212fe88e572e686828881fb467ca3aaf27a3"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/module-api.mjs",
+      "bytes": 5864,
+      "sha256": "d59fcc475d4bc527daf7613a1a174aebf80ff9aa055c7e0d63ae8496d16fcd88"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/native-runtime.mjs",
+      "bytes": 1991,
+      "sha256": "51f98d03243421a44756358995b69626cc17f3e5f43111aeb69e601dd5c7affe"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/native_probe.rs",
+      "bytes": 7255,
+      "sha256": "b7847994993bbd7b88f3d0f0bc5e7fc4c8f15fed963902c3c4ab59becab7a0d3"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/options.mjs",
+      "bytes": 1635,
+      "sha256": "39aa9860cfda9781158d493ef55a3421872463a8d6a23a90bfb190a79ce9a60e"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/oracles.mjs",
+      "bytes": 6890,
+      "sha256": "9d88641abf41ae2b2cb8ace4be4de80dfcbf1c4e4d8193059b62fb3636560606"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/parity.mjs",
+      "bytes": 1652,
+      "sha256": "e8f480f88db433e824bea5dc016e4a7d0c216cf306d575edc8a3be01ebc8970d"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/run-native.mjs",
+      "bytes": 1684,
+      "sha256": "6c4e796d207afd38a122f95be209da5c3d9dd385ad67c1b11c0f17cccb2ff926"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/run-wasm.mjs",
+      "bytes": 2718,
+      "sha256": "1e76142d73c5761cff328607ab075c8d6dcbf2c12c7d7149cedfbc00d3c74cf8"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tests/runtime-helper.test.mjs",
+      "bytes": 1529,
+      "sha256": "2b652bb281bf742a7592203fe7bd471028f41dade18d351859b6f3b7bb7fe69f"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tools/build.ps1",
+      "bytes": 4911,
+      "sha256": "d2aa11e237ee0071ea5053e0853bc607ba56016b668b29355055f2f7645bee06"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tools/check-evidence.mjs",
+      "bytes": 5496,
+      "sha256": "82d6bfb68a6be63ac8fd0e9059966e20746f4a7530305030dbf25560cff50ea8"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tools/prepare.mjs",
+      "bytes": 4209,
+      "sha256": "2fdf533c1ac67737a6eebc1bd815bda911c4c50a57a42b9a3f33024806b9e517"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tools/provenance.mjs",
+      "bytes": 4996,
+      "sha256": "c5f4b4818e9dcc25ce95737d9717c00d7b3e9ade9810f1d0747bc79de2a7ee09"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/final-scene-export/tools/seal.mjs",
+      "bytes": 11604,
+      "sha256": "2cb6c7972b7900120439cfc7426a2db85d311639b32f54c66c96071b0342051d"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/native/CMakeLists.txt",
+      "bytes": 3779,
+      "sha256": "4af8e1632bf718ee9ef4a9e384ad4eca6e41d86bde2ceabce6b728bff5d741aa"
+    },
+    {
+      "group": "main",
+      "path": "src/kernel/src/abi/product_runtime.rs",
+      "bytes": 21000,
+      "sha256": "e6229a6d689e2cad2b4d6d3f01699871bb76d9899592f3521601dd8bbcd9baec"
+    },
+    {
+      "group": "main",
+      "path": "tests/kernel/svg-source.test.mjs",
+      "bytes": 6932,
+      "sha256": "b7121d8cef307bd8744feb0ccf1c3857c0b60f2a000ad6aeb79f90454d4234bc"
+    }
+  ],
+  "modifiedFiles": [
+    "src/kernel/native/geometry.cpp",
+    "src/kernel/native/geometry.h",
+    "src/kernel/native/product-exports.json",
+    "src/kernel/native/runtime.h",
+    "src/kernel/src/abi/raster_runtime/mod.rs",
+    "src/kernel/src/abi.rs",
+    "src/kernel/src/lib.rs",
+    "src/kernel/src/vector.rs",
+    "src/core/engine-client.mjs",
+    "src/core/engine-worker.mjs"
+  ],
+  "excludedMainChanges": [
+    "src/integration/application.mjs",
+    "src/integration/kernel-adapters.mjs",
+    "src/integration/product-services.mjs",
+    "src/contracts/app-bridge.ts"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "boundsMm": [
+      0,
+      0,
+      0,
+      15,
+      10,
+      10
+    ],
+    "coordinateFrame": "source-manufacturing-mm",
+    "format": "ARCH/1",
+    "geometry": "material-union",
+    "grouping": "slot-rgba-materialSource/1",
+    "groups": [
+      {
+        "inputParts": [
+          0
+        ],
+        "materialSource": 42,
+        "part": 0,
+        "rgba": 4278190335,
+        "slot": 1,
+        "sourceIndices": [
+          101
+        ]
+      },
+      {
+        "inputParts": [
+          1
+        ],
+        "materialSource": 43,
+        "part": 1,
+        "rgba": 4278190335,
+        "slot": 1,
+        "sourceIndices": [
+          102
+        ]
+      }
+    ],
+    "meshVerdict": "unverified",
+    "nativeWarningFlags": 2,
+    "revision": "1",
+    "sourceSnapshotGeneration": 4,
+    "sourceSnapshotId": 3,
+    "sourceSnapshotSha256": "953008f54a906388cff19762826cd0dd262ef50064c61033d5265b5e1814ad08",
+    "sourceUnchanged": true,
+    "version": "arch-final-scene-geometry/1"
+  },
+  "volumes": [
+    999.9999999999999,
+    999.9999999999999
+  ],
+  "analyticUnion": 1500,
+  "analyticOverlap": 500
+}

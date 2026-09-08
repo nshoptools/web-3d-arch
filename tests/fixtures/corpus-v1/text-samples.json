@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "samples": [
+    {
+      "id": "vi-nfc",
+      "text": "Tiếng Việt"
+    },
+    {
+      "id": "vi-nfd",
+      "text": "Tiếng Việt"
+    },
+    {
+      "id": "zwj",
+      "text": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": "flag",
+      "text": "🇻🇳"
+    },
+    {
+      "id": "keycap",
+      "text": "1️⃣"
+    },
+    {
+      "id": "text-presentation",
+      "text": "❤︎"
+    }
+  ]
+}

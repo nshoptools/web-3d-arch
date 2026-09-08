@@ -42,7 +42,7 @@
     "font-audit.json": "96fba9ac22d66a49353d90d924d1d344833cc741f7709fc424cfddb387f55278",
     "opentype-audit.json": "679bd99023923e2c503c6d827ab10a2477cb9ea72abe3bcb0d6f2d4c12537115",
     "color-emoji-audit.json": "289d71e904eb90708f7455e6c9f63c3bafea98279054dbec651d083ee3d0900d",
-    "input-runtime-audit.json": "509aef147be0bc93a287de4f8436393bdae4b2d0fc92bc953e7f9f41ce78a267",
+    "input-runtime-audit.json": "19b9a30f12b0cd5acf2fef6e53841d7974dcdaa01a72d5aba2d826acd053c19e",
     "artwork-render-audit.json": "29d48c89f7ad574786d5c0efc5ae558fca3d3fba11d3cea48e5ddc0f715cb2b8"
   },
   "catalogSha256": {

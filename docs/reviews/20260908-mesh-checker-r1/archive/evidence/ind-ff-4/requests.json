@@ -1,0 +1,534 @@
+[
+  {
+    "url": "/",
+    "method": "GET"
+  },
+  {
+    "url": "/review/independent-browser-page.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/engine-client.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-client.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/review/analytic-shapes.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/review/idle-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/review/wrong-id-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/engine-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/product-source-operations.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/product-worker-hook.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/product-operations.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/kernel/mechanics/src/catalog-map.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/runtime/arch-kernel.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/runtime/arch-kernel.wasm",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/raster-operations.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/raster-schema.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/kernel/final-scene-export/float-runtime.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/kernel/final-scene-export/runtime-helper.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification-worker.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-qualification.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/viewport/arch-view.mjs",
+    "method": "GET"
+  },
+  {
+    "url": "/src/core/mesh-predicates.mjs",
+    "method": "GET"
+  }
+]

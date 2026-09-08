@@ -1,0 +1,195 @@
+{
+  "version": "arch-final-float-test-evidence/1",
+  "date": "2026-09-08",
+  "role": "implementation-self-test",
+  "model": "inherited Astra/max reported by parent",
+  "fastMode": "unverified",
+  "independentSeatReview": false,
+  "commands": [
+    {
+      "name": "unified native C++ configure/build",
+      "command": "CMake: private copy src/kernel/native, installed read-only Manifold/Clipper/HB; prepared official lib3MF2.5.0; ARCH_PRINTING_SOURCE=private src/printing; --config Release --parallel 6",
+      "exit": 0,
+      "logs": [
+        {
+          "path": "unified-native-configure-fixed.log",
+          "bytes": 2417,
+          "sha256": "ab6c79df0848d0abfab0ec3eed6ab46e14f2b242059859de612fd5c5dc9cc3bb"
+        },
+        {
+          "path": "unified-native-build.log",
+          "bytes": 481103,
+          "sha256": "c13c789ef7d46e8dee6c0d6dd3d6a4b502a35ab7575b7804247500c3c2d3371d"
+        }
+      ]
+    },
+    {
+      "name": "native root unit tests",
+      "command": "cargo test --manifest-path src/kernel/Cargo.toml --offline --locked --release --lib -- --test-threads=1",
+      "exit": 0,
+      "passed": 16,
+      "logs": [
+        {
+          "path": "root-native-final.log",
+          "bytes": 2013,
+          "sha256": "1f15565fbc279a81a73f77056e194464a65e2813c3406046f97ed3e147a1c2d9"
+        }
+      ]
+    },
+    {
+      "name": "native integration build",
+      "command": "cargo build --manifest-path tests/final-float/native/Cargo.toml --offline --locked --release",
+      "exit": 0,
+      "logs": [
+        {
+          "path": "native-final-build.log",
+          "bytes": 442,
+          "sha256": "00d67200b2b319eaac1a74ca3b7fbc129be2755332505286d4f4f661a784e28d"
+        }
+      ]
+    },
+    {
+      "name": "native integration execution",
+      "command": "$CARGO_TARGET_DIR/release/final-float-native-tests.exe $PROJECT_REVIEW_RUN/work/float-inputs/source.svg $PROJECT_REVIEW_RUN/work/float-inputs/clicky.aprq $PROJECT_REVIEW_RUN/evidence/native-root $PROJECT_REVIEW_RUN/work/float-inputs/assembly.aprq",
+      "exit": 0,
+      "checks": 43,
+      "logs": [
+        {
+          "path": "native-final-run.log",
+          "bytes": 30,
+          "sha256": "15c7fd3f7385d5b7cb4a724128fd333480a418b93c923fdd5d74e95b47609f11"
+        }
+      ]
+    },
+    {
+      "name": "unified WASM build",
+      "command": "CMake same source via emsdk toolchain; Cargo +nightly-2026-09-07 build -Zbuild-std=std,panic_abort --target wasm32-unknown-emscripten --release --lib --features test-fixtures --offline --locked; em++ same-module link with installed HB + printing export lists and additive final-scene exports",
+      "exit": 0,
+      "logs": [
+        {
+          "path": "root-wasm-configure.log",
+          "bytes": 2336,
+          "sha256": "26b857f3f9e528bbf3acf1512979f6c44f813127c56ffd5720a6c3693868321e"
+        },
+        {
+          "path": "root-wasm-cpp.log",
+          "bytes": 65,
+          "sha256": "7716162f3cd3b99cf3b8a8dd6decf324e08c7e941aae7e730baba5e4fc8c075b"
+        },
+        {
+          "path": "root-wasm-rust.log",
+          "bytes": 824,
+          "sha256": "60a736eb4a5dddaabeb7cc11f1684760c3f0da23346618fb6eae8463765da35d"
+        },
+        {
+          "path": "root-wasm-link.log",
+          "bytes": 350,
+          "sha256": "8d493a9947b648a9f7fe0ce2084b9bccbb3a8ec2c2ba58dd40db51d307d6b51c"
+        }
+      ]
+    },
+    {
+      "name": "typed declaration consumer",
+      "command": "node .toolchain/app-runtime/node_modules/typescript/bin/tsc --ignoreConfig --noEmit --strict --target ES2022 --module NodeNext --moduleResolution NodeNext --skipLibCheck tests/final-float/api-types.mts",
+      "exit": 0,
+      "logs": [
+        {
+          "path": "float-types-final.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "controlled client envelopes + actual Node + 3 Workers",
+      "command": "node --test --test-concurrency=1 tests/final-float/client-ready.test.mjs tests/final-float/runtime.test.mjs tests/final-float/worker.test.mjs",
+      "exit": 0,
+      "passed": 7,
+      "logs": [
+        {
+          "path": "float-sealed-node-workers.log",
+          "bytes": 722,
+          "sha256": "f21a8184b7d336bf6dd657f32a6c5babbca0f012b832d76afbd2dcdc783e6539"
+        }
+      ]
+    },
+    {
+      "name": "unchanged legacy final export RPC",
+      "command": "node --test --test-concurrency=1 tests/kernel/final-export-rpc.test.mjs (PROJECT_ROOT=captured source only for this Node process)",
+      "exit": 0,
+      "passed": 6,
+      "logs": [
+        {
+          "path": "legacy-final-sealed-rpc.log",
+          "bytes": 596,
+          "sha256": "0e03db2e4ef50bbefce98c39517b93bad31fec6bc9c93be47f684fe14d167a33"
+        }
+      ]
+    },
+    {
+      "name": "file and correspondence oracle",
+      "command": "node tests/final-float/file-oracle.mjs",
+      "exit": 0,
+      "logs": [
+        {
+          "path": "float-file-oracle-final.log",
+          "bytes": 922,
+          "sha256": "c739fd095a050cf4329c501270e8c4d933ae660fea225f94ab54700d275f435e"
+        }
+      ]
+    },
+    {
+      "name": "portable source staging smoke",
+      "command": "ARCH_FLOAT_SOURCE_ROOT=<candidate> node tests/final-float/stage.mjs",
+      "exit": 0,
+      "limitation": "Historical smoke capture preceded final printing ABI and checked-length additions. Final executed tests use the complete current candidate; this earlier immutable staging capture is retained without overwrite.",
+      "logs": [
+        {
+          "path": "portable-stage.log",
+          "bytes": 116,
+          "sha256": "cdc07c8d98997b910ae731a8c3afce5c9d67736a5f683b9b99e431183ebc4e3f"
+        }
+      ]
+    }
+  ],
+  "engines": {
+    "chromium": {
+      "checks": 35,
+      "printingGetterLiveEpoch": [
+        "actual same Module printing ABI 2/1/2 bound to client epoch",
+        "printing ABI proof retired with runtime",
+        "replacement obtains new printing getter proof"
+      ],
+      "nativeByteParity": true,
+      "pageErrors": []
+    },
+    "firefox": {
+      "checks": 35,
+      "printingGetterLiveEpoch": [
+        "actual same Module printing ABI 2/1/2 bound to client epoch",
+        "printing ABI proof retired with runtime",
+        "replacement obtains new printing getter proof"
+      ],
+      "nativeByteParity": true,
+      "pageErrors": []
+    },
+    "webkit": {
+      "checks": 35,
+      "printingGetterLiveEpoch": [
+        "actual same Module printing ABI 2/1/2 bound to client epoch",
+        "printing ABI proof retired with runtime",
+        "replacement obtains new printing getter proof"
+      ],
+      "nativeByteParity": true,
+      "pageErrors": []
+    }
+  },
+  "contentHashScope": "Private unified module bytes in artifact-hashes.json. Release loader must separately bind its own checked module pair to each live client epoch.",
+  "unsupported": [
+    "ambient isotopy",
+    "whole pipeline bound",
+    "printer fit",
+    "material ZIP/SVG conditioning",
+    "app account/controller consent integration"
+  ]
+}

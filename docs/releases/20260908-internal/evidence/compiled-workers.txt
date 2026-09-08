@@ -1,0 +1,11 @@
+✔ chromium: actual compiled Worker receives owned verified WASM exactly once; duplicate init and tamper refuse (8488.9057ms)
+✔ firefox: actual compiled Worker receives owned verified WASM exactly once; duplicate init and tamper refuse (12287.9507ms)
+✔ webkit: actual compiled Worker receives owned verified WASM exactly once; duplicate init and tamper refuse (2897.9817ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33917.311

@@ -1,0 +1,11 @@
+{
+  "version": "arch-ui-baseline-witness/1",
+  "baselineSha256": "7e0cd1d80de270ffc2a8e740bd1acacc927e3098ea85bd86aff0db63c565115e",
+  "currentSha256": "21760803bd1b0927137d6061efc3878a2b6b4a32bbe9119cf42b8d60c2458f7b",
+  "fileMetadataIdentical": true,
+  "fileBytesDifferent": true,
+  "baselineFileCollision": true,
+  "baselineTupleCollision": true,
+  "currentDistinct": true,
+  "scope": "Two pure collision witnesses only; not a full historical React/browser run"
+}

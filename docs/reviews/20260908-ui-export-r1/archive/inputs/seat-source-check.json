@@ -1,0 +1,13 @@
+{
+  "at": "2026-09-08T08:10:15.038Z",
+  "model": "gpt-6-astra",
+  "effort": "max",
+  "fast": false,
+  "officialSources": [
+    "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "https://developers.openai.com/api/docs/models",
+    "https://learn.chatgpt.com/docs/agent-configuration/speed",
+    "https://learn.chatgpt.com/docs/config-file/config-reference"
+  ],
+  "decision": "Current official model page supports max and names Astra flagship; no verified stronger available model/effort established. Keep configured model/max/Fast off; runtime must independently confirm."
+}

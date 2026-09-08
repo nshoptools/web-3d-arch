@@ -1,0 +1,1147 @@
+{
+  "version": "arch-runtime-bootstrap-verification/1",
+  "date": "2026-09-08",
+  "role": "implementation-self-test",
+  "independentReview": false,
+  "model": {
+    "inherited": "gpt-6-astra",
+    "effort": "max",
+    "fastModeVerified": false
+  },
+  "status": "pass-for-stated-runtime-integrity-scope",
+  "tools": {
+    "node": "24.19.0",
+    "vite": "8.2.2",
+    "playwright": "1.63.0"
+  },
+  "pairHistory": [
+    {
+      "capture": "module",
+      "pins": [
+        {
+          "file": "arch-kernel.mjs",
+          "sha256": "527a28809227d7cd20788af1b599447b70241a2ec1f95cff591d92b8e36a90aa",
+          "bytes": 139164
+        },
+        {
+          "file": "arch-kernel.wasm",
+          "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+          "bytes": 5788253
+        }
+      ]
+    },
+    {
+      "capture": "module-owned-r2",
+      "pins": [
+        {
+          "sha256": "64c5f89e2ee8fecda371436f907faf83e9120c41e11089979bd011bc8a197ed2",
+          "file": "arch-kernel.mjs",
+          "bytes": 139291
+        },
+        {
+          "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+          "file": "arch-kernel.wasm",
+          "bytes": 5788253
+        }
+      ]
+    }
+  ],
+  "parentBuildReceipt": {
+    "path": "inputs/build-owned-r2/source-owned-r2-build-receipt.json",
+    "bytes": 3545,
+    "sha256": "171daf4a7bcb16836970ace1634217ed8aeb6d986da4ad2ef0963abb1a991f42"
+  },
+  "relevantSources": [
+    {
+      "path": "inputs/main/src/core/engine-client.mjs",
+      "bytes": 27384,
+      "sha256": "3e0c00ca0802e30a08b4718d4f498acf98356b8f8d817ef452273328c3a04319"
+    },
+    {
+      "path": "inputs/main/src/core/runtime-integrity.mjs",
+      "bytes": 6269,
+      "sha256": "69a0e08dd5965a140bdbb05749b0d5d05122e2e03c4d6876971db64ba9e0729c"
+    },
+    {
+      "path": "inputs/revisions/r2/src/core/engine-client.mjs",
+      "bytes": 27638,
+      "sha256": "2b0d4965f912cc5302f8a1ade5ebfa27e36ec7a34504287ed18a03ce7fc1973b"
+    },
+    {
+      "path": "inputs/revisions/r3/src/core/runtime-integrity.mjs",
+      "bytes": 6636,
+      "sha256": "bfd366fd0b68e0936bcbd37753fe67d87382d881ccc711a33fe6aa0d4ebfd5ea"
+    }
+  ],
+  "capture": {
+    "manifest": {
+      "path": "inputs/portable-r3/manifest.json",
+      "bytes": 1154306,
+      "sha256": "bee3a65dd213f17ba3a37a836bebe22711323e731aae60f295f6ccf7888d0d4a"
+    },
+    "sourceTestFiles": 629,
+    "dependencyFiles": 3379,
+    "mainProductionInputFilesMatched": 623,
+    "mainProductionInputsMatchAtEvidenceCollection": true
+  },
+  "assertions": {
+    "engines": 3,
+    "scenariosPerEngine": 13,
+    "successfulCompleteRuns": 2,
+    "nodeTests": 13,
+    "noIndependentGeometryQualification": true,
+    "allOriginalCapturedModuleBytesUnchanged": true
+  },
+  "observations": [
+    {
+      "tag": "owned-r2",
+      "engine": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/owned-r2/chromium.json",
+        "bytes": 33730,
+        "sha256": "57f403e0c22493175adb95d857545bc06cce531c6af71f29997379b2a3c548c5"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "owned-r2",
+      "engine": "firefox",
+      "browserVersion": "155.0",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/owned-r2/firefox.json",
+        "bytes": 33647,
+        "sha256": "e5491a3501b217814c36b885b16f87cb423d66b0dd51297b28829595a4dca2d5"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "owned-r2",
+      "engine": "webkit",
+      "browserVersion": "26.6",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/owned-r2/webkit.json",
+        "bytes": 33571,
+        "sha256": "c4c394066d1a9d5318f6c46e9c684dbeee25637c3bd08922571a3aa34a5ba703"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "portable-r3",
+      "engine": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/portable-r3/chromium.json",
+        "bytes": 33733,
+        "sha256": "60ed4143e8605c3b4ba9d1bcdf9d5c81fdbad4964d678a17d74334f87e6b8fff"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "portable-r3",
+      "engine": "firefox",
+      "browserVersion": "155.0",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/portable-r3/firefox.json",
+        "bytes": 33650,
+        "sha256": "f8505aa4899e1361ba08bc623030494739cb3132d69b84c7bb2acdb72e5087c8"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "portable-r3",
+      "engine": "webkit",
+      "browserVersion": "26.6",
+      "nodeVersion": "v24.19.0",
+      "evidence": {
+        "path": "evidence/integrity-workers/portable-r3/webkit.json",
+        "bytes": 33574,
+        "sha256": "60570bd96858fef6bcce379e535ee440c54f4ff37a923de6e637d48b1051fc2f"
+      },
+      "cases": [
+        {
+          "name": "verified-original-bytes-and-one-module",
+          "status": "pass"
+        },
+        {
+          "name": "mixed-module-request-binding",
+          "status": "pass",
+          "code": "RUNTIME_MODULE_PAIR"
+        },
+        {
+          "name": "altered-wrapper",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "altered-wasm",
+          "status": "pass",
+          "code": "RUNTIME_HASH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "missing-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_SCHEMA",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "forged-wasm-proof",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "mixed-ready-pair",
+          "status": "pass",
+          "code": "RUNTIME_INTEGRITY_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-root-abi",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-ready-heap",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "invalid-control-offset",
+          "status": "pass",
+          "code": "CORE_ABI_MISMATCH",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "duplicate-actual-ready-retires-proof",
+          "status": "pass",
+          "code": "DUPLICATE_READY",
+          "geometryRequestSequence": 0
+        },
+        {
+          "name": "actual-replacement-aba-and-delayed-old-ready",
+          "status": "pass"
+        },
+        {
+          "name": "dispose-held-initialization",
+          "status": "pass",
+          "code": "ENGINE_DISPOSED",
+          "geometryRequestSequence": 0
+        }
+      ],
+      "actualInstance": {
+        "sha256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+        "bytes": 5788253,
+        "instantiateCount": 1,
+        "streamingCount": 0,
+        "shared": true,
+        "versions": {
+          "rootABI": 2,
+          "arch3mfABI": 1,
+          "kernel3mfABI": 2,
+          "sourceFrameVersion": 1
+        },
+        "readyHeapMatches": true,
+        "snapshotHeapMatches": true,
+        "wasmHTTPFetchCount": 1,
+        "wrapperHTTPFetchCount": 2
+      },
+      "printing": {
+        "rootABI": 2,
+        "arch3mfABI": 1,
+        "kernel3mfABI": 2,
+        "epoch": 1
+      },
+      "geometryWitness": {
+        "sourceHash": "f67a4f9f62230a6f7994f50b5bebbdbe88800bcb4395a47b6e021dc4a34f07ae",
+        "archSha256": "e8306b6863d31b1f49cef944bd2faa93238c1a0df681c0a4b1fc25c0c60be646",
+        "vertices": 16,
+        "triangles": 32,
+        "frameHash": "0c2d352eb44c705d7f39c1f306fc66a4d2aa206dfc79fa4b2b66bc397a1830b8"
+      },
+      "replacement": {
+        "oldEpoch": 1,
+        "newEpoch": 3,
+        "oldId": 2,
+        "newId": 2,
+        "oldLeaseCode": "SNAPSHOT_RETIRED",
+        "wasmHTTPFetchCount": 2,
+        "first": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        },
+        "second": {
+          "type": "integrity-test-drained",
+          "id": 1,
+          "instantiateCount": 1,
+          "streamingCount": 0,
+          "versions": {
+            "rootABI": 2,
+            "arch3mfABI": 1,
+            "kernel3mfABI": 2,
+            "sourceFrameVersion": 1
+          },
+          "received": [
+            "init",
+            "build"
+          ]
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": "evidence/ready-r1-node.log",
+      "bytes": 6309,
+      "sha256": "81dda2ae088c15187a6b2f536c00a3ebe8f8a0fe6b44bd6bd42de96c4e8e7483",
+      "exitCode": 1,
+      "result": "6 pass / 6 fail; parent production envelope gap"
+    },
+    {
+      "path": "evidence/ready-r2-node.log",
+      "bytes": 1016,
+      "sha256": "17f9eff10e5b3addd81813c77a0cdb527dcb3f14def565b1bace806a8030ab02",
+      "exitCode": 0,
+      "result": "12 pass after parent client fix"
+    },
+    {
+      "path": "evidence/ready-r3-node.log",
+      "bytes": 1137,
+      "sha256": "03e5369fd9ce7bd25c7a63e3044d98762c1f70229e000fd256dcc7a3904f00ee",
+      "exitCode": 0,
+      "result": "13 pass with exact boundary cases"
+    },
+    {
+      "path": "evidence/integrity-r1-workers.log",
+      "bytes": 3405,
+      "sha256": "83cc53366057c6bbebc1a2cafb932435d02b2ede6d02d07ad9ecd3af8959ce67",
+      "exitCode": 1,
+      "result": "3 harness digest failures; retained"
+    },
+    {
+      "path": "evidence/integrity-r2-workers.log",
+      "bytes": 3249,
+      "sha256": "0b3f02fc8e2c9cb91efe0766e16c182d995f0025aab4af5d44dfed7b1ec4e583",
+      "exitCode": 1,
+      "result": "3 actual old-wrapper exact-byte integrity failures"
+    },
+    {
+      "path": "evidence/integrity-r3-chromium-diagnostic.log",
+      "bytes": 2256,
+      "sha256": "df38e00ee000e80241ee39a7996b9c4d705fb2f3d784a5977becbef369ced760",
+      "exitCode": 1,
+      "result": "old-wrapper actual streaming path diagnostic"
+    },
+    {
+      "path": "evidence/integrity-owned-r2-workers.log",
+      "bytes": 370,
+      "sha256": "25d3a42cd1338460fe9efbf33918392a93742c2c8783717adcf107cfc504f80d",
+      "exitCode": 0,
+      "result": "3 actual engines, 13 scenarios each"
+    },
+    {
+      "path": "evidence/stage-portable-r3.log",
+      "bytes": 638,
+      "sha256": "32e979c35a5e7562dacf688443e66e330c79f08045a50086aef6c8dd47390575",
+      "exitCode": 0,
+      "result": "portable isolated source/module/dependency capture"
+    },
+    {
+      "path": "evidence/ready-portable-r3-node.log",
+      "bytes": 1138,
+      "sha256": "7903236230382f2dd075750e0caacc3e15da2b42aec6b11a33c681592237187c",
+      "exitCode": 0,
+      "result": "13 pass from portable snapshot"
+    },
+    {
+      "path": "evidence/integrity-portable-r3-workers.log",
+      "bytes": 370,
+      "sha256": "d9549876555c8528004cf88fbd845931c5169d3b2880826d1cc9e17e51eea79d",
+      "exitCode": 0,
+      "result": "3 actual engines, 13 scenarios each, from portable snapshot"
+    },
+    {
+      "path": "evidence/integrity-workers-r1/chromium-failure.json",
+      "bytes": 1128,
+      "sha256": "ca5b198a0fada842502e09e7095a89c41c760ef848539554b1a70aa0a56c5644"
+    },
+    {
+      "path": "evidence/integrity-workers-r1/firefox-failure.json",
+      "bytes": 1262,
+      "sha256": "425f645026d46684f39e603fa9f9ce15f9caa8743258c03d5f840c2e41d75c63"
+    },
+    {
+      "path": "evidence/integrity-workers-r1/webkit-failure.json",
+      "bytes": 827,
+      "sha256": "18c00e65006fe52d412971fc1392bdc0ae23b1a4ad607c0d3c028ed8ba614af0"
+    },
+    {
+      "path": "evidence/integrity-workers-r2/chromium-failure.json",
+      "bytes": 1073,
+      "sha256": "ec89ee1efd3e0dbfd825acdab800d0375e410da65319f2c68bb711b20338c7e3"
+    },
+    {
+      "path": "evidence/integrity-workers-r2/firefox-failure.json",
+      "bytes": 1151,
+      "sha256": "b8525e66b32d8216e43b67f06735a5aac69e9b9993504182942b378a04851782"
+    },
+    {
+      "path": "evidence/integrity-workers-r2/webkit-failure.json",
+      "bytes": 843,
+      "sha256": "bc8a6e4f830258781de50b5d53ceb8e6d44ceae0f151bb902dcd2b2f8119f0a5"
+    },
+    {
+      "path": "evidence/integrity-workers/chromium-failure.json",
+      "bytes": 2238,
+      "sha256": "b76db4c613da0c7c7bbe096b85f9e543c6b2ca5ec93c2d281c572564db407b31"
+    }
+  ],
+  "limitations": [
+    "JS import trusts the immutable verified content-addressed host; not dynamic-import SRI.",
+    "Synthetic Node Worker and deliberate READY mutation/old-handler replay are protocol fault injection, not independent native proof.",
+    "Mixed pair means mismatch against authorized release binding, not arbitrary binaries with newly approved pins.",
+    "Getter access alone is not instance proof. Actual instantiation bytes, same heap, ABI getters and HTTP traces are decisive for this pair.",
+    "The tiny SVG/frame witness is not a mesh/printing/native334/product-source acceptance suite."
+  ]
+}

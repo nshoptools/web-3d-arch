@@ -1,0 +1,209 @@
+{
+  "method": "Exact rational predicates over every serialized triangle for witness rays; indexed topology, signed volumes and boxes checked over all mesh faces; analytic parallelogram area and positive full-height void",
+  "results": [
+    {
+      "id": "roof-oblique-slit-2nm",
+      "verdict": 0,
+      "inputUnchanged": true,
+      "parts": [
+        {
+          "vertices": 272,
+          "faces": 540,
+          "edges": 810,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.014962206289339974,
+          "volume_mm3": 5380.620948053781,
+          "reported_volume_mm3": 5380.620948053782,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              0.0
+            ],
+            [
+              20.0,
+              15.0,
+              4.9
+            ]
+          ]
+        },
+        {
+          "vertices": 52,
+          "faces": 104,
+          "edges": 156,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 8.078315194534096e-08,
+          "volume_mm3": 1316.644463192016,
+          "reported_volume_mm3": 1316.6444631920158,
+          "volume_abs_delta": 2.2737367544323206e-13,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              4.9
+            ],
+            [
+              20.0,
+              15.0,
+              6.0
+            ]
+          ]
+        }
+      ],
+      "reported_guard": [
+        0.9999999,
+        0.9999999,
+        1e-07,
+        0,
+        0,
+        0
+      ],
+      "exact_readback_witness": {
+        "xy_rational": [
+          "680001/1000000",
+          "17/1000"
+        ],
+        "z_hits": [
+          0.0,
+          1.0
+        ],
+        "z_fractions": [
+          "0",
+          "1"
+        ],
+        "roof_hits_above_z4_9": []
+      },
+      "adjacent_control_z_hits": [
+        0.0,
+        1.0,
+        5.0,
+        6.0
+      ],
+      "analytic_void": {
+        "polygon_area_mm2": 2e-07,
+        "orthogonal_width_mm": 4.998438232040614e-08,
+        "roof_breakout_area_mm2": 2e-07,
+        "z_span": [
+          4.9,
+          6
+        ],
+        "nominal_roof_thickness_at_witness": 0
+      },
+      "false_acceptance": true
+    },
+    {
+      "id": "roof-oblique-slit-40nm",
+      "verdict": 1,
+      "inputUnchanged": true
+    },
+    {
+      "id": "roof-oblique-slit-4nm",
+      "verdict": 0,
+      "inputUnchanged": true,
+      "parts": [
+        {
+          "vertices": 272,
+          "faces": 540,
+          "edges": 810,
+          "components": 1,
+          "euler": 2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 0.014962206289339974,
+          "volume_mm3": 5380.620948053781,
+          "reported_volume_mm3": 5380.620948053782,
+          "volume_abs_delta": 9.094947017729282e-13,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              0.0
+            ],
+            [
+              20.0,
+              15.0,
+              4.9
+            ]
+          ]
+        },
+        {
+          "vertices": 52,
+          "faces": 104,
+          "edges": 156,
+          "components": 1,
+          "euler": 0,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 1.6186773356211977e-07,
+          "volume_mm3": 1316.644462991592,
+          "reported_volume_mm3": 1316.6444629915916,
+          "volume_abs_delta": 4.547473508864641e-13,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              4.9
+            ],
+            [
+              20.0,
+              15.0,
+              6.0
+            ]
+          ]
+        }
+      ],
+      "reported_guard": [
+        0.9999999,
+        0.9999999,
+        1e-07,
+        0,
+        0,
+        0
+      ],
+      "exact_readback_witness": {
+        "xy_rational": [
+          "340001/500000",
+          "17/1000"
+        ],
+        "z_hits": [
+          0.0,
+          1.0
+        ],
+        "z_fractions": [
+          "0",
+          "1"
+        ],
+        "roof_hits_above_z4_9": []
+      },
+      "adjacent_control_z_hits": [
+        0.0,
+        1.0,
+        5.0,
+        6.0
+      ],
+      "analytic_void": {
+        "polygon_area_mm2": 4e-07,
+        "orthogonal_width_mm": 9.996876464081229e-08,
+        "roof_breakout_area_mm2": 4e-07,
+        "z_span": [
+          4.9,
+          6
+        ],
+        "nominal_roof_thickness_at_witness": 0
+      },
+      "false_acceptance": true
+    },
+    {
+      "id": "roof-oblique-slit-8nm",
+      "verdict": 1,
+      "inputUnchanged": true
+    }
+  ]
+}

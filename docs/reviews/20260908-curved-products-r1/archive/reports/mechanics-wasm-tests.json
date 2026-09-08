@@ -1,0 +1,3448 @@
+{
+  "schemaVersion": 1,
+  "target": "wasm",
+  "at": "2026-09-08T11:04:57.363Z",
+  "implementation": "arch-mechanics/0.3.0",
+  "oracle": "mechanical-oracle/1 + indexed-oracle frozen main copy",
+  "fullFeatureAcceptance": false,
+  "configuredReview": false,
+  "fit": "unqualified",
+  "records": [
+    {
+      "id": "body-hole-islands",
+      "requirements": [
+        "GEO-01",
+        "GEO-02",
+        "AT-020.1",
+        "AT-020.3"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 770,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\001-body.bin",
+        "evidence\\fixtures-wasm\\002-hole.bin",
+        "evidence\\fixtures-wasm\\003-islands.bin"
+      ]
+    },
+    {
+      "id": "keychain-eyelet-openings",
+      "requirements": [
+        "MOD-03",
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 805,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\004-eyelet.bin",
+        "evidence\\fixtures-wasm\\005-eyelet-no-contact.bin",
+        "evidence\\fixtures-wasm\\006-eyelet-zero-explicit.bin",
+        "evidence\\fixtures-wasm\\007-eyelet-text-host.bin"
+      ]
+    },
+    {
+      "id": "five-products-three-sizes",
+      "requirements": [
+        "MOD-01",
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 11935,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\008-product-0-26.bin",
+        "evidence\\fixtures-wasm\\009-product-1-26.bin",
+        "evidence\\fixtures-wasm\\010-product-2-26.bin",
+        "evidence\\fixtures-wasm\\011-product-3-26.bin",
+        "evidence\\fixtures-wasm\\012-product-4-26.bin",
+        "evidence\\fixtures-wasm\\013-product-0-40.bin",
+        "evidence\\fixtures-wasm\\014-product-1-40.bin",
+        "evidence\\fixtures-wasm\\015-product-2-40.bin",
+        "evidence\\fixtures-wasm\\016-product-3-40.bin",
+        "evidence\\fixtures-wasm\\017-product-4-40.bin",
+        "evidence\\fixtures-wasm\\018-product-0-64.bin",
+        "evidence\\fixtures-wasm\\019-product-1-64.bin",
+        "evidence\\fixtures-wasm\\020-product-2-64.bin",
+        "evidence\\fixtures-wasm\\021-product-3-64.bin",
+        "evidence\\fixtures-wasm\\022-product-4-64.bin"
+      ]
+    },
+    {
+      "id": "strap-horizontal-vertical-slot-and-rotation",
+      "requirements": [
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 2286,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\023-strap.bin",
+        "evidence\\fixtures-wasm\\024-slot-0.bin",
+        "evidence\\fixtures-wasm\\025-slot-1.bin",
+        "evidence\\fixtures-wasm\\026-strap-angle.bin",
+        "evidence\\fixtures-wasm\\027-strap-rotate.bin",
+        "evidence\\fixtures-wasm\\028-strap-floor.bin",
+        "evidence\\fixtures-wasm\\029-strap-chamfer-oblique.bin"
+      ]
+    },
+    {
+      "id": "lego-grid-mask-depth-hollow-and-tabs",
+      "requirements": [
+        "GEO-01",
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 8281,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\030-lego-0.bin",
+        "evidence\\fixtures-wasm\\031-lego-1.bin",
+        "evidence\\fixtures-wasm\\032-lego-2.bin",
+        "evidence\\fixtures-wasm\\033-lego-hollow.bin",
+        "evidence\\fixtures-wasm\\034-lego-source-hole.bin",
+        "evidence\\fixtures-wasm\\035-lego-groove-default.bin",
+        "evidence\\fixtures-wasm\\036-lego-roof-proposal.bin"
+      ]
+    },
+    {
+      "id": "mx-tray-dimensions-nominal-and-tip",
+      "requirements": [
+        "GEO-03",
+        "GEO-02"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 3098,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\037-mx-tray.bin",
+        "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+        "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+        "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+      ]
+    },
+    {
+      "id": "clearance-positive-sign-and-zero",
+      "requirements": [
+        "GEO-03",
+        "AT-021.1"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 9276,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\041-mx-clearance-0.bin",
+        "evidence\\fixtures-wasm\\042-mx-clearance-0.05.bin",
+        "evidence\\fixtures-wasm\\043-mx-clearance-0.2.bin",
+        "evidence\\fixtures-wasm\\044-charm-clearance-0.bin",
+        "evidence\\fixtures-wasm\\045-charm-clearance-0.2.bin",
+        "evidence\\fixtures-wasm\\046-charm-clearance-0.6.bin",
+        "evidence\\fixtures-wasm\\047-tray-gap-0.05.bin",
+        "evidence\\fixtures-wasm\\048-tray-gap-0.25.bin",
+        "evidence\\fixtures-wasm\\049-tray-gap-0.6.bin",
+        "evidence\\fixtures-wasm\\050-negative-clearance.bin",
+        "evidence\\fixtures-wasm\\051-invalid-clearance-gap--0.05.bin",
+        "evidence\\fixtures-wasm\\052-invalid-clearance-gap-0.bin",
+        "evidence\\fixtures-wasm\\053-invalid-clearance-legoHoDu--0.01.bin",
+        "evidence\\fixtures-wasm\\054-invalid-clearance-charmClr--0.01.bin"
+      ]
+    },
+    {
+      "id": "charm-integral-separate-fit-and-flange",
+      "requirements": [
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 2347,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\055-charm.bin",
+        "evidence\\fixtures-wasm\\056-charm-integral.bin",
+        "evidence\\fixtures-wasm\\057-charm-no-roof.bin",
+        "evidence\\fixtures-wasm\\058-charm-offset.bin"
+      ]
+    },
+    {
+      "id": "schedule-explicit-interval-and-no-snap",
+      "requirements": [
+        "GEO-02",
+        "AT-021.2",
+        "AT-021.4"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 6304,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\059-schedule-0.16-0.2.bin",
+        "evidence\\fixtures-wasm\\060-nominal-0.16-0.2.bin",
+        "evidence\\fixtures-wasm\\061-schedule-0.2-0.16.bin",
+        "evidence\\fixtures-wasm\\062-nominal-0.2-0.16.bin",
+        "evidence\\fixtures-wasm\\063-schedule-0.2-0.2.bin",
+        "evidence\\fixtures-wasm\\064-nominal-0.2-0.2.bin",
+        "evidence\\fixtures-wasm\\065-schedule-0.25-0.2.bin",
+        "evidence\\fixtures-wasm\\066-nominal-0.25-0.2.bin",
+        "evidence\\fixtures-wasm\\067-schedule-0.25-0.25.bin",
+        "evidence\\fixtures-wasm\\068-nominal-0.25-0.25.bin",
+        "evidence\\fixtures-wasm\\069-nominal-body.bin",
+        "evidence\\fixtures-wasm\\070-feature-datum.bin",
+        "evidence\\fixtures-wasm\\071-datum-orphan.bin",
+        "evidence\\fixtures-wasm\\072-datum-wrong-face.bin"
+      ]
+    },
+    {
+      "id": "assembly-is-preview-only-and-proposals-immutable",
+      "requirements": [
+        "MOD-02",
+        "MOD-03",
+        "GEO-02",
+        "ABI-01"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 3110,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\073-assembly-off-1.bin",
+        "evidence\\fixtures-wasm\\074-assembly-on-1.bin",
+        "evidence\\fixtures-wasm\\075-assembly-off-4.bin",
+        "evidence\\fixtures-wasm\\076-assembly-on-4.bin",
+        "evidence\\fixtures-wasm\\077-small-tray.bin",
+        "evidence\\fixtures-wasm\\078-accepted-size.bin",
+        "evidence\\fixtures-wasm\\079-invalid-no-auto.bin"
+      ]
+    },
+    {
+      "id": "source-color-seams-styles-and-binding",
+      "requirements": [
+        "GEO-01",
+        "MOD-02",
+        "AT-020.2"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 10509,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\080-colors-0.bin",
+        "evidence\\fixtures-wasm\\081-colors-1.bin",
+        "evidence\\fixtures-wasm\\082-colors-2.bin",
+        "evidence\\fixtures-wasm\\083-colors-3.bin",
+        "evidence\\fixtures-wasm\\084-colors-4.bin",
+        "evidence\\fixtures-wasm\\085-prepared-style-0.bin",
+        "evidence\\fixtures-wasm\\086-prepared-style-1.bin",
+        "evidence\\fixtures-wasm\\087-prepared-style-2.bin",
+        "evidence\\fixtures-wasm\\088-prepared-style-3.bin",
+        "evidence\\fixtures-wasm\\089-prepared-role-overrides.bin",
+        "evidence\\fixtures-wasm\\090-stale-source.bin",
+        "evidence\\fixtures-wasm\\091-missing-source-binding.bin",
+        "evidence\\fixtures-wasm\\092-unprepared-flat.bin",
+        "evidence\\fixtures-wasm\\093-source-fillet.bin",
+        "evidence\\fixtures-wasm\\094-disjoint-z-same-xy.bin",
+        "evidence\\fixtures-wasm\\095-overlap-z.bin",
+        "evidence\\fixtures-wasm\\096-point-touch.bin",
+        "evidence\\fixtures-wasm\\097-below-grid.bin"
+      ]
+    },
+    {
+      "id": "mating-tolerance-signed-deviation-three-levels",
+      "requirements": [
+        "GEO-02",
+        "GEO-03",
+        "AT-021.1"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 7509,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\098-precision-4-0.001.bin",
+        "evidence\\fixtures-wasm\\099-precision-6-0.001.bin",
+        "evidence\\fixtures-wasm\\100-precision-10-0.001.bin",
+        "evidence\\fixtures-wasm\\101-precision-4-0.0005.bin",
+        "evidence\\fixtures-wasm\\102-precision-6-0.0005.bin",
+        "evidence\\fixtures-wasm\\103-precision-10-0.0005.bin",
+        "evidence\\fixtures-wasm\\104-precision-4-0.0001.bin",
+        "evidence\\fixtures-wasm\\105-precision-6-0.0001.bin",
+        "evidence\\fixtures-wasm\\106-precision-10-0.0001.bin"
+      ]
+    },
+    {
+      "id": "v1-groove-default-analytic-and-source",
+      "requirements": [
+        "MOD-03",
+        "GEO-03",
+        "AT-020.3"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 8939,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\107-v1-groove.bin",
+        "evidence\\fixtures-wasm\\108-v1-groove-literal-zero-wall-loss.bin",
+        "evidence\\fixtures-wasm\\109-v1-groove-literal-zero.bin",
+        "evidence\\fixtures-wasm\\110-v1-groove-hole.bin",
+        "evidence\\fixtures-wasm\\111-v1-groove-islands.bin",
+        "evidence\\fixtures-wasm\\112-v1-groove-colors.bin",
+        "evidence\\fixtures-wasm\\113-v1-groove-roof.bin"
+      ]
+    },
+    {
+      "id": "v1-top-bevel-round-chamfer-steps-material",
+      "requirements": [
+        "MOD-02",
+        "MOD-03",
+        "GEO-01",
+        "GEO-02"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 3877,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\114-v1-bevel-0.bin",
+        "evidence\\fixtures-wasm\\115-v1-bevel-1.bin",
+        "evidence\\fixtures-wasm\\116-v1-bevel-material-joined.bin",
+        "evidence\\fixtures-wasm\\117-v1-bevel-material-separate.bin",
+        "evidence\\fixtures-wasm\\118-v1-bevel-steps-0.16.bin",
+        "evidence\\fixtures-wasm\\119-v1-bevel-steps-0.2.bin",
+        "evidence\\fixtures-wasm\\120-v1-bevel-steps-0.25.bin",
+        "evidence\\fixtures-wasm\\121-v1-bevel-hole.bin",
+        "evidence\\fixtures-wasm\\122-v1-bevel-floor.bin",
+        "evidence\\fixtures-wasm\\123-v1-block-bevel-override.bin",
+        "evidence\\fixtures-wasm\\124-v1-block-bevel-orphan.bin"
+      ]
+    },
+    {
+      "id": "v1-text-host-and-independent-text-bevel",
+      "requirements": [
+        "SRC-04",
+        "MOD-02",
+        "MOD-03",
+        "GEO-01"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 3566,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\125-v1-text-eyelet.bin",
+        "evidence\\fixtures-wasm\\126-v1-text-bevel-0.bin",
+        "evidence\\fixtures-wasm\\127-v1-text-bevel-1.bin",
+        "evidence\\fixtures-wasm\\128-v1-text-bevel-2.bin",
+        "evidence\\fixtures-wasm\\129-v1-text-orphan-attachment.bin",
+        "evidence\\fixtures-wasm\\130-v1-text-eyelet-and-bevel.bin"
+      ]
+    },
+    {
+      "id": "v1-strap-capsule-oblique-and-corner-mouths",
+      "requirements": [
+        "MOD-03",
+        "GEO-03",
+        "AT-021.1"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 8050,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\131-v1-strap-0-0.bin",
+        "evidence\\fixtures-wasm\\132-v1-strap-0-1.bin",
+        "evidence\\fixtures-wasm\\133-v1-strap-30-0.bin",
+        "evidence\\fixtures-wasm\\134-v1-strap-30-1.bin",
+        "evidence\\fixtures-wasm\\135-v1-strap-45-0.bin",
+        "evidence\\fixtures-wasm\\136-v1-strap-45-1.bin",
+        "evidence\\fixtures-wasm\\137-v1-strap-90-0.bin",
+        "evidence\\fixtures-wasm\\138-v1-strap-90-1.bin",
+        "evidence\\fixtures-wasm\\139-v1-strap-120-0.bin",
+        "evidence\\fixtures-wasm\\140-v1-strap-120-1.bin",
+        "evidence\\fixtures-wasm\\141-v1-strap-capsule-end.bin",
+        "evidence\\fixtures-wasm\\142-v1-strap-capsule-floor.bin"
+      ]
+    },
+    {
+      "id": "v1-concave-corners-and-tolerance-budgets",
+      "requirements": [
+        "GEO-01",
+        "GEO-02",
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 22048,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+        "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+        "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+        "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+        "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+        "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+        "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+        "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+        "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin"
+      ]
+    },
+    {
+      "id": "v1-combinations-cancellation-and-seeded-surfaces",
+      "requirements": [
+        "MOD-03",
+        "GEO-02",
+        "GEO-03",
+        "ABI-01"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 12022,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\152-v1-cap-tray-bevel-0.bin",
+        "evidence\\fixtures-wasm\\153-v1-cap-tray-bevel-1.bin",
+        "evidence\\fixtures-wasm\\154-v1-cap-tray-bevel-2.bin",
+        "evidence\\fixtures-wasm\\155-v1-cancel-before.bin",
+        "evidence\\fixtures-wasm\\156-v1-cancel-stale.bin",
+        "evidence\\fixtures-wasm\\157-v1-control-generation.bin",
+        "evidence\\fixtures-wasm\\158-v1-surface-fuzz-0.bin",
+        "evidence\\fixtures-wasm\\159-v1-surface-fuzz-1.bin",
+        "evidence\\fixtures-wasm\\160-v1-surface-fuzz-2.bin",
+        "evidence\\fixtures-wasm\\161-v1-surface-fuzz-3.bin",
+        "evidence\\fixtures-wasm\\162-v1-surface-fuzz-4.bin",
+        "evidence\\fixtures-wasm\\163-v1-surface-fuzz-5.bin",
+        "evidence\\fixtures-wasm\\164-v1-surface-fuzz-6.bin",
+        "evidence\\fixtures-wasm\\165-v1-surface-fuzz-7.bin",
+        "evidence\\fixtures-wasm\\166-v1-surface-fuzz-8.bin",
+        "evidence\\fixtures-wasm\\167-v1-surface-fuzz-9.bin",
+        "evidence\\fixtures-wasm\\168-v1-surface-fuzz-10.bin",
+        "evidence\\fixtures-wasm\\169-v1-surface-fuzz-11.bin"
+      ]
+    },
+    {
+      "id": "seeded-corners-and-fuzz-regressions",
+      "requirements": [
+        "MOD-03",
+        "GEO-02",
+        "GEO-03"
+      ],
+      "verdict": "pass",
+      "elapsedMs": 15216,
+      "artifacts": [
+        "evidence\\fixtures-wasm\\170-fuzz-0.bin",
+        "evidence\\fixtures-wasm\\171-fuzz-1.bin",
+        "evidence\\fixtures-wasm\\172-fuzz-2.bin",
+        "evidence\\fixtures-wasm\\173-fuzz-3.bin",
+        "evidence\\fixtures-wasm\\174-fuzz-4.bin",
+        "evidence\\fixtures-wasm\\175-fuzz-5.bin",
+        "evidence\\fixtures-wasm\\176-fuzz-6.bin",
+        "evidence\\fixtures-wasm\\177-fuzz-7.bin",
+        "evidence\\fixtures-wasm\\178-fuzz-8.bin",
+        "evidence\\fixtures-wasm\\179-fuzz-9.bin",
+        "evidence\\fixtures-wasm\\180-fuzz-10.bin",
+        "evidence\\fixtures-wasm\\181-fuzz-11.bin",
+        "evidence\\fixtures-wasm\\182-fuzz-12.bin",
+        "evidence\\fixtures-wasm\\183-fuzz-13.bin",
+        "evidence\\fixtures-wasm\\184-fuzz-14.bin",
+        "evidence\\fixtures-wasm\\185-fuzz-15.bin",
+        "evidence\\fixtures-wasm\\186-fuzz-16.bin",
+        "evidence\\fixtures-wasm\\187-fuzz-17.bin",
+        "evidence\\fixtures-wasm\\188-fuzz-18.bin",
+        "evidence\\fixtures-wasm\\189-fuzz-19.bin",
+        "evidence\\fixtures-wasm\\190-fuzz-20.bin",
+        "evidence\\fixtures-wasm\\191-fuzz-21.bin",
+        "evidence\\fixtures-wasm\\192-fuzz-22.bin",
+        "evidence\\fixtures-wasm\\193-fuzz-23.bin",
+        "evidence\\fixtures-wasm\\194-bad-baseH-nan.bin",
+        "evidence\\fixtures-wasm\\195-bad-baseH-inf.bin",
+        "evidence\\fixtures-wasm\\196-bad-size-161.bin",
+        "evidence\\fixtures-wasm\\197-bad-layerH-0.31.bin",
+        "evidence\\fixtures-wasm\\198-badmaterial.bin",
+        "evidence\\fixtures-wasm\\199-extreme-tolerance.bin"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "body",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "set": {
+          "ringOn": 0
+        },
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\001-body.bin",
+      "sha256": "93a9d53262918e7e2a4be01263a4f6b0bd7cd90b89113c503fefa62015f6441d",
+      "metadataSha256": "7bd0f4701f7eb14db00bba94011600d0e8ef04063e25fb5524780a4a8e780eb7",
+      "verdict": 0
+    },
+    {
+      "name": "hole",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "hole",
+        "set": {
+          "ringOn": 0
+        },
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\002-hole.bin",
+      "sha256": "1261201ec5fa5abab92a7c3ed049938f20b40546022d445c16e390626c781a89",
+      "metadataSha256": "7bd0f4701f7eb14db00bba94011600d0e8ef04063e25fb5524780a4a8e780eb7",
+      "verdict": 0
+    },
+    {
+      "name": "islands",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "islands",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\003-islands.bin",
+      "sha256": "79bae231a4026fd8becba15c7202572dbecef4df0294b99a8ec0b7ddaaad0a3b",
+      "metadataSha256": "7bd0f4701f7eb14db00bba94011600d0e8ef04063e25fb5524780a4a8e780eb7",
+      "verdict": 0
+    },
+    {
+      "name": "eyelet",
+      "options": {
+        "width": 40,
+        "height": 30,
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\004-eyelet.bin",
+      "sha256": "6f8b233d9744f2a2374027934294eb44302ff8da4b8b49b27ec9476038a19ff7",
+      "metadataSha256": "5f8139ff62f3fdaf54503f765411808354d177079c153fe72c0d4893353dcd89",
+      "verdict": 0
+    },
+    {
+      "name": "eyelet-no-contact",
+      "options": {
+        "set": {
+          "ringOverlap": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\005-eyelet-no-contact.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "b76a274a20a342e8310c158ec2cdb72f95b993654bb8a28ca67e06e9b87bfed4",
+      "verdict": 1
+    },
+    {
+      "name": "eyelet-zero-explicit",
+      "options": {
+        "set": {
+          "ringH": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\006-eyelet-zero-explicit.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "b69a8b412e9248467e9263defbd234dd07dabea69108b92c5c0f93026483cd13",
+      "verdict": 1
+    },
+    {
+      "name": "eyelet-text-host",
+      "options": {
+        "set": {
+          "ringTren": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\007-eyelet-text-host.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "9a993b89ea6813d02a020bfd465e37fba4795d1d6f2153baccd54777dd686ce4",
+      "verdict": 1
+    },
+    {
+      "name": "product-0-26",
+      "options": {
+        "product": 0,
+        "width": 26,
+        "height": 26,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\008-product-0-26.bin",
+      "sha256": "625657a49890bc6c2f70d13601046d4aae76c67d6b7fd4094d3e55d0433a800e",
+      "metadataSha256": "5f5659642b83ea4fa9417e1a972063887b5688c6145881a66253cb85194a65d5",
+      "verdict": 0
+    },
+    {
+      "name": "product-1-26",
+      "options": {
+        "product": 1,
+        "width": 26,
+        "height": 26,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\009-product-1-26.bin",
+      "sha256": "f6b274d81c60ebf2da535cb4d5af7b03b0494dd93467a54694f907afdc983f00",
+      "metadataSha256": "a8c0ec2f60eb9d1378860e5b86f904fb95d4b83254fc40628734beb760a4425b",
+      "verdict": 0
+    },
+    {
+      "name": "product-2-26",
+      "options": {
+        "product": 2,
+        "width": 26,
+        "height": 26,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\010-product-2-26.bin",
+      "sha256": "596d560ed413f9b4e5fb1415b22b0eb198ff424c229992b4853156b983eaface",
+      "metadataSha256": "d3de3ee6fb79d3cbf8b20d4b0bf3c142cfac14102a14ec8392fe323253f64a34",
+      "verdict": 0
+    },
+    {
+      "name": "product-3-26",
+      "options": {
+        "product": 3,
+        "width": 26,
+        "height": 26,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\011-product-3-26.bin",
+      "sha256": "86a6ffcc1a73e798cf2cd90b128b9465221af56b65fc7f313ecdbe9a7e56ad60",
+      "metadataSha256": "56f7382e212619fa21b12ca591bc05543a5589be7cde827a79895bb715486c75",
+      "verdict": 0
+    },
+    {
+      "name": "product-4-26",
+      "options": {
+        "product": 4,
+        "width": 26,
+        "height": 26,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\012-product-4-26.bin",
+      "sha256": "426e7a344cd5d2658af2ae926a42901dc4fccdb9a2ad3a60abfaab51dd6a1495",
+      "metadataSha256": "6405bdc5af3612db4cc9e5d473c885d0ee31e90b8248c15183654fd2fd5a4f3b",
+      "verdict": 0
+    },
+    {
+      "name": "product-0-40",
+      "options": {
+        "product": 0,
+        "width": 40,
+        "height": 40,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\013-product-0-40.bin",
+      "sha256": "eeaf68ef7d0e935b0256598f27a078ae9eb3e33c519cd310653e1e968ac3e125",
+      "metadataSha256": "4c8118b0cb61a716dd6ef28a5eef956c244f5e104646d6e20f51fa974351270d",
+      "verdict": 0
+    },
+    {
+      "name": "product-1-40",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\014-product-1-40.bin",
+      "sha256": "7ad17857034103a6163e28288bdf097d3fb03fca8dd1a0f6a8f92dfedc5dd721",
+      "metadataSha256": "7d5028145ec22b21f4239731bd2a234a74c2ad2ae85d87c7c2da38d13e8eadd4",
+      "verdict": 0
+    },
+    {
+      "name": "product-2-40",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\015-product-2-40.bin",
+      "sha256": "e68c769057b0fccb34fc2fcf007f919b22e362f2d1b9c41a92c8eefd7872a4f5",
+      "metadataSha256": "15f945e9f1062ab7493d0ea7e919fcd97eae8639999aed12aed888cf78dce28a",
+      "verdict": 0
+    },
+    {
+      "name": "product-3-40",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\016-product-3-40.bin",
+      "sha256": "e7e49c4eb0b010336a74f49c6cd14861d8f3fd5b2aa92db415731fb4cd10ea2f",
+      "metadataSha256": "a0d87cd940006cebed6e4c205396080d723f438eb8b25e85cfe4beebb87724b7",
+      "verdict": 0
+    },
+    {
+      "name": "product-4-40",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\017-product-4-40.bin",
+      "sha256": "b995ae909794b9689c2272cb8e38f86cac228f4983d21f998a3f99b61f6e1adf",
+      "metadataSha256": "3edd1632a2a2e84d20d2f8f89f95beb4aaa8e5cfdd612b30dd310374f96147e7",
+      "verdict": 0
+    },
+    {
+      "name": "product-0-64",
+      "options": {
+        "product": 0,
+        "width": 64,
+        "height": 64,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\018-product-0-64.bin",
+      "sha256": "f01020cbc8273b87d51813a2ca2ce17906c2168611225a7ed678105b891b6db9",
+      "metadataSha256": "b3c998bcd4319472d73c7a09c974fb5c90f269862d93d50b4243ac70c3ed5681",
+      "verdict": 0
+    },
+    {
+      "name": "product-1-64",
+      "options": {
+        "product": 1,
+        "width": 64,
+        "height": 64,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\019-product-1-64.bin",
+      "sha256": "3cbcdeb0b9fc7d58bf4143456dd31d42d9f2396cc27ea26950a838c23b95939b",
+      "metadataSha256": "7b9cdd59bb98e78ceb4fa521e48c2671dfe7f7a2064ab0501e0329b254a5ac3c",
+      "verdict": 0
+    },
+    {
+      "name": "product-2-64",
+      "options": {
+        "product": 2,
+        "width": 64,
+        "height": 64,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\020-product-2-64.bin",
+      "sha256": "2e8f4c0adfa5c45660df352583c29c70df82f7fbea7dc3a0c27da7d02084cab3",
+      "metadataSha256": "cb967024a4c59a9551d06c8f2059c9a60fa640215baeb22989895aefbc5a1192",
+      "verdict": 0
+    },
+    {
+      "name": "product-3-64",
+      "options": {
+        "product": 3,
+        "width": 64,
+        "height": 64,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\021-product-3-64.bin",
+      "sha256": "ee567b265b87d9200b9a0ff17fb18bf25b471e510c5d9151e55a2e30211cc211",
+      "metadataSha256": "1ec7d08fff24ea431ae5a64a13f180cdbdfef2e4a809ecbde7e0b77ce87f62eb",
+      "verdict": 0
+    },
+    {
+      "name": "product-4-64",
+      "options": {
+        "product": 4,
+        "width": 64,
+        "height": 64,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\022-product-4-64.bin",
+      "sha256": "18a31a74cd535979e7e7a0f42653ad555259d2f64a2bfab888f80a14aea25aa8",
+      "metadataSha256": "d9f5107c7c5d90fc999886c711b161480597ff842b0fe6c9c52807719907c639",
+      "verdict": 0
+    },
+    {
+      "name": "strap",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30
+      },
+      "path": "evidence\\fixtures-wasm\\023-strap.bin",
+      "sha256": "ea0145e1c6a968a72c179790878a089064136ceaf0b42cd1054ffc145a2721a6",
+      "metadataSha256": "15f945e9f1062ab7493d0ea7e919fcd97eae8639999aed12aed888cf78dce28a",
+      "verdict": 0
+    },
+    {
+      "name": "slot-0",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapSlot": 4,
+          "strapSlotDir": 0,
+          "strapCham": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\024-slot-0.bin",
+      "sha256": "fa5a27f08e00cabc8c3b69503e7ee89efe1815f4e8ff39b6fcfdb27c80556121",
+      "metadataSha256": "60bad421402f2c3c70b6c1083f2d53ac05ff6275a0b593007f4ad6e9aeffc815",
+      "verdict": 0
+    },
+    {
+      "name": "slot-1",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapSlot": 4,
+          "strapSlotDir": 1,
+          "strapCham": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\025-slot-1.bin",
+      "sha256": "9787f5413c1767059d187cffc3f791f7e4b33c156898b5afb7eb008c9b14cf0a",
+      "metadataSha256": "5c924ad49a7b10023af7b17805b0b6626df9f8d255299f42df1e84f603df3fd4",
+      "verdict": 0
+    },
+    {
+      "name": "strap-angle",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapAngle": 45,
+          "strapCham": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\026-strap-angle.bin",
+      "sha256": "c25c87ac88dbd01fdf5ced0f6d63fb8879872a96d4be225a7b6c2199a8c56e19",
+      "metadataSha256": "8325c6335b5546c7d4e99b9cf0c2ccb4f6276c7cfdf88506104ccd3c354c122e",
+      "verdict": 0
+    },
+    {
+      "name": "strap-rotate",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapAngle": 90,
+          "strapCham": 0,
+          "rotObj": 90
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\027-strap-rotate.bin",
+      "sha256": "8393ab0b5ea2167d1bc02867a6fc3d29450dd7aafba64e1b88dc6de469d58314",
+      "metadataSha256": "5b19dd17eae4f2719906e5dda948e95671f37911d8b3089b17c15e31039d9f36",
+      "verdict": 0
+    },
+    {
+      "name": "strap-floor",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapZ": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\028-strap-floor.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "47cd3f682a802b63e6f62491538716d6c392f89cba5e5b54a9c25078cb3882ab",
+      "verdict": 1
+    },
+    {
+      "name": "strap-chamfer-oblique",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapAngle": 45
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\029-strap-chamfer-oblique.bin",
+      "sha256": "3880af98c007afc346e70f674814b1b4f0e5798b147f1aab95e1d84be397014d",
+      "metadataSha256": "2972aa4f63929fbfcb236ad9722e670a79ff3301a1df590d64fb80e30e052d04",
+      "verdict": 0
+    },
+    {
+      "name": "lego-0",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\030-lego-0.bin",
+      "sha256": "eee970c78b5001a9ecfe2ef8559b7184102633d7022fdf9dc923f45683ed79e5",
+      "metadataSha256": "67bcc602b93ec5b8de71f5caef79cf4239502a7a1748675ef4fdbd81639df55a",
+      "verdict": 0
+    },
+    {
+      "name": "lego-1",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\031-lego-1.bin",
+      "sha256": "a1a6ed6b2671c40df1612d4fb1ad835bdcc02fd9a617c56ad5462036d2809efa",
+      "metadataSha256": "4e08e0a683ae4d14220484a16e1b19f33d9af32ab0c49ac9ac2e49adb248c0d7",
+      "verdict": 0
+    },
+    {
+      "name": "lego-2",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\032-lego-2.bin",
+      "sha256": "cf8022c073c0c18219c231d9fa34e8c3a0d6655d58e3e8d254c9d91229f4e46e",
+      "metadataSha256": "51f8e6781c2fbf57144a46754a4bd67f92a475b7d1d383ad11e402a932371f83",
+      "verdict": 0
+    },
+    {
+      "name": "lego-hollow",
+      "options": {
+        "product": 3,
+        "set": {
+          "legoRanhOn": 0,
+          "legoRong": 1,
+          "legoXeOn": 1,
+          "legoTaiOn": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\033-lego-hollow.bin",
+      "sha256": "a4aba50c3cae9fee1c2bba6707f25893441925296fba455a27ae31eebff3a16d",
+      "metadataSha256": "65578ea4a401996f69f765a103d6c1e817aebab664e45cc5e89d890d89d16d08",
+      "verdict": 0
+    },
+    {
+      "name": "lego-source-hole",
+      "options": {
+        "product": 3,
+        "variant": "hole",
+        "set": {
+          "legoRanhOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\034-lego-source-hole.bin",
+      "sha256": "0bc3ae836619a1c8ff2bd0ce9048e637b5db3d0df276914bf6f5e4cfa51437ce",
+      "metadataSha256": "3992d329e12d9552f73b5c77f35fc6218ee6be953cb7d670e3510a2b17220e9e",
+      "verdict": 0
+    },
+    {
+      "name": "lego-groove-default",
+      "options": {
+        "product": 3
+      },
+      "path": "evidence\\fixtures-wasm\\035-lego-groove-default.bin",
+      "sha256": "584d5f879329929f5ed49cff3ec1f4c215ad69d8665820d291cc15fc1ee080cd",
+      "metadataSha256": "60aeda7ef9ef2f7511bf9fc8fadd9d4c80da61bef834dbdd0c59d49e34491a21",
+      "verdict": 0
+    },
+    {
+      "name": "lego-roof-proposal",
+      "options": {
+        "product": 3,
+        "set": {
+          "legoRanhOn": 0,
+          "baseH": 1.8
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\036-lego-roof-proposal.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "f0c0c054ac72fa726c7ae2ae4f1265318feba25704e6bbcda747d5247bd4e106",
+      "verdict": 3
+    },
+    {
+      "name": "mx-tray",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "skirtH": 7
+        },
+        "override": 1,
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\037-mx-tray.bin",
+      "sha256": "f27e5657a3bf8767192a887f025d239cd7fd48e69ec4813a67fc40aced83a3f1",
+      "metadataSha256": "cc00fbc280cae7ea1da3adb18e2236237c1e7d77e2714a0711d4d5193d9fe178",
+      "verdict": 0
+    },
+    {
+      "name": "mx-invalid-wall",
+      "options": {
+        "product": 1,
+        "set": {
+          "crossL": 6,
+          "crossW": 2,
+          "postD1": 4
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "5f06a8e7b60f3480acf3702a86c1292cb8d95ac418e32dbc983ca39c2b973b6d",
+      "verdict": 1
+    },
+    {
+      "name": "mx-invalid-roof",
+      "options": {
+        "product": 1,
+        "set": {
+          "socketD": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "94cf39d82daefbb02852be274443df0bcce5ef5607fa83036ca6165b2ec00513",
+      "verdict": 1
+    },
+    {
+      "name": "tray-eyelet",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "skirtH": 7,
+          "hRingOn": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\040-tray-eyelet.bin",
+      "sha256": "fdfdcd9905c4dbc1dfcb63cc55c92e30c1251c476cce321d6bb4416df7fe7243",
+      "metadataSha256": "e42430fcb668b549627d5d2d0f5cb9df34a36074bbb3651ae79a7a382544b9ff",
+      "verdict": 0
+    },
+    {
+      "name": "mx-clearance-0",
+      "options": {
+        "product": 1,
+        "set": {
+          "housing": 0,
+          "clr": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\041-mx-clearance-0.bin",
+      "sha256": "84025dc97a3b933ce593488b0181050f1067ad28e2e91b60d6dd26796f41107f",
+      "metadataSha256": "e9b4f11f5f807d63436b49d89bfb933a4db4ec13bc270581d7c5bdbe5f997c56",
+      "verdict": 0
+    },
+    {
+      "name": "mx-clearance-0.05",
+      "options": {
+        "product": 1,
+        "set": {
+          "housing": 0,
+          "clr": 0.05
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\042-mx-clearance-0.05.bin",
+      "sha256": "5bdbabc586fc7ab422417f314ebadfb8455f31bfe61821c2017d44bb228e4e30",
+      "metadataSha256": "6cbbbd4424fbaaa243a114d867297dc1e1a086bbcebe5e982c0dcb9069030bb7",
+      "verdict": 0
+    },
+    {
+      "name": "mx-clearance-0.2",
+      "options": {
+        "product": 1,
+        "set": {
+          "housing": 0,
+          "clr": 0.2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\043-mx-clearance-0.2.bin",
+      "sha256": "e6bd8ea8ad9df990ca008a1b442dda511428c366ca4d09e56e59dbaf3b666cb0",
+      "metadataSha256": "268717f523ca86811e3c9e4806f032fcca1db512ccd07eea18834ecedf1c1445",
+      "verdict": 0
+    },
+    {
+      "name": "charm-clearance-0",
+      "options": {
+        "product": 4,
+        "width": 25,
+        "height": 25,
+        "set": {
+          "charmClr": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\044-charm-clearance-0.bin",
+      "sha256": "5b02eca5d455c0fea463bb8c9237d09dcb2dd04bfff1d93202e40da0e4b06efb",
+      "metadataSha256": "5f684f4c1f678e980d43d7ddac2b37037501191c137d5c012ab0a267f5de552e",
+      "verdict": 0
+    },
+    {
+      "name": "charm-clearance-0.2",
+      "options": {
+        "product": 4,
+        "width": 25,
+        "height": 25,
+        "set": {
+          "charmClr": 0.2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\045-charm-clearance-0.2.bin",
+      "sha256": "056fe3aa9f14bc79cdf461762aa63ae848fba8731f091afed98e6836b9a3b375",
+      "metadataSha256": "49a5d336168a1748aa10268061ad1a6a2f6a75fdd92d8d608907cc592ce1f2fe",
+      "verdict": 0
+    },
+    {
+      "name": "charm-clearance-0.6",
+      "options": {
+        "product": 4,
+        "width": 25,
+        "height": 25,
+        "set": {
+          "charmClr": 0.6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\046-charm-clearance-0.6.bin",
+      "sha256": "c4706e74455c89389b7aac4327c65b7bb8d3271e88f4b6e5589592d2c499b0fd",
+      "metadataSha256": "60c6aebb4697fccdac39fef024d95912ae5c46125ba62a07551be9b298b4d413",
+      "verdict": 0
+    },
+    {
+      "name": "tray-gap-0.05",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "skirtH": 7,
+          "gap": 0.05,
+          "hRingOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\047-tray-gap-0.05.bin",
+      "sha256": "ea46ca6c3a13fb136225fbcc2ac20cc46733f918b2a86360dbbebf57dcc19bee",
+      "metadataSha256": "f8b395e7c8b9274cdd1d84bf450f01da5511603537d3060dba7f158e6a8d9379",
+      "verdict": 0
+    },
+    {
+      "name": "tray-gap-0.25",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "skirtH": 7,
+          "gap": 0.25,
+          "hRingOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\048-tray-gap-0.25.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "f4feb5d36ec2dea8687b5412d8163603d15724b6079c085fc1e1bbd294845c69",
+      "verdict": 0
+    },
+    {
+      "name": "tray-gap-0.6",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "skirtH": 7,
+          "gap": 0.6,
+          "hRingOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\049-tray-gap-0.6.bin",
+      "sha256": "10a188d86e9bdc24c3b899a46dd06f211c163c4a3e501ef15ef3c0d7aae547fc",
+      "metadataSha256": "d7173b9e97aa86432e852186c7b1174af804742136fd5931e0db042cfc0a5092",
+      "verdict": 0
+    },
+    {
+      "name": "negative-clearance",
+      "options": {
+        "product": 1,
+        "set": {
+          "clr": -0.02
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\050-negative-clearance.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "aa76d9f83c1e886a0735c719621b883290733575ef6bde1ed1b3bb9d019c4920",
+      "verdict": 1
+    },
+    {
+      "name": "invalid-clearance-gap--0.05",
+      "options": {
+        "product": 1,
+        "set": {
+          "gap": -0.05
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\051-invalid-clearance-gap--0.05.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "8947cf7d3bba54e20db90cb3b190c1b5eb19ba20d379d7823b792afe636f1b41",
+      "verdict": 1
+    },
+    {
+      "name": "invalid-clearance-gap-0",
+      "options": {
+        "product": 1,
+        "set": {
+          "gap": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\052-invalid-clearance-gap-0.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "8947cf7d3bba54e20db90cb3b190c1b5eb19ba20d379d7823b792afe636f1b41",
+      "verdict": 1
+    },
+    {
+      "name": "invalid-clearance-legoHoDu--0.01",
+      "options": {
+        "product": 3,
+        "set": {
+          "legoHoDu": -0.01
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\053-invalid-clearance-legoHoDu--0.01.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "ce07e552c9c75ad48b939042acec25aaa52e9d60c6748a3e6c685ef78e99e37f",
+      "verdict": 1
+    },
+    {
+      "name": "invalid-clearance-charmClr--0.01",
+      "options": {
+        "product": 4,
+        "set": {
+          "charmClr": -0.01
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\054-invalid-clearance-charmClr--0.01.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "989386f42aa088cfd845f24117664914a28dd155035d07f6237f5e4a28fda34f",
+      "verdict": 1
+    },
+    {
+      "name": "charm",
+      "options": {
+        "product": 4,
+        "width": 25,
+        "height": 25
+      },
+      "path": "evidence\\fixtures-wasm\\055-charm.bin",
+      "sha256": "056fe3aa9f14bc79cdf461762aa63ae848fba8731f091afed98e6836b9a3b375",
+      "metadataSha256": "a8814868c51be252b63fe11fc251e7147506ffc04c377668f58e321aa808d0f7",
+      "verdict": 0
+    },
+    {
+      "name": "charm-integral",
+      "options": {
+        "product": 4,
+        "width": 25,
+        "height": 25,
+        "set": {
+          "charmGan": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\056-charm-integral.bin",
+      "sha256": "afedb90219ba083d11e7a53ef9af582c805bf767c177bd9e5d948609bbb1383b",
+      "metadataSha256": "7a3274d34f2e9b61693d1b716c8941e67c4d9906085e1511209c4947b5953e8b",
+      "verdict": 0
+    },
+    {
+      "name": "charm-no-roof",
+      "options": {
+        "product": 4,
+        "set": {
+          "baseH": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\057-charm-no-roof.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "938547dc81353669e5334ffc6ac7fb097d8fd5de661cf3201a74e76d574c3857",
+      "verdict": 1
+    },
+    {
+      "name": "charm-offset",
+      "options": {
+        "product": 4,
+        "set": {
+          "charmOffX": 60
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\058-charm-offset.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "73630df49047d5d0a902c8fa15a0bbedacf11fe97f05345329c700d4a3147f2d",
+      "verdict": 1
+    },
+    {
+      "name": "schedule-0.16-0.2",
+      "options": {
+        "h0": 0.16,
+        "h": 0.2,
+        "layers": "baseH,12,0,0",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\059-schedule-0.16-0.2.bin",
+      "sha256": "02cb9db2b253ee82bfe333acfbaa30b28d66b03372e1165e2d9ac87cfea58eaf",
+      "metadataSha256": "cfa8fa91194dc41959135457c9c56705ce40340a2d6111d91bc26b5867601c3b",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-0.16-0.2",
+      "options": {
+        "product": 1,
+        "h0": 0.16,
+        "h": 0.2,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\060-nominal-0.16-0.2.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "704724dc79cec683d9029838f20e151dec4b3abb380b174bc3fd281f717aab85",
+      "verdict": 0
+    },
+    {
+      "name": "schedule-0.2-0.16",
+      "options": {
+        "h0": 0.2,
+        "h": 0.16,
+        "layers": "baseH,12,0,0",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\061-schedule-0.2-0.16.bin",
+      "sha256": "149985784dec63f14f0c44abd35129394b9c1ec73b3b6c07aa45943b1bdac32d",
+      "metadataSha256": "69e47155f8a47d4e68dfea023d46e53ef7855de905a25d6668e01175c22b8b5a",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-0.2-0.16",
+      "options": {
+        "product": 1,
+        "h0": 0.2,
+        "h": 0.16,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\062-nominal-0.2-0.16.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "1fd4cead4a651bfe1258bb276209974b5d4ecab283d769b7abb699c07ca5bfa5",
+      "verdict": 0
+    },
+    {
+      "name": "schedule-0.2-0.2",
+      "options": {
+        "h0": 0.2,
+        "h": 0.2,
+        "layers": "baseH,12,0,0",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\063-schedule-0.2-0.2.bin",
+      "sha256": "e7fc33f483d1e4bd89bba70912e8fc1131ebb98d5c43604e7584291b5cc44cc4",
+      "metadataSha256": "7bde9f194e725b98b985c629bed3c613fb09d9fb45ab7a2ab71038d9328895c4",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-0.2-0.2",
+      "options": {
+        "product": 1,
+        "h0": 0.2,
+        "h": 0.2,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\064-nominal-0.2-0.2.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "7d5028145ec22b21f4239731bd2a234a74c2ad2ae85d87c7c2da38d13e8eadd4",
+      "verdict": 0
+    },
+    {
+      "name": "schedule-0.25-0.2",
+      "options": {
+        "h0": 0.25,
+        "h": 0.2,
+        "layers": "baseH,12,0,0",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\065-schedule-0.25-0.2.bin",
+      "sha256": "8a6b845caeae17290db67fbc03051b093be10db49ac8d58af026df5be718500a",
+      "metadataSha256": "4a635c120bbfa3f695b06588a215826e6042a6d3fcc424f78e092abd4d6687db",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-0.25-0.2",
+      "options": {
+        "product": 1,
+        "h0": 0.25,
+        "h": 0.2,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\066-nominal-0.25-0.2.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "d2892ccfbd52970aad596a1dd4e79ce2878107501bf2e5b4c77da27b7891576d",
+      "verdict": 0
+    },
+    {
+      "name": "schedule-0.25-0.25",
+      "options": {
+        "h0": 0.25,
+        "h": 0.25,
+        "layers": "baseH,12,0,0",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\067-schedule-0.25-0.25.bin",
+      "sha256": "ce660cde27852f58a872ee1b9573def93385338033551e6c9630cce5be347cb1",
+      "metadataSha256": "c09dbd88d6b1a67a07bfe45df0f097cab427ec8d0e1928113662c500159f9f6b",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-0.25-0.25",
+      "options": {
+        "product": 1,
+        "h0": 0.25,
+        "h": 0.25,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\068-nominal-0.25-0.25.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "75e248c2f07aea68996f8534bb1000f76156e27d94c98eb0b6146cffe2ad3f11",
+      "verdict": 0
+    },
+    {
+      "name": "nominal-body",
+      "options": {
+        "h0": 0.16,
+        "h": 0.2,
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\069-nominal-body.bin",
+      "sha256": "e7fc33f483d1e4bd89bba70912e8fc1131ebb98d5c43604e7584291b5cc44cc4",
+      "metadataSha256": "f617b9622fbeabe3377465ed72285fa709b6bce44a183925f0c160d824068fe8",
+      "verdict": 0
+    },
+    {
+      "name": "feature-datum",
+      "options": {
+        "product": 1,
+        "h0": 0.2,
+        "h": 0.2,
+        "set": {
+          "hFloor": 1.6
+        },
+        "layers": "pinD,8,8,5"
+      },
+      "path": "evidence\\fixtures-wasm\\070-feature-datum.bin",
+      "sha256": "25baf0804fd49432199e11547073591afa33275a6f9a7110d7967f863c07ea51",
+      "metadataSha256": "baaed8644e36f8fd98bef41a619ddde7f3f2c7986877c8a9e9b7c8ff27df2df8",
+      "verdict": 0
+    },
+    {
+      "name": "datum-orphan",
+      "options": {
+        "product": 1,
+        "layers": "pinD,8,8,5"
+      },
+      "path": "evidence\\fixtures-wasm\\071-datum-orphan.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "fe6563da126f60e889a99908aaa0d9e1b5c221e144de05e1def88447c8f20866",
+      "verdict": 1
+    },
+    {
+      "name": "datum-wrong-face",
+      "options": {
+        "product": 1,
+        "set": {
+          "hFloor": 1.6
+        },
+        "layers": "pinD,8,8,3"
+      },
+      "path": "evidence\\fixtures-wasm\\072-datum-wrong-face.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "3648ff6074c5cfe3cd08cbcd745c75a3b5dded0f742beba3a9088adf8505055b",
+      "verdict": 1
+    },
+    {
+      "name": "assembly-off-1",
+      "options": {
+        "product": 1,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\073-assembly-off-1.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "7d5028145ec22b21f4239731bd2a234a74c2ad2ae85d87c7c2da38d13e8eadd4",
+      "verdict": 0
+    },
+    {
+      "name": "assembly-on-1",
+      "options": {
+        "product": 1,
+        "set": {
+          "skirtH": 7,
+          "assemble": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\074-assembly-on-1.bin",
+      "sha256": "e24f80a07293b9d130c2bf426289c18b27f17bbc4dbd8256d835f8e3ce5f5346",
+      "metadataSha256": "0eba40c88433d2f1e0e18edc102e94bfc12056222ea911d07b704154e106b83f",
+      "verdict": 0
+    },
+    {
+      "name": "assembly-off-4",
+      "options": {
+        "product": 4,
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\075-assembly-off-4.bin",
+      "sha256": "06fbfa8ee06c20c13059afa46f32e4c2909b167d2e585b9442ae781a48c6e1be",
+      "metadataSha256": "3edd1632a2a2e84d20d2f8f89f95beb4aaa8e5cfdd612b30dd310374f96147e7",
+      "verdict": 0
+    },
+    {
+      "name": "assembly-on-4",
+      "options": {
+        "product": 4,
+        "set": {
+          "charmRap": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\076-assembly-on-4.bin",
+      "sha256": "06fbfa8ee06c20c13059afa46f32e4c2909b167d2e585b9442ae781a48c6e1be",
+      "metadataSha256": "e71567ab11417c61a99c2aaf0b8beeff1386fa4ebada6289c34583471bde1322",
+      "verdict": 0
+    },
+    {
+      "name": "small-tray",
+      "options": {
+        "product": 1,
+        "width": 18,
+        "height": 18,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\077-small-tray.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "96ec1be21eb6e554a90c99258a34fcae24276426a9b5ae1627893dd8f1277cd4",
+      "verdict": 3
+    },
+    {
+      "name": "accepted-size",
+      "options": {
+        "product": 1,
+        "width": 26,
+        "height": 26,
+        "set": {
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\078-accepted-size.bin",
+      "sha256": "f6b274d81c60ebf2da535cb4d5af7b03b0494dd93467a54694f907afdc983f00",
+      "metadataSha256": "a8c0ec2f60eb9d1378860e5b86f904fb95d4b83254fc40628734beb760a4425b",
+      "verdict": 0
+    },
+    {
+      "name": "invalid-no-auto",
+      "options": {
+        "product": 1,
+        "width": 18,
+        "height": 18,
+        "set": {
+          "autoSize": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\079-invalid-no-auto.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "8c00fcfe439c648df4885fb9a0f3279ea9d3804db261a8ce58f6974c5248eaea",
+      "verdict": 1
+    },
+    {
+      "name": "colors-0",
+      "options": {
+        "product": 0,
+        "width": 40,
+        "height": 30,
+        "variant": "colors",
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\080-colors-0.bin",
+      "sha256": "607138a22b255725f25e6c2a5721a14e1da505ae24c507ae954d8c0125b58552",
+      "metadataSha256": "10196439a2244710acab513208529ff0fff009c2289a576cac6607f5332a8cab",
+      "verdict": 0
+    },
+    {
+      "name": "colors-1",
+      "options": {
+        "product": 1,
+        "width": 40,
+        "height": 30,
+        "variant": "colors",
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\081-colors-1.bin",
+      "sha256": "f2515f33240beb702af5516122a5d70d8a7090503d566ed00b825a164814c267",
+      "metadataSha256": "ab7602e2958c69f8ac9117bb5cd4b1b4308eade9dd697ab6a5701eae75ea3e32",
+      "verdict": 0
+    },
+    {
+      "name": "colors-2",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "variant": "colors",
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\082-colors-2.bin",
+      "sha256": "8f73becf30fec3a8bffcc8d7241a91b14c6d909894f52d64e013a2d951a02b59",
+      "metadataSha256": "732b3609fbdf29b54b8c8dbf77a9da1c1e5daa1292b6e7c874efb9b4976cc09e",
+      "verdict": 0
+    },
+    {
+      "name": "colors-3",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 30,
+        "variant": "colors",
+        "set": {
+          "legoRanhOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\083-colors-3.bin",
+      "sha256": "6eaf208cd2f9fc5e3715c61aef0901c4d7baf7bf7c19dd78065fc352c6d685fa",
+      "metadataSha256": "75bf1b72d18a0c9fc0828d2a60107dcc1fd5852ca5225cb9041ad9647857253b",
+      "verdict": 0
+    },
+    {
+      "name": "colors-4",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 30,
+        "variant": "colors",
+        "set": {}
+      },
+      "path": "evidence\\fixtures-wasm\\084-colors-4.bin",
+      "sha256": "54a1018780924ce4b7875049907fd09b1fdb33f7097a216b6c5eaeb230fd6d41",
+      "metadataSha256": "96d1fe71f71937f9bda79d96a5061addff9225adc33b97b0dfb81debcf8e02bb",
+      "verdict": 0
+    },
+    {
+      "name": "prepared-style-0",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "artMode": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\085-prepared-style-0.bin",
+      "sha256": "f869cf038c7605d8f0c390ee40c6a9341afeee9093893e3279b9604b1a682567",
+      "metadataSha256": "12825ce29de779066d061be88c10df00377fe0b5b7518eaf68d46719150fb9eb",
+      "verdict": 0
+    },
+    {
+      "name": "prepared-style-1",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "artMode": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\086-prepared-style-1.bin",
+      "sha256": "f869cf038c7605d8f0c390ee40c6a9341afeee9093893e3279b9604b1a682567",
+      "metadataSha256": "da7e5cdfc6c8f10786654f96775b3a5eb6847ac3a0272fb06e6cac2264df46be",
+      "verdict": 0
+    },
+    {
+      "name": "prepared-style-2",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "artMode": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\087-prepared-style-2.bin",
+      "sha256": "f869cf038c7605d8f0c390ee40c6a9341afeee9093893e3279b9604b1a682567",
+      "metadataSha256": "13fee099d4c5e66f6d3b0aed2f0899b5e7adcfaece40d84090464258734c09ef",
+      "verdict": 0
+    },
+    {
+      "name": "prepared-style-3",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "artMode": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\088-prepared-style-3.bin",
+      "sha256": "f869cf038c7605d8f0c390ee40c6a9341afeee9093893e3279b9604b1a682567",
+      "metadataSha256": "76a8d1880a23b783f01916d479946e6f7f168dc71006f013dc95e575a8e5dc33",
+      "verdict": 0
+    },
+    {
+      "name": "prepared-role-overrides",
+      "options": {
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0
+        },
+        "bodyoverride": 1,
+        "artoverride": 1,
+        "rimslab": 1
+      },
+      "path": "evidence\\fixtures-wasm\\089-prepared-role-overrides.bin",
+      "sha256": "cf52da1b91599e867827923b26fe3071fe9c0efb490bd205e2f6e76043704da0",
+      "metadataSha256": "a2c9e8821ee70ba08a8e13a2f408b25739a7cb2dde16d491a709e49e85309ccb",
+      "verdict": 0
+    },
+    {
+      "name": "stale-source",
+      "options": {
+        "stale": 1
+      },
+      "path": "evidence\\fixtures-wasm\\090-stale-source.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "9d8867028f150a9c6ad4a5f1127612f4354f6a54fe031a9991fcf8714ffff4fd",
+      "verdict": 1
+    },
+    {
+      "name": "missing-source-binding",
+      "options": {
+        "missing": 1
+      },
+      "path": "evidence\\fixtures-wasm\\091-missing-source-binding.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "0302a82e4dbbcad35f81183a49affa8c9b94d70b0e85b6e1f9ca68b481a481d5",
+      "verdict": 1
+    },
+    {
+      "name": "unprepared-flat",
+      "options": {
+        "set": {
+          "artMode": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\092-unprepared-flat.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "0fede3711c1c78a52aa6dfdef26ec8bb95e76d3abb4ac9236445f5b55a7078ec",
+      "verdict": 2
+    },
+    {
+      "name": "source-fillet",
+      "options": {
+        "set": {
+          "topBevel": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\093-source-fillet.bin",
+      "sha256": "db3f00533ec24ca23f9f9fe9297d804449a6f32c49bc6e21292812f03a7ad926",
+      "metadataSha256": "73aa1b21b22562c0849507540dc77dc6d24c31dd8baa6ad34a96e8dae6ec9d13",
+      "verdict": 0
+    },
+    {
+      "name": "disjoint-z-same-xy",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "z-separated",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\094-disjoint-z-same-xy.bin",
+      "sha256": "b15021776a0e1f5e4f7d2c9fa4f655038a2c52eb3c652550835def478ac45542",
+      "metadataSha256": "39c850227057ad2b5973820309e2008861b862da35344874eef3a5381a7cbdff",
+      "verdict": 0
+    },
+    {
+      "name": "overlap-z",
+      "options": {
+        "variant": "z-overlap",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\095-overlap-z.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "e6ca81aca827d1a12a8cfd2c6410cffac1ff15a2bed62f8bb848bb381813e9fd",
+      "verdict": 1
+    },
+    {
+      "name": "point-touch",
+      "options": {
+        "variant": "point-touch",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\096-point-touch.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "cc78ccbdb9a0e61bc1505b515206242f7a9e0bfafd42864b444bf25c2ba86b1c",
+      "verdict": 1
+    },
+    {
+      "name": "below-grid",
+      "options": {
+        "variant": "short-edge",
+        "set": {
+          "ringOn": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\097-below-grid.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "f10eb030650cbf9e1289dfd4e502aee82bad69437c2ff460fc1a543571b06e51",
+      "verdict": 1
+    },
+    {
+      "name": "precision-4-0.001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.001,
+        "set": {
+          "charmChotD": 4
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\098-precision-4-0.001.bin",
+      "sha256": "df661cbf339ca8c1e177936458831f373a43f6992628923e170c50c50cd68629",
+      "metadataSha256": "c020f46d0d954862e0f889ac0076f7aa36854bb9f69f853bada2da738a00b3ab",
+      "verdict": 0
+    },
+    {
+      "name": "precision-6-0.001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.001,
+        "set": {
+          "charmChotD": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\099-precision-6-0.001.bin",
+      "sha256": "b995ae909794b9689c2272cb8e38f86cac228f4983d21f998a3f99b61f6e1adf",
+      "metadataSha256": "ad5c09c66c48fe99c3731bb92a4e08d6c4e899fb87609120d59d725d34166601",
+      "verdict": 0
+    },
+    {
+      "name": "precision-10-0.001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.001,
+        "set": {
+          "charmChotD": 10
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\100-precision-10-0.001.bin",
+      "sha256": "c937096e2ad2d9a1bb0d1b336a95d27f5639ca5b9a16a8b8f941a3ed57a04474",
+      "metadataSha256": "cb51c7c0e89f031a47890a7d854d1b5e1f664b89a7e8fd507fb34d4e94dc4e84",
+      "verdict": 0
+    },
+    {
+      "name": "precision-4-0.0005",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0005,
+        "set": {
+          "charmChotD": 4
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\101-precision-4-0.0005.bin",
+      "sha256": "975fa350444179f40f2d3190c1aa517001be23dfa2488c58b6ec1e5c0271a55c",
+      "metadataSha256": "e8aaff7e3b2ce1a681429b595778dfcf00041abe5bec417f924a1eed2f404f3b",
+      "verdict": 0
+    },
+    {
+      "name": "precision-6-0.0005",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0005,
+        "set": {
+          "charmChotD": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\102-precision-6-0.0005.bin",
+      "sha256": "45c630ba2c1efc68b44f1b1ab67753dc8dfdff108ba8c100cbd9e943bc744925",
+      "metadataSha256": "44105f39286298f175c53e5833ee8ed65e4bb79468ca451efe0aba8febf38bc1",
+      "verdict": 0
+    },
+    {
+      "name": "precision-10-0.0005",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0005,
+        "set": {
+          "charmChotD": 10
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\103-precision-10-0.0005.bin",
+      "sha256": "9440d7713957852add8a3e1a9759c63e48f9153f2da484c139c5e7306ea797a6",
+      "metadataSha256": "13c992cae6437375d93ab26ea3518401ce1d6c2c52b8d1bb550ebe3209e84a1a",
+      "verdict": 0
+    },
+    {
+      "name": "precision-4-0.0001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0001,
+        "set": {
+          "charmChotD": 4
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\104-precision-4-0.0001.bin",
+      "sha256": "6e66983102f27dae5a39c01d64420ebc1a8b00839292f6eaadbc88046563dce2",
+      "metadataSha256": "4a9089e4de7fa0293ea01401036b451999cc01b59ebe85718b588394d88ba43e",
+      "verdict": 0
+    },
+    {
+      "name": "precision-6-0.0001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0001,
+        "set": {
+          "charmChotD": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\105-precision-6-0.0001.bin",
+      "sha256": "b0d12930168d4bedf271f21a18d126cdb334a6b8a821e341629d09137e1af1ca",
+      "metadataSha256": "853cf982599ef39acda2176cd6647e2fff04361ba92fc54bb23ef327eae83759",
+      "verdict": 0
+    },
+    {
+      "name": "precision-10-0.0001",
+      "options": {
+        "product": 4,
+        "width": 40,
+        "height": 40,
+        "tol": 0.0001,
+        "set": {
+          "charmChotD": 10
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\106-precision-10-0.0001.bin",
+      "sha256": "dd9977068d3eb94e3a47c041ca3f446bb940c93bb1975e3953b45e44e4f328bf",
+      "metadataSha256": "52540b8384e3ea83175833d19d04b559ff24f133eb94e078f54095941bad6703",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove",
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 30,
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\107-v1-groove.bin",
+      "sha256": "584d5f879329929f5ed49cff3ec1f4c215ad69d8665820d291cc15fc1ee080cd",
+      "metadataSha256": "60aeda7ef9ef2f7511bf9fc8fadd9d4c80da61bef834dbdd0c59d49e34491a21",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove-literal-zero-wall-loss",
+      "options": {
+        "product": 3,
+        "set": {
+          "legoRanhZ": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\108-v1-groove-literal-zero-wall-loss.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "0c571ef82181eaaa9fc11248fa771c3a43b44c7952929bb7abe645cc1d332b9d",
+      "verdict": 1
+    },
+    {
+      "name": "v1-groove-literal-zero",
+      "options": {
+        "product": 3,
+        "width": 40.11,
+        "set": {
+          "legoRanhZ": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\109-v1-groove-literal-zero.bin",
+      "sha256": "a63fd2be9b37289416e68a5e9a4b913542017101a74ee7c0e4254bbd6f436174",
+      "metadataSha256": "978c746b7918a585113a7317582df6f71adec08e78b79104f13b44f679f729c0",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove-hole",
+      "options": {
+        "product": 3,
+        "variant": "hole"
+      },
+      "path": "evidence\\fixtures-wasm\\110-v1-groove-hole.bin",
+      "sha256": "c47bc18c0d71ebfb114a57e719411bb7713f572d84c74bfc0b2dac73b2078217",
+      "metadataSha256": "8f0e13fd86f704b6ead20dedf625c9e8b76244a3d16474edc813130b5366b4e6",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove-islands",
+      "options": {
+        "product": 3,
+        "variant": "islands"
+      },
+      "path": "evidence\\fixtures-wasm\\111-v1-groove-islands.bin",
+      "sha256": "228ccf688d8fa54135ada76a6fb1e1565689c0768879865bd1d677b221906c1c",
+      "metadataSha256": "7176456f2ad3cca1317fc8b901db3408623f014fc8c1dc06dc7c25aefb14443d",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove-colors",
+      "options": {
+        "product": 3,
+        "variant": "colors"
+      },
+      "path": "evidence\\fixtures-wasm\\112-v1-groove-colors.bin",
+      "sha256": "9124ce01ef73bbd7abd9c4bd709a83e11c3a5eb4bb383a48a77e335e5b4f1c31",
+      "metadataSha256": "69f749e4c5f285fa54605c3d9001764e88484a6c8a16926ba6208cd344689b31",
+      "verdict": 0
+    },
+    {
+      "name": "v1-groove-roof",
+      "options": {
+        "product": 3,
+        "set": {
+          "legoRanhR": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\113-v1-groove-roof.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "069df5500fab9eb3805e850b59732074f6b40fc0043b624cd4e0d3f10d525032",
+      "verdict": 1
+    },
+    {
+      "name": "v1-bevel-0",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 0
+        },
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\114-v1-bevel-0.bin",
+      "sha256": "8de4c1c5381075ab1620d8fe80eea67244d1b68b28a2274df1795056da00a085",
+      "metadataSha256": "d3f5223c609ad967e8e918076d4bde9c721991b07e2bba5094776adf667315be",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-1",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 1
+        },
+        "stl": 1
+      },
+      "path": "evidence\\fixtures-wasm\\115-v1-bevel-1.bin",
+      "sha256": "51ff2d437c8e4f01989386d78112c16a84f2134bc7c49e238de4822decb57299",
+      "metadataSha256": "7e8da94bcf17479c5df6da81e3cbfa75a4f8e9c7a8985160163ab379789fc9d7",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-material-joined",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelR": 1.2,
+          "bevelGop": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\116-v1-bevel-material-joined.bin",
+      "sha256": "19a09da33404d98531d40af5d9cdc63ac9dd16e04585439ef623a901e2fc0370",
+      "metadataSha256": "d54c53ab078292c2ed7f7c658031bde0cb2dfe0223c2574a2821d1f364e364f0",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-material-separate",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "prepared",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "bevelGop": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\117-v1-bevel-material-separate.bin",
+      "sha256": "311e756000250d118e210d8a720cd83a412e0002e9ffdd4018a4610ad41522ac",
+      "metadataSha256": "2f79a6beb5a32afa388be080578c6d790f140606bd71894aeddb7d9191ecc32b",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-steps-0.16",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "h0": 0.2,
+        "h": 0.16,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelSeg": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\118-v1-bevel-steps-0.16.bin",
+      "sha256": "81b9e83bdb0e50d088f1156b63313f5070a0623929d4696f2d09965f47f838a1",
+      "metadataSha256": "f530770776f545a0cc7b28c9b8079d3a358c3a4db10f6947276b6849b5b142e4",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-steps-0.2",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "h0": 0.2,
+        "h": 0.2,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelSeg": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\119-v1-bevel-steps-0.2.bin",
+      "sha256": "a9379ad7cbc44d52afa78eec86ff9e7d8cef72c5d46de4309e9efaf04a4e9a1b",
+      "metadataSha256": "28f22838ec79b2854ff408cbf11177bab488726efa21434688abff3e10d2cd4b",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-steps-0.25",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "h0": 0.2,
+        "h": 0.25,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelSeg": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\120-v1-bevel-steps-0.25.bin",
+      "sha256": "1ede4b017effe8825abe7a2561a2cb5f0856e8ce2b012bfd8cb33943f2002f2a",
+      "metadataSha256": "321c745ae85c058e8915e6d09c16cd69e81e59b61b6de7fb90baa284f9401903",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-hole",
+      "options": {
+        "width": 20,
+        "height": 10,
+        "variant": "hole",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\121-v1-bevel-hole.bin",
+      "sha256": "d2087471b067666f85556cb6e221238d087c31687688f583eb5f5b8244abff6a",
+      "metadataSha256": "be44654443739ec446ffe78013b461f7caf2d1b8f42f2695ac39f2b50f6bf28e",
+      "verdict": 0
+    },
+    {
+      "name": "v1-bevel-floor",
+      "options": {
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "topBevelR": 3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\122-v1-bevel-floor.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "9e56dccc5144958cd8a9a99de13a61b22b9bffae6b2e58c22e2d6243e43b67ec",
+      "verdict": 1
+    },
+    {
+      "name": "v1-block-bevel-override",
+      "options": {
+        "variant": "prepared",
+        "blockbevel": 1,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1,
+          "bevelGop": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\123-v1-block-bevel-override.bin",
+      "sha256": "ff3e9bcdd14e835dd682378a286372b944642a2708700f5291251de3a9f49b03",
+      "metadataSha256": "502d221ed8d1237baa4b4ec5317734156bf1bbf6e0833d30b01ab9b50ff1864b",
+      "verdict": 0
+    },
+    {
+      "name": "v1-block-bevel-orphan",
+      "options": {
+        "variant": "prepared",
+        "blockbevel": 2
+      },
+      "path": "evidence\\fixtures-wasm\\124-v1-block-bevel-orphan.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "cfba293c4ec6c8a7096d2e20785499e229a733ec249d2436fbca19d35be74544",
+      "verdict": 1
+    },
+    {
+      "name": "v1-text-eyelet",
+      "options": {
+        "variant": "text",
+        "set": {
+          "ringTren": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\125-v1-text-eyelet.bin",
+      "sha256": "f1bce4f2341044d0e7a791111c405ca95f6421a798e9a3da4df38d410ad8091a",
+      "metadataSha256": "88869de06c9e29df40ca71bb954da99c5e29b04d5aae7decc30a205f264295fe",
+      "verdict": 0
+    },
+    {
+      "name": "v1-text-bevel-0",
+      "options": {
+        "variant": "text",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 0,
+          "bevelChu": 1,
+          "topBevelR": 0.3,
+          "topBevelShape": 0,
+          "topBevelSeg": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\126-v1-text-bevel-0.bin",
+      "sha256": "a6512c1bf9d47ef3284a791df36603da752aa5126ffbf820e277d57bf03a6e11",
+      "metadataSha256": "01976716ad5c752a0b30a9974eb998f78fcc73f8d22b3dddf45ace46de2e93c3",
+      "verdict": 0
+    },
+    {
+      "name": "v1-text-bevel-1",
+      "options": {
+        "variant": "text",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 0,
+          "bevelChu": 1,
+          "topBevelR": 0.3,
+          "topBevelShape": 1,
+          "topBevelSeg": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\127-v1-text-bevel-1.bin",
+      "sha256": "65e35a8ed8dca63863305ea2c23df80fadf10a118b2efd96d6f58b84285adae6",
+      "metadataSha256": "a98bfaf95be7c1fa513d38503232520260030c015ff6d4d1cd5d044e31fb76cd",
+      "verdict": 0
+    },
+    {
+      "name": "v1-text-bevel-2",
+      "options": {
+        "variant": "text",
+        "set": {
+          "ringOn": 0,
+          "topBevel": 0,
+          "bevelChu": 1,
+          "topBevelR": 0.3,
+          "topBevelShape": 2,
+          "topBevelSeg": 2
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\128-v1-text-bevel-2.bin",
+      "sha256": "d94c0c7176719ed07993884a93b0a6f9fcdc6e8696b941f07fb274903ac41155",
+      "metadataSha256": "4702201f59941855d0b1ebe9b414f9a238b61f2eb2aac77ecc14ac32dd688aab",
+      "verdict": 0
+    },
+    {
+      "name": "v1-text-orphan-attachment",
+      "options": {
+        "variant": "text",
+        "badattachment": 1,
+        "set": {
+          "ringTren": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\129-v1-text-orphan-attachment.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "d7ae8ac69d0310c70c1f79399a6c22a0f178c1086d7951b9ae901cb6cfed0002",
+      "verdict": 1
+    },
+    {
+      "name": "v1-text-eyelet-and-bevel",
+      "options": {
+        "variant": "text",
+        "set": {
+          "ringTren": 1,
+          "bevelChu": 1,
+          "topBevelR": 0.3
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\130-v1-text-eyelet-and-bevel.bin",
+      "sha256": "5886c25a6b6a5ba7eb1f8f29cb1a3a9770195a193edf59ace10a36eb5cb17c61",
+      "metadataSha256": "44da1a3f69475bd2187cafb5b3108d152d28fc0f80b79a55a7c920db257f2217",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-0-0",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 0,
+          "strapSlot": 2,
+          "strapSlotDir": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\131-v1-strap-0-0.bin",
+      "sha256": "d7d0137d7fbabc514e1e50be76eb2d3f8acf57e3d208bffa287dc629df1abc8e",
+      "metadataSha256": "b80621daf2eb4572550916eeefc854feb80c30260fee6b9eca3655dba41f954c",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-0-1",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 0,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\132-v1-strap-0-1.bin",
+      "sha256": "3e1e85b0cc50d82aa9de639abcb3497575178a31572989abc4bbcd55a88907cb",
+      "metadataSha256": "2aaf3ff5340689682f4a8477e8665beae2cf91eee582f4a89c8359efb11a4bfa",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-30-0",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 30,
+          "strapSlot": 2,
+          "strapSlotDir": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\133-v1-strap-30-0.bin",
+      "sha256": "3e0de6eb3cfda792d738121cbe286d71612eb7b0477d7708bed031cc5f6a219b",
+      "metadataSha256": "6914705b3f11971b69ed31fe20dbd93cc84c38da37dad9dc8b06f8754cfce4a2",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-30-1",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 30,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\134-v1-strap-30-1.bin",
+      "sha256": "abbcfdb88c0ef1d421129c7edb573946bd1aa228fad9cb42fdd5b2303a9189a0",
+      "metadataSha256": "27e82826578c6387891de124a8114847695b63ae177f535839a5b861ee103e91",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-45-0",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 45,
+          "strapSlot": 2,
+          "strapSlotDir": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\135-v1-strap-45-0.bin",
+      "sha256": "d620140f016a2584fa90cd5d4c53fe26ace71b9a7c479f4cf586faae8aef1ca5",
+      "metadataSha256": "5c24e732b0f603bc3eea98096d77f91ad676f771bc9127d3f7b506289884d518",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-45-1",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 45,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\136-v1-strap-45-1.bin",
+      "sha256": "7ea8e500231d8a2741bd8eb33e5771fa124cea8004c8defb2b951a73a55f97ab",
+      "metadataSha256": "78d76695edc471c70695c938f8dfb54c05077176574cb0b3b72c646cd065e4bd",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-90-0",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 90,
+          "strapSlot": 2,
+          "strapSlotDir": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\137-v1-strap-90-0.bin",
+      "sha256": "d80c78ab41127b30e86fa309855e77396ddaa715f4d7e8ac114bdfd6fb61b781",
+      "metadataSha256": "61f8ccf4f4284b20275af2de3c73995194dbe3371b046cc00c15a698e56025cc",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-90-1",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 90,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\138-v1-strap-90-1.bin",
+      "sha256": "1afcc9730dcf3b4361827d38b73ee6d525d9db83288a7b9c9be754738fb768fb",
+      "metadataSha256": "1238fa01bb89c8f913ba2a16e02508b89e3cf23069a580ec1a1b15e2447ea29d",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-120-0",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 120,
+          "strapSlot": 2,
+          "strapSlotDir": 0
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\139-v1-strap-120-0.bin",
+      "sha256": "ac88a1e12fac0ef0334d02648e6f7ac8e1c65f84f4f48ff23c99c410ccf14e8d",
+      "metadataSha256": "fe757a9577107838f8fa356e993ee4c218dee60db6f93015b5eba87c5bee80a4",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-120-1",
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 40,
+        "set": {
+          "strapAngle": 120,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\140-v1-strap-120-1.bin",
+      "sha256": "da00c368be7765ed4c6bbac71672ead4e36e4f826387edef882fd546a518ef6e",
+      "metadataSha256": "340adb866e664d5b8db3f2591f0b6da4cc08ead8d2b184d0048cbf2f881c9197",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-capsule-end",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapSlot": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\141-v1-strap-capsule-end.bin",
+      "sha256": "02d6c02fc3a154c343ed6e52f2b96edf4dcaefed219b4fe8676606044768f388",
+      "metadataSha256": "0d665fcc23646fbe5019a4cd6e12d9550c08205d6bc2b35836b79be819b0f010",
+      "verdict": 0
+    },
+    {
+      "name": "v1-strap-capsule-floor",
+      "options": {
+        "product": 2,
+        "set": {
+          "strapSlot": 8,
+          "strapSlotDir": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\142-v1-strap-capsule-floor.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694",
+      "metadataSha256": "5d8dc970e023f2770cdd344d63d47b74b414001c26fbb3633e3d033cff6b19ba",
+      "verdict": 1
+    },
+    {
+      "name": "v1-concave-groove-0.001",
+      "options": {
+        "product": 3,
+        "variant": "concave",
+        "tol": 0.001
+      },
+      "path": "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+      "sha256": "d9ee111ea95b4f4025a00c1b74812cbd42b2cb33a932cc1b0b5a5e756153838b",
+      "metadataSha256": "bbf9d0ccf66f6c0bd31a409d2359882bb16cb26f8a60c562464084300325d438",
+      "verdict": 0
+    },
+    {
+      "name": "v1-concave-bevel-0.001",
+      "options": {
+        "variant": "concave",
+        "exporttol": 0.001,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+      "sha256": "cbeff1b743b94ecc0238f6129157dde643507479e6958b2cc6336f1e368e5237",
+      "metadataSha256": "9cb99c713e15d61dd11d6d4f39c9894f38401ba7f3b7fecf285a39c14c4749ad",
+      "verdict": 0
+    },
+    {
+      "name": "v1-capsule-tolerance-0.001",
+      "options": {
+        "product": 2,
+        "tol": 0.001,
+        "set": {
+          "strapSlot": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+      "sha256": "02d6c02fc3a154c343ed6e52f2b96edf4dcaefed219b4fe8676606044768f388",
+      "metadataSha256": "0d665fcc23646fbe5019a4cd6e12d9550c08205d6bc2b35836b79be819b0f010",
+      "verdict": 0
+    },
+    {
+      "name": "v1-concave-groove-0.0005",
+      "options": {
+        "product": 3,
+        "variant": "concave",
+        "tol": 0.0005
+      },
+      "path": "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+      "sha256": "1ef18fc0c6e94a0663611eaec3290f8e4680041bc96fe5d1fa43b7f163c780d1",
+      "metadataSha256": "7399905ad73dcf7a7fd87f1f31ae511bba366c7ae2ba2535a57a644578c4f349",
+      "verdict": 0
+    },
+    {
+      "name": "v1-concave-bevel-0.0005",
+      "options": {
+        "variant": "concave",
+        "exporttol": 0.0005,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+      "sha256": "6ed8247632daa7a65b66d0c78bea9c0cc8808f83278a765276e2d5c7baa75684",
+      "metadataSha256": "3901deb1358c63fbbb2d5cdbabb96741baf78b08f87c933f5c0689623b2fce67",
+      "verdict": 0
+    },
+    {
+      "name": "v1-capsule-tolerance-0.0005",
+      "options": {
+        "product": 2,
+        "tol": 0.0005,
+        "set": {
+          "strapSlot": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+      "sha256": "e91d236c2c1f375780b1cb89f808d60c6629b69f9eb7674b64ac3a78e8236d46",
+      "metadataSha256": "aaa8c6bde87168782608634a5dea9a11e528b16ae1576a0f8d49c64a4d6e127a",
+      "verdict": 0
+    },
+    {
+      "name": "v1-concave-groove-0.0001",
+      "options": {
+        "product": 3,
+        "variant": "concave",
+        "tol": 0.0001
+      },
+      "path": "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+      "sha256": "ef2d38e37824c636751ea9a5cd0982566a1107a08044e2f6cd06589e3980522f",
+      "metadataSha256": "4762812dd309e3822a4e9a670e43f3d6450b230be30b8c6c3cb1cc0b02ad9e65",
+      "verdict": 0
+    },
+    {
+      "name": "v1-concave-bevel-0.0001",
+      "options": {
+        "variant": "concave",
+        "exporttol": 0.0001,
+        "set": {
+          "ringOn": 0,
+          "topBevel": 1
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+      "sha256": "40717176e019e58f37930c102e8b07c7936b2b30014c2d52c252d97c68a21387",
+      "metadataSha256": "3ba18798b75c5edb32a98cdb89e92128f72426174dbef3bdfd1f69f4ca31977c",
+      "verdict": 0
+    },
+    {
+      "name": "v1-capsule-tolerance-0.0001",
+      "options": {
+        "product": 2,
+        "tol": 0.0001,
+        "set": {
+          "strapSlot": 6
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin",
+      "sha256": "89a184d6e8952b0e840ddb76ba219544b2a5159bcb909d06d864fef3322dabb8",
+      "metadataSha256": "5367749ef467ba5c8340a3bda69e179cade5551a9b2b123f486f0e85299a03bd",
+      "verdict": 0
+    },
+    {
+      "name": "v1-cap-tray-bevel-0",
+      "options": {
+        "product": 1,
+        "variant": "colors",
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "bevelGop": 1,
+          "topBevelR": 0.4,
+          "topBevelSeg": 2,
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\152-v1-cap-tray-bevel-0.bin",
+      "sha256": "c6fadcab8d303cd1a9b62a4e46acf351ecb8a1a084f14d665909e6dbb4261108",
+      "metadataSha256": "a1f1cd727a00c8177f09ff3f355ab537df0f3b5773995ce3844b749844e619e8",
+      "verdict": 0
+    },
+    {
+      "name": "v1-cap-tray-bevel-1",
+      "options": {
+        "product": 1,
+        "variant": "colors",
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "bevelGop": 1,
+          "topBevelR": 0.4,
+          "topBevelSeg": 2,
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\153-v1-cap-tray-bevel-1.bin",
+      "sha256": "3a4d98fc00faced99f144ff58926e60fc252be29520ff9b86376a761653db1b9",
+      "metadataSha256": "1dc0770c06a38554d35e2b4ee1534eafcd05ed6a789d3da26ae6de475a0496c3",
+      "verdict": 0
+    },
+    {
+      "name": "v1-cap-tray-bevel-2",
+      "options": {
+        "product": 1,
+        "variant": "colors",
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "bevelGop": 1,
+          "topBevelR": 0.4,
+          "topBevelSeg": 2,
+          "skirtH": 7
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\154-v1-cap-tray-bevel-2.bin",
+      "sha256": "15d19c7eaa83cfd3c43ea0b2b69cfcc1f0e6135c2c1aa9cc108da188c1c32377",
+      "metadataSha256": "59f0e08b26350aafa8f93688ee06c608ef91b44beeb785eeaf1d7f2f984d4a30",
+      "verdict": 0
+    },
+    {
+      "name": "v1-cancel-before",
+      "options": {
+        "cancel": "before"
+      },
+      "path": "evidence\\fixtures-wasm\\155-v1-cancel-before.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "5f7952748b594ca09122a4a14a1c0ed7db49d36ebcab4e3a32c15c9e822997be",
+      "verdict": 5
+    },
+    {
+      "name": "v1-cancel-stale",
+      "options": {
+        "cancel": "stale"
+      },
+      "path": "evidence\\fixtures-wasm\\156-v1-cancel-stale.bin",
+      "sha256": "6f8b233d9744f2a2374027934294eb44302ff8da4b8b49b27ec9476038a19ff7",
+      "metadataSha256": "5f8139ff62f3fdaf54503f765411808354d177079c153fe72c0d4893353dcd89",
+      "verdict": 0
+    },
+    {
+      "name": "v1-control-generation",
+      "options": {
+        "cancel": "generation"
+      },
+      "path": "evidence\\fixtures-wasm\\157-v1-control-generation.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "c44bf3f17c08a448b05c7de448cd97e20744b237bac1908c111bc6f75c0f39e2",
+      "verdict": 1
+    },
+    {
+      "name": "v1-surface-fuzz-0",
+      "options": {
+        "product": 0,
+        "width": 54.0136,
+        "height": 38.824,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\158-v1-surface-fuzz-0.bin",
+      "sha256": "92b1dfdbee64e7ce4af6b8a9513539a28abee8716fa7b894587ddec9887f91d3",
+      "metadataSha256": "f6c8fac7c660c5647a049390380f906500d9e90bc9ee7538539fea0ab0f0e38f",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-1",
+      "options": {
+        "product": 2,
+        "width": 56.6883,
+        "height": 31.5042,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1,
+          "strapAngle": 95,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\159-v1-surface-fuzz-1.bin",
+      "sha256": "9744b459aa8572a10d89fd9259f304bbbd63467a345665ff8e6b266b1f9a42e3",
+      "metadataSha256": "c52b388a9adc74abe7043471ffe89708a5e2d4e0957ed9e7b3cee00c5aa3c2a5",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-2",
+      "options": {
+        "product": 3,
+        "width": 46.0513,
+        "height": 29.5443,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\160-v1-surface-fuzz-2.bin",
+      "sha256": "981d52acb11f8d1407a225fca9e6c5b936197ce9ff4c77ec601642f6a515a405",
+      "metadataSha256": "91c1eef8e22d71b55634075f433501baefeaea596941e278d5aa158c019c59a4",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-3",
+      "options": {
+        "product": 4,
+        "width": 39.6705,
+        "height": 38.4037,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\161-v1-surface-fuzz-3.bin",
+      "sha256": "e9581fa34dad9011ee4d2ade090f39aa45c4de23f15bdb1c907bc7bf18e911b6",
+      "metadataSha256": "5efd698405299a0ad2e650b7830ae76e2baf667e12a40ea7a2ebdfd58153eb0e",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-4",
+      "options": {
+        "product": 0,
+        "width": 45.0633,
+        "height": 28.4903,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\162-v1-surface-fuzz-4.bin",
+      "sha256": "7f9824b08fc68150c3224aa51b094cc7e92c931d88022710a5a14671371ddebf",
+      "metadataSha256": "942effd90535fce85362ce656b3d29dd0285c683be23bf81fe025d95d8beefc0",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-5",
+      "options": {
+        "product": 2,
+        "width": 37.1071,
+        "height": 33.9609,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1,
+          "strapAngle": 51,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\163-v1-surface-fuzz-5.bin",
+      "sha256": "0df23c92e3b02f2633843263824e0a9a11d9a83163775711decb30c9b588d357",
+      "metadataSha256": "8bb735d5bfed77ee7935e41a49237e40af21d990ad6bb00531ce65c9d3e36566",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-6",
+      "options": {
+        "product": 3,
+        "width": 44.0902,
+        "height": 46.1457,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\164-v1-surface-fuzz-6.bin",
+      "sha256": "988a48c243609eeddc40c71197960a3c7582448b40ead9ca90b24027d4a2d6ac",
+      "metadataSha256": "86958273379d91af9f23c02b14f11291dca0f95894da96ea33b937032eab25c6",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-7",
+      "options": {
+        "product": 4,
+        "width": 42.3697,
+        "height": 32.0878,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\165-v1-surface-fuzz-7.bin",
+      "sha256": "fec612154b20d5bbfaf08019b0e4460a5ce64e9aeec2999562ab0cf8b7cdf576",
+      "metadataSha256": "09edd01e4115e9362ed5de1e2434f1c468067cc397ed416d2fb0e9ad3f366303",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-8",
+      "options": {
+        "product": 0,
+        "width": 48.711,
+        "height": 31.6983,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\166-v1-surface-fuzz-8.bin",
+      "sha256": "51b32583963b7b02ed2f746884c2ac214c30ef7e7dc1f84f17b4ab5f3ea2d095",
+      "metadataSha256": "c9caa93f9a02deb709742f3e404f65bde6ba07b8a272b787697755fbc51b9c2d",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-9",
+      "options": {
+        "product": 2,
+        "width": 56.9244,
+        "height": 49.0669,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1,
+          "strapAngle": 105,
+          "strapSlot": 2,
+          "strapSlotDir": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\167-v1-surface-fuzz-9.bin",
+      "sha256": "e5f9da4264a0ede20ea9f9bc47536802236d4ecf3aa1d1a546ca9e63f8c5d016",
+      "metadataSha256": "91026481deb4efd94abcac78248fc2052fe4d29bfc4c4400fa0484b8fec98aef",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-10",
+      "options": {
+        "product": 3,
+        "width": 32.333,
+        "height": 41.0348,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\168-v1-surface-fuzz-10.bin",
+      "sha256": "11495ace529444c17790e27edd14ab6aae777e006e67ad0d1ede268468b7988a",
+      "metadataSha256": "5dc0ac3a11045365f66d8354f4eec511e43248f33b5cfa98c52bb2078da2b485",
+      "verdict": 0
+    },
+    {
+      "name": "v1-surface-fuzz-11",
+      "options": {
+        "product": 4,
+        "width": 40.881,
+        "height": 43.3384,
+        "set": {
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelR": 0.3,
+          "topBevelSeg": 2,
+          "bevelGop": 1
+        },
+        "seed": "0x6d656332"
+      },
+      "path": "evidence\\fixtures-wasm\\169-v1-surface-fuzz-11.bin",
+      "sha256": "2b3df76fa337b4498d4dba73b4d34cce57f14036c7efabaa27efa3c6d3b60642",
+      "metadataSha256": "4017868d6bd4494d1742324bd65c318c749f8039813840aeb841318ad8d94aad",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-0",
+      "options": {
+        "product": 0,
+        "width": 54.2539,
+        "height": 29.8325,
+        "set": {
+          "ringAngle": 202,
+          "ringOverlap": 1.3
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\170-fuzz-0.bin",
+      "sha256": "00ae74d0a75d5ab6fcebcf02b4735a2c5e9ba3794e5bf6fc5007b5a95dfea1d6",
+      "metadataSha256": "e010069eaffcd739260e9f6c1022dec0afa11abe7527784d5b16f45bf2f78642",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-1",
+      "options": {
+        "product": 1,
+        "width": 55.6114,
+        "height": 36.6726,
+        "set": {
+          "skirtH": 7,
+          "clr": 0.1426
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\171-fuzz-1.bin",
+      "sha256": "68e646470ccdbc8514ba10f17f1cacf61d292968c7919cceaf63ea0a4b24b1c6",
+      "metadataSha256": "2f3c79035c0ad8aa09c243deb6314fc7af4cefeff856b694e85508d7d4c8dec2",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-2",
+      "options": {
+        "product": 2,
+        "width": 42.0148,
+        "height": 47.9047,
+        "set": {
+          "strapAngle": 58,
+          "strapCham": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\172-fuzz-2.bin",
+      "sha256": "4748f0d2c9d07dedbe588fc37703a737074aa22254feb86859ee304c96cc7e09",
+      "metadataSha256": "4aaa9d5b37c35707eabf2b59f2877904e80e9b594330034f58bde47263f451a3",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-3",
+      "options": {
+        "product": 3,
+        "width": 29.691,
+        "height": 42.775,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\173-fuzz-3.bin",
+      "sha256": "9b7c10f7ef34a9667a896150d07f070b1c1049334f4ade5e3c6aa2ee74adfb15",
+      "metadataSha256": "6b80a24f5613d2eeab822ad94f3a39da89ce8e95a944ae6c2ca4e69d6463f0a2",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-4",
+      "options": {
+        "product": 4,
+        "width": 40.3402,
+        "height": 34.8265,
+        "set": {
+          "charmClr": 0.4631
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\174-fuzz-4.bin",
+      "sha256": "f51ae900184637c32a2774a492c8be28246a82e61b1c3b8ff9b5955afa7347e9",
+      "metadataSha256": "e13b0fd1dc06466ee027a7503dd3a5a30ee96960721c9107d7e1d12e2609e21b",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-5",
+      "options": {
+        "product": 0,
+        "width": 43.5312,
+        "height": 35.5352,
+        "set": {
+          "ringAngle": 171,
+          "ringOverlap": 1.3
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\175-fuzz-5.bin",
+      "sha256": "7b706fc5baccb2c8cd53bb328dcb19a772ae928257c2bead4f45dc225e6ebbe4",
+      "metadataSha256": "79990fe8e5d12a6a964c11e75472032d40907fa2d8a01d802c5f5891a5ee1563",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-6",
+      "options": {
+        "product": 1,
+        "width": 49.4065,
+        "height": 38.1949,
+        "set": {
+          "skirtH": 7,
+          "clr": 0.0229
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\176-fuzz-6.bin",
+      "sha256": "576eedc67e31060373f8e6e4701669a6499e412de67da2cc0f48298cf4d0f866",
+      "metadataSha256": "f24fe0f49371bd8d40f69919d83669863fda2d4db0811195084bc76abbbdb4de",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-7",
+      "options": {
+        "product": 2,
+        "width": 46.0222,
+        "height": 39.5869,
+        "set": {
+          "strapAngle": 57,
+          "strapCham": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\177-fuzz-7.bin",
+      "sha256": "6b2c6a06d78dd0fdd0bcc439dda19262029c3d74ed3ce0ee3c72bee4e8222d49",
+      "metadataSha256": "4f9c347f26062c92e9a6f84c7ec428c3a62b411e7470edcc8b970774ff04f4d3",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-8",
+      "options": {
+        "product": 3,
+        "width": 37.0474,
+        "height": 33.8396,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 2
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\178-fuzz-8.bin",
+      "sha256": "c438bbdf0802d0c1533e55b1ee58005c2448b9a4c5b4a1187e85ba10be9cb428",
+      "metadataSha256": "d829b1fd44ae46c7ac453d9258bf2a7f0b582afdcbd7b4186183f6866215584f",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-9",
+      "options": {
+        "product": 4,
+        "width": 50.541,
+        "height": 45.0664,
+        "set": {
+          "charmClr": 0.5497
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\179-fuzz-9.bin",
+      "sha256": "d1291c291a498f62f5e71c53f3374edf6206dd1e2303af35c6ed23f121334de3",
+      "metadataSha256": "64e76265bb07e3d4fa1e9000e074e5e852903b20f4706618f29aa087ab954899",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-10",
+      "options": {
+        "product": 0,
+        "width": 44.1322,
+        "height": 47.3258,
+        "set": {
+          "ringAngle": 129,
+          "ringOverlap": 1.3
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\180-fuzz-10.bin",
+      "sha256": "c71e915cab9b178a68ca96ec01380e5df7aa30f0213d4abdc42e2ce1602fdf1d",
+      "metadataSha256": "9e3fd782b8889e7ef7c2fb92aa684e7e8095f93487d030dab6a88fcbfbd8a163",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-11",
+      "options": {
+        "product": 1,
+        "width": 42.5604,
+        "height": 35.7732,
+        "set": {
+          "skirtH": 7,
+          "clr": 0.1076
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\181-fuzz-11.bin",
+      "sha256": "ea88b46aaa5d8a632e63a8302debe0c299962bfa5b3f5a1b83ecc41564c14183",
+      "metadataSha256": "370523de6fd28d327c85d52398ee3184426f0ba45e02f6c5a816d55ba048cb38",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-12",
+      "options": {
+        "product": 2,
+        "width": 37.2731,
+        "height": 45.3345,
+        "set": {
+          "strapAngle": 124,
+          "strapCham": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\182-fuzz-12.bin",
+      "sha256": "a44effe885a7007496c34fe9c2aa2c589139fd18104eca0e738b81cdf44c6ee5",
+      "metadataSha256": "2d51809a53387035a99b1a2d05485124c2288ac3d9fbc50e0e63368836dfd1e4",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-13",
+      "options": {
+        "product": 3,
+        "width": 55.7131,
+        "height": 42.5423,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 1
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\183-fuzz-13.bin",
+      "sha256": "1da5cfdda4b13b070bd3992a7cabaf2db1d1161ef5e32747a6152335f1806ed7",
+      "metadataSha256": "5bd47e1b5727e98e1abbfd1c640475e6b51a9202f42ab74d3150bfde8a1d1dd6",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-14",
+      "options": {
+        "product": 4,
+        "width": 49.4545,
+        "height": 47.0509,
+        "set": {
+          "charmClr": 0.5855
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\184-fuzz-14.bin",
+      "sha256": "b20c74b46d81ea212fd530646a6c1e9cfe5caf421249f896af3f3cc93fbb7b74",
+      "metadataSha256": "e9843757cd209925c209decadb4ea45f4d134f08e988e49f527de3281e0d1802",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-15",
+      "options": {
+        "product": 0,
+        "width": 54.0926,
+        "height": 35.6236,
+        "set": {
+          "ringAngle": 160,
+          "ringOverlap": 1.3
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\185-fuzz-15.bin",
+      "sha256": "2e0c09b1cd5abb8b248dbac6cf5ef479b8162a06260e6c577adaf836d357d2ea",
+      "metadataSha256": "1e615734125d974500a91d5a1c7b8d2a93a55dbb44059df59ae75bd0fbe57870",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-16",
+      "options": {
+        "product": 1,
+        "width": 40.6299,
+        "height": 29.618,
+        "set": {
+          "skirtH": 7,
+          "clr": 0.1331
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\186-fuzz-16.bin",
+      "sha256": "196c11ad80ed71b850f6a8dcdca2a3ce4994fa8e17e3ecec53ba0f231b1d67eb",
+      "metadataSha256": "f36502b5a1dd875dec990e2bf0de0b1a76fc2771f6728ce1fa38679a1e833810",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-17",
+      "options": {
+        "product": 2,
+        "width": 48.8709,
+        "height": 33.8448,
+        "set": {
+          "strapAngle": 86,
+          "strapCham": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\187-fuzz-17.bin",
+      "sha256": "d5268ed44d6f7f1c79e625b416ce48320a313d62772e8de9d4b9b1ac056559b2",
+      "metadataSha256": "f2c6e38b81fa0adf2543a324404b28b1024ef06016ab26977bb51e19a3069129",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-18",
+      "options": {
+        "product": 3,
+        "width": 34.1187,
+        "height": 44.0525,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\188-fuzz-18.bin",
+      "sha256": "f52d298694512a1c919c0fc4481ec987c82f1100db3fd718b59035b3852533b0",
+      "metadataSha256": "84360d4ee19079a10e1e69a860f7fbfd79a3b8e26adac2d796c96828b6b28b6d",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-19",
+      "options": {
+        "product": 4,
+        "width": 45.6223,
+        "height": 47.579,
+        "set": {
+          "charmClr": 0.1694
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\189-fuzz-19.bin",
+      "sha256": "286768dac6ae4820e7407b595100898d8727e870a2b13cdde8208f10e19fac7f",
+      "metadataSha256": "eaf89097e158d55961c6ed0a22886390e5ed9532acece1652b7add75c2eed8a6",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-20",
+      "options": {
+        "product": 0,
+        "width": 56.479,
+        "height": 28.4617,
+        "set": {
+          "ringAngle": 316,
+          "ringOverlap": 1.3
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\190-fuzz-20.bin",
+      "sha256": "95c291c78fef7a80d0e3b49f9628db21d112a05132cdb76663d755a542f26538",
+      "metadataSha256": "58c37c462386248f5cae34fbe014d5343e781635ca54aa2350b74e9fc6094e9d",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-21",
+      "options": {
+        "product": 1,
+        "width": 45.684,
+        "height": 46.859,
+        "set": {
+          "skirtH": 7,
+          "clr": 0.1445
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\191-fuzz-21.bin",
+      "sha256": "a3dce96e88f16734c27972ebb6d7f02282b5bd72d0502b8fca8b2b6365a5052c",
+      "metadataSha256": "153e770bf20e5186767429c85936f935bb1f556826a9e8dc68b774481a4a4890",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-22",
+      "options": {
+        "product": 2,
+        "width": 30.7053,
+        "height": 36.0996,
+        "set": {
+          "strapAngle": 95,
+          "strapCham": 0
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\192-fuzz-22.bin",
+      "sha256": "145dcbe2104e2e6ba7198b4283dda4f4d6f5478dcb5d58c53080dd4269cef55f",
+      "metadataSha256": "ebaaeb59a932c985162cd3699937c24c930f639dec662ed364f1b53c5635326c",
+      "verdict": 0
+    },
+    {
+      "name": "fuzz-23",
+      "options": {
+        "product": 3,
+        "width": 39.3031,
+        "height": 47.4024,
+        "set": {
+          "legoRanhOn": 0,
+          "legoThua": 2
+        },
+        "seed": "0x6d656368"
+      },
+      "path": "evidence\\fixtures-wasm\\193-fuzz-23.bin",
+      "sha256": "10b6bd2ad1ea6ea3a4fc04bb703148a7f9c104f35dc4a62d991387a51094a740",
+      "metadataSha256": "e2e16860343e84be393da1a1603e9c348d45c87700988ebbe19db26d80ad9872",
+      "verdict": 0
+    },
+    {
+      "name": "bad-baseH-nan",
+      "options": {
+        "set": {
+          "baseH": "nan"
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\194-bad-baseH-nan.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "9713a65eaf304f7f294cc3c50f22d03c1b707b7a019a9ea0639f2819c59c70d5",
+      "verdict": 1
+    },
+    {
+      "name": "bad-baseH-inf",
+      "options": {
+        "set": {
+          "baseH": "inf"
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\195-bad-baseH-inf.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "9713a65eaf304f7f294cc3c50f22d03c1b707b7a019a9ea0639f2819c59c70d5",
+      "verdict": 1
+    },
+    {
+      "name": "bad-size-161",
+      "options": {
+        "set": {
+          "size": 161
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\196-bad-size-161.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "09a312273273a813ce0202c28f611419b06f6bc1710c8575a0435aebe26943f1",
+      "verdict": 1
+    },
+    {
+      "name": "bad-layerH-0.31",
+      "options": {
+        "set": {
+          "layerH": 0.31
+        }
+      },
+      "path": "evidence\\fixtures-wasm\\197-bad-layerH-0.31.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "5c2cf565744c7ab0c2bb32cfa10179882345f1e76a18cbf548a23c58e62b698f",
+      "verdict": 1
+    },
+    {
+      "name": "badmaterial",
+      "options": {
+        "badmaterial": 1
+      },
+      "path": "evidence\\fixtures-wasm\\198-badmaterial.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "52582ba6d3ae36af3583d7c3daf04e54989863f2a1434728883c8ae553300ce5",
+      "verdict": 1
+    },
+    {
+      "name": "extreme-tolerance",
+      "options": {
+        "tol": 1e-7
+      },
+      "path": "evidence\\fixtures-wasm\\199-extreme-tolerance.bin",
+      "sha256": "d8bb0eada93ecbf7e39105a11d9a3053c9aea19f5df4ea5f3c299e1ff5c00491",
+      "metadataSha256": "c28ca81b7ed7ee58d6409413a6266f5da2c347d3be04551b97729904e1cd0abb",
+      "verdict": 1
+    }
+  ],
+  "counts": {
+    "pass": 19,
+    "fail": 0
+  },
+  "limitations": [
+    "Physical AT-022.1/.2 unverified",
+    "No slicer or printer actions",
+    "General source self-intersection and whole-pipeline signed error remain parent dependencies",
+    "Prepared source slabs are fixtures at an integration boundary, not proof of artwork-style implementation",
+    "Single-thread WASM cancellation during a call requires parent shared-memory observer or Worker watchdog"
+  ]
+}

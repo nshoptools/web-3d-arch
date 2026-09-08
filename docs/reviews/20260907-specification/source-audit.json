@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 2,
+  "method": "Hash/JSON/ZIP/XML/index checks; no JS or G-code execution; no extraction",
+  "scope": "Mandatory permanent inputs named by source-manifest.json; structural audit, not product certification",
+  "files": [
+    {
+      "id": "bambu-project-reference-v1",
+      "path": "tests/fixtures/printing-reference/v1/bambu-project.3mf",
+      "bytes": 11726478,
+      "sha256": "361859e04e686452a60b7e9cc3104e7f4e173ca35979dd2311b1d6c27664ca75",
+      "package": {
+        "expandedBytes": 11725068,
+        "entryCount": 11,
+        "crcBadEntry": null,
+        "models": [
+          {
+            "path": "3D/3dmodel.model",
+            "sha256": "d7a545e9c2a5d689e89654b644a471de6f905949a4dbd13ca3fa71bcb839cab0",
+            "unit": "millimeter",
+            "objects": []
+          },
+          {
+            "path": "3D/Objects/object_1.model",
+            "sha256": "67faa754111f2b0504e66b10897a60e10d09d2e5e121c54d7a1f735e7cad3265",
+            "unit": "millimeter",
+            "objects": [
+              {
+                "id": "1",
+                "vertices": 54860,
+                "triangles": 109712,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -28.836489,
+                    99.222969
+                  ],
+                  [
+                    -28.892014,
+                    37.986454
+                  ],
+                  [
+                    0.0,
+                    17.35
+                  ]
+                ]
+              },
+              {
+                "id": "2",
+                "vertices": 7666,
+                "triangles": 15332,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -19.409765,
+                    19.020964
+                  ],
+                  [
+                    -18.636412,
+                    19.743469
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "3",
+                "vertices": 4802,
+                "triangles": 9592,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -18.026016,
+                    17.528093
+                  ],
+                  [
+                    -16.747272,
+                    14.477776
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "4",
+                "vertices": 9188,
+                "triangles": 18372,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -27.838295,
+                    27.453245
+                  ],
+                  [
+                    -26.121801,
+                    27.172838
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "5",
+                "vertices": 1304,
+                "triangles": 2604,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -17.856363,
+                    17.468182
+                  ],
+                  [
+                    -8.656086,
+                    -3.436035
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "6",
+                "vertices": 1108,
+                "triangles": 2212,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -8.54,
+                    7.652727
+                  ],
+                  [
+                    -18.191874,
+                    -13.195843
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "metadataExtruders": {
+          "Metadata/model_settings.config": [
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "Metadata/Slic3r_PE_model.config": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        "projectSettings": {
+          "version": "02.08.02.60",
+          "printer_model": "Bambu Lab P1S",
+          "nozzle_diameter": [
+            "0.4"
+          ],
+          "filament_colour": [
+            "#F8C42C",
+            "#FCDB2F",
+            "#442D0E",
+            "#F09E16",
+            "#FEFEFE",
+            "#ED7770"
+          ],
+          "layer_height": "0.2",
+          "initial_layer_print_height": "0.16"
+        },
+        "slotReferenceAudit": {
+          "positiveExtruderReferences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "configuredFilaments": 6,
+          "referencesWithoutFilament": [],
+          "method": "Positive one-based extruder IDs against the included filament_colour table; no nozzle-count inference",
+          "targetSlicerCompatibility": "unverified"
+        },
+        "meshOracle": "unverified: index/edge checks do not prove manifold vertices, intersections or fit",
+        "slicerRoundtrip": "unverified"
+      },
+      "auditStatus": "pass"
+    },
+    {
+      "id": "u1-project-invalid-slots-v1",
+      "path": "tests/fixtures/printing-reference/v1/u1-inconsistent-slots.3mf",
+      "bytes": 11695870,
+      "sha256": "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece",
+      "package": {
+        "expandedBytes": 11694592,
+        "entryCount": 10,
+        "crcBadEntry": null,
+        "models": [
+          {
+            "path": "3D/3dmodel.model",
+            "sha256": "d7a545e9c2a5d689e89654b644a471de6f905949a4dbd13ca3fa71bcb839cab0",
+            "unit": "millimeter",
+            "objects": []
+          },
+          {
+            "path": "3D/Objects/object_1.model",
+            "sha256": "67faa754111f2b0504e66b10897a60e10d09d2e5e121c54d7a1f735e7cad3265",
+            "unit": "millimeter",
+            "objects": [
+              {
+                "id": "1",
+                "vertices": 54860,
+                "triangles": 109712,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -28.836489,
+                    99.222969
+                  ],
+                  [
+                    -28.892014,
+                    37.986454
+                  ],
+                  [
+                    0.0,
+                    17.35
+                  ]
+                ]
+              },
+              {
+                "id": "2",
+                "vertices": 7666,
+                "triangles": 15332,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -19.409765,
+                    19.020964
+                  ],
+                  [
+                    -18.636412,
+                    19.743469
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "3",
+                "vertices": 4802,
+                "triangles": 9592,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -18.026016,
+                    17.528093
+                  ],
+                  [
+                    -16.747272,
+                    14.477776
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "4",
+                "vertices": 9188,
+                "triangles": 18372,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -27.838295,
+                    27.453245
+                  ],
+                  [
+                    -26.121801,
+                    27.172838
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "5",
+                "vertices": 1304,
+                "triangles": 2604,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -17.856363,
+                    17.468182
+                  ],
+                  [
+                    -8.656086,
+                    -3.436035
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              },
+              {
+                "id": "6",
+                "vertices": 1108,
+                "triangles": 2212,
+                "invalidIndices": 0,
+                "indexedEdgeIncidenceNotTwo": 0,
+                "bounds": [
+                  [
+                    -8.54,
+                    7.652727
+                  ],
+                  [
+                    -18.191874,
+                    -13.195843
+                  ],
+                  [
+                    6.1,
+                    6.7
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "metadataExtruders": {
+          "Metadata/model_settings.config": [
+            "1",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "Metadata/Slic3r_PE_model.config": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ]
+        },
+        "projectSettings": {
+          "version": "2.2.1",
+          "printer_model": "Snapmaker U1",
+          "nozzle_diameter": [
+            "0.4",
+            "0.4",
+            "0.4",
+            "0.4"
+          ],
+          "filament_colour": [
+            "#F8C42C",
+            "#FCDB2F",
+            "#442D0E",
+            "#F09E16"
+          ],
+          "layer_height": "0.2",
+          "initial_layer_print_height": "0.25"
+        },
+        "slotReferenceAudit": {
+          "positiveExtruderReferences": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "configuredFilaments": 4,
+          "referencesWithoutFilament": [
+            5,
+            6
+          ],
+          "method": "Positive one-based extruder IDs against the included filament_colour table; no nozzle-count inference",
+          "targetSlicerCompatibility": "unverified"
+        },
+        "meshOracle": "unverified: index/edge checks do not prove manifold vertices, intersections or fit",
+        "slicerRoundtrip": "unverified"
+      },
+      "expectedNegativeObservation": "confirmed; invalid slot mapping is not a valid slicer golden",
+      "auditStatus": "pass"
+    },
+    {
+      "id": "printer-beds-reference-v1",
+      "path": "tests/fixtures/printing-reference/v1/printer-beds.json",
+      "bytes": 643081,
+      "sha256": "56a95d16b537feb3b806ea7d6b8d99aa75311a4764acaa0075a34665a8ed795d",
+      "jsonType": "dict",
+      "bedRecords": 1057,
+      "claimedSource": {
+        "cong_cu": "PrusaSlicer",
+        "phien_ban": "PrusaSlicer-2.9.6",
+        "thu_muc": "resources/profiles/*.ini",
+        "sinh_boi": "src/v2/bin/sinh-ban-in",
+        "ghi_chu": "SINH RA, không gõ tay. Cài một bản slicer mới rồi chạy lại kịch bản này là có bàn mới. `inherits` ĐƯỢC GIẢI: bỏ nó làm mất 930 máy thật, trong đó cả dòng Creality Ender."
+      },
+      "auditStatus": "pass"
+    },
+    {
+      "id": "bambu-settings-v1",
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-bambu.js",
+      "bytes": 43485,
+      "sha256": "190f78c5e05e08d511edb42a5e65ff00f47cd60aa32b4aca34197fc3d11d22f9",
+      "variable": "MAU3MF_BAMBU",
+      "keyCount": 582,
+      "arrayLengths": {
+        "4": 121,
+        "0": 6,
+        "2": 67,
+        "1": 24,
+        "6": 2,
+        "8": 48,
+        "16": 3,
+        "12": 1
+      },
+      "profileSummary": {
+        "version": "02.08.02.60",
+        "printer_model": "Bambu Lab P1S",
+        "nozzle_diameter": [
+          "0.4"
+        ],
+        "filament_colour": [
+          "#76D9F4",
+          "#161616",
+          "#FF0080",
+          "#FF8040"
+        ],
+        "layer_height": "0.2",
+        "initial_layer_print_height": "0.16",
+        "print_settings_id": "0.20mm Standard @BBL X1C"
+      },
+      "auditStatus": "pass"
+    },
+    {
+      "id": "u1-settings-v1",
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-u1.js",
+      "bytes": 25487,
+      "sha256": "e4070112c126244d2df6a0eff7295a2e3198a03b4025e49a686a5978bc490643",
+      "variable": "MAU3MF_U1",
+      "keyCount": 549,
+      "arrayLengths": {
+        "4": 125,
+        "1": 7,
+        "16": 1,
+        "8": 1,
+        "0": 4,
+        "2": 19,
+        "10": 1
+      },
+      "profileSummary": {
+        "version": "2.2.1",
+        "printer_model": "Snapmaker U1",
+        "nozzle_diameter": [
+          "0.4",
+          "0.4",
+          "0.4",
+          "0.4"
+        ],
+        "filament_colour": [
+          "#FF0000",
+          "#0080FF",
+          "#FFFFFF",
+          "#000000"
+        ],
+        "layer_height": "0.2",
+        "initial_layer_print_height": "0.25",
+        "print_settings_id": "0.20 Standard @Snapmaker U1 (0.4 nozzle)"
+      },
+      "auditStatus": "pass"
+    },
+    {
+      "id": "parameters-core-v1",
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+      "jsonType": "dict",
+      "parameters": {
+        "count": 126,
+        "types": {
+          "r": 94,
+          "s": 10,
+          "c": 22
+        },
+        "groups": {
+          "Màu & chi tiết": 7,
+          "Kích thước & dáng": 13,
+          "Chiều cao": 13,
+          "Lỗ móc khoá": 7,
+          "Ngàm Lego": 19,
+          "Charm dép": 12,
+          "Lỗ luồn dây đeo": 9,
+          "Thân clicky": 3,
+          "Trụ cắm MX": 9,
+          "Khay lắp switch": 24,
+          "Khối nhập thêm": 10
+        },
+        "defaultTypeDomainStepIssues": [],
+        "modeDefaultIssues": [],
+        "modeCount": 5,
+        "geometrySemantics": "unverified"
+      },
+      "auditStatus": "pass"
+    }
+  ],
+  "summary": {
+    "pass": 6
+  }
+}

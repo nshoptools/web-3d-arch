@@ -1,0 +1,507 @@
+{
+  "checks": [
+    "16 full identity/permuted mapping cases and 16 owned-copy repeat checks",
+    "mapping rejection: MATERIAL_MAPPING_INVALID",
+    "mapping rejection: MATERIAL_MAPPING_STALE_SOURCE",
+    "mapping rejection: MATERIAL_MAPPING_INVALID",
+    "mapping rejection: MATERIAL_MAPPING_INVALID",
+    "mixed ordinary export/readback output cap and cross-kind ownership",
+    "successful legacy union STL bytes/metadata preserved after readback/failure/budget pressure",
+    "source SHA and complete AFCP SHA recomputed independently; repeated proposal canonical hash",
+    "canonical context binds filename",
+    "canonical context binds materialSource",
+    "canonical context binds workLimit",
+    "read-only original buffer 1 mutation fails context seal",
+    "read-only original buffer 2 mutation fails context seal",
+    "all observed root resident bytes and registries zero after release"
+  ],
+  "material": [
+    {
+      "bits": 0,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0,
+            1
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101,
+            102
+          ]
+        }
+      ],
+      "sha256": "cbfd9801fc2009c1c9f61d1589cb91e51005037481f3b96c7e1b34789a6f762d"
+    },
+    {
+      "bits": 0,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            1,
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            102,
+            101
+          ]
+        }
+      ],
+      "sha256": "0b214db49338b0df95f69ed7486ee9191b75c56661b244906aa05917ad646382"
+    },
+    {
+      "bits": 1,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 1,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 2,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 2,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 3,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 3,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 0,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 4,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 4,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 5,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 5,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 287454207,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "c86b7aad1a84a42064b095028705444ba6b716fc73088946874987ff787394ea"
+    },
+    {
+      "bits": 6,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 6,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 1,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 7,
+      "reversed": false,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    },
+    {
+      "bits": 7,
+      "reversed": true,
+      "groups": [
+        {
+          "inputParts": [
+            0
+          ],
+          "materialSource": 0,
+          "part": 0,
+          "rgba": 287454207,
+          "slot": 1,
+          "sourceIndices": [
+            101
+          ]
+        },
+        {
+          "inputParts": [
+            1
+          ],
+          "materialSource": 4294967295,
+          "part": 1,
+          "rgba": 4289383679,
+          "slot": 65535,
+          "sourceIndices": [
+            102
+          ]
+        }
+      ],
+      "sha256": "7d1422d8f6bc74519fd8c140301706e07f22b70a77337caca8ad35598b8971e4"
+    }
+  ],
+  "legacySha256": "04e08b49a7e190b50097369c02c7f07f62b8e64f49d154e298dd55c7b76b587a",
+  "confirmedSha256": "77ffcd7c23559dfaac803235aaecf0d07cc95320a1179c61de0eab82bcdb817d",
+  "rootStatistics": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "binary": "supplied runtime-instrumented",
+  "status": "pass"
+}

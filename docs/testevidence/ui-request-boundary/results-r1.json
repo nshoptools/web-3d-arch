@@ -1,0 +1,1198 @@
+{
+  "version": "arch-ui-request-boundary-tests/1",
+  "scope": "Actual captured React UI/hooks with synthetic deferred AppBridge; no backend, paid calls, geometry, or independent review",
+  "captureHash": "73b54d49a1bd359a58e9fedac0fd93958daf62432be1f7a32b5a54525ce68ada",
+  "inputRevision": "initial",
+  "pureExit": 0,
+  "typecheckExit": 0,
+  "testFiles": [
+    {
+      "file": "tests/ui/request-boundary/baseline.mjs",
+      "sha256": "0387553de72a4f2dfab342a97712e74721cad36887bb0ed0ef577957e465d1ff"
+    },
+    {
+      "file": "tests/ui/request-boundary/browser-cases.mjs",
+      "sha256": "506106519844dcb6486ad8ea86fbb77b955d40926c7777597173a0a3f3d939ed"
+    },
+    {
+      "file": "tests/ui/request-boundary/deferred-bridge.ts",
+      "sha256": "0c3edadefbde632933216adb922dc1e01d1e113b02ad68216eab89c28f50648e"
+    },
+    {
+      "file": "tests/ui/request-boundary/harness.tsx",
+      "sha256": "227f7eaec9f524bfe1013bf74143ad05df06aa93fb4a53a209f354bdaf2b6450"
+    },
+    {
+      "file": "tests/ui/request-boundary/index.html",
+      "sha256": "d9fb3daba36c493be70f4d3303c98e10c305f168db8e76641492f8bf4e4a98f7"
+    },
+    {
+      "file": "tests/ui/request-boundary/pure.test.mjs",
+      "sha256": "9fae73705fde96e616100c4788a7d1d0919554c2e0f0cdc03ca848070ed125d8"
+    },
+    {
+      "file": "tests/ui/request-boundary/run.mjs",
+      "sha256": "c7362e9f760e9051e01255a1b460a4fc2c3da9be7fa20036936b8b38339cb807"
+    },
+    {
+      "file": "tests/ui/request-boundary/run.ps1",
+      "sha256": "3caea8fa2cfb4ad13cc312d0eefb74985b4a49ddec16edbc6eb1fdc8738b17ed"
+    },
+    {
+      "file": "tests/ui/request-boundary/support.mjs",
+      "sha256": "d6501ecae0ae38d59fc2bcd1fa7581a37d8f8c4f769d7cbbc59bff059d6175e3"
+    },
+    {
+      "file": "tests/ui/request-boundary/typecheck.mjs",
+      "sha256": "97d59f211695bf1abd28059f26d1a2fcfed71360ac9af67ff676aadc60a69651"
+    }
+  ],
+  "packages": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vite": "8.2.2",
+    "typescript": "7.0.2",
+    "playwright": "1.63.0"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "browserVersion": "153.0.8010.12",
+      "checks": [
+        {
+          "name": "current matching diagnostic renders log, toast and alert",
+          "pass": true
+        },
+        {
+          "name": "current unexpected rejection remains visible, pending clears",
+          "pass": true
+        },
+        {
+          "name": "current confirmation renders actual ConfirmDialog without duplicate toast",
+          "pass": true
+        },
+        {
+          "name": "busy ref prevents duplicate handler dispatch",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "ordinary project edit keeps current result owned",
+          "pass": true
+        },
+        {
+          "name": "requestKey collision witness changes real hook ownership",
+          "pass": true
+        },
+        {
+          "name": "newer serial wins reverse completion order",
+          "pass": true
+        },
+        {
+          "name": "project owner rejects P1 P2 P1, account owner survives project-only navigation",
+          "pass": true
+        },
+        {
+          "name": "account owner also rejects A B A after identical final key",
+          "pass": true
+        },
+        {
+          "name": "latest navigation owns result after changing its own project",
+          "pass": true
+        },
+        {
+          "name": "latest navigation genuine refusal remains visible",
+          "pass": true
+        },
+        {
+          "name": "navigation account-aba prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "navigation retire prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "unmounted navigation caller cannot publish later confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_NAV_UNMOUNT\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:210\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-34-bddc7833",
+                  "tone": "error",
+                  "text": "PRIVATE_NAV_UNMOUNT",
+                  "at": "2026-09-08T05:34:41.849Z",
+                  "detail": "PRIVATE_NAV_UNMOUNT_DETAIL",
+                  "code": "TEST_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-35-19a03308",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "PRIVATE_NAV_UNMOUNT_TITLE",
+                    "changes": [
+                      "PRIVATE_NAV_UNMOUNT_CHANGE"
+                    ],
+                    "retry": {
+                      "type": "project.delete",
+                      "id": "PRIVATE_NAV_UNMOUNT_RETRY",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "TEST_REFUSAL",
+                      "severity": "error",
+                      "message": "PRIVATE_NAV_UNMOUNT",
+                      "detail": "PRIVATE_NAV_UNMOUNT_DETAIL"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE",
+              "alert": ""
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.delete",
+                  "id": "P1",
+                  "confirmed": false
+                }
+              }
+            ],
+            "listeners": 3,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0\nPRIVATE_NAV_UNMOUNT_TITLE\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nPRIVATE_NAV_UNMOUNT_CHANGE\nLỗiTEST_REFUSAL\nPRIVATE_NAV_UNMOUNT\nPRIVATE_NAV_UNMOUNT_DETAIL\n\nThao tác này không nằm trong lịch sử hoàn tác của dự án. Lệnh gửi lên máy chủ, thay đổi quyền, xuất tệp hoặc xóa dữ liệu có hiệu lực ngay và không có bước hoàn tác nào trong giao diện.\n\nMở nhật ký và chẩn đoán\n\nLượt này chưa có mã đề xuất nào ở nhân, nên đóng hộp thoại chỉ là không xác nhận: không có gì được thực thi và không có gì phải rút lại. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhậnÁp dụng thay đổi\nMount passive request\nCần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\n\nPRIVATE_NAV_UNMOUNT PRIVATE_NAV_UNMOUNT_DETAIL\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[],\"log\":[{\"id\":\"log-34-bddc7833\",\"tone\":\"error\",\"text\":\"PRIVATE_NAV_UNMOUNT\",\"at\":\"2026-09-08T05:34:41.849Z\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\",\"code\":\"TEST_REFUSAL\"}],\"dialogs\":[{\"id\":\"dlg-35-19a03308\",\"spec\":{\"kind\":\"confirm\",\"title\":\"PRIVATE_NAV_UNMOUNT_TITLE\",\"changes\":[\"PRIVATE_NAV_UNMOUNT_CHANGE\"],\"retry\":{\"type\":\"project.delete\",\"id\":\"PRIVATE_NAV_UNMOUNT_RETRY\",\"confirmed\":true},\"diagnostic\":{\"code\":\"TEST_REFUSAL\",\"severity\":\"error\",\"message\":\"PRIVATE_NAV_UNMOUNT\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\"}}}],\"announcement\":\"Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\",\"alert\":\"\"}"
+          }
+        },
+        {
+          "name": "non-context command rejects project ABA",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog accepts unchanged same File quote without submission",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog rejects equal-metadata different-byte File quote",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then late confirmation neither reopens nor leaks",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then unexpected rejection remains private",
+          "pass": true
+        },
+        {
+          "name": "actual AI account ABA rejects quote even when dialog remains mounted",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt cannot publish old rejected body",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_EDITED_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:283\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-52-ea861fb5",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_EDITED_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-51-4589afb8",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:42.367Z",
+                  "detail": "PRIVATE_EDITED_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-50-aabb279e",
+                  "spec": {
+                    "kind": "ai-generate"
+                  }
+                }
+              ],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "prepareImage",
+                "pending": false,
+                "input": {
+                  "providerId": "synthetic",
+                  "modelId": "m",
+                  "prompt": "Mẫu | có :: dấu và tiếng Việt",
+                  "operationId": "401079a0-0e1d-409f-88f2-869cd0770bb6"
+                }
+              }
+            ],
+            "listeners": 6,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nTạo ảnh bằng AI\n\nMở trang này không gửi gì. Lấy báo giá cũng không tính phí và không gửi nội dung đi; chỉ nút Gửi mới thực hiện lượt tính phí.\n\nNhà cung cấp\nSynthetic provider (no network)\nModel\nControlled model · nhận ảnh tham chiếu\nModel này không công bố mức chất lượng nào, nên giao diện không gửi trường chất lượng.Model này không công bố kích thước nào, nên giao diện không gửi trường kích thước.\nMô tả (prompt)25/4000 ký tự\nChọn ảnh tham chiếuChưa chọn ảnh tham chiếu.\nChưa có báo giá\n\nBấm “Lấy báo giá” để xem nơi nhận, tài khoản tính phí, dữ liệu sẽ gửi và trần chi phí. Bước đó không tính phí và không gửi nội dung tới nhà cung cấp. Đổi mô tả, nhà cung cấp, model, chất lượng, kích thước hoặc ảnh tham chiếu sẽ làm báo giá hiện có mất hiệu lực.\n\nModelControlled model\nChất lượngmodel không công bố\nKích thướcmodel không công bố\nẢnh tham chiếukhông gửi\nMô tả sẽ gửiA new | prompt :: content\nLưu promptTạo lượt mới“Tạo lượt mới” là một ý định mới và có thể phát sinh phí thêm một lần nữa. Mã lượt hiện tại: 401079a0-0e1d-409f-88f2-869cd0770bb6.\nKhay kết quả0 ảnh\n\nKết quả về khay chứ không tự thay nguồn thiết kế. Nếu dự án đã đổi từ lúc gửi, ảnh vẫn nằm ở đây cho tới khi bạn chọn áp.\n\nChưa có kết quả nào trong khay.\n\nĐóngLấy báo giáGửi lượt đã đồng ýLấy báo giá trước; bước lấy báo giá không tính phí.\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_EDITED_REJECTION\nLệnh không hoàn tất được.\n\nLệnh không hoàn tất được. PRIVATE_EDITED_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-52-ea861fb5\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_EDITED_REJECTION\"}],\"log\":[{\"id\":\"log-51-4589afb8\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:42.367Z\",\"detail\":\"PRIVATE_EDITED_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[{\"id\":\"dlg-50-aabb279e\",\"spec\":{\"kind\":\"ai-generate\"}}],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "child passive request starts after global layout subscription",
+          "pass": true
+        },
+        {
+          "name": "wrapped current navigation failure is handled only once",
+          "pass": true
+        },
+        {
+          "name": "wrapped earlier navigation rejection cannot publish after newer navigation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_OLDER_NAV_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:286\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-57-ce599aea",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-56-55521460",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:42.427Z",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P2"
+                }
+              },
+              {
+                "id": 2,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P3"
+                }
+              }
+            ],
+            "listeners": 2,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_OLDER_NAV_REJECTION\nLệnh không hoàn tất được.\n\nLệnh không hoàn tất được. PRIVATE_OLDER_NAV_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-57-ce599aea\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\"}],\"log\":[{\"id\":\"log-56-55521460\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:42.427Z\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "actual AI current matching unexpected rejection stays visible",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt drops returned confirmation",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "deniedOrigins": []
+    },
+    {
+      "engine": "firefox",
+      "browserVersion": "155.0",
+      "checks": [
+        {
+          "name": "current matching diagnostic renders log, toast and alert",
+          "pass": true
+        },
+        {
+          "name": "current unexpected rejection remains visible, pending clears",
+          "pass": true
+        },
+        {
+          "name": "current confirmation renders actual ConfirmDialog without duplicate toast",
+          "pass": true
+        },
+        {
+          "name": "busy ref prevents duplicate handler dispatch",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "ordinary project edit keeps current result owned",
+          "pass": true
+        },
+        {
+          "name": "requestKey collision witness changes real hook ownership",
+          "pass": true
+        },
+        {
+          "name": "newer serial wins reverse completion order",
+          "pass": true
+        },
+        {
+          "name": "project owner rejects P1 P2 P1, account owner survives project-only navigation",
+          "pass": true
+        },
+        {
+          "name": "account owner also rejects A B A after identical final key",
+          "pass": true
+        },
+        {
+          "name": "latest navigation owns result after changing its own project",
+          "pass": true
+        },
+        {
+          "name": "latest navigation genuine refusal remains visible",
+          "pass": true
+        },
+        {
+          "name": "navigation account-aba prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "navigation retire prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "unmounted navigation caller cannot publish later confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_NAV_UNMOUNT\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:210\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-34-a0005c75",
+                  "tone": "error",
+                  "text": "PRIVATE_NAV_UNMOUNT",
+                  "at": "2026-09-08T05:34:45.342Z",
+                  "detail": "PRIVATE_NAV_UNMOUNT_DETAIL",
+                  "code": "TEST_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-35-4418621d",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "PRIVATE_NAV_UNMOUNT_TITLE",
+                    "changes": [
+                      "PRIVATE_NAV_UNMOUNT_CHANGE"
+                    ],
+                    "retry": {
+                      "type": "project.delete",
+                      "id": "PRIVATE_NAV_UNMOUNT_RETRY",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "TEST_REFUSAL",
+                      "severity": "error",
+                      "message": "PRIVATE_NAV_UNMOUNT",
+                      "detail": "PRIVATE_NAV_UNMOUNT_DETAIL"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE",
+              "alert": ""
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.delete",
+                  "id": "P1",
+                  "confirmed": false
+                }
+              }
+            ],
+            "listeners": 3,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0\nPRIVATE_NAV_UNMOUNT_TITLE\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nPRIVATE_NAV_UNMOUNT_CHANGE\nLỗiTEST_REFUSAL\nPRIVATE_NAV_UNMOUNT\nPRIVATE_NAV_UNMOUNT_DETAIL\n\nThao tác này không nằm trong lịch sử hoàn tác của dự án. Lệnh gửi lên máy chủ, thay đổi quyền, xuất tệp hoặc xóa dữ liệu có hiệu lực ngay và không có bước hoàn tác nào trong giao diện.\n\nMở nhật ký và chẩn đoán\n\nLượt này chưa có mã đề xuất nào ở nhân, nên đóng hộp thoại chỉ là không xác nhận: không có gì được thực thi và không có gì phải rút lại. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhậnÁp dụng thay đổi\nMount passive request\nCần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\n\nPRIVATE_NAV_UNMOUNT PRIVATE_NAV_UNMOUNT_DETAIL\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[],\"log\":[{\"id\":\"log-34-a0005c75\",\"tone\":\"error\",\"text\":\"PRIVATE_NAV_UNMOUNT\",\"at\":\"2026-09-08T05:34:45.342Z\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\",\"code\":\"TEST_REFUSAL\"}],\"dialogs\":[{\"id\":\"dlg-35-4418621d\",\"spec\":{\"kind\":\"confirm\",\"title\":\"PRIVATE_NAV_UNMOUNT_TITLE\",\"changes\":[\"PRIVATE_NAV_UNMOUNT_CHANGE\"],\"retry\":{\"type\":\"project.delete\",\"id\":\"PRIVATE_NAV_UNMOUNT_RETRY\",\"confirmed\":true},\"diagnostic\":{\"code\":\"TEST_REFUSAL\",\"severity\":\"error\",\"message\":\"PRIVATE_NAV_UNMOUNT\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\"}}}],\"announcement\":\"Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\",\"alert\":\"\"}"
+          }
+        },
+        {
+          "name": "non-context command rejects project ABA",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog accepts unchanged same File quote without submission",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog rejects equal-metadata different-byte File quote",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then late confirmation neither reopens nor leaks",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then unexpected rejection remains private",
+          "pass": true
+        },
+        {
+          "name": "actual AI account ABA rejects quote even when dialog remains mounted",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt cannot publish old rejected body",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_EDITED_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:283\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-52-2b4b6515",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_EDITED_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-51-7176fbda",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:46.054Z",
+                  "detail": "PRIVATE_EDITED_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-50-8c4eda94",
+                  "spec": {
+                    "kind": "ai-generate"
+                  }
+                }
+              ],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "prepareImage",
+                "pending": false,
+                "input": {
+                  "providerId": "synthetic",
+                  "modelId": "m",
+                  "prompt": "Mẫu | có :: dấu và tiếng Việt",
+                  "operationId": "d20398da-98d8-4968-8488-26ff193da028"
+                }
+              }
+            ],
+            "listeners": 6,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nTạo ảnh bằng AI\n\nMở trang này không gửi gì. Lấy báo giá cũng không tính phí và không gửi nội dung đi; chỉ nút Gửi mới thực hiện lượt tính phí.\n\nNhà cung cấp\nModel\nModel này không công bố mức chất lượng nào, nên giao diện không gửi trường chất lượng.Model này không công bố kích thước nào, nên giao diện không gửi trường kích thước.\nMô tả (prompt)25/4000 ký tự\nChọn ảnh tham chiếuChưa chọn ảnh tham chiếu.\nChưa có báo giá\n\nBấm “Lấy báo giá” để xem nơi nhận, tài khoản tính phí, dữ liệu sẽ gửi và trần chi phí. Bước đó không tính phí và không gửi nội dung tới nhà cung cấp. Đổi mô tả, nhà cung cấp, model, chất lượng, kích thước hoặc ảnh tham chiếu sẽ làm báo giá hiện có mất hiệu lực.\n\nModelControlled model\nChất lượngmodel không công bố\nKích thướcmodel không công bố\nẢnh tham chiếukhông gửi\nMô tả sẽ gửiA new | prompt :: content\nLưu promptTạo lượt mới“Tạo lượt mới” là một ý định mới và có thể phát sinh phí thêm một lần nữa. Mã lượt hiện tại: d20398da-98d8-4968-8488-26ff193da028.\nKhay kết quả0 ảnh\n\nKết quả về khay chứ không tự thay nguồn thiết kế. Nếu dự án đã đổi từ lúc gửi, ảnh vẫn nằm ở đây cho tới khi bạn chọn áp.\n\nChưa có kết quả nào trong khay.\n\nĐóngLấy báo giáGửi lượt đã đồng ýLấy báo giá trước; bước lấy báo giá không tính phí.\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_EDITED_REJECTION\nLệnh không hoàn tất được.\n\nLệnh không hoàn tất được. PRIVATE_EDITED_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-52-2b4b6515\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_EDITED_REJECTION\"}],\"log\":[{\"id\":\"log-51-7176fbda\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:46.054Z\",\"detail\":\"PRIVATE_EDITED_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[{\"id\":\"dlg-50-8c4eda94\",\"spec\":{\"kind\":\"ai-generate\"}}],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "child passive request starts after global layout subscription",
+          "pass": true
+        },
+        {
+          "name": "wrapped current navigation failure is handled only once",
+          "pass": true
+        },
+        {
+          "name": "wrapped earlier navigation rejection cannot publish after newer navigation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_OLDER_NAV_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:286\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-57-2c787481",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-56-bfd932bc",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:46.161Z",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P2"
+                }
+              },
+              {
+                "id": 2,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P3"
+                }
+              }
+            ],
+            "listeners": 2,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_OLDER_NAV_REJECTION\nLệnh không hoàn tất được.\n\nLệnh không hoàn tất được. PRIVATE_OLDER_NAV_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-57-2c787481\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\"}],\"log\":[{\"id\":\"log-56-bfd932bc\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:46.161Z\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "actual AI current matching unexpected rejection stays visible",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt drops returned confirmation",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "deniedOrigins": []
+    },
+    {
+      "engine": "webkit",
+      "browserVersion": "26.6",
+      "checks": [
+        {
+          "name": "current matching diagnostic renders log, toast and alert",
+          "pass": true
+        },
+        {
+          "name": "current unexpected rejection remains visible, pending clears",
+          "pass": true
+        },
+        {
+          "name": "current confirmation renders actual ConfirmDialog without duplicate toast",
+          "pass": true
+        },
+        {
+          "name": "busy ref prevents duplicate handler dispatch",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "account-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "project-aba: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "unmount: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late confirmation cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late rejection cannot publish",
+          "pass": true
+        },
+        {
+          "name": "retire: late success cannot publish",
+          "pass": true
+        },
+        {
+          "name": "ordinary project edit keeps current result owned",
+          "pass": true
+        },
+        {
+          "name": "requestKey collision witness changes real hook ownership",
+          "pass": true
+        },
+        {
+          "name": "newer serial wins reverse completion order",
+          "pass": true
+        },
+        {
+          "name": "project owner rejects P1 P2 P1, account owner survives project-only navigation",
+          "pass": true
+        },
+        {
+          "name": "account owner also rejects A B A after identical final key",
+          "pass": true
+        },
+        {
+          "name": "latest navigation owns result after changing its own project",
+          "pass": true
+        },
+        {
+          "name": "latest navigation genuine refusal remains visible",
+          "pass": true
+        },
+        {
+          "name": "navigation account-aba prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "navigation retire prevents late confirmation",
+          "pass": true
+        },
+        {
+          "name": "unmounted navigation caller cannot publish later confirmation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_NAV_UNMOUNT\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:210\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:32:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [],
+              "log": [
+                {
+                  "id": "log-34-e64d3cec",
+                  "tone": "error",
+                  "text": "PRIVATE_NAV_UNMOUNT",
+                  "at": "2026-09-08T05:34:51.941Z",
+                  "detail": "PRIVATE_NAV_UNMOUNT_DETAIL",
+                  "code": "TEST_REFUSAL"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-35-1b6682de",
+                  "spec": {
+                    "kind": "confirm",
+                    "title": "PRIVATE_NAV_UNMOUNT_TITLE",
+                    "changes": [
+                      "PRIVATE_NAV_UNMOUNT_CHANGE"
+                    ],
+                    "retry": {
+                      "type": "project.delete",
+                      "id": "PRIVATE_NAV_UNMOUNT_RETRY",
+                      "confirmed": true
+                    },
+                    "diagnostic": {
+                      "code": "TEST_REFUSAL",
+                      "severity": "error",
+                      "message": "PRIVATE_NAV_UNMOUNT",
+                      "detail": "PRIVATE_NAV_UNMOUNT_DETAIL"
+                    }
+                  }
+                }
+              ],
+              "announcement": "Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE",
+              "alert": ""
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.delete",
+                  "id": "P1",
+                  "confirmed": false
+                }
+              }
+            ],
+            "listeners": 3,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0\nPRIVATE_NAV_UNMOUNT_TITLE\n\nNhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.\n\nPRIVATE_NAV_UNMOUNT_CHANGE\nLỗiTEST_REFUSAL\nPRIVATE_NAV_UNMOUNT\nPRIVATE_NAV_UNMOUNT_DETAIL\n\nThao tác này không nằm trong lịch sử hoàn tác của dự án. Lệnh gửi lên máy chủ, thay đổi quyền, xuất tệp hoặc xóa dữ liệu có hiệu lực ngay và không có bước hoàn tác nào trong giao diện.\n\nMở nhật ký và chẩn đoán\n\nLượt này chưa có mã đề xuất nào ở nhân, nên đóng hộp thoại chỉ là không xác nhận: không có gì được thực thi và không có gì phải rút lại. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.\n\nĐóng, chưa xác nhậnÁp dụng thay đổi\nMount passive request\nCần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\n\n\nPRIVATE_NAV_UNMOUNT PRIVATE_NAV_UNMOUNT_DETAIL\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[],\"log\":[{\"id\":\"log-34-e64d3cec\",\"tone\":\"error\",\"text\":\"PRIVATE_NAV_UNMOUNT\",\"at\":\"2026-09-08T05:34:51.941Z\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\",\"code\":\"TEST_REFUSAL\"}],\"dialogs\":[{\"id\":\"dlg-35-1b6682de\",\"spec\":{\"kind\":\"confirm\",\"title\":\"PRIVATE_NAV_UNMOUNT_TITLE\",\"changes\":[\"PRIVATE_NAV_UNMOUNT_CHANGE\"],\"retry\":{\"type\":\"project.delete\",\"id\":\"PRIVATE_NAV_UNMOUNT_RETRY\",\"confirmed\":true},\"diagnostic\":{\"code\":\"TEST_REFUSAL\",\"severity\":\"error\",\"message\":\"PRIVATE_NAV_UNMOUNT\",\"detail\":\"PRIVATE_NAV_UNMOUNT_DETAIL\"}}}],\"announcement\":\"Cần xác nhận: PRIVATE_NAV_UNMOUNT_TITLE\",\"alert\":\"\"}"
+          }
+        },
+        {
+          "name": "non-context command rejects project ABA",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog accepts unchanged same File quote without submission",
+          "pass": true
+        },
+        {
+          "name": "actual AI dialog rejects equal-metadata different-byte File quote",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then late confirmation neither reopens nor leaks",
+          "pass": true
+        },
+        {
+          "name": "actual AI close then unexpected rejection remains private",
+          "pass": true
+        },
+        {
+          "name": "actual AI account ABA rejects quote even when dialog remains mounted",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt cannot publish old rejected body",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_EDITED_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:283\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:39:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-52-c06715a0",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_EDITED_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-51-185b232a",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:53.432Z",
+                  "detail": "PRIVATE_EDITED_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [
+                {
+                  "id": "dlg-50-7d87f821",
+                  "spec": {
+                    "kind": "ai-generate"
+                  }
+                }
+              ],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "prepareImage",
+                "pending": false,
+                "input": {
+                  "providerId": "synthetic",
+                  "modelId": "m",
+                  "prompt": "Mẫu | có :: dấu và tiếng Việt",
+                  "operationId": "a4aa04d8-4f37-44c9-8d40-590557c4804b"
+                }
+              }
+            ],
+            "listeners": 6,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nTạo ảnh bằng AI\n\nMở trang này không gửi gì. Lấy báo giá cũng không tính phí và không gửi nội dung đi; chỉ nút Gửi mới thực hiện lượt tính phí.\n\nNhà cung cấpSynthetic provider (no network)\nModelControlled model · nhận ảnh tham chiếu\nModel này không công bố mức chất lượng nào, nên giao diện không gửi trường chất lượng.Model này không công bố kích thước nào, nên giao diện không gửi trường kích thước.\nMô tả (prompt)25/4000 ký tự\nChọn ảnh tham chiếuChưa chọn ảnh tham chiếu.\nChưa có báo giá\n\nBấm “Lấy báo giá” để xem nơi nhận, tài khoản tính phí, dữ liệu sẽ gửi và trần chi phí. Bước đó không tính phí và không gửi nội dung tới nhà cung cấp. Đổi mô tả, nhà cung cấp, model, chất lượng, kích thước hoặc ảnh tham chiếu sẽ làm báo giá hiện có mất hiệu lực.\n\nModelControlled model\nChất lượngmodel không công bố\nKích thướcmodel không công bố\nẢnh tham chiếukhông gửi\nMô tả sẽ gửiA new | prompt :: content\nLưu promptTạo lượt mới“Tạo lượt mới” là một ý định mới và có thể phát sinh phí thêm một lần nữa. Mã lượt hiện tại: a4aa04d8-4f37-44c9-8d40-590557c4804b.\nKhay kết quả0 ảnh\n\nKết quả về khay chứ không tự thay nguồn thiết kế. Nếu dự án đã đổi từ lúc gửi, ảnh vẫn nằm ở đây cho tới khi bạn chọn áp.\n\nChưa có kết quả nào trong khay.\n\nĐóngLấy báo giáGửi lượt đã đồng ýLấy báo giá trước; bước lấy báo giá không tính phí.\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_EDITED_REJECTION\nLệnh không hoàn tất được.\n\n\nLệnh không hoàn tất được. PRIVATE_EDITED_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-52-c06715a0\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_EDITED_REJECTION\"}],\"log\":[{\"id\":\"log-51-185b232a\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:53.432Z\",\"detail\":\"PRIVATE_EDITED_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[{\"id\":\"dlg-50-7d87f821\",\"spec\":{\"kind\":\"ai-generate\"}}],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "child passive request starts after global layout subscription",
+          "pass": true
+        },
+        {
+          "name": "wrapped current navigation failure is handled only once",
+          "pass": true
+        },
+        {
+          "name": "wrapped earlier navigation rejection cannot publish after newer navigation",
+          "pass": false,
+          "error": "AssertionError [ERR_ASSERTION]: retired payload leaked into UiState: PRIVATE_OLDER_NAV_REJECTION\n    at absent (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:10:64)\n    at async file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:286\n    at async check (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:11:84)\n    at async browserCases (file:///CANDIDATE/tests/ui/request-boundary/browser-cases.mjs:42:2)\n    at async file:///CANDIDATE/tests/ui/request-boundary/run.mjs:24:75",
+          "observed": {
+            "state": {
+              "section": "source",
+              "panelCollapsed": false,
+              "drawerOpen": false,
+              "searchOpen": false,
+              "groupClosed": {},
+              "paramQuery": "",
+              "paramMode": "compact",
+              "materialSelected": null,
+              "armedDelete": null,
+              "emojiHardPrintFilter": false,
+              "blockPopup": null,
+              "sourceIntent": "file",
+              "toasts": [
+                {
+                  "id": "toast-57-c0264244",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION"
+                }
+              ],
+              "log": [
+                {
+                  "id": "log-56-1fda76d7",
+                  "tone": "error",
+                  "text": "Lệnh không hoàn tất được.",
+                  "at": "2026-09-08T05:34:53.958Z",
+                  "detail": "PRIVATE_OLDER_NAV_REJECTION",
+                  "code": "BRIDGE_CALL_REJECTED"
+                }
+              ],
+              "dialogs": [],
+              "announcement": "",
+              "alert": "Lệnh không hoàn tất được."
+            },
+            "context": {
+              "account": 1,
+              "project": 1,
+              "active": true
+            },
+            "commits": [
+              "[\"A\",\"P1\",0]",
+              "[\"A\",\"P1\",0]"
+            ],
+            "notifications": [],
+            "calls": [
+              {
+                "id": 1,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P2"
+                }
+              },
+              {
+                "id": 2,
+                "method": "dispatch",
+                "pending": false,
+                "input": {
+                  "type": "project.open",
+                  "id": "P3"
+                }
+              }
+            ],
+            "listeners": 2,
+            "html": "Account A B A in one handlerProject P1 P2 P1 in one handlerProject P2Edit revisionUnmount callerRetire providerOpen actual AI dialogA/P1/0Raw bridge actionOpen P2Create P3Delete P1SaveWrapped navigation P2Wrapped navigation P3\nKeyed requestChange tuple\nKeyed requestChange tuple\nMount passive request\nLỗi: Lệnh không hoàn tất được. — PRIVATE_OLDER_NAV_REJECTION\nLệnh không hoàn tất được.\n\n\nLệnh không hoàn tất được. PRIVATE_OLDER_NAV_REJECTION\n\n{\"section\":\"source\",\"panelCollapsed\":false,\"drawerOpen\":false,\"searchOpen\":false,\"groupClosed\":{},\"paramQuery\":\"\",\"paramMode\":\"compact\",\"materialSelected\":null,\"armedDelete\":null,\"emojiHardPrintFilter\":false,\"blockPopup\":null,\"sourceIntent\":\"file\",\"toasts\":[{\"id\":\"toast-57-c0264244\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\"}],\"log\":[{\"id\":\"log-56-1fda76d7\",\"tone\":\"error\",\"text\":\"Lệnh không hoàn tất được.\",\"at\":\"2026-09-08T05:34:53.958Z\",\"detail\":\"PRIVATE_OLDER_NAV_REJECTION\",\"code\":\"BRIDGE_CALL_REJECTED\"}],\"dialogs\":[],\"announcement\":\"\",\"alert\":\"Lệnh không hoàn tất được.\"}"
+          }
+        },
+        {
+          "name": "actual AI current matching unexpected rejection stays visible",
+          "pass": true
+        },
+        {
+          "name": "actual AI changed prompt drops returned confirmation",
+          "pass": true
+        }
+      ],
+      "errors": [],
+      "deniedOrigins": []
+    }
+  ],
+  "rawEvidenceSha256": "ec03d913eff9fa0f85dbe93ca43a8ee7c0939e5930b17a8d4b20de704c89b633",
+  "portabilityNote": "Stack paths replace the candidate absolute path; payload assertions and recorded results are unchanged."
+}

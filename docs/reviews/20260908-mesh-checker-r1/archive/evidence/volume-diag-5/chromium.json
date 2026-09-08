@@ -1,0 +1,74 @@
+{
+  "crossOriginIsolated": true,
+  "artifacts": [
+    {
+      "name": "original-mm-request-source.arch",
+      "sha256": "fd239f8fab76bee09d3f0a387aeda3c08b681f5365fb8d4a138e7f4d15d6d7ec"
+    },
+    {
+      "name": "original-mm-request-material.arch",
+      "sha256": "883ef6180766accdf959fd73f6bf6bece9c14d1643b533a19eed19be8ee9964d"
+    }
+  ],
+  "trace": [
+    {
+      "name": "prior-volume-assertion-diagnostic",
+      "sourceBounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          20.000001,
+          10,
+          2
+        ],
+        "size": [
+          20.000001,
+          10,
+          2
+        ],
+        "center": [
+          10.0000005,
+          5,
+          1
+        ]
+      },
+      "sourceVolume": 400.00001999999995,
+      "afgmBounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          20.000001,
+          10,
+          2
+        ],
+        "size": [
+          20.000001,
+          10,
+          2
+        ],
+        "center": [
+          10.0000005,
+          5,
+          1
+        ]
+      },
+      "afgmVolume": 400.00001999999995,
+      "nominalVolume": 400,
+      "nominalDifference": 0.000019999999949504854,
+      "sourceToAFGMDifference": 0,
+      "classification": "diagnostic only; no pass or geometry intent assertion"
+    }
+  ],
+  "browser": "153.0.8010.12",
+  "harness": {
+    "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\cache\\bp\\volume-diag-5-c",
+    "pageMode": "initial"
+  },
+  "errors": []
+}

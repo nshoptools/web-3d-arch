@@ -1,0 +1,21 @@
+{
+  "before": {
+    "observation": {
+      "csp": [],
+      "styles": []
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "scrollHeight": 900
+    },
+    "step": "2",
+    "readouts": "Kích thước\n48 × 32 × 3,2 mm\nBộ phận\n3\nTam giác\n1.900\nKiểm mesh\nđã kiểm đạt",
+    "exports": []
+  },
+  "afterCapture": {
+    "csp": [],
+    "styles": []
+  }
+}

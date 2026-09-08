@@ -1,0 +1,124 @@
+[
+  {
+    "id": "V02-1280-14",
+    "name": "Direction label remains readable at 1280px / 14px app text",
+    "pass": false,
+    "error": "AssertionError [ERR_ASSERTION]: Ordinary five-letter label word is split into individual lines\n\n5 !== 1\n\n    at readabilityCases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/readability-cases.mjs:8:12)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:221",
+    "observed": {
+      "label": "Hướng chế tạo · orientation",
+      "labelWidth": 0,
+      "labelHeight": 433.40625,
+      "labelFont": "13px",
+      "firstWord": "Hướng",
+      "firstWordRects": [
+        {
+          "x": 108,
+          "y": 316.40625,
+          "width": 9.234375,
+          "height": 17
+        },
+        {
+          "x": 108,
+          "y": 335.25,
+          "width": 7.65625,
+          "height": 17
+        },
+        {
+          "x": 108,
+          "y": 354.09375,
+          "width": 7.765625,
+          "height": 17
+        },
+        {
+          "x": 108,
+          "y": 372.9375,
+          "width": 7.359375,
+          "height": 17
+        },
+        {
+          "x": 108,
+          "y": 391.78125,
+          "width": 7.65625,
+          "height": 17
+        }
+      ],
+      "controlWidth": 265,
+      "controlFont": "14px",
+      "panelWidth": 344
+    },
+    "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\readability-r7\\chromium-V02-1280-14.png"
+  },
+  {
+    "id": "V02-1280-28",
+    "name": "Direction label remains readable at 1280px / 28px app text",
+    "pass": false,
+    "error": "AssertionError [ERR_ASSERTION]: Ordinary five-letter label word is split into individual lines\n\n5 !== 1\n\n    at readabilityCases (file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/readability-cases.mjs:8:12)\n    at async file:///D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-ui-export-review-r1/work/browser-review/run.mjs:17:221",
+    "observed": {
+      "label": "Hướng chế tạo · orientation",
+      "labelWidth": 3.140625,
+      "labelHeight": 866.8125,
+      "labelFont": "26px",
+      "firstWord": "Hướng",
+      "firstWordRects": [
+        {
+          "x": 108,
+          "y": 197.421875,
+          "width": 18.46875,
+          "height": 35
+        },
+        {
+          "x": 108,
+          "y": 235.109375,
+          "width": 15.296875,
+          "height": 35
+        },
+        {
+          "x": 108,
+          "y": 272.796875,
+          "width": 15.53125,
+          "height": 35
+        },
+        {
+          "x": 108,
+          "y": 310.484375,
+          "width": 14.71875,
+          "height": 35
+        },
+        {
+          "x": 108,
+          "y": 348.171875,
+          "width": 15.3125,
+          "height": 35
+        }
+      ],
+      "controlWidth": 276,
+      "controlFont": "14px",
+      "panelWidth": 344
+    },
+    "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\readability-r7\\chromium-V02-1280-28.png"
+  },
+  {
+    "id": "V02-320-28",
+    "name": "Direction label remains readable at 320px / 28px app text",
+    "pass": true,
+    "observed": {
+      "label": "Hướng chế tạo · orientation",
+      "labelWidth": 289.140625,
+      "labelHeight": 37.6875,
+      "labelFont": "26px",
+      "firstWord": "Hướng",
+      "firstWordRects": [
+        {
+          "x": 30,
+          "y": 761.421875,
+          "width": 79.296875,
+          "height": 35
+        }
+      ],
+      "controlWidth": 276,
+      "controlFont": "14px",
+      "panelWidth": 320
+    },
+    "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\readability-r7\\chromium-V02-320-28.png"
+  }
+]

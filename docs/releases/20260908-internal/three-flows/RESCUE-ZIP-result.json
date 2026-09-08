@@ -1,0 +1,17 @@
+{
+  "verdict": "pass",
+  "expected": "Actual UI download has coherent selected manifest, complete CRC/size/SHA inventory, original SVG bytes and current project/revision; matches STL receipt when emitted",
+  "actual": {
+    "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+    "revision": 2,
+    "selectedManifestHash": "6f4af4458ab2d629669f4f57680f0b318fec1e69d115536e3ef2fe26a84773af",
+    "entries": 8,
+    "sha256": "89d013f2052059d87f737a5ae828bfa3ab0f941acdb043e672c91dc16eb69468",
+    "byteLength": 96373,
+    "originalSHA256": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+    "receiptCrossBound": true,
+    "complete": true,
+    "issues": []
+  },
+  "durationMs": 428
+}

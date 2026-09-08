@@ -1,0 +1,33 @@
+[
+  {
+    "id": "filename",
+    "disabled": false,
+    "readOnly": true,
+    "tabIndex": 0,
+    "description": "_r_25n_-hint _r_25n_-reason",
+    "focusableReason": true
+  },
+  {
+    "id": "errorMm",
+    "disabled": false,
+    "readOnly": true,
+    "tabIndex": 0,
+    "description": "_r_25p_-hint _r_25p_-reason",
+    "focusableReason": true
+  },
+  {
+    "id": "inspection",
+    "disabled": true,
+    "readOnly": false,
+    "tabIndex": 0,
+    "description": "_r_25r_-hint _r_25r_-reason",
+    "focusableReason": false
+  },
+  {
+    "id": "orientation",
+    "disabled": true,
+    "tabIndex": 0,
+    "description": "_r_25t_-reason",
+    "focusableReason": false
+  }
+]

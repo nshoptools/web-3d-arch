@@ -1,0 +1,261 @@
+{
+  "at": "2026-09-08T12:22:30.963Z",
+  "sourceManifest": "2d2ee2f48fcc9e18fc2de917d9bdb50d37dfa7a7c5aa6fe2e04a3f6b2ce65e52",
+  "implementationOnly": true,
+  "scope": "Actual React with controlled bridge; independent reviewer cases reused by parent, no native/backend qualification",
+  "packages": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "vite": "8.2.2",
+    "typescript": "7.0.2",
+    "playwright": "1.63.0"
+  },
+  "results": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "checks": [
+        {
+          "id": "V02-1280-14",
+          "name": "Direction label remains readable at 1280px / 14px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 275,
+            "labelHeight": 18.84375,
+            "labelFont": "13px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 108,
+                "y": 523.09375,
+                "width": 39.65625,
+                "height": 17
+              }
+            ],
+            "controlWidth": 275,
+            "controlFont": "14px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\chromium-V02-1280-14.png"
+        },
+        {
+          "id": "V02-1280-28",
+          "name": "Direction label remains readable at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 275,
+            "labelHeight": 75.375,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 108,
+                "y": 592.4375,
+                "width": 79.296875,
+                "height": 35
+              }
+            ],
+            "controlWidth": 275,
+            "controlFont": "28px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\chromium-V02-1280-28.png"
+        },
+        {
+          "id": "V02-320-28",
+          "name": "Direction label remains readable at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 250,
+            "labelHeight": 75.375,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 35,
+                "y": 742.9375,
+                "width": 79.296875,
+                "height": 35
+              }
+            ],
+            "controlWidth": 250,
+            "controlFont": "28px",
+            "panelWidth": 320
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\chromium-V02-320-28.png"
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\p\\readability-final-c"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "checks": [
+        {
+          "id": "V02-1280-14",
+          "name": "Direction label remains readable at 1280px / 14px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 276.41668701171875,
+            "labelHeight": 18.850006103515625,
+            "labelFont": "13px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 107.43333435058594,
+                "y": 524.183349609375,
+                "width": 39.649993896484375,
+                "height": 17.916671752929688
+              }
+            ],
+            "controlWidth": 272.3500061035156,
+            "controlFont": "14px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\firefox-V02-1280-14.png"
+        },
+        {
+          "id": "V02-1280-28",
+          "name": "Direction label remains readable at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 276.41668701171875,
+            "labelHeight": 75.40000915527344,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 107.43333435058594,
+                "y": 592.0499877929688,
+                "width": 79.31666564941406,
+                "height": 34.399993896484375
+              }
+            ],
+            "controlWidth": 276.41668701171875,
+            "controlFont": "28px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\firefox-V02-1280-28.png"
+        },
+        {
+          "id": "V02-320-28",
+          "name": "Direction label remains readable at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 252.0500030517578,
+            "labelHeight": 75.40000915527344,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 34.149993896484375,
+                "y": 743.7999877929688,
+                "width": 79.31666564941406,
+                "height": 34.399993896484375
+              }
+            ],
+            "controlWidth": 252.0500030517578,
+            "controlFont": "28px",
+            "panelWidth": 320.3500061035156
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\firefox-V02-320-28.png"
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\p\\readability-final-f"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "checks": [
+        {
+          "id": "V02-1280-14",
+          "name": "Direction label remains readable at 1280px / 14px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 275,
+            "labelHeight": 18.84375,
+            "labelFont": "13px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 108,
+                "y": 524.015625,
+                "width": 40,
+                "height": 17
+              }
+            ],
+            "controlWidth": 275,
+            "controlFont": "14px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\webkit-V02-1280-14.png"
+        },
+        {
+          "id": "V02-1280-28",
+          "name": "Direction label remains readable at 1280px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 275,
+            "labelHeight": 75.375,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 108,
+                "y": 592.78125,
+                "width": 80,
+                "height": 35
+              }
+            ],
+            "controlWidth": 275,
+            "controlFont": "28px",
+            "panelWidth": 344
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\webkit-V02-1280-28.png"
+        },
+        {
+          "id": "V02-320-28",
+          "name": "Direction label remains readable at 320px / 28px app text",
+          "pass": true,
+          "observed": {
+            "label": "Hướng chế tạo · orientation",
+            "labelWidth": 250,
+            "labelHeight": 75.375,
+            "labelFont": "26px",
+            "firstWord": "Hướng",
+            "firstWordRects": [
+              {
+                "x": 35,
+                "y": 742.28125,
+                "width": 80,
+                "height": 35
+              }
+            ],
+            "controlWidth": 250,
+            "controlFont": "28px",
+            "panelWidth": 320
+          },
+          "evidence": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\evidence\\readability-final\\webkit-V02-320-28.png"
+        }
+      ],
+      "errors": [],
+      "consoleMessages": [],
+      "denied": [],
+      "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-final-readability\\p\\readability-final-w"
+    }
+  ]
+}

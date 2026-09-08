@@ -1,0 +1,78 @@
+{
+  "fixtureVersion": 1,
+  "source": "tests/host/helpers.mjs",
+  "rights": "Synthetic HTML/JS/CSS/WASM authored for this task; font OFL-1.1 unchanged",
+  "assets": [
+    {
+      "url": "/engine-32e9891ae7d3cedf.wasm",
+      "file": "engine-32e9891ae7d3cedf.wasm",
+      "sha256": "32e9891ae7d3cedff10d21cea1ae3a989d4fb5424b89b9c2f93328535cf30af7",
+      "bytes": 36,
+      "mime": "application/wasm",
+      "cache": "immutable"
+    },
+    {
+      "url": "/public.json",
+      "file": "public.json",
+      "sha256": "03f5a2399ff1aa3b42b8f7fea5f848c7799e19d8f5288d92a539d27816ffc909",
+      "bytes": 22,
+      "mime": "application/json; charset=utf-8",
+      "cache": "revalidate"
+    },
+    {
+      "url": "/worker.mjs",
+      "file": "worker.mjs",
+      "sha256": "445d3fbc1cdc21f1bf40aefcc5eb248a7c60bb3053c31c27f2ca4c4e0baa726a",
+      "bytes": 383,
+      "mime": "text/javascript; charset=utf-8",
+      "cache": "revalidate"
+    },
+    {
+      "url": "/fixture-font.ttf",
+      "file": "fixture-font.ttf",
+      "sha256": "0f173b3e6cb6d1af25babf7f0057c5ac4ee11f9992b0469bb817e967ef4ad0fc",
+      "bytes": 214772,
+      "mime": "font/ttf",
+      "cache": "revalidate"
+    },
+    {
+      "url": "/app.mjs",
+      "file": "app.mjs",
+      "sha256": "60da2acb79f8169e04461bd9d11172fa3910ddf3d3fc97a1c4538556e8d9735c",
+      "bytes": 26,
+      "mime": "text/javascript; charset=utf-8",
+      "cache": "revalidate"
+    },
+    {
+      "url": "/style.css",
+      "file": "style.css",
+      "sha256": "511856738a30d59d7e40379dcc85f8811108d3533680ea4e284abfc9b766b562",
+      "bytes": 33,
+      "mime": "text/css; charset=utf-8",
+      "cache": "revalidate"
+    },
+    {
+      "url": "/index.html",
+      "file": "index.html",
+      "sha256": "99df57996fbf9c258d4b386c8b34ed6fa644a1571fcb250ffb530df86fe329ce",
+      "bytes": 186,
+      "mime": "text/html; charset=utf-8",
+      "cache": "revalidate"
+    }
+  ],
+  "navigations": {
+    "/": "/index.html",
+    "/settings": "/index.html"
+  },
+  "oracle": {
+    "mainCOI": true,
+    "workerCOI": true,
+    "sharedBytes": 16,
+    "wasmResult": 42,
+    "fontStatus": "loaded",
+    "apiCached": false,
+    "logoutStatus": 401
+  },
+  "fontSource": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/patrickhand/PatrickHand-Regular.ttf",
+  "fontLicense": "inputs/font/OFL.txt"
+}

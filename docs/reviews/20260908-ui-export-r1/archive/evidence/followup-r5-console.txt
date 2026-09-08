@@ -1,0 +1,4 @@
+chromium FAIL F01: same-value numeric Enter retains stale base after refusal while blur resets it
+chromium FAIL F02: late rejected command cannot alert the user about replaced text
+chromium PASS F03: current rejected bridge call remains visible beside exact draft
+chromium PASS F04: published numeric values update without losing focused draft or its caret

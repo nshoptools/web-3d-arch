@@ -1,0 +1,161 @@
+{
+  "method": "All-triangle exact rational ray readbacks, topology/part/volume audit; footprint rectangular notch analytical domain constant on -5<x<5. Public mechanics ABI, no product instrumentation.",
+  "results": [
+    {
+      "kind": "native",
+      "case": "strap-notch-1",
+      "mechanicsVerdict": 0,
+      "inputUnchanged": true,
+      "parts": [
+        {
+          "vertices": 2074,
+          "faces": 4152,
+          "edges": 6228,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 7.595724870690325e-07,
+          "volume_mm3": 10115.122735923536,
+          "reported_volume_mm3": 10115.122735923536,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              0.0
+            ],
+            [
+              20.0,
+              15.0,
+              10.0
+            ]
+          ]
+        }
+      ],
+      "cross_section_x_z": [
+        0.123,
+        5
+      ],
+      "y_hits": [
+        -15.0,
+        -2.0
+      ],
+      "y_fractions": [
+        "-15",
+        "-2"
+      ],
+      "control_x_z": [
+        10.123,
+        5
+      ],
+      "control_y_hits": [
+        -15.0,
+        -2.0,
+        2.0,
+        15.0
+      ],
+      "declared_bore_transverse_interval": [
+        -2,
+        2
+      ],
+      "analytic_host_interval_in_notch": [
+        -15,
+        1
+      ],
+      "guard": [
+        2.3999999,
+        2.3999999000000005,
+        1e-07,
+        0,
+        0,
+        0
+      ],
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "CHAMFER_WORK scanned=8 active=4 activeLimit=512",
+        "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+      ],
+      "lateral_breakout_accepted": true
+    },
+    {
+      "kind": "wasm",
+      "case": "strap-notch-1",
+      "mechanicsVerdict": 0,
+      "inputUnchanged": true,
+      "parts": [
+        {
+          "vertices": 2074,
+          "faces": 4152,
+          "edges": 6228,
+          "components": 1,
+          "euler": -2,
+          "boundary_or_orientation_errors": 0,
+          "duplicate_coordinate_vertices": 0,
+          "min_face_area": 7.595724870690325e-07,
+          "volume_mm3": 10115.122735923536,
+          "reported_volume_mm3": 10115.122735923536,
+          "volume_abs_delta": 0.0,
+          "bbox": [
+            [
+              -20.0,
+              -15.0,
+              0.0
+            ],
+            [
+              20.0,
+              15.0,
+              10.0
+            ]
+          ]
+        }
+      ],
+      "cross_section_x_z": [
+        0.123,
+        5
+      ],
+      "y_hits": [
+        -15.0,
+        -2.0
+      ],
+      "y_fractions": [
+        "-15",
+        "-2"
+      ],
+      "control_x_z": [
+        10.123,
+        5
+      ],
+      "control_y_hits": [
+        -15.0,
+        -2.0,
+        2.0,
+        15.0
+      ],
+      "declared_bore_transverse_interval": [
+        -2,
+        2
+      ],
+      "analytic_host_interval_in_notch": [
+        -15,
+        1
+      ],
+      "guard": [
+        2.3999999,
+        2.3999999000000005,
+        1e-07,
+        0,
+        0,
+        0
+      ],
+      "diagnostics": [
+        "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+        "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+        "CHAMFER_WORK scanned=8 active=4 activeLimit=512",
+        "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+      ],
+      "lateral_breakout_accepted": true
+    }
+  ]
+}

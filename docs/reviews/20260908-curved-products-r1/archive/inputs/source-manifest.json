@@ -1,0 +1,1098 @@
+{
+  "version": 1,
+  "at": "2026-09-08T10:26:14.221Z",
+  "sourceBase": "work/review-source",
+  "scope": "Frozen curved child implementation + replay fixtures, official specs and relevant API; no prior reviewer conclusions or private credentials",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 7988,
+      "sha256": "72c880703bfed2eb36d2eff16c04bde5b7a27162187e597ab6802cde53258da3"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 817,
+      "sha256": "f04a9f05913b586b35559aaf674fc7ee65787cabbf81ac34cc87ed3698f982cd"
+    },
+    {
+      "path": "dependencies/cross_section.h",
+      "bytes": 6874,
+      "sha256": "c7f1cd9744d99ab4765641766645ae087f03580c8deebcee7699fd20f28ad832"
+    },
+    {
+      "path": "dependencies/manifold.h",
+      "bytes": 14410,
+      "sha256": "aabb3f78ec9bc92c78bdb6952980aa94e0a0ab2aba71463b3b9c92080c9001cf"
+    },
+    {
+      "path": "docs/assets/INPUT-CONTRACT.md",
+      "bytes": 7158,
+      "sha256": "ecfd1c86cc13887c36d6555a521bb62db80db29543fe9dbcbd5c65e5be722f94"
+    },
+    {
+      "path": "docs/curved-products/API.md",
+      "bytes": 2556,
+      "sha256": "96ab72c1ca023ccb6b978f2c09cac9ded52dfd60d2aa91ecbe0205ae4879399e"
+    },
+    {
+      "path": "docs/curved-products/LIMITS.md",
+      "bytes": 2813,
+      "sha256": "d43e580f2d03cf706d275032d48c10f87c7926a9830f4523ce1efb4b93af5bfa"
+    },
+    {
+      "path": "docs/development/README.md",
+      "bytes": 6123,
+      "sha256": "9b6cf485abd5359a3c6180a9ee74eb6547e0510981634b83e5e7c879b86a0245"
+    },
+    {
+      "path": "docs/reviews/seat-config.json",
+      "bytes": 778,
+      "sha256": "feb34cf80062356bb1dc8ad8f37867350eebab416d78d28a8a83d122468720a2"
+    },
+    {
+      "path": "docs/reviews/SEAT-CONFIG.md",
+      "bytes": 7171,
+      "sha256": "11470fa44406aeeb3b6476f7f30d8f5d6b8380af0927b55f6850e53bc7690555"
+    },
+    {
+      "path": "docs/specs/01-chuc-nang.md",
+      "bytes": 25899,
+      "sha256": "380a3acee82d765fb2a976b5aefd252a0d5dd43f8f4057d5b1be562d69f46122"
+    },
+    {
+      "path": "docs/specs/02-giao-dien.md",
+      "bytes": 12420,
+      "sha256": "c11941f66b2296cbbc275bc8cd799e7feb1a2c6b9f09cda631a4589d721267dc"
+    },
+    {
+      "path": "docs/specs/03-ky-thuat.md",
+      "bytes": 28928,
+      "sha256": "3608208ccb37b1e2521c71fec07e644da53e1cd1d14bbcda8ae0a09821fac157"
+    },
+    {
+      "path": "docs/specs/04-nghiem-thu.md",
+      "bytes": 9624,
+      "sha256": "82df989bb710cc895df65f050e1883d2db3d277786f76058922edc3548715899"
+    },
+    {
+      "path": "docs/specs/05-quyet-dinh-va-truy-vet.md",
+      "bytes": 11191,
+      "sha256": "7979086f8e82bdb6e851dd7cc1b4ac6e950a347749e5d6b9515dd85cb45dcbf1"
+    },
+    {
+      "path": "docs/specs/06-danh-muc-thong-so.md",
+      "bytes": 8396,
+      "sha256": "4e337f428be436513f9260d7a902a5b6217d61a295ca566c13666c276dcdce19"
+    },
+    {
+      "path": "docs/specs/07-nguoi-dung-va-ai.md",
+      "bytes": 17116,
+      "sha256": "ab71053116b7bebe94929827ea77815e480f81227e966c09cd207ea1ffd76468"
+    },
+    {
+      "path": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "bytes": 9726,
+      "sha256": "818ce7a5da1a32227fa35eb28b72d3f0a24a99f2c1212fe53e21770dc958e588"
+    },
+    {
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee"
+    },
+    {
+      "path": "docs/specs/README.md",
+      "bytes": 3740,
+      "sha256": "b1ce54c06b58ad246b52c9ec665d645f4c497e33c0ce5e2b11d731a2c71acd15"
+    },
+    {
+      "path": "docs/specs/requirements.json",
+      "bytes": 21988,
+      "sha256": "070db3cc10ad95bf01b2fd3ac494d7e230a38ec17c6c86a569a3d080f56d7e3f"
+    },
+    {
+      "path": "docs/specs/source-manifest.json",
+      "bytes": 2722,
+      "sha256": "949c2e2af220edadb44caabaa2a63e5f39e2f6feea9fb1ff33309a5ac1daffa7"
+    },
+    {
+      "path": "docs/specs/traceability.json",
+      "bytes": 19242,
+      "sha256": "e901183b7ac4f29fa9369b41922f761db9bf48da06ffeb4d43b68b810184cbe2"
+    },
+    {
+      "path": "src/kernel/mechanics/CMakeLists.txt",
+      "bytes": 2877,
+      "sha256": "d13d7766c85aaeecfb5bbf4a762119f34d5d6c2928edc71cd65244cff33a5e21"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-001-v1.md",
+      "bytes": 11757,
+      "sha256": "fe40f8ad0ee9a37d17b3a9b42d11f107f2499a2b8fd49bff1476b2b1bf6001d0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-002-v2.md",
+      "bytes": 10565,
+      "sha256": "db5344c04e8224b43703f2894874a90e5af87442e2fffbb4761932b5466bfe35"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-003-final-geometry-and-datums.md",
+      "bytes": 7648,
+      "sha256": "f4c8588db5ca65c70fcd1223f2bb5995f80963bee209f4bbafc866daf63083b0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-004-final-strap-guard.md",
+      "bytes": 4109,
+      "sha256": "479c82f4cf078ce8260f4f78978ea1b63e1bee0cee39fe38147873ba5a6d5082"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/API.md",
+      "bytes": 17245,
+      "sha256": "e9cc0bdba90d42b5d5057412cdc6768ec4dd5ce64990afe430564ee7d00b7b0c"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/catalog-lock.json",
+      "bytes": 13390,
+      "sha256": "5e76951cfd843124c4f9f2eeb549601f12d7438256bae3361037552e06b363b1"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/remediation-acceptance.json",
+      "bytes": 7654,
+      "sha256": "4d14412d5b193acc5311a4799ec3ea05f23444d7891bc5491b003a6bdee89359"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/semantic-contract.json",
+      "bytes": 70335,
+      "sha256": "92fbf4db63dfe12c738859b97bf645ff35b52e49e5088cf70e266e5935a28f88"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.json",
+      "bytes": 78780,
+      "sha256": "1b1b038b71835fc510e4d8aa87d2294bb86af31969f1b30e5a5321f42bba62bf"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.md",
+      "bytes": 4448,
+      "sha256": "e7a8766ab55ce3c82565b5602fddcee628fd1342736689cf3ac05ac4bf121f81"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/mechanics/pins.json",
+      "bytes": 2345,
+      "sha256": "43a8beda47ffde1762f88604f21eed98aed7bedeac24f070f82bc9b99516d4d1"
+    },
+    {
+      "path": "src/kernel/mechanics/README.md",
+      "bytes": 3161,
+      "sha256": "6d6d1cc4483437f9eabeadc1c777eed0fb7c84b02512208d13f2391fb171a939"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog_quantum.inc",
+      "bytes": 993,
+      "sha256": "7ddfb6ea4b1daf07e66bc8d6ec91b6c22b64b2afa50af825187258e04a0bc31a"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog-map.mjs",
+      "bytes": 8239,
+      "sha256": "c51ea0c52eb68d681b1dd05be13856efafbbd57bb70ad9c64b8ce2058a46f720"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog.inc",
+      "bytes": 5883,
+      "sha256": "cd6d5f2a431ebd485cf6665a3e21cb4d53838a0bd17c1eb4e688499616173fb4"
+    },
+    {
+      "path": "src/kernel/mechanics/src/domain-adapter.mjs",
+      "bytes": 6842,
+      "sha256": "7cc3493e6d9f0ba836e654dedcea039af93905da8cbdc2b3eb67091c6bc2ed27"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "bytes": 78856,
+      "sha256": "5e18bdea26f33e7f513a79095a1f032029fa84682d2738c43b749b3a9a912787"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.h",
+      "bytes": 7906,
+      "sha256": "671a8031c41ca53dca0c7fb285de65adc94cc90733cbfc491c3d2a758dd75725"
+    },
+    {
+      "path": "src/kernel/mechanics/src/parameter_ids.h",
+      "bytes": 2880,
+      "sha256": "252be9c95f8b380b74da6875fa460d0635867e7e413a3aee527886c0aa0de4a3"
+    },
+    {
+      "path": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+      "bytes": 12575,
+      "sha256": "3307c7711b918162ce6db161e8082d7ceb38316a9930a1266d2eca67900de36d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/cancellation.mjs",
+      "bytes": 2239,
+      "sha256": "7f11f7c23260705f1b8857fb6c2026a74bea50f75ed4660c376ef6b26bcc51d7"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/domain-adapter.test.mjs",
+      "bytes": 4010,
+      "sha256": "19db5d953cb0c2283406ef56913eb6a30b8e3975110422b5af10ca18fabbd76d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/fixture.cpp",
+      "bytes": 19789,
+      "sha256": "2d42fedff6cae6af96016db672c42604c7ea06ea9b95cd225784a8860f4ba235"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/mechanical-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/parity.mjs",
+      "bytes": 3946,
+      "sha256": "740ae6cf35eb91cf6720ae2140b7c73702bf84aaba5f8cc3ff1a84cd8042463d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-domain.mjs",
+      "bytes": 4983,
+      "sha256": "23db3fe54f2baeac59a067ce4d90aef552aab010107ea495ddf5e6f4305759e9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-parity.mjs",
+      "bytes": 3402,
+      "sha256": "2e317f96e46ddb568002f33bd98e2d92a5c418303e1a91a6ae98da26b28680a9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation.mjs",
+      "bytes": 9930,
+      "sha256": "7a924fed0f1d910e3741c1ba969a26dff3362dd43906787768918cb0e6e32ac7"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/run.mjs",
+      "bytes": 32891,
+      "sha256": "d5feef4a8df18ff9c5c3c1a8af389b3dc4f606e8366aeb366260154be6f52e1e"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-parity.mjs",
+      "bytes": 3635,
+      "sha256": "ee2cf9d5b9e35733e322b814d507d4ca32734b5048910b8dc7170ea9e69fb17f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-regression.mjs",
+      "bytes": 13402,
+      "sha256": "e567b5d2ac12d6b195201bc0cbbaca023c726878357aeaa34e3d52826a497127"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/build.ps1",
+      "bytes": 2484,
+      "sha256": "fa13edd6e855db47ea6839cb7e77018e8c3ba3fd0bb401965baaaef588c90c69"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/check.ps1",
+      "bytes": 1131,
+      "sha256": "a28e0f28c9837fbfc1b2e47696f326b539bece149be5063e23dcdc8d016e6850"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/finalize-report.mjs",
+      "bytes": 12814,
+      "sha256": "bbf871a94d2c55168e5390235ffd95b8047d2cd97284aba830b85ad0902d845a"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/generate-catalog.mjs",
+      "bytes": 3957,
+      "sha256": "9d0cdcccbed446a26fae762124200a718d02d8c7f6d8b1d00a1886d18779578b"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/inspect-degenerate.mjs",
+      "bytes": 731,
+      "sha256": "047b7323d20b597af773b2110cf545e5c7b2286fbae57d5b967e187905f53feb"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/verify-pins.mjs",
+      "bytes": 1341,
+      "sha256": "5f6ecd3656ed80d7da47d91f23c11017101c7ad0d7112a1a63fdad87e8cd4f88"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/write-handoff.mjs",
+      "bytes": 17061,
+      "sha256": "dc4b6fd0a6a87150de2961eb288cf302bf2fad1ef53f1db66625f883728df4f2"
+    },
+    {
+      "path": "src/kernel/native/geometry.h",
+      "bytes": 3519,
+      "sha256": "fd6a6d40b63a1fea07cf66956d85e001cb9f5262088f8c8d2b3d3c6ff510f5a4"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.cpp",
+      "bytes": 14039,
+      "sha256": "81b60eb448e7a78bb81b240f4516a07b13b4a7fd0e8627f827cfcfd4f7228f1b"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.h",
+      "bytes": 761,
+      "sha256": "244454e1b73f70984cc716746379db2230122a51496261218ec1f9c3b040632c"
+    },
+    {
+      "path": "src/kernel/source-assembly/CMakeLists.txt",
+      "bytes": 1813,
+      "sha256": "48fc89e116e42e6551cc4fd1025a6b372408b90c10fd4b5e3a767d01c7acc2f2"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/mechanics-source-integration.patch",
+      "bytes": 18572,
+      "sha256": "dbf2bfe1dcbc7bd813fad31156872142162a14dd65c87546a5bd775466497693"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/patch-detached.mjs",
+      "bytes": 3600,
+      "sha256": "c61f765d5ec1075fec2e79dafc43e9ada332ff926e5c9ed5f2ed525595421ad3"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/perimeter-groove.cpp.inc",
+      "bytes": 2268,
+      "sha256": "6e0e8b477bd6fc6b9d3a25f1e1827b6590855cf91432ddb1cd9dbbea39ae030c"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/acceptance.json",
+      "bytes": 14063,
+      "sha256": "fb7cbd328c6f008fb6835a902e6199f23a9c625b1ec7e8c29c28e7abff98122f"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ACCEPTANCE.md",
+      "bytes": 3454,
+      "sha256": "468371a0a18085bd6b79b57c04c0537a88600abcf940f9902af941cf2dd7c044"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ADR-001-source-semantics.md",
+      "bytes": 5308,
+      "sha256": "2ff5f57536bf92a454c8944c5ebb214ff31b26c5a2a796ac071473b791f7cb29"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ADR-002-height-faces.md",
+      "bytes": 4520,
+      "sha256": "1402313c4a72e6281b03d1434ab324b9471e712da533f51a1ce2ecc55026fd3a"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API-EARLY.md",
+      "bytes": 6959,
+      "sha256": "762b5d9c28f6c9cf27020ff71189dbfb6abdf40e192c374c49d5524e36d50a15"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API.md",
+      "bytes": 4442,
+      "sha256": "0b05aa5aea4bf124aae7c9b2cdfb402f484276769a276455eb7ad0c635527e9b"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/FIELD-BINDINGS.md",
+      "bytes": 4521,
+      "sha256": "060986c589c741769ecec4bddc4aefc76960e62940b4139f379e133130b75581"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/NUMERICS.md",
+      "bytes": 4554,
+      "sha256": "b9a07248dc59af83f5d702265f1ec43e093925405d721c4ffb9c0d0d590feded"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-BUILD-AND-TEST.md",
+      "bytes": 4392,
+      "sha256": "9e2acf49f23c380d40cf3a1fd760479090d9079e3bdaa157c55d38d0be8aca67"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-FIXTURE-ADJUDICATION.md",
+      "bytes": 1686,
+      "sha256": "90bb2af615f27208791ad2fccf5f21b77929caf172c4cf1a4aa61cdda246a802"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/r2-preimage-manifest.json",
+      "bytes": 14493,
+      "sha256": "fd000cdf2b475910237dc7106962a01037fc3c607bb6a2c9b8da3b31dd35b40c"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-ROOT-INTEGRATION.md",
+      "bytes": 4403,
+      "sha256": "dc8e04803bfaa84bcf5bd90d1d6f04041b0a5c1146afff97b471d5875c239b90"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/source-assembly/pins.json",
+      "bytes": 2342,
+      "sha256": "799002eb591ffebc34fb9f0764650316688fcbebcef884b57295adcd54611314"
+    },
+    {
+      "path": "src/kernel/source-assembly/README.md",
+      "bytes": 2874,
+      "sha256": "ed89143aed6c42f86b5a6447c203e24ff223713d7462d8c5b36424d971babcce"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 39427,
+      "sha256": "0ad9d95ccea037f5f767f914502b54bf1c209c0076e4c42404c1c12f2bdd658c"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.h",
+      "bytes": 5205,
+      "sha256": "2f377e139946210e634fa9263823fc472a771cc3bcebcf14b32f3c63f5d2d760"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source-datums.mjs",
+      "bytes": 758,
+      "sha256": "5ddf91811957187b62ca3c6d3e26aa736c2c70c728700e6166853277e4c2071f"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/bridge-regression.mjs",
+      "bytes": 3794,
+      "sha256": "cbc9989e41bdc7084ad36bae602baa358525068d12388e8c80e5725b37da7748"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/domain-bindings.mjs",
+      "bytes": 2358,
+      "sha256": "74364d52c25fc3968c102e9ba9fc3de60bdef8ab7c941ace9401867877c51124"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/fixture.cpp",
+      "bytes": 16780,
+      "sha256": "8a1506de61bca7d35a2a14dc7efb21fdb7633373d675f45d45639c913c37d942"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/mechanics_fixture.cpp",
+      "bytes": 16547,
+      "sha256": "5e6d5eeaaeabf82b1753ac3feea353b41d2c561319f9460d21d2dce04e284a8a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/spatial-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/parity.mjs",
+      "bytes": 3325,
+      "sha256": "575dbba374b4b1dcfd52424abb08b84804bcf062c026d8d007a740f10c1df32b"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2-domain.mjs",
+      "bytes": 4012,
+      "sha256": "8ff72cf079f01e6edbfce8caaeaf4acc06f5215e6253d361700b99fc4509f525"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2-parity.mjs",
+      "bytes": 2983,
+      "sha256": "35bc3b9e5c411f34108e2f6af66ad413196f3a0f6938b897161968546fb991e3"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2.mjs",
+      "bytes": 14134,
+      "sha256": "b7f20e96d472b6404ba511343be0ff4886e8712feadc395cf88460277bfc055d"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2/CMakeLists.txt",
+      "bytes": 2457,
+      "sha256": "87b01a4bf9b6db54cef7aa2a2ed00a2201a485fa869f47c1ee4f8b827f10a29a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/run.mjs",
+      "bytes": 13779,
+      "sha256": "cb85b098c88ee931a42af93bb123e852a521501601d83d2a647eadb8bbfcc115"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/build.ps1",
+      "bytes": 2244,
+      "sha256": "7826f06de8af5ec413cb929e678bfc30e76ac21ec352662a2bf44b575081911a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/handoff.mjs",
+      "bytes": 11602,
+      "sha256": "8bbc84866465b644155406b04191e26c20848a8bffc8592225adfdc8f673c0df"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/prepare-bridge.mjs",
+      "bytes": 5683,
+      "sha256": "57342718ab2726445736b0e516d620b14be2176a930c185f6f922faed28996fb"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/r2-check.ps1",
+      "bytes": 3967,
+      "sha256": "8aaee1d1397a2fda63411a76208a8843c7675e640fd6591b3ebff958b029863e"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/test-env.mjs",
+      "bytes": 869,
+      "sha256": "2702f6638f60f794bd9486b754f880b1637e1634e679271af95d841895099015"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/verify-pins.mjs",
+      "bytes": 1327,
+      "sha256": "9254e0702555c80725a0edd903ad4b1dfb738f0b5cc352e65d71ecd2263dfda0"
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "bytes": 887,
+      "sha256": "dd23e3b11896fd6a801b68b81fab94a6c2c8b4322dedd4c25f817a6170f6c239"
+    },
+    {
+      "path": "tests/curved-products/CMakeLists.txt",
+      "bytes": 1057,
+      "sha256": "5e75640ead6689649659d819a96a33354aad5e84a70c425e26721984ab8dcaef"
+    },
+    {
+      "path": "tests/curved-products/derive.mjs",
+      "bytes": 2368,
+      "sha256": "0d2c05af1eab070a62bfc1491cc744aee77b5cdd8210d0ec85c7ebd0597232ff"
+    },
+    {
+      "path": "tests/curved-products/fixture.cpp",
+      "bytes": 1861,
+      "sha256": "736b5d4185f416b60cc1b0fba8a9c2ddae0166d7717972ee6cc3a3bf709f45b1"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-chim.aprq.gz",
+      "bytes": 3939,
+      "sha256": "9e52559ad6f2c84768fce37b241521e981314416f8fe6e3ff5f2e2d2c4c80959"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-chim.arch.gz",
+      "bytes": 55279,
+      "sha256": "8d9b7c41bd4567ede210648ea0a4820a1384205b8f7dba60f4f852061a828daa"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-noi.aprq.gz",
+      "bytes": 3935,
+      "sha256": "4ea8963b98829fd8315595361eed2c46ab70bcf18022b607d4a88026832c4354"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-noi.arch.gz",
+      "bytes": 55279,
+      "sha256": "6c8223007f75cf06f3b840d66e6798657dad63b9e41bdc19f4208fbcc62bedfd"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-phang.aprq.gz",
+      "bytes": 3931,
+      "sha256": "0b7b5b5fbc022694a8321cf4958d1dc822763c7c636ca695324fadc16a1e641f"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-phang.arch.gz",
+      "bytes": 55279,
+      "sha256": "0008497c4c30fcb8f02a5326e17368626422a242ccd72a83cf0a23c715472856"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-phang2.aprq.gz",
+      "bytes": 3939,
+      "sha256": "f5459e347ee85158571507aaaf0cb9759bfcda544dcb47295b0fc87eb8a755e5"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-charm-phang2.arch.gz",
+      "bytes": 55279,
+      "sha256": "cce483996ce5afe7263fa882f68f8176b4beff64cc44e21e9dff14bba64c5e7a"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-chim.aprq.gz",
+      "bytes": 4360,
+      "sha256": "46d2078cc08c2313af4df90fc87d3701a8424358c0223e1e9a636636331997e0"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-chim.arch.gz",
+      "bytes": 55279,
+      "sha256": "eb9b715e3b26ac508495321e44c6f455cb3a6cb89122e2a5c3604dd5c7e2acd3"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-noi.aprq.gz",
+      "bytes": 4353,
+      "sha256": "1d6931fb59877f7b7d55f470423f1946f676185e9d38bb1c7f6cc8d26d6b2f7b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-noi.arch.gz",
+      "bytes": 55279,
+      "sha256": "4f183fd10e84e5c6f08c7580081295f7b1ca344ecbac46ec67c42aea7a416365"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-phang.aprq.gz",
+      "bytes": 4362,
+      "sha256": "b1fea4de65a76aa10955101fc7d3a3a456617d9617799c775999de7ebda9685b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-phang.arch.gz",
+      "bytes": 55279,
+      "sha256": "0b2c1e399e7bbe4c1f83d47e108b0672e737c6cc5060fcdb0e8d326ee56336e6"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-phang2.aprq.gz",
+      "bytes": 4351,
+      "sha256": "ba7692eb6ab3f4db1f427271d384f1d9d5b8fe976b5540f939a723bf93fe9f99"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-clicky-phang2.arch.gz",
+      "bytes": 55279,
+      "sha256": "4a208f54642139eae112c86068db5981e9373ee887ddb0236d83cf004254c395"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-chim.aprq.gz",
+      "bytes": 3889,
+      "sha256": "69f189f9eb44b8821c8712999194ee0d53228d39fc151a14ee984a7f5e19d6f4"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-chim.arch.gz",
+      "bytes": 55279,
+      "sha256": "e8a7fc827d97d0172eae531865166be63aeb41e0fbe9ecd70ff9489e68d60a33"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-noi.aprq.gz",
+      "bytes": 3874,
+      "sha256": "94955aef107795dcf727eed54bfe8ffb4e17a5d3322bfd29c1b5b8f4f8ffe59f"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-noi.arch.gz",
+      "bytes": 55279,
+      "sha256": "e1545f72f925463dd16ae7a96d68d5b5fdc73ee86a4688a765501832c8e9c787"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-phang.aprq.gz",
+      "bytes": 3891,
+      "sha256": "9be0ee963202adbf11535bbd32382a37787d885a19176007e0db2674823ef525"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-phang.arch.gz",
+      "bytes": 55279,
+      "sha256": "133a7d3f4e6e7f3ec36ea2eaab5d38b2d3a532ffd61de5ef4ef9b33dd0047067"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-phang2.aprq.gz",
+      "bytes": 3888,
+      "sha256": "0ea38936d1ffb37159f399b0e7a4a77443f2a88128bb556c86268b36db693fb4"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-keychain-phang2.arch.gz",
+      "bytes": 55279,
+      "sha256": "2c7f00956ac643783da72c8a2739844aee8caf2ec287e359184f6dd495cc9df4"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-chim.aprq.gz",
+      "bytes": 4010,
+      "sha256": "5841beb2ddbc1622d44ccca28730daa95c4eff774d3eb0404632f3debfddea2d"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-chim.arch.gz",
+      "bytes": 55279,
+      "sha256": "027f955a79171acc1e55f49146956286c4c9935e57e8256dd2f5d27289e584c7"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-noi.aprq.gz",
+      "bytes": 4008,
+      "sha256": "d75a005f34ba27d17897f085d1f73576be0080cea902a5662b5185a22b3b7c28"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-noi.arch.gz",
+      "bytes": 55279,
+      "sha256": "1f3af6f0558ceda139aa9afdb6a31e13e585beffa0678dc45dd0e6133678e7b6"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-phang.aprq.gz",
+      "bytes": 4010,
+      "sha256": "5c70658e34931442c390545f2ef70ba7f2649a4b638a0b086ecc25643a12fc1a"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-phang.arch.gz",
+      "bytes": 55279,
+      "sha256": "a37005f81d9bba140144090524ea67e43b9900ff3645aebe84f18a412793fc49"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-phang2.aprq.gz",
+      "bytes": 4011,
+      "sha256": "49c11d94762ed1aea168140aeda3aebb82e679e4a2d98496850833a5720fb74a"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-lego-phang2.arch.gz",
+      "bytes": 55279,
+      "sha256": "991f36d03ca00c2056273246bd5349f1393a8c96147b2d1cf86a88d20fadf244"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-chim.aprq.gz",
+      "bytes": 3887,
+      "sha256": "655191e3691a4050d29fab1b44191e98e540763f7670b7ee04e612bf9dd12f7d"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-chim.arch.gz",
+      "bytes": 55279,
+      "sha256": "6255bb7d7c066636014c977bc9d9e21e1250ad4c4f102358e7144c7aad637230"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-noi.aprq.gz",
+      "bytes": 3890,
+      "sha256": "83f64d12d532a9aa20209ca3124a28924a2c92076bba361f3e0f302568d2d50a"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-noi.arch.gz",
+      "bytes": 55279,
+      "sha256": "c6b94b7ac64ae66521498f9f1b758505a10a894c13825bc69336fb6a81781e83"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-phang.aprq.gz",
+      "bytes": 3887,
+      "sha256": "0337ac160f43f888d91585e1768b2029c2086d4b7e6202fc366542c88c6d8329"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-phang.arch.gz",
+      "bytes": 55279,
+      "sha256": "ab81ad96bed388589e784771db58e073a450af98d8e27ff4bf4669313b8ff499"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-phang2.aprq.gz",
+      "bytes": 3890,
+      "sha256": "f6dcd9058909969f9f3b019bf73236eb46b24750f4f87c9033c3098162c5fc4d"
+    },
+    {
+      "path": "tests/curved-products/fixtures/emoji-strap-phang2.arch.gz",
+      "bytes": 55279,
+      "sha256": "f8c8e6c63227857a431452710538a4971f8d5ddd75e45fd108a60527e0ce5525"
+    },
+    {
+      "path": "tests/curved-products/fixtures/Inter-OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "tests/curved-products/fixtures/manifest.json",
+      "bytes": 26989,
+      "sha256": "a8a143cb4b30f488070491f4f0a346f1fe6628d1a88ab971c8784c7e26a6a41f"
+    },
+    {
+      "path": "tests/curved-products/fixtures/NotoEmoji-OFL.txt",
+      "bytes": 4330,
+      "sha256": "500bb1ccf43df7bbb522112f9133a52b16e1c35e809632f5d8609b179152de5b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-chim.aprq.gz",
+      "bytes": 3935,
+      "sha256": "6cffc270d0b6f4b48b01facc17b407ada59a4f0ee821394a5497edcfc5ce8287"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-chim.arch.gz",
+      "bytes": 17967,
+      "sha256": "009708e49c2523d88eb9723ab94623044dc6322d19647799350492e26a0b3711"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-noi.aprq.gz",
+      "bytes": 3933,
+      "sha256": "c4b607b03b0537f1e384ba183f240d3c8a520a98180a6faf5f3dede6e1d5529a"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-noi.arch.gz",
+      "bytes": 17968,
+      "sha256": "847aecd844e6aa5d8ec7ffe3676f7a97eceadc2b90022b70ea061e75a14e136f"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-phang.aprq.gz",
+      "bytes": 3942,
+      "sha256": "2c3179188077c69dbbda352d6fe8fab0933b521bc49a5036f4ab3c1b7b98f925"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-phang.arch.gz",
+      "bytes": 17965,
+      "sha256": "0e5b1b2da44148663b8805691b76329bbce309dfd8b01a20670fefc2c2973e7d"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-phang2.aprq.gz",
+      "bytes": 3932,
+      "sha256": "dab0e6e2f07ec2c0c39fce73dad1f87f53d99a242064253e3b68f6f72a529e01"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-charm-phang2.arch.gz",
+      "bytes": 17966,
+      "sha256": "59b8375d65ce8d74ac21ff816788c7ead9a98ad271c69cbd58dd060b442cd44f"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-chim.aprq.gz",
+      "bytes": 4357,
+      "sha256": "008b88da8edf6bada0c64e93b225a46c2ca5b8b4944f202c4afb830c99c3e5a4"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-chim.arch.gz",
+      "bytes": 17964,
+      "sha256": "cbc1f5dac535f0596378ce563d1dd76d1146e862a817cf5610f68f7bdf29179e"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-noi.aprq.gz",
+      "bytes": 4351,
+      "sha256": "318335dcc5a88c357ef83c9a72d89ad852de6a97eef254923cfac08cdb21fbdd"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-noi.arch.gz",
+      "bytes": 17966,
+      "sha256": "d709f79c3d74b4a189a08096eedb40c2bb80176505054a2913ff6d4aa3634e18"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-phang.aprq.gz",
+      "bytes": 4352,
+      "sha256": "55cd40be5a28fb1234555c534dff6de08c03e5a3135beb08828cd827c4704390"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-phang.arch.gz",
+      "bytes": 17964,
+      "sha256": "484c2face4cb6452f4d4316e06ec9b93a32ab26b09e4e360d734525d70670bb6"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-phang2.aprq.gz",
+      "bytes": 4350,
+      "sha256": "7c355e09a1d7fab0d8589f2adaf45217fc891e85f423dfb5642590957ae933a7"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-clicky-phang2.arch.gz",
+      "bytes": 17967,
+      "sha256": "d7355dec19b04fb05f5ad28dd81c00acb87323962db4b0d58121b8a7a6dfcdac"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-chim.aprq.gz",
+      "bytes": 3886,
+      "sha256": "86391470f4987a0bd5e55bc6ab55f85bc08baf697e43d8d95c2d4b05c92fe32c"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-chim.arch.gz",
+      "bytes": 17965,
+      "sha256": "3651107a0ecac20146bcb11cd4abda0ddb56b7ccb4987300ae5d62a92de7e828"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-noi.aprq.gz",
+      "bytes": 3876,
+      "sha256": "d5a7b1d0357a4656393edcc9f63b4186081f3a7b139d722f74a9f59818dce39b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-noi.arch.gz",
+      "bytes": 17963,
+      "sha256": "233bfbf04ab31922fed4d6727bc7d3e5173b5f52ecd676e773e2ef552ccd0efa"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-phang.aprq.gz",
+      "bytes": 3878,
+      "sha256": "69869d3aa998c1cb43f7844f820513476ce702f08397859e6ffcc19435a6c374"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-phang.arch.gz",
+      "bytes": 17967,
+      "sha256": "0a625e7aa8acc3ab7a8be16db8f227ebe6bc3c8882163ee08b48b654aceac3b8"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-phang2.aprq.gz",
+      "bytes": 3880,
+      "sha256": "bb308c8bdeee0e4fa39f710818efacca77ab26dfab81b336abcfdb85ed54cfbd"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-keychain-phang2.arch.gz",
+      "bytes": 17966,
+      "sha256": "170542e2d4fdd155b711300c6fd0f519f1875a4a21e21eefe520b2c6049f7f19"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-chim.aprq.gz",
+      "bytes": 4007,
+      "sha256": "be2a37c01845d52f3e0cee96f0a147dff9d9a0fba9f87c0e91bacbcf61e16730"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-chim.arch.gz",
+      "bytes": 17966,
+      "sha256": "dd5f38569c5d077e8f134dd7655f13295dc2493b705b0a6ffadafad30b520efe"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-noi.aprq.gz",
+      "bytes": 4007,
+      "sha256": "b1a07655e0bfcc30523231bed4df79954ee0ed1e875d4c61ebf62b29bc3cad03"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-noi.arch.gz",
+      "bytes": 17966,
+      "sha256": "7cd127db23ae3696f20a5ed7ff9f584ab5fd1cd2381d0407fd51cea01a6c9457"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-phang.aprq.gz",
+      "bytes": 4013,
+      "sha256": "2a3dc17e57f39b6836c9ecb3c66924e890f5c25754a7ab143738e283b5a17918"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-phang.arch.gz",
+      "bytes": 17967,
+      "sha256": "019c01f30f5c1f4f5945b306fa7952d4e321f5bd59e00c524f5946db8af024bc"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-phang2.aprq.gz",
+      "bytes": 4021,
+      "sha256": "804d1b9bdc9f742ae497f68649e4d57d0db601ad700627b7a9df13561db8ec9b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-lego-phang2.arch.gz",
+      "bytes": 17966,
+      "sha256": "9916a9f27e9a1873e57d8b033b54112b1107a5431b0f06a3d157f963f33e9718"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-chim.aprq.gz",
+      "bytes": 3888,
+      "sha256": "495a664bad1e737f6261f72de57da2a909ca343218a3907bb694f3c6d7d85511"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-chim.arch.gz",
+      "bytes": 17968,
+      "sha256": "9aeb62e74ba2f0d7cb26ab3a89237ecbb7da2acdc85b654bb48c844588d7143b"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-noi.aprq.gz",
+      "bytes": 3880,
+      "sha256": "6e41c801d0f1accc8482d5951d70361c7b7dd545172e1378ae417ead321437d1"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-noi.arch.gz",
+      "bytes": 17968,
+      "sha256": "65ca1f7ae2b133dc893494b0a951f104498970188973f15ac85bcf484c39aa73"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-phang.aprq.gz",
+      "bytes": 3886,
+      "sha256": "9c633eead71b6816d6dc91bc04365f4d0a278c071eba31062aba636bf132156e"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-phang.arch.gz",
+      "bytes": 17966,
+      "sha256": "ba301d22dfe4b2dbfd536eb3e5cd737b6c9a9f8957a629b7f6b0d283918fba86"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-phang2.aprq.gz",
+      "bytes": 3895,
+      "sha256": "625a3ce85ab151278aa08d841fc8e712489ffd799c1db8b428f81a8c2447f5c0"
+    },
+    {
+      "path": "tests/curved-products/fixtures/text-strap-phang2.arch.gz",
+      "bytes": 17966,
+      "sha256": "19bce3cba3b0a57fb0f73f514a36640efb86992d77133e6221ffbb30c1d378ab"
+    },
+    {
+      "path": "tests/curved-products/oracle.mjs",
+      "bytes": 15500,
+      "sha256": "9c46087385bbea4b33ea465cbc15a90917bd80e02c91f2de9bea16acaf0182e6"
+    },
+    {
+      "path": "tests/curved-products/parity.mjs",
+      "bytes": 4219,
+      "sha256": "5c833555a08f34a6884fe77d9013ce5d6ae62caa6eb64dc4d7218fd98dfffb12"
+    },
+    {
+      "path": "tests/curved-products/r2-guards.mjs",
+      "bytes": 3825,
+      "sha256": "733fcf4eedc4335f6b1b95e7bbc26025e4242be64b4130b347229fb670373c22"
+    },
+    {
+      "path": "tests/curved-products/README.md",
+      "bytes": 5839,
+      "sha256": "a8d234dd5fd4a6ed4f4cf7197049c20ab4281f77ac2e66db788f536d17d476de"
+    },
+    {
+      "path": "tests/curved-products/resource.mjs",
+      "bytes": 4204,
+      "sha256": "7bc413fac5c0882f83a67a5a2fc9405a5ffeaac02be0e73417b7620edb004fd4"
+    },
+    {
+      "path": "tests/curved-products/run.mjs",
+      "bytes": 4254,
+      "sha256": "da86d9ac0c6d173a4b9c2e318134023389ea4b4b2a96d106830a2c02f5413ac3"
+    },
+    {
+      "path": "tests/curved-products/stage-fixtures.mjs",
+      "bytes": 1388,
+      "sha256": "f51d5f6f3346cc5684cfaa8c648928b3d52fbe3711f7285693f9d633735ac01b"
+    },
+    {
+      "path": "tests/curved-products/surface-parity.mjs",
+      "bytes": 5526,
+      "sha256": "038b28300b3cb1ca7a6d625668a64cf474b2f710c238716e40fe6e3ee560dcea"
+    },
+    {
+      "path": "tests/curved-products/surface-parity.test.mjs",
+      "bytes": 1853,
+      "sha256": "c7738a3e0fb3a3c574a6b888c6b62ef04955265cfcb08fc91831b0b10151d657"
+    },
+    {
+      "path": "tmp/reviews/README.md",
+      "bytes": 3126,
+      "sha256": "0446d98d262bbcbafafbb934cf9dc638f8e4108a20c014e9cf708178216cd82c"
+    },
+    {
+      "path": "tools/curved-products/build.ps1",
+      "bytes": 1875,
+      "sha256": "85244fa29cbfab16e7c6f4ea8f0649527231a585cb13e7301e3b853e89df077f"
+    },
+    {
+      "path": "tools/curved-products/capture.mjs",
+      "bytes": 3333,
+      "sha256": "645083fbdb3da8e2ed9a516d496780c6f4390384d5db3717db8a750f32cbc7f4"
+    },
+    {
+      "path": "tools/curved-products/check.ps1",
+      "bytes": 2909,
+      "sha256": "08f2a6230858cacf09822fee97d6ed65db7e1bfcc3597b33793a46735ca70e48"
+    },
+    {
+      "path": "tools/curved-products/inspect-partition.mjs",
+      "bytes": 1198,
+      "sha256": "230594d6b14663f8a12a303ec102aa49abacf1e6f9795b358481cd768cc3fa68"
+    },
+    {
+      "path": "tools/curved-products/package-fixtures.mjs",
+      "bytes": 2234,
+      "sha256": "591b479e6e3466e5d6094bc3fbb245f85283d85b0299a64dd4c41dd08d39cf8c"
+    },
+    {
+      "path": "tools/curved-products/prepare-runtime.mjs",
+      "bytes": 2112,
+      "sha256": "e72b38947c406bae224538098be7b58b85f034e9e005399bcaf0da64851c6829"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": "arch-first-party-controller-fixtures/1",
+  "license": "First-party project test artifacts; no external asset or dependency added.",
+  "source": {
+    "label": "retained controller STL-TWO-APPROVALS-REPLAY-HISTORY,2026-09-08",
+    "originalDocumentSha256": "fa30291c22a38bb7892d2aea375281a7d12bbb47255984303a49e532480b8c1a",
+    "authoredFixtureSha256": "bdd1e47db9dc0e86f1f54b7185e3537ba3791b0f3f767d869ba8707acc64bebe",
+    "failedBrowserReportSha256": "4f94e0ffe5af54d3ffdd161f6a3f784619e55ab2ca896b0698f7ab9da3cd432d"
+  },
+  "files": [
+    {
+      "path": "fixtures/controller-cut.stl",
+      "bytes": 1991,
+      "sha256": "ebd83de3977b2731a2f52ea6e7864317256eb8d83430353553b5dd919d44fee2"
+    },
+    {
+      "path": "fixtures/controller-cutter.inc",
+      "bytes": 699,
+      "sha256": "13242b5f2aaa2dab236bc9c0772604ca593fd675a8ebee1178d1dda8b3183f86"
+    },
+    {
+      "path": "fixtures/controller-meta.inc",
+      "bytes": 3261,
+      "sha256": "d928c127f76da211ba00c84c6569a0e6b8cee5c31cd55dbe5ef8f9a3dbb33e90"
+    },
+    {
+      "path": "fixtures/controller-metadata.json",
+      "bytes": 73615,
+      "sha256": "717ea05b6c00e6e36696aa1b20a97a23a6c11d0b9eb5655537d4cb7af5024b85"
+    },
+    {
+      "path": "fixtures/controller-original.arch",
+      "bytes": 45984,
+      "sha256": "385f61fa791f2ea7eaa6c1a604dac03ce54ad7dda6a02a2ecb7af0ca9e873a83"
+    }
+  ]
+}

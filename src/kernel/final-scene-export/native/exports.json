@@ -1,0 +1,20 @@
+[
+  "_arch_final_export_version",
+  "_arch_export_final",
+  "_arch_final_output_ptr",
+  "_arch_final_output_len",
+  "_arch_final_output_metadata_ptr",
+  "_arch_final_output_metadata_len",
+  "_arch_final_output_acquire",
+  "_arch_final_output_release",
+  "_arch_final_native_abi_version",
+  "_arch_final_native_layout",
+  "_arch_final_float_version",
+  "_arch_final_float_prepare",
+  "_arch_final_float_confirm",
+  "_arch_final_float_buffer_ptr",
+  "_arch_final_float_buffer_len",
+  "_arch_final_float_release",
+  "_arch_final_scene_geometry_version",
+  "_arch_final_scene_geometry"
+]

@@ -1,0 +1,15 @@
+{
+  "verdict": "pass",
+  "expected": "No project required: UI JSON import and download roundtrip equals actual current-account HTTPS/SQLite settings, no credentials exported",
+  "actual": {
+    "settingsRevision": 1,
+    "values": {
+      "language": "vi"
+    },
+    "byteLength": 46,
+    "sha256": "d3fd325e089a40fe65edd942c806276bcfd9b5649b6330d19c01d4e0a0870ef2",
+    "noProject": true,
+    "transport": "actual HTTPS/SQLite; synthetic signed identity only"
+  },
+  "durationMs": 2801
+}

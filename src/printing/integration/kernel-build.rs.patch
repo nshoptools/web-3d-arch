@@ -1,0 +1,27 @@
+--- a/src/kernel/build.rs
++++ b/src/kernel/build.rs
+@@ -17,5 +17,24 @@
+         println!("cargo:rerun-if-changed={}",archive.display());
+         println!("cargo:rustc-link-lib=static={lib}");
+     }
++    println!("cargo:rerun-if-env-changed=ARCH_PRINTING_ENABLED");
++    if env::var("ARCH_PRINTING_ENABLED").as_deref()==Ok("1") {
++        let dirs=if target.ends_with("msvc"){vec!["printing/Release","printing/lib3mf/Release"]}
++                 else {vec!["printing","printing/lib3mf"]};
++        for dir in &dirs { println!("cargo:rustc-link-search=native={}",root.join(dir).display()); }
++        for lib in ["arch3mf_static","lib3mf"] {
++            // lib3mf already carries the lib prefix as its target name.
++            let file=if target.ends_with("msvc"){format!("{lib}.lib")}else if lib=="lib3mf"{"lib3mf.a".into()}else{format!("lib{lib}.a")};
++            let path=dirs.iter().map(|d|root.join(d).join(&file)).find(|p|p.is_file())
++                .unwrap_or_else(||panic!("Missing printing archive: {file}"));
++            println!("cargo:rerun-if-changed={}",path.display());
++            if lib=="lib3mf" && !target.ends_with("msvc") {
++                println!("cargo:rustc-link-lib=static:+verbatim=lib3mf.a");
++            } else { println!("cargo:rustc-link-lib=static={lib}"); }
++        }
++        if target.ends_with("msvc") {
++            for lib in ["advapi32","ole32","uuid"] { println!("cargo:rustc-link-lib={lib}"); }
++        }
++    }
+     if !target.ends_with("msvc") { println!("cargo:rustc-link-lib=c++"); }
+ }

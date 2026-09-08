@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "capturedUtc": "2026-09-08T02:39:06.920356+00:00",
+  "head": "7efa83b1623adaa089d86aa597d892db5dae5dd7",
+  "files": [
+    {
+      "path": "src/kernel/mechanics/CMakeLists.txt",
+      "bytes": 2631,
+      "sha256": "8e81968eb7993a16aec40436b9581138dfccfe6ad0772a45df8bfcd3021c5ed5"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-001-v1.md",
+      "bytes": 11757,
+      "sha256": "fe40f8ad0ee9a37d17b3a9b42d11f107f2499a2b8fd49bff1476b2b1bf6001d0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-002-v2.md",
+      "bytes": 10565,
+      "sha256": "db5344c04e8224b43703f2894874a90e5af87442e2fffbb4761932b5466bfe35"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-003-final-geometry-and-datums.md",
+      "bytes": 7648,
+      "sha256": "f4c8588db5ca65c70fcd1223f2bb5995f80963bee209f4bbafc866daf63083b0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/API.md",
+      "bytes": 17163,
+      "sha256": "19ad579dbefc9d6c8263159a1c2573dc82699c133d8c653bace085f8afdd1b64"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/catalog-lock.json",
+      "bytes": 13390,
+      "sha256": "5e76951cfd843124c4f9f2eeb549601f12d7438256bae3361037552e06b363b1"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/remediation-acceptance.json",
+      "bytes": 7654,
+      "sha256": "4d14412d5b193acc5311a4799ec3ea05f23444d7891bc5491b003a6bdee89359"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/semantic-contract.json",
+      "bytes": 67218,
+      "sha256": "f9d082a4cf8382f52aad378ea0d35d2542700ec8365f209ebdbc8c01baf61dc1"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.json",
+      "bytes": 78780,
+      "sha256": "1b1b038b71835fc510e4d8aa87d2294bb86af31969f1b30e5a5321f42bba62bf"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.md",
+      "bytes": 4448,
+      "sha256": "e7a8766ab55ce3c82565b5602fddcee628fd1342736689cf3ac05ac4bf121f81"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/mechanics/pins.json",
+      "bytes": 2345,
+      "sha256": "43a8beda47ffde1762f88604f21eed98aed7bedeac24f070f82bc9b99516d4d1"
+    },
+    {
+      "path": "src/kernel/mechanics/README.md",
+      "bytes": 4983,
+      "sha256": "22a6430aa2bafce73180a57f1ac9a6a18db7e16b2eceb41d711d78095159c465"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog-map.mjs",
+      "bytes": 8239,
+      "sha256": "c51ea0c52eb68d681b1dd05be13856efafbbd57bb70ad9c64b8ce2058a46f720"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog.inc",
+      "bytes": 5883,
+      "sha256": "cd6d5f2a431ebd485cf6665a3e21cb4d53838a0bd17c1eb4e688499616173fb4"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog_quantum.inc",
+      "bytes": 993,
+      "sha256": "7ddfb6ea4b1daf07e66bc8d6ec91b6c22b64b2afa50af825187258e04a0bc31a"
+    },
+    {
+      "path": "src/kernel/mechanics/src/domain-adapter.mjs",
+      "bytes": 6635,
+      "sha256": "169412a40b79105f44acb424de7d5e279dce6cb5294d281ff5e8db7a8637bebd"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "bytes": 74200,
+      "sha256": "ead7623d3a8e1fabfa9a9455de24dbf1cc1999e5660d436aeecde7fe03ee3225"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.h",
+      "bytes": 7827,
+      "sha256": "fcc35a8341b0471647905e09d52c20a63ac53787b351a33d9635dedd993fae40"
+    },
+    {
+      "path": "src/kernel/mechanics/src/parameter_ids.h",
+      "bytes": 2880,
+      "sha256": "252be9c95f8b380b74da6875fa460d0635867e7e413a3aee527886c0aa0de4a3"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/cancellation.mjs",
+      "bytes": 2203,
+      "sha256": "6f2e19460800dd9fa62c0c5fbcf57ff439f8929aee5c32385bd1a7afe4183f25"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/domain-adapter.test.mjs",
+      "bytes": 4010,
+      "sha256": "19db5d953cb0c2283406ef56913eb6a30b8e3975110422b5af10ca18fabbd76d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/fixture.cpp",
+      "bytes": 17600,
+      "sha256": "5958070d44b4d72a4a932ddcf3a54fa8d197b3a4f907d4ec1f43aef9ea803779"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/mechanical-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/parity.mjs",
+      "bytes": 3946,
+      "sha256": "740ae6cf35eb91cf6720ae2140b7c73702bf84aaba5f8cc3ff1a84cd8042463d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-domain.mjs",
+      "bytes": 4983,
+      "sha256": "23db3fe54f2baeac59a067ce4d90aef552aab010107ea495ddf5e6f4305759e9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-parity.mjs",
+      "bytes": 3402,
+      "sha256": "2e317f96e46ddb568002f33bd98e2d92a5c418303e1a91a6ae98da26b28680a9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation.mjs",
+      "bytes": 9894,
+      "sha256": "08e53da7775e0137852130d98aa96bc8ef99ef53ccea3e5a7d3c8869b31da6f5"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/run.mjs",
+      "bytes": 32853,
+      "sha256": "63d85c6b179be3a6b1784b89f5fde60116bedc2b49ff080f9030864dc594923e"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-parity.mjs",
+      "bytes": 3635,
+      "sha256": "ee2cf9d5b9e35733e322b814d507d4ca32734b5048910b8dc7170ea9e69fb17f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-regression.mjs",
+      "bytes": 13402,
+      "sha256": "e567b5d2ac12d6b195201bc0cbbaca023c726878357aeaa34e3d52826a497127"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/build.ps1",
+      "bytes": 2484,
+      "sha256": "fa13edd6e855db47ea6839cb7e77018e8c3ba3fd0bb401965baaaef588c90c69"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/check.ps1",
+      "bytes": 1131,
+      "sha256": "a28e0f28c9837fbfc1b2e47696f326b539bece149be5063e23dcdc8d016e6850"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/finalize-report.mjs",
+      "bytes": 12814,
+      "sha256": "bbf871a94d2c55168e5390235ffd95b8047d2cd97284aba830b85ad0902d845a"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/generate-catalog.mjs",
+      "bytes": 3957,
+      "sha256": "9d0cdcccbed446a26fae762124200a718d02d8c7f6d8b1d00a1886d18779578b"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/inspect-degenerate.mjs",
+      "bytes": 731,
+      "sha256": "047b7323d20b597af773b2110cf545e5c7b2286fbae57d5b967e187905f53feb"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/verify-pins.mjs",
+      "bytes": 1341,
+      "sha256": "5f6ecd3656ed80d7da47d91f23c11017101c7ad0d7112a1a63fdad87e8cd4f88"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/write-handoff.mjs",
+      "bytes": 17061,
+      "sha256": "dc4b6fd0a6a87150de2961eb288cf302bf2fad1ef53f1db66625f883728df4f2"
+    },
+    {
+      "path": "src/kernel/source-assembly/CMakeLists.txt",
+      "bytes": 1555,
+      "sha256": "33f1b299be489ad192b50d2cb1c4cc2487aa5e8ea8c3c32035ac3d6fea0ed883"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/mechanics-source-integration.patch",
+      "bytes": 18572,
+      "sha256": "dbf2bfe1dcbc7bd813fad31156872142162a14dd65c87546a5bd775466497693"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/patch-detached.mjs",
+      "bytes": 3600,
+      "sha256": "c61f765d5ec1075fec2e79dafc43e9ada332ff926e5c9ed5f2ed525595421ad3"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/perimeter-groove.cpp.inc",
+      "bytes": 2268,
+      "sha256": "6e0e8b477bd6fc6b9d3a25f1e1827b6590855cf91432ddb1cd9dbbea39ae030c"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/acceptance.json",
+      "bytes": 14063,
+      "sha256": "fb7cbd328c6f008fb6835a902e6199f23a9c625b1ec7e8c29c28e7abff98122f"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ACCEPTANCE.md",
+      "bytes": 3454,
+      "sha256": "468371a0a18085bd6b79b57c04c0537a88600abcf940f9902af941cf2dd7c044"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ADR-001-source-semantics.md",
+      "bytes": 5144,
+      "sha256": "9f7757aece9225090f850c258b609402550ee6db6d985dab4fb14d7f286e48ac"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API-EARLY.md",
+      "bytes": 6959,
+      "sha256": "762b5d9c28f6c9cf27020ff71189dbfb6abdf40e192c374c49d5524e36d50a15"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API.md",
+      "bytes": 4250,
+      "sha256": "e50ac99ea7b4907f78a6b7fa82d2a5caf39d416bc1e39776a6e5f4e0cfd49128"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/FIELD-BINDINGS.md",
+      "bytes": 4357,
+      "sha256": "e158332fd248a99873ae4e61a2df9365a3bde72196c5886ecfa91924e9e1add7"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/NUMERICS.md",
+      "bytes": 4554,
+      "sha256": "b9a07248dc59af83f5d702265f1ec43e093925405d721c4ffb9c0d0d590feded"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/source-assembly/pins.json",
+      "bytes": 2342,
+      "sha256": "799002eb591ffebc34fb9f0764650316688fcbebcef884b57295adcd54611314"
+    },
+    {
+      "path": "src/kernel/source-assembly/README.md",
+      "bytes": 3405,
+      "sha256": "7fd47eca69e8ffbadae058b86bddd31556bd53463080ddc0cdaeaeda32210af0"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source-datums.mjs",
+      "bytes": 620,
+      "sha256": "748ff94785684fcb8c89fb4ed3e52dc1ff752979820a5d5e57e73da3d079c6d4"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 34402,
+      "sha256": "fdfb0b1e0f49f7cc27ec5dad375eb85c9c6b94e017e21cdce5b685d160910e89"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.h",
+      "bytes": 4963,
+      "sha256": "f5258636a7130abe3557fd6916389632617b14cfb8679f7b38850b6624aa5625"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/bridge-regression.mjs",
+      "bytes": 3794,
+      "sha256": "cbc9989e41bdc7084ad36bae602baa358525068d12388e8c80e5725b37da7748"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/domain-bindings.mjs",
+      "bytes": 2358,
+      "sha256": "74364d52c25fc3968c102e9ba9fc3de60bdef8ab7c941ace9401867877c51124"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/fixture.cpp",
+      "bytes": 13946,
+      "sha256": "660504388e05ee90067e44591041893a96a218f6a184eb7fb67e7a34f48ca025"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/mechanics_fixture.cpp",
+      "bytes": 16547,
+      "sha256": "5e6d5eeaaeabf82b1753ac3feea353b41d2c561319f9460d21d2dce04e284a8a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/spatial-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/parity.mjs",
+      "bytes": 3325,
+      "sha256": "575dbba374b4b1dcfd52424abb08b84804bcf062c026d8d007a740f10c1df32b"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/run.mjs",
+      "bytes": 13135,
+      "sha256": "f72a89f9216e0ea6a5aaf7e8364003968f57a7cbc3ddec7d503e099ebca0ec27"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/build.ps1",
+      "bytes": 2244,
+      "sha256": "7826f06de8af5ec413cb929e678bfc30e76ac21ec352662a2bf44b575081911a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/handoff.mjs",
+      "bytes": 11602,
+      "sha256": "8bbc84866465b644155406b04191e26c20848a8bffc8592225adfdc8f673c0df"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/prepare-bridge.mjs",
+      "bytes": 5683,
+      "sha256": "57342718ab2726445736b0e516d620b14be2176a930c185f6f922faed28996fb"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/test-env.mjs",
+      "bytes": 869,
+      "sha256": "2702f6638f60f794bd9486b754f880b1637e1634e679271af95d841895099015"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/verify-pins.mjs",
+      "bytes": 1327,
+      "sha256": "9254e0702555c80725a0edd903ad4b1dfb738f0b5cc352e65d71ecd2263dfda0"
+    }
+  ]
+}

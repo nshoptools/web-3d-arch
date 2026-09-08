@@ -1,0 +1,42 @@
+{
+  "schema": "arch-final-export-root-preimages/1",
+  "note": "Original captured root hashes before private hooks. Main may have concurrent changes; do not replace whole files.",
+  "files": [
+    {
+      "path": "src/kernel/build.rs",
+      "sha256": "c53eaa5723a1ca7dfa61034014cbfcf19c8feb953eb7a7481532eb5926ee10a9"
+    },
+    {
+      "path": "src/kernel/Cargo.lock",
+      "sha256": "3c2dade86bfba5df4b9a1cbb37164af4f9fcd47b09dcdc69a0c4a163849fe532"
+    },
+    {
+      "path": "src/kernel/Cargo.toml",
+      "sha256": "23a789096bcb268bcf0bfb2d7801e4f6064bde5a6fa88ed508d65506b3ee5648"
+    },
+    {
+      "path": "src/kernel/native/CMakeLists.txt",
+      "sha256": "c5bca7dac0d187311c1dceb3afabefae3119e10d891728759e27f31261fe1f8c"
+    },
+    {
+      "path": "src/kernel/native/geometry.h",
+      "sha256": "fd6a6d40b63a1fea07cf66956d85e001cb9f5262088f8c8d2b3d3c6ff510f5a4"
+    },
+    {
+      "path": "src/kernel/native/runtime.h",
+      "sha256": "64b2ac04f1014a1dcdae48f3e1931bce766a5b5042c868b59838a5a8282992d3"
+    },
+    {
+      "path": "src/kernel/src/abi.rs",
+      "sha256": "5c2c5decb4b9f34506403f9ba544608f2fd29ada948576d321d44a28f2740b47"
+    },
+    {
+      "path": "src/kernel/src/lib.rs",
+      "sha256": "be0b979f05f5524e6a4f30db1f00a03a7a17fca3aff27cb4db6658f0dc959451"
+    },
+    {
+      "path": "tools/kernel/build.ps1",
+      "sha256": "cc263bb6c11e64b54a6b0815e6148afc7ed150955f32b538cc04f825dea34047"
+    }
+  ]
+}

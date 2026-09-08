@@ -1,0 +1,181 @@
+{
+  "method": "Independent hand-defined input polygons and four mode formulas; integer boundary-chain equality per expected cell; exhaustive orthogonal XY arrangement verifies entire area and material interiors; all source horizontal/vertical contacts verified against rational area/length times Z overlap.",
+  "results": [
+    {
+      "id": "partition-mode0-rim0",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "19857/5",
+      "expected_volume_mm3": 3971.4,
+      "slabs": 4,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 4,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode0-rim1",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "21639/5",
+      "expected_volume_mm3": 4327.8,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 5,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode1-rim0",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "15783/5",
+      "expected_volume_mm3": 3156.6,
+      "slabs": 4,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 4,
+      "maximum_contact_delta": 0
+    },
+    {
+      "id": "partition-mode1-rim1",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "15783/5",
+      "expected_volume_mm3": 3156.6,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode2-rim0",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "3564",
+      "expected_volume_mm3": 3564.0,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode2-rim1",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "3564",
+      "expected_volume_mm3": 3564.0,
+      "slabs": 6,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 9,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode3-rim0",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "19602/5",
+      "expected_volume_mm3": 3920.4,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 2.1316282072803006e-14
+    },
+    {
+      "id": "partition-mode3-rim1",
+      "kind": "native",
+      "status": "pass",
+      "expected_volume_rational_mm3": "21384/5",
+      "expected_volume_mm3": 4276.8,
+      "slabs": 6,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 9,
+      "maximum_contact_delta": 2.1316282072803006e-14
+    },
+    {
+      "id": "partition-mode0-rim0",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "19857/5",
+      "expected_volume_mm3": 3971.4,
+      "slabs": 4,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 4,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode0-rim1",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "21639/5",
+      "expected_volume_mm3": 4327.8,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 5,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode1-rim0",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "15783/5",
+      "expected_volume_mm3": 3156.6,
+      "slabs": 4,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 4,
+      "maximum_contact_delta": 0
+    },
+    {
+      "id": "partition-mode1-rim1",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "15783/5",
+      "expected_volume_mm3": 3156.6,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode2-rim0",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "3564",
+      "expected_volume_mm3": 3564.0,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode2-rim1",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "3564",
+      "expected_volume_mm3": 3564.0,
+      "slabs": 6,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 9,
+      "maximum_contact_delta": 7.105427357601002e-15
+    },
+    {
+      "id": "partition-mode3-rim0",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "19602/5",
+      "expected_volume_mm3": 3920.4,
+      "slabs": 5,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 8,
+      "maximum_contact_delta": 2.1316282072803006e-14
+    },
+    {
+      "id": "partition-mode3-rim1",
+      "kind": "wasm",
+      "status": "pass",
+      "expected_volume_rational_mm3": "21384/5",
+      "expected_volume_mm3": 4276.8,
+      "slabs": 6,
+      "complete_xy_arrangement_cells": 63,
+      "horizontal_and_vertical_contacts": 9,
+      "maximum_contact_delta": 2.1316282072803006e-14
+    }
+  ]
+}

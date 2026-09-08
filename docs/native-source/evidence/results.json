@@ -1,0 +1,2834 @@
+{
+  "version": "arch-native-source-evidence/1",
+  "date": "2026-09-08",
+  "role": "implementation-self-test",
+  "model": "inherited Astra/max per parent assignment",
+  "fastMode": "unverified",
+  "independentReview": false,
+  "commandVariables": {
+    "nsWork": "captured candidate root",
+    "run": "own PROJECT_REVIEW_RUN",
+    "cargo": ".toolchain/cargo/bin/cargo.exe",
+    "node": ".toolchain/emsdk/node/24.19.0_64bit/node.exe"
+  },
+  "modules": [
+    {
+      "path": "work/module/arch-kernel.mjs",
+      "bytes": 137772,
+      "sha256": "d3e450bc4bf2763dba08bc9d3db89f2d0e7325b6c1c483cbe0853e668ea27c40"
+    },
+    {
+      "path": "work/module/arch-kernel.wasm",
+      "bytes": 5820062,
+      "sha256": "74ead2291e7f17c32f3f88c179a510a4e3d1babe16e9953e454af1c7dc2d2918"
+    }
+  ],
+  "baseline": {
+    "rootABI": 2,
+    "module": [
+      {
+        "ext": "mjs",
+        "sha256": "950225880c23476f9a6523111ac5a33aebb24f1d89bfa1d8f60bff1b1cc1c375",
+        "bytes": 138932
+      },
+      {
+        "ext": "wasm",
+        "sha256": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd",
+        "bytes": 5752782
+      }
+    ],
+    "checks": [
+      {
+        "sourceHash": "4af5a0bf6159dbfed4a6cc16ac4a33e5b83979edb39a01d18d58dcdf5275940d",
+        "id": 0,
+        "error": "REGION_BELOW_BOOLEAN_RESOLUTION"
+      },
+      {
+        "sourceHash": "c1c031b7b0c127c80af1d250b206671cd11aeedc24eef6cec61f6c4e9471322e",
+        "id": 0,
+        "error": "REGION_BELOW_BOOLEAN_RESOLUTION"
+      }
+    ]
+  },
+  "native": {
+    "checks": 334,
+    "libTests": 17
+  },
+  "node": {
+    "status": "pass",
+    "records": [
+      {
+        "name": "combined-vietnamese-original",
+        "metrics": {
+          "vertexCount": 1808,
+          "faceCount": 3604,
+          "edgeCount": 5406,
+          "euler": 6,
+          "volume": 21.84274155930681,
+          "area": 250.26301621553006,
+          "caps": {
+            "0": 109.21370779653394,
+            "0.2": 109.21370779653394
+          },
+          "components": 5,
+          "holes": 2,
+          "boundaryCount": 904,
+          "area2Grid": "218427415593068",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "72539331897703",
+              "volume": 7.253933189770299,
+              "triangles": 88
+            },
+            {
+              "source": 1,
+              "area2Grid": "77093695980554",
+              "volume": 7.709369598055418,
+              "triangles": 1212
+            },
+            {
+              "source": 2,
+              "area2Grid": "68794387714811",
+              "volume": 6.879438771481047,
+              "triangles": 2304
+            }
+          ],
+          "interpretation": null
+        },
+        "frames": [
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          }
+        ],
+        "geometrySha256": "03bfd251425005cb80e8fe0dbe13da090d07fb4f919fd05abacc26a68f8f98a6"
+      },
+      {
+        "name": "combined-vietnamese-adopted",
+        "metrics": {
+          "vertexCount": 1808,
+          "faceCount": 3604,
+          "edgeCount": 5406,
+          "euler": 6,
+          "volume": 21.842743693023586,
+          "area": 250.26303995628325,
+          "caps": {
+            "0": 109.2137184651181,
+            "0.2": 109.2137184651181
+          },
+          "components": 5,
+          "holes": 2,
+          "boundaryCount": 904,
+          "area2Grid": "218427436930236",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "72539333208793",
+              "volume": 7.253933320879299,
+              "triangles": 88
+            },
+            {
+              "source": 1,
+              "area2Grid": "77093708211909",
+              "volume": 7.7093708211909,
+              "triangles": 1212
+            },
+            {
+              "source": 2,
+              "area2Grid": "68794395509534",
+              "volume": 6.879439550953405,
+              "triangles": 2304
+            }
+          ],
+          "interpretation": null
+        },
+        "frames": [
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          }
+        ],
+        "geometrySha256": "501d2cae24ce0d870ec4095c8a8ebe24cfa2f570fba4bccdc9b47693b03e6203"
+      },
+      {
+        "name": "shared-hole-accent",
+        "metrics": {
+          "vertexCount": 42,
+          "faceCount": 72,
+          "edgeCount": 108,
+          "euler": 6,
+          "volume": 37.000002,
+          "area": 394.0000208,
+          "caps": {
+            "0": 185.00000999999997,
+            "0.2": 185.00000999999997
+          },
+          "components": 4,
+          "holes": 1,
+          "boundaryCount": 21,
+          "area2Grid": "370000020000000",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "170000000000000",
+              "volume": 17.000000000000004,
+              "triangles": 48
+            },
+            {
+              "source": 1,
+              "area2Grid": "100000010000000",
+              "volume": 10.000001000000001,
+              "triangles": 12
+            },
+            {
+              "source": 2,
+              "area2Grid": "100000010000000",
+              "volume": 10.000001000000003,
+              "triangles": 12
+            }
+          ],
+          "interpretation": {
+            "sourceAreaMm2": 185,
+            "observedDeltaMm2": 0.000010000000003174137,
+            "coordinateBoundMm": 0.0000772939453125,
+            "areaBoundMm2": 0.013117599848686264,
+            "scope": "this authored affine rectangle fixture only; no general source bound"
+          }
+        },
+        "frames": [
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          }
+        ],
+        "geometrySha256": "c93f083cc301702628156b0de876d369e4d41aee2bcc88014eb8a3274639b3c1"
+      },
+      {
+        "name": "oo-multiline",
+        "metrics": {
+          "vertexCount": 2304,
+          "faceCount": 4608,
+          "edgeCount": 6912,
+          "euler": 0,
+          "volume": 13.758878352009347,
+          "area": 155.42137048898252,
+          "caps": {
+            "0": 68.79439176004648,
+            "0.2": 68.79439176004648
+          },
+          "components": 2,
+          "holes": 2,
+          "boundaryCount": 1152,
+          "area2Grid": "137588783520093",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "68794392203286",
+              "volume": 6.87943922032861,
+              "triangles": 2304
+            },
+            {
+              "source": 1,
+              "area2Grid": "68794391316807",
+              "volume": 6.879439131680725,
+              "triangles": 2304
+            }
+          ],
+          "interpretation": null
+        },
+        "frames": [
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          }
+        ],
+        "geometrySha256": "4d30ca3382b4810066fe067bb78bebf0d0dce8a7c3fa56f156292afb6927a3a9"
+      },
+      {
+        "name": "nfd-accent",
+        "metrics": {
+          "vertexCount": 50,
+          "faceCount": 88,
+          "edgeCount": 132,
+          "euler": 6,
+          "volume": 7.253934571546796,
+          "area": 84.96965312158184,
+          "caps": {
+            "0": 36.269672857733994,
+            "0.2": 36.269672857733994
+          },
+          "components": 3,
+          "holes": 0,
+          "boundaryCount": 25,
+          "area2Grid": "72539345715468",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "72539345715468",
+              "volume": 7.253934571546796,
+              "triangles": 88
+            }
+          ],
+          "interpretation": null
+        },
+        "frames": [
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          }
+        ],
+        "geometrySha256": "54996dffd1e392428e1be9877144e5bdc9f35c2eca5c9e5ce477992d27f17d61"
+      },
+      {
+        "name": "nfd-regular-multiline",
+        "metrics": {
+          "vertexCount": 1804,
+          "faceCount": 3596,
+          "edgeCount": 5394,
+          "euler": 6,
+          "volume": 16.013759849211546,
+          "area": 192.54628878410136,
+          "caps": {
+            "0": 80.0687992460584,
+            "0.2": 80.0687992460584
+          },
+          "components": 5,
+          "holes": 2,
+          "boundaryCount": 902,
+          "area2Grid": "160137598492117",
+          "partMetrics": [
+            {
+              "source": 0,
+              "area2Grid": "53253780958740",
+              "volume": 5.325378095874,
+              "triangles": 88
+            },
+            {
+              "source": 1,
+              "area2Grid": "57225759855218",
+              "volume": 5.722575985521822,
+              "triangles": 1216
+            },
+            {
+              "source": 2,
+              "area2Grid": "49658057678159",
+              "volume": 4.96580576781574,
+              "triangles": 2292
+            }
+          ],
+          "interpretation": null
+        },
+        "frames": [
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          }
+        ],
+        "geometrySha256": "5093fdf2591fbaeec049f29b05206b956ddd7e998c1f1aa7907fc6b1a34c3c8a"
+      }
+    ]
+  },
+  "workers": [
+    {
+      "engine": "chromium",
+      "status": "pass",
+      "moduleSha256": "74ead2291e7f17c32f3f88c179a510a4e3d1babe16e9953e454af1c7dc2d2918",
+      "errors": [],
+      "checks": [
+        "actual frame version1 combined-vietnamese-original",
+        "immutable original combined-vietnamese-original",
+        "exact source hash binding combined-vietnamese-original",
+        "request captured before yield combined-vietnamese-original",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 combined-vietnamese-adopted",
+        "immutable original combined-vietnamese-adopted",
+        "exact source hash binding combined-vietnamese-adopted",
+        "request captured before yield combined-vietnamese-adopted",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 shared-hole-accent",
+        "immutable original shared-hole-accent",
+        "exact source hash binding shared-hole-accent",
+        "request captured before yield shared-hole-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 oo-multiline",
+        "immutable original oo-multiline",
+        "exact source hash binding oo-multiline",
+        "request captured before yield oo-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-accent",
+        "immutable original nfd-accent",
+        "exact source hash binding nfd-accent",
+        "request captured before yield nfd-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-regular-multiline",
+        "immutable original nfd-regular-multiline",
+        "exact source hash binding nfd-regular-multiline",
+        "request captured before yield nfd-regular-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "controlled running-frame cancellation no publication",
+        "released reader cannot start a job",
+        "framed planar context consumed by actual source assembly",
+        "assembly produces real triangles",
+        "independent frame remains after assembly",
+        "one Worker and Module for source/frame/product",
+        "retire version proof",
+        "retired opaque lease never restored",
+        "cleanup no runtime restart",
+        "replacement obtains new actual capability",
+        "old frame stays retired after replacement/ABA"
+      ],
+      "records": [
+        {
+          "name": "combined-vietnamese-original",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.84274155930681,
+            "area": 250.26301621553006,
+            "caps": {
+              "0": 109.21370779653394,
+              "0.2": 109.21370779653394
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427415593068",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539331897703",
+                "volume": 7.253933189770299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093695980554",
+                "volume": 7.709369598055418,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794387714811",
+                "volume": 6.879438771481047,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -129413,
+                13453765
+              ],
+              [
+                17453422,
+                13453765
+              ],
+              [
+                17453422,
+                -16852149
+              ],
+              [
+                -129413,
+                -16852149
+              ]
+            ],
+            "geometrySha256": "7d11bec886e17d0d60ebe9d2323e29ebbef24170a785d1b35da2fffdc8b36f81",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2ce8512a470b2de3ee00f8daa4ccc546c3bd986c82bb8d0499be949003645b5d",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -0.1294126883682002,
+              13.453764550524818
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "36b24c3a79d59d8f1e493faceb8821fdfc5258988813f4fd4c34dcd11353238e",
+            "sourceSnapshotGeneration": 1,
+            "sourceSnapshotId": 2,
+            "sourceSnapshotSha256": "4214677ebf58e3ae6e65a012e260989c413df8bde3f87ceb5b75a8b808978385",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -129413,
+              13453765
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "combined-vietnamese-adopted",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.842743693023586,
+            "area": 250.26303995628325,
+            "caps": {
+              "0": 109.2137184651181,
+              "0.2": 109.2137184651181
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427436930236",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539333208793",
+                "volume": 7.253933320879299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093708211909",
+                "volume": 7.7093708211909,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794395509534",
+                "volume": 6.879439550953405,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                3582837,
+                -6250000
+              ],
+              [
+                3582837,
+                -37555914
+              ],
+              [
+                -15000000,
+                -37555914
+              ]
+            ],
+            "geometrySha256": "90e061892281f67e88a4a31b3b0236ddf4f9a7ffcca2984f87c452d06acb6992",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c89f10c1f6427ae154ca6df7f56d03e90e10e78d02c44bbd82bdf7957242564f",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "59db74eb6408498bfadc0efe50249689275c3d7834c77fdfa0a7aba4f81b8c5c",
+            "sourceSnapshotGeneration": 7,
+            "sourceSnapshotId": 8,
+            "sourceSnapshotSha256": "5aa87c0129c0d815cabae168b7687dbae936cff80e67d5af85d325ccbd042792",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "shared-hole-accent",
+          "metrics": {
+            "vertexCount": 42,
+            "faceCount": 72,
+            "edgeCount": 108,
+            "euler": 6,
+            "volume": 37.000002,
+            "area": 394.0000208,
+            "caps": {
+              "0": 185.00000999999997,
+              "0.2": 185.00000999999997
+            },
+            "components": 4,
+            "holes": 1,
+            "boundaryCount": 21,
+            "area2Grid": "370000020000000",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "170000000000000",
+                "volume": 17.000000000000004,
+                "triangles": 48
+              },
+              {
+                "source": 1,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000001,
+                "triangles": 12
+              },
+              {
+                "source": 2,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000003,
+                "triangles": 12
+              }
+            ],
+            "interpretation": {
+              "sourceAreaMm2": 185,
+              "observedDeltaMm2": 0.000010000000003174137,
+              "coordinateBoundMm": 0.0000772939453125,
+              "areaBoundMm2": 0.013117599848686264,
+              "scope": "this authored affine rectangle fixture only; no general source bound"
+            }
+          },
+          "frame": {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                9000001,
+                -6250000
+              ],
+              [
+                9000001,
+                -16250000
+              ],
+              [
+                -15000000,
+                -16250000
+              ]
+            ],
+            "geometrySha256": "4fbcf504dc28d3cf7d7aea627c10c89ba729675acabc2a0c6da3f98f3679b5f7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "54c9cf24994e4e2c893a451983e2ccc9837fad32805db6f38800ce240336d447",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed3f5e701e5e96910a07bef71132c57e10a7745cfb00eb7fa42492e97067e538",
+            "sourceSnapshotGeneration": 13,
+            "sourceSnapshotId": 14,
+            "sourceSnapshotSha256": "bcf76ac686052c06d1942e11f117dfb1ea4ec939477f90b89972e7b397a374e0",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "oo-multiline",
+          "metrics": {
+            "vertexCount": 2304,
+            "faceCount": 4608,
+            "edgeCount": 6912,
+            "euler": 0,
+            "volume": 13.758878352009347,
+            "area": 155.42137048898252,
+            "caps": {
+              "0": 68.79439176004648,
+              "0.2": 68.79439176004648
+            },
+            "components": 2,
+            "holes": 2,
+            "boundaryCount": 1152,
+            "area2Grid": "137588783520093",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "68794392203286",
+                "volume": 6.87943922032861,
+                "triangles": 2304
+              },
+              {
+                "source": 1,
+                "area2Grid": "68794391316807",
+                "volume": 6.879439131680725,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -6710065,
+                -6250000
+              ],
+              [
+                -6710065,
+                -32205518
+              ],
+              [
+                -15000000,
+                -32205518
+              ]
+            ],
+            "geometrySha256": "469a0d9e76935e4428bf8ddc176e0c4b78df11846e355bf581795c222853df24",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "0865d422eaf6ea993543bd27bfca221ad69d2b1d4e7ec9614ddfddd7c9fdb216",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed9f69e2f40109802360ffd5d73935472e113f3da477d6fd6341d577d9b01dd6",
+            "sourceSnapshotGeneration": 19,
+            "sourceSnapshotId": 20,
+            "sourceSnapshotSha256": "b2d96a5b91e39084e2eaf902f1a1bc3c2770cf377786e7cbd4194dc438b816c3",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-accent",
+          "metrics": {
+            "vertexCount": 50,
+            "faceCount": 88,
+            "edgeCount": 132,
+            "euler": 6,
+            "volume": 7.253934571546796,
+            "area": 84.96965312158184,
+            "caps": {
+              "0": 36.269672857733994,
+              "0.2": 36.269672857733994
+            },
+            "components": 3,
+            "holes": 0,
+            "boundaryCount": 25,
+            "area2Grid": "72539345715468",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539345715468",
+                "volume": 7.253934571546796,
+                "triangles": 88
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -9139386,
+                -6250000
+              ],
+              [
+                -9139386,
+                -19514407
+              ],
+              [
+                -15000000,
+                -19514407
+              ]
+            ],
+            "geometrySha256": "fd50e5fa0604e055ecdff9c2065055a34633a35e398be8ff9736481569362bf7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2335220f39824055ebbe092537e5d72edf6a81dea62c083607b32b3cb1a10c17",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ff169c961fb413dbc4ccf738af9876816f95402eea6ae7ae74a74b15d0522b4d",
+            "sourceSnapshotGeneration": 25,
+            "sourceSnapshotId": 26,
+            "sourceSnapshotSha256": "f58e08d5819ed92bcdf952f192d4f85ac4a79127c1ecdf792f2801d8c5d6ea14",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-regular-multiline",
+          "metrics": {
+            "vertexCount": 1804,
+            "faceCount": 3596,
+            "edgeCount": 5394,
+            "euler": 6,
+            "volume": 16.013759849211546,
+            "area": 192.54628878410136,
+            "caps": {
+              "0": 80.0687992460584,
+              "0.2": 80.0687992460584
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 902,
+            "area2Grid": "160137598492117",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "53253780958740",
+                "volume": 5.325378095874,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "57225759855218",
+                "volume": 5.722575985521822,
+                "triangles": 1216
+              },
+              {
+                "source": 2,
+                "area2Grid": "49658057678159",
+                "volume": 4.96580576781574,
+                "triangles": 2292
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                2512111,
+                -6250000
+              ],
+              [
+                2512111,
+                -36426951
+              ],
+              [
+                -15000000,
+                -36426951
+              ]
+            ],
+            "geometrySha256": "d9c4933c10638fa9d6503c2b43341b6d018792dfd978868006fb085292f026b7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c00480192a3a0ccfe3c939ef8aedaa988780e45e06b1e78669e6ca7f666d661e",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "d24815d39feb937b7cb5b50595da7a43741903d0d91d77e04484d87b4d1fbb4a",
+            "sourceSnapshotGeneration": 31,
+            "sourceSnapshotId": 32,
+            "sourceSnapshotSha256": "0628b5341caccf4a7475ab3a7d4bae4686a6b02faa22173eb4353c8cdd5a588b",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "status": "pass",
+      "moduleSha256": "74ead2291e7f17c32f3f88c179a510a4e3d1babe16e9953e454af1c7dc2d2918",
+      "errors": [],
+      "checks": [
+        "actual frame version1 combined-vietnamese-original",
+        "immutable original combined-vietnamese-original",
+        "exact source hash binding combined-vietnamese-original",
+        "request captured before yield combined-vietnamese-original",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 combined-vietnamese-adopted",
+        "immutable original combined-vietnamese-adopted",
+        "exact source hash binding combined-vietnamese-adopted",
+        "request captured before yield combined-vietnamese-adopted",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 shared-hole-accent",
+        "immutable original shared-hole-accent",
+        "exact source hash binding shared-hole-accent",
+        "request captured before yield shared-hole-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 oo-multiline",
+        "immutable original oo-multiline",
+        "exact source hash binding oo-multiline",
+        "request captured before yield oo-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-accent",
+        "immutable original nfd-accent",
+        "exact source hash binding nfd-accent",
+        "request captured before yield nfd-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-regular-multiline",
+        "immutable original nfd-regular-multiline",
+        "exact source hash binding nfd-regular-multiline",
+        "request captured before yield nfd-regular-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "controlled running-frame cancellation no publication",
+        "released reader cannot start a job",
+        "framed planar context consumed by actual source assembly",
+        "assembly produces real triangles",
+        "independent frame remains after assembly",
+        "one Worker and Module for source/frame/product",
+        "retire version proof",
+        "retired opaque lease never restored",
+        "cleanup no runtime restart",
+        "replacement obtains new actual capability",
+        "old frame stays retired after replacement/ABA"
+      ],
+      "records": [
+        {
+          "name": "combined-vietnamese-original",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.84274155930681,
+            "area": 250.26301621553006,
+            "caps": {
+              "0": 109.21370779653394,
+              "0.2": 109.21370779653394
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427415593068",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539331897703",
+                "volume": 7.253933189770299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093695980554",
+                "volume": 7.709369598055418,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794387714811",
+                "volume": 6.879438771481047,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -129413,
+                13453765
+              ],
+              [
+                17453422,
+                13453765
+              ],
+              [
+                17453422,
+                -16852149
+              ],
+              [
+                -129413,
+                -16852149
+              ]
+            ],
+            "geometrySha256": "7d11bec886e17d0d60ebe9d2323e29ebbef24170a785d1b35da2fffdc8b36f81",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2ce8512a470b2de3ee00f8daa4ccc546c3bd986c82bb8d0499be949003645b5d",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -0.1294126883682002,
+              13.453764550524818
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "36b24c3a79d59d8f1e493faceb8821fdfc5258988813f4fd4c34dcd11353238e",
+            "sourceSnapshotGeneration": 1,
+            "sourceSnapshotId": 2,
+            "sourceSnapshotSha256": "4214677ebf58e3ae6e65a012e260989c413df8bde3f87ceb5b75a8b808978385",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -129413,
+              13453765
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "combined-vietnamese-adopted",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.842743693023586,
+            "area": 250.26303995628325,
+            "caps": {
+              "0": 109.2137184651181,
+              "0.2": 109.2137184651181
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427436930236",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539333208793",
+                "volume": 7.253933320879299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093708211909",
+                "volume": 7.7093708211909,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794395509534",
+                "volume": 6.879439550953405,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                3582837,
+                -6250000
+              ],
+              [
+                3582837,
+                -37555914
+              ],
+              [
+                -15000000,
+                -37555914
+              ]
+            ],
+            "geometrySha256": "90e061892281f67e88a4a31b3b0236ddf4f9a7ffcca2984f87c452d06acb6992",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c89f10c1f6427ae154ca6df7f56d03e90e10e78d02c44bbd82bdf7957242564f",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "59db74eb6408498bfadc0efe50249689275c3d7834c77fdfa0a7aba4f81b8c5c",
+            "sourceSnapshotGeneration": 7,
+            "sourceSnapshotId": 8,
+            "sourceSnapshotSha256": "5aa87c0129c0d815cabae168b7687dbae936cff80e67d5af85d325ccbd042792",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "shared-hole-accent",
+          "metrics": {
+            "vertexCount": 42,
+            "faceCount": 72,
+            "edgeCount": 108,
+            "euler": 6,
+            "volume": 37.000002,
+            "area": 394.0000208,
+            "caps": {
+              "0": 185.00000999999997,
+              "0.2": 185.00000999999997
+            },
+            "components": 4,
+            "holes": 1,
+            "boundaryCount": 21,
+            "area2Grid": "370000020000000",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "170000000000000",
+                "volume": 17.000000000000004,
+                "triangles": 48
+              },
+              {
+                "source": 1,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000001,
+                "triangles": 12
+              },
+              {
+                "source": 2,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000003,
+                "triangles": 12
+              }
+            ],
+            "interpretation": {
+              "sourceAreaMm2": 185,
+              "observedDeltaMm2": 0.000010000000003174137,
+              "coordinateBoundMm": 0.0000772939453125,
+              "areaBoundMm2": 0.013117599848686264,
+              "scope": "this authored affine rectangle fixture only; no general source bound"
+            }
+          },
+          "frame": {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                9000001,
+                -6250000
+              ],
+              [
+                9000001,
+                -16250000
+              ],
+              [
+                -15000000,
+                -16250000
+              ]
+            ],
+            "geometrySha256": "4fbcf504dc28d3cf7d7aea627c10c89ba729675acabc2a0c6da3f98f3679b5f7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "54c9cf24994e4e2c893a451983e2ccc9837fad32805db6f38800ce240336d447",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed3f5e701e5e96910a07bef71132c57e10a7745cfb00eb7fa42492e97067e538",
+            "sourceSnapshotGeneration": 13,
+            "sourceSnapshotId": 14,
+            "sourceSnapshotSha256": "bcf76ac686052c06d1942e11f117dfb1ea4ec939477f90b89972e7b397a374e0",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "oo-multiline",
+          "metrics": {
+            "vertexCount": 2304,
+            "faceCount": 4608,
+            "edgeCount": 6912,
+            "euler": 0,
+            "volume": 13.758878352009347,
+            "area": 155.42137048898252,
+            "caps": {
+              "0": 68.79439176004648,
+              "0.2": 68.79439176004648
+            },
+            "components": 2,
+            "holes": 2,
+            "boundaryCount": 1152,
+            "area2Grid": "137588783520093",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "68794392203286",
+                "volume": 6.87943922032861,
+                "triangles": 2304
+              },
+              {
+                "source": 1,
+                "area2Grid": "68794391316807",
+                "volume": 6.879439131680725,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -6710065,
+                -6250000
+              ],
+              [
+                -6710065,
+                -32205518
+              ],
+              [
+                -15000000,
+                -32205518
+              ]
+            ],
+            "geometrySha256": "469a0d9e76935e4428bf8ddc176e0c4b78df11846e355bf581795c222853df24",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "0865d422eaf6ea993543bd27bfca221ad69d2b1d4e7ec9614ddfddd7c9fdb216",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed9f69e2f40109802360ffd5d73935472e113f3da477d6fd6341d577d9b01dd6",
+            "sourceSnapshotGeneration": 19,
+            "sourceSnapshotId": 20,
+            "sourceSnapshotSha256": "b2d96a5b91e39084e2eaf902f1a1bc3c2770cf377786e7cbd4194dc438b816c3",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-accent",
+          "metrics": {
+            "vertexCount": 50,
+            "faceCount": 88,
+            "edgeCount": 132,
+            "euler": 6,
+            "volume": 7.253934571546796,
+            "area": 84.96965312158184,
+            "caps": {
+              "0": 36.269672857733994,
+              "0.2": 36.269672857733994
+            },
+            "components": 3,
+            "holes": 0,
+            "boundaryCount": 25,
+            "area2Grid": "72539345715468",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539345715468",
+                "volume": 7.253934571546796,
+                "triangles": 88
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -9139386,
+                -6250000
+              ],
+              [
+                -9139386,
+                -19514407
+              ],
+              [
+                -15000000,
+                -19514407
+              ]
+            ],
+            "geometrySha256": "fd50e5fa0604e055ecdff9c2065055a34633a35e398be8ff9736481569362bf7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2335220f39824055ebbe092537e5d72edf6a81dea62c083607b32b3cb1a10c17",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ff169c961fb413dbc4ccf738af9876816f95402eea6ae7ae74a74b15d0522b4d",
+            "sourceSnapshotGeneration": 25,
+            "sourceSnapshotId": 26,
+            "sourceSnapshotSha256": "f58e08d5819ed92bcdf952f192d4f85ac4a79127c1ecdf792f2801d8c5d6ea14",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-regular-multiline",
+          "metrics": {
+            "vertexCount": 1804,
+            "faceCount": 3596,
+            "edgeCount": 5394,
+            "euler": 6,
+            "volume": 16.013759849211546,
+            "area": 192.54628878410136,
+            "caps": {
+              "0": 80.0687992460584,
+              "0.2": 80.0687992460584
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 902,
+            "area2Grid": "160137598492117",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "53253780958740",
+                "volume": 5.325378095874,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "57225759855218",
+                "volume": 5.722575985521822,
+                "triangles": 1216
+              },
+              {
+                "source": 2,
+                "area2Grid": "49658057678159",
+                "volume": 4.96580576781574,
+                "triangles": 2292
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                2512111,
+                -6250000
+              ],
+              [
+                2512111,
+                -36426951
+              ],
+              [
+                -15000000,
+                -36426951
+              ]
+            ],
+            "geometrySha256": "d9c4933c10638fa9d6503c2b43341b6d018792dfd978868006fb085292f026b7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c00480192a3a0ccfe3c939ef8aedaa988780e45e06b1e78669e6ca7f666d661e",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "d24815d39feb937b7cb5b50595da7a43741903d0d91d77e04484d87b4d1fbb4a",
+            "sourceSnapshotGeneration": 31,
+            "sourceSnapshotId": 32,
+            "sourceSnapshotSha256": "0628b5341caccf4a7475ab3a7d4bae4686a6b02faa22173eb4353c8cdd5a588b",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "status": "pass",
+      "moduleSha256": "74ead2291e7f17c32f3f88c179a510a4e3d1babe16e9953e454af1c7dc2d2918",
+      "errors": [],
+      "checks": [
+        "actual frame version1 combined-vietnamese-original",
+        "immutable original combined-vietnamese-original",
+        "exact source hash binding combined-vietnamese-original",
+        "request captured before yield combined-vietnamese-original",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 combined-vietnamese-adopted",
+        "immutable original combined-vietnamese-adopted",
+        "exact source hash binding combined-vietnamese-adopted",
+        "request captured before yield combined-vietnamese-adopted",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 shared-hole-accent",
+        "immutable original shared-hole-accent",
+        "exact source hash binding shared-hole-accent",
+        "request captured before yield shared-hole-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 oo-multiline",
+        "immutable original oo-multiline",
+        "exact source hash binding oo-multiline",
+        "request captured before yield oo-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-accent",
+        "immutable original nfd-accent",
+        "exact source hash binding nfd-accent",
+        "request captured before yield nfd-accent",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "actual frame version1 nfd-regular-multiline",
+        "immutable original nfd-regular-multiline",
+        "exact source hash binding nfd-regular-multiline",
+        "request captured before yield nfd-regular-multiline",
+        "forged lease rejected",
+        "wrong source hash rejected",
+        "no hidden repeated rounding",
+        "shear rejected",
+        "controlled running-frame cancellation no publication",
+        "released reader cannot start a job",
+        "framed planar context consumed by actual source assembly",
+        "assembly produces real triangles",
+        "independent frame remains after assembly",
+        "one Worker and Module for source/frame/product",
+        "retire version proof",
+        "retired opaque lease never restored",
+        "cleanup no runtime restart",
+        "replacement obtains new actual capability",
+        "old frame stays retired after replacement/ABA"
+      ],
+      "records": [
+        {
+          "name": "combined-vietnamese-original",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.84274155930681,
+            "area": 250.26301621553006,
+            "caps": {
+              "0": 109.21370779653394,
+              "0.2": 109.21370779653394
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427415593068",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539331897703",
+                "volume": 7.253933189770299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093695980554",
+                "volume": 7.709369598055418,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794387714811",
+                "volume": 6.879438771481047,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -129413,
+                13453765
+              ],
+              [
+                17453422,
+                13453765
+              ],
+              [
+                17453422,
+                -16852149
+              ],
+              [
+                -129413,
+                -16852149
+              ]
+            ],
+            "geometrySha256": "7d11bec886e17d0d60ebe9d2323e29ebbef24170a785d1b35da2fffdc8b36f81",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2ce8512a470b2de3ee00f8daa4ccc546c3bd986c82bb8d0499be949003645b5d",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -0.1294126883682002,
+              13.453764550524818
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "36b24c3a79d59d8f1e493faceb8821fdfc5258988813f4fd4c34dcd11353238e",
+            "sourceSnapshotGeneration": 1,
+            "sourceSnapshotId": 2,
+            "sourceSnapshotSha256": "4214677ebf58e3ae6e65a012e260989c413df8bde3f87ceb5b75a8b808978385",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -129413,
+              13453765
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "combined-vietnamese-adopted",
+          "metrics": {
+            "vertexCount": 1808,
+            "faceCount": 3604,
+            "edgeCount": 5406,
+            "euler": 6,
+            "volume": 21.842743693023586,
+            "area": 250.26303995628325,
+            "caps": {
+              "0": 109.2137184651181,
+              "0.2": 109.2137184651181
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 904,
+            "area2Grid": "218427436930236",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539333208793",
+                "volume": 7.253933320879299,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "77093708211909",
+                "volume": 7.7093708211909,
+                "triangles": 1212
+              },
+              {
+                "source": 2,
+                "area2Grid": "68794395509534",
+                "volume": 6.879439550953405,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 904,
+            "contours": 7,
+            "edges": 904,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                3582837,
+                -6250000
+              ],
+              [
+                3582837,
+                -37555914
+              ],
+              [
+                -15000000,
+                -37555914
+              ]
+            ],
+            "geometrySha256": "90e061892281f67e88a4a31b3b0236ddf4f9a7ffcca2984f87c452d06acb6992",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c89f10c1f6427ae154ca6df7f56d03e90e10e78d02c44bbd82bdf7957242564f",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "59db74eb6408498bfadc0efe50249689275c3d7834c77fdfa0a7aba4f81b8c5c",
+            "sourceSnapshotGeneration": 7,
+            "sourceSnapshotId": 8,
+            "sourceSnapshotSha256": "5aa87c0129c0d815cabae168b7687dbae936cff80e67d5af85d325ccbd042792",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "shared-hole-accent",
+          "metrics": {
+            "vertexCount": 42,
+            "faceCount": 72,
+            "edgeCount": 108,
+            "euler": 6,
+            "volume": 37.000002,
+            "area": 394.0000208,
+            "caps": {
+              "0": 185.00000999999997,
+              "0.2": 185.00000999999997
+            },
+            "components": 4,
+            "holes": 1,
+            "boundaryCount": 21,
+            "area2Grid": "370000020000000",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "170000000000000",
+                "volume": 17.000000000000004,
+                "triangles": 48
+              },
+              {
+                "source": 1,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000001,
+                "triangles": 12
+              },
+              {
+                "source": 2,
+                "area2Grid": "100000010000000",
+                "volume": 10.000001000000003,
+                "triangles": 12
+              }
+            ],
+            "interpretation": {
+              "sourceAreaMm2": 185,
+              "observedDeltaMm2": 0.000010000000003174137,
+              "coordinateBoundMm": 0.0000772939453125,
+              "areaBoundMm2": 0.013117599848686264,
+              "scope": "this authored affine rectangle fixture only; no general source bound"
+            }
+          },
+          "frame": {
+            "points": 16,
+            "contours": 5,
+            "edges": 18,
+            "sharedEdges": 3
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                9000001,
+                -6250000
+              ],
+              [
+                9000001,
+                -16250000
+              ],
+              [
+                -15000000,
+                -16250000
+              ]
+            ],
+            "geometrySha256": "4fbcf504dc28d3cf7d7aea627c10c89ba729675acabc2a0c6da3f98f3679b5f7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "54c9cf24994e4e2c893a451983e2ccc9837fad32805db6f38800ce240336d447",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed3f5e701e5e96910a07bef71132c57e10a7745cfb00eb7fa42492e97067e538",
+            "sourceSnapshotGeneration": 13,
+            "sourceSnapshotId": 14,
+            "sourceSnapshotSha256": "bcf76ac686052c06d1942e11f117dfb1ea4ec939477f90b89972e7b397a374e0",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "oo-multiline",
+          "metrics": {
+            "vertexCount": 2304,
+            "faceCount": 4608,
+            "edgeCount": 6912,
+            "euler": 0,
+            "volume": 13.758878352009347,
+            "area": 155.42137048898252,
+            "caps": {
+              "0": 68.79439176004648,
+              "0.2": 68.79439176004648
+            },
+            "components": 2,
+            "holes": 2,
+            "boundaryCount": 1152,
+            "area2Grid": "137588783520093",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "68794392203286",
+                "volume": 6.87943922032861,
+                "triangles": 2304
+              },
+              {
+                "source": 1,
+                "area2Grid": "68794391316807",
+                "volume": 6.879439131680725,
+                "triangles": 2304
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 1152,
+            "contours": 4,
+            "edges": 1152,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -6710065,
+                -6250000
+              ],
+              [
+                -6710065,
+                -32205518
+              ],
+              [
+                -15000000,
+                -32205518
+              ]
+            ],
+            "geometrySha256": "469a0d9e76935e4428bf8ddc176e0c4b78df11846e355bf581795c222853df24",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "0865d422eaf6ea993543bd27bfca221ad69d2b1d4e7ec9614ddfddd7c9fdb216",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ed9f69e2f40109802360ffd5d73935472e113f3da477d6fd6341d577d9b01dd6",
+            "sourceSnapshotGeneration": 19,
+            "sourceSnapshotId": 20,
+            "sourceSnapshotSha256": "b2d96a5b91e39084e2eaf902f1a1bc3c2770cf377786e7cbd4194dc438b816c3",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-accent",
+          "metrics": {
+            "vertexCount": 50,
+            "faceCount": 88,
+            "edgeCount": 132,
+            "euler": 6,
+            "volume": 7.253934571546796,
+            "area": 84.96965312158184,
+            "caps": {
+              "0": 36.269672857733994,
+              "0.2": 36.269672857733994
+            },
+            "components": 3,
+            "holes": 0,
+            "boundaryCount": 25,
+            "area2Grid": "72539345715468",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "72539345715468",
+                "volume": 7.253934571546796,
+                "triangles": 88
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 25,
+            "contours": 3,
+            "edges": 25,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                -9139386,
+                -6250000
+              ],
+              [
+                -9139386,
+                -19514407
+              ],
+              [
+                -15000000,
+                -19514407
+              ]
+            ],
+            "geometrySha256": "fd50e5fa0604e055ecdff9c2065055a34633a35e398be8ff9736481569362bf7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "2335220f39824055ebbe092537e5d72edf6a81dea62c083607b32b3cb1a10c17",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "ff169c961fb413dbc4ccf738af9876816f95402eea6ae7ae74a74b15d0522b4d",
+            "sourceSnapshotGeneration": 25,
+            "sourceSnapshotId": 26,
+            "sourceSnapshotSha256": "f58e08d5819ed92bcdf952f192d4f85ac4a79127c1ecdf792f2801d8c5d6ea14",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        },
+        {
+          "name": "nfd-regular-multiline",
+          "metrics": {
+            "vertexCount": 1804,
+            "faceCount": 3596,
+            "edgeCount": 5394,
+            "euler": 6,
+            "volume": 16.013759849211546,
+            "area": 192.54628878410136,
+            "caps": {
+              "0": 80.0687992460584,
+              "0.2": 80.0687992460584
+            },
+            "components": 5,
+            "holes": 2,
+            "boundaryCount": 902,
+            "area2Grid": "160137598492117",
+            "partMetrics": [
+              {
+                "source": 0,
+                "area2Grid": "53253780958740",
+                "volume": 5.325378095874,
+                "triangles": 88
+              },
+              {
+                "source": 1,
+                "area2Grid": "57225759855218",
+                "volume": 5.722575985521822,
+                "triangles": 1216
+              },
+              {
+                "source": 2,
+                "area2Grid": "49658057678159",
+                "volume": 4.96580576781574,
+                "triangles": 2292
+              }
+            ],
+            "interpretation": null
+          },
+          "frame": {
+            "points": 902,
+            "contours": 7,
+            "edges": 902,
+            "sharedEdges": 0
+          },
+          "sourceFrame": {
+            "domainCornersGrid": [
+              [
+                -15000000,
+                -6250000
+              ],
+              [
+                2512111,
+                -6250000
+              ],
+              [
+                2512111,
+                -36426951
+              ],
+              [
+                -15000000,
+                -36426951
+              ]
+            ],
+            "geometrySha256": "d9c4933c10638fa9d6503c2b43341b6d018792dfd978868006fb085292f026b7",
+            "gridScalePerMm": 1000000,
+            "linearMatrix": [
+              1,
+              0,
+              0,
+              -1
+            ],
+            "requestSha256": "c00480192a3a0ccfe3c939ef8aedaa988780e45e06b1e78669e6ca7f666d661e",
+            "requestedMatrix": [
+              1,
+              0,
+              0,
+              -1,
+              -15,
+              -6.25
+            ],
+            "rounding": "binary64-exact-nearest-ties-even/1",
+            "sourceMetadataSha256": "d24815d39feb937b7cb5b50595da7a43741903d0d91d77e04484d87b4d1fbb4a",
+            "sourceSnapshotGeneration": 31,
+            "sourceSnapshotId": 32,
+            "sourceSnapshotSha256": "0628b5341caccf4a7475ab3a7d4bae4686a6b02faa22173eb4353c8cdd5a588b",
+            "totalErrorBoundMm": null,
+            "translationErrorUpperMmPerAxis": 5e-7,
+            "translationGrid": [
+              -15000000,
+              -6250000
+            ],
+            "version": "arch-source-frame/1"
+          }
+        }
+      ]
+    }
+  ],
+  "text": {
+    "status": "pass",
+    "moduleSha256": "d3e450bc4bf2763dba08bc9d3db89f2d0e7325b6c1c483cbe0853e668ea27c40",
+    "records": [
+      {
+        "name": "combined-vietnamese",
+        "text": "Ế\nĐO",
+        "wght": 620,
+        "bend": 12,
+        "fontSha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+        "svgSha256": "4af5a0bf6159dbfed4a6cc16ac4a33e5b83979edb39a01d18d58dcdf5275940d",
+        "svgExport": {
+          "status": "ready",
+          "parserViewportToSourceMm": [
+            1,
+            0,
+            0,
+            -1,
+            -0.1294126883682002,
+            13.453764550524818
+          ],
+          "expandedSegmentLimit": 16384
+        },
+        "sourceBounds": {
+          "minX": -0.1294126883682002,
+          "minY": -16.852147628012364,
+          "maxX": 17.453423716947203,
+          "maxY": 13.453764550524818,
+          "width": 17.582836405315405,
+          "height": 30.305912178537184,
+          "kind": "conservative-control-hull"
+        }
+      },
+      {
+        "name": "oo-multiline",
+        "text": "O\nO",
+        "wght": 620,
+        "bend": 12,
+        "fontSha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+        "svgSha256": "657e9923c92f9da45f0711bfa9d47110ee19f040aa6ac2cd71988f9d152005c5",
+        "svgExport": {
+          "status": "ready",
+          "parserViewportToSourceMm": [
+            1,
+            0,
+            0,
+            -1,
+            0.004037230262759484,
+            9.160743327940622
+          ],
+          "expandedSegmentLimit": 16384
+        },
+        "sourceBounds": {
+          "minX": 0.004037230262759484,
+          "minY": -16.794775040792114,
+          "maxX": 8.293971873922093,
+          "maxY": 9.160743327940622,
+          "width": 8.289934643659333,
+          "height": 25.955518368732736,
+          "kind": "conservative-control-hull"
+        }
+      },
+      {
+        "name": "nfd-accent",
+        "text": "Ế",
+        "wght": 620,
+        "bend": 0,
+        "fontSha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+        "svgSha256": "92c19d9982cd7b54b38b942325c0e3e320b99debde12ea2cf85db4c968c6b3f8",
+        "svgExport": {
+          "status": "ready",
+          "parserViewportToSourceMm": [
+            1,
+            0,
+            0,
+            -1,
+            0.8597831726074219,
+            13.264406204223633
+          ],
+          "expandedSegmentLimit": 16384
+        },
+        "sourceBounds": {
+          "minX": 0.8597831726074219,
+          "minY": 0,
+          "maxX": 6.720396995544434,
+          "maxY": 13.264406204223633,
+          "width": 5.860613822937012,
+          "height": 13.264406204223633,
+          "kind": "conservative-control-hull"
+        }
+      },
+      {
+        "name": "nfd-regular-multiline",
+        "text": "Ế\nĐO",
+        "wght": 400,
+        "bend": 0,
+        "fontSha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+        "svgSha256": "83cab7f33953537f14c4c5f7f3cd0c6728a335f269d85eb4bf6564029a7ac9eb",
+        "svgExport": {
+          "status": "ready",
+          "parserViewportToSourceMm": [
+            1,
+            0,
+            0,
+            -1,
+            0.1171875,
+            13.259765625
+          ],
+          "expandedSegmentLimit": 16384
+        },
+        "sourceBounds": {
+          "minX": 0.1171875,
+          "minY": -16.917187499999997,
+          "maxX": 17.629296875,
+          "maxY": 13.259765625,
+          "width": 17.512109375,
+          "height": 30.176953124999997,
+          "kind": "conservative-control-hull"
+        }
+      }
+    ]
+  },
+  "counts": {
+    "nodeSuites": 3,
+    "workerEngines": 3,
+    "svgRegression": 7,
+    "printingReadyRegression": 1,
+    "stagedNodeSuites": 3
+  },
+  "commands": [
+    {
+      "name": "native unified build",
+      "command": "work/build-private.ps1 -Target native",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/root-native-configure.log",
+          "bytes": 4398,
+          "sha256": "84ce953fdcc2038b2a58473c135539dee2c2e92d7753bf3dfb47f0862c18d7dd"
+        },
+        {
+          "path": "evidence/root-native-cpp.log",
+          "bytes": 21093,
+          "sha256": "e95d922ecd23e2f9ac618f262f0ff3c0ecb40d3a433329c3a8851d68eae5692a"
+        },
+        {
+          "path": "evidence/root-native-rust.log",
+          "bytes": 2558,
+          "sha256": "c78049d10f81b43c3eb89df859cba477673c4987327dec0622544122029ea109"
+        }
+      ]
+    },
+    {
+      "name": "WASM unified build",
+      "command": "work/build-private.ps1 -Target wasm",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/root-wasm-configure.log",
+          "bytes": 2337,
+          "sha256": "0f4627c9ca434f54530458d9137f698f3eb1e36cfd83dffd5397d12746c43846"
+        },
+        {
+          "path": "evidence/root-wasm-cpp.log",
+          "bytes": 65,
+          "sha256": "7716162f3cd3b99cf3b8a8dd6decf324e08c7e941aae7e730baba5e4fc8c075b"
+        },
+        {
+          "path": "evidence/root-wasm-rust.log",
+          "bytes": 819,
+          "sha256": "7efefc6ecd7b9cda331973d6076465844a31b2e53e2ab534396fe086de33b908"
+        },
+        {
+          "path": "evidence/root-wasm-link.log",
+          "bytes": 350,
+          "sha256": "8d493a9947b648a9f7fe0ce2084b9bccbb3a8ec2c2ba58dd40db51d307d6b51c"
+        }
+      ]
+    },
+    {
+      "name": "native library",
+      "command": "cargo +1.98.1 test --manifest-path $nsWork/src/kernel/Cargo.toml --offline --locked --release --lib -- --test-threads=1",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/frame-root-native-tests.log",
+          "bytes": 2089,
+          "sha256": "2ea150cff7430ef9f45e20dcc3080b2e948cb5b70fef26383b1f63e288973fa6"
+        }
+      ]
+    },
+    {
+      "name": "native source suite",
+      "command": "cargo +1.98.1 run --manifest-path $nsWork/tests/native-source/native/Cargo.toml --offline --locked --release -- $nsWork/tests/native-source/fixtures $run/evidence/native-source",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/native-source-suite.log",
+          "bytes": 696,
+          "sha256": "e0c264d746752481168ec84e9e26189db55015a1f03a8de97f890455581c0991"
+        }
+      ]
+    },
+    {
+      "name": "Node WASM",
+      "command": "node --test $nsWork/tests/native-source/runtime.test.mjs",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/source-node-test.log",
+          "bytes": 453,
+          "sha256": "f075f665cf69b0da0be4d80abfa79960f805f6645ca140a46b4e8bfe8a8ef73f"
+        }
+      ]
+    },
+    {
+      "name": "actual browser Workers",
+      "command": "node --test $nsWork/tests/native-source/worker.test.mjs",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/source-worker-test.log",
+          "bytes": 316,
+          "sha256": "a5ee685687ac8f72ab1b5dd4a6a3ab2364f325ba98dd34698f4dea7b5b0fee48"
+        }
+      ]
+    },
+    {
+      "name": "SVG regression",
+      "command": "node --test $nsWork/tests/kernel/svg-source.test.mjs (ARCH_NATIVE_BIN + ARCH_WASM_MODULE set)",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/svg-source-regression.log",
+          "bytes": 838,
+          "sha256": "cdeda6b37b74d9665bc662215a58ae062216047cc0356a157aea2151b2f711d0"
+        }
+      ]
+    },
+    {
+      "name": "ready version regression",
+      "command": "node --test $nsWork/tests/final-float/client-ready.test.mjs",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/client-ready-regression.log",
+          "bytes": 211,
+          "sha256": "cc5ad1f7a1baa298e100349b2e0cf2e396cde2e5f01ea738ede618abf83d2d5c"
+        }
+      ]
+    },
+    {
+      "name": "strict types",
+      "command": "node $nsWork/node_modules/typescript/lib/tsc.js --ignoreConfig --noEmit --strict --module nodenext --target es2022 --skipLibCheck $nsWork/tests/native-source/api-types.mts",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/source-types.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "same root text generation",
+      "command": "node $nsWork/tests/native-source/regenerate-text.mjs",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/text-regeneration.log",
+          "bytes": 2232,
+          "sha256": "716aa387f78567656764d2ddd95a25e9facb4d95a019bad1d802da71ff2a2a22"
+        }
+      ]
+    },
+    {
+      "name": "portable stage",
+      "command": "node $nsWork/tests/native-source/stage.mjs (ARCH_SOURCE_TEST_ROOT=$nsWork)",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/test-stage.log",
+          "bytes": 124,
+          "sha256": "05a1b6c6356bdb983bfb243cf0f598f96ce3b4c3a4db2688d3a3761fa304a63e"
+        }
+      ]
+    },
+    {
+      "name": "staged Node WASM",
+      "command": "node --test $run/work/native-source-test-snapshot/tests/native-source/runtime.test.mjs",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/portable-stage-node.log",
+          "bytes": 451,
+          "sha256": "b29b3196a61fcdac53362b2697c8497d6def94fef47e18805b43c2b1c1823995"
+        }
+      ]
+    },
+    {
+      "name": "primary Clipper stage",
+      "command": "CMake configure/build tests/native-source/clipper-stage; arch-native-source-tests dump-vector; python -B format-input.py; source_clipper_stage.exe input output",
+      "exitCode": 0,
+      "logs": [
+        {
+          "path": "evidence/clipper-stage-configure.log",
+          "bytes": 1013,
+          "sha256": "74e106a4b631e903cec37f70ea9a58c4bb31accbde96121b61fa9cebaa1d5d35"
+        },
+        {
+          "path": "evidence/clipper-stage-build.log",
+          "bytes": 1435,
+          "sha256": "f0066e04c50c5a07c5c3c6f6ac24156a3e27547e4bcd4c9dbe3dffe8014dfbea"
+        }
+      ]
+    }
+  ],
+  "rawEvidence": {
+    "geometryParity": {
+      "path": "evidence/node-source/geometry-parity.json",
+      "bytes": 12490,
+      "sha256": "e3ca6b59fab51dd7ca6350227ee086118f997fd6609409afffd21e43f63f138f"
+    },
+    "negativeWire": {
+      "path": "evidence/node-source/negative-wire.json",
+      "bytes": 639,
+      "sha256": "b4d66c2caa66902a8326c2495d26da0655d0bf14999053a745605b96fe07fc9f"
+    },
+    "rasterMetadata": {
+      "path": "evidence/node-source/raster-metadata.json",
+      "bytes": 9651,
+      "sha256": "9e20b9c493835a3614aa5a66a68ca808d1a24d04bc841c8c7a9dabad6111d535"
+    },
+    "clipperOriginal": {
+      "path": "evidence/original-clipper-stages.json",
+      "bytes": 53349,
+      "sha256": "a060d548be6a0c694240ec756b2adc4b2af512a92683d5e1f85d92345a53989d"
+    },
+    "clipperAdopted": {
+      "path": "evidence/adopted-clipper-stages.json",
+      "bytes": 50619,
+      "sha256": "ddc7c16f21f305fa3bd6fcc24c2831ec201d704724bb8c9ce3750d2d72298d44"
+    },
+    "clipperRegenerated": {
+      "path": "evidence/primary-regenerated.json",
+      "bytes": 53349,
+      "sha256": "a060d548be6a0c694240ec756b2adc4b2af512a92683d5e1f85d92345a53989d"
+    }
+  },
+  "limitations": [
+    "Source-frame output is planar assembly context, not completed product/mesh.",
+    "Only exact signed-axis permutations plus quantized translation; no total source/manufacturing precision claim.",
+    "Firefox startup failures remain recorded; final harness pass is not causal diagnosis.",
+    "Other curved-source refusals are not covered by this focused fix."
+  ]
+}

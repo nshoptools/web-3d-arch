@@ -1,0 +1,8 @@
+import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
+const room=fs.realpathSync(process.env.PROJECT_REVIEW_RUN),base=fs.realpathSync(path.join(room,'work/review-source')),manifestFile=path.join(room,'inputs/source-manifest.json'),manifestBytes=fs.readFileSync(manifestFile),manifest=JSON.parse(manifestBytes),hash=b=>createHash('sha256').update(b).digest('hex');
+const suffix=process.argv[2]??'after';if(!/^[a-z0-9-]+$/.test(suffix))throw Error('SUFFIX');
+const dest=path.join(room,'evidence/source-hashes-'+suffix+'.json');if(fs.existsSync(dest))throw Error('Preserve previous source verification');
+const files=manifest.files.map(pin=>{const file=fs.realpathSync(path.join(base,pin.path));if(!file.startsWith(base+path.sep))throw Error('SOURCE_LINK_ESCAPE');const b=fs.readFileSync(file),sha256=hash(b);return {path:pin.path,bytes:b.length,sha256,match:b.length===pin.bytes&&sha256===pin.sha256};});
+function list(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?list(path.join(dir,e.name)):[path.relative(base,path.join(dir,e.name)).split(path.sep).join('/')]);}
+const known=new Set(manifest.files.map(p=>p.path)),extras=list(base).filter(p=>!known.has(p)),result={at:new Date().toISOString(),manifestSha256:hash(manifestBytes),count:files.length,allMatch:files.every(f=>f.match),extras,files};
+fs.writeFileSync(dest,JSON.stringify(result,null,2));console.log(JSON.stringify({manifestSha256:result.manifestSha256,count:files.length,allMatch:result.allMatch,extras},null,2));process.exitCode=result.allMatch&&extras.length===0?0:1;

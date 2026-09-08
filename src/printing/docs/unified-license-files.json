@@ -1,0 +1,228 @@
+[
+  {
+    "path": "docs/licenses/kernel/manifold-LICENSE.txt",
+    "sourceRepoPath": "docs/licenses/kernel/manifold-LICENSE.txt",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "path": "docs/licenses/kernel/clipper2-LICENSE.txt",
+    "sourceRepoPath": "docs/licenses/kernel/clipper2-LICENSE.txt",
+    "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+    "bytes": 1338
+  },
+  {
+    "path": "docs/licenses/kernel/clipper2-no-iostream.patch",
+    "sourceRepoPath": "docs/licenses/kernel/clipper2-no-iostream.patch",
+    "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039",
+    "bytes": 5097
+  },
+  {
+    "path": "docs/licenses/kernel/harfbuzz-COPYING.txt",
+    "sourceRepoPath": ".toolchain/harfbuzz-original/COPYING",
+    "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+    "bytes": 1971
+  },
+  {
+    "path": "docs/licenses/test/Inter-OFL.txt",
+    "sourceRepoPath": "src/assets/fonts/licenses/inter/OFL.txt",
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+    "bytes": 4377
+  },
+  {
+    "path": "docs/licenses/emscripten/LICENSE",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/LICENSE",
+    "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+    "bytes": 5093
+  },
+  {
+    "path": "docs/licenses/emscripten/musl-COPYRIGHT.txt",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/system/lib/libc/musl/COPYRIGHT",
+    "sha256": "b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b",
+    "bytes": 6196
+  },
+  {
+    "path": "docs/licenses/emscripten/libcxx-LICENSE.txt",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/system/lib/libcxx/LICENSE.TXT",
+    "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+    "bytes": 16703
+  },
+  {
+    "path": "docs/licenses/emscripten/libcxxabi-LICENSE.txt",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/system/lib/libcxxabi/LICENSE.TXT",
+    "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+    "bytes": 16706
+  },
+  {
+    "path": "docs/licenses/emscripten/compiler-rt-LICENSE.txt",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/system/lib/compiler-rt/LICENSE.TXT",
+    "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+    "bytes": 16708
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/COPYRIGHT-library.html",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/COPYRIGHT-library.html",
+    "sha256": "07ca08d0838ccbbfb79bf292741c7c4c45311f90784431d09af9a1e0b90a9469",
+    "bytes": 1527758
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/MIT.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/MIT.txt",
+    "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+    "bytes": 1078
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/Apache-2.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/Apache-2.0.txt",
+    "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "bytes": 10280
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/LLVM-exception.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/LLVM-exception.txt",
+    "sha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+    "bytes": 919
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/COPYRIGHT-library.html",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/COPYRIGHT-library.html",
+    "sha256": "68129500b616d5838629e68f55ff3aed5e096dacf60ce9eb41bbe599a563afa6",
+    "bytes": 1512520
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/MIT.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/MIT.txt",
+    "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+    "bytes": 1078
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/Apache-2.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/Apache-2.0.txt",
+    "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+    "bytes": 10280
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/LLVM-exception.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/LLVM-exception.txt",
+    "sha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+    "bytes": 919
+  },
+  {
+    "path": "docs/licenses/emscripten/dlmalloc-notice.txt",
+    "sourceRepoPath": ".toolchain/emsdk/upstream/emscripten/system/lib/dlmalloc.c",
+    "sourceSha256": "175ef7cab6d59b858471ad8ba16ee8a2f0536ddf666742b5e044b187171695d6",
+    "noticeSha256": "97b860afb98f4f1a5f6eb89fc986badf9a0f5cb07dffc976c8907c51788f5413",
+    "sourceByteRange": [
+      1653,
+      28920
+    ]
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/BSD-2-Clause.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/BSD-2-Clause.txt",
+    "sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+    "bytes": 1267
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/CC-BY-SA-4.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/CC-BY-SA-4.0.txt",
+    "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+    "bytes": 20137
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/GCC-exception-3.1.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/GCC-exception-3.1.txt",
+    "sha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+    "bytes": 3320
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/GPL-2.0-only.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/GPL-2.0-only.txt",
+    "sha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+    "bytes": 17642
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/GPL-3.0-or-later.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/GPL-3.0-or-later.txt",
+    "sha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+    "bytes": 34795
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/ISC.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/ISC.txt",
+    "sha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+    "bytes": 730
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/NCSA.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/NCSA.txt",
+    "sha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+    "bytes": 1676
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/OFL-1.1.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/OFL-1.1.txt",
+    "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+    "bytes": 4016
+  },
+  {
+    "path": "docs/licenses/rust/nightly-2026-09-07/licenses/Unicode-3.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/nightly-2026-09-07-x86_64-pc-windows-msvc/share/doc/rust/licenses/Unicode-3.0.txt",
+    "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+    "bytes": 1995
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/BSD-2-Clause.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/BSD-2-Clause.txt",
+    "sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+    "bytes": 1267
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/CC-BY-SA-4.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/CC-BY-SA-4.0.txt",
+    "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+    "bytes": 20137
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/GCC-exception-3.1.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/GCC-exception-3.1.txt",
+    "sha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+    "bytes": 3320
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/GPL-2.0-only.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/GPL-2.0-only.txt",
+    "sha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+    "bytes": 17642
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/GPL-3.0-or-later.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/GPL-3.0-or-later.txt",
+    "sha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+    "bytes": 34795
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/ISC.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/ISC.txt",
+    "sha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+    "bytes": 730
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/NCSA.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/NCSA.txt",
+    "sha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+    "bytes": 1676
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/OFL-1.1.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/OFL-1.1.txt",
+    "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+    "bytes": 4016
+  },
+  {
+    "path": "docs/licenses/rust/1.98.1/licenses/Unicode-3.0.txt",
+    "sourceRepoPath": ".toolchain/rustup/toolchains/1.98.1-x86_64-pc-windows-msvc/share/doc/rust/licenses/Unicode-3.0.txt",
+    "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+    "bytes": 1995
+  }
+]

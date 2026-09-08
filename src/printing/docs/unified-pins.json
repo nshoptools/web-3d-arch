@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-08",
+  "verification": "Offline verification of already acquired official-source bytes and installed tools; no network operation in wave2.",
+  "kernelRuntimeABI": 2,
+  "snapshotFormat": "ARCH/1",
+  "printingABI": 1,
+  "bridgeABI": 2,
+  "mainPreimage": "../integration/main-preimage.json",
+  "parentLicenseReferences": "../integration/parent-license-references.json",
+  "lib3mf": {
+    "version": "2.5.0",
+    "commit": "64bb454d1fcb53effa57d3cef752a10d740d41a2",
+    "release": "https://github.com/3MFConsortium/lib3mf/releases/tag/v2.5.0",
+    "archive": "https://github.com/3MFConsortium/lib3mf/releases/download/v2.5.0/lib3mf-2.5.0-source-with-submodules.zip",
+    "archiveSha256": "46914f7c7a82ee0839fdd09b339daf621540d5c8d8904b2a0449fd67353dd7cb",
+    "archiveBytes": 58890676,
+    "originalCmakeSha256": "3685b1311423ebc08c24ddb01af2c8ce30efbcad0de3e1979e89d4dd290928f7",
+    "derivedCmakeSha256": "2dabcae25d0a5e89c78a4af44d9450f8101d80ff0deb65692864cf04b8a08993",
+    "patch": "../tools/prepare-lib3mf.py",
+    "bundled": [
+      "libzip 1.11.1 (header measured)",
+      "zlib 1.3.1",
+      "cpp-base64 2.rc.08 (release credits)",
+      "fast_float 6.0.0 (release credits)"
+    ]
+  },
+  "preparedTrees": [
+    {
+      "name": "manifold",
+      "fileCount": 380,
+      "treeSha256": "3f1ee0cb9a5281422b6691eac8d1aac798ae7a409b569a0bb6ed343254df19fc"
+    },
+    {
+      "name": "clipper2-derived",
+      "fileCount": 223,
+      "treeSha256": "6316dc4c346683b329f362b78d9d2c324ad628175716f1ccd280c12d305a62cb"
+    },
+    {
+      "name": "harfbuzz-original",
+      "fileCount": 3808,
+      "treeSha256": "f83e0b89e8a075adfcf338ab875bb71304f7c12143f1867f63024a213e0a31bf"
+    },
+    {
+      "name": "lib3mf-derived",
+      "fileCount": 5360,
+      "treeSha256": "51a44f709d416932e76c9a708ca50e82be4029f378667d4a7073ce95c4441e10",
+      "archiveSha256": "46914f7c7a82ee0839fdd09b339daf621540d5c8d8904b2a0449fd67353dd7cb"
+    }
+  ],
+  "treeHashRecipes": {
+    "manifold/clipper2-derived/harfbuzz-original": "SHA256 UTF8 ordinal sorted relativePath:UPPERCASE_SHA256 LF lines",
+    "lib3mf-derived": "SHA256 UTF8 ordinal sorted relativePath:lowercase_sha256 LF lines"
+  },
+  "parentToolchain": {
+    "schemaVersion": 1,
+    "date": "2026-09-08",
+    "status": "provisional; O-01 remains open for unified HarfBuzz integration",
+    "runtimeABI": 2,
+    "snapshotFormat": "ARCH/1",
+    "node": "24.19.0",
+    "rustNative": "1.98.1",
+    "rustWasm": "nightly-2026-09-07",
+    "rustWasmCommit": "5a2be9f5f",
+    "rustTarget": "wasm32-unknown-emscripten",
+    "rustBuildStd": [
+      "std",
+      "panic_abort"
+    ],
+    "emsdk": "6.0.9",
+    "emsdkReleaseHash": "f04ea239d533260dd1db760dd2d668d5f9a88d6b",
+    "cmake": "4.4.3",
+    "ninja": "1.13.2",
+    "manifold": {
+      "version": "3.5.3",
+      "revision": "0edd9d54876f3135e431575214dd6d8a72866fee",
+      "source": "https://github.com/elalish/manifold",
+      "internalParallelism": false,
+      "license": "../licenses/kernel/manifold-LICENSE.txt",
+      "licenseSha256": "C71D239DF91726FC519C6EB72D318EC65820627232B2F796219E87DCF35D0AB4"
+    },
+    "clipper2": {
+      "revision": "46f639177fe418f9689e8ddb74f08a870c71f5b4",
+      "source": "https://codeload.github.com/AngusJohnson/Clipper2/tar.gz/46f639177fe418f9689e8ddb74f08a870c71f5b4",
+      "archiveSha256": "73F5783E0C88299976334F48E3E356C756B96212C652ECC8BCEEC3BD99455BCB",
+      "patch": "../licenses/kernel/clipper2-no-iostream.patch",
+      "patchSha256": "88763E9A0B2AD9EC036BAEAF00317090621AA98C9754869E856BA16080EA8039",
+      "derivedTreeSha256": "6316DC4C346683B329F362B78D9D2C324AD628175716F1CCD280C12D305A62CB",
+      "treeHashRecipe": "SHA256 of UTF-8 ordinal-sorted relativePath:UPPERCASE_SHA256 lines, LF-terminated",
+      "license": "../licenses/kernel/clipper2-LICENSE.txt",
+      "licenseSha256": "C9BFF75738922193E67FA726FA225535870D2AA1059F91452C411736284AD566",
+      "configureDownloads": false
+    },
+    "harfbuzz": {
+      "revision": "36cb489cb02ce4b92099669ba9f9bea348eff93f",
+      "source": "https://codeload.github.com/harfbuzz/harfbuzz/tar.gz/36cb489cb02ce4b92099669ba9f9bea348eff93f",
+      "archiveSha256": "0AFA12C8EF4BC4FFEBD99E5D2A4A2C56DFE329C661FEDA08A9BC878B7352BE89",
+      "matchesValidatedHarfbuzzjs": "1.6.1",
+      "unifiedModuleVerified": false,
+      "extractionNote": "Original archive retained; build tree omits the CLAUDE.md symlink to AGENTS.md. No compiled source or license changed."
+    }
+  },
+  "rustNativeActual": "rustc 1.98.1 (48a229cea 2026-09-01)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: x86_64-pc-windows-msvc\nrelease: 1.98.1\nLLVM version: 22.1.8",
+  "rustWasmActual": "rustc 1.100.0-nightly (5a2be9f5f 2026-09-06)\nbinary: rustc\ncommit-hash: 5a2be9f5f075d31e3ca5526b5b029881ce441253\ncommit-date: 2026-09-06\nhost: x86_64-pc-windows-msvc\nrelease: 1.100.0-nightly\nLLVM version: 23.1.1",
+  "toolchainOfficialSources": {
+    "rust": "https://github.com/rust-lang/rust",
+    "emscripten": "https://github.com/emscripten-core/emscripten/tree/4e4223852a0835923411059a3929907d7df1232e",
+    "emsdk": "https://github.com/emscripten-core/emsdk/tree/6.0.9",
+    "cmake": "https://cmake.org/download/",
+    "ninja": "https://github.com/ninja-build/ninja/releases/tag/v1.13.2",
+    "node": "https://nodejs.org/dist/v24.19.0/"
+  },
+  "compileFlags": {
+    "wasmC": [
+      "-pthread"
+    ],
+    "wasmCpp": [
+      "-pthread",
+      "-fexceptions"
+    ],
+    "rust": [
+      "-C panic=abort",
+      "-C target-feature=+atomics,+bulk-memory,+mutable-globals"
+    ]
+  },
+  "link": {
+    "pthread": true,
+    "exceptions": true,
+    "memory": "shared",
+    "allocator": "Emscripten dlmalloc-mt",
+    "initialBytes": 67108864,
+    "maximumBytes": 1073741824,
+    "stackBytes": 4194304,
+    "extraWasmInstance": false,
+    "native": "static MSVC library/executable; creating API retains pointer ownership"
+  },
+  "npmOfflineTarballs": [
+    {
+      "name": "xmldom-0.9.12.tgz",
+      "resolved": "https://registry.npmjs.org/@xmldom/xmldom/-/xmldom-0.9.12.tgz",
+      "integrity": "sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==",
+      "sha256": "08245e18c248b957b4c6e07f8549ad5f55ae11b7a8abd4c1113a0fd61ddc67ee"
+    },
+    {
+      "name": "fflate-0.8.3.tgz",
+      "resolved": "https://registry.npmjs.org/fflate/-/fflate-0.8.3.tgz",
+      "integrity": "sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==",
+      "sha256": "38c2cd824402407b43153c782274aec2ea83ea688e4aa0b743c5f2c305857d92"
+    }
+  ],
+  "testFont": {
+    "name": "Inter original variable TTF",
+    "source": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+    "license": "licenses/test/Inter-OFL.txt",
+    "productionBundle": false
+  },
+  "licenses": "unified-license-files.json",
+  "standaloneWave1Pins": "pins.json",
+  "limits": [
+    "Analytic export integration scope only",
+    "No new slicer invocation in wave2",
+    "U1 CLI unverified",
+    "No general importer",
+    "No full G5/G6 or physical fit",
+    "No cross-host clean-build byte identity claim"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "arch-ui-test-preimage/1",
+  "files": [
+    {
+      "file": "tests/ui/request-boundary/baseline.mjs",
+      "bytes": 1950,
+      "sha256": "0387553de72a4f2dfab342a97712e74721cad36887bb0ed0ef577957e465d1ff"
+    },
+    {
+      "file": "tests/ui/request-boundary/browser-cases.mjs",
+      "bytes": 13418,
+      "sha256": "506106519844dcb6486ad8ea86fbb77b955d40926c7777597173a0a3f3d939ed"
+    },
+    {
+      "file": "tests/ui/request-boundary/deferred-bridge.ts",
+      "bytes": 4186,
+      "sha256": "0c3edadefbde632933216adb922dc1e01d1e113b02ad68216eab89c28f50648e"
+    },
+    {
+      "file": "tests/ui/request-boundary/harness.tsx",
+      "bytes": 7473,
+      "sha256": "227f7eaec9f524bfe1013bf74143ad05df06aa93fb4a53a209f354bdaf2b6450"
+    },
+    {
+      "file": "tests/ui/request-boundary/index.html",
+      "bytes": 234,
+      "sha256": "d9fb3daba36c493be70f4d3303c98e10c305f168db8e76641492f8bf4e4a98f7"
+    },
+    {
+      "file": "tests/ui/request-boundary/pure.test.mjs",
+      "bytes": 5106,
+      "sha256": "9fae73705fde96e616100c4788a7d1d0919554c2e0f0cdc03ca848070ed125d8"
+    },
+    {
+      "file": "tests/ui/request-boundary/run.mjs",
+      "bytes": 4371,
+      "sha256": "c7362e9f760e9051e01255a1b460a4fc2c3da9be7fa20036936b8b38339cb807"
+    },
+    {
+      "file": "tests/ui/request-boundary/run.ps1",
+      "bytes": 1395,
+      "sha256": "3caea8fa2cfb4ad13cc312d0eefb74985b4a49ddec16edbc6eb1fdc8738b17ed"
+    },
+    {
+      "file": "tests/ui/request-boundary/support.mjs",
+      "bytes": 3889,
+      "sha256": "d6501ecae0ae38d59fc2bcd1fa7581a37d8f8c4f769d7cbbc59bff059d6175e3"
+    },
+    {
+      "file": "tests/ui/request-boundary/typecheck.mjs",
+      "bytes": 1202,
+      "sha256": "97d59f211695bf1abd28059f26d1a2fcfed71360ac9af67ff676aadc60a69651"
+    }
+  ]
+}

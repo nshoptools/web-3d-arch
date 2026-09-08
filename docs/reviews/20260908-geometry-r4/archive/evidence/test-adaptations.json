@@ -1,0 +1,12 @@
+{
+  "source": "work/review-source/tests/final-float/worker.test.mjs",
+  "sourceHash": "f97d8b3548a320ed098db30e151b927b41cb4c54336a5e3a88a1022a0be9d45b",
+  "derived": "work/worker-review.test.mjs",
+  "changes": [
+    "Imports use read-only existing toolchain packages and snapshot fixture/oracle",
+    "Vite root explicitly ARCH_FLOAT_SOURCE_ROOT=snapshot; vendor aliases to read-only installed files",
+    "Persistent browser profiles moved under work/cache; output/cache remains room"
+  ],
+  "suppliedBinaries": true,
+  "independentRootRebuild": false
+}

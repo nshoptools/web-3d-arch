@@ -1,0 +1,10 @@
+✔ settings export is available without a project, uses real per-user HTTP/SQLite values, and roundtrips (9171.4568ms)
+✔ settings response held across account retirement never reaches download (4307.2081ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13764.9873

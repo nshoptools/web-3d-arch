@@ -1,0 +1,25 @@
+diff --git a/src/integration/raster-adapters.mjs b/src/integration/raster-adapters.mjs
+index 56e1162..2817155 100644
+--- a/src/integration/raster-adapters.mjs
++++ b/src/integration/raster-adapters.mjs
+@@ -267,17 +267,17 @@ export function createRasterAdapters({runtime,encodePNG=encodeRasterPNG,processi
+         // Replay of persisted, exact consent; no new processing proposal is approved here.
+         accepted=await runtime.confirm(prepared,stored.proposalHash,c);guard(e,c);
+         const packet=await accepted.copy();validatePacket(packet);guard(e,c);
+-        const prepared={status:'ready',kind:'raster-source-geometry',sourceAssemblyRequired:true,coordinateKind:28,unitMm:0.000001,packet,receipt:freeze(cloneJSON(acceptance)),preparation:freeze(cloneJSON(stored))};
++        const ready={status:'ready',kind:'raster-source-geometry',sourceAssemblyRequired:true,coordinateKind:28,unitMm:0.000001,packet,receipt:freeze(cloneJSON(acceptance)),preparation:freeze(cloneJSON(stored))};
+         if(consume){
+           check(typeof runtime.productSource==='function','RASTER_PRODUCT_TRANSPORT_REQUIRED');
+           // Keep the accepted native source alive until the parent has consumed
+           // it in a product build. A failed/cancelled consumer releases both
+           // readers below; its separately owned finished snapshot can outlive us.
+-          const result=await consume({...prepared,nativeSource:runtime.productSource(accepted)});
++          const result=await consume({...ready,nativeSource:runtime.productSource(accepted)});
+           try{guard(e,c);}catch(error){if(typeof result?.release==='function')await result.release();throw error;}
+           return result;
+         }
+-        return prepared;
++        return ready;
+       }finally{await accepted?.release();await prepared.release();}
+     },
+     async reset(options={}){epoch++;await runtime.reset(options);}

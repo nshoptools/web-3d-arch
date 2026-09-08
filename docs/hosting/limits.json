@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "units": { "sizes": "bytes", "deadlines": "milliseconds", "cacheHsts": "seconds" },
+  "defaults": {
+    "maxAssetBytes": 67108864,
+    "maxPublicBytes": 536870912,
+    "maxRequestBytes": 32500000,
+    "maxResponseBytes": 32500000,
+    "maxConcurrent": 16,
+    "maxConnections": 128,
+    "maxHeaderBytes": 16384,
+    "maxHeadersCount": 100,
+    "maxRequestsPerSocket": 1000,
+    "maxRequestTargetCharacters": 8192,
+    "maxPathCharacters": 2048,
+    "maxManifestBytes": 33554432,
+    "maxAssets": 65536,
+    "maxNavigations": 1000,
+    "requestDeadlineMs": 30000,
+    "headersDeadlineMs": 10000,
+    "upstreamDeadlineMs": 35000,
+    "tlsHandshakeDeadlineMs": 10000,
+    "keepAliveMs": 5000,
+    "shutdownDrainMs": 5000,
+    "immutableMaxAge": 31536000,
+    "hstsSeconds": 31536000
+  },
+  "configurableRanges": {
+    "maxAssetBytes": [1,268435456],
+    "maxPublicBytes": [1,1073741824],
+    "maxRequestBytes": [1,32500000],
+    "maxResponseBytes": [1,67108864],
+    "maxConcurrent": [1,128],
+    "maxConnections": [1,1024],
+    "requestDeadlineMs": [50,60000],
+    "upstreamDeadlineMs": [50,180000],
+    "immutableMaxAge": [0,31536000],
+    "hstsSeconds": [0,63072000]
+  },
+  "notes": [
+    "maxConnections must be at least maxConcurrent.",
+    "Headers timeout is min(10000, requestDeadlineMs). Socket inactivity cutoff is max(requestDeadlineMs, upstreamDeadlineMs)+5000; it is not the upstream total deadline.",
+    "At default limits, simultaneous request/response chunk buffers and concatenation can transiently exceed 2 GiB plus 512 MiB static bytes, runtime and TLS overhead. These are bounded payloads, not a hard RSS cap; provision or reduce limits and load-test.",
+    "Bodies are not compressed/decompressed; upstream Accept-Encoding identity. Range is unsupported.",
+    "No distributed limit store, load balancer, CDN, HTTP redirect listener, HTTP/2, HTTP/3 or WebSocket.",
+    "Operating-system firewall, process-account ACL, cert renewal, memory/cpu enforcement and log rotation are operator responsibilities and unverified."
+  ]
+}

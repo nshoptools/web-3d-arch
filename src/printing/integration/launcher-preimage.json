@@ -1,0 +1,5 @@
+{
+  "path": "tools/kernel/build.ps1",
+  "sha256": "c77f8ceafb9c27a82d68cde29107bc7cea9709ea60bbe369959a6185a6041cc1",
+  "scope": "Launcher proposal refreshed to preserve parent STL output exports and native font/performance probe switch. AST only; compiled proof remains frozen main-preimage.json."
+}

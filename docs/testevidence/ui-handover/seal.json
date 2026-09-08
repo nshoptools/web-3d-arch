@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "status": "complete-frozen-report",
+  "files": [
+    {
+      "path": "reports/summary.json",
+      "sha256": "c6a3d75897f7d4134f43a46d8f3fd4fde311bff89cac91c66df42cf263c74bff"
+    },
+    {
+      "path": "reports/RESULT.md",
+      "sha256": "c3ee79f513fbacc90616c2aa6d502c1df67552e11994e9aa86f24e4280a96307"
+    },
+    {
+      "path": "reports/harness-adaptation.json",
+      "sha256": "debbbabd019fda9baacf47abc2f2139fd4453b85c4f660f207b77264ed7d9e1e"
+    },
+    {
+      "path": "reports/exit.json",
+      "sha256": "fd190462c9c8af03cf5060e5d04bb26064670051823d3511dabd0023d540509d"
+    },
+    {
+      "path": "inputs/source-manifest.json",
+      "sha256": "2d2ee2f48fcc9e18fc2de917d9bdb50d37dfa7a7c5aa6fe2e04a3f6b2ce65e52"
+    },
+    {
+      "path": "evidence/source-integrity.json",
+      "sha256": "db2babd4a292732ff47896909bb99bbc613d77536d2c0a53f1cf5ecacd60c659"
+    },
+    {
+      "path": "evidence/readability-final/results.json",
+      "sha256": "2f3926c77f3a98d724792ec38d326bfd2bd582c239d139efe1f9cd6f676955df"
+    },
+    {
+      "path": "evidence/readability-final/cleanup.json",
+      "sha256": "046f9c4dae7d98169be5f5894e08cfafd3e17a5ccc7f7f9851be9c51f51f9949"
+    }
+  ],
+  "externalEvidencePins": [
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/inputs/source-manifest.json",
+      "sha256": "f1756404c0df7b160a220e7c9a989c85decdd8531b9c335c5ae00f9e6323f247",
+      "bytes": 19325
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/source-integrity.json",
+      "sha256": "af395375b493995ae6e59e97afb75a46c6d89551fb0adfd01e98a0e4528dfae1",
+      "bytes": 126
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/reports/harness-adaptation.json",
+      "sha256": "a16d9dd9e8b68a40ca84adf17ab11cdeb7e7830a26d6de25a0d5ac4a338f8b67",
+      "bytes": 3280
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/reports/exit.json",
+      "sha256": "920ebc10ab273c1920a718ac3b14131f9a944f2715073f8cfedc5df8f7e1dca5",
+      "bytes": 65
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/runner.log",
+      "sha256": "b063acf6590c50bf7e30833fc339e4c12b9a80ae01b379c719446b16bec4cb32",
+      "bytes": 2988
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/extra-final/results.json",
+      "sha256": "04266784beeb47e2cc871467e8b0d27be9bba9ae953cf2f7091a903f2ef0190b",
+      "bytes": 74764
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/extra-final/cleanup.json",
+      "sha256": "dacb308ff2141bfca7fc2c7daa7018d0ef57ac52d22de13a6f32e52c28016627",
+      "bytes": 200
+    }
+  ],
+  "endedAt": "2026-09-08T12:24:00.257Z"
+}

@@ -1,0 +1,410 @@
+{
+  "note": "Original files remain in the parent kernel; preserve these notices when linking the unified runtime. Paths are relative to repo root.",
+  "files": [
+    {
+      "path": "src/kernel/Cargo.lock",
+      "bytes": 9598,
+      "sha256": "740259abaa6a39bf333c097d82ea3ae20d9bd27ef0dacae31f29e157b9701521"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/dependency-inventory.json",
+      "bytes": 27763,
+      "sha256": "3690cdb109f25f239148442d4aea7361bd21a1a3c67bc439ff8f7b7d17c65c54"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayref-0.3.9/LICENSE",
+      "bytes": 1336,
+      "sha256": "1bc7e6f475b3ec99b7e2643411950ae2368c250dd4c5c325f80f9811362a94a1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayvec-0.7.8/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayvec-0.7.8/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/autocfg-1.5.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/autocfg-1.5.1/LICENSE-MIT",
+      "bytes": 1054,
+      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/block-buffer-0.10.4/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/block-buffer-0.10.4/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-APACHE",
+      "bytes": 10398,
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-MIT",
+      "bytes": 1110,
+      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-ZLIB",
+      "bytes": 851,
+      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cfg-if-1.0.4/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cfg-if-1.0.4/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cpufeatures-0.2.17/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cpufeatures-0.2.17/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/crypto-common-0.1.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/crypto-common-0.1.7/LICENSE-MIT",
+      "bytes": 1065,
+      "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/data-url-0.3.2/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/data-url-0.3.2/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "b38f11f6096706e6de553dabe2a7ed142d59b6fa8c97e290c67496154745cdd5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/digest-0.10.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/digest-0.10.7/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/euclid-0.22.14/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/euclid-0.22.14/LICENSE-MIT",
+      "bytes": 1067,
+      "sha256": "62065228e42caebca7e7d7db1204cbb867033de5982ca4009928915e4095f3a3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/float-cmp-0.9.0/LICENSE",
+      "bytes": 1075,
+      "sha256": "40be1e77825d7e49485a2e43d89bed29dfff29f8f529e71d3c683656021f0d08"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/generic-array-0.14.7/LICENSE",
+      "bytes": 1107,
+      "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/imagesize-0.15.0/LICENSE",
+      "bytes": 1064,
+      "sha256": "fa0d694967d5c279e70a5c7b7e4b9929e4c1c8c1b8506998e66fc2f1547b200a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/itoa-1.0.18/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/itoa-1.0.18/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/kurbo-0.13.1/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/kurbo-0.13.1/LICENSE-MIT",
+      "bytes": 1055,
+      "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/libc-0.2.189/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/libc-0.2.189/LICENSE-MIT",
+      "bytes": 1066,
+      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/log-0.4.34/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/log-0.4.34/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/memchr-2.8.3/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/memchr-2.8.3/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/num-traits-0.2.19/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/num-traits-0.2.19/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/pico-args-0.5.0/LICENSE",
+      "bytes": 1061,
+      "sha256": "f71452d91682fdae0ca948b18cfed53a953d1237740dd80371c76a5c1c7bbe91"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/polycool-0.4.0/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/polycool-0.4.0/LICENSE-MIT",
+      "bytes": 1055,
+      "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/proc-macro2-1.0.107/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/proc-macro2-1.0.107/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/quote-1.0.47/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/quote-1.0.47/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/roxmltree-0.21.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/roxmltree-0.21.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "fffe218c1e349e1d482a05677f2ce850502f88298174d77f6ac7c04821db7899"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_core-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_core-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_derive-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_derive-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_json-1.0.149/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_json-1.0.149/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/sha2-0.10.9/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/sha2-0.10.9/LICENSE-MIT",
+      "bytes": 1138,
+      "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/simplecss-0.2.2/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/simplecss-0.2.2/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "0b5f24524360e15bcf9fb79bca875f5aa62f01f94f2988e23238c7ec0e6e8784"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/siphasher-1.0.3/COPYING",
+      "bytes": 281,
+      "sha256": "c962ee4d1d05ddc138b202b2540219ebc57893fcf97b364852094a9a94ce1365"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/smallvec-1.16.0/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/smallvec-1.16.0/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/strict-num-0.1.1/LICENSE",
+      "bytes": 1060,
+      "sha256": "3085885678bb161f6c472bbd331f66a2550b555eb76128f7f8247779128199c0"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/svgtypes-0.16.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/svgtypes-0.16.1/LICENSE-MIT",
+      "bytes": 1061,
+      "sha256": "f3c9fe731c701ed77fd5fbaac573872af04dc5869385eb9bd5e3c73c42713814"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/syn-2.0.119/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/syn-2.0.119/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/tiny-skia-path-0.12.0/LICENSE",
+      "bytes": 1564,
+      "sha256": "6d41e05f1d54fe726997cb0334ec539f1dff50600b1d5d90462ec2b392770ced"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE",
+      "bytes": 17,
+      "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE-APACHE",
+      "bytes": 10835,
+      "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-UNICODE",
+      "bytes": 1995,
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/usvg-0.48.1/LICENSE-APACHE",
+      "bytes": 10173,
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/usvg-0.48.1/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "f5d934dc281b44e0003ee461ac740b18b6629a454decd872c774d34e4ee0b21d"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/version_check-0.9.5/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/version_check-0.9.5/LICENSE-MIT",
+      "bytes": 1085,
+      "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/zmij-1.0.23/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/LICENSE",
+      "bytes": 5000,
+      "sha256": "b0e592f2221200f9873e30d3457a31805d864f851941601f39488e77e49ed2b3"
+    }
+  ]
+}

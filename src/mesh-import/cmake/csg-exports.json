@@ -1,0 +1,16 @@
+[
+  "_archcsg_abi_version",
+  "_archcsg_compute",
+  "_archcsg_view",
+  "_archcsg_acquire",
+  "_archcsg_release",
+  "_archcsg_confirmation_matches",
+  "_archcsg_source_count",
+  "_archcsg_source_ptr",
+  "_archcsg_source_len",
+  "_archcsg_import_source_faces",
+  "_archcsg_import_source_face_count",
+  "_archcsg_layout",
+  "_archcsg_error",
+  "_archcsg_operation_mask"
+]

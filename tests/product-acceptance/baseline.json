@@ -1,0 +1,15 @@
+{
+  "version": "product-acceptance-input/2",
+  "purpose": "whole-product",
+  "id": "owned-r2",
+  "releaseRoot": "D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-product-release-builder/work/release-owned-r2",
+  "preparedRoot": "D:/VoSon/Code/web-3d-arch/tmp/reviews/codex/runs/20260908-product-release-builder/work/production-owned-r2-1",
+  "releaseSHA256": "1147ad94ad005ffdb5f2524e4d9e6ada71778f3cc84c1b3cf590b2165c3b621f",
+  "preparedSHA256": "136b8b90a35e4007a6e110db7a2737d73eb25f12c8b33fc9b44b595fb333d2e9",
+  "engine": {
+    "canonicalModuleSHA256": "64c5f89e2ee8fecda371436f907faf83e9120c41e11089979bd011bc8a197ed2",
+    "derivedModuleSHA256": "11870a06cd38aa2d86c5faf3e4a6fd158e4d52062ff3ed9a2bd8eb67e1f81877",
+    "wasmSHA256": "b67d421769ba188e5dc6328bf520ab683213239459da3c308d92411df458e949",
+    "buildReceiptSHA256": "171daf4a7bcb16836970ace1634217ed8aeb6d986da4ad2ef0963abb1a991f42"
+  }
+}

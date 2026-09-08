@@ -1,0 +1,62 @@
+[
+  {
+    "id": "roof-oblique-slit-2nm",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\roof-oblique-slit-2nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\guard-public-native\\roof-oblique-slit-2nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 0,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "roof-oblique-slit-4nm",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\roof-oblique-slit-4nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\guard-public-native\\roof-oblique-slit-4nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 0,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "roof-oblique-slit-8nm",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\roof-oblique-slit-8nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\guard-public-native\\roof-oblique-slit-8nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 1,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_STRAP_ROOF_FLOOR_UNRESOLVED: uniform envelope not present and projected facet sign unavailable"
+    ]
+  },
+  {
+    "id": "roof-oblique-slit-40nm",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\roof-oblique-slit-40nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\guard-public-native\\roof-oblique-slit-40nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 1,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_STRAP_ROOF_FLOOR_UNRESOLVED: uniform envelope not present and projected facet sign unavailable"
+    ]
+  }
+]

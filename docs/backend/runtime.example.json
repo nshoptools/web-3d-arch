@@ -1,0 +1,15 @@
+{
+  "version": "arch-backend-runtime/1",
+  "maintenance": {
+    "enabled": true,
+    "intervalMs": 300000,
+    "batchRows": 100,
+    "batchBytes": 33554432,
+    "maxBatchesPerTurn": 4,
+    "catchUpDelayMs": 25,
+    "failureDelayMs": 30000,
+    "maxClockStepMs": 300000,
+    "maxLagMs": 3600000
+  },
+  "shutdownGraceMs": 10000
+}

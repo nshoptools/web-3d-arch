@@ -1,0 +1,198 @@
+{
+  "transport": "explicit independent doubles; production qualifier and sceneMaterialBindings",
+  "outcomes": [
+    {
+      "name": "complete-current-material-table",
+      "code": "pass",
+      "cached": "ready",
+      "verdict": "pass",
+      "calls": 2,
+      "releases": 0
+    },
+    {
+      "name": "hidden-model",
+      "code": "SCENE_MODEL_NOT_VISIBLE",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "obsolete-epoch",
+      "code": "SCENE_MODEL_RETIRED",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "missing-root-lease",
+      "code": "SCENE_MODEL_UNOWNED",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "duplicate-full-material-id",
+      "code": "SCENE_MATERIAL_BINDINGS",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "duplicate-part-index",
+      "code": "SCENE_PART_MAPPING",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "upstream-assembly",
+      "code": "SCENE_UPSTREAM_BLOCKED",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "source-unverified",
+      "code": "SCENE_UPSTREAM_BLOCKED",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "mechanics-unsupported",
+      "code": "SCENE_SEMANTICS_UNQUALIFIED",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "missing-actual-afgm-method",
+      "code": "SCENE_UNION_CAPABILITY",
+      "cached": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "missing-capability-stays-unverified",
+      "code": "unverified",
+      "cached": "ready",
+      "verdict": "unverified",
+      "calls": 0,
+      "releases": 0
+    },
+    {
+      "name": "wrong-root-hash",
+      "code": "SCENE_UNION_BINDING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "wrong-generation",
+      "code": "SCENE_UNION_BINDING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "missing-membership",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "duplicate-membership",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "wrong-source-index",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "wrong-full-material-key",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "missing-group",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "native-positive-label",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "wrong-analysis-membership",
+      "code": "SCENE_GEOMETRY_MAPPING",
+      "cached": "unverified",
+      "calls": 2,
+      "releases": 0
+    },
+    {
+      "name": "state-changed-during-check",
+      "code": "SCENE_CONTEXT_CHANGED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "session-changed-during-check",
+      "code": "SCENE_CONTEXT_CHANGED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "source-bytes-changed-during-check",
+      "code": "SCENE_BYTES_CHANGED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "cancel-during-check",
+      "code": "CANCELLED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "semantic-bytes-changed",
+      "code": "SCENE_METADATA_CHANGED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "unused-material-changed",
+      "code": "SCENE_CONTEXT_CHANGED",
+      "cached": "unverified",
+      "calls": 1,
+      "releases": 0
+    },
+    {
+      "name": "observed-A-B-A",
+      "during": "unverified",
+      "after": "unverified"
+    },
+    {
+      "name": "reordered-current-table-retires-old-evidence",
+      "verdict": "unverified"
+    }
+  ]
+}

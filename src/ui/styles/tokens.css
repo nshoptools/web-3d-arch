@@ -1,0 +1,181 @@
+/*
+ * Design tokens — UI-02 of docs/specs/02-giao-dien.md.
+ * Every colour pair used for text is measured against its real composited
+ * background; see reports/contrast.md for the computed ratios. Values marked
+ * "derived" exist because the base token failed a measured ratio on a lifted
+ * surface, which UI-02 explicitly allows ("sửa token có bằng chứng").
+ */
+
+@layer tokens, base, layout, components, overrides;
+
+@layer tokens {
+  :root {
+    /* Surfaces */
+    --b0: #0b0e14;
+    --b1: #10151e;
+    --b2: #141924;
+    --b3: #1b2130;
+    --b4: #232b3b;
+
+    /* Lines. --ln and --ln2 are the decorative separators of UI-02 and are
+       never the only boundary of a control. Interactive controls use
+       --ln-control, which is measured at >= 3:1 against b0..b4; the base #39445c
+       reaches only 1.88:1 on b1, so it cannot carry a component boundary.
+       UI-02 allows fixing a token when the measurement says so. */
+    --ln: #2b344a;
+    --ln2: #39445c;
+    --ln-control: #6b7a99;
+
+    /* Canvas / stage / glass */
+    --canvas: #0b0e13;
+    --stage: #090d14;
+    --glass: rgb(12 16 24 / 0.86);
+    --glass-solid: #0c1018; /* fallback when backdrop-filter is unavailable */
+
+    /* Text */
+    --t1: #e9eef7;
+    --t2: #8b98ad;
+    --t3: #7e8b9f;
+
+    /* Status */
+    --accent: #5b8cff;
+    --ok: #39d0a0;
+    --warn: #ffb545;
+    --err: #ff6b6b;
+    --star: #f5c451;
+
+    /* Derived text-safe variants for lifted surfaces (b4 and above).
+       #5b8cff on #232b3b measures 4.49:1, just under the 4.5:1 floor. */
+    --accent-text: #7ea3ff;
+
+    /* Buttons */
+    --btn-primary-bg: #3f6fe0;
+    --btn-primary-fg: #ffffff;
+    --btn-done-bg: #39d0a0;
+    --btn-done-fg: #052419;
+
+    /* Six workspace sections — UI-01 */
+    --sec-source: #5b9dff;
+    --sec-product: #b478ff;
+    --sec-materials: #38cfa0;
+    --sec-parameters: #ffab3d;
+    --sec-export: #ff7a9c;
+    --sec-library: #4dd0e1;
+
+    /* Radii */
+    --r1: 7px;
+    --r2: 10px;
+    --r3: 14px;
+    --r4: 18px;
+
+    /* Motion */
+    --dur-fast: 130ms;
+    --dur-slow: 220ms;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Structure — UI-01 / UI-06 */
+    --topbar-h: 56px;
+    --rail-w: 74px;
+    --panel-w: 344px;
+    --nextbar-h: 57px;
+    --stage-gap: 10px;
+    --tab-w: 18px;
+    --tab-h: 44px;
+
+    /* Control sizing — UI-04 */
+    --btn-h: 38px;
+    --input-h: 34px;
+    --target-min: 24px;
+    --swatch: 27px;
+    --hex-w: 78px;
+    --slot-w: 80px;
+
+    /* Type scale. Body content never below 14px, secondary labels 14px on a
+       12px-token baseline scaled by the user text-size setting. */
+    --ui-scale: 1;
+    --fs-body: calc(14px * var(--ui-scale));
+    --fs-label: calc(13px * var(--ui-scale));
+    --fs-small: calc(12.5px * var(--ui-scale));
+    --fs-head: calc(16px * var(--ui-scale));
+    --fs-title: calc(18px * var(--ui-scale));
+    --lh: 1.45;
+
+    /* Stacking — UI-03. Tokens, not guesses: every consumer must sit in the
+       same stacking context or create its own explicitly. */
+    --z-label: 1;
+    --z-readout: 2;
+    --z-ruler: 3;
+    --z-corner: 4;
+    --z-warning: 5;
+    --z-empty: 6;
+    --z-busy: 7;
+    --z-busy-top: 8;
+    --z-panel-tab: 9;
+    --z-popup: 20;
+    --z-backdrop: 55;
+    --z-drawer: 60;
+    --z-search: 200;
+    --z-toast: 300;
+    --z-tooltip: 400;
+    --z-skip: 999;
+
+    --focus-ring: 0 0 0 2px var(--b0), 0 0 0 4px var(--accent);
+    color-scheme: dark;
+  }
+
+  /* The user's `fontSize` setting (ACC-03) arrives through the snapshot and is
+     applied as --ui-scale on a wrapper inside the mounted tree, never on the
+     host document, so unmounting leaves no trace. The whole scale is
+     re-declared on that same element on purpose: a custom property that
+     references another one is substituted where it is declared, so setting
+     --ui-scale further down would leave the --fs-* values computed from the
+     :root value and change nothing. */
+  .ui-scale-host {
+    --fs-body: calc(14px * var(--ui-scale));
+    --fs-label: calc(13px * var(--ui-scale));
+    --fs-small: calc(12.5px * var(--ui-scale));
+    --fs-head: calc(16px * var(--ui-scale));
+    --fs-title: calc(18px * var(--ui-scale));
+    /* And the size itself, not only the variables. `body` resolves --fs-body
+       where it is declared, which is :root, where the scale is always 1 — so
+       every piece of text that simply inherits its size stayed at 14 px however
+       large the person set their interface: the characters they type into a
+       field, the option showing in a select, the word beside a checkbox. Form
+       controls take `font: inherit` from base.css, so declaring the size here
+       is what carries the published size into them (ACC-03, UI-06). At the
+       default 14 px this computes to exactly what body already had. */
+    font-size: var(--fs-body);
+  }
+
+  @media (width > 1400px) {
+    :root { --panel-w: 376px; }
+  }
+
+  @media (width <= 720px) {
+    :root {
+      --topbar-h: 50px;
+      --nextbar-h: 53px;
+    }
+  }
+
+  /* UI-02: reduced motion removes non-essential motion, turns shimmer and
+     spinners into static/text state, and drops smooth scrolling. */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --dur-fast: 1ms;
+      --dur-slow: 1ms;
+    }
+  }
+
+  /* UI-02: prefers-contrast:more raises separation. */
+  @media (prefers-contrast: more) {
+    :root {
+      --t2: #c3ccdb;
+      --t3: #b9c3d3;
+      --ln: #5a6683;
+      --ln2: #7986a5;
+      --ln-control: #93a0bd;
+      --accent-text: #9fbaff;
+    }
+  }
+}

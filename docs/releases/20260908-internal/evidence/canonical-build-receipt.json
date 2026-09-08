@@ -1,0 +1,115 @@
+{
+  "version": "arch-kernel-build-receipt/1",
+  "createdAt": "2026-09-08T12:22:09.822Z",
+  "mode": "production",
+  "printing": true,
+  "testFixtures": false,
+  "command": {
+    "script": "tools/kernel/build.ps1",
+    "arguments": {
+      "Target": "wasm",
+      "Printing": true,
+      "EvidenceTag": "handover-r4",
+      "ModuleDirectory": "module-handover-r4"
+    }
+  },
+  "exitCode": 0,
+  "toolchainSources": [
+    {
+      "path": ".toolchain/emsdk/upstream/emscripten/src/settings.js",
+      "bytes": 104768,
+      "sha256": "d3f392677fb5b890f3c7042c3e8138c99dfda238da8fc9f45dbd6be29802c2a9"
+    },
+    {
+      "path": ".toolchain/emsdk/upstream/emscripten/src/preamble.js",
+      "bytes": 32457,
+      "sha256": "3aaba887bb710f8a527fb7cfff90e2a414085cbe1fb61b195a36c957fb3e5c18"
+    }
+  ],
+  "buildInputs": [
+    {
+      "path": "tools/kernel/build.ps1",
+      "bytes": 8684,
+      "sha256": "511c9f8fba262732d7a91ea04d9e59ab22975b5bad78abbbcf22114bba3f20aa"
+    },
+    {
+      "path": "tools/kernel/module-incoming-api.json",
+      "bytes": 436,
+      "sha256": "0e4eb9b850e900111ae50fa3982bb9a5219b988024226b34b2a7e15eebddb837"
+    },
+    {
+      "path": "src/kernel/native/product-exports.json",
+      "bytes": 585,
+      "sha256": "f1066b531cb8e7c7b24a80b8d6e8d524ab86fa4c07831368b26e0977deb980d4"
+    }
+  ],
+  "incomingModuleApi": [
+    "ENVIRONMENT",
+    "arguments",
+    "canvas",
+    "dynamicLibraries",
+    "elementPointerLock",
+    "instantiateWasm",
+    "locateFile",
+    "monitorRunDependencies",
+    "noExitRuntime",
+    "noInitialRun",
+    "onAbort",
+    "onExit",
+    "onRuntimeInitialized",
+    "postRun",
+    "preInit",
+    "preRun",
+    "print",
+    "printErr",
+    "setStatus",
+    "statusMessage",
+    "stderr",
+    "stdin",
+    "stdout",
+    "thisProgram",
+    "wasm",
+    "websocket",
+    "wasmBinary"
+  ],
+  "observations": {
+    "generatedReadsWasmBinary": true,
+    "wasmUnchangedFromSourceR1": false,
+    "actualWorkersIntegrity": "pending-final-compiled-worker-check",
+    "scope": "Observed canonical production Printing build exit0 and exact outputs; includes source-root integration and bounded guard remediation; no reproducible-build or all-input geometry proof."
+  },
+  "outputs": {
+    "module": {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-handover-r4/arch-kernel.mjs",
+      "bytes": 139735,
+      "sha256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828"
+    },
+    "wasm": {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-handover-r4/arch-kernel.wasm",
+      "bytes": 5813742,
+      "sha256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c"
+    }
+  },
+  "logs": [
+    {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/handover-r4-wasm-configure.log",
+      "bytes": 2377,
+      "sha256": "2f13b901dbdd6d38ccba1117b1415c32ab27bbb2f4416ad913ba08f700bc6b3f"
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/handover-r4-wasm-build.log",
+      "bytes": 664,
+      "sha256": "bec17c43fc3aba796b745586ba0077e9077ffdf911c2bee9a6906dbca91713e1"
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/handover-r4-wasm-rust.log",
+      "bytes": 1030,
+      "sha256": "26776d26b23b7016cb837a1ddf506d0e206bac7e2179fc6cd2dae8c5fdf73b93"
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/evidence/handover-r4-wasm-module-link.log",
+      "bytes": 350,
+      "sha256": "8d493a9947b648a9f7fe0ce2084b9bccbb3a8ec2c2ba58dd40db51d307d6b51c"
+    }
+  ]
+}

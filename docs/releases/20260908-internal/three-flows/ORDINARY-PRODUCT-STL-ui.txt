@@ -1,0 +1,332 @@
+Bỏ qua thanh điều hướng, tới khung thiết kế
+W3
+web‑3d‑arch
+Bước 1 · Nguồn & màu
+quay lại được
+Bước 2 · Mô hình 3D
+đang mở
+Tìm nhanh
+Ctrl K
+Trực tuyến
+Tải nguồn
+Ctrl O
+Xuất file
+53bce713-414c-4462-962f-2f4e1b4443a4
+Ảnh nguồn
+Sản phẩm
+Lớp màu
+3
+— 3 vật liệu trong bảng màu
+Thông số
+Xuất file
+đạt
+— Kết quả dựng: đã kiểm đạt
+Thư viện
+1
+— 1 dự án trong thư viện
+Xuất file
+
+3MF, STL, SVG và PNG
+
+Gập bảng
+\
+Máy in cho bản xuất
+chưa gắn ID máy
+No printer selected · 0 khe filament
+hồ sơ chưa kiểm
+Máy in đang chọn
+Chưa gắn ID máy — máy in chung
+Danh sách do nhân công bố. Nhãn “đã kiểm” chỉ áp cho đúng máy, nozzle, vật liệu và bản slicer đã thử; không suy sang máy khác.
+ADAPTER_CAPABILITY_REQUIRED
+Thư viện hồ sơ máy in cá nhân của bạn: 0 hồ sơ đã nhập. Nằm ở Cài đặt cá nhân → “Máy in và hồ sơ hiệu chuẩn”. Nhãn “đã kiểm” ở trên nói về máy in, không phải về hồ sơ trong thư viện; hồ sơ trong thư viện không tự áp cho máy đang chọn và giao diện không tự khớp hồ sơ với máy theo tên.
+Mở cài đặt máy in và hiệu chuẩn
+Cài đặt xuất là một lần sửa dự án
+
+Lưu một thiết lập xuất làm dự án sang bản sửa mới, nên mô hình đã dựng có thể trở thành bản dựng cũ. Giao diện chỉ đọc trạng thái nhân công bố; nó không tự sửa bản sửa nào để mô hình trông như còn khớp.
+
+Mô hình đang hiển thị dựng từ bản sửa 2, khớp bản sửa hiện tại.
+
+dự án ở bản sửa 2
+nhân không có lượt xử lý nào đang chạy
+Rescue project package
+arch-project.zip
+chưa kiểm
+project
+cần byte đã lưu cục bộ
+Xuất để kiểm tra
+
+⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.
+
+Cài đặt cá nhân (JSON)
+json
+chưa kiểm
+settings
+cần đăng nhập và kết nối mạng
+Xuất để kiểm tra
+
+⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.
+
+SVG nguồn màu
+svg
+chưa kiểm
+svg-color
+cần nguồn đã chốt
+Xuất để kiểm tra
+
+⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.
+
+Cài đặt của đường xuất này
+2 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+
+Thiết lập ở đây thuộc riêng đường xuất “SVG nguồn màu”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+Nhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.
+
+SVG mặt cắt scene cuối
+svg
+đã kiểm đạt
+svg-section
+cần mô hình khớp bản sửa
+Xuất
+Cài đặt của đường xuất này
+13 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+Hướng xuất · pose
+Hệ chế tạo
+Đường xuất này giữ hệ chế tạo gốc.
+Đặt đáy trên bàn
+Đường xuất này giữ hệ chế tạo gốc.
+restOnBed
+Giới hạn sai số bước xuất · errorMm
+mm
+Giới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.
+Miền 0.000001–0.004 mm · bước 0.000001 mm
+Mặt cắt · sectionMode
+Một cao độ
+Dãy cao độ
+Cao độ Z · zMm
+mm
+Miền -10000–10000 mm · bước 0.000001 mm
+Z bắt đầu · startMm
+mm
+Trường được giữ cho chế độ mặt cắt tương ứng.
+Miền -10000–10000 mm · bước 0.000001 mm
+Z kết thúc · endMm
+mm
+Trường được giữ cho chế độ mặt cắt tương ứng.
+Miền -10000–10000 mm · bước 0.000001 mm
+Bước cao độ · stepMm
+mm
+Trường được giữ cho chế độ mặt cắt tương ứng.
+Miền 0.000001–10000 mm · bước 0.000001 mm
+Đơn vị SVG · units
+mm
+inch
+Mặt nhìn · side
+Trước
+Sau
+Màu mặt cắt · color
+Đen
+Theo vật liệu
+
+Thiết lập ở đây thuộc riêng đường xuất “SVG mặt cắt scene cuối”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+3MF dự án Bambu
+3mf
+chưa kiểm
+3mf-bambu-project
+cần mô hình khớp bản sửa
+Xuất
+This slicer project route is available for inspection. Slicer roundtrip and physical print qualification are unverified.
+PRINTING_INSPECTION_REQUIRED
+Cài đặt của đường xuất này
+4 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+Hướng xuất · pose
+Hệ chế tạo
+Đường xuất này giữ hệ chế tạo gốc.
+Đặt đáy trên bàn
+Đường xuất này giữ hệ chế tạo gốc.
+restOnBed
+
+Thiết lập ở đây thuộc riêng đường xuất “3MF dự án Bambu”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+Nhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.
+
+3MF dự án Snapmaker
+3mf
+chưa kiểm
+3mf-snapmaker-project
+cần mô hình khớp bản sửa
+Xuất
+This slicer project route is available for inspection. Slicer roundtrip and physical print qualification are unverified.
+PRINTING_INSPECTION_REQUIRED
+Cài đặt của đường xuất này
+4 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+Hướng xuất · pose
+Hệ chế tạo
+Đường xuất này giữ hệ chế tạo gốc.
+Đặt đáy trên bàn
+Đường xuất này giữ hệ chế tạo gốc.
+restOnBed
+
+Thiết lập ở đây thuộc riêng đường xuất “3MF dự án Snapmaker”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+Nhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.
+
+ZIP STL theo khe và màu (mm)
+zip
+đã kiểm đạt
+stl-material-zip
+cần mô hình khớp bản sửa
+Xuất
+Cài đặt của đường xuất này
+5 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+Hướng xuất · pose
+Hệ chế tạo
+Lật hoa văn xuống và đặt đáy trên bàn
+Đặt đáy trên bàn
+restOnBed
+Giới hạn sai số bước xuất · errorMm
+mm
+Giới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.
+Miền 0.000001–0.004 mm · bước 0.000001 mm
+
+Thiết lập ở đây thuộc riêng đường xuất “ZIP STL theo khe và màu (mm)”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+STL union scene cuối (mm)
+stl
+đã kiểm đạt
+stl-union
+cần mô hình khớp bản sửa
+Xuất
+Cài đặt của đường xuất này
+5 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+Hướng xuất · pose
+Hệ chế tạo
+Lật hoa văn xuống và đặt đáy trên bàn
+Đặt đáy trên bàn
+restOnBed
+Giới hạn sai số bước xuất · errorMm
+mm
+Giới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.
+Miền 0.000001–0.004 mm · bước 0.000001 mm
+
+Thiết lập ở đây thuộc riêng đường xuất “STL union scene cuối (mm)”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+PNG khung xem
+png
+chưa kiểm
+png-viewport
+cần khung xem đang chạy
+Xuất để kiểm tra
+
+⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.
+
+Cài đặt của đường xuất này
+2 thiết lập
+Tên tệp · filename
+Xuất để kiểm tra
+Giữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.
+inspection
+
+Thiết lập ở đây thuộc riêng đường xuất “PNG khung xem”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+
+Nhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn.
+
+Hồ sơ kết quả xuất
+1 hồ sơ
+
+Đây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án hoặc đăng xuất.
+
+Có hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in được.
+
+final-keychain-smoke.stl
+stl-union
+đã kiểm đạt
+lượt xuất thường
+95,1 kB
+bản sửa 2
+19:50 8/9/26
+Byte thực: 95.084 · thời điểm nhân ghi: 2026-09-08T12:50:08.599Z
+SHA-256 của tệp
+ffb7a42dbb036c699e12f67653ac8dca21f3d7061f7529a65837bcbbd60ca810
+Tải hồ sơ (JSON)
+Điều kiện và cửa chặn xuất
+4 điều kiện · 7 mã
+
+STL không lưu đơn vị hay màu; tệp xuất theo mm và kèm bảng kê tệp ↔ khe. Bảng tầng và bảng kê chi tiết do nhân trả về cùng artifact sau khi xuất.
+
+‹
+Gập bảng thiết lập
+Chỉ số
+Khung xem
+Gợi ý
+Kích thước
+48 × 32 × 3,2 mm
+Bộ phận
+3
+Tam giác
+1.900
+Kiểm mesh
+đã kiểm đạt
+▾ Khung xem
+Vừa khung
+F
+Lưới
+G
+Nhìn từ trên
+T
+Nghiêng
+I
+Nhìn trước
+P
+Giữa bàn
+C
+ADAPTER_CAPABILITY_REQUIRED
+Đo
+M
+Khối đang chọn
+— không chọn khối nào
+source:slab:9734118213826577556 · body
+source:slab:2945095659212322029 · region
+source:slab:8115522688655946948 · region
+mech:keyring · body
+Cùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.
+Chi tiết khối
+Nhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.
+Thế hệ tài liệu 2
+Mô hình đang vẽ: bản sửa 2
+1 vấn đề cần xem
+Mở nhật ký
+
+PROPOSAL_REQUIRED
+
+Tách tầng
+Xoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.
+Quay lại
+Xuất (7 lựa chọn)
+Đã xong: Nhân đã nhận xác nhận.
+Đã gửi yêu cầu tải hồ sơ kết quả cho nhân.

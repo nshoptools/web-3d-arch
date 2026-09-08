@@ -1,0 +1,44 @@
+{
+  "version": "arch-text-source-test-portability/1",
+  "changes": [
+    {
+      "file": "tests/text-source/node.test.mjs",
+      "edits": [
+        [
+          "const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);\nif(!run.endsWith(path.join('codex','runs','20260908-text-source-wave1')))throw Error('Wrong output room');",
+          "import {testEnvironment,testModule} from './test-environment.mjs';\nconst {root,run}=await testEnvironment();"
+        ],
+        [
+          "const modulePath=path.join(root,'tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.mjs');",
+          "const modulePath=await testModule(root);"
+        ]
+      ]
+    },
+    {
+      "file": "tests/text-source/browser.test.mjs",
+      "edits": [
+        [
+          "const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);\nif(!run.endsWith(path.join('codex','runs','20260908-text-source-wave1')))throw Error('Wrong browser output room');",
+          "import {testEnvironment,testModule} from './test-environment.mjs';\nconst {root,run}=await testEnvironment();"
+        ],
+        [
+          "const enginePath=path.join(root,'tmp/reviews/codex/runs/20260908-implementation-wave1/work/module');",
+          "const existingModulePath=await testModule(root);"
+        ],
+        [
+          "path.join(enginePath,'arch-kernel.'+ext)",
+          "existingModulePath.replace(/\\.mjs$/,'.'+ext)"
+        ]
+      ]
+    },
+    {
+      "file": "tests/text-source/bridge-client.test.mjs",
+      "edits": [
+        [
+          "await writeFile(path.join(process.env.PROJECT_REVIEW_RUN,'evidence/bridge-client-results.json'),JSON.stringify(result,null,2));",
+          "await writeFile(await (await import('./test-environment.mjs')).testOutput('evidence/bridge-client-results.json'),JSON.stringify(result,null,2));"
+        ]
+      ]
+    }
+  ]
+}

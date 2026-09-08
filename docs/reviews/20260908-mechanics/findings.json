@@ -1,0 +1,596 @@
+{
+  "schemaVersion": 1,
+  "reviewId": "20260908-mechanics-review-r1-codex",
+  "seat": "codex",
+  "date": "2026-09-08",
+  "conclusion": "changes-required",
+  "releaseCertified": false,
+  "independence": {
+    "otherSeatsStarted": false,
+    "otherReviewOrImplementationReportsRead": false,
+    "frozenOrProductCodeModified": false,
+    "writes": "Codex run work/evidence/reports only; environment and session cache/temp remain in this run"
+  },
+  "scope": {
+    "frozenRoot": "inputs/frozen",
+    "manifest": "inputs/source-manifest.json",
+    "manifestSha256": "9686d19caa1a500889b56a9d73362edc09326116de78dea2a6281d2f72a3a7ae",
+    "verifiedFileCount": 57,
+    "hashEvidence": "evidence/reviewer-source-hashes.json",
+    "finalIntegrityEvidence": "evidence/reviewer-final-input-integrity.json",
+    "nativeInputABI": 2,
+    "coreParameterCount": 126,
+    "additionalParameterIds": [
+      127,
+      128
+    ]
+  },
+  "configuration": {
+    "checkedAt": "2026-09-08T07:01:17.8971721+07:00",
+    "sessionMetadata": [
+      {
+        "timestamp": "2026-09-07T23:59:10.971Z",
+        "type": "session_meta",
+        "runtime": {
+          "id": "01a07e4f-bf00-7df3-b8f5-1284181a0ca1",
+          "cli_version": "0.153.4",
+          "model": null,
+          "effort": null,
+          "service_tier": null,
+          "cwd": "D:\\VoSon\\Code\\web-3d-arch",
+          "originator": "Codex Desktop",
+          "source": "exec",
+          "collaboration_mode": null
+        }
+      },
+      {
+        "timestamp": "2026-09-07T23:59:14.068Z",
+        "type": "turn_context",
+        "runtime": {
+          "id": null,
+          "cli_version": null,
+          "model": "gpt-6-astra",
+          "effort": "max",
+          "service_tier": null,
+          "cwd": "D:\\VoSon\\Code\\web-3d-arch",
+          "originator": null,
+          "source": null,
+          "collaboration_mode": {
+            "mode": "default",
+            "settings": {
+              "model": "gpt-6-astra",
+              "reasoning_effort": "max",
+              "developer_instructions": null
+            }
+          }
+        }
+      }
+    ],
+    "fastFeature": "fast_mode                                stable             false",
+    "launch": {
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "fast": false,
+      "version": "codex-cli 0.153.4",
+      "binarySha256": "444A3F0008050605CAE73CD9B7A2DCAC61294062DFAAB56DD20430FD6498518B",
+      "args": [
+        "exec",
+        "--ignore-user-config",
+        "--color",
+        "never",
+        "-C",
+        "D:\\VoSon\\Code\\web-3d-arch",
+        "-m",
+        "gpt-6-astra",
+        "-c",
+        "model_reasoning_effort=\"max\"",
+        "-c",
+        "service_tier=\"default\"",
+        "-c",
+        "features.fast_mode=false",
+        "-c",
+        "approval_policy=\"never\"",
+        "-s",
+        "danger-full-access",
+        "--json",
+        "-o",
+        "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mechanics-review-r1\\reports\\response.md",
+        "-"
+      ],
+      "status": "requested; verify actual session metadata"
+    },
+    "status": "verified at CLI/session metadata level",
+    "limitation": "No server-side response service-tier telemetry in session record",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "https://learn.chatgpt.com/docs/agent-configuration/speed"
+    ],
+    "upgrade": "Local ultra described as automatic task delegation; prohibited by task. Official model page lists max as highest reasoning effort."
+  },
+  "summary": {
+    "cases": 82,
+    "verdictCounts": {
+      "0": 66,
+      "5": 2,
+      "1": 10,
+      "2": 1,
+      "3": 3
+    },
+    "severityCounts": {
+      "P1": 2,
+      "P2": 5
+    },
+    "allNativeProcessExitCodesZero": true,
+    "allFailedResultsHadNoMesh": true,
+    "perPartIndexedTopologyClean": true,
+    "note": "Construction status and per-part topology are not functional pass verdicts."
+  },
+  "findings": [
+    {
+      "id": "MECH-R1-001",
+      "severity": "P1",
+      "title": "Các phép vát/rãnh phá thành lỗ lắp nhưng kiểm tra vẫn dùng footprint và chiều cao trước cắt",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 613,
+          "endLine": 619
+        },
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 646,
+          "endLine": 651
+        },
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 791,
+          "endLine": 800
+        }
+      ],
+      "reproduction": {
+        "cases": [
+          "lego-bevel-width-39.0",
+          "lego-groove-bore-breakout",
+          "charm-wide-pin-bevel"
+        ],
+        "fixtureArgs": [
+          "--product",
+          "3",
+          "--width",
+          "39",
+          "--set",
+          "baseH=2",
+          "--set",
+          "legoHoleH=1.8",
+          "--set",
+          "topBevel=1",
+          "--set",
+          "topBevelR=1.5",
+          "--set",
+          "topBevelShape=1",
+          "--set",
+          "legoRanhOn=0"
+        ],
+        "measurement": {
+          "yMm": 0.031,
+          "zMm": 1.75,
+          "boreCenterXmm": 16,
+          "radiusMm": 2.45,
+          "nominalWallMm": 0.8
+        }
+      },
+      "expected": "Lỗ mù giữ thành/mái trên solid cuối; nếu vát/rãnh cắt vào mặt lắp thì trả lỗi/đề xuất có lý do và không công bố candidate cơ khí hợp lệ.",
+      "actual": "AM_OK, exportBlocked=0. Ở Z=1.75, mặt vát ngoài X=18.25 còn bore tới X≈18.45: không còn thành bên. Bộ đọc tam giác chỉ thấy giao điểm cuối X=13.549999997, tức void thông ra ngoài. Với rãnh R=3, Z=4, H=8 cũng mất thành. Charm Øchốt=12, Øsocket=12.2, tâm X=6, Rvát=2.8, H=3, sâu=2.9: mặt vát X=9.9 tại Z=2.8, socket tới X≈12.1; Euler thân đổi 2→0 dù AM_OK.",
+      "impact": "Tệp dựng được có lỗ/ngàm mở sang mặt ngoài, mất vùng lắp đã yêu cầu. Đây là sai hình học kết hợp feature; topology từng part sạch và thể tích dương không phát hiện được.",
+      "requirements": [
+        "GEO-03",
+        "GEO-02",
+        "MOD-03"
+      ],
+      "suggestedFix": "Kiểm envelope thành và roof của mỗi lỗ trên solid sau toàn bộ bevel/groove/hollow/cross cuts; khai rõ vùng mở có chủ ý của flexure. Kiểm lại connector sau các phép cắt; không chỉ kiểm contains(envelope, footprint) và body_h>depth.",
+      "evidence": [
+        "evidence/reviewer-cases/lego-bevel-width-39.0.json",
+        "evidence/reviewer-cases/lego-bevel-width-39.0.bin",
+        "evidence/reviewer-followup-results.json",
+        "evidence/reviewer-cases/charm-wide-pin-bevel.bin"
+      ]
+    },
+    {
+      "id": "MECH-R1-002",
+      "severity": "P1",
+      "title": "impOn bị bỏ qua ở clicky, strap, lego và charm thay vì trả unsupported",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 108,
+          "endLine": 108
+        },
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 262,
+          "endLine": 262
+        },
+        {
+          "path": "src/kernel/mechanics/src/catalog.inc",
+          "line": 118,
+          "endLine": 127
+        },
+        {
+          "path": "src/domain/schema.mjs",
+          "line": 189,
+          "endLine": 191
+        }
+      ],
+      "reproduction": {
+        "cases": [
+          "import-enabled-0",
+          "import-enabled-1",
+          "import-enabled-2",
+          "import-enabled-3",
+          "import-enabled-4"
+        ],
+        "fixtureArgs": [
+          "--product",
+          "1",
+          "--set",
+          "impOn=1"
+        ],
+        "domainScript": "work/reviewer-probe/domain_probes.mjs"
+      },
+      "expected": "GEO-04 và domain cho impOn ở cả năm loại; khi ABI này chưa có mesh executor, mọi yêu cầu bật impOn phải trả AM_UNSUPPORTED, không mesh.",
+      "actual": "Adapter mã hóa field 117/value=1 cho cả năm loại. Keychain trả verdict=2/0 parts; bốn loại còn lại trả AM_OK, exportBlocked=0. So toàn bộ vertices/triangles/parts cho thấy hình học giống hệt impOn=false ở cả bốn loại. Native catalog vẫn có product mask=1, khiến b(impOn) false ngoài keychain.",
+      "impact": "Tích hợp có thể trả/xuất mô hình thiếu phần mesh được yêu cầu thêm/hàn/trừ mà không báo không hỗ trợ.",
+      "requirements": [
+        "GEO-04",
+        "MOD-03",
+        "EXP-02"
+      ],
+      "suggestedFix": "Đồng bộ product scope từ schema đã thống nhất; kiểm yêu cầu import độc lập khỏi mask cũ trước khi build. Khi chưa có executor, từ chối nhất quán cả năm loại.",
+      "evidence": [
+        "evidence/reviewer-domain-probes.json",
+        "evidence/reviewer-parameter-audit.json",
+        "evidence/reviewer-extended-results.json",
+        "evidence/reviewer-cases/import-enabled-1.json"
+      ]
+    },
+    {
+      "id": "MECH-R1-003",
+      "severity": "P2",
+      "title": "Adapter làm mất datum/referenceLayer của chiều cao nominal mm trong record vận hành",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/domain-adapter.mjs",
+          "line": 29,
+          "endLine": 41
+        }
+      ],
+      "reproduction": {
+        "domainInput": {
+          "product": "clicky",
+          "plateT": {
+            "heightMode": "mm",
+            "mm": 1.5,
+            "datum": {
+              "kind": "feature",
+              "featureId": "mech:cap:plate.underside"
+            },
+            "referenceLayer": 35
+          }
+        },
+        "script": "work/reviewer-probe/domain_probes.mjs"
+      },
+      "expected": "Đã khai datum/referenceLayer hợp lệ thì giữ trong packed ArchMechParam và source recipe binding; trường datum lạ phải bị từ chối cả ở mode mm.",
+      "actual": "Domain giữ dữ liệu nhưng adapter phát fieldId=24, mode=1, value=1.5, datum=0, referenceLayer=0. Bản gốc còn trong provenance, song record mà native/source-binding kiểm không giữ hai trường này.",
+      "impact": "Thông tin tham chiếu chế tạo bị mất qua hợp đồng tích hợp; metadata/conversion và kiểm stale binding không còn phản ánh lựa chọn của dự án. Nominal geometry của ca này vẫn giữ 1.5 mm; không khẳng định có snap tự động.",
+      "requirements": [
+        "GEO-02",
+        "ABI-01",
+        "MOD-03"
+      ],
+      "suggestedFix": "Mã hóa và kiểm datum/referenceLayer tùy chọn trong mode mm giống mode layers; dùng một resolver datum nhất quán và giữ chúng trong exact recipe bindings.",
+      "evidence": [
+        "evidence/reviewer-domain-probes.json",
+        "evidence/reviewer-domain-probes.log"
+      ]
+    },
+    {
+      "id": "MECH-R1-004",
+      "severity": "P2",
+      "title": "Nearest ties-to-even trong native dùng parity của chỉ số lớp toàn cục thay vì số lớp từ datum",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 138,
+          "endLine": 146
+        },
+        {
+          "path": "src/domain/layers.mjs",
+          "line": 97,
+          "endLine": 98
+        }
+      ],
+      "reproduction": {
+        "case": "clicky-mm-datum",
+        "schedule": {
+          "firstNm": 200000,
+          "regularNm": 200000
+        },
+        "parameter": {
+          "field": "plateT",
+          "mode": "mm",
+          "value": 1.5,
+          "datum": 2,
+          "referenceLayer": 35
+        },
+        "datumZmm": 7
+      },
+      "expected": "Cùng quy tắc domain: từ reference 35, span=7.5 lớp chọn 8 lớp, chiều dày 1.6 mm, delta +0.1 mm, endpoint 8.6.",
+      "actual": "Native báo z0=7,z1=8.5,floor≈-0.1,ceil≈+0.1 nhưng nearest≈-0.1 (endpoint 8.4, span 7 lớp) vì lo=42 là chẵn. Oracle số nguyên/domain chọn +0.1.",
+      "impact": "Hai bên đưa ra lựa chọn nearest lệch một lớp (0.2 mm). Người chấp nhận gợi ý có thể tạo độ dày khác tùy bên cung cấp metadata; hiện native chỉ trả sai gợi ý, không tự đổi nominal mm.",
+      "requirements": [
+        "GEO-02",
+        "MOD-03"
+      ],
+      "suggestedFix": "So khoảng cách và tie bằng đơn vị nguyên của schedule; dùng parity (end-referenceLayer), xác minh reference đúng datum. Đồng nhất chính sách với domain thay vì nới epsilon cho float.",
+      "evidence": [
+        "evidence/reviewer-cases/clicky-mm-datum.json",
+        "evidence/reviewer-domain-probes.json"
+      ]
+    },
+    {
+      "id": "MECH-R1-005",
+      "severity": "P2",
+      "title": "Datum source:body.bottom được dùng cho đáy váy dù hai mặt khác Z",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 287,
+          "endLine": 290
+        },
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 677,
+          "endLine": 677
+        },
+        {
+          "path": "src/kernel/mechanics/src/domain-adapter.mjs",
+          "line": 7,
+          "endLine": 10
+        }
+      ],
+      "reproduction": {
+        "case": "clicky-skirt-datum",
+        "parameters": {
+          "housing": 0,
+          "postH": 7,
+          "skirtH": {
+            "mode": "layers",
+            "count": 40,
+            "referenceLayer": 0,
+            "datum": 1
+          }
+        },
+        "scheduleMm": [
+          0.2,
+          0.2
+        ]
+      },
+      "expected": "source:body.bottom là đáy nguồn/plate ở U=8 mm. Reference layer 0 ở Z=0 không khớp datum này và phải bị từ chối; váy cần datum riêng hoặc bed khi đáy váy thật sự ở 0.",
+      "actual": "AM_OK. Source:body bắt đầu tại Z=8; interval skirtH vẫn mang datum=1,reference=0,z0=0,z1=8. height() chỉ so tag được call-site truyền, không đối chiếu nguồn datum đã xác định.",
+      "impact": "Một ID tham chiếu có hai mặt vật lý; lớp được chấp nhận với binding sai. Điều này làm sai ý nghĩa layer schedule khi UI/parent dùng cùng ID cho nguồn và váy.",
+      "requirements": [
+        "GEO-02",
+        "ABI-01"
+      ],
+      "suggestedFix": "Thêm/định nghĩa datum đáy váy riêng và kiểm Z của datum từ một registry hình học; mọi ID phải resolve một nghĩa trong request, không đổi nghĩa tùy field.",
+      "evidence": [
+        "evidence/reviewer-cases/clicky-skirt-datum.json",
+        "evidence/reviewer-cases/clicky-skirt-datum.bin"
+      ]
+    },
+    {
+      "id": "MECH-R1-006",
+      "severity": "P2",
+      "title": "Native chấp nhận số bậc không nguyên rồi cắt phần thập phân",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 253,
+          "endLine": 253
+        },
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 456,
+          "endLine": 461
+        },
+        {
+          "path": "src/kernel/mechanics/src/catalog.inc",
+          "line": 21,
+          "endLine": 21
+        }
+      ],
+      "reproduction": {
+        "case": "lego-fractional-steps",
+        "parameters": {
+          "legoOn": 0,
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelSeg": 3.9
+        }
+      },
+      "expected": "topBevelSeg là số bậc nguyên theo domain; 3.9 phải trả AM_INVALID và không mesh.",
+      "actual": "AM_OK, 60 triangles; effective parameter giữ 3.9 nhưng chỉ sinh ba feature step :0,:1,:2. Native kind=0 chỉ kiểm range rồi cast uint32_t. Domain normalizeField trả field-grid với cùng 3.9.",
+      "impact": "Đầu vào C ABI/native draft bị biến đổi nghĩa âm thầm và khác schema. Đường adapter strict hiện đã chặn ca này, nên phạm vi ảnh hưởng là caller C ABI/draft đi ngoài adapter.",
+      "requirements": [
+        "MOD-03",
+        "GEO-02",
+        "ABI-01"
+      ],
+      "suggestedFix": "Sinh ràng buộc integer/quantum từ schema vào native catalog và kiểm trước cast. Giữ nguyên yêu cầu, không làm tròn số bậc để pass.",
+      "evidence": [
+        "evidence/reviewer-cases/lego-fractional-steps.json",
+        "evidence/reviewer-parameter-audit.json"
+      ]
+    },
+    {
+      "id": "MECH-R1-007",
+      "severity": "P2",
+      "title": "Cổ MX tắt vẫn dùng đường kính cổ để chặn hốc trong trụ đang tồn tại",
+      "status": "confirmed",
+      "locations": [
+        {
+          "path": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 656,
+          "endLine": 668
+        }
+      ],
+      "reproduction": {
+        "case": "clicky-no-collar-small-d2",
+        "controlCase": "clicky-collar-disabled",
+        "parameters": {
+          "housing": 0,
+          "collarH": 0,
+          "postD1": 5.7,
+          "postD2": 4,
+          "crossL": 4.1,
+          "crossW": 1.35,
+          "clr": 0.05
+        }
+      },
+      "expected": "Với collarH=0 chỉ có trụ bán kính 2.85; góc hốc ở sqrt(4.2²+1.45²)/2≈2.222 mm nằm trong trụ. postD2 của phần cổ không được sinh phải được giữ mà không chặn quan hệ hình học.",
+      "actual": "AM_INVALID/MX_SOCKET_BREAKS_POST_WALL do so với min(r1,r2)=2, dù không có collar mesh. Đối chứng cùng collarH=0 với postD2 mặc định 6 dựng được hai part.",
+      "impact": "Một cấu hình trụ hợp lệ bị từ chối vì giá trị của phần đã tắt; người dùng phải sửa tham số không tạo hình học để tiếp tục dựng.",
+      "requirements": [
+        "MOD-03",
+        "GEO-03"
+      ],
+      "suggestedFix": "Kiểm kích thước hốc theo các đoạn trụ thực sự tồn tại trên khoảng Z của hốc; chỉ áp r2 khi collar có chiều cao dương và có giao khoảng cần kiểm.",
+      "evidence": [
+        "evidence/reviewer-cases/clicky-no-collar-small-d2.json",
+        "evidence/reviewer-cases/clicky-collar-disabled.json"
+      ]
+    }
+  ],
+  "limitationsAndObservations": [
+    {
+      "id": "GAP-01",
+      "title": "Oracle từng part không phải oracle toàn scene",
+      "evidence": [
+        "evidence/reviewer-followup-results.json"
+      ],
+      "observed": "Hai prepared slabs tiếp xúc đúng cạnh [0,20,0] mm hoặc điểm [0,0,0] được AM_OK; từng part kín. Ca tiếp xúc mặt [1,20,0] cũng AM_OK. AM_OK theo API chỉ là dựng hoàn tất, không phải chứng nhận scene manifold. Không gán lỗi standalone chỉ từ AM_OK, nhưng không được dùng các ca này làm pass in/union.",
+      "requiredNext": "Parent cần oracle giao/tiếp xúc/vertex-link/union toàn scene, giữ verdict fail/unverified qua cửa xuất."
+    },
+    {
+      "id": "GAP-02",
+      "title": "Nguồn prepared và layer rời chỉ là hợp đồng/probe tổng hợp",
+      "evidence": [
+        "evidence/reviewer-cases/lego-prepared-flat.json",
+        "evidence/reviewer-cases/charm-integral-floating-neck.json"
+      ],
+      "observed": "Prepared-flat chia slab có cùng volume với raised geometry; ca có lớp Z tách rời được giữ. Không có bộ nhập SVG, shaping, phân màu hoặc thuật toán bốn style trong đầu vào mechanics.",
+      "requiredNext": "Repro từ nguồn thật qua parent preparation và validate semantics/contacts; slab fixture không chứng minh source integration."
+    },
+    {
+      "id": "GAP-03",
+      "title": "Chưa kiểm đủ cửa runtime và xuất sản phẩm",
+      "observed": "Chỉ native ABI và adapter metadata; không build WASM, không Worker publish/lease/generation integration, OOM, native exception injection, memory.grow, serializer sản phẩm, slicer hay in coupon. STL đã đọc là STL fixture của một hộp, không phải exporter sản phẩm."
+    },
+    {
+      "id": "GAP-04",
+      "title": "Sai số cục bộ không phải tổng error bound hay fit vật lý",
+      "observed": "Đã đo pin/socket circles và thể tích giải tích. Boolean arbitrary input, near self-intersection, tổng nguồn/offset/triangulation/float, tất cả mặt bevel/oblique và độ bền/force/fatigue chưa có chứng minh đầy đủ."
+    },
+    {
+      "id": "OBS-01",
+      "title": "AM_AUTO_BODY_HEIGHT còn nhận stored value khác zero",
+      "observed": "Case autoh-nonzero: mode=3,value=5 của ringH được nhận và resolve 2.4, trong khi API yêu cầu stored zero. Không có biến đổi geometry ngoài ý nghĩa auto; ghi để siết canonical tag validation, không tính thêm lỗi P1/P2.",
+      "evidence": [
+        "evidence/reviewer-cases/autoh-nonzero.json"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "command": ". ./tools/project-env.ps1 -Seat codex -RunId 20260908-mechanics-review-r1; SHA256/length all inputs/source-manifest.json rows",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-source-hashes.json"
+    },
+    {
+      "command": "& \"$env:PROJECT_REVIEW_RUN/inputs/frozen/src/kernel/mechanics/tools/build.ps1\" -RunId 20260908-mechanics-review-r1 -Target native",
+      "exitCode": 0,
+      "evidence": [
+        "evidence/mechanics-native-configure.log",
+        "evidence/mechanics-native-build.log"
+      ]
+    },
+    {
+      "command": "cmake -S work/reviewer-probe -B work/build-reviewer-probe -G \"Visual Studio 18 2026\"; cmake --build work/build-reviewer-probe --config Release --parallel 2",
+      "exitCode": 0,
+      "evidence": [
+        "evidence/reviewer-probe-configure.log",
+        "evidence/reviewer-probe-build.log",
+        "evidence/reviewer-probe-final-build.log"
+      ]
+    },
+    {
+      "command": "python work/reviewer-probe/review_oracle.py",
+      "exitCode": 1,
+      "evidence": "evidence/reviewer-cases-run.log",
+      "note": "48 native cases exited 0; reviewer measurement harness stopped on typo utf8-sig. Fixed to utf-8-sig, remeasured without changing mesh."
+    },
+    {
+      "command": "python work/reviewer-probe/review_oracle.py --measure-only",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-measurements-run.log"
+    },
+    {
+      "command": "node work/reviewer-probe/domain_probes.mjs",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-domain-probes.log"
+    },
+    {
+      "command": "python work/reviewer-probe/followup_oracle.py (first attempt)",
+      "exitCode": 1,
+      "evidence": "evidence/reviewer-followup-harness-error.log",
+      "note": "Reviewer Path.with_suffix incorrectly stripped decimal part of test filename; corrected string+extension only."
+    },
+    {
+      "command": "python work/reviewer-probe/followup_oracle.py (corrected)",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-followup-run.log"
+    },
+    {
+      "command": "python work/reviewer-probe/extended_oracle.py",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-extended-run.log",
+      "note": "Corrected reviewer fixture option to --variant prepared; no expected/tolerance changes."
+    },
+    {
+      "command": "node work/reviewer-probe/parameter_audit.mjs",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-parameter-audit.log"
+    },
+    {
+      "command": "python work/reviewer-probe/output_range.py",
+      "exitCode": 0,
+      "evidence": "evidence/reviewer-output-range.log"
+    },
+    {
+      "command": "Rehash 57 frozen files; git -C .toolchain/manifold status --porcelain --untracked-files=no with GIT_OPTIONAL_LOCKS=0",
+      "exitCode": 0,
+      "evidence": [
+        "evidence/reviewer-final-input-integrity.json",
+        "evidence/reviewer-tools-and-dependencies.json"
+      ]
+    }
+  ],
+  "nativeCommandsEvidence": "evidence/reviewer-command-journal.json",
+  "caseSummaryEvidence": "evidence/reviewer-final-case-summary.json"
+}

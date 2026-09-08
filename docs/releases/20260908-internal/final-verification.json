@@ -1,0 +1,269 @@
+{
+  "at": "2026-09-08T12:54:37.402Z",
+  "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+  "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+  "finalFlows": {
+    "passed": 3,
+    "total": 3,
+    "engine": "Chromium visible",
+    "input": "report/preview/20260908-internal/input.json",
+    "results": [
+      {
+        "id": "SETTINGS-JSON",
+        "verdict": "pass",
+        "actual": {
+          "settingsRevision": 1,
+          "values": {
+            "language": "vi"
+          },
+          "byteLength": 46,
+          "sha256": "d3fd325e089a40fe65edd942c806276bcfd9b5649b6330d19c01d4e0a0870ef2",
+          "noProject": true,
+          "transport": "actual HTTPS/SQLite; synthetic signed identity only"
+        }
+      },
+      {
+        "id": "ORDINARY-PRODUCT-STL",
+        "verdict": "pass",
+        "actual": {
+          "model": {
+            "visibleRevision": 2,
+            "readouts": "Kích thước\n48 × 32 × 3,2 mm\nBộ phận\n3\nTam giác\n1.900\nKiểm mesh\nđã kiểm đạt"
+          },
+          "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+          "revision": 2,
+          "sha256": "ffb7a42dbb036c699e12f67653ac8dca21f3d7061f7529a65837bcbbd60ca810",
+          "byteLength": 95084,
+          "triangles": 1900,
+          "bounds": {
+            "min": [
+              -24,
+              -12.749999046325684,
+              0
+            ],
+            "max": [
+              24,
+              19.249998092651367,
+              3.200000047683716
+            ]
+          },
+          "mesh": {
+            "vertexCount": 950,
+            "faceCount": 1900,
+            "edgeCount": 2850,
+            "euler": 0,
+            "volume": 3752.9201799580555,
+            "area": 3048.157839069353,
+            "caps": {
+              "0": 1253.2167361072793,
+              "2.4000000953674316": 321.716813354897,
+              "3.200000047683716": 931.4999227523803
+            }
+          },
+          "receiptSHA256": "599302d31a1a269dd828a60bdc05893b7975adde43a4fa4839a590d26c800cdb",
+          "conditioning": {
+            "status": "not-proposed"
+          },
+          "projectIdentityBinding": "cross-checked against independent downloaded rescue in RESCUE-ZIP",
+          "qualificationLimit": "No added physical-fit, global-error or self-intersection proof from this independent reader"
+        }
+      },
+      {
+        "id": "RESCUE-ZIP",
+        "verdict": "pass",
+        "actual": {
+          "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+          "revision": 2,
+          "selectedManifestHash": "6f4af4458ab2d629669f4f57680f0b318fec1e69d115536e3ef2fe26a84773af",
+          "entries": 8,
+          "sha256": "89d013f2052059d87f737a5ae828bfa3ab0f941acdb043e672c91dc16eb69468",
+          "byteLength": 96373,
+          "originalSHA256": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+          "receiptCrossBound": true,
+          "complete": true,
+          "issues": []
+        }
+      }
+    ]
+  },
+  "parentReadback": {
+    "stlTriangles": 1900,
+    "rescueComplete": true,
+    "receiptProjectAndRevisionMatch": true,
+    "settingsHashMatches": true
+  },
+  "runtimeIssues": [],
+  "startupLimitation": "First headless navigation exceeded10s beforeanycase. VisibleChromium rerun passed with originalcase/startupdeadlines retained; no causalperformancefix or10scoldstartupguarantee.",
+  "files": [
+    {
+      "path": "three-flows/ACTUAL-MODEL-dom.json",
+      "bytes": 418,
+      "sha256": "238535c96049790dc22f814b7970442625630e20cefc380058fbb5fd8581fd21"
+    },
+    {
+      "path": "three-flows/ACTUAL-MODEL-ui.txt",
+      "bytes": 3569,
+      "sha256": "8a2f8bd348805a9f149a8c8b56fa2143f4c40faec6ba84bcae622779219425ee"
+    },
+    {
+      "path": "three-flows/ACTUAL-MODEL.png",
+      "bytes": 249464,
+      "sha256": "542647d20b03b4c2a80b97cdcaf19715a3411147739114e8b0dea309f82beb6e"
+    },
+    {
+      "path": "three-flows/cleanup.json",
+      "bytes": 148,
+      "sha256": "49ee51fd5f0525111b3a1bd3c53bc850e31b1bbe2f20b1fdff9443799e0fe526"
+    },
+    {
+      "path": "three-flows/final-rescue.arch-project.zip",
+      "bytes": 96373,
+      "sha256": "89d013f2052059d87f737a5ae828bfa3ab0f941acdb043e672c91dc16eb69468"
+    },
+    {
+      "path": "three-flows/keychain-receipt.json",
+      "bytes": 9865,
+      "sha256": "599302d31a1a269dd828a60bdc05893b7975adde43a4fa4839a590d26c800cdb"
+    },
+    {
+      "path": "three-flows/keychain.stl",
+      "bytes": 95084,
+      "sha256": "ffb7a42dbb036c699e12f67653ac8dca21f3d7061f7529a65837bcbbd60ca810"
+    },
+    {
+      "path": "three-flows/ORDINARY-PRODUCT-STL-dom.json",
+      "bytes": 9967,
+      "sha256": "cad67c22798e951c4f4c42b7a68770c34f8fc77e8000d85ff36cb8b2301c856d"
+    },
+    {
+      "path": "three-flows/ORDINARY-PRODUCT-STL-result.json",
+      "bytes": 1535,
+      "sha256": "0f49b18f9678da1caa2154ee9ec025b5d0606d1ef601376e33b4eb09a7eb6661"
+    },
+    {
+      "path": "three-flows/ORDINARY-PRODUCT-STL-ui.txt",
+      "bytes": 11903,
+      "sha256": "d004f632cf22d4a974a765cf598e2ce7edbf936fdb15b57dd31201f371a7b564"
+    },
+    {
+      "path": "three-flows/ORDINARY-PRODUCT-STL.png",
+      "bytes": 266969,
+      "sha256": "a8c2b73c5f4ae6947a5b4b83f5b1107fc771bf59de608c3411819145c73b682d"
+    },
+    {
+      "path": "three-flows/progress.json",
+      "bytes": 5649,
+      "sha256": "b48c9e27415b1fbccdb080b6c94dba0d319e0961d89a948a4e2353b4d834354f"
+    },
+    {
+      "path": "three-flows/RESCUE-ZIP-dom.json",
+      "bytes": 418,
+      "sha256": "238535c96049790dc22f814b7970442625630e20cefc380058fbb5fd8581fd21"
+    },
+    {
+      "path": "three-flows/RESCUE-ZIP-result.json",
+      "bytes": 704,
+      "sha256": "a1f7ecd03c0c6aca92d6594ac7295596d4271eb922676183c58619afa003e839"
+    },
+    {
+      "path": "three-flows/RESCUE-ZIP-ui.txt",
+      "bytes": 4183,
+      "sha256": "60fba99affbeea8602bb40ef9fb3d0e0a68eabbbd8baef9d78dff65c2f4befd8"
+    },
+    {
+      "path": "three-flows/RESCUE-ZIP.png",
+      "bytes": 256587,
+      "sha256": "0dd06027a0c51ddf82f37114ad74e289594305a4b12ae1dc56121a11a04a7c60"
+    },
+    {
+      "path": "three-flows/runtime.json",
+      "bytes": 15517,
+      "sha256": "918ba8a1aa29f03e950e36cab894740821c5227f4065543afe939cbe2d4fd362"
+    },
+    {
+      "path": "three-flows/settings-input.json",
+      "bytes": 46,
+      "sha256": "d3fd325e089a40fe65edd942c806276bcfd9b5649b6330d19c01d4e0a0870ef2"
+    },
+    {
+      "path": "three-flows/SETTINGS-JSON-dom.json",
+      "bytes": 410,
+      "sha256": "8427a8095ad9b77dd73dc0bb6724648e14e962d9868d10afd08c13263df97381"
+    },
+    {
+      "path": "three-flows/SETTINGS-JSON-result.json",
+      "bytes": 489,
+      "sha256": "564846eea98c35e694800c0f40a3c0332e45445b6638a798cca73c127ace9291"
+    },
+    {
+      "path": "three-flows/SETTINGS-JSON-ui.txt",
+      "bytes": 11298,
+      "sha256": "874c67ed56a781797756c6d007c8587619ca5426c792d7a1f85456c12593e58f"
+    },
+    {
+      "path": "three-flows/SETTINGS-JSON.png",
+      "bytes": 152377,
+      "sha256": "b9d53fca045a976defaa6cc5712d480ade97230defe138b2f47fa0566b4801f6"
+    },
+    {
+      "path": "three-flows/settings.json",
+      "bytes": 46,
+      "sha256": "d3fd325e089a40fe65edd942c806276bcfd9b5649b6330d19c01d4e0a0870ef2"
+    },
+    {
+      "path": "three-flows/SOURCE-CONSENT-dom.json",
+      "bytes": 410,
+      "sha256": "8427a8095ad9b77dd73dc0bb6724648e14e962d9868d10afd08c13263df97381"
+    },
+    {
+      "path": "three-flows/SOURCE-CONSENT-ui.txt",
+      "bytes": 14072,
+      "sha256": "46bf52a53a40e4d4080bf9b80691defef2e6ec332b2612912efdaeca5057a818"
+    },
+    {
+      "path": "three-flows/SOURCE-CONSENT.png",
+      "bytes": 210217,
+      "sha256": "66949bae10ed7d9e2f6780e8fd4904950ce7a3bd3fdb74450c4b5fc97272ca73"
+    },
+    {
+      "path": "three-flows/summary.json",
+      "bytes": 8240,
+      "sha256": "964642cb6c6845eacfeca6617a8ab1a0ebee52867527a6aa61d60ec3a65601d2"
+    },
+    {
+      "path": "evidence/final-three-r1-chromium.txt",
+      "bytes": 639,
+      "sha256": "4d4845e3bce328b558ce69945ff76c4bf81e088068a954c1fedc9e5d1bfef9bd"
+    },
+    {
+      "path": "evidence/final-three-r1-exit.json",
+      "bytes": 227,
+      "sha256": "b0c42895c521b0fc40bb3f20e633f397dcfc45b62795a261a7be284dc02ce797"
+    },
+    {
+      "path": "evidence/final-three-r2-control.json",
+      "bytes": 447,
+      "sha256": "fae168c27045ded0d156cb26a30653dcfd90d6b1faf5d409752155e749b9c7c9"
+    },
+    {
+      "path": "evidence/final-three-r2-chromium.txt",
+      "bytes": 2121,
+      "sha256": "6beacb8343d5de781632939776462ec0d39937f8bd295c37d8b82c51e91cf74d"
+    },
+    {
+      "path": "evidence/final-three-r2-exit.json",
+      "bytes": 235,
+      "sha256": "8a4612aa751228daf6cc4e8935ee5f0c87b8a7e7f7fdd3d074aff4e3287d5ebe"
+    }
+  ],
+  "releaseReady": false,
+  "qualification": "Three targeted real UI/HTTPS/SQLite/Worker flows; not fullv1, allgeometry, allbrowsers, paidAI, productionauth, slicer orphysicalfit acceptance.",
+  "finalAgentSeal": {
+    "sha256": "e813d76606e5dc333647467021b36f6e3405d810e92719354d2b5424f7ead9ec",
+    "entriesChecked": 109,
+    "passed": 3,
+    "exit": 0
+  },
+  "networkNotes": "2 background fetches aborted, recorded;0page/consoleissues",
+  "floatConsentInThisFinalSample": "not-proposed; not counted as covered by3flows"
+}

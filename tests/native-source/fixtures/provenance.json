@@ -1,0 +1,208 @@
+{
+  "version": "arch-native-source-fixtures/1",
+  "purpose": "Actual NFD Vietnamese text regression: canonical Clipper intersection edge must survive source extrusion.",
+  "originalText": "Ế\nĐO",
+  "font": {
+    "id": "inter",
+    "name": "Inter",
+    "family": "Inter",
+    "file": "Inter.ttf",
+    "path": "ttf/Inter.ttf",
+    "style": "normal",
+    "weight": 400,
+    "category": "sans_serif",
+    "format": "truetype",
+    "outlineFormat": "glyf",
+    "variable": true,
+    "axes": {
+      "opsz": {
+        "min": 14,
+        "default": 14,
+        "max": 32
+      },
+      "wght": {
+        "min": 100,
+        "default": 400,
+        "max": 900
+      }
+    },
+    "defaultVariation": {
+      "opsz": 14,
+      "wght": 400
+    },
+    "unitsPerEm": 2048,
+    "glyphCount": 2933,
+    "fontRevision": 4.001007080078125,
+    "internalVersion": "Version 4.001;git-66647c0bb",
+    "coverage": {
+      "unicodeCodepoints": 2849,
+      "vietnamese": true,
+      "missingVietnamese": []
+    },
+    "sampleText": "Tiếng Việt: Đặng Thái Sơn — Ắ ầ ễ ộ ớ ự ỹ",
+    "bytes": 876576,
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+    "license": {
+      "spdx": "OFL-1.1",
+      "path": "licenses/inter/OFL.txt"
+    },
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/5e35378e6bda803962ee6fd257e444a7d459660d/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "filename": "Inter[opsz,wght].ttf",
+      "repository": "https://github.com/google/fonts",
+      "commit": "5e35378e6bda803962ee6fd257e444a7d459660d",
+      "modified": false
+    }
+  },
+  "parameters": {
+    "sizeMm": 12,
+    "variations": {
+      "wght": 620,
+      "opsz": 14
+    },
+    "letterSpacingMm": 0.35,
+    "lineSpacing": 1.4,
+    "bendDegrees": 12,
+    "placement": {
+      "xMm": 0,
+      "yMm": 0,
+      "rotationDegrees": 0
+    },
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "build": {
+    "thicknessMm": 0.2,
+    "longEdgeMm": 0,
+    "toleranceMm": 0.001
+  },
+  "files": [
+    {
+      "path": "combined-vietnamese-original.svg",
+      "sha256": "4af5a0bf6159dbfed4a6cc16ac4a33e5b83979edb39a01d18d58dcdf5275940d",
+      "derivation": "main same-Module HarfBuzz+text-layout SVG numeric output, original font bytes unchanged",
+      "bytes": 4944
+    },
+    {
+      "path": "combined-vietnamese-adopted.svg",
+      "sha256": "c1c031b7b0c127c80af1d250b206671cd11aeedc24eef6cec61f6c4e9471322e",
+      "derivation": "checked source-art manufacturing wrapper over numeric SVG, captured production source export",
+      "bytes": 4982
+    },
+    {
+      "path": "oo-multiline.svg",
+      "sha256": "657e9923c92f9da45f0711bfa9d47110ee19f040aa6ac2cd71988f9d152005c5",
+      "text": "O\nO",
+      "parameters": {
+        "sizeMm": 12,
+        "variations": {
+          "wght": 620,
+          "opsz": 14
+        },
+        "letterSpacingMm": 0.35,
+        "lineSpacing": 1.4,
+        "bendDegrees": 12,
+        "placement": {
+          "xMm": 0,
+          "yMm": 0,
+          "rotationDegrees": 0
+        },
+        "color": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      "derivation": "same-root HarfBuzz14.4.0 + checked text-layout, original Inter bytes",
+      "bytes": 4142
+    },
+    {
+      "path": "nfd-accent.svg",
+      "sha256": "92c19d9982cd7b54b38b942325c0e3e320b99debde12ea2cf85db4c968c6b3f8",
+      "text": "Ế",
+      "parameters": {
+        "sizeMm": 12,
+        "variations": {
+          "wght": 620,
+          "opsz": 14
+        },
+        "letterSpacingMm": 0.35,
+        "lineSpacing": 1.4,
+        "bendDegrees": 0,
+        "placement": {
+          "xMm": 0,
+          "yMm": 0,
+          "rotationDegrees": 0
+        },
+        "color": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      "derivation": "same-root HarfBuzz14.4.0 + checked text-layout, original Inter bytes",
+      "bytes": 1280
+    },
+    {
+      "path": "nfd-regular-multiline.svg",
+      "sha256": "83cab7f33953537f14c4c5f7f3cd0c6728a335f269d85eb4bf6564029a7ac9eb",
+      "text": "Ế\nĐO",
+      "parameters": {
+        "sizeMm": 12,
+        "variations": {
+          "wght": 400,
+          "opsz": 14
+        },
+        "letterSpacingMm": 0.35,
+        "lineSpacing": 1.4,
+        "bendDegrees": 0,
+        "placement": {
+          "xMm": 0,
+          "yMm": 0,
+          "rotationDegrees": 0
+        },
+        "color": [
+          0,
+          0,
+          0,
+          255
+        ]
+      },
+      "derivation": "same-root HarfBuzz14.4.0 + checked text-layout, original Inter bytes",
+      "bytes": 3154
+    },
+    {
+      "path": "shared-hole-accent.svg",
+      "derivation": "authored analytic24x10mm source:100-16+1+50+50=185mm2, T-junction/hole/accent; no external asset",
+      "sha256": "3221492caa1245e1b91ab76fea0a15a6f94b18da1c32cbefab45a7f9cd98fbda",
+      "bytes": 256
+    },
+    {
+      "path": "clipper-viewport.json",
+      "derivation": "direct pinned Clipper union/viewport output, separate original/adopted cases; tests/native-source/clipper-stage and actual dump-vector records",
+      "sha256": "ebfe6b360dbd064b4bfe288c51797c3ef497307788289dec32325c48755d6553",
+      "bytes": 158835
+    }
+  ],
+  "license": "OFL-1.1 original font, copied notice OFL-Inter.txt; authored test text and generated outline fixture",
+  "regenerator": "tests/native-source/regenerate-text.mjs",
+  "fontAssetPath": "src/assets/fonts/ttf/Inter.ttf",
+  "licenseNotice": {
+    "path": "OFL-Inter.txt",
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+  },
+  "toolchain": {
+    "usvg": "0.48.1",
+    "clipperRevision": "46f639177fe418f9689e8ddb74f08a870c71f5b4",
+    "harfbuzz": "14.4.0",
+    "nativeRust": "1.98.1",
+    "wasmRust": "nightly-2026-09-07",
+    "emsdk": "6.0.9"
+  }
+}

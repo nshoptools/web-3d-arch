@@ -1,0 +1,2709 @@
+{
+  "seed": "0xfe030407",
+  "pairs": 450,
+  "interiorOverlapCases": 144,
+  "unsafe": [],
+  "rows": [
+    {
+      "i": 0,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 1,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 2,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 3,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 4,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 5,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 6,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 7,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 8,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 9,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 10,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 11,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 12,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 13,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 14,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 15,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 16,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 17,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 18,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 19,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 20,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 21,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 22,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 23,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 24,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 25,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 26,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 27,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 28,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 29,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 30,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 31,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 32,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 33,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 34,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 35,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 36,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 37,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 38,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 39,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 40,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 41,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 42,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 43,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 44,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 45,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 46,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 47,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 48,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 49,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 50,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 51,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 52,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 53,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 54,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 55,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 56,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 57,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 58,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 59,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 60,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 61,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 62,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 63,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 64,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 65,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 66,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 67,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 68,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 69,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 70,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 71,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 72,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 73,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 74,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 75,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 76,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 77,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 78,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 79,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 80,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 81,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 82,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 83,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 84,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 85,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 86,
+      "overlapVolumeMm3": 5,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 87,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 88,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 89,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 90,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 91,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 92,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 93,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 94,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 95,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 96,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 97,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 98,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 99,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 100,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 101,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 102,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 103,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 104,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 105,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 106,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 107,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 108,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 109,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 110,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 111,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 112,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 113,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 114,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 115,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 116,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 117,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 118,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 119,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 120,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 121,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 122,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 123,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 124,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 125,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 126,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 127,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 128,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 129,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 130,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 131,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 132,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 133,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 134,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 135,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 136,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 137,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 138,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 139,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 140,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 141,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 142,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 143,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 144,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 145,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 146,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 147,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 148,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 149,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 150,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 151,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 152,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 153,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 154,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 155,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 156,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 157,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 158,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 159,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 160,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 161,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 162,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 163,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 164,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 165,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 166,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 167,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 168,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 169,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 170,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 171,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 172,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 173,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 174,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 175,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 176,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 177,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 178,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 179,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 180,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 181,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 182,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 183,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 184,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 185,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 186,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 187,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 188,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 189,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 190,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 191,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 192,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 193,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 194,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 195,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 196,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 197,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 198,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 199,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 200,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 201,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 202,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 203,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 204,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 205,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 206,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 207,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 208,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 209,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 210,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 211,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 212,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 213,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 214,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 215,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 216,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 217,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 218,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 219,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 220,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 221,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 222,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 223,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 224,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 225,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 226,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 227,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 228,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 229,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 230,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 231,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 232,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 233,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 234,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 235,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 236,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 237,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 238,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 239,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 240,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 241,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 242,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 243,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 244,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 245,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 246,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 247,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 248,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 249,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 250,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 251,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 252,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 253,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 254,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 255,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 256,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 257,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 258,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 259,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 260,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 261,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 262,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 263,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 264,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 265,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 266,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 267,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 268,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 269,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 270,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 271,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 272,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 273,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 274,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 275,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 276,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 277,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 278,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 279,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 280,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 281,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 282,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 283,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 284,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 285,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 286,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 287,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 288,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 289,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 290,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 291,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 292,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 293,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 294,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 295,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 296,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 297,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 298,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 299,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 300,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 301,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 302,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 303,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 304,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 305,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 306,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 307,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 308,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 309,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 310,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 311,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 312,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 313,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 314,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 315,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 316,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 317,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 318,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 319,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 320,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 321,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 322,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 323,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 324,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 325,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 326,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 327,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 328,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 329,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 330,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 331,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 332,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 333,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 334,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 335,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 336,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 337,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 338,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 339,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 340,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 341,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 342,
+      "overlapVolumeMm3": 5,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 343,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 344,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 345,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 346,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 347,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 348,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 349,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK"
+    },
+    {
+      "i": 350,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 351,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 352,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 353,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 354,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 355,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 356,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 357,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 358,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 359,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 360,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 361,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 362,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 363,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 364,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 365,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 366,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 367,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 368,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 369,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 370,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 371,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 372,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 373,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 374,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 375,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 376,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 377,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 378,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 379,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 380,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 381,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 382,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 383,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 384,
+      "overlapVolumeMm3": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 385,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 386,
+      "overlapVolumeMm3": 5,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 387,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 388,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 389,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 390,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 391,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 392,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 393,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 394,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 395,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 396,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 397,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 398,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 399,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 400,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 401,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 402,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 403,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 404,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 405,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 406,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 407,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 408,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 409,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 410,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 411,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 412,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 413,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 414,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 415,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 416,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 417,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 418,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 419,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 420,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 421,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 422,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 423,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 424,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 425,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 426,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 427,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 428,
+      "overlapVolumeMm3": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 429,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 430,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 431,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 432,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 433,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 434,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 435,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 436,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 437,
+      "overlapVolumeMm3": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 438,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 439,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 440,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 441,
+      "overlapVolumeMm3": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 442,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 443,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 444,
+      "overlapVolumeMm3": 1,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 445,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 446,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 447,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 448,
+      "overlapVolumeMm3": 2,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    },
+    {
+      "i": 449,
+      "overlapVolumeMm3": 0,
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE"
+    }
+  ],
+  "limits": "Random surface nonmanifold cases are allowed to fail; only a positive verdict with nonzero occupancy intersection is counted unsafe."
+}

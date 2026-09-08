@@ -1,0 +1,1726 @@
+{
+  "budgetMm": 1e-8,
+  "method": "Frozen patch-boundary/plane-slab oracle on every corresponding part after independent full topology checks. No changed tolerance, no altered meshes. This is cross-target parity, not correctness by itself.",
+  "rows": [
+    {
+      "id": "emoji-charm-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-charm-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-clicky-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-keychain-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-chim",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 1.0771951821462068e-11,
+          "maxSurfaceBound": 1.077617240367912e-11,
+          "maxPlaneWidth": 4.220582217051572e-15,
+          "changedFaces": 56,
+          "patches": 14,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-noi",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 1.0771951821462068e-11,
+          "maxSurfaceBound": 1.077617240367912e-11,
+          "maxPlaneWidth": 4.220582217051572e-15,
+          "changedFaces": 56,
+          "patches": 14,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-phang",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 1.0771951821462068e-11,
+          "maxSurfaceBound": 1.077617240367912e-11,
+          "maxPlaneWidth": 4.220582217051572e-15,
+          "changedFaces": 56,
+          "patches": 14,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-lego-phang2",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 1.0771951821462068e-11,
+          "maxSurfaceBound": 1.077617240367912e-11,
+          "maxPlaneWidth": 4.220582217051572e-15,
+          "changedFaces": 56,
+          "patches": 14,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "emoji-strap-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-charm-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-clicky-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-keychain-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-chim",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 5.088190587414789e-11,
+          "maxSurfaceBound": 5.0884469795445387e-11,
+          "maxPlaneWidth": 2.563921297493721e-15,
+          "changedFaces": 32,
+          "patches": 8,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-noi",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 5.088190587414789e-11,
+          "maxSurfaceBound": 5.0884469795445387e-11,
+          "maxPlaneWidth": 2.563921297493721e-15,
+          "changedFaces": 32,
+          "patches": 8,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-phang",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 5.088190587414789e-11,
+          "maxSurfaceBound": 5.0884469795445387e-11,
+          "maxPlaneWidth": 2.563921297493721e-15,
+          "changedFaces": 32,
+          "patches": 8,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-lego-phang2",
+      "byteIdentical": false,
+      "parts": [
+        {
+          "maxVertexDelta": 5.088190587414789e-11,
+          "maxSurfaceBound": 5.0884469795445387e-11,
+          "maxPlaneWidth": 2.563921297493721e-15,
+          "changedFaces": 32,
+          "patches": 8,
+          "orientedTrianglesIdentical": false
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-chim",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-noi",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-phang",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "id": "text-strap-phang2",
+      "byteIdentical": true,
+      "parts": [
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        },
+        {
+          "maxVertexDelta": 0,
+          "maxSurfaceBound": 0,
+          "maxPlaneWidth": 0,
+          "changedFaces": 0,
+          "patches": 0,
+          "orientedTrianglesIdentical": true
+        }
+      ],
+      "status": "pass"
+    }
+  ]
+}

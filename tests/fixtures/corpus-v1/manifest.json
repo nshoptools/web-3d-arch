@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "version": "corpus-v1",
+  "status": "seed corpus; geometry acceptance unverified",
+  "files": [
+    {
+      "path": "rectangle-hole.svg",
+      "bytes": 168,
+      "sha256": "07e2d061680bffe7915f733c40a3ea6bb6ed28de119d997a38947ead4bb55187",
+      "source": "created for this project specification",
+      "rights": "project-authored test data; see repository LICENSE",
+      "expected": {
+        "area_mm2": 184,
+        "components": 1,
+        "holes": 1,
+        "oracle": "20*10 - 4*4; geometry not yet executed"
+      }
+    },
+    {
+      "path": "shared-seam.svg",
+      "bytes": 177,
+      "sha256": "6deec001cb76b5d9c998d259ef9a8c84e3dfcf6b4f353e912ece3788bcbf5648",
+      "source": "created for this project specification",
+      "rights": "project-authored test data; see repository LICENSE",
+      "expected": {
+        "total_area_mm2": 200,
+        "per_material_area_mm2": [
+          100,
+          100
+        ],
+        "shared_seam_mm": 10,
+        "oracle": "two analytic rectangles; geometry not yet executed"
+      }
+    },
+    {
+      "path": "text-samples.json",
+      "bytes": 469,
+      "sha256": "9a8c80bd2454dd6e76f1f015a04181732a213d26b14ab1bb7d293f2d3d2a55fe",
+      "source": "created for this project specification",
+      "rights": "project-authored test data; see repository LICENSE",
+      "expected": {
+        "oracle": "Unicode literal sequences; not font coverage assertion"
+      }
+    }
+  ]
+}

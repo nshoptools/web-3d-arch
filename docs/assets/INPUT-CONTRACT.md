@@ -32,6 +32,23 @@ const run = source.shapeRun('Tiếng Việt', {
 Hàm chặn xuống dòng, tab, bidi control, surrogate lỗi, glyph thiếu và trục
 ngoài phạm vi. Không thay ký tự thiếu bằng hình hộp hoặc font hệ thống ngầm định.
 
+Trong Worker của ứng dụng, dùng cùng module nhân thay vì khởi tạo allocator
+HarfBuzz thứ hai:
+
+```javascript
+import { initializeHarfBuzz } from '../../src/input/harfbuzz-engine.mjs';
+import { createFontSourceWithHarfBuzz } from '../../src/input/font-source-core.mjs';
+const hb = await initializeHarfBuzz(engine); // module Emscripten đã khởi tạo, ABI 2
+const source = await createFontSourceWithHarfBuzz(fontBytes, entry, hb);
+```
+
+Đường import điều chỉnh theo vị trí module gọi. `fontBytes` phải là byte nguồn
+đã kiểm hash; `entry` giữ cùng catalog và variation. Wrapper dẫn xuất có
+[provenance](../development/harfbuzz-binding.json); không sửa bản vendor gốc.
+Kết quả shape/outline/variation đã so trên 53 tệp font với bộ đọc độc lập;
+memory growth và paint graph được kiểm ở Worker ba browser. Điều này không
+thay các bước chia run, bố trí chữ, chuyển màu và kiểm mesh dưới đây.
+
 Kết quả giữ `originalText`, `text` chuẩn hóa NFC, `glyphId`, `cluster`,
 `xAdvance/yAdvance`, `xOffset/yOffset`, vị trí `x/y` đã cộng offset. `cluster`
 tính theo **UTF-16 code unit của text sau NFC**. Với font chữ/đơn sắc, `outline`

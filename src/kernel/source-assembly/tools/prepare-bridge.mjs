@@ -1,0 +1,41 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {spawnSync} from 'node:child_process';
+import {patchDetached} from '../compat/patch-detached.mjs';
+const room=process.env.PROJECT_REVIEW_RUN;
+assert.equal(path.basename(room??''),'20260908-source-assembly-wave1');
+const input=path.join(room,'inputs/mechanics-v2'),target=path.join(room,'work/mechanics-bridge');
+assert.ok(path.resolve(target).startsWith(path.resolve(room)+path.sep));
+const files=['CMakeLists.txt','src/mechanics.cpp','src/mechanics.h','src/parameter_ids.h','src/catalog.inc','src/domain-adapter.mjs','src/catalog-map.mjs'];
+for(const f of files){const out=path.join(target,f);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,fs.readFileSync(path.join(input,f)));}
+const file=path.join(target,'src/mechanics.cpp'),before=fs.readFileSync(file,'utf8');
+const old='p.origin<=AM_PRESET&&p.mode<=AM_AUTO_BODY_MIDPOINT&&p.datum<AM_DATUM_COUNT';
+const replacement='p.origin<=AM_PRESET&&p.mode<=AM_AUTO_BODY_MIDPOINT&&(p.datum<AM_DATUM_COUNT||(f.source==1&&f.kind==1&&p.datum>=128&&p.datum<135))';
+assert.equal(before.split(old).length,2);
+const sliceOld='std::vector<Manifold> body;for(const auto& p:source_patches)if(!p.text)body.push_back(pieces[p.piece].mesh);\n    const CrossSection support(Manifold::BatchBoolean(body,manifold::OpType::Add).Slice(body_z+first/2),CrossSection::FillRule::NonZero);';
+const sliceNew='// Validate the typed slab partition at an interior Z interval directly.\n    // Manifold::Slice interpolates triangle edges, adding a second rounding path\n    // to an exact supplied footprint (visible on curved circle contours).\n    std::vector<CrossSection> body;for(const auto& p:source_patches)if(!p.text&&p.z0<body_z+first/2&&p.z1>body_z+first/2)body.push_back(p.shape);\n    const CrossSection support=CrossSection::BatchBoolean(body,manifold::OpType::Add);';
+assert.ok(before.includes(sliceOld));
+const groove=fs.readFileSync(new URL('../compat/perimeter-groove.cpp.inc',import.meta.url),'utf8').trim();
+const grooveStart=before.indexOf('Manifold Builder::perimeter_groove('),grooveEnd=before.indexOf('\nvoid Builder::source_bevel()',grooveStart);
+assert.ok(grooveStart>0&&grooveEnd>grooveStart);
+const withGroove=before.slice(0,grooveStart)+groove+'\n'+before.slice(grooveEnd);
+const cutOld='cut(perimeter_groove(footprint,radius,body_z+center,f),0);';
+const cutNew='auto groove=perimeter_groove(footprint,radius,body_z+center,f);\n    const double numericBudget=std::min({1e-7,r.mating_tolerance_mm/1000,v(AM_F_meshJoinTolerance)/1000});\n    for(auto& piece:pieces)if(piece.group==0){\n      auto result=evaluate(piece.mesh-groove);\n      piece.mesh=evaluate(result.AsOriginal().Simplify(numericBudget));\n    }\n    out.curves.push_back({f,0,2,0,0,-numericBudget,numericBudget,r.mating_tolerance_mm});';
+assert.ok(withGroove.includes(cutOld));
+const after=patchDetached(withGroove.replace(old,replacement).replace(sliceOld,sliceNew).replace(cutOld,cutNew))+'\nextern "C" uint32_t arch_mech_source_datum_extension_version(){return 1;}\n';
+fs.writeFileSync(file,after);
+const header=path.join(target,'src/mechanics.h');fs.writeFileSync(header,fs.readFileSync(header,'utf8').replace('AM_SOURCE_TEXT_BASE };','AM_SOURCE_TEXT_BASE, AM_SOURCE_BED_TEXT, AM_SOURCE_BED_TEXT_BASE };').replace('uint32_t arch_mech_abi_version(void);','uint32_t arch_mech_abi_version(void);\n// Source semantics1: height tags128..134 and detached bed text slab kinds4/5.\nuint32_t arch_mech_source_datum_extension_version(void);'));
+const adapter=path.join(target,'src/domain-adapter.mjs');let adapterText=fs.readFileSync(adapter,'utf8');
+adapterText=adapterText.replace("'source:attachment.bottom':10,","'source:attachment.bottom':10,\n  'source:art.bottom':128,'source:rim.bottom':129,'source:flat.bottom':130,\n  'source:recess.top':131,'source:core-cap.top':132,'source:text.bottom':133,\n  'source:text-base.bottom':134,");
+adapterText=adapterText.replace("else if(value.heightMode==='mm'){r.mode=1;r.value=value.mm;}","else if(value.heightMode==='mm'){r.mode=1;r.value=value.mm;\n          if(value.datum){r.referenceLayer=value.referenceLayer;r.datum=value.datum.kind==='bed'?0:DATUMS[value.datum.featureId];requireValue(r.datum!==undefined,'ORPHAN_DATUM',id);}\n        }");fs.writeFileSync(adapter,adapterText);
+let patch='';
+for(const rel of ['src/mechanics.cpp','src/mechanics.h','src/domain-adapter.mjs']){
+  const diff=spawnSync('git',['diff','--no-index','--text','--no-ext-diff',path.join(input,rel),path.join(target,rel)],{encoding:'utf8'});assert.equal(diff.status,1);
+  const dest='src/kernel/mechanics/'+rel;patch+=diff.stdout.replace(/^diff --git.*$/m,`diff --git a/${dest} b/${dest}`).replace(/^--- .*$/m,`--- a/${dest}`).replace(/^\+\+\+ .*$/m,`+++ b/${dest}`);
+}
+fs.writeFileSync(new URL('../compat/mechanics-source-integration.patch',import.meta.url),patch);
+const sha=s=>createHash('sha256').update(s).digest('hex');
+fs.writeFileSync(path.join(room,'evidence/mechanics-bridge.json'),JSON.stringify({version:1,baseRelease:'mechanics-wave2-f09a6fc371be0af0',before:sha(before),after:sha(after),changes:['Admit source-only height datum tags128..134, expose capability and domain map','Preserve optional mm datum/reference metadata in adapter','Validate exact bottom slab support before mesh slicing; preserve positive 3D interval selection','Inside groove boundary sweep; convex identity, reentrant sectors, explicit sub-grid Manifold simplification, external part provenance retained']},null,2)+'\n');
+console.log('Own-run mechanics bridge prepared; frozen inputs unchanged');

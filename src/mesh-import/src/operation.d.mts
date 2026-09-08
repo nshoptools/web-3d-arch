@@ -1,0 +1,1 @@
+export function meshOperationForParameters(impOp:'them'|'han'|'tru'):{readonly operation:'import-as-part'|'union'|'difference';readonly materialPolicy:'requireDisjointMaterials'|'keepSelectedTargetMaterial';readonly requiresTarget:boolean};

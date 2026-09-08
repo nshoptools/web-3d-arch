@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "at": "2026-09-08T10:46:34.723Z",
+  "target": "native",
+  "method": "Independent thread waits for stage >= 3 (surfaces), then cancels generation 17; independent reader checks zero mesh",
+  "scope": "In-flight cancellation and publication gate; does not prove every library query is interruptible or a hard latency SLA",
+  "cases": [
+    {
+      "verdict": "pass",
+      "elapsedMs": 571,
+      "artifact": "evidence\\cancellation-native\\observer-0.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694"
+    },
+    {
+      "verdict": "pass",
+      "elapsedMs": 293,
+      "artifact": "evidence\\cancellation-native\\observer-1.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694"
+    },
+    {
+      "verdict": "pass",
+      "elapsedMs": 203,
+      "artifact": "evidence\\cancellation-native\\observer-2.bin",
+      "sha256": "44228ac8284e460578ce000301cf2d36b2a7cad23899122e1744b02939300694"
+    }
+  ]
+}

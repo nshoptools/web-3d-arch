@@ -1,0 +1,71 @@
+{
+  "createdAt": "2026-09-08T12:41:06.601Z",
+  "files": [
+    {
+      "path": "evidence/compiled-workers.txt",
+      "sha256": "14c3f5d9a919fad000e18a6394d09d940fd5ba0c0f0f8ec4eb37bbd5a2562e90",
+      "bytes": 504
+    },
+    {
+      "path": "evidence/compiled-chromium.json",
+      "sha256": "534904ce8c355a7b7ac7ceb76ee997ff15ff772495c881d10617601b66b7b77d",
+      "bytes": 3844
+    },
+    {
+      "path": "evidence/compiled-firefox.json",
+      "sha256": "fa62b16438cfc6734728611a80e60b99918ad791bbfee4402e8cc6893413690c",
+      "bytes": 3835
+    },
+    {
+      "path": "evidence/compiled-webkit.json",
+      "sha256": "f10ffb069142044c1324b17e7da43929bd90236ab1ddc004c0c1b82f5672c895",
+      "bytes": 3833
+    },
+    {
+      "path": "evidence/https-shell.txt",
+      "sha256": "4d5021f76e553df4b34ca127fb051378ec97b3a068edf176692280c4cf73c38a",
+      "bytes": 266
+    },
+    {
+      "path": "evidence/https-shell.json",
+      "sha256": "3b01f6687d3a84a7c609f0fb05f2e53fad3feac82cc381889ce9e51f78d0d4f9",
+      "bytes": 1547
+    },
+    {
+      "path": "evidence/settings-final.txt",
+      "sha256": "9745264165041552952538e99ab616d07bbc16022bc7a4fe6ef468a49fbb57f6",
+      "bytes": 335
+    },
+    {
+      "path": "evidence/storage-regression.json",
+      "sha256": "021084deeff081956d46e061aedd0ac189c0b0e9629a50f147b2cfef14fb89f1",
+      "bytes": 27051
+    },
+    {
+      "path": "evidence/source-integration.json",
+      "sha256": "2940d6168ae4ae734bf5f5773bd73e11892d211f2816ea9a1d3e0f544edcd1ef",
+      "bytes": 35210
+    },
+    {
+      "path": "evidence/ui-integration.json",
+      "sha256": "0489cae56b1c873a19248c1ff7f08960c498300cdd7aa1ee464a81d69f56c45b",
+      "bytes": 25669
+    },
+    {
+      "path": "evidence/plan-binding-correction.json",
+      "sha256": "1883f1cb12a0e2f41cc4d974eda1c015dcfcd0ed67403652d6143fae538e8017",
+      "bytes": 2047
+    },
+    {
+      "path": "evidence/plan-binding-verification.txt",
+      "sha256": "275a7776b474b7b9889c189ea12ef277e32bd099e230f4aed1f8c26b513d7788",
+      "bytes": 929
+    },
+    {
+      "path": "evidence/canonical-build-receipt.json",
+      "sha256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17",
+      "bytes": 3619
+    }
+  ],
+  "scope": "Selected original build/component evidence; no implied final3workflow outcome. Original prepared seal changed only2privatebindingfiles; publicruntime/assets identical."
+}

@@ -1,0 +1,14 @@
+--- a/src/kernel/native/CMakeLists.txt
++++ b/src/kernel/native/CMakeLists.txt
+@@ -40,3 +40,11 @@
+   target_link_libraries(arch_geometry_smoke PRIVATE arch_geometry)
+ endif()
+ install(TARGETS arch_geometry ARCHIVE DESTINATION lib)
++
++# Optional printing library; all sources are prepared before configure.
++if(ARCH_PRINTING_SOURCE)
++  set(ARCH_PRINTING_STANDALONE OFF CACHE BOOL "" FORCE)
++  set(ARCH_PRINTING_PTHREADS ON CACHE BOOL "" FORCE)
++  set(ARCH_KERNEL_RUNTIME_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}")
++  add_subdirectory("${ARCH_PRINTING_SOURCE}" printing)
++endif()

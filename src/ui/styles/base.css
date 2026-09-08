@@ -1,0 +1,185 @@
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--b0);
+    color: var(--t1);
+    font-family: 'Segoe UI', system-ui, -apple-system, 'Noto Sans', 'Helvetica Neue', Arial,
+      sans-serif;
+    font-size: var(--fs-body);
+    line-height: var(--lh);
+  }
+
+  /* Smooth scrolling is opt-in and disabled under reduced motion (UI-02). */
+  @media (prefers-reduced-motion: no-preference) {
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--r1);
+  }
+
+  /* Focus must stay visible even inside clipping wrappers (UI-04). */
+  /* `hidden` has to win. The UA rule is `display: none` at the lowest
+     specificity, so any layout class on the same element silently defeats it —
+     which is how a folded panel keeps taking up the whole stage. */
+  [hidden] { display: none !important; }
+
+  .focus-safe {
+    overflow: visible;
+  }
+
+  .u-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* A button rather than a fragment link on purpose: WebKit does not put plain
+     links in the Tab order by default, and a fragment link only moves focus
+     when its target is focusable. This control is reachable in every engine and
+     always lands the caret on the design area (UI-06). */
+  .u-skip-link {
+    position: fixed;
+    inset-block-start: 8px;
+    inset-inline-start: 8px;
+    z-index: var(--z-skip);
+    padding: 10px 14px;
+    background: var(--b3);
+    color: var(--t1);
+    border: 1px solid var(--ln-control);
+    border-radius: var(--r2);
+    text-align: start;
+    transform: translateY(calc(-100% - 16px));
+    transition: transform var(--dur-fast) var(--ease);
+  }
+
+  .u-skip-link:focus-visible,
+  .u-skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Focus moved by the interface itself — into a dialog, into a popup — has to
+     be as visible as focus the user tabbed to. Firefox does not match
+     :focus-visible for a programmatic focus() on a button, so the trap marks
+     the element and this rule draws the same ring. */
+  [data-focus-ring='true'] {
+    box-shadow: var(--focus-ring);
+    border-radius: var(--r1);
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--ln);
+    margin: 10px 0;
+  }
+
+  /* UI-02: forced-colors uses system colours and keeps focus obvious. */
+  @media (forced-colors: active) {
+    :root {
+      --b0: Canvas;
+      --b1: Canvas;
+      --b2: Canvas;
+      --b3: Canvas;
+      --b4: Canvas;
+      --canvas: Canvas;
+      --stage: Canvas;
+      --glass: Canvas;
+      --glass-solid: Canvas;
+      --t1: CanvasText;
+      --t2: CanvasText;
+      --t3: CanvasText;
+      --ln: CanvasText;
+      --ln2: CanvasText;
+      --ln-control: CanvasText;
+      --accent: LinkText;
+      --accent-text: LinkText;
+      --btn-primary-bg: ButtonFace;
+      --btn-primary-fg: ButtonText;
+      --btn-done-bg: ButtonFace;
+      --btn-done-fg: ButtonText;
+      --focus-ring: 0 0 0 2px Canvas, 0 0 0 4px Highlight;
+    }
+
+    :focus-visible,
+    [data-focus-ring='true'] {
+      outline: 3px solid Highlight;
+      outline-offset: 2px;
+    }
+
+    .fc-border {
+      border: 1px solid CanvasText !important;
+    }
+
+    /* Selected/active state must not rely on a background colour alone. */
+    [aria-selected='true'],
+    [aria-checked='true'],
+    [aria-current='step'] {
+      forced-color-adjust: none;
+      background: Highlight !important;
+      color: HighlightText !important;
+    }
+
+    /* A material swatch is the one place where the colour *is* the content:
+       forcing it to system colours would delete the information. It keeps its
+       own colour and gains a system-coloured boundary so it stays visible.
+       Its accessible name still carries the hex, so nothing depends on sight. */
+    .swatch,
+    .swatch input[type='color'],
+    .emoji-cell img {
+      forced-color-adjust: none;
+    }
+    .swatch {
+      border: 2px solid CanvasText !important;
+    }
+    .swatch[aria-pressed='true'] {
+      outline: 3px solid Highlight;
+      outline-offset: 2px;
+    }
+
+    /* Every other pressed control follows the system palette. */
+    [aria-pressed='true']:not(.swatch) {
+      forced-color-adjust: none;
+      background: Highlight !important;
+      color: HighlightText !important;
+    }
+  }
+}

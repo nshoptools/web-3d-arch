@@ -1,0 +1,26 @@
+[
+  {
+    "id": "source:slab:17418185339274325469",
+    "name": "source:slab:17418185339274325469",
+    "role": 0,
+    "assemblyGroup": 0
+  },
+  {
+    "id": "source:slab:1418539335897375248",
+    "name": "source:slab:1418539335897375248",
+    "role": 1,
+    "assemblyGroup": 0
+  },
+  {
+    "id": "source:slab:14704399586199030131",
+    "name": "source:slab:14704399586199030131",
+    "role": 1,
+    "assemblyGroup": 0
+  },
+  {
+    "id": "mech:keyring",
+    "name": "mech:keyring",
+    "role": 0,
+    "assemblyGroup": 0
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "at": "2026-09-08T10:29:56.608171+00:00",
+  "method": "read-only SQLite; SELECT explicit whitelist from threads; no rollout/events/logs/messages/credential reads",
+  "actual_session_metadata": [
+    {
+      "id": "01a0808f-2ad6-7c21-a266-0c0de3aff4b4",
+      "created_at": 1788863261,
+      "source": "exec",
+      "model_provider": "openai",
+      "cwd": "\\\\?\\D:\\VoSon\\Code\\web-3d-arch",
+      "approval_mode": "never",
+      "cli_version": "0.153.4",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "max",
+      "agent_path": null,
+      "thread_source": "user"
+    }
+  ],
+  "server_service_tier": "NOT ATTESTED: absent from allowed metadata; requested default does not attest server tier",
+  "official_sources": [
+    {
+      "url": "https://learn.chatgpt.com/docs/models",
+      "observation": "Astra most capable; Max single-task depth; Ultra delegation. Rechecked 2026-09-08."
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/speed",
+      "observation": "Fast is separate speed setting; CLI /fast and features.fast_mode/service_tier controls. Rechecked 2026-09-08."
+    }
+  ],
+  "parent_recheck_sha256": "8a9a8fcc3fac2e1757f783bf437a8b6170bdad7cc41237f60221a51dba5b58a8"
+}

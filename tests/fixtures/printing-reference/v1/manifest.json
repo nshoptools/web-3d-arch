@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "version": "printing-reference-v1",
+  "storedAt": "2026-09-08",
+  "files": [
+    {
+      "id": "bambu-project-reference-v1",
+      "path": "bambu-project.3mf",
+      "bytes": 11726478,
+      "sha256": "361859e04e686452a60b7e9cc3104e7f4e173ca35979dd2311b1d6c27664ca75",
+      "kind": "project-3mf",
+      "purpose": "Reference structure/adapter experiments; not a verified slicer golden",
+      "authority": "Internal reference/test data, not certified product or hardware truth",
+      "rights": "Held for internal project testing; upstream redistribution rights unverified",
+      "slicerRoundtrip": "unverified",
+      "physicalPrint": "unverified"
+    },
+    {
+      "id": "u1-project-invalid-slots-v1",
+      "path": "u1-inconsistent-slots.3mf",
+      "bytes": 11695870,
+      "sha256": "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece",
+      "kind": "project-3mf",
+      "purpose": "Negative slot-mapping fixture; never a U1 golden",
+      "authority": "Internal reference/test data, not certified product or hardware truth",
+      "rights": "Held for internal project testing; upstream redistribution rights unverified",
+      "slicerRoundtrip": "unverified",
+      "physicalPrint": "unverified",
+      "slotMapping": "invalid",
+      "allowedUses": [
+        "expected-rejection",
+        "explicit-remap-experiment"
+      ],
+      "forbiddenUses": [
+        "golden-u1"
+      ]
+    },
+    {
+      "id": "printer-beds-reference-v1",
+      "path": "printer-beds.json",
+      "bytes": 643081,
+      "sha256": "56a95d16b537feb3b806ea7d6b8d99aa75311a4764acaa0075a34665a8ed795d",
+      "kind": "printer-beds",
+      "purpose": "1057 unqualified printer-bed records for parser/placement audits",
+      "authority": "Internal reference/test data, not certified product or hardware truth",
+      "rights": "Held for internal project testing; upstream redistribution rights unverified",
+      "slicerRoundtrip": "unverified",
+      "physicalPrint": "unverified"
+    }
+  ]
+}

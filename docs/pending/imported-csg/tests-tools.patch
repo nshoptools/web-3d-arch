@@ -1,0 +1,777 @@
+diff --git a/src/mesh-import/tests/prepare-root-native.mjs b/src/mesh-import/tests/prepare-root-native.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..7e5d967fbcea3828d001a189027cc8b299ef1253
+--- /dev/null
++++ b/src/mesh-import/tests/prepare-root-native.mjs
+@@ -0,0 +1,19 @@
++import fs from 'node:fs';import path from 'node:path';import {createHash} from 'node:crypto';
++import {source,productFixture,inputFixture,affine,selectionFor,commandFor,extendedCases} from './root-fixtures.mjs';
++import {decodeSTL} from '../src/stl.mjs';
++const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'inputs/root-native-fixtures-'+(process.env.PROOF_TAG??'r2'));fs.mkdirSync(out,{recursive:true});
++const sha=b=>createHash('sha256').update(b).digest('hex'),headHash=sha('root-product-fixture'),sourceHash=sha(source);
++const p=productFixture({sourceHash,headHash});fs.writeFileSync(path.join(out,'product.svg'),source);fs.writeFileSync(path.join(out,'product.aprq'),p.packed);
++const cases=[];
++for(const [name,encoding,operation,transform,customInput]of[
++ ['internal-rotated-difference','ascii','difference',affine(31,3,-2,1)],
++ ['side-union','binary','union',affine(35,19,-2,1)],
++ ['internal-intersection-blocked-datum','ascii','intersection',affine(17,3,-2,1)],
++ ...extendedCases().filter(c=>c.input.format==='stl').map(c=>[c.name,'ascii',c.operation,c.transform,c.input]),
++]){
++ const input=customInput??inputFixture('stl',encoding),parsed=decodeSTL(input.bytes),positions=name+'.f64';
++ fs.writeFileSync(path.join(out,name+'.stl'),input.bytes);
++ const b=new Uint8Array(parsed.positions.length*8),d=new DataView(b.buffer);parsed.positions.forEach((v,i)=>d.setFloat64(8*i,v,true));fs.writeFileSync(path.join(out,positions),b);
++ cases.push({name,expectedBlocked:name==='internal-intersection-blocked-datum',source:name+'.stl',positions,conversionError:parsed.conversionError,transform,selection:selectionFor(transform),command:commandFor({bindings:[],materials:[],targets:[]},transform,operation),decoder:parsed.decoder});
++}
++fs.writeFileSync(path.join(out,'cases.json'),JSON.stringify({context:{userId:'test-author',projectId:'test-project'},cases},null,2));console.log(out);
+diff --git a/src/mesh-import/tests/root-browser.mjs b/src/mesh-import/tests/root-browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..28ece17381afb31f36efb05e013e8d390996f500
+--- /dev/null
++++ b/src/mesh-import/tests/root-browser.mjs
+@@ -0,0 +1,120 @@
++import {durableHistoryProof} from './root-history-browser.mjs';
++import {createRootMeshAdapter} from '../src/root-app-adapter.mjs';
++import {createFinalSceneEvidence} from '../../integration/final-scene-evidence.mjs';
++import {EngineClient} from '../../core/engine-client.mjs';
++import {createMeshClient} from '../src/root-client.mjs';
++import {readProductSemantics} from '../../core/product-operations.mjs';
++import {readArchSnapshot} from '../../viewport/arch-view.mjs';
++import {qualifyMesh} from '../../core/mesh-qualification.mjs';
++import {source,productFixture,inputFixture,bindingInventory,affine,selectionFor,commandFor} from './root-fixtures.mjs';
++const assert=(v,s)=>{if(!v)throw Error(s);};
++const sha=async b=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',typeof b==='string'?new TextEncoder().encode(b):b)),x=>x.toString(16).padStart(2,'0')).join('');
++async function rejected(fn,pattern){try{await fn();}catch(e){assert(pattern.test(e.code??e.message),String(e.code??e));return e.code??e.message;}throw Error('expected rejection '+pattern);}
++export async function runProof(pin){
++ const client=new EngineClient({moduleURL:pin.module.url,integrity:pin,watchdogMs:45000,cancelGraceMs:3000}),mesh=createMeshClient(client),records=[];
++ let parent;let next=0;const generation=()=>++next;
++ try{
++  await client.start();assert(client.runtimeIntegrity?.wasmLoading==='verified-owned-wasmBinary','integrity');
++  assert(client.serviceCapabilities.mesh===true&&client.serviceCapabilities.sourceFrameVersion===1,'mesh/ASFR routes');
++  assert(client.serviceCapabilities.finalFloat&&client.serviceCapabilities.finalSceneGeometry,'float/material routes');
++  const headHash=await sha('root-product-fixture'),product=productFixture({sourceHash:await sha(source),headHash});
++  parent=await client.build({kind:'product',source:{kind:'svg',source},packed:product.packed},{generation:generation()});
++  const original=parent.bytes().slice(),originalHash=await sha(original),sem=readProductSemantics(parent.metadata.semanticBytes),inventory=bindingInventory(original,sem);
++  const context={userId:'test-author',projectId:'test-project',revision:sem.revision,headHash};
++  const output={version:'arch-root-mesh-browser-proof/1',runtimeIntegrity:client.runtimeIntegrity,capabilities:client.serviceCapabilities,records,artifacts:[{name:'parent.arch',bytes:Array.from(original)}]};
++  let unitInput=inputFixture();delete unitInput.unit;
++  const unit=await mesh.previewImport({context,input:unitInput,selection:selectionFor(affine(31,3,-2,1))},{generation:generation()});
++  assert(unit.applied===false&&!unit.token&&unit.state==='unit-choice-required','no hidden unit');
++  records.push({name:'missing-unit',state:unit.state});
++  for(const [name,format,encoding,operation,transform,blocked]of[
++   ['rotated-stl-difference','stl','ascii','difference',affine(31,3,-2,1),false],
++   ['rotated-obj-difference','obj','ascii','difference',affine(-23,3,-2,1),false],
++   ['side-union','stl','binary','union',affine(35,19,-2,1),false],
++   ['intersection-datum','stl','ascii','intersection',affine(17,3,-2,1),true],
++  ]){
++   let preview,prepared,proposal,derived;
++   try{
++    preview=await mesh.previewImport({context,input:inputFixture(format,encoding),selection:selectionFor(transform)},{generation:generation()});
++    assert(preview.state==='approval-required'&&preview.applied===false,'input preview');
++    await rejected(()=>mesh.approveImport(preview,{context,approved:true,approvalHash:'0'.repeat(64)},{generation:generation()}),/MESH_EXACT_INPUT_APPROVAL_REQUIRED/);
++    prepared=await mesh.approveImport(preview,{context,approved:true,approvalHash:preview.approvalHash},{generation:generation()});preview=null;
++    const command=commandFor(inventory,transform,operation);
++    await rejected(()=>mesh.prepare(parent,prepared,{context:{...context,headHash:'0'.repeat(64)},command},{generation:generation()}),/MESH_STALE_CONTEXT/);
++    proposal=await mesh.prepare(parent,prepared,{context,command},{generation:generation()});
++    assert(proposal.state===(blocked?'blocked':'confirmation-required'),JSON.stringify(proposal.report.postCsgGates));
++    assert(await sha(parent.bytes().slice())===originalHash,'parent immutable');
++    const before=proposal.previewBytes().slice();
++    output.artifacts.push({name:name+'.arch',bytes:Array.from(before)});
++    if(blocked){
++     await rejected(()=>mesh.confirm(proposal,{context,approved:true,proposalHash:proposal.confirmation.proposalHash},{generation:generation()}),/MESH_POST_CSG_OR_TOPOLOGY_BLOCKED/);
++    }else{
++     assert(proposal.qualification.verdict==='pass','actual checker');
++     await rejected(()=>mesh.confirm(proposal,{context,approved:true,proposalHash:'0'.repeat(64)},{generation:generation()}),/MESH_EXACT_CONFIRMATION_MISMATCH/);
++     derived=await mesh.confirm(proposal,{context,approved:true,proposalHash:proposal.confirmation.proposalHash},{generation:generation()});proposal=null;
++     assert(derived.generation===next&&derived.metadata.kind==='mesh-scene'&&derived.metadata.applied===true,'root lease');
++     const b=derived.bytes().slice();assert(readArchSnapshot(b).generation===next,'published generation');
++     assert(await sha(b)===derived.metadata.derivedSnapshotHash,'derived hash');
++     output.artifacts.push({name:name+'.published.arch',bytes:Array.from(b)});
++     const mapping=derived.metadata.materialLineage.map(p=>({part:p.part,slot:p.slot,rgba:p.rgba,source:p.sourceIndex,materialSource:Number(p.materialId)}));
++     const readback=await client.finalSceneGeometry(derived,{revision:sem.revision,expectedRevision:sem.revision,mapping},{generation:generation()});
++     assert(readback.metadata.sourceSnapshotSha256===derived.metadata.derivedSnapshotHash,'actual derived material readback');
++     assert(qualifyMesh(readback.bytes).verdict==='pass','independent material readback');
++     output.artifacts.push({name:name+'.material.arch',bytes:Array.from(readback.bytes)});
++    }
++    records.push({name,state:blocked?'blocked':'published',gates:derived?.metadata.postCsgGates??proposal.report.postCsgGates,parentUnchanged:true});
++   }finally{derived?.release();proposal?.release();prepared?.release();preview?.release();}
++  }
++  // Actual client/Worker/native publication + a deterministic host CAS,
++  // followed by the main final-scene provider's independent real Worker.
++  const kernelLeases=new WeakMap(),host={userId:context.userId,projectId:context.projectId,state:{revision:Number(sem.revision)},headHash,sessionKey:'test-session'};
++  const baseModel={generation:parent.generation,bytes:()=>parent.bytes()};host.model=baseModel;kernelLeases.set(baseModel,{root:parent,client});
++  const operation=(c,fn)=>{assert(!c.signal.aborted,'cancelled host job');return fn(client,generation());};
++  const control=()=>({version:'arch-app-adapters/1',ticket:{id:crypto.randomUUID(),userId:host.userId,projectId:host.projectId,revision:host.state.revision,generation:next+1},signal:new AbortController().signal,onProgress:()=>{}});
++  let targetState,commits=0,rejectCommit=true;
++  const adapter=createRootMeshAdapter({operation,kernelLeases,context:()=>host,commitCandidate:async({expected,publication,model,history})=>{
++   assert(expected.headHash===host.headHash&&Number(expected.revision)===host.state.revision,'CAS expected head');
++   assert(publication.transactionHash===await sha(JSON.stringify(targetState)),'exact candidate state');
++   assert(history.original.raw.hash===history.inputApproval.sourceHash,'history original');
++   if(rejectCommit)throw Object.assign(Error('TEST_CAS_REJECTED'),{code:'TEST_CAS_REJECTED'});
++   host.state=targetState;host.headHash=publication.headHash;host.model=model;commits++;return {committed:true,model};
++  }});
++  let preparedApp,proposalApp,derivedModel,provider;
++  try{
++   const input=inputFixture('obj'),file={name:input.name,bytes:input.bytes},c=control();
++   const sourceContext={version:'arch-source-context/1',operation:'import',id:'import-history-source',revision:0};
++   const ingested=await adapter.source.ingest({...c,file,purpose:'mesh',state:host.state,sourceContext});
++   assert(ingested.metadata.meshImport.unit===null&&ingested.metadata.meshImport.generatedParameters==='unapplied','ingest gate');
++   const descriptor={id:sourceContext.id,name:file.name,kind:'mesh',revision:0,raw:{hash:await sha(file.bytes),byteLength:file.bytes.length},metadata:ingested.metadata};
++   const transform=affine(-23,3,-2,1),inputConfig={unit:input.unit,materials:input.materials,sourceMaterialAssignments:input.sourceMaterialAssignments,maxErrorMm:input.maxErrorMm};
++   const previewApp=await adapter.prepareInput({control:control(),file,mesh:descriptor,selection:{input:inputConfig,approval:selectionFor(transform)}});
++   preparedApp=await adapter.approveInput(previewApp,{control:control(),proposalHash:previewApp.proposalHash});
++   previewApp.release(); // transferred owner must not release the prepared input
++   const command=commandFor(inventory,transform,'difference');
++   targetState={revision:host.state.revision+1,mesh:{source:descriptor,command,applied:true}};
++   const publication={version:'arch-mesh-publication/1',revision:String(targetState.revision),headHash:await sha('head:'+JSON.stringify(targetState)),transactionHash:await sha(JSON.stringify(targetState))};
++   const args={model:baseModel,command,publication,materialNames:{'800':'tool','901':'body','902':'left','903':'right'},
++    sourceHashes:[{id:'generated-original',sha256:await sha(source)},{id:descriptor.id,sha256:descriptor.raw.hash}]};
++   proposalApp=await adapter.prepareApply(preparedApp,{control:control(),...args});
++   assert(proposalApp.state==='confirmation-required','app prepared');
++   await rejected(()=>adapter.confirmApply(proposalApp,{control:control(),proposalHash:proposalApp.proposalHash}),/TEST_CAS_REJECTED/);
++   assert(host.model===baseModel&&host.state.revision===Number(sem.revision)&&commits===0,'failed CAS unchanged');
++   proposalApp.release();proposalApp=null;rejectCommit=false;
++   proposalApp=await adapter.prepareApply(preparedApp,{control:control(),...args});
++   const receipt=await adapter.confirmApply(proposalApp,{control:control(),proposalHash:proposalApp.proposalHash});proposalApp=null;
++   derivedModel=receipt.model;assert(commits===1&&host.model===derivedModel&&derivedModel.mesh.revision===String(targetState.revision),'atomic visible adoption');
++   provider=createFinalSceneEvidence({kernelLeases,inspectModel:adapter.inspectModel,operation,context:()=>host,
++    gateState:()=>({key:'derived-head-'+host.headHash,invalidInput:false,kernelFailure:false,assemblyView:false,unappliedMeshEdit:false}),
++    materialSourceIds:()=>[{materialId:'body',materialSourceId:901},{materialId:'left',materialSourceId:902},{materialId:'right',materialSourceId:903}]});
++   const evidence=await provider.qualify({model:derivedModel,control:control()});
++   assert(evidence.evidence.status==='ready'&&evidence.evidence.meshVerdict==='pass'&&evidence.evidence.provenance.sceneKind==='mesh-scene','derived final-scene provider');
++   output.artifacts.push({name:'transaction.published.arch',bytes:Array.from(derivedModel.bytes())});
++   records.push({name:'app-transaction-cas-and-final-scene-provider',state:'published',failedCasUnchanged:true,commits,evidence:evidence.evidence});
++  }finally{await provider?.dispose();derivedModel?.release();proposalApp?.release();preparedApp?.release();adapter.dispose();}
++  for(const failureMode of ['none','adopt','session'])records.push(await durableHistoryProof({client,generation,pin,artifacts:output.artifacts,failureMode}));
++  let preview=await mesh.previewImport({context,input:inputFixture(),selection:selectionFor(affine(31,3,-2,1))},{generation:generation()});
++  const priorEpoch=client.epoch;client.terminate('TEST_RETIRE');await rejected(()=>mesh.approveImport(preview,{context,approved:true,approvalHash:preview.approvalHash},{generation:generation()}),/MESH_RUNTIME_RETIRED/);
++  preview.release();assert(client.epoch>priorEpoch,'epoch retirement');records.push({name:'stale-epoch',state:'rejected'});
++  return output;
++ }finally{parent?.release();client.dispose();}
++}
++globalThis.runProof=runProof;
+diff --git a/src/mesh-import/tests/root-extended.test.mjs b/src/mesh-import/tests/root-extended.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..3ee80d8d6b3693122f3451bed9c4c003a4a24c5b
+--- /dev/null
++++ b/src/mesh-import/tests/root-extended.test.mjs
+@@ -0,0 +1,80 @@
++import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{pathToFileURL}from'node:url';import{createHash}from'node:crypto';
++import{createMeshRootOperations}from'../src/root-runtime.mjs';
++import{createProductOperations,readProductSemantics}from'../../core/product-operations.mjs';
++import{source,productFixture,inputFixture,bindingInventory,affine,selectionFor,commandFor,extendedCases,triangle,obj}from'./root-fixtures.mjs';
++const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'evidence/root-extended-'+(process.env.PROOF_TAG??'r1'));if(fs.existsSync(out))throw Error('fresh output');fs.mkdirSync(out);
++const M=await(await import(pathToFileURL(path.join(run,'work/module/arch-kernel.mjs')))).default({print(){},printErr(){}});
++const ops=createMeshRootOperations(M),productOps=createProductOperations(M),sha=b=>createHash('sha256').update(b).digest('hex'),headHash=sha('root-product-fixture');let generation=0;
++const reset=()=>{assert.equal(M._arch_control_reset(++generation),1);return generation;};
++const snap=id=>M.HEAPU8.slice(M._arch_snapshot_ptr(id),M._arch_snapshot_ptr(id)+M._arch_snapshot_len(id));
++const owned=()=>M._arch_raster_owned_bytes(),records=[];
++function build(product='keychain'){const g=reset(),f=productFixture({sourceHash:sha(source),headHash,product});
++ const id=productOps.buildRequest(productOps.prepare({kind:'product',source:{kind:'svg',source},packed:f.packed},g),g),bytes=snap(id),sem=readProductSemantics(productOps.metadata(id).semanticBytes);
++ return {id,bytes,sem,inventory:bindingInventory(bytes,sem),context:{userId:'test-author',projectId:'test-project',revision:sem.revision,headHash},generation:g};
++}
++let base=build();fs.writeFileSync(path.join(out,'parent.arch'),base.bytes);
++async function prepared(input,transform,selection=selectionFor(transform)){
++ const a=await ops.dispatch('previewImport',{context:base.context,input,selection},{generation:reset()});
++ assert.equal(a.state,'approval-required',JSON.stringify(a));try{return await ops.dispatch('approveImport',{token:a.token,context:base.context,approved:true,approvalHash:a.approvalHash},{generation:reset()});}finally{ops.release(a.token);}
++}
++async function apply(name,input,transform,operation,{selection,change,expected='published'}={}){
++ let p,q,root;const before=owned();
++ try{
++  p=await prepared(input,transform,selection);const cmd=commandFor(base.inventory,transform,operation);cmd.snapshotGeneration=base.generation;change?.(cmd);
++  q=await ops.dispatch('prepare',{snapshotId:base.id,token:p.token,context:base.context,command:cmd},{generation:reset()});
++  fs.writeFileSync(path.join(out,name+'.json'),JSON.stringify(q,null,2));
++  fs.writeFileSync(path.join(out,name+'.arch'),M.HEAPU8.slice(q.preview.byteOffset,q.preview.byteOffset+q.preview.byteLength));
++  assert.equal(q.state,expected==='published'?'confirmation-required':'blocked',JSON.stringify(q.report.postCsgGates));
++  if(expected==='published'){
++   root=await ops.dispatch('confirm',{token:q.token,context:base.context,approved:true,proposalHash:q.confirmation.proposalHash},{generation:reset()});q=null;
++   fs.writeFileSync(path.join(out,name+'.published.arch'),snap(root.snapshotId));
++   const n=M._arch_mesh_buffer_len(root.snapshotId,4),p=M._arch_mesh_buffer_ptr(root.snapshotId,4);assert.equal(sha(M.HEAPU8.slice(p,p+n)),sha(input.bytes));
++   const lineageN=M._arch_mesh_buffer_len(root.snapshotId,5);assert.equal(lineageN,new DataView(snap(root.snapshotId).buffer).getUint32(24,true)*16);
++  }else await assert.rejects(()=>ops.dispatch('confirm',{token:q.token,context:base.context,approved:true,proposalHash:q.confirmation.proposalHash},{generation:reset()}),e=>e.code==='MESH_POST_CSG_OR_TOPOLOGY_BLOCKED');
++  assert.equal(sha(snap(base.id)),sha(base.bytes));records.push({name,state:expected,originalExact:true,parentUnchanged:true});
++ }finally{if(root)M._arch_snapshot_release(root.snapshotId);if(q)ops.release(q.token);if(p)ops.release(p.token);assert.equal(owned(),before);}
++}
++try{
++ for(const c of extendedCases())await apply(c.name,c.input,c.transform,c.operation);
++ // Two disjoint nonbox OBJ objects keep distinct imported material identities.
++ const a=triangle(),b=triangle();b.vertices=b.vertices.map(v=>[v[0],v[1]+5,v[2]]);
++ const off=a.vertices.length,joined=new TextEncoder().encode(new TextDecoder().decode(obj(a,{name:'one',material:'tool'}))+'\n'+
++ 'o two\n'+b.vertices.map(v=>'v '+v.join(' ')).join('\n')+'\nusemtl second\n'+b.triangles.map(t=>'f '+t.map(i=>i+1+off).join(' ')).join('\n')+'\n');
++ const input={...inputFixture('obj'),bytes:joined,materials:[{id:'800',name:'one',rgba:0x30353bff},{id:'801',name:'two',rgba:0x11cc33ff}],
++ sourceMaterialAssignments:[{sourceName:'tool',materialId:'800'},{sourceName:'second',materialId:'801'}]};
++ const transform=affine(29,30,-2,0),sel=selectionFor(transform);sel.materials.push({sourceMaterialId:'801',materialId:'801',slot:9,rgba:0x11cc33ff});
++ await apply('disconnected-multimaterial-obj',input,transform,'union',{selection:sel,change:c=>c.materialPolicy='requireDisjointMaterials'});
++ const p=await prepared(inputFixture(),affine(31,3,-2,1)),retained=owned();
++ try{
++  const invalids=[
++   ['resource-budget',c=>c.limits.operations=1,/RESOURCE|WORK|BUDGET/i],
++   ['wrong-generated-binding',c=>c.bindings[0].sourceId='123',/MESH_GENERATED_LINEAGE_MISMATCH/],
++   ['orphan-target',c=>c.targets=['9999'],/MESH_TARGET_ORPHAN/],
++   ['stale-parent-generation',c=>c.snapshotGeneration=99999,/MESH_GENERATED_GENERATION/],
++   ['unapproved-transform',c=>c.transform[9]+=1,/MESH_TRANSFORM_APPROVAL_MISMATCH/],
++   ['same-head-next-revision',c=>c.publication={version:'arch-mesh-publication/1',revision:String(Number(base.sem.revision)+1),headHash,transactionHash:'b'.repeat(64)},/MESH_PUBLICATION_HEAD/],
++  ];
++  for(const[name,change,expected]of invalids){
++   const cmd=commandFor(base.inventory,affine(31,3,-2,1),'difference');cmd.snapshotGeneration=base.generation;change(cmd);
++   await assert.rejects(()=>ops.dispatch('prepare',{snapshotId:base.id,token:p.token,context:base.context,command:cmd},{generation:reset()}),e=>expected.test(e.code??e.message));
++   assert.equal(owned(),retained);assert.deepEqual(snap(base.id),base.bytes);records.push({name,state:'rejected',noPartial:true});
++  }
++  const g=reset(),c=new Int32Array(M.HEAPU8.buffer,M._arch_control_ptr(),4);Atomics.store(c,3,g);
++  await assert.rejects(()=>ops.dispatch('prepare',{snapshotId:base.id,token:p.token,context:base.context,command:{}},{generation:g}),e=>e.code==='CANCELLED');
++  assert.equal(owned(),retained);records.push({name:'cancel-before-native',state:'rejected',noPartial:true});
++  for(let i=0;i<63;i++)assert(M._arch_snapshot_acquire(base.id));assert.equal(M._arch_snapshot_acquire(base.id),0);
++  try{const cmd=commandFor(base.inventory,affine(31,3,-2,1),'difference');cmd.snapshotGeneration=base.generation;
++   await assert.rejects(()=>ops.dispatch('prepare',{snapshotId:base.id,token:p.token,context:base.context,command:cmd},{generation:reset()}),e=>e.code==='MESH_GENERATED_GENERATION');
++  }finally{for(let i=0;i<63;i++)M._arch_snapshot_release(base.id);}
++  assert.equal(owned(),retained);records.push({name:'root-reader-lease-limit',state:'rejected',noPartial:true});
++ }finally{ops.release(p.token);}
++ const broken=inputFixture();broken.bytes=new TextEncoder().encode(new TextDecoder().decode(broken.bytes).replace(/facet normal[\s\S]*?endfacet\n/,''));
++ const preview=await ops.dispatch('previewImport',{context:base.context,input:broken,selection:selectionFor(affine(31,3,-2,1))},{generation:reset()});
++ assert.equal(preview.state,'repair-proposal');assert(!preview.token);records.push({name:'nonmanifold-no-silent-repair',state:preview.state});
++ const collisionSelection=selectionFor(transform);collisionSelection.materials[0].slot=1;
++ await assert.rejects(()=>apply('imported-slot-collision',inputFixture(),transform,'union',{selection:collisionSelection,change:c=>c.materialPolicy='requireDisjointMaterials'}),e=>/MESH_FINAL_SLOT_COLLISION/.test(e.code));records.push({name:'imported-slot-collision',state:'rejected',noPartial:true});
++ M._arch_snapshot_release(base.id);base=build('strap');fs.writeFileSync(path.join(out,'strap-parent.arch'),base.bytes);
++ await apply('strap-cut-away-from-tunnel',inputFixture(),affine(21,3,7,1),'difference');
++ await apply('strap-roof-breakout',inputFixture(),affine(21,3,-1,4),'difference',{expected:'blocked'});
++}finally{M._arch_snapshot_release(base.id);ops.reset();}
++assert.equal(owned(),0);fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({records,rootOwnedBytes:owned()},null,2));console.log(JSON.stringify(records));
+diff --git a/src/mesh-import/tests/root-fixtures.mjs b/src/mesh-import/tests/root-fixtures.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..042482ee08f00eb6c11ce7bd674600d0e3ecea17
+--- /dev/null
++++ b/src/mesh-import/tests/root-fixtures.mjs
+@@ -0,0 +1,82 @@
++import {source,makeRequest} from '../../../tests/product-runtime/fixtures.mjs';
++export {source};
++const encoder=new TextEncoder();
++export const mm=mm=>({heightMode:'mm',mm});
++export function productFixture({sourceHash,headHash,product='keychain',extra=[]}){
++ const changes=[{id:'size',value:40},{id:'offset',value:0},{id:'weld',value:0},{id:'cornerR',value:0},
++  {id:'fillHoles',value:false},{id:'baseH',value:mm(6)},{id:'artH',value:mm(1)},...(product==='keychain'?[{id:'ringOn',value:false}]:[]),
++  ...(product==='strap'?[{id:'strapCham',value:0},{id:'strapD',value:4},{id:'strapZ',value:3}]:[]),...extra];
++ return makeRequest(product,'noi',{sourceHash,headHash,changes});
++}
++export const toolMaterial={id:'800',name:'Imported analytic tool',rgba:0x30353bff};
++export const sourceMaterial={sourceMaterialId:'800',materialId:'800',slot:8,rgba:0x30353bff};
++export function prism(points,z0,z1){
++ const vertices=[...points.map(p=>[...p,z0]),...points.map(p=>[...p,z1])],n=points.length;
++ // Only triangle/quadrilateral ANALYTIC TEST fixtures. No production parser
++ // triangulation or general polygon/holes algorithm is implemented here.
++ if(n!==3&&n!==4)throw Error('ANALYTIC_FIXTURE_ONLY');
++ const triangles=[];
++ for(let i=1;i<n-1;i++){triangles.push([0,i+1,i],[n,n+i,n+i+1]);}
++ for(let i=0;i<n;i++){const j=(i+1)%n;triangles.push([i,j,n+j],[i,n+j,n+i]);}
++ return {vertices,triangles};
++}
++export const triangle=()=>prism([[0,0],[2,0],[0,2]],0,3);
++export function asciiSTL(mesh,name='analytic-prism'){
++ return encoder.encode('solid '+name+'\n'+mesh.triangles.map(t=>'facet normal 0 0 0\nouter loop\n'+t.map(i=>'vertex '+mesh.vertices[i].join(' ')).join('\n')+'\nendloop\nendfacet').join('\n')+'\nendsolid '+name+'\n');
++}
++export function binarySTL(mesh){
++ const b=new Uint8Array(84+50*mesh.triangles.length),d=new DataView(b.buffer);d.setUint32(80,mesh.triangles.length,true);
++ mesh.triangles.forEach((t,i)=>t.forEach((v,k)=>mesh.vertices[v].forEach((x,a)=>d.setFloat32(84+50*i+12+12*k+4*a,x,true))));return b;
++}
++export function obj(mesh,{name='analytic-prism',material='tool'}={}){
++ return encoder.encode('o '+name+'\n'+mesh.vertices.map(p=>'v '+p.join(' ')).join('\n')+'\nusemtl '+material+'\n'+mesh.triangles.map(t=>'f '+t.map(i=>i+1).join(' ')).join('\n')+'\n');
++}
++export function affine(angle,x,y,z,scale=1){
++ const a=angle*Math.PI/180,c=Math.cos(a)*scale,s=Math.sin(a)*scale;
++ return [c,s,0,-s,c,0,0,0,scale,x,y,z];
++}
++export const identity=[1,0,0,0,1,0,0,0,1,0,0,0];
++export function inputFixture(format='stl',encoding='ascii',mesh=triangle()){
++ return {bytes:format==='obj'?obj(mesh):encoding==='binary'?binarySTL(mesh):asciiSTL(mesh),
++  format,sourceId:'authored-analytic-import',name:'tool.'+format,unit:'millimeter',materials:[toolMaterial],
++  ...(format==='obj'?{sourceMaterialAssignments:[{sourceName:'tool',materialId:'800'}]}:{partMaterialIds:['800']}),maxErrorMm:.002};
++}
++export function bindingInventory(arch,sem){
++ const d=new DataView(arch.buffer,arch.byteOffset,arch.byteLength),po=d.getUint32(56,true),materials=[],bySlot=new Map();
++ const bindings=sem.parts.map((p,i)=>{
++  const rgba=d.getUint32(po+i*40+16,true),key=p.slot+':'+rgba;
++  if(!bySlot.has(key)){bySlot.set(key,materials.length);materials.push({materialId:String(900+p.slot),slot:p.slot,rgba});}
++  return {semanticId:String(10000+i),sourceId:p.sourceId,provenanceId:p.provenanceId,
++   sourceIndex:d.getUint32(po+i*40+20,true),materialIndex:bySlot.get(key)};
++ });
++ let target=sem.parts.findIndex(p=>p.role===0);if(target<0)target=0;
++ return {bindings,materials,targets:[bindings[target].semanticId],target};
++}
++export function commandFor(inventory,transform,operation){
++ const {bindings,materials,targets}=structuredClone(inventory);
++ return {featureId:'7001',operation,materialPolicy:'keepSelectedTargetMaterial',transform,bindings,materials,targets,
++  queryToleranceCeilingMm:.002,limits:{vertices:100000,triangles:100000,parts:128,operations:2000000},separateImportedAssemblyGroup:2};
++}
++export function selectionFor(transform){
++ return {unit:'millimeter',transform,materials:[sourceMaterial],sourceNumericId:'7002',provenanceNumericId:'7003',
++  repair:'none',conditioning:'none'};
++}
++
++export function tilted(x=3,y=-2,z=1){
++ const a=21*Math.PI/180,b=17*Math.PI/180,c=29*Math.PI/180;
++ const ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b),cc=Math.cos(c),sc=Math.sin(c);
++ return [cc*cb,sc*cb,-sb,cc*sb*sa-sc*ca,sc*sb*sa+cc*ca,cb*sa,cc*sb*ca+sc*sa,sc*sb*ca-cc*sa,cb*ca,x,y,z];
++}
++export function squareTube(){
++ const xy=[[0,0],[4,0],[4,4],[0,4],[1,1],[3,1],[3,3],[1,3]],vertices=[...xy.map(p=>[...p,0]),...xy.map(p=>[...p,1])],triangles=[];
++ for(let i=0;i<4;i++){const j=(i+1)%4;
++  triangles.push([i,j,j+8],[i,j+8,i+8],[i+4,j+12,j+4],[i+4,i+12,j+12],[i+8,j+8,j+12],[i+8,j+12,i+12],[i,j+4,j],[i,i+4,j+4]);
++ }return {vertices,triangles};
++}
++export function extendedCases(){return [
++ {name:'three-axis-stl-difference',input:inputFixture(),transform:tilted(),operation:'difference',expected:'published'},
++ {name:'three-axis-obj-difference',input:inputFixture('obj'),transform:tilted(),operation:'difference',expected:'published'},
++ {name:'rotated-holed-stl-difference',input:inputFixture('stl','ascii',squareTube()),transform:affine(27,3,-2,1),operation:'difference',expected:'published'},
++ {name:'rotated-holed-obj-difference',input:inputFixture('obj','ascii',squareTube()),transform:affine(27,3,-2,1),operation:'difference',expected:'published'},
++ {name:'signed-zero-transform',input:inputFixture(),transform:affine(0,3,-2,1),operation:'difference',expected:'published'},
++];}
+diff --git a/src/mesh-import/tests/root-history-browser.mjs b/src/mesh-import/tests/root-history-browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..e163eb97c323485ff34a77a03455c1b6b52f6856
+--- /dev/null
++++ b/src/mesh-import/tests/root-history-browser.mjs
+@@ -0,0 +1,130 @@
++import {createMeshCandidateQualification} from '../src/candidate-qualification.mjs';
++import * as domain from '../../domain/index.mjs';
++import {appContent,appendDocument,newDocument,verifyDocument,commitInventory,moveDocument} from '../../app/documents.mjs';
++import {domainStateFingerprint,openProjectStore,canonicalJSON,sha256} from '../../storage/index.mjs';
++import {createMechanicsDomainAdapter} from '../../kernel/mechanics/src/domain-adapter.mjs';
++import {packProductRequest,readProductSemantics} from '../../core/product-operations.mjs';
++import {materials,regions} from '../../../tests/product-runtime/fixtures.mjs';
++import {createRootMeshAdapter} from '../src/root-app-adapter.mjs';
++import {createFinalSceneEvidence} from '../../integration/final-scene-evidence.mjs';
++import {createMeshReplayRecord,meshParameterBindings,prepareMeshHostTransaction,replayMeshRequest,createMeshReplayPublication} from '../src/app-csg-transaction.mjs';
++import {matrixBinary64LE} from '../src/root-runtime.mjs';
++import {source,productFixture,inputFixture,affine,selectionFor,commandFor,bindingInventory} from './root-fixtures.mjs';
++const assert=(v,s)=>{if(!v)throw Error(s);},clone=x=>structuredClone(x),encoder=new TextEncoder();
++async function reject(f,code){try{await f();}catch(e){assert((e.code??e.message)===code,'expected '+code+' got '+(e.code??e.message));return;}throw Error('expected '+code);}
++export async function durableHistoryProof({client,generation,pin,artifacts,failureMode='none'}){
++ const userId='mesh-proof-'+crypto.randomUUID(),projectId='mesh-project',now=Date.now(),engine={id:'arch-root-mesh-proof',version:pin.wasm.sha256};
++ const store=await openProjectStore({userId,deviceId:'local-owned-browser',now:()=>now,policy:{backend:'idb',coordination:'cas-only'}});
++ await store.unlock({userId,deviceId:'local-owned-browser',authVersion:1,verifiedAt:now,expiresAt:now+3600000,verified:true});
++ let adapter,prepared,proposal,host,transaction=null,replayPublication=null;const leases=new WeakMap(),releases=[];
++ const post=client.worker.postMessage.bind(client.worker);
++ client.worker.postMessage=(data,...args)=>{if(data.type==='release')releases.push(data.id);return post(data,...args);};
++ let lastQualifiedModel,lastQualifiedId,loseSessionAfterAck=false;
++ const storeCommit=store.commit.bind(store);
++ store.commit=async(...args)=>{const ack=await storeCommit(...args);if(loseSessionAfterAck){loseSessionAfterAck=false;host.sessionKey='after-durable-session-change';}return ack;};
++
++ const control=()=>({version:'arch-app-adapters/1',ticket:{id:crypto.randomUUID(),userId,projectId,revision:host.document.state.revision,generation:1},signal:new AbortController().signal,onProgress:()=>{}});
++ const current=()=>host,context=()=>({userId,projectId,state:host.document.state,headHash:host.headHash,sessionKey:host.sessionKey,model:host.model});
++ const operation=(c,f)=>{assert(!c.signal.aborted,'cancelled');return f(client,generation());};
++ const generated=new Set();
++ async function baseModel(baseState,liveState){
++  const headHash=await domainStateFingerprint(liveState),s=clone(baseState);s.revision=liveState.revision;
++  const record=createMechanicsDomainAdapter(domain)(s),packed=packProductRequest({domainRecord:record,headHash,sourceHash:await sha256(source),
++   sourceId:9007199254741099n,provenanceId:2000n,regions,materials,upstreamBindings:record.records.filter(r=>r.fieldId<=7).sort((a,b)=>a.fieldId-b.fieldId),
++   provenance:{kind:'authored-root-history-oracle/1',regionSources:regions.map(r=>({sourceIndex:r.sourceIndex,sourceKey:r.sourceIndex===0?'left':'right',semanticId:r.semanticId.toString()})),materials:[...materials,...regions.map(r=>r.material)].map(m=>({...m,id:'explicit-material-'+m.provenanceId}))}});
++  const root=await client.build({kind:'product',source:{kind:'svg',source},packed},{generation:generation()});
++  let released=false;const m={bytes:()=>root.bytes(),generation:root.generation,release(){if(!released){released=true;leases.delete(m);root.release();generated.delete(m);}}};
++  generated.add(m);leases.set(m,{root,client});return m;
++ }
++ const qualification=args=>{lastQualifiedModel=args.model;lastQualifiedId=leases.get(args.model).root.id;return createMeshCandidateQualification({mesh:adapter,kernelLeases:leases,operation})(args);};
++ try{
++  const input=inputFixture('obj'),transform=affine(31,3,-2,1),sourceBytes=encoder.encode(source),sourceHash=await sha256(sourceBytes),rawHash=await sha256(input.bytes);
++  const initial=await newDocument('keychain'),state=clone(productFixture({sourceHash,headHash:'a'.repeat(64)}).project);
++  state.content={app:appContent('Immutable imported mesh history')};
++  state.content.app.materials=[['body',1,'#30353b'],['left',2,'#e04444'],['right',3,'#3388ee'],['tool',8,'#30353b']].map(([id,slot,color])=>({id,label:id,role:'other',slot,color,excluded:false,overridden:true}));
++  state.content.app.source={id:'generated-original',name:'analytic.svg',kind:'svg',revision:0,raw:{hash:sourceHash,byteLength:sourceBytes.length},assetHashes:[sourceHash],metadata:{}};
++  state.content.app.mesh={id:'import-history-source',name:input.name,kind:'mesh',revision:0,raw:{hash:rawHash,byteLength:input.bytes.length},assetHashes:[rawHash],
++   applied:false,metadata:{meshImport:{version:'arch-mesh-ingest/1',format:'obj',original:{sha256:rawHash,byteLength:input.bytes.length},unit:null}}};
++  const assets=new Map(initial.assets);
++  for(const [hash,bytes]of[[sourceHash,sourceBytes],[rawHash,input.bytes]])assets.set(hash,{hash,bytes,byteLength:bytes.length,kind:'source'});
++  const before=await appendDocument(initial.document,state,assets,{type:'authored.fixture-import'});
++  const first=await store.commit({projectId,expectedRevision:0,transactionId:crypto.randomUUID(),engine,document:before.document,assets:commitInventory(before.document,before.assets)});
++  host={document:before.document,assets:before.assets,model:null,headRevision:first.head.revision,headHash:await domainStateFingerprint(state),sessionKey:'session-1',store,userId,projectId};
++  host.model=await baseModel(state,state);const base=host.model,beforeBytes=base.bytes().slice(),beforeHash=await sha256(beforeBytes);
++  adapter=createRootMeshAdapter({operation,kernelLeases:leases,context,commitCandidate:args=>transaction.commitCandidate(args),publishReplay:args=>replayPublication.publishReplay(args)});
++  const inventory=bindingInventory(base.bytes(),readProductSemantics(leases.get(base).root.metadata.semanticBytes)),command=commandFor(inventory,transform,'difference');
++  const selection=selectionFor(transform),parser={unit:input.unit,materials:input.materials,sourceMaterialAssignments:input.sourceMaterialAssignments,maxErrorMm:input.maxErrorMm};
++  const preview=await adapter.prepareInput({control:control(),file:input,mesh:state.content.app.mesh,selection:{input:parser,approval:selection}});
++  prepared=await adapter.approveInput(preview,{control:control(),proposalHash:preview.proposalHash});preview.release();
++  const proposed=domain.previewCommand(state,{id:'parameters.set',args:{changes:[{id:'impOn',value:true},{id:'impOp',value:'tru'},
++   {id:'impRZ',value:31},{id:'impX',value:3},{id:'impY',value:-2},{id:'impZ',value:1}]}});
++  assert(proposed.ok,'explicit domain parameters '+JSON.stringify(proposed.issues));const nextState=clone(domain.commitPreview(state,proposed).state);
++  const bits=matrixBinary64LE(transform),parameters=meshParameterBindings(nextState,{resolved:{queryToleranceCeilingMm:.002,unit:'millimeter',impZMm:1},transformConvention:'arch-test-approved-T-Rz-S/1',transformBinary64LE:bits});
++  const materialNames={'800':'tool','901':'body','902':'left','903':'right'},sourceHashes=[{id:'generated-original',sha256:sourceHash},{id:state.content.app.mesh.id,sha256:rawHash}];
++  const rr=await createMeshReplayRecord({original:state.content.app.mesh,baseState:state,assets:host.assets,engine,parser,
++   approval:{version:'arch-mesh-input-selection/1',...selection,transformBinary64LE:bits},command,materialNames,sourceHashes,parameters});
++  nextState.content.app.mesh={...clone(state.content.app.mesh),applied:true,assetHashes:rr.assetHashes,metadata:{...clone(state.content.app.mesh.metadata),meshCsg:rr.recipe}};
++  let installs=0;
++  transaction=await prepareMeshHostTransaction({current,nextState,assets:rr.assets,engine,preflight:async()=>{},qualifyCandidate:qualification,
++   adopt({candidate,model,head}){if(failureMode==='adopt')throw Object.assign(Error('VIEWPORT_TEST_ADOPTION_EXCEPTION'),{code:'VIEWPORT_TEST_ADOPTION_EXCEPTION'});const old=host.model;host={...host,document:candidate.document,assets:candidate.assets,headRevision:head.revision,headHash:model.mesh.headHash,model};installs++;old.release();return true;}});
++  assert(transaction.publication.headHash===await domainStateFingerprint(nextState),'domain head not asset hash');
++  const args={model:base,command,publication:transaction.publication,materialNames,sourceHashes};
++  proposal=await adapter.prepareApply(prepared,{control:control(),...args});
++  // A real competing durable write: same domain content, higher storage CAS counter.
++  await store.commit({projectId,expectedRevision:host.headRevision,transactionId:crypto.randomUUID(),engine,document:host.document,assets:commitInventory(host.document,host.assets),provenance:{}});
++  await reject(()=>adapter.confirmApply(proposal,{control:control(),proposalHash:proposal.proposalHash}),'CONFLICT');proposal=null;
++  assert(installs===0&&host.model===base&&await sha256(base.bytes().slice())===beforeHash,'real failed CAS no partial visible mutation');
++  const competing=await store.load(projectId);host.headRevision=competing.headRevision;
++  transaction=await prepareMeshHostTransaction({current,nextState,assets:rr.assets,engine,preflight:async()=>{},qualifyCandidate:qualification,
++   adopt({candidate,model,head}){if(failureMode==='adopt')throw Object.assign(Error('VIEWPORT_TEST_ADOPTION_EXCEPTION'),{code:'VIEWPORT_TEST_ADOPTION_EXCEPTION'});const old=host.model;host={...host,document:candidate.document,assets:candidate.assets,headRevision:head.revision,headHash:model.mesh.headHash,model};installs++;old.release();return true;}});
++  proposal=await adapter.prepareApply(prepared,{control:control(),...args,publication:transaction.publication});
++  loseSessionAfterAck=failureMode==='session';
++  const committed=await adapter.confirmApply(proposal,{control:control(),proposalHash:proposal.proposalHash});proposal=null;prepared.release();prepared=null;
++  assert(committed.committed,'real durable commit');
++  if(failureMode==='none')assert(committed.visible&&installs===1,'real history adopted once');
++  else{
++   assert(committed.visible===false&&committed.model===null&&committed.diagnostic.code==='COMMITTED_MODEL_UNAVAILABLE'&&installs===0&&host.model===base,'committed unavailable variant');
++   assert(!leases.has(lastQualifiedModel)&&releases.filter(id=>id===lastQualifiedId).length===1,'unadopted primary released exactly once');
++   await reject(async()=>lastQualifiedModel.bytes(),'MESH_MODEL_RETIRED');
++  }
++  const committedHash=committed.history.derivedSnapshotHash,saved=await store.load(projectId);
++  const loadedAssets=new Map(saved.assets.map(a=>[a.hash,{...a,bytes:new Uint8Array(a.bytes)}]));
++  const loadedDoc=await verifyDocument(saved.manifest.document,loadedAssets);
++  assert(loadedDoc.history.transactions.at(-1).command.receipt.derivedSnapshotHash===committedHash,'actual history receipt');
++  assert(await sha256(loadedAssets.get(rawHash).bytes)===rawHash,'immutable original bytes saved');
++  const bad=clone(loadedDoc.state);bad.content.app.mesh.metadata.meshCsg.input.approval.unit='inch';
++  await reject(()=>replayMeshRequest({state:bad,assets:loadedAssets,engine}),'MESH_REPLAY_UNIT');
++  const changed=domain.previewCommand(loadedDoc.state,{id:'parameters.set',args:{changes:[{id:'impX',value:4}]}});
++  await reject(()=>replayMeshRequest({state:domain.commitPreview(loadedDoc.state,changed).state,assets:loadedAssets,engine}),'MESH_REPLAY_PARAMETERS_CHANGED');
++  const changedBody=domain.previewCommand(loadedDoc.state,{id:'parameters.set',args:{changes:[{id:'baseH',value:{heightMode:'mm',mm:8}}]}});
++  await reject(()=>replayMeshRequest({state:domain.commitPreview(loadedDoc.state,changedBody).state,assets:loadedAssets,engine}),'MESH_REPLAY_GENERATED_PARAMETERS_CHANGED');
++  host.model.release();host={...host,document:loadedDoc,assets:loadedAssets,model:null,headRevision:saved.headRevision,sessionKey:'reopened',headHash:await domainStateFingerprint(loadedDoc.state)};
++  const publish=async()=>{
++   replayPublication=await createMeshReplayPublication({current,engine,preflight:async()=>{},qualifyCandidate:qualification,
++    adopt({model}){host={...host,model};return true;}});
++   const r=replayPublication.replay,b=await baseModel(r.baseState,host.document.state);let pre,pr;
++   try{
++    const v=await adapter.prepareInput({control:control(),file:r.file,mesh:r.source,selection:r.selection});
++    pre=await adapter.approveInput(v,{control:control(),proposalHash:v.proposalHash});v.release();
++    pr=await adapter.prepareApply(pre,{control:control(),model:b,command:r.command,materialNames:r.materialNames,sourceHashes:r.sourceHashes,replayRecord:r.recipe});
++    const out=await adapter.confirmApply(pr,{control:control(),proposalHash:pr.proposalHash});pr=null;
++    assert(out.model===host.model,'replay actual model adoption');
++   }finally{pr?.release();pre?.release();b.release();}
++  };
++  const count=host.document.history.transactions.length;await publish();assert(host.document.history.transactions.length===count,'rebuild appends no history');
++  artifacts.push({name:'durable-'+failureMode+'-reopened.arch',bytes:Array.from(host.model.bytes())});
++  const restoredRecipe=canonicalJSON(host.document.state.content.app.mesh.metadata.meshCsg);
++  for(const direction of ['undo','redo']){
++   host.model?.release();const moved=await moveDocument(host.document,host.assets,direction);
++   const ack=await store.commit({projectId,expectedRevision:host.headRevision,transactionId:crypto.randomUUID(),engine,document:moved.document,assets:commitInventory(moved.document,moved.assets)});
++   host={...host,document:moved.document,assets:moved.assets,headRevision:ack.head.revision,headHash:await domainStateFingerprint(moved.document.state),model:null};
++   if(direction==='undo')assert(!host.document.state.content.app.mesh.applied,'undo restores unapplied original');
++   else {assert(canonicalJSON(host.document.state.content.app.mesh.metadata.meshCsg)===restoredRecipe,'redo exact recipe');await publish();}
++  }
++  artifacts.push({name:'durable-'+failureMode+'-redone.arch',bytes:Array.from(host.model.bytes())});
++  assert(await sha256(host.assets.get(rawHash).bytes)===rawHash,'undo redo original immutable');
++  return {name:'durable-store-'+failureMode+'-CAS-history-reopen-undo-redo',state:'published',backend:store.capabilities.selectedBackend,
++   domainRevision:host.document.state.revision,storeRevision:host.headRevision,installs,failureMode,unadoptedPrimaryReleasedOnce:failureMode!=='none',failedCasUnchanged:true,rawHash,committedHash,
++   reopenedAndRedone:true,historyTransactions:host.document.history.transactions.length,replayHasFreshNativeGates:true};
++ }finally{proposal?.release();prepared?.release();host?.model?.release();for(const m of generated)m.release();adapter?.dispose();transaction?.release();store.close();client.worker.postMessage=post;}
++}
+diff --git a/src/mesh-import/tests/root-native.rs b/src/mesh-import/tests/root-native.rs
+new file mode 100644
+index 0000000000000000000000000000000000000000..d3c2f97fe644f86b9867922e6c5d625b7b7b7e68
+--- /dev/null
++++ b/src/mesh-import/tests/root-native.rs
+@@ -0,0 +1,92 @@
++use arch_kernel::*;
++use std::{fs,env,path::PathBuf,slice,ffi::CString};
++use serde_json::{Value,json};
++use sha2::{Digest,Sha256};
++unsafe extern "C"{
++ fn arch_control_reset(g:u32)->u32;fn arch_control_ptr()->*const std::sync::atomic::AtomicU32;
++ fn arch_input_create(n:u32)->u32;fn arch_input_ptr(id:u32)->*mut u8;fn arch_input_release(id:u32)->u32;
++ fn arch_snapshot_ptr(id:u32)->*const u8;fn arch_snapshot_len(id:u32)->u32;fn arch_snapshot_release(id:u32)->u32;fn arch_snapshot_acquire(id:u32)->*const u8;
++ fn arch_error_ptr()->*const u8;fn arch_error_len()->u32;fn arch_metadata_ptr(id:u32)->*const u8;fn arch_metadata_len(id:u32)->u32;
++ fn archmi_begin(n:u32)->u32;fn archmi_source_ptr(id:u32)->*mut u8;fn archmi_release(id:u32)->u32;
++ fn archmi_set_provenance(id:u32,source:*const i8,name:*const i8)->i32;
++ fn archmi_report(id:u32)->*const u8;fn archmi_report_len(id:u32)->u32;fn archmi_publishable(id:u32)->u32;
++ fn archmi_stage_stl(id:u32,xyz:*const f64,faces:u32,unit:u32,rgba:u32,chosen:u32,name:*const i8,material:*const i8,material_name:*const i8,error:f64)->i32;
++ fn archmi_validate(id:u32,error:f64)->i32;
++}
++fn hash(b:&[u8])->String{Sha256::digest(b).iter().map(|x|format!("{x:02x}")).collect()}
++fn err()->String{unsafe{String::from_utf8_lossy(slice::from_raw_parts(arch_error_ptr(),arch_error_len()as usize)).into()}}
++fn input(b:&[u8])->u32{unsafe{let h=arch_input_create(b.len()as u32);assert_ne!(h,0);std::ptr::copy_nonoverlapping(b.as_ptr(),arch_input_ptr(h),b.len());h}}
++fn text(v:&Value)->Vec<u8>{serde_json::to_vec(v).unwrap()}
++fn snapshot(id:u32)->Vec<u8>{unsafe{slice::from_raw_parts(arch_snapshot_ptr(id),arch_snapshot_len(id)as usize).to_vec()}}
++fn buf(id:u32,k:u32)->Vec<u8>{unsafe{let n=arch_mesh_buffer_len(id,k);if n==0{vec![]}else{slice::from_raw_parts(arch_mesh_buffer_ptr(id,k),n as usize).to_vec()}}}
++fn product_buf(id:u32,k:u32)->Vec<u8>{unsafe{slice::from_raw_parts(arch_product_buffer_ptr(id,k),arch_product_buffer_len(id,k)as usize).to_vec()}}
++fn u32at(b:&[u8],o:usize)->u32{u32::from_le_bytes(b[o..o+4].try_into().unwrap())}
++fn u64at(b:&[u8],o:usize)->u64{u64::from_le_bytes(b[o..o+8].try_into().unwrap())}
++fn table(b:&[u8],tag:u32)->(usize,usize){for i in 0..u32at(b,12)as usize{let o=256+16*i;if u32at(b,o)==tag{return(u32at(b,o+12)as usize,u32at(b,o+8)as usize)}}panic!("table")}
++fn main(){
++ let run=PathBuf::from(env::var("PROJECT_REVIEW_RUN").unwrap()).canonicalize().unwrap();
++ let args:Vec<_>=env::args().collect();assert_eq!(args.len(),3);
++ let fixture=PathBuf::from(&args[1]).canonicalize().unwrap();let out=PathBuf::from(&args[2]);assert!(fixture.starts_with(&run));assert!(out.canonicalize().unwrap().starts_with(&run));
++ let data:Value=serde_json::from_slice(&fs::read(&fixture).unwrap()).unwrap();let base=fixture.parent().unwrap();
++ let read=|name:&str|{let p=base.join(name).canonicalize().unwrap();assert!(p.starts_with(&run));let b=fs::read(p).unwrap();assert!(b.len()<=64_000_000);b};
++ let mut generation=0u32;let mut reset=||{generation+=1;assert_eq!(unsafe{arch_control_reset(generation)},1);generation};
++ let before=arch_raster_owned_bytes();let g=reset();
++ let request=arch_product_prepare_svg(input(&read("product.svg")),input(&read("product.aprq")),0.2,0.,0.001,g);
++ assert_ne!(request,0,"{}",err());let parent=arch_product_build(request,g);assert_ne!(parent,0,"{}",err());
++ let original=snapshot(parent);let semantic=product_buf(parent,1);let meta:Value=unsafe{serde_json::from_slice(slice::from_raw_parts(arch_metadata_ptr(parent),arch_metadata_len(parent)as usize)).unwrap()};
++ fs::write(out.join("parent.arch"),&original).unwrap();
++ let(po,count)=table(&semantic,1);let(fo,_)=table(&semantic,2);let parts=u32at(&original,56)as usize;
++ let mut mats=Vec::new();let mut binds=Vec::new();let mut target=0;
++ for pi in 0..count{
++  let at=po+160*pi;let feature=u32at(&semantic,at)as usize;let slot=u32at(&semantic,at+8);let rgba=u32at(&original,parts+40*pi+16);
++  let mi=mats.iter().position(|m:&Value|m["slot"]==slot&&m["rgba"]==rgba).unwrap_or_else(||{mats.push(json!({"materialId":(900+slot).to_string(),"slot":slot,"rgba":rgba}));mats.len()-1});
++  if u32at(&semantic,at+4)==0{target=pi;}
++  binds.push(json!({"semanticId":(10000+pi).to_string(),"sourceId":u64at(&semantic,fo+176*feature+112).to_string(),
++   "provenanceId":u64at(&semantic,at+24).to_string(),"sourceIndex":u32at(&original,parts+40*pi+20),"materialIndex":mi}));
++ }
++ let mut records=Vec::new();
++ for case in data["cases"].as_array().unwrap(){
++  let name=case["name"].as_str().unwrap();let raw=read(case["source"].as_str().unwrap());let positions=read(case["positions"].as_str().unwrap());
++  assert_eq!(positions.len()%72,0);let xyz:Vec<f64>=positions.chunks_exact(8).map(|b|f64::from_le_bytes(b.try_into().unwrap())).collect();
++  let id=unsafe{archmi_begin(raw.len()as u32)};assert_ne!(id,0);
++  let sid=CString::new("authored-analytic-import").unwrap();let filename=CString::new("tool.stl").unwrap();
++  assert_eq!(unsafe{archmi_set_provenance(id,sid.as_ptr(),filename.as_ptr())},0);
++  unsafe{std::ptr::copy_nonoverlapping(raw.as_ptr(),archmi_source_ptr(id),raw.len());}
++  let label=CString::new("analytic-prism").unwrap();let mat=CString::new("800").unwrap();let matname=CString::new("Imported analytic tool").unwrap();
++  assert_eq!(unsafe{archmi_stage_stl(id,xyz.as_ptr(),(xyz.len()/9)as u32,1,0x30353bff,1,label.as_ptr(),mat.as_ptr(),matname.as_ptr(),case["conversionError"].as_f64().unwrap())},0);
++  unsafe{archmi_validate(id,0.002);}assert_eq!(unsafe{archmi_publishable(id)},1);
++  let report=unsafe{slice::from_raw_parts(archmi_report(id),archmi_report_len(id)as usize)};let transform=case["transform"].clone();
++  let matrix:Vec<f64>=transform.as_array().unwrap().iter().map(|v|v.as_f64().unwrap()).collect();
++  let bits:String=matrix.iter().flat_map(|v|v.to_le_bytes()).map(|v|format!("{v:02x}")).collect();
++  let mut stage=case["selection"].clone();stage["version"]=json!("arch-mesh-stage/1");stage["approved"]=json!(true);
++  for k in ["userId","projectId"]{stage[k]=data["context"][k].clone();}
++  stage["revision"]=meta["revision"].clone();stage["headHash"]=meta["headHash"].clone();stage["transform"]=transform.clone();stage["transformBinary64LE"]=json!(bits);
++  stage["sourceHash"]=json!(hash(&raw));stage["nativeReportHash"]=json!(hash(report));
++  let g=reset();let prepared=arch_mesh_stage(id,input(&text(&stage)),g);assert_ne!(prepared,0,"{}",err());assert_eq!(unsafe{archmi_release(id)},1);
++  let mut cmd=case["command"].clone();
++  for k in ["revision","headHash","userId","projectId","transform","transformBinary64LE"]{cmd[k]=stage[k].clone();}
++  cmd["version"]=json!("arch-mesh-csg-request/1");cmd["snapshotGeneration"]=json!(1);cmd["bindings"]=json!(binds);cmd["materials"]=json!(mats);cmd["targets"]=json!([binds[target]["semanticId"]]);
++  let retained=arch_raster_owned_bytes();let g=reset();
++  let proposal=arch_mesh_prepare(parent,prepared,input(&text(&cmd)),g);assert_ne!(proposal,0,"{}",err());
++  let metadata:Value=serde_json::from_slice(&buf(proposal,2)).unwrap();let geometry=buf(proposal,1);
++  fs::write(out.join(format!("{name}.arch")),&geometry).unwrap();fs::write(out.join(format!("{name}.json")),serde_json::to_vec_pretty(&metadata).unwrap()).unwrap();
++  assert_eq!(snapshot(parent),original);assert_eq!(buf(proposal,4),raw);
++  assert!(unsafe{arch_snapshot_ptr(proposal)}.is_null(),"proposal cannot impersonate published root snapshot");
++  let exact=buf(proposal,3);let mut bad=exact.clone();bad[0]^=1;let g=reset();
++  assert_eq!(arch_mesh_confirm(proposal,input(&bad),g),0);assert_eq!(snapshot(parent),original);
++  let blocked=metadata["exportBlocked"]==true;assert_eq!(blocked,case["expectedBlocked"].as_bool().unwrap(),"{name}: {metadata}");
++  if !blocked{
++   let g=reset();let published=arch_mesh_confirm(proposal,input(&exact),g);assert_ne!(published,0,"{}",err());
++   assert_eq!(arch_mesh_proposal_release(proposal),0);
++   let bytes=snapshot(published);assert_eq!(u32at(&bytes,16),g);assert_eq!(&bytes[20..],&geometry[20..]);
++   assert_eq!(unsafe{arch_snapshot_acquire(published)},unsafe{arch_snapshot_ptr(published)});assert_eq!(unsafe{arch_snapshot_release(published)},1);
++   fs::write(out.join(format!("{name}.published.arch")),bytes).unwrap();
++   assert_eq!(unsafe{arch_snapshot_release(published)},1);assert_eq!(unsafe{arch_snapshot_release(published)},0);
++  }else{let g=reset();assert_eq!(arch_mesh_confirm(proposal,input(&exact),g),0);assert_eq!(err(),"MESH_POST_CSG_GATES_BLOCKED");arch_mesh_proposal_release(proposal);}
++  assert_eq!(arch_raster_owned_bytes(),retained);
++  arch_mesh_prepared_release(prepared);assert_eq!(snapshot(parent),original);
++  records.push(json!({"name":name,"published":!blocked,"parentUnchanged":true,"originalBytesExact":true,"noPartialOnBadConfirmation":true,"retainedBytes":retained}));
++ }
++ assert_eq!(unsafe{arch_snapshot_release(parent)},1);assert_eq!(arch_raster_owned_bytes(),before);
++ fs::write(out.join("summary.json"),serde_json::to_vec_pretty(&json!({"records":records,"ownedBefore":before,"ownedAfter":arch_raster_owned_bytes()})).unwrap()).unwrap();
++}
+diff --git a/src/mesh-import/tests/root-node.test.mjs b/src/mesh-import/tests/root-node.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..73743b28b251ceb81c5cf2669a85c8a48a6146c8
+--- /dev/null
++++ b/src/mesh-import/tests/root-node.test.mjs
+@@ -0,0 +1,52 @@
++import fs from 'node:fs';import path from 'node:path';import assert from 'node:assert/strict';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';
++import {createMeshRootOperations} from '../src/root-runtime.mjs';
++import {createProductOperations,readProductSemantics} from '../../core/product-operations.mjs';
++import {readSnapshot,inspectMesh} from '../../../tests/oracles/mesh-oracle.mjs';
++import {source,productFixture,inputFixture,bindingInventory,affine,selectionFor,commandFor} from './root-fixtures.mjs';
++const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'evidence/root-node-'+(process.env.PROOF_TAG??'r2'));fs.mkdirSync(out,{recursive:true});
++const sha=b=>createHash('sha256').update(b).digest('hex');
++const M=await (await import(pathToFileURL(path.join(run,'work/module/arch-kernel.mjs')))).default({print:()=>{},printErr:()=>{}});
++const ops=createMeshRootOperations(M),productOps=createProductOperations(M);let generation=0;
++const reset=()=>{const g=++generation;assert.equal(M._arch_control_reset(g),1);return g;};
++const snapshot=id=>new Uint8Array(M.HEAPU8.subarray(M._arch_snapshot_ptr(id),M._arch_snapshot_ptr(id)+M._arch_snapshot_len(id)));
++const prefix='root-product-fixture',headHash=sha(prefix),sourceHash=sha(source),product=productFixture({sourceHash,headHash});
++let g=reset();const parent=productOps.buildRequest(productOps.prepare({kind:'product',source:{kind:'svg',source},packed:product.packed},g),g);
++const before=snapshot(parent),sem=readProductSemantics(productOps.metadata(parent).semanticBytes),inventory=bindingInventory(before,sem);
++const context={userId:'test-author',projectId:'test-project',revision:sem.revision,headHash};
++fs.writeFileSync(path.join(out,'parent.arch'),before);fs.writeFileSync(path.join(out,'parent.apms'),productOps.metadata(parent).semanticBytes);
++fs.writeFileSync(path.join(out,'parent.json'),JSON.stringify({context,inventory,parts:readSnapshot(before).parts,intervals:sem.sourceIntervals},null,2));
++const records=[];
++try{
++ for(const [name,format,encoding,operation,transform] of [
++  ['internal-rotated-difference','stl','ascii','difference',affine(31,3,-2,1)],
++  ['rotated-obj-difference','obj','ascii','difference',affine(-23,3,-2,1)],
++  ['side-union','stl','binary','union',affine(35,19,-2,1)],
++  ['internal-intersection-blocked-datum','stl','ascii','intersection',affine(17,3,-2,1)],
++ ]){
++  let a,p,q,published;
++  try{
++   a=await ops.dispatch('previewImport',{context,input:inputFixture(format,encoding),selection:selectionFor(transform)},{generation:reset()});
++   assert.equal(a.state,'approval-required',JSON.stringify(a));
++   p=await ops.dispatch('approveImport',{token:a.token,context,approved:true,approvalHash:a.approvalHash},{generation:reset()});a=null;
++   const command=commandFor(inventory,transform,operation);command.snapshotGeneration=1;
++   q=await ops.dispatch('prepare',{snapshotId:parent,token:p.token,context,command},{generation:reset()});
++   fs.writeFileSync(path.join(out,name+'.proposal.json'),JSON.stringify(q,null,2));
++   const b=new Uint8Array(M.HEAPU8.subarray(q.preview.byteOffset,q.preview.byteOffset+q.preview.byteLength));
++   fs.writeFileSync(path.join(out,name+'.arch'),b);assert.equal(sha(snapshot(parent)),sha(before));
++   if(name.endsWith('blocked-datum')){
++    assert.equal(q.state,'blocked');await assert.rejects(()=>ops.dispatch('confirm',{token:q.token,context,approved:true,proposalHash:q.confirmation.proposalHash},{generation:reset()}),e=>e.code==='MESH_POST_CSG_OR_TOPOLOGY_BLOCKED');
++   }else{
++    assert.equal(q.state,'confirmation-required',JSON.stringify({gate:q.report.postCsgGates,qualification:q.qualification}));
++    published=await ops.dispatch('confirm',{token:q.token,context,approved:true,proposalHash:q.confirmation.proposalHash},{generation:reset()});q=null;
++    assert(published.snapshotId);const bytes=snapshot(published.snapshotId),s=readSnapshot(bytes);
++    for(const part of s.parts)inspectMesh({vertices:s.vertices,faces:s.faces.slice(part.faceStart,part.faceStart+part.faceCount)});
++    fs.writeFileSync(path.join(out,name+'.published.arch'),bytes);
++    fs.writeFileSync(path.join(out,name+'.published.json'),JSON.stringify(published.metadata,null,2));
++    assert.equal(new DataView(bytes.buffer).getUint32(16,true),generation);assert.equal(published.metadata.applied,true);
++   }
++   records.push({name,state:published?'published':q.state,unchangedParent:true});
++  }finally{if(published)M._arch_snapshot_release(published.snapshotId);if(q?.token)ops.release(q.token);if(p?.token)ops.release(p.token);if(a?.token)ops.release(a.token);}
++ }
++}finally{M._arch_snapshot_release(parent);ops.reset();}
++assert.equal(M._arch_raster_owned_bytes(),0);
++fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({records,rootOwnedBytes:String(M._arch_raster_owned_bytes())},null,2));console.log(JSON.stringify(records));
+diff --git a/src/mesh-import/tests/root-oracles.mjs b/src/mesh-import/tests/root-oracles.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..e3ac0f6487d4a7c8c94fb06bd45a14e11e2dbce9
+--- /dev/null
++++ b/src/mesh-import/tests/root-oracles.mjs
+@@ -0,0 +1,35 @@
++import fs from'node:fs';import path from'node:path';import assert from'node:assert/strict';import{createHash}from'node:crypto';
++import{readSnapshot,inspectMesh,verticalIntersections}from'../../../tests/oracles/mesh-oracle.mjs';
++const run=path.resolve(process.env.PROJECT_REVIEW_RUN),dirs=process.argv.slice(2).map(x=>path.resolve(run,x));assert(dirs.length);
++const results=[];const near=(x,y,n)=>assert(Math.abs(x-y)<1e-7,n+': '+x+' vs '+y);
++function measure(b){const s=readSnapshot(b),parts=s.parts.map(p=>inspectMesh({vertices:s.vertices,faces:s.faces.slice(p.faceStart,p.faceStart+p.faceCount)}));
++ const hash=createHash('sha256');const rows=s.faces.map(f=>{const points=f.map(i=>s.vertices[i].map(x=>Object.is(x,-0)?0:x));const cycles=[0,1,2].map(i=>JSON.stringify([...points.slice(i),...points.slice(0,i)]));return cycles.sort()[0];}).sort();hash.update(JSON.stringify(rows));
++ return {s,parts,volume:parts.reduce((n,p)=>n+p.volume,0),triangleCoordinateHash:hash.digest('hex')};}
++for(const dir of dirs){
++ assert(dir.startsWith(run+path.sep));
++ const base=measure(fs.readFileSync(path.join(dir,'parent.arch')));near(base.volume,8288,'area1184 × (base6+art1)');assert.deepEqual(verticalIntersections(base.s,-13,-7),[],'original through-hole');
++ for(const name of fs.readdirSync(dir).filter(n=>n.endsWith('.arch')&&!/parent|material|transaction|strap/.test(n))){
++  const m=measure(fs.readFileSync(path.join(dir,name)));let expected;
++  if(name.includes('side-union')){const angle=35*Math.PI/180,xa=19,xb=19+2*Math.cos(angle),xc=19-2*Math.sin(angle);expected=8288+6*(xb-20)**2/((xb-xa)*(xb-xc));}
++  else if(name.includes('intersection'))expected=1184+6; // only selected body is intersected; art remains
++  else if(name.includes('disconnected'))expected=8288+12;
++  else if(name.includes('holed'))expected=8288-12;
++  else expected=8288-6;
++  near(m.volume,expected,name);assert.deepEqual(verticalIntersections(m.s,-13,-7),[],'original hole retained '+name);
++  if(name.includes('holed')){
++   const a=27*Math.PI/180,at=(x,y)=>[3+x*Math.cos(a)-y*Math.sin(a),-2+x*Math.sin(a)+y*Math.cos(a)];
++   const cut=verticalIntersections(m.s,...at(.5,.5)),kept=verticalIntersections(m.s,...at(2,2));
++   assert(cut.includes(1)&&cut.includes(2),'full ring tool creates bounded cavity');
++   assert(!kept.includes(1)&&!kept.includes(2),'tool hole preserves the central source column');
++  }
++  results.push({directory:path.relative(run,dir),name,volume:m.volume,expectedVolume:expected,parts:m.parts.map(p=>({volume:p.volume,euler:p.euler})),triangleCoordinateHash:m.triangleCoordinateHash});
++ }
++}
++const parity=[];
++const natives=results.filter(r=>r.directory.includes('root-native'));
++for(const a of natives){const b=results.find(r=>r.name===a.name&&!r.directory.includes('root-native'));if(!b)continue;
++ near(a.volume,b.volume,'native/WASM analytic parity');assert.equal(a.parts.length,b.parts.length);
++ parity.push({name:a.name,native:a.directory,wasm:b.directory,volumeDelta:Math.abs(a.volume-b.volume),exactTriangleCoordinateMultiset:a.triangleCoordinateHash===b.triangleCoordinateHash});
++}
++const report={version:'independent-root-csg-oracles/1',reader:'tests/oracles/mesh-oracle.mjs',scope:'analytic represented geometry; comparison tolerance1e-7mm3 is test arithmetic only, not a global error or fit receipt',results,parity};
++const out=path.join(run,'reports/root-oracles.json');fs.writeFileSync(out,JSON.stringify(report,null,2));console.log(JSON.stringify({checked:results.length,parity:parity.length,maxVolumeDelta:Math.max(0,...parity.map(p=>p.volumeDelta))}));
+diff --git a/src/mesh-import/tests/run-root-browser.mjs b/src/mesh-import/tests/run-root-browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..8664687b64994d1cecc6c3e07df378c80bbbb67d
+--- /dev/null
++++ b/src/mesh-import/tests/run-root-browser.mjs
+@@ -0,0 +1,40 @@
++import fs from 'node:fs';import path from 'node:path';import http from 'node:http';import {pathToFileURL}from'node:url';import{createHash}from'node:crypto';
++const repo=path.resolve(process.cwd()),run=path.resolve(process.env.PROJECT_REVIEW_RUN),tag=process.env.PROOF_TAG??'r1',pkg=path.join(run,'work/imported-csg-root/src/mesh-import'),out=path.join(run,'evidence/root-browser-'+tag),pub=path.join(run,'work/root-browser-public-'+tag);
++if(!run.startsWith(repo+path.sep)||fs.existsSync(out)||fs.existsSync(pub))throw Error('own fresh evidence paths');
++fs.mkdirSync(out,{recursive:true});fs.mkdirSync(pub,{recursive:true});
++const {rolldown}=await import(pathToFileURL(path.join(repo,'node_modules/rolldown/dist/index.mjs')));
++for(const [name,file]of [['proof',path.join(pkg,'tests/root-browser.mjs')],['engine-worker',path.join(pkg,'../core/engine-worker.mjs')],['mesh-qualification-worker',path.join(pkg,'../core/mesh-qualification-worker.mjs')]]){
++ const bundle=await rolldown({input:file,platform:'browser',resolve:{alias:{'@xmldom/xmldom':path.join(repo,'src/printing/node_modules/@xmldom/xmldom/lib/index.js')}},onwarn:w=>{if(w.code==='UNRESOLVED_IMPORT')throw Error(w.message);},external:id=>id.startsWith('node:')});
++ await bundle.write({file:path.join(pub,name+'.mjs'),format:'esm',codeSplitting:false});await bundle.close();
++}
++const sha=b=>createHash('sha256').update(b).digest('hex'),pins={};
++for(const [kind,ext]of[['module','mjs'],['wasm','wasm']]){
++ const bytes=fs.readFileSync(path.join(run,'work/module/arch-kernel.'+ext)),hash=sha(bytes),name='arch-kernel.'+hash.slice(0,16)+'.'+ext;
++ fs.writeFileSync(path.join(pub,name),bytes);pins[kind]={url:'/'+name,sha256:hash,bytes:bytes.length};
++}
++fs.writeFileSync(path.join(pub,'index.html'),'<!doctype html><meta charset="utf-8"><title>Owned root mesh RPC proof</title><script type="module" src="/proof.mjs"></script>');
++const files=new Map(fs.readdirSync(pub).map(name=>['/'+name,fs.readFileSync(path.join(pub,name))]));
++const requests=[];const server=http.createServer((req,res)=>{
++ const url=req.url==='/'?'/index.html':req.url;requests.push({method:req.method,url});
++ if(req.method!=='GET'||!files.has(url)){res.writeHead(404);res.end();return;}
++ const bytes=files.get(url);res.writeHead(200,{'Content-Type':url.endsWith('.wasm')?'application/wasm':url.endsWith('.mjs')?'text/javascript':'text/html','Content-Length':bytes.length,'Cache-Control':'no-store','Cross-Origin-Opener-Policy':'same-origin','Cross-Origin-Embedder-Policy':'require-corp','Cross-Origin-Resource-Policy':'same-origin'});res.end(bytes);
++});
++await new Promise(r=>server.listen(0,'127.0.0.1',r));const origin='http://127.0.0.1:'+server.address().port,pin={version:'arch-engine-integrity/1',...Object.fromEntries(Object.entries(pins).map(([k,p])=>[k,{...p,url:origin+p.url}]))};
++const pw=await import(pathToFileURL(path.join(repo,'.toolchain/app-runtime/node_modules/playwright/index.mjs'))),summaries=[];let failed=false;
++try{
++ const browsers=(process.env.PROOF_BROWSERS??'firefox,chromium,webkit').split(',');if(!browsers.every(b=>['chromium','firefox','webkit'].includes(b)))throw Error('engine selection');
++ for(const browser of browsers){
++  const logs=[],context=await pw[browser].launchPersistentContext(path.join(run,'cache/profiles/root-'+tag+'-'+browser),{headless:true,viewport:{width:1000,height:720},downloadsPath:path.join(run,'temp/downloads-'+tag+'-'+browser),acceptDownloads:false});
++  await context.route('**/*',r=>r.request().url().startsWith(origin+'/')?r.continue():r.abort());
++  try{
++   const page=await context.newPage();page.on('requestfailed',r=>logs.push({type:'requestfailed',url:r.url(),failure:r.failure()}));page.on('response',r=>logs.push({type:'response',url:r.url(),status:r.status()}));page.on('console',m=>logs.push({type:m.type(),text:m.text()}));page.on('pageerror',e=>logs.push({type:'pageerror',text:e.stack??String(e)}));
++   await page.goto(origin,{waitUntil:'load',timeout:45000});await page.waitForFunction(()=>typeof globalThis.runProof==='function',{},{timeout:20000});
++   const result=await page.evaluate(pin=>globalThis.runProof(pin),pin);
++   const dir=path.join(out,browser);fs.mkdirSync(dir);for(const a of result.artifacts){if(!/^[a-z0-9.-]+$/.test(a.name))throw Error('artifact name');fs.writeFileSync(path.join(dir,a.name),Uint8Array.from(a.bytes));}
++   delete result.artifacts;fs.writeFileSync(path.join(dir,'result.json'),JSON.stringify(result,null,2));summaries.push({browser,pass:true,records:result.records.length});
++  }catch(e){failed=true;summaries.push({browser,pass:false,error:e.stack??String(e)});}
++  finally{await context.close();fs.writeFileSync(path.join(out,browser+'.log.json'),JSON.stringify(logs,null,2));}
++ }
++}finally{await new Promise(r=>server.close(r));fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({pin,summaries,servedFiles:[...files.keys()],requests},null,2));}
++const wasmRequests=requests.filter(r=>r.url===new URL(pin.wasm.url).pathname).length;if(wasmRequests!==summaries.length){failed=true;console.error('EXACT_WASM_REQUEST_COUNT',wasmRequests);}
++console.log(JSON.stringify(summaries));if(failed)process.exitCode=1;
+diff --git a/src/mesh-import/tools/build-root.ps1 b/src/mesh-import/tools/build-root.ps1
+new file mode 100644
+index 0000000000000000000000000000000000000000..64154183b61dbd9e4c6bb32193ab3b2caf0f68f7
+--- /dev/null
++++ b/src/mesh-import/tools/build-root.ps1
+@@ -0,0 +1,52 @@
++#requires -Version 7.0
++[CmdletBinding()]
++param([string]$RunId,[ValidateSet('native','wasm')][string]$Target='native',[string]$CandidateRoot,[string]$EvidenceTag='r1')
++$ErrorActionPreference='Stop'
++$taskRepository=([IO.Path]::GetFullPath((Get-Location).Path))
++if(-not(Test-Path -LiteralPath "$taskRepository/AGENTS.md")){throw 'Run from repository root'}
++. "$taskRepository/tools/development/env.ps1" -Seat codex -RunId $RunId
++$env:CARGO_HOME=Join-Path $env:PROJECT_REVIEW_RUN 'cache/cargo'
++$env:CARGO_NET_OFFLINE='true'
++if(-not $CandidateRoot){$CandidateRoot=Join-Path $env:PROJECT_REVIEW_RUN 'work/imported-csg-root'}
++$CandidateRoot=[IO.Path]::GetFullPath($CandidateRoot)
++if(-not $CandidateRoot.StartsWith($env:PROJECT_REVIEW_RUN+[IO.Path]::DirectorySeparatorChar,[StringComparison]::OrdinalIgnoreCase)){throw 'Candidate must be in own run'}
++$taskBuild=Join-Path $env:PROJECT_REVIEW_RUN "work/$Target-build"
++$env:ARCH_NATIVE_BUILD=$taskBuild
++$env:ARCH_PRINTING_ENABLED=''
++$taskKernel=Join-Path $CandidateRoot 'src/kernel'
++$taskArgs=@('-S',"$taskKernel/native",'-B',$taskBuild,"-DARCH_MANIFOLD_SOURCE=$taskRepository/.toolchain/manifold","-DARCH_CLIPPER2_SOURCE=$taskRepository/.toolchain/clipper2-derived","-DARCH_HARFBUZZ_SOURCE=$taskRepository/.toolchain/harfbuzz-original",'-DARCH_NATIVE_SMOKE=OFF','-DARCH_FINAL_EXPORT_TESTS=ON','-DFETCHCONTENT_FULLY_DISCONNECTED=ON','-DFETCHCONTENT_UPDATES_DISCONNECTED=ON')
++if($Target -eq 'native'){
++ $taskArgs+=@('-G','Visual Studio 18 2026')
++ $env:RUSTFLAGS=''
++ $taskRustArgs=@('+1.98.1','build','--release','--features','test-fixtures')
++}else{
++ $taskArgs+=@('-G','Ninja',"-DCMAKE_MAKE_PROGRAM=$taskRepository/.toolchain/ninja/bin/ninja.exe","-DCMAKE_TOOLCHAIN_FILE=$env:EMSDK/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",'-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_FLAGS=-pthread','-DCMAKE_CXX_FLAGS=-pthread -fexceptions')
++ $env:RUSTFLAGS='-C panic=abort -C target-feature=+atomics,+bulk-memory,+mutable-globals'
++ $env:EMCC_CFLAGS='-pthread -fexceptions'
++ $env:CARGO_TARGET_DIR=Join-Path $env:PROJECT_REVIEW_RUN 'work/rust-nightly-target'
++ $taskRustArgs=@('+nightly-2026-09-07','build','-Zbuild-std=std,panic_abort','--target','wasm32-unknown-emscripten','--release','--lib','--features','test-fixtures')
++}
++$taskPrefix=Join-Path $env:PROJECT_REVIEW_RUN "evidence/root-$Target-$EvidenceTag"
++if(Test-Path -LiteralPath "$taskPrefix-configure.log"){throw 'Evidence tag exists'}
++& $env:CMAKE @taskArgs *> "$taskPrefix-configure.log"
++if($LASTEXITCODE -ne 0){Get-Content "$taskPrefix-configure.log" -Tail 30;throw 'configure failed'}
++& $env:CMAKE --build $taskBuild --config Release --parallel 6 *> "$taskPrefix-build.log"
++if($LASTEXITCODE -ne 0){Get-Content "$taskPrefix-build.log" -Tail 40;throw 'native library build failed'}
++& "$taskRepository/.toolchain/cargo/bin/cargo.exe" @taskRustArgs --manifest-path "$taskKernel/Cargo.toml" --locked --offline *> "$taskPrefix-rust.log"
++if($LASTEXITCODE -ne 0){Get-Content "$taskPrefix-rust.log" -Tail 55;throw 'Rust root build failed'}
++if($Target -eq 'wasm'){
++ $taskExports=@('_arch_abi_version','_arch_control_ptr','_arch_control_reset','_arch_snapshot_acquire','_arch_snapshot_ptr','_arch_snapshot_len','_arch_snapshot_release','_arch_error_ptr','_arch_error_len','_arch_metadata_ptr','_arch_metadata_len','_arch_input_create','_arch_input_ptr','_arch_input_release','_arch_build_svg','_arch_test_fixture','_arch_font_library_version','_arch_export_stl','_arch_output_ptr','_arch_output_len','_arch_output_release','_malloc','_free','_arch_mech_abi_version','_arch_mech_semantics_version','_arch_mech_source_datum_extension_version','_arch_mech_derived_guard_version','_arch_source_abi_version','_arch_source_semantics_version')
++ foreach($taskList in @("$taskKernel/native/product-exports.json","$taskKernel/native/raster-exports.json","$taskKernel/final-scene-export/native/exports.json","$CandidateRoot/src/mesh-import/cmake/required-exports.json","$CandidateRoot/src/mesh-import/cmake/csg-exports.json","$CandidateRoot/src/mesh-import/cmake/root-exports.json")){
++  $taskExports+=@(Get-Content -LiteralPath $taskList -Raw|ConvertFrom-Json)
++ }
++ $taskHb=& node --input-type=module -e 'import{readFileSync}from"node:fs";const m=new WebAssembly.Module(readFileSync("src/assets/harfbuzz/dist/harfbuzz.wasm"));console.log(JSON.stringify(WebAssembly.Module.exports(m).filter(e=>e.kind==="function"&&e.name.startsWith("hb_")).map(e=>"_"+e.name)));'
++ if($LASTEXITCODE -ne 0){throw 'HB export inventory'}
++ $taskExports+=@($taskHb|ConvertFrom-Json)
++ $taskExportJson=ConvertTo-Json -InputObject @($taskExports|Select-Object -Unique) -Compress
++ $taskModule=Join-Path $env:PROJECT_REVIEW_RUN 'work/module/arch-kernel.mjs'
++ New-Item -ItemType Directory -Path (Split-Path -Parent $taskModule) -Force|Out-Null
++ $taskIncoming=ConvertTo-Json -InputObject @(Get-Content -LiteralPath "$CandidateRoot/tools/kernel/module-incoming-api.json" -Raw|ConvertFrom-Json) -Compress
++ python -B "$env:EMSDK/upstream/emscripten/em++.py" "$env:CARGO_TARGET_DIR/wasm32-unknown-emscripten/release/libarch_kernel.a" -o $taskModule --no-entry -O2 -pthread -fexceptions -sWASM_BIGINT=1 -sMODULARIZE=1 -sEXPORT_ES6=1 "-sINCOMING_MODULE_JS_API=$taskIncoming" -sALLOW_TABLE_GROWTH=1 -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=67108864 -sMAXIMUM_MEMORY=1073741824 -sSTACK_SIZE=4194304 "-sEXPORTED_FUNCTIONS=$taskExportJson" '-sEXPORTED_RUNTIME_METHODS=["HEAPU8","HEAP32","HEAPU16","HEAPU32","HEAPF32","addFunction","removeFunction","stackAlloc","stackSave","stackRestore"]' *> "$taskPrefix-link.log"
++ if($LASTEXITCODE -ne 0){Get-Content "$taskPrefix-link.log" -Tail 25;throw 'unified module link failed'}
++ Write-Output $taskModule
++}
+diff --git a/tools/kernel/build.ps1 b/tools/kernel/build.ps1
+index c7fbb3fe060312b76abfadcb05fab9dd77c49702..c31bb86607970838af95642be7a04ea633a4d46a 100644
+--- a/tools/kernel/build.ps1
++++ b/tools/kernel/build.ps1
+@@ -76,6 +76,10 @@
+   if($LASTEXITCODE -ne 0){throw 'Cannot read validated HarfBuzz export surface'}
+   $kernelFunctions+=@($kernelHbExports | ConvertFrom-Json)
+   $kernelFunctions+=@('_malloc','_free')
++  $kernelFunctions+='_arch_mech_derived_guard_version'
++  foreach($meshExportList in @('required-exports.json','csg-exports.json','root-exports.json')){
++    $kernelFunctions+=@(Get-Content -LiteralPath (Join-Path $kernelRoot "../mesh-import/cmake/$meshExportList") -Raw | ConvertFrom-Json)
++  }
+   if($Printing){$kernelFunctions+=@(Get-Content -LiteralPath (Join-Path $kernelPrinting 'cmake/unified-exports.json') -Raw | ConvertFrom-Json)}
+   $kernelExport=ConvertTo-Json -InputObject @($kernelFunctions|Select-Object -Unique) -Compress
+   $kernelLinkLog=Join-Path $env:PROJECT_REVIEW_RUN "evidence/$kernelLogPrefix-module-link.log"

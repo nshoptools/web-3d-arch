@@ -1,0 +1,85 @@
+{
+  "status": "qualified",
+  "expected": "complete",
+  "qualified": 15,
+  "materialOnly": 0,
+  "unavailable": 0,
+  "expectedProducts": 15,
+  "products": [
+    {
+      "engine": "chromium",
+      "case": "keychain",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "case": "clicky",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "case": "strap",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "case": "lego",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "case": "charm",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "case": "keychain",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "case": "clicky",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "case": "strap",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "case": "lego",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "case": "charm",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "case": "keychain",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "case": "clicky",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "case": "strap",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "case": "lego",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "case": "charm",
+      "status": "pass"
+    }
+  ]
+}

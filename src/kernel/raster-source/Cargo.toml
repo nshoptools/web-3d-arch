@@ -1,0 +1,24 @@
+[package]
+name = "arch-raster-source"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.88"
+description = "Bounded image decode, deterministic segmentation and shared raster boundary graph"
+license-file = "LICENSE"
+publish = false
+
+[workspace]
+
+[dependencies]
+image = { version = "=0.25.10", default-features = false, features = ["png", "jpeg", "webp"] }
+serde = { version = "=1.0.228", features = ["derive"] }
+sha2 = "=0.10.9"
+
+png = "=0.18.1"
+image-webp = "=0.2.4"
+serde_json = "=1.0.149"
+
+
+zune-jpeg = '=0.5.15'
+zune-core = '=0.5.3'
+rstar = "=0.13.0"

@@ -1,0 +1,18 @@
+{
+  "label": "Hướng chế tạo · orientation",
+  "labelWidth": 289.140625,
+  "labelHeight": 37.6875,
+  "labelFont": "26px",
+  "firstWord": "Hướng",
+  "firstWordRects": [
+    {
+      "x": 29,
+      "y": 760.765625,
+      "width": 80,
+      "height": 35
+    }
+  ],
+  "controlWidth": 282,
+  "controlFont": "14px",
+  "panelWidth": 320
+}

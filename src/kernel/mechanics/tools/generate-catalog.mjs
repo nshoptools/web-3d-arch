@@ -1,0 +1,36 @@
+// Build-time only. Catalog metadata is not a geometry pass. No runtime JSON mesh.
+import fs from 'node:fs';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+import {pathToFileURL} from 'node:url';
+const root=process.argv[2],out=process.argv[3];
+if(!root||!out)throw Error('usage: generate-catalog.mjs repository candidate');
+const raw=fs.readFileSync(path.join(root,'docs/specs/parameters-reference.json'));
+if(createHash('sha256').update(raw).digest('hex')!=='5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee')throw Error('Catalog changed: update ADR/catalog version before regeneration');
+const cat=JSON.parse(raw),products=['keychain','clicky','strap','lego','charm'];
+const {getField}=await import(pathToFileURL(path.join(root,'src/domain/schema.mjs')));
+const schemaHash=createHash('sha256').update(fs.readFileSync(path.join(root,'src/domain/schema.mjs'))).digest('hex');
+const heights=new Set('baseH plateT flatTop artH rimH bandCap ringH legoHoleH charmCoH charmVanhH charmChotH skirtH socketD postH collarH stemH hSocketD hRecess pinD hFloor hRingH'.split(' '));
+const delegated=new Set('k res smooth minA denoise eps tension size outline cornerR offset weld minFeature fillHoles artMode flatTop artH rimOn rimH splitObj layerBand bandCore bandCap'.split(' '));
+const enums=[],quanta=[];
+const rows=cat.fields.map((f,i)=>{
+  enums.push(`  AM_F_${f.id} = ${i+1},`);
+  const en=f.kieu==='s'&&f.id!=='layerH';
+  const kind=heights.has(f.id)?1:f.kieu==='c'?2:en?3:0;
+  const map=v=>f.id==='layerH'?Number(v):en?f.mien.indexOf(v):Number(v);
+  const schema=getField(f.id);
+  const mask=schema.applicability.products.reduce((a,p)=>a|(1<<products.indexOf(p)),0);
+  const quantum=schema.domain.kind==='range'?schema.domain.quantum:1;
+  quanta.push(quantum);
+  const defs=products.map(p=>map(cat.modeDefaults.find(m=>m.mode===p)?.preset[f.id]??f.macDinh));
+  const min=kind===2?0:en?0:f.id==='layerH'?.08:f.mien[0];
+  const max=kind===2?1:en?f.mien.length-1:f.id==='layerH'?.30:f.mien[1];
+  return `  {"${f.id}",${kind},${min},${max},${mask},${delegated.has(f.id)?1:['baseH','plateT'].includes(f.id)?2:0},{${defs.join(',')}}},`;
+});
+fs.mkdirSync(path.join(out,'src'),{recursive:true});
+fs.writeFileSync(path.join(out,'src/parameter_ids.h'),`#pragma once\n// Frozen IDs: parameters-core-v1, then replacements. Never reorder.\nenum ArchMechField { AM_F_NONE=0,\n${enums.join('\n')}\n  AM_F_strapTolerance=127, AM_F_meshJoinTolerance=128, AM_FIELD_COUNT=129 };\n`);
+fs.writeFileSync(path.join(out,'src/catalog.inc'),`// Core IDs/defaults from parameters-reference.json SHA256 ${createHash('sha256').update(raw).digest('hex')}\n// Scope from integrated schema.mjs SHA256 ${schemaHash}; row layout retained for source assembly1.\n${rows.join('\n')}\n  {"strapTolerance",0,0.000001,0.001,4,0,{0.001,0.001,0.001,0.001,0.001}},\n  {"meshJoinTolerance",0,0.000001,0.004,31,0,{0.004,0.004,0.004,0.004,0.004}},\n`);
+fs.writeFileSync(path.join(out,'src/catalog_quantum.inc'),`// Integrated schema.mjs SHA256 ${schemaHash}. IDs match catalog.inc.\n${quanta.concat([.000001,.000001]).join(',')}\n`);
+fs.mkdirSync(path.join(out,'docs'),{recursive:true});
+fs.writeFileSync(path.join(out,'docs/catalog-lock.json'),JSON.stringify({catalog:cat.catalogId,version:cat.catalogVersion,sha256:createHash('sha256').update(raw).digest('hex'),fields:cat.fields.map((f,i)=>({id:f.id,abiId:i+1,enum:f.kieu==='s'?f.mien:null,delegated:delegated.has(f.id)}))},null,2)+'\n');
+fs.writeFileSync(path.join(out,'src/catalog-map.mjs'),`// Generated versioned parameter ABI metadata; no geometry.\nexport const FIELD_MAP=Object.freeze(${JSON.stringify(cat.fields.map((f,i)=>({id:f.id,abiId:i+1,enum:f.kieu==='s'&&f.id!=='layerH'?f.mien:null,sourceBinding:delegated.has(f.id)||['baseH','plateT'].includes(f.id)})).concat([{id:'strapTolerance',abiId:127,enum:null,sourceBinding:false},{id:'meshJoinTolerance',abiId:128,enum:null,sourceBinding:false}]))});\n`);

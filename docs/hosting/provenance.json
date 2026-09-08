@@ -1,0 +1,20 @@
+{
+  "checkedOn": "2026-09-08",
+  "implementationNotIndependentReview": true,
+  "modelRequestedInherited": "gpt-6-astra",
+  "effortRequestedInherited": "max",
+  "runtimeModelEffortIndependentlyVerified": false,
+  "serviceTierFastControlExposed": false,
+  "sources": [
+    {"url":"https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/https.md","pin":"v24.19.0","use":"HTTPS server and TLS options"},
+    {"url":"https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/http.md","pin":"v24.19.0","use":"parser limits, deadlines, request/response headers and close semantics"},
+    {"url":"https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/fs.md","pin":"v24.19.0","use":"bounded descriptor reads, lstat/fstat and explicit closure"},
+    {"url":"https://html.spec.whatwg.org/multipage/browsers.html#cross-origin-embedder-policies","pin":"living standard read on checkedOn; not immutable","use":"COOP/COEP agent isolation"},
+    {"url":"https://www.w3.org/TR/CSP3/#can-compile-wasm-bytes","pin":"current document read on checkedOn; not immutable","use":"WASM-specific CSP permission"},
+    {"url":"https://w3c.github.io/ServiceWorker/#cache-put","pin":"living specification read on checkedOn; not immutable","use":"CacheStorage and service-worker lifecycle/redirect semantics"},
+    {"url":"https://playwright.dev/docs/api/class-browsertype#browser-type-launch-persistent-context","pin":"installed implementation 1.63.0; web docs mutable","use":"explicit profile/download/artifact/environment options"},
+    {"url":"https://playwright.dev/docs/service-workers","pin":"installed implementation 1.63.0; web docs mutable","use":"service-worker request observability limits"},
+    {"url":"https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.x509certificates.certificaterequest.createselfsigned?view=net-10.0","pin":"API docs read on checkedOn","use":"ephemeral .NET-generated certificate without trust-store installation"}
+  ],
+  "localPins": ["../../../reports/dependency-manifest.json", "../../../reports/font-pins.json", "../../../reports/toolchain-pins.json", "../tests/host/fixtures/host-v1.json"]
+}

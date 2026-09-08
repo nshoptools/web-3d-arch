@@ -1,0 +1,544 @@
+{
+  "engine": "chromium",
+  "browserVersion": "153.0.8010.12",
+  "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-product-acceptance-wave1\\p\\c01c310b",
+  "profileLength": 93,
+  "origin": "https://127.0.0.1:62253",
+  "artifact": {
+    "version": "product-acceptance-artifact-check/1",
+    "scope": "immutable artifact integrity; no whole-product functional verdict",
+    "input": {
+      "version": "product-acceptance-input/2",
+      "purpose": "whole-product",
+      "id": "final-internal-20260908",
+      "releaseRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal",
+      "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+      "preparedRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal",
+      "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+      "engine": {
+        "canonicalModuleSHA256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828",
+        "derivedModuleSHA256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+        "wasmSHA256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+        "buildReceiptSHA256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17"
+      }
+    },
+    "releaseRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal",
+    "preparedRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal",
+    "manifestPath": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal\\public-manifest.json",
+    "webroot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal\\public",
+    "packageBytes": 374874711,
+    "files": 21647,
+    "publicAssets": 21414,
+    "publicBytes": 360491890,
+    "buildId": "release-289cc2372b8b6c7a48266287ae1e9e38",
+    "preparedFileCount": 512,
+    "canonicalModuleSHA256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828",
+    "derivedModuleSHA256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+    "wasmSHA256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+    "buildReceiptSHA256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17",
+    "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+    "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6"
+  },
+  "issues": [],
+  "workers": [
+    {
+      "url": {
+        "origin": "https://127.0.0.1:62253",
+        "path": "/assets/engine-worker-YeW_k1g0.js",
+        "queryPresent": false,
+        "protocol": "https:"
+      },
+      "createdAt": 1788871802856
+    },
+    {
+      "url": {
+        "origin": "https://127.0.0.1:62253",
+        "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+        "queryPresent": false,
+        "protocol": "https:"
+      },
+      "createdAt": 1788871805566,
+      "closedAt": 1788871805930
+    },
+    {
+      "url": {
+        "origin": "https://127.0.0.1:62253",
+        "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+        "queryPresent": false,
+        "protocol": "https:"
+      },
+      "createdAt": 1788871806017,
+      "closedAt": 1788871806363
+    },
+    {
+      "url": {
+        "origin": "https://127.0.0.1:62253",
+        "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+        "queryPresent": false,
+        "protocol": "https:"
+      },
+      "createdAt": 1788871806438,
+      "closedAt": 1788871806763
+    }
+  ],
+  "routePins": [
+    {
+      "path": "/assets/index-Bw5O1ZY3.css",
+      "status": 200,
+      "sha256": "627ee5c20a5b8d10ae996ba16ab0049a81ae49b7581f116840ad202d210268fc",
+      "bytes": 34256
+    },
+    {
+      "path": "/assets/index-Lzv2zHv2.js",
+      "status": 200,
+      "sha256": "f08400574bddb6fe3e6d3fb10ea003edf242ba1f87e7f22ccfd2aa9b00b01989",
+      "bytes": 1777252
+    },
+    {
+      "path": "/release-bindings.json",
+      "status": 200,
+      "sha256": "7ded0989bfe1e0d473655f741f96a0f5e9893462abfb05f0c569fee5fe504385",
+      "bytes": 1847
+    },
+    {
+      "path": "/source-library/catalog.cf924096fc266a204a2b1bc99dd2adcbe875ed4f4c823c6074dff155d85311b2.json",
+      "status": 200,
+      "sha256": "cf924096fc266a204a2b1bc99dd2adcbe875ed4f4c823c6074dff155d85311b2",
+      "bytes": 21844030
+    },
+    {
+      "path": "/source-library/deployment.051feb5ee8d124b5f4cb1df5bcc5c334cff9d545808f5d76f5e690a527cbcefb.json",
+      "status": 200,
+      "sha256": "051feb5ee8d124b5f4cb1df5bcc5c334cff9d545808f5d76f5e690a527cbcefb",
+      "bytes": 10156119
+    },
+    {
+      "path": "/source-library/transport.882ac67ec8dea8104a09231213423c5cc8f2c0863d35b8ca5cf917a25719f67d.json",
+      "status": 200,
+      "sha256": "882ac67ec8dea8104a09231213423c5cc8f2c0863d35b8ca5cf917a25719f67d",
+      "bytes": 5114680
+    },
+    {
+      "path": "/source-assets/88df38e1a578f360c1df99b41387ec370bb568a58a6e846631422e39e6473530.png",
+      "status": 200,
+      "sha256": "88df38e1a578f360c1df99b41387ec370bb568a58a6e846631422e39e6473530",
+      "bytes": 7541
+    },
+    {
+      "path": "/assets/engine-worker-YeW_k1g0.js",
+      "status": 200,
+      "sha256": "3c380ee4c9e861a14d37a2b17d085e03c392eebaee5af0da64ff674d6dcaa355",
+      "bytes": 38629
+    },
+    {
+      "path": "/arch-kernel.0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589.mjs",
+      "status": 200,
+      "sha256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+      "bytes": 139865
+    },
+    {
+      "path": "/arch-kernel.064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c.wasm",
+      "status": 200,
+      "sha256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+      "bytes": 5813742
+    },
+    {
+      "path": "/arch-kernel.0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589.mjs",
+      "status": 200,
+      "sha256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+      "bytes": 139865
+    },
+    {
+      "path": "/assets/engine-text-service-BsXcbRqQ.js",
+      "status": 200,
+      "sha256": "0b4a34fd05b7b4074dff6711edb279a5a37c11980386e8aba3b6a90676a00cb8",
+      "bytes": 95307
+    },
+    {
+      "path": "/assets/rolldown-runtime-BpQH8Ho1.js",
+      "status": 200,
+      "sha256": "f42a7e25f42fd00b0935f3a7b06f4429238b50b6798b53c273e30d7095f9e94e",
+      "bytes": 227
+    },
+    {
+      "path": "/assets/source-preview-BBBVCsGS.js",
+      "status": 200,
+      "sha256": "9e8a9b4b88992c32d894c4a809c8bc1e0bb28c35c3fab4932cc4263773ba5b6a",
+      "bytes": 6791
+    },
+    {
+      "path": "/assets/raster-operations-DTfhhQjc.js",
+      "status": 200,
+      "sha256": "61444de13d0c6e1cb94419545e80a0af9addcf698dbcbadba98cdc0f7936f1ce",
+      "bytes": 22614
+    },
+    {
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "status": 200,
+      "sha256": "11a953e4b94a2ac695d105de271b2d0990309fb9d90c620e3b78c2603f1d6d20",
+      "bytes": 14300
+    },
+    {
+      "path": "/assets/float-runtime-COIhj9Ns.js",
+      "status": 200,
+      "sha256": "027397a2d90f4f4d9cee1ddec36f74b624c129dc3bdcfdc100080600a6812bf6",
+      "bytes": 5293
+    },
+    {
+      "path": "/assets/runtime-helper-B_QAjI2R.js",
+      "status": 200,
+      "sha256": "cfa6c858078d6459e08aece62225733db05e99e65551c8f64e673f7db823b0c6",
+      "bytes": 3086
+    },
+    {
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "status": 200,
+      "sha256": "11a953e4b94a2ac695d105de271b2d0990309fb9d90c620e3b78c2603f1d6d20",
+      "bytes": 14300
+    },
+    {
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "status": 200,
+      "sha256": "11a953e4b94a2ac695d105de271b2d0990309fb9d90c620e3b78c2603f1d6d20",
+      "bytes": 14300
+    }
+  ],
+  "network": [
+    {
+      "via": "navigation-request",
+      "origin": "https://127.0.0.1:62253",
+      "path": "/",
+      "queryPresent": false,
+      "protocol": "https:"
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/index-Lzv2zHv2.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/index-Bw5O1ZY3.css",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/release-bindings.json",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/source-library/catalog.cf924096fc266a204a2b1bc99dd2adcbe875ed4f4c823c6074dff155d85311b2.json",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/source-library/deployment.051feb5ee8d124b5f4cb1df5bcc5c334cff9d545808f5d76f5e690a527cbcefb.json",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/source-library/transport.882ac67ec8dea8104a09231213423c5cc8f2c0863d35b8ca5cf917a25719f67d.json",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/me",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "POST",
+      "path": "/api/v1/offline/lease",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/settings",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/policy",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/providers",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/credentials",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/budget",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "browser",
+      "origin": "https://127.0.0.1:62253",
+      "path": "/api/v1/ai/providers",
+      "queryPresent": false,
+      "protocol": "https:",
+      "type": "fetch",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "via": "browser",
+      "origin": "https://127.0.0.1:62253",
+      "path": "/api/v1/ai/credentials",
+      "queryPresent": false,
+      "protocol": "https:",
+      "type": "fetch",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/jobs",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/jobs",
+      "queryPresent": true,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/jobs",
+      "queryPresent": true,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/jobs",
+      "queryPresent": true,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/ai/jobs",
+      "queryPresent": true,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "POST",
+      "path": "/api/v1/settings/import",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/settings",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/api/v1/settings/export",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/source-assets/88df38e1a578f360c1df99b41387ec370bb568a58a6e846631422e39e6473530.png",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/engine-worker-YeW_k1g0.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/arch-kernel.0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589.mjs",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/arch-kernel.064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c.wasm",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/arch-kernel.0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589.mjs",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/engine-text-service-BsXcbRqQ.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/rolldown-runtime-BpQH8Ho1.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/source-preview-BBBVCsGS.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/raster-operations-DTfhhQjc.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/float-runtime-COIhj9Ns.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/runtime-helper-B_QAjI2R.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "queryPresent": false,
+      "status": 200
+    },
+    {
+      "via": "host",
+      "method": "GET",
+      "path": "/assets/mesh-qualification-worker-DwD3DtMw.js",
+      "queryPresent": false,
+      "status": 200
+    }
+  ],
+  "timings": [
+    {
+      "name": "signed-idp-three-accounts-sqlite-ready",
+      "ms": 3188.088
+    },
+    {
+      "name": "before-host-create",
+      "ms": 3345.4602
+    },
+    {
+      "name": "after-host-create",
+      "ms": 15427.2538
+    },
+    {
+      "name": "host-listen",
+      "ms": 15429.2816
+    },
+    {
+      "name": "browser-launched",
+      "ms": 16484.192
+    },
+    {
+      "name": "explicit-tab-created",
+      "ms": 25734.0491
+    }
+  ],
+  "resourceUsage": {
+    "userCPUTime": 6421000,
+    "systemCPUTime": 7968000,
+    "maxRSS": 554504,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 0,
+    "majorPageFault": 193620,
+    "swappedOut": 0,
+    "fsRead": 46436,
+    "fsWrite": 1527,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 0,
+    "involuntaryContextSwitches": 0
+  },
+  "scope": {
+    "identity": "real backend/SQLite, synthetic local signed OIDC+PKCE bootstrapped by HTTP; no IdP UI qualification",
+    "provider": "explicit synthetic local adapter; no outbound paid calls"
+  },
+  "memory": {
+    "rss": 522149888,
+    "heapTotal": 84848640,
+    "heapUsed": 75560848,
+    "external": 367708086,
+    "arrayBuffers": 363408712
+  }
+}

@@ -1,0 +1,633 @@
+{
+  "version": 1,
+  "qualification": "implementation verification only; no configured independent review or whole-application/physical-fit claim",
+  "requirements": [
+    "MOD-01",
+    "MOD-02",
+    "MOD-03",
+    "GEO-01",
+    "GEO-02",
+    "GEO-03",
+    "AT-020",
+    "AT-021"
+  ],
+  "baseline": {
+    "models": 40,
+    "published": 18,
+    "refused": 22
+  },
+  "native": [
+    {
+      "id": "emoji-charm-chim",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2349.7682303484544,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-noi",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2579.564622418145,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-phang",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2464.6664263832968,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-phang2",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 3081.4184758758674,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-clicky-chim",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12928.666277027982,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-noi",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 13369.875332292968,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-phang",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 13149.270804660473,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-phang2",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 14563.643980216015,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-keychain-chim",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4053.6631713386178,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-noi",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4798.2034477613915,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-phang",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 4425.933309465454,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-phang2",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 6238.568441371886,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 8915.961155824043,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 9660.501432415922,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 9288.231294120023,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 11100.86642592468,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-strap-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 14108.426800928486,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 14696.70554128182,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 14402.566171105123,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 15898.064654566926,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "text-charm-chim",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2120.692410754768,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-noi",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2429.5444239904773,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-phang",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2275.1184173726206,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-phang2",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2828.687797194961,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-clicky-chim",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12021.345647864768,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-noi",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12614.341526620992,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-phang",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 12317.843587242874,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-phang2",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 13578.81603254336,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-keychain-chim",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 3456.9467076341302,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-noi",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4457.627235533852,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-phang",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 3957.2869715839943,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-phang2",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 5574.600642455969,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 7701.959428170773,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 8702.639956070634,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 8202.299692120772,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 9819.61336300602,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-strap-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 12499.698255738338,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 13290.359427413267,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 12895.028841575799,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 14232.953232959117,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    }
+  ],
+  "wasm": [
+    {
+      "id": "emoji-charm-chim",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2349.7682303484544,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-noi",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2579.564622418145,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-phang",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2464.6664263832968,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-charm-phang2",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 3081.4184758758674,
+      "sourceOutlineMaxDeltaMm": 6.444147107826186e-7
+    },
+    {
+      "id": "emoji-clicky-chim",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12928.666277027982,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-noi",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 13369.875332292968,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-phang",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 13149.270804660473,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-clicky-phang2",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 14563.643980216015,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-keychain-chim",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4053.6631713386178,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-noi",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4798.2034477613915,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-phang",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 4425.933309465454,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-keychain-phang2",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 6238.568441371886,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 8915.961155824041,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 9660.501432415922,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 9288.231294120029,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-lego-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 11100.86642592468,
+      "sourceOutlineMaxDeltaMm": 6.466084954953737e-7
+    },
+    {
+      "id": "emoji-strap-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 14108.426800928486,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 14696.70554128182,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 14402.566171105123,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "emoji-strap-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 15898.064654566926,
+      "sourceOutlineMaxDeltaMm": 6.166479553630286e-7
+    },
+    {
+      "id": "text-charm-chim",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2120.692410754768,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-noi",
+      "pass": true,
+      "parts": 5,
+      "volumeMm3": 2429.5444239904773,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-phang",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2275.1184173726206,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-charm-phang2",
+      "pass": true,
+      "parts": 6,
+      "volumeMm3": 2828.687797194961,
+      "sourceOutlineMaxDeltaMm": 6.813635284279876e-7
+    },
+    {
+      "id": "text-clicky-chim",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12021.345647864768,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-noi",
+      "pass": true,
+      "parts": 8,
+      "volumeMm3": 12614.341526620992,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-phang",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 12317.843587242874,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-clicky-phang2",
+      "pass": true,
+      "parts": 9,
+      "volumeMm3": 13578.81603254336,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-keychain-chim",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 3456.9467076341302,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-noi",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 4457.627235533852,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-phang",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 3957.2869715839943,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-keychain-phang2",
+      "pass": true,
+      "parts": 4,
+      "volumeMm3": 5574.600642455969,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 7701.959428170771,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 8702.639956070632,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 8202.29969212077,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-lego-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 9819.613363006018,
+      "sourceOutlineMaxDeltaMm": 5.98150167617085e-7
+    },
+    {
+      "id": "text-strap-chim",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 12499.698255738338,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-noi",
+      "pass": true,
+      "parts": 2,
+      "volumeMm3": 13290.359427413267,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-phang",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 12895.028841575799,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    },
+    {
+      "id": "text-strap-phang2",
+      "pass": true,
+      "parts": 3,
+      "volumeMm3": 14232.953232959117,
+      "sourceOutlineMaxDeltaMm": 6.174025104880715e-7
+    }
+  ],
+  "variants": {
+    "scope": "direct ABI derivatives, not committed app heads",
+    "sizesMm": [
+      40,
+      50,
+      60
+    ],
+    "regularLayersMm": [
+      0.16,
+      0.2,
+      0.25
+    ],
+    "firstLayerMm": 0.27,
+    "matingTolerancesMm": [
+      0.001,
+      0.0005,
+      0.00025
+    ],
+    "native": 12,
+    "wasm": 12
+  },
+  "controls": {
+    "resourceAndCornersPerTarget": 16,
+    "validGeometry": 14,
+    "expectedBudgetRejections": 2,
+    "notchGeometryCases": 9,
+    "r2GuardCasesPerTarget": 22,
+    "existingMechanicsGroupsPerTarget": 19,
+    "existingRemediationCasesPerTarget": 83,
+    "existingSourceCasesPerTarget": 140,
+    "nativeInFlightCancellation": 3
+  },
+  "numeric": {
+    "maxSourceOutlineDeltaMm": 6.813635284279876e-7,
+    "maxVolumeDeltaMm3": 1.2732925824820995e-11,
+    "maxBboxDeltaMm": 0,
+    "maxVertexDeltaMm": 5.088190587414789e-11,
+    "maxSurfaceParityBoundMm": 5.0884469795445387e-11,
+    "exactMeshBytesCases": 37,
+    "parityOracleControls": 7,
+    "maxGrooveDeltaMm": 2.4424906541753444e-15,
+    "maxMouthDeltaMm": 0
+  },
+  "limits": [
+    "Corpus and analytic fixtures qualify only these paths, not arbitrary source geometry.",
+    "Single-thread Node WASM child replay does not qualify root Rust registry, Worker/browser RPC, cancellation transport or final export.",
+    "New parent ASFR/runtime module-source-r1 is not the captured runtime.",
+    "General dense source bevel retains its existing 512-edge bound outside this bounded remediation.",
+    "No whole-pipeline Hausdorff bound, hard allocator/latency SLA inside a single Manifold operation, slicer acceptance or physical fit is claimed."
+  ]
+}

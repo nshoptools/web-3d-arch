@@ -1,0 +1,13 @@
+product 0
+mode source
+param size 40
+param outline 1
+param cornerR 6
+param offset 2
+param weld 0
+param ringOn 0
+param rimOn 0
+param baseH 4
+param artMode 0
+ring 4 -20000000 0 0 -4000000 20000000 0 0 4000000
+region 0 1 2 3762570495

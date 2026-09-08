@@ -1,0 +1,24 @@
+{
+  "at": "2026-09-08T09:37:25.5464423Z",
+  "model_selection": [
+    {
+      "slug": "gpt-6-astra",
+      "supported_reasoning_levels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max",
+        "ultra"
+      ]
+    }
+  ],
+  "official_check": {
+    "upgradeDecision": "Retain explicit mandated Astra/max/Fast off. Official Ultra description involves automatic delegation, which this review prohibits; no unverified stronger-name inference.",
+    "speed": "https://learn.chatgpt.com/docs/agent-configuration/speed",
+    "fast": false,
+    "models": "https://learn.chatgpt.com/docs/models",
+    "model": "gpt-6-astra",
+    "effort": "max"
+  }
+}

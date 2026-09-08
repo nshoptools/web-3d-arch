@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "sealed_at": "2026-09-08T11:22:20.578806+00:00",
+  "method": "SHA-256 content seal; no other reviewer/author conclusions or handoff read before this seal. No claim of immutable filesystem.",
+  "artifacts": [
+    {
+      "path": "reports/initial-findings.json",
+      "bytes": 30103,
+      "sha256": "6549fbb57ebf9df2b51a66423e4641b2a36796d194a457474d0b5a897a06e05e"
+    },
+    {
+      "path": "reports/initial-review.md",
+      "bytes": 11491,
+      "sha256": "b659dd6c657591abfc30eed6716a9cfc1ce93011b0f07e60aa5d983fbe44b729"
+    }
+  ],
+  "exclusions": [
+    "reports/response.md (launcher writes after final)",
+    "future response/output-last-message and manifest self-reference"
+  ],
+  "independence": true
+}

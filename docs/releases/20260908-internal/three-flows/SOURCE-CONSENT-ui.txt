@@ -1,0 +1,345 @@
+Bỏ qua thanh điều hướng, tới khung thiết kế
+W3
+web‑3d‑arch
+Bước 1 · Nguồn & màu
+đang mở
+Bước 2 · Mô hình 3D
+chưa có đầu vào
+Chưa có mô hình đã dựng. Bấm “Dựng 3D” ở bước 1; nhân tự chuyển sang bước 2 khi dựng xong.
+Tìm nhanh
+Ctrl K
+Trực tuyến
+Tải nguồn
+Ctrl O
+Dựng 3D
+Nhân đang chạy một việc. Chờ xong hoặc bấm Hủy trong khung xem.
+53bce713-414c-4462-962f-2f4e1b4443a4
+Ảnh nguồn
+Sản phẩm
+Lớp màu
+0
+— 0 vật liệu trong bảng màu
+Thông số
+Xuất file
+–
+— Chưa dựng lần nào, nên chưa có kết quả kiểm. Các đường xuất không cần lưới vẫn mở.
+Thư viện
+1
+— 1 dự án trong thư viện
+Ảnh nguồn
+
+Tải ảnh, tạo bằng AI, gõ chữ hoặc chọn emoji
+
+Gập bảng
+\
+Chưa có nguồn thiết kế
+
+Chọn một trong ba lối bắt đầu. Chữ hoặc emoji hợp lệ cũng đủ để thoát trạng thái rỗng, không bắt buộc phải có ảnh raster.
+
+Tải tệp ảnh hoặc SVG
+Chọn emoji
+Gõ chữ
+Tải tệp
+Chọn tệp từ máy
+Ctrl O
+
+Kéo thả tệp lên khung xem cũng được. Dán bằng Ctrl+V hoạt động khi con trỏ không ở trong một ô nhập.
+
+Dán: ADAPTER_CAPABILITY_REQUIRED
+
+Trần theo LIM-01: ảnh 32 MB, SVG 16 MB, lưới STL/OBJ 64 MB. Vượt trần bị từ chối trước khi ghi, trạng thái cũ được giữ nguyên.
+
+Tạo ảnh bằng AI
+Chữ
+8 thông số · 2 công tắc
+Chưa có chữ
+chưa chọn font
+
+Xem trước là bản dựng chữ do nhân trả về; đây không phải kết quả kiểm mesh.
+
+Nội dung chữ
+Tối đa 500 cụm ký tự Unicode. Chuỗi được giữ nguyên, không cắt đuôi ngầm.
+Tìm font
+Chỉ font đang chọn được nạp. Danh mục lấy từ nhân.
+Font
+chưa chọn — ngoài kết quả tìm
+Alfa Slab One · normal
+Anton · normal
+Arizonia · normal
+Baloo 2 · normal
+Bangers · normal
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · italic
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Be Vietnam Pro · normal
+Bungee · normal
+Carattere · normal
+Cherry Bomb One · normal
+Coiny · normal
+Comfortaa · normal
+Dancing Script · normal
+Fruktur · italic
+Fruktur · normal
+Great Vibes · normal
+Inter · italic
+Inter · normal
+Lobster · normal
+Merriweather · italic
+Merriweather · normal
+Montserrat · italic
+Montserrat · normal
+Noto Emoji · normal
+Nunito · italic
+Nunito · normal
+Oswald · normal
+Pacifico · normal
+Patrick Hand · normal
+Pattaya · normal
+Playfair Display · italic
+Playfair Display · normal
+Praise · normal
+Protest Riot · normal
+Quicksand · normal
+Story Script · normal
+Vina Sans · normal
+Yeseva One · normal
+Khối chữ
+8 thông số
+Đơn vị cỡ chữ
+Milimet (mm)
+Point (pt)
+Nhân đang hiển thị cỡ chữ là 10 mm. 1 pt = 25,4/72 mm; giao diện không tự quy đổi.
+Cỡ chữ
+mm
+Miền 2–120 mm · bước 0,1
+Cỡ chữ là em-size, không phải chiều cao nét nhìn thấy. 1 pt = 25,4/72 mm.
+Cao chữ
+lớp
+Miền 1–80 lớp · bước 1
+Rộng đế chữ
+mm
+Miền 0–40 mm · bước 0,1
+Dày đế chữ
+lớp
+Miền 1–60 lớp · bước 1
+Bo viền đế
+mm
+Miền 0–20 mm · bước 0,1
+Uốn cong
+°
+Miền -180–180 ° · bước 1
+Giãn chữ
+mm
+Miền -5–20 mm · bước 0,05
+Giãn dòng
+×
+Miền 0,5–4 × · bước 0,05
+
+Các chiều cao tính theo lớp. Số mm tương ứng do nhân suy ra từ lịch lớp Z; giao diện không tự nhân số lớp với một chiều cao lớp giả định.
+
+Đế và mép
+2 công tắc
+Có đế đỡ chữ
+Bo mép chữ và đế
+Độc lập với bo mép trên của thân sản phẩm.
+Chỗ đứng của khối chữ
+Vị trí X
+mm
+Ô số thay cho Shift+kéo. Nhân xử lý cả số và cử chỉ.
+Vị trí Y
+mm
+Cách đặt khối chữ
+Trên mô hình
+Bên cạnh mô hình
+Dùng chữ làm hình
+Tạo nguồn thiết kế từ khối chữ. Thay bằng ảnh sau này là một lệnh có hoàn tác.
+Bỏ chữ
+Chưa có khối chữ để bỏ.
+Gỡ chữ và đế chữ; hoàn tác được.
+Emoji
+Tìm emoji
+Tìm được cả khi bỏ dấu; mọi từ trong ô tìm đều phải khớp.
+Ví dụ:
+trái tim
+la co
+mặt cười
+1F600
+ngôi sao
+Tất cả bộ nguồn
+Gần đây
+Yêu thích
+Noto Emoji màu
+Noto Emoji đơn sắc
+Lọc bớt mục đã đo là không nên in
+Mục chưa đo không bao giờ bị lọc.
+Hiện 64 / 3953 mục
+mặt cười toe toét
+chưa đo
+
+Mã: 😀 · bộ: noto-color-emoji. Hạng in gắn với phép kiểm của nguồn; “chưa đo” không phải “in tốt”.
+
+Dùng làm nguồn
+Thêm vào Yêu thích
+Chưa đọc được bộ Yêu thích, nên chưa biết mục này đang ở trạng thái nào.
+Tải thêm (64/3953)
+‹
+Gập bảng thiết lập
+
+Khung ảnh nguồn. Mũi tên để dời khung nhìn, phím cộng và trừ để phóng, phím 0 để vừa khung. Công cụ Tô màu: Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu. Enter kết thúc và gửi thao tác, Backspace bỏ nút cuối của đường cong, Escape hủy thao tác đang vẽ. Nếu không dùng được con trỏ, dùng ô nhập tọa độ trong bảng công cụ.
+
+100%
+Chưa có ảnh nguồn để sửa
+
+Nhân chưa công bố project.sourceCanvas. Bảy công cụ sửa vùng chỉ chạy trên ảnh raster mà nhân đã chuẩn bị; giao diện không tự dựng ảnh thay cho nguồn của bạn.
+
+Chỉ số
+Công cụ
+Khung ảnh và tọa độ
+Gợi ý
+Vùng màu
+0
+Cỡ nguồn
+do nhân báo
+Nguồn
+chưa có
+Ảnh sửa
+chưa công bố
+Kết quả cũ · đang cập nhật
+Tô màu (B) — Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu.
+Tô màu — phím B
+B
+Vẽ nét (V) — Kéo một nét có bề rộng; giữ Shift để bám ngang/dọc/45°.
+Vẽ nét — phím V
+V
+Đường cong (U) — Bấm từng điểm nút; nhân nội suy đường cong qua các nút đó.
+Đường cong — phím U
+U
+Xóa (X) — Kéo một nét; gộp màu hoặc cắt thủng theo chế độ đang chọn.
+Xóa — phím X
+X
+Đường cắt (C) — Kéo một nét để xẻ vùng; giữ Shift để bám hướng.
+Đường cắt — phím C
+C
+Khung cắt (K) — Kéo từ góc này sang góc kia; chữ nhật hoặc elip, giữ phần trong hoặc ngoài.
+Khung cắt — phím K
+K
+Vá hở (H) — Bấm một điểm mồi trong lỗ cần vá; màu chọn tay hoặc lấy theo vùng bao.
+Vá hở — phím H
+H
+▾ Tùy chọn công cụ và khung ảnh
+Tô màu
+
+Bấm một điểm mồi; nhân loang vùng cùng màu từ điểm đó và đổi vật liệu.
+
+Chưa có vùng màu để chọn.
+Nhân chưa công bố vùng màu nào cho nguồn này, nên công cụ này chưa gửi được.
+Hoàn tác (1)
+Z
+Làm lại (0)
+Không còn bước nào để làm lại.
+Khung ảnh nguồn
+−
+100%
++
+Vừa khung
+100%
+←
+→
+↑
+↓
+Ảnh đang xem
+Bản hiện tại
+Bản trước khi sửa
+“Bản trước khi sửa” là ảnh raster của bản chuyển đổi trước lần sửa đầu tiên. Đó không phải byte gốc của tệp vector hay font: bản gốc đó do nhân giữ riêng.
+Nhập tọa độ bằng bàn phím
+
+Tọa độ theo pixel của ảnh nguồn, gốc ở góc trên bên trái. Đây là đường tương đương cho người không dùng được con trỏ.
+
+X (px ảnh)
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Y (px ảnh)
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Thêm điểm
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+Áp dụng thao tác
+Thêm ít nhất một điểm trước khi áp dụng.
+Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).
+1 vấn đề cần xem
+Mở nhật ký
+
+PROPOSAL_REQUIRED
+
+Tách tầng
+Tách tầng chỉ có ở bước 2, sau khi đã dựng mô hình.
+Source and datum confirmation
+running
+Mã việc 1fe8a011-3d72-44b8-a94f-fb07b8583158
+Hủy
+Lưu dự án
+
+Lưu và cứu dữ liệu vẫn dùng được trong khi nhân đang chạy.
+
+Kéo thả ảnh hoặc SVG vào khung này, dán bằng Ctrl+V, hoặc mở khu Ảnh nguồn để gõ chữ và chọn emoji.
+SVG màu
+Snapshot hiện tại không công bố đường xuất SVG của nguồn.
+Dựng 3D
+Ctrl ⏎
+Nhân đang chạy một việc. Chờ xong hoặc bấm Hủy trong khung xem.
+Confirm product source update
+
+Nhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả.
+
+{"identityTuple":["arch-product-identity/1","9fb7583b-a4e9-4e2b-8993-8ea984030686","1457ce45-6ec4-4ea3-a5f5-cb85315f80fb","material-key","palette:1"],"kind":"initialize-source-palette","materialId":"product-palette-12518725599715583227","origin":"source","parserId":"source-0099cc","previousMaterialId":null,"reason":"new-parser-route"}
+{"identityTuple":["arch-product-identity/1","9fb7583b-a4e9-4e2b-8993-8ea984030686","1457ce45-6ec4-4ea3-a5f5-cb85315f80fb","material-key","palette:2"],"kind":"initialize-source-palette","materialId":"product-palette-16726110473749959742","origin":"source","parserId":"source-ee7733","previousMaterialId":null,"reason":"new-parser-route"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-12344773568642392499","origin":"auto","role":"body"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-18429137307943453351","origin":"auto","role":"artwork"}
+{"color":"#ffffff","kind":"initialize-role","materialId":"product-role-14125055543400052683","origin":"auto","role":"rim"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-17138835494062667117","origin":"auto","role":"skirt"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-15930097731605118516","origin":"auto","role":"stem"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-11040435939843362500","origin":"auto","role":"tray"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-14992957361948419739","origin":"auto","role":"fastener"}
+{"color":"#ffffff","kind":"initialize-role","materialId":"product-role-14106951054265245522","origin":"auto","role":"text"}
+{"color":"#30353b","kind":"initialize-role","materialId":"product-role-9946452939662016587","origin":"auto","role":"textBase"}
+{"kind":"initialize-slot","materialId":"product-material-12757789764971659411","origin":"auto","qualification":"logical-material-slot-only","slot":1}
+{"kind":"initialize-slot","materialId":"product-material-18152242763697275186","origin":"auto","qualification":"logical-material-slot-only","slot":2}
+{"kind":"initialize-slot","materialId":"product-role-11040435939843362500","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-12344773568642392499","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-14106951054265245522","origin":"auto","qualification":"logical-material-slot-only","slot":4}
+{"kind":"initialize-slot","materialId":"product-role-14125055543400052683","origin":"auto","qualification":"logical-material-slot-only","slot":4}
+{"kind":"initialize-slot","materialId":"product-role-14992957361948419739","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-15930097731605118516","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-17138835494062667117","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-18429137307943453351","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+{"kind":"initialize-slot","materialId":"product-role-9946452939662016587","origin":"auto","qualification":"logical-material-slot-only","slot":3}
+Commit source bytes, material identities, text and layer references together; build a new model from this head
+Mã đề xuất
+2ecf2660-7cd4-46c1-a42d-a51f67d49b4e
+Mã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi thì nhân từ chối và bạn lấy đề xuất mới.
+Lỗi
+PROPOSAL_REQUIRED
+Nhân cần bạn xác nhận trước khi thực hiện.
+
+Chưa có gì được thực thi. Hiệu lực sau khi áp dụng đúng bằng danh sách thay đổi ở trên và do nhân quyết định: có lượt chỉ sửa dữ liệu dự án nên hoàn tác được, nhưng cũng có lượt ghi tệp ra máy, gọi mạng hoặc cắt bớt lịch sử — những việc đó không hoàn tác được. Giao diện không hứa thay nhân.
+
+Mở nhật ký và chẩn đoán
+Hủy lượt đang chạy
+
+Đóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không thêm bước lịch sử và không đổi bản sửa của dự án. Lượt đang chạy là việc riêng: nút “Hủy lượt đang chạy” gửi job.cancel, không thay cho bước bỏ đề xuất. Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.
+
+Đóng, chưa xác nhận
+Áp dụng thay đổi
+Cần xác nhận: Confirm product source update

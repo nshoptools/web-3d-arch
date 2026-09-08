@@ -1,0 +1,34 @@
+[
+  {
+    "id": "lego-roof-oblique-slit-2nm",
+    "argv": [
+      "node",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-wasm\\independent_probe.js",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\lego-roof-oblique-slit-2nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\cavity-public-wasm\\lego-roof-oblique-slit-2nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 0,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_CAVITY_GUARDS: full-volume walls, open cutters and strictly positive roof checked after all feature cuts and material partition; intentional flexure regions are explicit"
+    ]
+  },
+  {
+    "id": "lego-roof-oblique-slit-8nm",
+    "argv": [
+      "node",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-wasm\\independent_probe.js",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\lego-roof-oblique-slit-8nm.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\cavity-public-wasm\\lego-roof-oblique-slit-8nm"
+    ],
+    "exit_code": 0,
+    "mechanicsVerdict": 1,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "FINAL_CAVITY_ROOF_NOT_POSITIVE mech:lego:bore:0:0"
+    ]
+  }
+]

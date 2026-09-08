@@ -1,0 +1,36 @@
+{
+  "status": "pass",
+  "oracle": "independent file decoder + combinatorial mesh oracle + exhaustive affine correspondence",
+  "vertices": 2424,
+  "triangles": 4840,
+  "oldVertices": 2648,
+  "oldTriangles": 5288,
+  "collapsedEdges": 224,
+  "removedFaces": 448,
+  "maximumMeasuredDisplacementMm": 0.0000039185716493157654,
+  "hausdorffUpperBoundMm": 0.000003918571649315768,
+  "metrics": {
+    "vertexCount": 2424,
+    "faceCount": 4840,
+    "edgeCount": 7260,
+    "euler": 4,
+    "volume": 14456.486695101747,
+    "area": 12845.688861641574,
+    "caps": {
+      "0": 1735.8268101294602,
+      "7": 1344.25505699572,
+      "8.600000381469727": 188.52338544727536,
+      "9.199999809265137": 1184,
+      "5.150000095367432": 2.7566905798580947,
+      "5.5": 10.077499709129313,
+      "1.5": 914.2499694824219,
+      "16.950000762939453": 310.78814712892563,
+      "3.200000047683716": 65.15249196052537,
+      "8.350000381469727": 39.75746691703898,
+      "10.350000381469727": 139.19998931884766,
+      "11.149999618530273": 251.244607159133
+    }
+  },
+  "globalPipelineErrorMm": null,
+  "ambientIsotopy": "unverified"
+}

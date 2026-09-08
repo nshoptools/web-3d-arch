@@ -1,0 +1,11 @@
+{"startup":{"name":"signed-idp-three-accounts-sqlite-ready","ms":1463.8926000000001}}
+{"startup":{"name":"before-host-create","ms":1571.3928}}
+{"startup":{"name":"after-host-create","ms":14362.7025}}
+{"startup":{"name":"host-listen","ms":14364.8931}}
+{"startup":{"name":"browser-launched","ms":37314.010599999994}}
+{"startup":{"name":"explicit-tab-created","ms":39424.1118}}
+page.goto: Timeout 10000ms exceeded.
+Call log:
+  - navigating to "https://127.0.0.1:60923/", waiting until "domcontentloaded"
+
+    at D:\VoSon\Code\web-3d-arch\tmp\reviews\codex\runs\20260908-product-acceptance-wave1\work\final-smoke-r1\three.mjs:43:13

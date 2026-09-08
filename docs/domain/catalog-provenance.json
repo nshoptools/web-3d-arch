@@ -1,0 +1,63 @@
+{
+  "task": "implementation",
+  "callerReportedModel": "gpt-6-astra",
+  "callerReportedEffort": "max",
+  "fastMode": "unverified: spawn does not expose fast/service-tier",
+  "independentReview": false,
+  "reviewConfigurationVerified": false,
+  "timestamp": "2026-09-08T01:50:25.2907581+07:00",
+  "node": "v24.19.0",
+  "gitHead": "7efa83b1623adaa089d86aa597d892db5dae5dd7",
+  "inputs": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 7988,
+      "sha256": "72c880703bfed2eb36d2eff16c04bde5b7a27162187e597ab6802cde53258da3"
+    },
+    {
+      "path": "docs/development/README.md",
+      "bytes": 6123,
+      "sha256": "9b6cf485abd5359a3c6180a9ee74eb6547e0510981634b83e5e7c879b86a0245"
+    },
+    {
+      "path": "docs/reviews/seat-config.json",
+      "bytes": 778,
+      "sha256": "feb34cf80062356bb1dc8ad8f37867350eebab416d78d28a8a83d122468720a2"
+    },
+    {
+      "path": "docs/reviews/SEAT-CONFIG.md",
+      "bytes": 7171,
+      "sha256": "11470fa44406aeeb3b6476f7f30d8f5d6b8380af0927b55f6850e53bc7690555"
+    },
+    {
+      "path": "docs/specs/06-danh-muc-thong-so.md",
+      "bytes": 8396,
+      "sha256": "4e337f428be436513f9260d7a902a5b6217d61a295ca566c13666c276dcdce19"
+    },
+    {
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee"
+    },
+    {
+      "path": "docs/specs/03-ky-thuat.md",
+      "bytes": 28928,
+      "sha256": "3608208ccb37b1e2521c71fec07e644da53e1cd1d14bbcda8ae0a09821fac157"
+    },
+    {
+      "path": "docs/specs/01-chuc-nang.md",
+      "bytes": 25899,
+      "sha256": "380a3acee82d765fb2a976b5aefd252a0d5dd43f8f4057d5b1be562d69f46122"
+    },
+    {
+      "path": "docs/specs/05-quyet-dinh-va-truy-vet.md",
+      "bytes": 11191,
+      "sha256": "7979086f8e82bdb6e851dd7cc1b4ac6e950a347749e5d6b9515dd85cb45dcbf1"
+    },
+    {
+      "path": "docs/assets/INPUT-CONTRACT.md",
+      "bytes": 6160,
+      "sha256": "ccb8dd3dc0fd54d09b0ace92bbd3153e65b618e029d544bc79d1be74cb236f76"
+    }
+  ]
+}

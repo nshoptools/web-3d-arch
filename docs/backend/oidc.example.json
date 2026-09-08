@@ -1,0 +1,8 @@
+{
+  "issuer": "https://idp.example.invalid",
+  "authorizationEndpoint": "https://idp.example.invalid/authorize",
+  "tokenEndpoint": "https://idp.example.invalid/token",
+  "jwksUri": "https://idp.example.invalid/jwks",
+  "clientId": "REPLACE_WITH_REGISTERED_CLIENT_ID",
+  "authMethod": "none"
+}

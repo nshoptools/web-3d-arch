@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "at": "2026-09-08T06:54:49.953Z",
+  "scope": {
+    "node": 7,
+    "passed": 7,
+    "failed": 0,
+    "scope": "Real controller/history with labelled Node CAS store and synthetic exporter; exact rawdecimal/revision/receipt/explicitpreparedconsent lifecycle",
+    "run": "20260908-export-controls-wave1",
+    "initialFailure": "4of7 fromrequiredformatkeys bug; fixed optionalformats and rerun7pass",
+    "latest": "node-r4-context-message.log"
+  },
+  "nodeLog": {
+    "path": "tmp/reviews/codex/runs/20260908-export-controls-wave1/evidence/node-r4-context-message.log",
+    "bytes": 852,
+    "sha256": "939192ea667911d099c3a51c8b75f606b431a84461f78e42260fa20bf1b3d390"
+  },
+  "sourcePins": [
+    {
+      "path": "src/app/export-configuration.mjs",
+      "bytes": 7574,
+      "sha256": "fb8887f164c21d991d1668c55628ec45815b3b9385f3ba46488d5d91566bec1e"
+    },
+    {
+      "path": "src/app/export-receipts.mjs",
+      "bytes": 1905,
+      "sha256": "47c986dd8d675a1050ccd478e5018ff6a800d1eb869fd45c8836f64be1190205"
+    },
+    {
+      "path": "src/app/export-messages.mjs",
+      "bytes": 1933,
+      "sha256": "c4f123973658592f961c19c2e06bfb98270d88c0450c7bf300909ae4308ca360"
+    },
+    {
+      "path": "src/app/jobs.mjs",
+      "bytes": 13658,
+      "sha256": "dac5be706e52618ff428ba998ed1adb7e9c5ee4aac1000eeed6afc313acc342f"
+    },
+    {
+      "path": "src/app/controller.mjs",
+      "bytes": 19110,
+      "sha256": "3ffb11eaef67463f70eecdb53aaa634ff17fcdcb348536d9055a9571130649ec"
+    },
+    {
+      "path": "src/app/projects.mjs",
+      "bytes": 16788,
+      "sha256": "36ad69b6b1a6bfc0b082b7af6d860174d3d1d1060f069bd95f30a2380a581103"
+    },
+    {
+      "path": "src/app/documents.mjs",
+      "bytes": 12270,
+      "sha256": "881498c15b060c70de2aaa5bd9a32c8e7a0504779ddd3b07f585443a73f7cf67"
+    },
+    {
+      "path": "src/app/common.mjs",
+      "bytes": 2629,
+      "sha256": "ee87e10d1210b89c63a972b927097223b2abe6f072cf9d9117406b4ec578cb28"
+    },
+    {
+      "path": "src/app/adapters.d.mts",
+      "bytes": 8350,
+      "sha256": "79af64a99e8aa7749e8dea9ae3d2e0d5500cc8f8ca9aa0c26882d57705270888"
+    },
+    {
+      "path": "src/integration/application-context.mjs",
+      "bytes": 777,
+      "sha256": "aabd932ffa17700efcc585826ea30c1e9e628864f5ba2d918e4999eb404e176b"
+    },
+    {
+      "path": "src/integration/viewport-export.mjs",
+      "bytes": 1762,
+      "sha256": "4c084394288b8aaaa56338de6686a82c69cf0fbdd8307d1626a3d9945f9db506"
+    },
+    {
+      "path": "src/app/parent-adapters.mjs",
+      "bytes": 4988,
+      "sha256": "70af8fec90776ecb1851d29079ef42342c7555990e86201cc5f24e94bb369a59"
+    },
+    {
+      "path": "src/viewport/three-viewport.mjs",
+      "bytes": 12444,
+      "sha256": "b32e89ea47c7da7cdefaf02f454ff2b1864a7ffe6883aea87231b85d2c779bf2"
+    },
+    {
+      "path": "src/contracts/app-bridge.ts",
+      "bytes": 13783,
+      "sha256": "c93ae1326eed05967a751b8e3590e80d2485386bf9c2719ec58e95dc06a899f1"
+    },
+    {
+      "path": "tests/app/export-controls.node.test.mjs",
+      "bytes": 12093,
+      "sha256": "008290e97530c4eaeb19bcbd6f5a361cabc7fc503e8b1afab57c5fae3fc8fe58"
+    },
+    {
+      "path": "tests/viewport/png-checks.mjs",
+      "bytes": 3104,
+      "sha256": "1415d8e23b115e751fb533e6192a0f28f69453ebb6519a134c706cc6e76d846f"
+    },
+    {
+      "path": "tests/viewport/harness.mjs",
+      "bytes": 5468,
+      "sha256": "be931fb7531685a8b2bb050e2bd0976481366f22a6a5ff32dbf70b801387aca9"
+    },
+    {
+      "path": "tests/viewport/browser.test.mjs",
+      "bytes": 4255,
+      "sha256": "710babd5af62a3426bca8853f8966e1404b730534038b4eb74114dc22dd264ab"
+    }
+  ],
+  "browser": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "result": {
+        "stats": {
+          "generation": 1,
+          "revision": 1,
+          "parts": 2,
+          "triangles": 44,
+          "boundsMm": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              20.000001,
+              10,
+              2
+            ],
+            "size": [
+              20.000001,
+              10,
+              2
+            ],
+            "center": [
+              10.0000005,
+              5,
+              1
+            ]
+          }
+        },
+        "selected": [
+          "block-0",
+          null
+        ],
+        "dimensions": {
+          "width": 320,
+          "height": 320
+        },
+        "graphics": {
+          "renderer": "WebKit WebGL",
+          "calls": 5,
+          "triangles": 44
+        },
+        "checks": 18,
+        "png": {
+          "checks": 9,
+          "width": 320,
+          "height": 320,
+          "bytes": 9886,
+          "coloredPixels": 19732,
+          "scope": "Actual WebGL PNG plus explicit synthetic access identity; no backend account qualification"
+        },
+        "diagnostics": [],
+        "manufacturingBytesUnchanged": true,
+        "scope": "real SVG Worker mesh and Three viewport; not full application UX or printer qualification"
+      }
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "result": {
+        "stats": {
+          "generation": 1,
+          "revision": 1,
+          "parts": 2,
+          "triangles": 44,
+          "boundsMm": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              20.000001,
+              10,
+              2
+            ],
+            "size": [
+              20.000001,
+              10,
+              2
+            ],
+            "center": [
+              10.0000005,
+              5,
+              1
+            ]
+          }
+        },
+        "selected": [
+          "block-0",
+          null
+        ],
+        "dimensions": {
+          "width": 446,
+          "height": 446
+        },
+        "graphics": {
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce GTX 980 Direct3D11 vs_5_0 ps_5_0), or similar",
+          "calls": 5,
+          "triangles": 44
+        },
+        "checks": 18,
+        "png": {
+          "checks": 9,
+          "width": 446,
+          "height": 446,
+          "bytes": 8347,
+          "coloredPixels": 38764,
+          "scope": "Actual WebGL PNG plus explicit synthetic access identity; no backend account qualification"
+        },
+        "diagnostics": [],
+        "manufacturingBytesUnchanged": true,
+        "scope": "real SVG Worker mesh and Three viewport; not full application UX or printer qualification"
+      }
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "result": {
+        "stats": {
+          "generation": 1,
+          "revision": 1,
+          "parts": 2,
+          "triangles": 44,
+          "boundsMm": {
+            "min": [
+              0,
+              0,
+              0
+            ],
+            "max": [
+              20.000001,
+              10,
+              2
+            ],
+            "size": [
+              20.000001,
+              10,
+              2
+            ],
+            "center": [
+              10.0000005,
+              5,
+              1
+            ]
+          }
+        },
+        "selected": [
+          "block-0",
+          null
+        ],
+        "dimensions": {
+          "width": 320,
+          "height": 320
+        },
+        "graphics": {
+          "renderer": "WebKit WebGL",
+          "calls": 5,
+          "triangles": 44
+        },
+        "checks": 18,
+        "png": {
+          "checks": 9,
+          "width": 320,
+          "height": 320,
+          "bytes": 5888,
+          "coloredPixels": 19985,
+          "scope": "Actual WebGL PNG plus explicit synthetic access identity; no backend account qualification"
+        },
+        "diagnostics": [],
+        "manufacturingBytesUnchanged": true,
+        "scope": "real SVG Worker mesh and Three viewport; not full application UX or printer qualification"
+      }
+    }
+  ],
+  "runtime": {
+    "mechanicsAbi": 2,
+    "mechanicsSemantics": 3,
+    "sourceAbi": 1,
+    "sourceSemantics": 2,
+    "datumExtension": 1,
+    "mjsSha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+    "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+    "nativeAndWasmBuild": true,
+    "rootR2Groups": 3,
+    "productNodeGroups": 8,
+    "productBrowserEngines": 3,
+    "modelsPerEngine": 46
+  },
+  "releaseReady": false
+}

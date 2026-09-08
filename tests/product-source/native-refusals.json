@@ -1,0 +1,295 @@
+{
+  "version": "arch-product-source-test-refusals/1",
+  "mechanicsSemantics": 3,
+  "sourceSemantics": 2,
+  "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+  "qualification": "Known native model blockers; not a claim those product cases build",
+  "cases": [
+    {
+      "id": "text-keychain-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-clicky-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-strap-noi",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-strap-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-strap-phang",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-strap-phang2",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-lego-noi",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-lego-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-lego-phang",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-lego-phang2",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "text-charm-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-keychain-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-clicky-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-strap-noi",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-strap-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-strap-phang",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-strap-phang2",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 78,
+          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-lego-noi",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-lego-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-lego-phang",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-lego-phang2",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    },
+    {
+      "id": "emoji-charm-chim",
+      "code": "PRODUCT_NATIVE_BLOCKED",
+      "diagnostics": [
+        {
+          "code": 1,
+          "fieldId": 0,
+          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+        }
+      ],
+      "sourceVerdict": 0,
+      "mechanicsVerdict": 1
+    }
+  ]
+}

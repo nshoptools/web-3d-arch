@@ -1,0 +1,8 @@
+{
+  "seed": "0x8b177efd",
+  "pairs": 2909,
+  "intersecting": 1577,
+  "mismatches": [],
+  "unsafeFloatingExclusions": [],
+  "oracle": "Fraction.from_float + exact convex SAT; closed-set intersection"
+}

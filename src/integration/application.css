@@ -1,0 +1,7 @@
+/* The interface fills its host. The full-page composition supplies a definite
+   viewport box so sidebar content scrolls inside its panel. No UI theme here. */
+.arch-application-host {
+  block-size: 100dvh;
+  inline-size: 100%;
+  overflow: auto;
+}

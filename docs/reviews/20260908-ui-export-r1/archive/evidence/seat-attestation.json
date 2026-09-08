@@ -1,0 +1,55 @@
+{
+  "required": {
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "fast": false
+  },
+  "observed": {
+    "model": "gpt-6-astra",
+    "effort": "max",
+    "cliVersion": "0.153.4",
+    "originator": "Codex Desktop",
+    "launchServiceTier": "default",
+    "launchFastFeature": false,
+    "effectiveFastFeature": false
+  },
+  "configurationDate": "2026-09-07",
+  "attestedAt": "2026-09-08T09:00:24.876Z",
+  "evidence": [
+    {
+      "path": "evidence/seat-metadata.json",
+      "sha256": "4931f360a6c0705cec62114aa9e1896dc9b5ea3c4742079be6d8ed249c12764f",
+      "bytes": 1238
+    },
+    {
+      "path": "evidence/seat-effective-feature-exact.txt",
+      "sha256": "079b0d9c690a3765efa7fc9b6fa150a97a870345517bb67cee5b9c18f908e635",
+      "bytes": 71
+    },
+    {
+      "path": "inputs/seat-source-check.json",
+      "sha256": "6951eff5bf34c4ab2e68451936c3ec00f35b0f76ec108c721bd32347a562293c",
+      "bytes": 590
+    }
+  ],
+  "status": "Client launch/effective configuration and actual session model/effort verified; served-tier attestation limited",
+  "limits": [
+    "Session turn_context provides model/effort but no service_tier or fast_mode values.",
+    "Effective-feature evidence is a separate non-inference CLI invocation with the same model, effort, service_tier=default and features.fast_mode=false flags as the launch.",
+    "No wire response, billing record, server routing or administrative override was inspected. No cryptographic server/model provenance claim.",
+    "Only allowlisted launch flags and session/turn metadata were extracted. Auth was not inspected; raw session/events were not emitted."
+  ],
+  "officialSourceCheck": {
+    "parent": {
+      "path": "inputs/seat-source-check.json",
+      "sha256": "6951eff5bf34c4ab2e68451936c3ec00f35b0f76ec108c721bd32347a562293c",
+      "bytes": 590
+    },
+    "independentFetchDate": "2026-09-08",
+    "sources": [
+      "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "https://learn.chatgpt.com/docs/agent-configuration/speed"
+    ],
+    "conclusion": "The model page supports max; speed documentation describes explicit Fast selection. No stronger available configuration was established. No configuration changes made."
+  }
+}

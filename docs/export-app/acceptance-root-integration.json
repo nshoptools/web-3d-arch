@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "requirements": [
+    {
+      "id": "EXP-01-seven-formats",
+      "accepted": true,
+      "evidence": "53 production-runtime boundary tests; explicit source/viewport/profile callback doubles, real serializers and lib3mf"
+    },
+    {
+      "id": "EXP-02-actual-authority",
+      "accepted": true,
+      "evidence": "20 current provider cases plus real product inspector/finalScene/AFGM/mesh Worker in three browsers"
+    },
+    {
+      "id": "explicit-prepare-confirm",
+      "accepted": true,
+      "evidence": "28 lifecycle doubles, 8 actual helper WASM tests, actual app RPC no-bytes-before-confirm and receipt readback"
+    },
+    {
+      "id": "source-stale-cancel-retire",
+      "accepted": true,
+      "evidence": "current parent 8 proposal/receipt controls; actual session invalidation, original signal replacement, late RPC bytes discarded, primary source hashes preserved"
+    },
+    {
+      "id": "same-module-owned-bytes",
+      "accepted": true,
+      "evidence": "three engines, one WASM fetch each, exact 64c5/f146 hashes and current integrity ready proof"
+    },
+    {
+      "id": "bounded-worker-suffix",
+      "accepted": true,
+      "evidence": "only two exact final-file messages translated; generics, other operations and terminal newlines retain original error"
+    },
+    {
+      "id": "GEO-OUT-export-integrity",
+      "accepted": true,
+      "evidence": "independent triangle/normal/volume/section/file and root correspondence checks; byte-exact parity for four artifacts across three engines"
+    },
+    {
+      "id": "whole-product-release-or-physical-fit",
+      "accepted": false,
+      "evidence": "outside this delivery; upstream curved fixes and full application/slicer/physical acceptance remain parent-owned"
+    }
+  ],
+  "counts": {
+    "node": 102,
+    "ordinary": 53,
+    "floatLifecycleDoubles": 28,
+    "currentProvider": 20,
+    "workerDiagnosticWhitelist": 1,
+    "parentProposalReceiptControls": 8,
+    "actualHelperWasm": 8,
+    "types": true,
+    "browserCasesPerEngine": 12
+  }
+}

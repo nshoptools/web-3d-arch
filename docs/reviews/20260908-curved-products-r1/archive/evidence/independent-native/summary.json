@@ -1,0 +1,341 @@
+[
+  {
+    "id": "partition-mode0-rim0",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode0-rim0.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode0-rim0"
+    ],
+    "exit_code": 0,
+    "seconds": 0.19240929999796208,
+    "input_sha256": "d6fd13fdb6b341acd911a7d9ea3f802b4fd37c06896cd3b1d17149c9cbab655a",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "partition-mode0-rim1",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode0-rim1.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode0-rim1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.128705600000103,
+    "input_sha256": "ffa3c927f2ef2df6dc72ec1fb840e8d0375fd615b0877f3aaa2db2f5778686ab",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "MATERIAL_SLOT_MISMATCH: same slot has different colors; retain overrides and require adapter remap before machine-project export"
+    ]
+  },
+  {
+    "id": "partition-mode1-rim0",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode1-rim0.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode1-rim0"
+    ],
+    "exit_code": 0,
+    "seconds": 0.09840400000393856,
+    "input_sha256": "5dfd3724070a65793eea9a0a36d24a55b8b86f385cb19d34ca20dda9f226273b",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "partition-mode1-rim1",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode1-rim1.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode1-rim1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.10361140000168234,
+    "input_sha256": "c804c29c916e009202a7cc4e85f8e45703b11dd851a5b419007c5f77da326fd6",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "MATERIAL_SLOT_MISMATCH: same slot has different colors; retain overrides and require adapter remap before machine-project export"
+    ]
+  },
+  {
+    "id": "partition-mode2-rim0",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode2-rim0.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode2-rim0"
+    ],
+    "exit_code": 0,
+    "seconds": 0.14141579999704845,
+    "input_sha256": "57c67c5c334299e440fb9558a0ab5e4c9aa509025024fe5729454f6716f699b7",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "partition-mode2-rim1",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode2-rim1.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode2-rim1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.11721509999188129,
+    "input_sha256": "84644e0b13bca30f5c1419de56186540b3220965281213014d24951e7b3c1baa",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "MATERIAL_SLOT_MISMATCH: same slot has different colors; retain overrides and require adapter remap before machine-project export"
+    ]
+  },
+  {
+    "id": "partition-mode3-rim0",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode3-rim0.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode3-rim0"
+    ],
+    "exit_code": 0,
+    "seconds": 0.14301900001009926,
+    "input_sha256": "0658426fe59ca42720b50a86dc7ec42d5e4dc5d449ee56d3bfe13425e39f4617",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "partition-mode3-rim1",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\partition-mode3-rim1.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\partition-mode3-rim1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.0980542999895988,
+    "input_sha256": "0996abde4e800246d048a02866c70c5ddd0af563ac728a2b5b462f2c797e1add",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "MATERIAL_SLOT_MISMATCH: same slot has different colors; retain overrides and require adapter remap before machine-project export"
+    ]
+  },
+  {
+    "id": "rounded-tall-exact",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\rounded-tall-exact.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\rounded-tall-exact"
+    ],
+    "exit_code": 0,
+    "seconds": 0.08934790000785142,
+    "input_sha256": "487e86f2574da53ff3de3533b42069cad4f41e44929fa5445d19d2ea01afe435",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "rounded-tall-near",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\rounded-tall-near.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\rounded-tall-near"
+    ],
+    "exit_code": 0,
+    "seconds": 0.10102429999096785,
+    "input_sha256": "bb250581a0f7cd5533b381926b84c2c720d82082db86417e2fc746a7cb29e411",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "rounded-wide-exact",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\rounded-wide-exact.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\rounded-wide-exact"
+    ],
+    "exit_code": 0,
+    "seconds": 0.13330459999269806,
+    "input_sha256": "ef445cdec42ed7ad572fba300352234b0cd0163ecb6cf5283923ec6733db7d9d",
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+    ]
+  },
+  {
+    "id": "strap-notch-1",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-1.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-1"
+    ],
+    "exit_code": 0,
+    "seconds": 0.3500937999924645,
+    "input_sha256": "dab1b2ea3650d6f2dec74b02d95a72d7afd084ae098019e44c61142bc852ad5e",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=4 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "strap-notch-2.3",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-2.3.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-2.3"
+    ],
+    "exit_code": 0,
+    "seconds": 0.9260179999982938,
+    "input_sha256": "86fd6b9f3600466359d27743c4fb436d0cfc69bf856c331774008efd30aa8859",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=4 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "strap-notch-2.599999",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-2.599999.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-2.599999"
+    ],
+    "exit_code": 0,
+    "seconds": 0.4332042000023648,
+    "input_sha256": "5a81df38b8d6319d4dc1fc0f6fe1339e61c1ba125dbe2e9e51ddbfe3834435ce",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=2 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "strap-notch-2.6",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-2.6.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-2.6"
+    ],
+    "exit_code": 0,
+    "seconds": 0.28057269999408163,
+    "input_sha256": "17367ac60502af0c0d22ff3650826afccd799c170152e844fbe0e972edab32e2",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=2 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "strap-notch-2.600001",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-2.600001.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-2.600001"
+    ],
+    "exit_code": 0,
+    "seconds": 0.2595535000000382,
+    "input_sha256": "e6d74905bf720fa7acdfec470d9f511ceb3c42614fff054f998795495549bb87",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=2 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  },
+  {
+    "id": "strap-notch-3",
+    "kind": "native",
+    "argv": [
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\work\\build-native\\Release\\independent_probe.exe",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\inputs\\independent\\strap-notch-3.txt",
+      "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-curved-products-review-r1\\evidence\\independent-native\\strap-notch-3"
+    ],
+    "exit_code": 0,
+    "seconds": 0.30125809999299236,
+    "input_sha256": "6e063115fcb45c2d936ed6560f5e9d8ec579e07027bd131f1c22dc965cb9f1b7",
+    "sourceVerdict": -1,
+    "mechanicsVerdict": 0,
+    "inputUnchanged": true,
+    "diagnostics": [
+      "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility",
+      "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified",
+      "CHAMFER_WORK scanned=8 active=2 activeLimit=512",
+      "FINAL_STRAP_GUARD UNIFORM_ENVELOPE: complete final material above/below the complete host footprint (a superset of cutter shadow); strong sufficient volume condition; query budget recorded"
+    ]
+  }
+]

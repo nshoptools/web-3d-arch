@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "implementationOnly": true,
+  "configuredIndependentReview": false,
+  "startedAt": "2026-09-08T12:18:43.770Z",
+  "only": "extra",
+  "phase": "extra-final",
+  "engines": "chromium,firefox,webkit",
+  "changes": [
+    "Explicit extra-only selector; lifecycle not called.",
+    "Fresh context.newPage() instead of persistent startup tab."
+  ],
+  "assertionsUnchanged": true,
+  "productionWritten": false,
+  "files": [
+    {
+      "path": "tests/ui/export-consent/cases.mjs",
+      "before": "72410b2e11b804d5667c9d048f35f16b8d490eb952fcf02f7e8ce784ad8bf272",
+      "after": "72410b2e11b804d5667c9d048f35f16b8d490eb952fcf02f7e8ce784ad8bf272",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/deferred-bridge.ts",
+      "before": "a07a8c728513b78762ae6faab9103b5f3eaf7f7a6ff3140a7e2a7207f6996111",
+      "after": "a07a8c728513b78762ae6faab9103b5f3eaf7f7a6ff3140a7e2a7207f6996111",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/extra-cases.mjs",
+      "before": "373abdd64490258d19b1248f61e3b8b69e0b428d827ef26ad3608a13b16795ec",
+      "after": "373abdd64490258d19b1248f61e3b8b69e0b428d827ef26ad3608a13b16795ec",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/followup-cases.mjs",
+      "before": "f7c9b9f2e85dd5b05cc4e1b8eb1ad3b4d88a3705480fb95adaac7a6d26a481c6",
+      "after": "f7c9b9f2e85dd5b05cc4e1b8eb1ad3b4d88a3705480fb95adaac7a6d26a481c6",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/harness.tsx",
+      "before": "fc37b8393021f5d52d18222ee8c28482bd3ea815a2e9e953d20528279570fd8f",
+      "after": "fc37b8393021f5d52d18222ee8c28482bd3ea815a2e9e953d20528279570fd8f",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/index.html",
+      "before": "7ca9c4f28a42e53c5f21ea1533da9ba453a6ed06768f1178e9ccaee508803d7d",
+      "after": "7ca9c4f28a42e53c5f21ea1533da9ba453a6ed06768f1178e9ccaee508803d7d",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/keyboard-cases.mjs",
+      "before": "1ce9a9fc1498ee4ede6871676c620215ac263d8aff2ebf3b8113294f6ba96b02",
+      "after": "1ce9a9fc1498ee4ede6871676c620215ac263d8aff2ebf3b8113294f6ba96b02",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/readability-cases.mjs",
+      "before": "ab882b5a1729366db00628f44106f352f594384b2449d9c125dcefd0eb8de81e",
+      "after": "ab882b5a1729366db00628f44106f352f594384b2449d9c125dcefd0eb8de81e",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/README.md",
+      "before": "6004c91e86e00694b10bf0e7470d44527e9ff3873679252073ad951edcf53154",
+      "after": "6004c91e86e00694b10bf0e7470d44527e9ff3873679252073ad951edcf53154",
+      "changed": false
+    },
+    {
+      "path": "tests/ui/export-consent/run.mjs",
+      "before": "ecec4e8af35a59ed687f9c57ec99d6df0e0d555c53f475683d42217f9fd78676",
+      "after": "ec6c48b3677b3dcf9bbbc416ccc87c1cbad141d2566d6df8f9921de152aa5969",
+      "changed": true
+    },
+    {
+      "path": "tests/ui/export-consent/support.mjs",
+      "before": "439c1fa31c8e5a63519b6955ee780f7169aff364d8029857b3927f191a23f7b3",
+      "after": "439c1fa31c8e5a63519b6955ee780f7169aff364d8029857b3927f191a23f7b3",
+      "changed": false
+    }
+  ]
+}

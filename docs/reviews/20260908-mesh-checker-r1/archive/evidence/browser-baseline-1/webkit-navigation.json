@@ -1,0 +1,2266 @@
+{
+  "factors": {
+    "start": 1788859467884,
+    "freeMemory": 7078072320,
+    "totalMemory": 25684361216,
+    "logicalCPUs": 6,
+    "node": "v24.19.0",
+    "pageMode": "initial"
+  },
+  "end": 1788859532592,
+  "freeMemoryAtEnd": 6708162560,
+  "navigation": [
+    {
+      "event": "request",
+      "path": "/",
+      "time": 1788859468763
+    },
+    {
+      "event": "response",
+      "path": "/",
+      "status": 200,
+      "time": 1788859468952
+    },
+    {
+      "event": "load",
+      "time": 1788859468970
+    },
+    {
+      "event": "domcontentloaded",
+      "time": 1788859468970
+    },
+    {
+      "event": "request",
+      "path": "/tests/final-scene/browser-page.mjs",
+      "time": 1788859469032
+    },
+    {
+      "event": "response",
+      "path": "/tests/final-scene/browser-page.mjs",
+      "status": 200,
+      "time": 1788859469041
+    },
+    {
+      "event": "request",
+      "path": "/src/integration/kernel-adapters.mjs",
+      "time": 1788859469043
+    },
+    {
+      "event": "request",
+      "path": "/src/integration/product-adapters.mjs",
+      "time": 1788859469043
+    },
+    {
+      "event": "request",
+      "path": "/src/storage/history.mjs",
+      "time": 1788859469048
+    },
+    {
+      "event": "request",
+      "path": "/src/integration/final-scene-evidence.mjs",
+      "time": 1788859469048
+    },
+    {
+      "event": "request",
+      "path": "/src/integration/material-source-ledger.mjs",
+      "time": 1788859469048
+    },
+    {
+      "event": "request",
+      "path": "/src/integration/final-scene-gates.mjs",
+      "time": 1788859469051
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-client.mjs",
+      "time": 1788859469052
+    },
+    {
+      "event": "request",
+      "path": "/tests/final-scene/fixtures.mjs",
+      "time": 1788859469053
+    },
+    {
+      "event": "response",
+      "path": "/src/integration/kernel-adapters.mjs",
+      "status": 200,
+      "time": 1788859469063
+    },
+    {
+      "event": "response",
+      "path": "/src/integration/product-adapters.mjs",
+      "status": 200,
+      "time": 1788859469079
+    },
+    {
+      "event": "request",
+      "path": "/src/core/engine-client.mjs",
+      "time": 1788859469079
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859469080
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/index.mjs",
+      "time": 1788859469080
+    },
+    {
+      "event": "request",
+      "path": "/src/storage/zip.mjs",
+      "time": 1788859469080
+    },
+    {
+      "event": "request",
+      "path": "/src/kernel/mechanics/src/domain-adapter.mjs",
+      "time": 1788859469087
+    },
+    {
+      "event": "request",
+      "path": "/src/storage/common.mjs",
+      "time": 1788859469088
+    },
+    {
+      "event": "request",
+      "path": "/src/core/product-operations.mjs",
+      "time": 1788859469088
+    },
+    {
+      "event": "request",
+      "path": "/src/core/product-export-descriptor.mjs",
+      "time": 1788859469088
+    },
+    {
+      "event": "request",
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "time": 1788859469088
+    },
+    {
+      "event": "request",
+      "path": "/src/contracts/product-material.mjs",
+      "time": 1788859469089
+    },
+    {
+      "event": "response",
+      "path": "/src/storage/history.mjs",
+      "status": 200,
+      "time": 1788859469092
+    },
+    {
+      "event": "response",
+      "path": "/src/integration/final-scene-evidence.mjs",
+      "status": 200,
+      "time": 1788859469092
+    },
+    {
+      "event": "response",
+      "path": "/src/integration/material-source-ledger.mjs",
+      "status": 200,
+      "time": 1788859469092
+    },
+    {
+      "event": "response",
+      "path": "/src/integration/final-scene-gates.mjs",
+      "status": 200,
+      "time": 1788859469168
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-client.mjs",
+      "status": 200,
+      "time": 1788859469168
+    },
+    {
+      "event": "response",
+      "path": "/tests/final-scene/fixtures.mjs",
+      "status": 200,
+      "time": 1788859469169
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/hash.mjs",
+      "time": 1788859469176
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859469176
+    },
+    {
+      "event": "response",
+      "path": "/src/core/engine-client.mjs",
+      "status": 200,
+      "time": 1788859469176
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859469176
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/index.mjs",
+      "status": 200,
+      "time": 1788859469178
+    },
+    {
+      "event": "response",
+      "path": "/src/storage/zip.mjs",
+      "status": 200,
+      "time": 1788859469185
+    },
+    {
+      "event": "response",
+      "path": "/src/kernel/mechanics/src/domain-adapter.mjs",
+      "status": 200,
+      "time": 1788859469186
+    },
+    {
+      "event": "response",
+      "path": "/src/storage/common.mjs",
+      "status": 200,
+      "time": 1788859469186
+    },
+    {
+      "event": "response",
+      "path": "/src/core/product-operations.mjs",
+      "status": 200,
+      "time": 1788859469193
+    },
+    {
+      "event": "response",
+      "path": "/src/core/product-export-descriptor.mjs",
+      "status": 200,
+      "time": 1788859469201
+    },
+    {
+      "event": "response",
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "status": 200,
+      "time": 1788859469201
+    },
+    {
+      "event": "response",
+      "path": "/src/contracts/product-material.mjs",
+      "status": 200,
+      "time": 1788859469203
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/catalog.mjs",
+      "time": 1788859469205
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/schema.mjs",
+      "time": 1788859469205
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/decimal.mjs",
+      "time": 1788859469205
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/layers.mjs",
+      "time": 1788859469205
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/project.mjs",
+      "time": 1788859469206
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/transactions.mjs",
+      "time": 1788859469206
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/migration.mjs",
+      "time": 1788859469209
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/persistence.mjs",
+      "time": 1788859469210
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/safe.mjs",
+      "time": 1788859469210
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/hash.mjs",
+      "status": 200,
+      "time": 1788859469210
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859469210
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859469210
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/catalog.mjs",
+      "status": 200,
+      "time": 1788859469219
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/schema.mjs",
+      "status": 200,
+      "time": 1788859469219
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/decimal.mjs",
+      "status": 200,
+      "time": 1788859469219
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/layers.mjs",
+      "status": 200,
+      "time": 1788859469234
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/project.mjs",
+      "status": 200,
+      "time": 1788859469234
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/transactions.mjs",
+      "status": 200,
+      "time": 1788859469234
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/migration.mjs",
+      "status": 200,
+      "time": 1788859469234
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/persistence.mjs",
+      "status": 200,
+      "time": 1788859469235
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/safe.mjs",
+      "status": 200,
+      "time": 1788859469259
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859469259
+    },
+    {
+      "event": "request",
+      "path": "/src/domain/json-number.mjs",
+      "time": 1788859469259
+    },
+    {
+      "event": "response",
+      "path": "/src/domain/json-number.mjs",
+      "status": 200,
+      "time": 1788859469262
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859469280
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859469284
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859469298
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859469303
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859469305
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859469305
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859469308
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859469310
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859469329
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859469333
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859469381
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859469388
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859469389
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859469390
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859469400
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859469401
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859469411
+    },
+    {
+      "event": "request",
+      "path": "/fixtures/keychain.json",
+      "time": 1788859469412
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859469416
+    },
+    {
+      "event": "response",
+      "path": "/fixtures/keychain.json",
+      "status": 200,
+      "time": 1788859469418
+    },
+    {
+      "event": "request",
+      "path": "/src/core/engine-worker.mjs",
+      "time": 1788859469825
+    },
+    {
+      "event": "response",
+      "path": "/src/core/engine-worker.mjs",
+      "status": 200,
+      "time": 1788859469835
+    },
+    {
+      "event": "request",
+      "path": "/src/core/product-source-operations.mjs",
+      "time": 1788859469847
+    },
+    {
+      "event": "request",
+      "path": "/src/core/product-worker-hook.mjs",
+      "time": 1788859469848
+    },
+    {
+      "event": "request",
+      "path": "/src/core/product-operations.mjs",
+      "time": 1788859469849
+    },
+    {
+      "event": "response",
+      "path": "/src/core/product-source-operations.mjs",
+      "status": 200,
+      "time": 1788859469853
+    },
+    {
+      "event": "response",
+      "path": "/src/core/product-worker-hook.mjs",
+      "status": 200,
+      "time": 1788859469856
+    },
+    {
+      "event": "response",
+      "path": "/src/core/product-operations.mjs",
+      "status": 200,
+      "time": 1788859469858
+    },
+    {
+      "event": "request",
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "time": 1788859469860
+    },
+    {
+      "event": "response",
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "status": 200,
+      "time": 1788859469864
+    },
+    {
+      "event": "request",
+      "path": "/runtime/arch-kernel.mjs",
+      "time": 1788859469869
+    },
+    {
+      "event": "response",
+      "path": "/runtime/arch-kernel.mjs",
+      "status": 200,
+      "time": 1788859469875
+    },
+    {
+      "event": "request",
+      "path": "/runtime/arch-kernel.wasm",
+      "time": 1788859469916
+    },
+    {
+      "event": "response",
+      "path": "/runtime/arch-kernel.wasm",
+      "status": 200,
+      "time": 1788859469922
+    },
+    {
+      "event": "request",
+      "path": "/src/core/raster-operations.mjs",
+      "time": 1788859470074
+    },
+    {
+      "event": "response",
+      "path": "/src/core/raster-operations.mjs",
+      "status": 200,
+      "time": 1788859470080
+    },
+    {
+      "event": "request",
+      "path": "/src/core/raster-schema.mjs",
+      "time": 1788859470083
+    },
+    {
+      "event": "response",
+      "path": "/src/core/raster-schema.mjs",
+      "status": 200,
+      "time": 1788859470087
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859470578
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859470587
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859470599
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859470604
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859470606
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859470607
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859470611
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859470612
+    },
+    {
+      "event": "request",
+      "path": "/src/kernel/final-scene-export/float-runtime.mjs",
+      "time": 1788859471128
+    },
+    {
+      "event": "response",
+      "path": "/src/kernel/final-scene-export/float-runtime.mjs",
+      "status": 200,
+      "time": 1788859471141
+    },
+    {
+      "event": "request",
+      "path": "/src/kernel/final-scene-export/runtime-helper.mjs",
+      "time": 1788859471142
+    },
+    {
+      "event": "response",
+      "path": "/src/kernel/final-scene-export/runtime-helper.mjs",
+      "status": 200,
+      "time": 1788859471146
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859471200
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859471204
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859471222
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859471229
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859471229
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859471230
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859471234
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859471238
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859471880
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859471887
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859471899
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859471903
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859471905
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859471906
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859471910
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859471910
+    },
+    {
+      "event": "request",
+      "path": "/fixtures/clicky.json",
+      "time": 1788859472456
+    },
+    {
+      "event": "response",
+      "path": "/fixtures/clicky.json",
+      "status": 200,
+      "time": 1788859472460
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859473969
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859473973
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859473983
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859473987
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859474016
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859474016
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859474019
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859474021
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859478942
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859478946
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859478961
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859478965
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859478967
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859478968
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859478971
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859478972
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859481161
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859481169
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859481181
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859481184
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859481189
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859481189
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859481197
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859481206
+    },
+    {
+      "event": "request",
+      "path": "/fixtures/strap.json",
+      "time": 1788859482957
+    },
+    {
+      "event": "response",
+      "path": "/fixtures/strap.json",
+      "status": 200,
+      "time": 1788859482962
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859484025
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859484028
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859484277
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859484282
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859484282
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859484283
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859484286
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859484288
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859485698
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859485714
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859485727
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859485740
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859485742
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859485742
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859485746
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859485747
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859487352
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859487356
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859487369
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859487373
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859487374
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859487375
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859487379
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859487380
+    },
+    {
+      "event": "request",
+      "path": "/fixtures/lego.json",
+      "time": 1788859488608
+    },
+    {
+      "event": "response",
+      "path": "/fixtures/lego.json",
+      "status": 200,
+      "time": 1788859488611
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859495910
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859495916
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859495926
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859495929
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859495931
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859495932
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859495936
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859495938
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859507140
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859507184
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859507210
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859507226
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859507226
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859507230
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859507249
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859507249
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859518393
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859518399
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859518411
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859518415
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859518416
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859518417
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859518421
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859518423
+    },
+    {
+      "event": "request",
+      "path": "/fixtures/charm.json",
+      "time": 1788859527924
+    },
+    {
+      "event": "response",
+      "path": "/fixtures/charm.json",
+      "status": 200,
+      "time": 1788859527928
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859528979
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859528989
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859529006
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859529012
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859529013
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859529014
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859529019
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859529021
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859530331
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859530335
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859530345
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859530348
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859530350
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859530351
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859530355
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859530356
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "time": 1788859531408
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "status": 200,
+      "time": 1788859531412
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-qualification.mjs",
+      "time": 1788859531421
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-qualification.mjs",
+      "status": 200,
+      "time": 1788859531425
+    },
+    {
+      "event": "request",
+      "path": "/src/viewport/arch-view.mjs",
+      "time": 1788859531426
+    },
+    {
+      "event": "request",
+      "path": "/src/core/mesh-predicates.mjs",
+      "time": 1788859531427
+    },
+    {
+      "event": "response",
+      "path": "/src/viewport/arch-view.mjs",
+      "status": 200,
+      "time": 1788859531431
+    },
+    {
+      "event": "response",
+      "path": "/src/core/mesh-predicates.mjs",
+      "status": 200,
+      "time": 1788859531433
+    }
+  ],
+  "requests": [
+    {
+      "engine": "webkit",
+      "time": 1788859468769,
+      "path": "/",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859468769
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469035,
+      "path": "/tests/final-scene/browser-page.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469035
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469049,
+      "path": "/src/integration/kernel-adapters.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469050
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469050,
+      "path": "/src/integration/product-adapters.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469050
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469060,
+      "path": "/src/storage/history.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469060
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469060,
+      "path": "/src/integration/final-scene-evidence.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469061
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469076,
+      "path": "/src/integration/material-source-ledger.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469079
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469086,
+      "path": "/src/integration/final-scene-gates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469086
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469089,
+      "path": "/src/core/mesh-qualification-client.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469089
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469092,
+      "path": "/tests/final-scene/fixtures.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469093
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469131,
+      "path": "/src/core/engine-client.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469131
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469131,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469131
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469131,
+      "path": "/src/domain/index.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469131
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469132,
+      "path": "/src/storage/zip.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469132
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469132,
+      "path": "/src/kernel/mechanics/src/domain-adapter.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469132
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469132,
+      "path": "/src/storage/common.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469132
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469134,
+      "path": "/src/core/product-operations.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469135
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469135,
+      "path": "/src/core/product-export-descriptor.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469135
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469135,
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469135
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469138,
+      "path": "/src/contracts/product-material.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469138
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469186,
+      "path": "/src/domain/hash.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469186
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469186,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469187
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469215,
+      "path": "/src/domain/catalog.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469215
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469215,
+      "path": "/src/domain/schema.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469216
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469216,
+      "path": "/src/domain/decimal.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469216
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469217,
+      "path": "/src/domain/layers.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469217
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469218,
+      "path": "/src/domain/project.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469218
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469218,
+      "path": "/src/domain/transactions.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469218
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469218,
+      "path": "/src/domain/migration.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469218
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469226,
+      "path": "/src/domain/persistence.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469227
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469227,
+      "path": "/src/domain/safe.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469229
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469233,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469233
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469261,
+      "path": "/src/domain/json-number.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469261
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469282,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469282
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469300,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469300
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469307,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469307
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469307,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469307
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469331,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469331
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469383,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469384
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469393,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469393
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469393,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469393
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469414,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469414
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469416,
+      "path": "/fixtures/keychain.json",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469416
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469831,
+      "path": "/src/core/engine-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469831
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469851,
+      "path": "/src/core/product-source-operations.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469851
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469855,
+      "path": "/src/core/product-worker-hook.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469855
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469855,
+      "path": "/src/core/product-operations.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469855
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469862,
+      "path": "/src/kernel/mechanics/src/catalog-map.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469862
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469873,
+      "path": "/runtime/arch-kernel.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469874
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859469919,
+      "path": "/runtime/arch-kernel.wasm",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859469921
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470077,
+      "path": "/src/core/raster-operations.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470077
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470085,
+      "path": "/src/core/raster-schema.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470085
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470582,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470582
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470602,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470602
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470608,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470609
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859470609,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859470609
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471130,
+      "path": "/src/kernel/final-scene-export/float-runtime.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471131
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471144,
+      "path": "/src/kernel/final-scene-export/runtime-helper.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471144
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471202,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471202
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471224,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471224
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471231,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471232
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471234,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471235
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471885,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471885
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471901,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471902
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471907,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471907
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859471908,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859471908
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859472458,
+      "path": "/fixtures/clicky.json",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859472459
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859473971,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859473971
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859473985,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859473985
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859474018,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859474018
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859474018,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859474018
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859478944,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859478944
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859478963,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859478964
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859478969,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859478970
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859478970,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859478970
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859481164,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859481164
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859481183,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859481183
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859481195,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859481195
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859481195,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859481196
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859482960,
+      "path": "/fixtures/strap.json",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859482960
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859484027,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859484027
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859484279,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859484279
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859484284,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859484285
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859484285,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859484285
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859485708,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859485708
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859485732,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859485732
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859485744,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859485744
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859485744,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859485745
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859487354,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859487354
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859487370,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859487371
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859487377,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859487377
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859487377,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859487377
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859488610,
+      "path": "/fixtures/lego.json",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859488610
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859495913,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859495914
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859495928,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859495928
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859495934,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859495934
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859495935,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859495935
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859507162,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859507162
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859507214,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859507214
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859507232,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859507232
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859507237,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859507237
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859518397,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859518397
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859518413,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859518413
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859518419,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859518419
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859518420,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859518420
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859527926,
+      "path": "/fixtures/charm.json",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859527927
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859528986,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859528986
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859529009,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859529010
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859529016,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859529016
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859529016,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859529017
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859530333,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859530333
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859530347,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859530347
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859530352,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859530352
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859530353,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859530353
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859531410,
+      "path": "/src/core/mesh-qualification-worker.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859531410
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859531423,
+      "path": "/src/core/mesh-qualification.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859531423
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859531429,
+      "path": "/src/viewport/arch-view.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859531430
+    },
+    {
+      "engine": "webkit",
+      "time": 1788859531430,
+      "path": "/src/core/mesh-predicates.mjs",
+      "method": "GET",
+      "status": 200,
+      "finished": 1788859531430
+    }
+  ]
+}

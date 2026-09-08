@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6-astra",
+  "effort": "max",
+  "fast": false,
+  "version": "codex-cli 0.153.4",
+  "binarySha256": "444A3F0008050605CAE73CD9B7A2DCAC61294062DFAAB56DD20430FD6498518B",
+  "args": [
+    "exec",
+    "--ignore-user-config",
+    "--color",
+    "never",
+    "-C",
+    "D:\\VoSon\\Code\\web-3d-arch",
+    "-m",
+    "gpt-6-astra",
+    "-c",
+    "model_reasoning_effort=\"max\"",
+    "-c",
+    "service_tier=\"default\"",
+    "-c",
+    "features.fast_mode=false",
+    "-c",
+    "approval_policy=\"never\"",
+    "-s",
+    "danger-full-access",
+    "--json",
+    "-o",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\reports\\response.md",
+    "-"
+  ],
+  "status": "requested; verify actual session metadata"
+}

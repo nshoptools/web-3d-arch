@@ -1,0 +1,76 @@
+{
+  "at": "2026-09-08T09:20:17.745Z",
+  "verdict": "accept-eight-findings-with-bounded-impact",
+  "findings": [
+    {
+      "id": "UI-R1-01",
+      "severity": "P1",
+      "status": "fixed-parent-rerun-passed",
+      "owner": "Codex",
+      "basis": "Drafts and their starting revision must belong to the account/project access context in which editing began. A new context must show its own published value and must not adopt or submit another context's draft.",
+      "limit": "Reproduced in all three engines with an atomic contract-valid publication retaining format/field IDs. A host that first unmounts these controls may mask the problem. Native persistence and account-service acceptance were not tested.",
+      "evidence": "../../testevidence/ui-consent/verification.json"
+    },
+    {
+      "id": "UI-R1-02",
+      "severity": "P2",
+      "status": "fixed-parent-rerun-passed",
+      "owner": "Codex",
+      "basis": "The same request/draft ownership fence must protect local validation and shared dialogs, logs, and alerts. Superseded responses must not replace the current consent question.",
+      "limit": "The confirmation cases reproduce in Chromium, Firefox and WebKit; rejected-promise follow-up is Chromium only. No automatic proposal.accept was observed, and native proposal validation may refuse the obsolete ID.",
+      "evidence": "../../testevidence/ui-consent/verification.json"
+    },
+    {
+      "id": "UI-R1-03",
+      "severity": "P2",
+      "status": "fixed-parent-rerun-passed",
+      "owner": "Codex",
+      "basis": "An open consent question must retire when its originating access/project context is invalidated, even when the final IDs equal their original values.",
+      "limit": "Reproduced in all three engines using batched bridge notifications. This establishes stale UI consent, not successful execution of an invalid proposal; the native controller was not exercised.",
+      "evidence": "../../testevidence/ui-consent/verification.json"
+    },
+    {
+      "id": "UI-R1-04",
+      "severity": "P2",
+      "status": "fixed-parent-rerun-passed",
+      "owner": "Codex",
+      "basis": "Explicitly returning to the published value should resolve the dirty draft consistently and allow a subsequent edit to start at revision 4.",
+      "limit": "The extra stale command reproduces in all three engines. The subsequent-rejection sequence is Chromium-only with a deterministic STALE_REVISION reply; native revision validation is out of scope.",
+      "evidence": "../../testevidence/ui-consent/verification.json"
+    },
+    {
+      "id": "UI-R1-05",
+      "severity": "P2",
+      "status": "accepted-awaiting-fix-and-parent-rerun",
+      "owner": "Opus",
+      "basis": "The first Escape should cancel the field's edit while keeping the drawer open; a later Escape may close the drawer and restore useful focus. This follows UI-05's one-layer Escape rule.",
+      "limit": "Reproduced with actual keyboard events in all three engines at 320px. Real mobile virtual keyboards and assistive technology were not exercised."
+    },
+    {
+      "id": "UI-R1-06",
+      "severity": "P2",
+      "status": "accepted-awaiting-fix-and-parent-rerun",
+      "owner": "Opus",
+      "basis": "Keep a keyboard-reachable control or explanation for unavailable settings as specified by UI-04; preserve actual refusal semantics.",
+      "limit": "DOM focusability was checked in all three engines. Reasons remain visibly printed and can be read in screen-reader browse mode; no screen-reader session was run. This is grounded in the project's focusable-reason requirement, not a blanket claim that every native disabled control violates WCAG."
+    },
+    {
+      "id": "UI-R1-07",
+      "severity": "P2",
+      "status": "accepted-awaiting-fix-and-parent-rerun",
+      "owner": "Opus",
+      "basis": "The focused number control should expose its published unit and constraints in the accessible name/description, as required by UI-04, without parsing or modifying the raw input.",
+      "limit": "Association failure reproduces in all three engines via DOM/accessibility inspection. A separately authored hint may repeat this information and mask the omission; no native screen-reader output was captured."
+    },
+    {
+      "id": "UI-R1-08",
+      "severity": "P2",
+      "status": "accepted-awaiting-fix-and-parent-rerun",
+      "owner": "Opus",
+      "basis": "Ordinary setting labels should remain readable beside or above the control in the narrow desktop panel. UI-06 requires actual usability and visual review, not just containment.",
+      "limit": "Measured in Chromium and WebKit; visually reproduced in the earlier Firefox r2 screenshot. The dedicated Firefox r7 measurement did not execute because page.goto timed out at 30 seconds. The 320px layout's one-column rule avoids this defect. Choice strings are an explicit contract fixture, not evidence of the native controller's current catalog."
+    }
+  ],
+  "basis": "Captured actual React public-contract reproducers plus matching current main source; cross-context draft/consent defects do not establish successful stale native commit. Accessibility based on UI04/05/06, not blanket WCAG claim.",
+  "updatedAt": "2026-09-08T09:40:33.210Z"
+}

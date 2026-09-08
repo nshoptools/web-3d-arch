@@ -1,0 +1,19 @@
+product 3
+mode mechanics
+param size 40
+param baseH 6
+param artMode 0
+param rimOn 0
+param strapZ 3
+param strapD 4
+param strapCham 0
+ring 4 -20000000 -15000000 20000000 -15000000 20000000 15000000 -20000000 15000000
+ring 4 -2000000 -50000 2000000 50000 2000002 50000 -1999998 -50000
+footprint 0 1 1
+slab 0 1 1 0 1 808795135 0 3.0
+slab 0 2 1 0 1 808795135 3.0 6
+param legoHoleH 3
+param legoRong 0
+param legoRanhOn 0
+param legoXeOn 0
+param legoTaiOn 0

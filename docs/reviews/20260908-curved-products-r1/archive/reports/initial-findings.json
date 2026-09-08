@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "review": "20260908-curved-products-review-r1",
+  "at": "2026-09-08T11:20:44.476047+00:00",
+  "status": "independent initial findings; two demonstrated defects; no release conclusion",
+  "source": {
+    "manifest": {
+      "path": "inputs/source-manifest.json",
+      "bytes": 39892,
+      "sha256": "0b0a12030d0c9dede1ceacc80f2721ec43bc31d7078b1c0831779f9ce7f50cf9"
+    },
+    "count": 218,
+    "unchanged": true,
+    "before": {
+      "path": "evidence/source-before.json",
+      "bytes": 46142,
+      "sha256": "e191a2cab44a295c4c0a8d00d5478bfba4dfcd6911f3a92192834a5259e16aaa"
+    },
+    "after": {
+      "path": "evidence/source-after.json",
+      "bytes": 46172,
+      "sha256": "3f8464a5ccf5cd0681c923a3d7d6f23952d1d28dec31d7e4a9da886334c7dc5e"
+    },
+    "scope": [
+      {
+        "file": "src/kernel/mechanics/src/mechanics.cpp",
+        "line": 1,
+        "end_line": 1131,
+        "sha256": "5e18bdea26f33e7f513a79095a1f032029fa84682d2738c43b749b3a9a912787"
+      },
+      {
+        "file": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+        "line": 1,
+        "end_line": 190,
+        "sha256": "3307c7711b918162ce6db161e8082d7ceb38316a9930a1266d2eca67900de36d"
+      },
+      {
+        "file": "src/kernel/source-assembly/src/source_assembly.cpp",
+        "line": 1,
+        "end_line": 421,
+        "sha256": "0ad9d95ccea037f5f767f914502b54bf1c209c0076e4c42404c1c12f2bdd658c"
+      }
+    ]
+  },
+  "reviewer_configuration": {
+    "actual_model": "gpt-6-astra",
+    "actual_effort": "max",
+    "effective_fast_mode": false,
+    "cli_version": "0.153.4",
+    "cli_sha256": "444a3f0008050605cae73cd9b7a2dcac61294062dfaab56dd20430fd6498518b",
+    "server_service_tier_attested": false,
+    "evidence": [
+      {
+        "path": "evidence/session-attestation.json",
+        "bytes": 1256,
+        "sha256": "dc100058399e9e231fc98ae95b3acd774cff573460fa8f790d127dab4aaf6404"
+      },
+      {
+        "path": "evidence/cli-verification.json",
+        "bytes": 291,
+        "sha256": "37609bfb4f2bea769d0d977a04205cddc8a54acc31353ff8e83d234fc144e882"
+      },
+      {
+        "path": "evidence/reviewer-effective-features.txt",
+        "bytes": 8998,
+        "sha256": "b76408ac22185402e446f4c1b8e5a03ca1d533dd2ce67c0df0581fba0f43c662"
+      },
+      {
+        "path": "inputs/parent-model-recheck.json",
+        "bytes": 557,
+        "sha256": "8a9a8fcc3fac2e1757f783bf437a8b6170bdad7cc41237f60221a51dba5b58a8"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "priority": "P1",
+      "title": "Query simplification erases full-height roof voids and accepts a positive full-volume guard",
+      "reqID": [
+        "GEO-01",
+        "GEO-02",
+        "GEO-03"
+      ],
+      "requirement_detail": "Preserve small regions/holes and account for numerical error; final mechanical guard must establish material over the entire roof/floor domain. An unresolved positive-volume residual requires refusal/unverified, not a positive lower bound.",
+      "locations": [
+        {
+          "file": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+          "line": 37,
+          "end_line": 45,
+          "sha256": "3307c7711b918162ce6db161e8082d7ceb38316a9930a1266d2eca67900de36d"
+        },
+        {
+          "file": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+          "line": 69,
+          "end_line": 90,
+          "sha256": "3307c7711b918162ce6db161e8082d7ceb38316a9930a1266d2eca67900de36d"
+        },
+        {
+          "file": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 967,
+          "end_line": 982,
+          "sha256": "5e18bdea26f33e7f513a79095a1f032029fa84682d2738c43b749b3a9a912787"
+        }
+      ],
+      "trigger": {
+        "api": "Public arch_mech_build ABI 2, AM_PREPARED_SLABS; no product instrumentation",
+        "strap_parameters": {
+          "product": 2,
+          "size": 40,
+          "baseH": 6,
+          "artMode": 0,
+          "rimOn": 0,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "lego_parameters": {
+          "product": 3,
+          "size": 40,
+          "baseH": 6,
+          "artMode": 0,
+          "rimOn": 0,
+          "legoHoleH": 3,
+          "legoRong": 0,
+          "legoRanhOn": 0,
+          "legoXeOn": 0,
+          "legoTaiOn": 0
+        },
+        "footprint_mm": [
+          [
+            -20,
+            -15
+          ],
+          [
+            20,
+            -15
+          ],
+          [
+            20,
+            15
+          ],
+          [
+            -20,
+            15
+          ]
+        ],
+        "hole_integer_xy": [
+          [
+            -2000000,
+            -50000
+          ],
+          [
+            2000000,
+            50000
+          ],
+          [
+            2000002,
+            50000
+          ],
+          [
+            -1999998,
+            -50000
+          ]
+        ],
+        "source_scale_units_per_mm": 1000000,
+        "strap_slabs_z_mm": [
+          [
+            0,
+            4.9
+          ],
+          [
+            4.9,
+            6
+          ]
+        ],
+        "lego_slabs_z_mm": [
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "hole_only_in_upper_slab": true,
+        "slit_orthogonal_width_mm": 4.998438232040614e-08,
+        "slit_area_mm2": 2e-07
+      },
+      "observed": {
+        "targets": [
+          "native MSVC",
+          "WASM Emscripten/Node"
+        ],
+        "verdict": "AM_OK (0)",
+        "exportBlocked": 0,
+        "parameters_preserved": true,
+        "strap_reported_floor_roof_mm": [
+          0.9999999,
+          0.9999999
+        ],
+        "lego_reported_roof_mm": 3,
+        "query_budget_mm": 1e-07,
+        "witness_xy_rational": [
+          "680001/1000000",
+          "17/1000"
+        ],
+        "strap_exact_z_hits": [
+          "0",
+          "1"
+        ],
+        "lego_exact_z_hits": [],
+        "intact_adjacent_control_xy_rational": [
+          "681/1000",
+          "17/1000"
+        ],
+        "strap_control_z_hits": [
+          "0",
+          "1",
+          "5",
+          "6"
+        ],
+        "lego_control_z_hits": [
+          "3",
+          "6"
+        ],
+        "strap_volume_mm3": 6697.265411245797,
+        "lego_volume_mm3": 6351.301818994563,
+        "body_bbox_mm": [
+          [
+            -20,
+            -15,
+            0
+          ],
+          [
+            20,
+            15,
+            6
+          ]
+        ],
+        "positive_void_preserved_in_exported_mesh": true
+      },
+      "expected": "Reject the unresolved/nonpositive roof with zero mesh, or compute a conservative full-domain lower bound that remains zero at this opening. Removing a laterally narrow residual does not bound its missing Z extent.",
+      "cause": "Both guards simplify the missing-material Boolean result and interpret an empty/zero-volume simplified result as complete coverage. A 1e-7 mm distance budget can erase a narrow void extending through the entire roof; subtracting that scalar from Z clearance cannot restore a valid universal roof certificate.",
+      "controls": "Strap axial shifts 2 and 4 nm accept on both targets; 8 and 40 nm reject with no mesh. LEGO 2 nm accepts; 8 nm rejects. Intact adjacent rays show the expected roof. These are positive-area voids, not zero-thickness contact remnants.",
+      "reachability_limit": "Public mechanics ABI prepared-source boundary demonstrated; not a claim that the current application/source producer emits this exact two-slab input. No end-to-end root/Rust/Worker reachability was tested.",
+      "severity_rationale": "Violates the stated conservative guard invariant on accepted integer input and actual exported mesh. The opening is sub-nanometre wide; this finding concerns certificate soundness, not a claim of printable physical slit resolution.",
+      "reproducer": {
+        "script": {
+          "path": "work/harness/reproduce-findings.ps1",
+          "bytes": 800,
+          "sha256": "83a0b26303b3c8406151336bb5696a2d4e9aa0dd21ead968f0e9e16f3e39ce00"
+        },
+        "driver": {
+          "path": "work/harness/reproduce-findings.py",
+          "bytes": 3857,
+          "sha256": "3703853faac97ff249d40e954370a1a5df7c022348032cad75435e500afaa0ce"
+        },
+        "requests": [
+          {
+            "path": "inputs/independent/roof-oblique-slit-2nm.txt",
+            "bytes": 373,
+            "sha256": "f6530a24b75cc18c8fafccd9a41346786227eb93a7b3c74d52027d7f0d0fbeaa"
+          },
+          {
+            "path": "inputs/independent/roof-oblique-slit-4nm.txt",
+            "bytes": 373,
+            "sha256": "2ba098f4b47fe0964edc031aa47e9cb03d02812af2eb8c4b0822bd4208481c03"
+          },
+          {
+            "path": "inputs/independent/roof-oblique-slit-8nm.txt",
+            "bytes": 373,
+            "sha256": "75b84c5f3054560de12e98351966975d913687b662659e60073e44780b9ec99f"
+          },
+          {
+            "path": "inputs/independent/roof-oblique-slit-40nm.txt",
+            "bytes": 373,
+            "sha256": "254d3edd21bd1473d6efe4968f29eb23c02d7b3d41d9a9d61cfa35eda20df0a8"
+          },
+          {
+            "path": "inputs/independent/lego-roof-oblique-slit-2nm.txt",
+            "bytes": 467,
+            "sha256": "b86eb3113088dd908216776f8bf628302fb79f806bd3bf6b157a99c71cecdbf5"
+          },
+          {
+            "path": "inputs/independent/lego-roof-oblique-slit-8nm.txt",
+            "bytes": 467,
+            "sha256": "1213c42096ec3669b7671ede19fcec60bd3da29ff3e14f699a1708cc3a24085a"
+          }
+        ],
+        "command": "pwsh -NoProfile -File <run>/work/harness/reproduce-findings.ps1 -Target native|wasm -Tag <fresh-tag>"
+      },
+      "evidence": [
+        {
+          "path": "reports/guard-independent-native.json",
+          "bytes": 5073,
+          "sha256": "606d161e9032c57ff7625c047ae77bd9d83dfbe70e360113310ac1716aeb1e48"
+        },
+        {
+          "path": "reports/guard-independent-wasm.json",
+          "bytes": 5073,
+          "sha256": "606d161e9032c57ff7625c047ae77bd9d83dfbe70e360113310ac1716aeb1e48"
+        },
+        {
+          "path": "reports/cavity-independent.json",
+          "bytes": 3888,
+          "sha256": "ec169aa8ff383c87e4b94b6a035cf4c0a7857bfff0ec563f6cf25cf04e4041d4"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-native/summary.json",
+          "bytes": 11372,
+          "sha256": "2c062a6098e3bda84395c1f57878d8dfad04b39af62a2adaeffcef3b3dec7c48"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-wasm/summary.json",
+          "bytes": 11379,
+          "sha256": "d056b708d2e350063a6405c0bb8365d10d7ee01da2bb15efaabf2813de64f698"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "priority": "P2",
+      "title": "Global transverse extrema miss a local strap lateral breakout in a nonconvex host",
+      "reqID": [
+        "GEO-01",
+        "GEO-03"
+      ],
+      "requirement_detail": "Strap entry chamfers require positive lateral containment (frozen ADR-002-v2.md, line 122); source holes/nonconvex boundaries must remain meaningful.",
+      "locations": [
+        {
+          "file": "src/kernel/mechanics/src/mechanics.cpp",
+          "line": 678,
+          "end_line": 701,
+          "sha256": "5e18bdea26f33e7f513a79095a1f032029fa84682d2738c43b749b3a9a912787"
+        }
+      ],
+      "trigger": {
+        "api": "Public arch_mech_build ABI 2, AM_RAISED_BODY",
+        "parameters": {
+          "product": 2,
+          "size": 40,
+          "baseH": 10,
+          "artMode": 0,
+          "rimOn": 0,
+          "strapZ": 5,
+          "strapD": 4,
+          "strapCham": 0.6
+        },
+        "footprint_mm": [
+          [
+            -20,
+            -15
+          ],
+          [
+            20,
+            -15
+          ],
+          [
+            20,
+            15
+          ],
+          [
+            5,
+            15
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            -5,
+            1
+          ],
+          [
+            -5,
+            15
+          ],
+          [
+            -20,
+            15
+          ]
+        ],
+        "analytic_host_y_interval_at_minus5_lt_x_lt_5": [
+          -15,
+          1
+        ],
+        "bore_y_interval_at_z5": [
+          -2,
+          2
+        ]
+      },
+      "observed": {
+        "targets": [
+          "native MSVC",
+          "WASM Emscripten/Node"
+        ],
+        "verdict": "AM_OK (0)",
+        "exportBlocked": 0,
+        "parameters_preserved": true,
+        "chamfer_edges_scanned": 8,
+        "chamfer_edges_active": 4,
+        "ray_x_z_rational": [
+          "123/1000",
+          "5"
+        ],
+        "exact_y_hits": [
+          "-15",
+          "-2"
+        ],
+        "control_x_z_rational": [
+          "10123/1000",
+          "5"
+        ],
+        "control_y_hits": [
+          "-15",
+          "-2",
+          "2",
+          "15"
+        ],
+        "volume_mm3": 10115.122735923536,
+        "body_bbox_mm": [
+          [
+            -20,
+            -15,
+            0
+          ],
+          [
+            20,
+            15,
+            10
+          ]
+        ],
+        "vertices": 2074,
+        "faces": 4152,
+        "edges": 6228,
+        "euler": -2,
+        "components": 1,
+        "oriented_edge_errors": 0,
+        "roof_floor_guard_mm": [
+          2.3999999,
+          2.3999999000000005
+        ]
+      },
+      "expected": "Reject STRAP_CHAMFER_LATERAL_BREAKOUT (or explicit unsupported lateral containment) instead of exporting a tunnel that opens through the parallel inner notch wall. This opening is lateral, not an intended axial mouth.",
+      "cause": "The notch segment y=1 is parallel to the bore axis: hi-lo=0, so it is skipped at line 685. The final min_u/max_u test sees the distant y=±15 extrema and passes even though the local y=1 wall is inside the radius-2 bore.",
+      "controls": "The adjacent x=10.123 section retains both walls; x=0.123 loses the upper wall over a macroscopic x interval. Deeper notch controls were retained separately; no tolerances or dimensions changed to pass.",
+      "reachability_limit": "Public child boundary on a simple valid integer nonconvex ring. This review does not establish current UI/root production of the exact ring.",
+      "severity_rationale": "Functional geometry issue with ordinary millimetre dimensions, distinct from an intentional resource refusal.",
+      "reproducer": {
+        "script": {
+          "path": "work/harness/reproduce-findings.ps1",
+          "bytes": 800,
+          "sha256": "83a0b26303b3c8406151336bb5696a2d4e9aa0dd21ead968f0e9e16f3e39ce00"
+        },
+        "driver": {
+          "path": "work/harness/reproduce-findings.py",
+          "bytes": 3857,
+          "sha256": "3703853faac97ff249d40e954370a1a5df7c022348032cad75435e500afaa0ce"
+        },
+        "requests": [
+          {
+            "path": "inputs/independent/strap-notch-1.txt",
+            "bytes": 312,
+            "sha256": "dab1b2ea3650d6f2dec74b02d95a72d7afd084ae098019e44c61142bc852ad5e"
+          }
+        ],
+        "command": "pwsh -NoProfile -File <run>/work/harness/reproduce-findings.ps1 -Target native|wasm -Tag <fresh-tag>"
+      },
+      "evidence": [
+        {
+          "path": "reports/lateral-independent.json",
+          "bytes": 4295,
+          "sha256": "bb95ba222fb73df682bd51c1d7922ee9a84c3b7bd2f3c7e70ca43cdc87e72bfe"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-native/strap-notch-1.arch",
+          "bytes": 99768,
+          "sha256": "f8d51be7866b1fff0e7e4acb4a542f45a12d714fb6e3237ec67537c2d67f2ac0"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-wasm/strap-notch-1.arch",
+          "bytes": 99768,
+          "sha256": "f8d51be7866b1fff0e7e4acb4a542f45a12d714fb6e3237ec67537c2d67f2ac0"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-native/summary.json",
+          "bytes": 11372,
+          "sha256": "2c062a6098e3bda84395c1f57878d8dfad04b39af62a2adaeffcef3b3dec7c48"
+        },
+        {
+          "path": "evidence/reproduction-reviewer-final-check-wasm/summary.json",
+          "bytes": 11379,
+          "sha256": "d056b708d2e350063a6405c0bb8365d10d7ee01da2bb15efaabf2813de64f698"
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "family": "captured_corpus",
+      "target": "native",
+      "cases": 40,
+      "evidence": {
+        "path": "evidence/corpus-native/summary.json",
+        "bytes": 39074,
+        "sha256": "e3efc66d122cae347d364a30719a902f5cf29b6c1f795234ceed441de72a31a8"
+      },
+      "scope": "40 captured requests; actual child mesh readback"
+    },
+    {
+      "family": "independent_corpus_audit",
+      "target": "native",
+      "cases": 40,
+      "evidence": {
+        "path": "reports/corpus-independent-native.json",
+        "bytes": 192593,
+        "sha256": "eba38ea787aaf771e9565faa0f6ce4b947a03f73e0f667a17b96d7dba403503f"
+      },
+      "scope": "All source Z intervals and original artwork integer boundary chains; analytic style volumes; every mesh face/edge/part read"
+    },
+    {
+      "family": "source_full_surface",
+      "target": "native",
+      "cases": 12,
+      "evidence": {
+        "path": "reports/full-source-surface-native.json",
+        "bytes": 58915,
+        "sha256": "f7240771592ea882834e33bfd5a1ea7e1d0f1dbf6b6be06adb2781f6a6fb6306"
+      },
+      "scope": "12 source/material prism cases: all directed patch boundaries, planes, Z/material labels, comparison bound <=1e-8 mm"
+    },
+    {
+      "family": "resource",
+      "target": "native",
+      "cases": 16,
+      "evidence": {
+        "path": "reports/curved-resource-native.json",
+        "bytes": 9230,
+        "sha256": "009894892eda8beee2543ec35db79cc6c3929dfc87650a30797bd019922089ac"
+      },
+      "scope": "14 normal geometry, two expected resource refusals"
+    },
+    {
+      "family": "r2_guards",
+      "target": "native",
+      "cases": 22,
+      "evidence": {
+        "path": "reports/curved-r2-native.json",
+        "bytes": 9842,
+        "sha256": "7cbc21ee7bcf4783d900b7f3e18c62e5ad6693fd441f4fdfd95efb8fdf6f930d"
+      },
+      "scope": "22 frozen producer controls; independent interpretation, not universal proof"
+    },
+    {
+      "family": "source_child_suite",
+      "target": "native",
+      "cases": 140,
+      "count_unit": "cases",
+      "evidence": {
+        "path": "evidence/source-assembly/independent-child-replay/source-native-results.json",
+        "bytes": 60376,
+        "sha256": "9b62fa280f44996ef82fe022c8bb8cdb3766f8dcfb9a560e49d9d33c581a19bc"
+      },
+      "result": "all passed; producer suite, no full-feature acceptance inference"
+    },
+    {
+      "family": "mechanics_child_suite",
+      "target": "native",
+      "cases": 19,
+      "count_unit": "campaigns (199 serialized inputs)",
+      "evidence": {
+        "path": "reports/mechanics-native-tests.json",
+        "bytes": 109996,
+        "sha256": "b70af1df4e2567fe1e59d1b6d474a6d2598afb3e4ce118afd96f2e6f2363c9ee"
+      },
+      "result": "all passed; producer suite, no full-feature acceptance inference"
+    },
+    {
+      "family": "captured_corpus",
+      "target": "wasm",
+      "cases": 40,
+      "evidence": {
+        "path": "evidence/corpus-wasm/summary.json",
+        "bytes": 39035,
+        "sha256": "5a7f59e7759786be9f80042782f7dde8bb781f198a3c7e10aa9877e0fe7c30e7"
+      },
+      "scope": "40 captured requests; actual child mesh readback"
+    },
+    {
+      "family": "independent_corpus_audit",
+      "target": "wasm",
+      "cases": 40,
+      "evidence": {
+        "path": "reports/corpus-independent-wasm.json",
+        "bytes": 192591,
+        "sha256": "27ed376e6768cbe954ee8baf41ec885ed36f78d9768e542c2923ac7cd9190d0e"
+      },
+      "scope": "All source Z intervals and original artwork integer boundary chains; analytic style volumes; every mesh face/edge/part read"
+    },
+    {
+      "family": "source_full_surface",
+      "target": "wasm",
+      "cases": 12,
+      "evidence": {
+        "path": "reports/full-source-surface-wasm.json",
+        "bytes": 58915,
+        "sha256": "f7240771592ea882834e33bfd5a1ea7e1d0f1dbf6b6be06adb2781f6a6fb6306"
+      },
+      "scope": "12 source/material prism cases: all directed patch boundaries, planes, Z/material labels, comparison bound <=1e-8 mm"
+    },
+    {
+      "family": "resource",
+      "target": "wasm",
+      "cases": 16,
+      "evidence": {
+        "path": "reports/curved-resource-wasm.json",
+        "bytes": 9201,
+        "sha256": "5300ae80042822c2c9119785cd9f90f01d3bf9f3653421c906134c6f9d9dc225"
+      },
+      "scope": "14 normal geometry, two expected resource refusals"
+    },
+    {
+      "family": "r2_guards",
+      "target": "wasm",
+      "cases": 22,
+      "evidence": {
+        "path": "reports/curved-r2-wasm.json",
+        "bytes": 9842,
+        "sha256": "7cbc21ee7bcf4783d900b7f3e18c62e5ad6693fd441f4fdfd95efb8fdf6f930d"
+      },
+      "scope": "22 frozen producer controls; independent interpretation, not universal proof"
+    },
+    {
+      "family": "source_child_suite",
+      "target": "wasm",
+      "cases": 140,
+      "count_unit": "cases",
+      "evidence": {
+        "path": "evidence/source-assembly/independent-child-replay/source-wasm-results.json",
+        "bytes": 60374,
+        "sha256": "6562f43358dd9c2a5cc8778504c77542ed17a5824988c7add25748e311669cf8"
+      },
+      "result": "all passed; producer suite, no full-feature acceptance inference"
+    },
+    {
+      "family": "mechanics_child_suite",
+      "target": "wasm",
+      "cases": 19,
+      "count_unit": "campaigns (199 serialized inputs)",
+      "evidence": {
+        "path": "reports/mechanics-wasm-tests.json",
+        "bytes": 109198,
+        "sha256": "de8556734d95672ba85d8833f4fe1388d4cc6423d04aff0f342826de9cbb63a5"
+      },
+      "result": "all passed; producer suite, no full-feature acceptance inference"
+    },
+    {
+      "family": "independent_rational_material_contract",
+      "targets": [
+        "native",
+        "wasm"
+      ],
+      "cases": 16,
+      "result": "all passed: 8 exact orthogonal arrangements each target, all horizontal/vertical contacts",
+      "evidence": {
+        "path": "reports/rational-material-contract.json",
+        "bytes": 5916,
+        "sha256": "a09ab3a45a094995dd5a2a0c082bb91f609dc7097a2cb236855a0ac2ccb6f863"
+      }
+    },
+    {
+      "family": "native_in_flight_cancellation",
+      "cases": 3,
+      "result": "cancelled at stage >=3; zero published mesh; no hard latency SLA",
+      "evidence": {
+        "path": "reports/mechanics-cancellation.json",
+        "bytes": 994,
+        "sha256": "ec99cb480de31f04ee8d7a496e1f688777dd2425a1cfd6f7e59c7585ac54c756"
+      }
+    },
+    {
+      "family": "frozen_surface_parity_controls",
+      "cases": 7,
+      "result": "all passed",
+      "evidence": {
+        "path": "evidence/surface-parity-controls.log",
+        "bytes": 621,
+        "sha256": "f2ef1c72b14a9ce61955f2d8a87d4b4b4857deefe7edfb5be85f65addc38b17d"
+      }
+    },
+    {
+      "family": "captured_corpus_surface_parity",
+      "cases": 40,
+      "byte_identical": 32,
+      "retriangulated_cases": 8,
+      "paired_patches": 88,
+      "max_surface_bound_mm": 5.0884469795445387e-11,
+      "unchanged_budget_mm": 1e-08,
+      "evidence": {
+        "path": "reports/corpus-surface-parity.json",
+        "bytes": 43838,
+        "sha256": "67ed370a45f8dcc8eea0255b701065c8beecb69e2965f255c407ae6a25c4aeee"
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H-PARTITION",
+      "result": "No counterexample in tested set",
+      "detail": "Exact directed-chain conservation, split at all collinear endpoints, for P/A/P-A and every Z interval. Original captured artwork holes/islands preserved. Source full-face checks cover four modes, rim off/on, nonconvex hole, separate accent, and angled 2 nm material strip."
+    },
+    {
+      "id": "H-MATERIAL-Z",
+      "result": "No counterexample in tested set",
+      "detail": "Independent rational four-mode formulas and exhaustive orthogonal arrangement establish all contact areas for 8 inputs per target; labels and actual prism surfaces read back. Nonuniform schedules/legacy binding negatives covered by frozen child suite only."
+    },
+    {
+      "id": "H-STRAP-MOUTH",
+      "result": "F2 confirmed",
+      "detail": "1024 scanned-edge normal case and 512 active cap exercised by frozen resource tests; global transverse bounds do not ensure local lateral wall. Small nonzero mouth-band threshold completeness is not proven for all orientations."
+    },
+    {
+      "id": "H-FINAL-GUARDS",
+      "result": "F1 confirmed",
+      "detail": "All-triangle exact rational mesh witnesses refute full-volume roof lower bounds on both targets. Detached roof/floor and thin-skin controls pass, but do not prevent narrow-hole erasure."
+    },
+    {
+      "id": "H-LEGO-GROOVE",
+      "result": "No additional demonstrated defect",
+      "detail": "Reviewed outer boundary pipe construction, partial revolve, angular/minimum-three counts, streaming limits and reentrant corner support. Frozen 513-edge, seeded, and nine shallow-notch cases preserve nominal feature dimensions and pass radial/section oracles; no universal analytic guarantee for arbitrary curves/tangencies is inferred."
+    },
+    {
+      "id": "H-RESOURCE-CANCEL",
+      "result": "Finite controls passed",
+      "detail": "6000-edge groove and 200001-point inputs refuse with empty output; 14 normal resource/corner inputs still produce geometry. Three actual native observers cancel. Library query latency, adversarial maximum memory and WASM Worker cancellation remain unverified."
+    },
+    {
+      "id": "H-ROUNDBOX",
+      "result": "Not established as a defect",
+      "detail": "Tall capsule equality-branch hypothesis checked with native/WASM controls and native width sweep; all calls accepted. Floating bounds may avoid exact equality branch. No finding from code suspicion alone."
+    },
+    {
+      "id": "H-SURFACE-PARITY",
+      "result": "Conditional full-patch argument supported on finite corpus",
+      "detail": "Changed patches require identical directed boundary and consistently positive projected normals; equal oriented projected domains plus plane-slab width bounds all triangle interiors. Vertex matching alone is insufficient. Implementation uses ordinary floating arithmetic, not outward-rounded formal interval proof."
+    }
+  ],
+  "uncertainties": [
+    "Clipper2 declared derived tree could not be attested. Actual .toolchain derived tree matched the pinned upstream archive; exact supplied carry patch was applied to an own-room copy. Result fcefb0a6d112a2f44feccc3a2a86411171c0a1666fb3a3fb549d6b432448a8fe differs from declared 6316dc4c346683b329f362b78d9d2c324ad628175716f1ccd280c12d305a62cb. Results qualify this recorded upstream+patch variant; not the unavailable declared tree.",
+    "Server service tier NOT ATTESTED. Local requested default tier and fast_mode=false do not attest backend service tier.",
+    "Manifold/Clipper and actual children rebuilt; Emscripten sysroot and installed compiler tools were not rebuilt. Their selected bytes/provenance are recorded.",
+    "Captured root product-bridge.cpp is frozen build input only. No current main, Rust state, Worker, ASTF/probe/CSG root, or full application authority inferred.",
+    "F1 uses direct prepared slabs accepted by the public child ABI, with explicit matching parameter bindings; exact application/source-producer reachability not demonstrated.",
+    "Whole arbitrary Boolean/source pipeline signed error remains unverified in output. Circle flatten bounds and finite geometry tests do not supply that missing bound.",
+    "Independent mesh audit checks every face and oriented edge incidence, components, Euler, bbox, volumes and material parts. It is not an exhaustive arbitrary mesh self-intersection/vertex-link theorem.",
+    "Full source prism surface comparison uses a <=1e-8 mm comparison-only embedding and exact integer boundary chains after embedding; it is not a zero-error equivalence claim for arbitrary geometry.",
+    "No other reviewer or author conclusions/handoff read. All initial findings are independent and require parent adjudication."
+  ],
+  "refused": "Expected resource refusals and negative geometry controls are recorded separately in coverage; F1/F2 cases returned AM_OK and an exportable mesh.",
+  "notrun": [
+    "Current main/worktree/root application build, Rust, Worker, new parent ASTF/probe/CSG integrations",
+    "Backend/auth/account or external services",
+    "Network acquisition/installation, printer, slicer execution, physical fit/coupons, deployment",
+    "Full current source font/shaping/parser recapture; captured input bytes only",
+    "Frozen derive.mjs 12 derivative corpus and original root-JS-dependent oracle.mjs runner; replaced captured-corpus readback with independent readers, no main fallback",
+    "WASM shared-memory/Worker in-flight cancellation and exhaustive resource worst cases",
+    "Other reviewers/handoff/author acceptance conclusions"
+  ],
+  "independence": {
+    "other_conclusions_read": false,
+    "product_source_modified": false,
+    "child_agents_used": false,
+    "paid_or_external_services_used": false,
+    "server_tier_attested": false
+  }
+}

@@ -1,0 +1,456 @@
+[
+  {
+    "id": "K05-1280",
+    "name": "Keyboard-only Tab, typing, Space, arrow/Enter and metadata route at 1280",
+    "pass": true,
+    "observed": {
+      "pathTaken": [
+        {
+          "tag": "BUTTON",
+          "label": "Bỏ qua thanh điều hướng, tới khung thiết kế",
+          "type": "button",
+          "box": {
+            "left": 8,
+            "right": 312.3125,
+            "top": 8,
+            "bottom": 50.296875
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Bước 1 · Nguồn & màuquay lại được",
+          "type": "button",
+          "box": {
+            "left": 153.53125,
+            "right": 423.3125,
+            "top": 11.0625,
+            "bottom": 43.9375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Bước 2 · Mô hình 3Dđang mở",
+          "type": "button",
+          "box": {
+            "left": 429.3125,
+            "right": 660.75,
+            "top": 11.0625,
+            "bottom": 43.9375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Tìm nhanhCtrl K",
+          "type": "button",
+          "box": {
+            "left": 693.125,
+            "right": 839.15625,
+            "top": 15,
+            "bottom": 40
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Tải nguồnCtrl O",
+          "type": "button",
+          "box": {
+            "left": 949.484375,
+            "right": 1094.109375,
+            "top": 15,
+            "bottom": 40
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Xuất file",
+          "type": "button",
+          "box": {
+            "left": 1102.109375,
+            "right": 1188.09375,
+            "top": 15.5,
+            "bottom": 39.5
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Menu tài khoản của Test A",
+          "type": "button",
+          "box": {
+            "left": 1196.09375,
+            "right": 1270,
+            "top": 15.5,
+            "bottom": 39.5
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Xuất file? — Kết quả dựng: chưa kiểm",
+          "type": "button",
+          "box": {
+            "left": 4,
+            "right": 69,
+            "top": 305.75,
+            "bottom": 361.75
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Gập bảng\\",
+          "type": "button",
+          "box": {
+            "left": 285.96875,
+            "right": 405,
+            "top": 66,
+            "bottom": 91
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mở cài đặt máy in và hiệu chuẩn",
+          "type": "button",
+          "box": {
+            "left": 99,
+            "right": 392,
+            "top": 429.609375,
+            "bottom": 467.609375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Xuất để kiểm tra",
+          "type": "button",
+          "box": {
+            "left": 97,
+            "right": 249.59375,
+            "top": 846.09375,
+            "bottom": 884.09375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Cài đặt của đường xuất này4 thiết lập",
+          "type": "button",
+          "box": {
+            "left": 98,
+            "right": 393,
+            "top": 514.46875,
+            "bottom": 549.3125
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "filename",
+          "type": "text",
+          "box": {
+            "left": 197,
+            "right": 383,
+            "top": 563.3125,
+            "bottom": 597.3125
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "errorMm",
+          "type": "text",
+          "box": {
+            "left": 246.078125,
+            "right": 330.078125,
+            "top": 636.4375,
+            "bottom": 670.4375
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "inspection",
+          "type": "checkbox",
+          "box": {
+            "left": 110,
+            "right": 126,
+            "top": 737.6875,
+            "bottom": 753.6875
+          }
+        },
+        {
+          "tag": "SELECT",
+          "label": "Hoa văn hướng lênLật hoa văn xuống và đặt đáy trên bàn",
+          "field": "orientation",
+          "type": "select-one",
+          "box": {
+            "left": 118,
+            "right": 383,
+            "top": 511.609375,
+            "bottom": 552.609375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Hồ sơ kết quả xuất1 hồ sơ",
+          "type": "button",
+          "box": {
+            "left": 87,
+            "right": 404,
+            "top": 514.6875,
+            "bottom": 549.53125
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Tải hồ sơ kết quả: keyboard.stl",
+          "receipt": "KEYBOARD",
+          "type": "button",
+          "box": {
+            "left": 108,
+            "right": 260.703125,
+            "top": 937.953125,
+            "bottom": 975.953125
+          }
+        }
+      ],
+      "calls": [
+        {
+          "id": 7,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "filename",
+            "value": "Bàn phím thật"
+          },
+          "pending": true
+        },
+        {
+          "id": 8,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "errorMm",
+            "value": "0,008"
+          },
+          "pending": true
+        },
+        {
+          "id": 9,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "inspection",
+            "value": true
+          },
+          "pending": true
+        },
+        {
+          "id": 10,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "orientation",
+            "value": "down"
+          },
+          "pending": true
+        },
+        {
+          "id": 11,
+          "method": "dispatch",
+          "input": {
+            "type": "export.receipt",
+            "id": "KEYBOARD"
+          },
+          "pending": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "K05-320",
+    "name": "Keyboard-only Tab, typing, Space, arrow/Enter and metadata route at 320",
+    "pass": true,
+    "observed": {
+      "pathTaken": [
+        {
+          "tag": "BUTTON",
+          "label": "Đóng",
+          "type": "button",
+          "box": {
+            "left": 235.46875,
+            "right": 307,
+            "top": 441,
+            "bottom": 465
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Mở cài đặt máy in và hiệu chuẩn",
+          "type": "button",
+          "box": {
+            "left": 26,
+            "right": 294,
+            "top": 804.609375,
+            "bottom": 842.609375
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Xuất để kiểm tra",
+          "type": "button",
+          "box": {
+            "left": 24,
+            "right": 176.59375,
+            "top": 1239.21875,
+            "bottom": 1277.21875
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Cài đặt của đường xuất này4 thiết lập",
+          "type": "button",
+          "box": {
+            "left": 25,
+            "right": 295,
+            "top": 692.59375,
+            "bottom": 746.28125
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "filename",
+          "type": "text",
+          "box": {
+            "left": 35,
+            "right": 221,
+            "top": 783.125,
+            "bottom": 817.125
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "errorMm",
+          "type": "text",
+          "box": {
+            "left": 35,
+            "right": 119,
+            "top": 879.09375,
+            "bottom": 913.09375
+          }
+        },
+        {
+          "tag": "INPUT",
+          "label": "",
+          "field": "inspection",
+          "type": "checkbox",
+          "box": {
+            "left": 37,
+            "right": 53,
+            "top": 712.34375,
+            "bottom": 728.34375
+          }
+        },
+        {
+          "tag": "SELECT",
+          "label": "Hoa văn hướng lênLật hoa văn xuống và đặt đáy trên bàn",
+          "field": "orientation",
+          "type": "select-one",
+          "box": {
+            "left": 35,
+            "right": 285,
+            "top": 816.90625,
+            "bottom": 857.90625
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Hồ sơ kết quả xuất1 hồ sơ",
+          "type": "button",
+          "box": {
+            "left": 14,
+            "right": 306,
+            "top": 1056.90625,
+            "bottom": 1091.75
+          }
+        },
+        {
+          "tag": "BUTTON",
+          "label": "Tải hồ sơ kết quả: keyboard.stl",
+          "receipt": "KEYBOARD",
+          "type": "button",
+          "box": {
+            "left": 35,
+            "right": 187.703125,
+            "top": 1176.171875,
+            "bottom": 1214.171875
+          }
+        }
+      ],
+      "calls": [
+        {
+          "id": 7,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "filename",
+            "value": "Bàn phím thật"
+          },
+          "pending": true
+        },
+        {
+          "id": 8,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "errorMm",
+            "value": "0,008"
+          },
+          "pending": true
+        },
+        {
+          "id": 9,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "inspection",
+            "value": true
+          },
+          "pending": true
+        },
+        {
+          "id": 10,
+          "method": "dispatch",
+          "input": {
+            "type": "export.configure",
+            "id": "stl-union",
+            "projectRevision": 0,
+            "field": "orientation",
+            "value": "down"
+          },
+          "pending": true
+        },
+        {
+          "id": 11,
+          "method": "dispatch",
+          "input": {
+            "type": "export.receipt",
+            "id": "KEYBOARD"
+          },
+          "pending": true
+        }
+      ]
+    }
+  }
+]

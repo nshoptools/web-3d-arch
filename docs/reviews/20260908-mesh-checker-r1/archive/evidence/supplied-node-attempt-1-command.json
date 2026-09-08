@@ -1,0 +1,13 @@
+{
+  "command": [
+    "D:\\VoSon\\Code\\web-3d-arch\\.toolchain\\emsdk\\node\\24.19.0_64bit\\node.exe",
+    "--test",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\review-source\\tests\\final-scene\\qualification.test.mjs",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\review-source\\tests\\final-scene\\provider.test.mjs",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\review-source\\tests\\final-scene\\provider-analysis.test.mjs",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\review-source\\tests\\final-scene\\material-ledger.test.mjs",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\review-source\\tests\\final-scene\\gates.test.mjs"
+  ],
+  "exit": 0,
+  "at": "2026-09-08T09:21:40.9050997Z"
+}

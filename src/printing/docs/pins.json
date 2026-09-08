@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-08",
+  "core": {
+    "id": "3MFConsortium/lib3mf",
+    "version": "2.5.0",
+    "release": "https://github.com/3MFConsortium/lib3mf/releases/tag/v2.5.0",
+    "archives": [
+      {
+        "name": "lib3mf-2.5.0-source-with-submodules.zip",
+        "url": "https://github.com/3MFConsortium/lib3mf/releases/download/v2.5.0/lib3mf-2.5.0-source-with-submodules.zip",
+        "size": 58890676,
+        "sha256": "46914f7c7a82ee0839fdd09b339daf621540d5c8d8904b2a0449fd67353dd7cb",
+        "upstreamDigest": "sha256:46914f7c7a82ee0839fdd09b339daf621540d5c8d8904b2a0449fd67353dd7cb"
+      },
+      {
+        "name": "lib3mf-2.5.0-Windows.zip",
+        "url": "https://github.com/3MFConsortium/lib3mf/releases/download/v2.5.0/lib3mf-2.5.0-Windows.zip",
+        "size": 2310943,
+        "sha256": "8e185bc19e5d544c3c1e489fd8f8fcecfb0530def36e5c8bcc81bebf2ac96aa1",
+        "upstreamDigest": "sha256:8e185bc19e5d544c3c1e489fd8f8fcecfb0530def36e5c8bcc81bebf2ac96aa1"
+      },
+      {
+        "name": "lib3mf-wasm-2.5.0.zip",
+        "url": "https://github.com/3MFConsortium/lib3mf/releases/download/v2.5.0/lib3mf-wasm-2.5.0.zip",
+        "size": 591265,
+        "sha256": "bc62f7b3f5337ecd71591e87e70b8e8dfb81733cd1508efe175e64c97235117a",
+        "upstreamDigest": "sha256:bc62f7b3f5337ecd71591e87e70b8e8dfb81733cd1508efe175e64c97235117a"
+      }
+    ],
+    "sourceCommit": "64bb454d1fcb53effa57d3cef752a10d740d41a2",
+    "sourceDate": "2026-02-24T17:23:52Z"
+  },
+  "runtime": {
+    "fflate": "0.8.3",
+    "@xmldom/xmldom": "0.9.12"
+  },
+  "qualification": "Candidate implementation; not a complete G5/G6 release qualification.",
+  "toolchain": {
+    "os": "Microsoft Windows NT 10.0.26200.0",
+    "cmake": "cmake version 4.4.3",
+    "node": "v24.19.0",
+    "emscripten": "emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 6.0.9 (4e4223852a0835923411059a3929907d7df1232e)",
+    "ninja": "1.13.2.git.kitware.jobserver-pipe-1",
+    "powershell": "7.6.5"
+  },
+  "oracle": {
+    "numpy": "2.5.3",
+    "trimesh": "4.12.2",
+    "networkx": "3.6.1",
+    "lxml": "6.1.2.0"
+  }
+}

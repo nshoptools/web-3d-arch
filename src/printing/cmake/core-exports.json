@@ -1,0 +1,18 @@
+[
+  "_malloc",
+  "_free",
+  "_arch3mf_abi_version",
+  "_arch3mf_create",
+  "_arch3mf_destroy",
+  "_arch3mf_error",
+  "_arch3mf_add_material",
+  "_arch3mf_add_part",
+  "_arch3mf_add_part_range",
+  "_arch3mf_assembly_id",
+  "_arch3mf_metadata",
+  "_arch3mf_attachment",
+  "_arch3mf_validate_output",
+  "_arch3mf_finish",
+  "_arch3mf_bytes",
+  "_arch3mf_size"
+]

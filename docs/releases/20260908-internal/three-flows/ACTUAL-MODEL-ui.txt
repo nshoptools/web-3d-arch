@@ -1,0 +1,134 @@
+Bỏ qua thanh điều hướng, tới khung thiết kế
+W3
+web‑3d‑arch
+Bước 1 · Nguồn & màu
+quay lại được
+Bước 2 · Mô hình 3D
+đang mở
+Tìm nhanh
+Ctrl K
+Trực tuyến
+Tải nguồn
+Ctrl O
+Xuất file
+53bce713-414c-4462-962f-2f4e1b4443a4
+Ảnh nguồn
+Sản phẩm
+Lớp màu
+3
+— 3 vật liệu trong bảng màu
+Thông số
+Xuất file
+đạt
+— Kết quả dựng: đã kiểm đạt
+Thư viện
+1
+— 1 dự án trong thư viện
+Thư viện
+
+Dự án, sao lưu, cài đặt và trợ giúp
+
+Gập bảng
+\
+Tên dự án
+Có thay đổi chưa lưu
+Bản sửa 2 · chưa từng lưu
+Lưu dự án
+Ctrl S
+
+“Đã lưu” chỉ hiện sau khi commit được xác nhận. Thao tác trong vài trăm mili giây cuối trước sự cố có thể chưa nằm trong commit.
+
+Dự án mới
+
+Tạo thêm một dự án khác. Dự án đang mở không bị đóng cho tới khi nhân xác nhận đã tạo xong.
+
+Loại sản phẩm
+Móc khóa — Tấm 2,5D có lỗ móc và gờ.
+Keycap — Trụ tương thích kiểu MX và khay switch.
+Dây đeo — Lỗ luồn dây và slot.
+Ngàm khối — Lưới lỗ ngàm, rãnh và tai gióng.
+Charm cài dép — Nút cài, cổ và vành.
+Loại sản phẩm quyết định bộ thông số và ràng buộc lắp ghép. Đổi lại sau được, và nhân sẽ hỏi trước khi đổi.
+Sau khi tạo xong, mở
+Tải tệp ảnh hoặc SVG
+Chọn emoji
+Gõ chữ
+Không mở gì, tôi tự chọn
+Chỉ là đường điều hướng: giao diện không tự gửi lệnh nguồn thay bạn.
+Tạo dự án
+Mở gói dự án đã có
+
+Gói cứu do chính ứng dụng này xuất ra (*.arch-project.zip). Nhân kiểm schema, đường dẫn, CRC và SHA-256 rồi mới tạo bản sao; hỏng ở bước nào thì không có dự án nào được tạo.
+
+Dự án đã lưu
+1/40
+chưa có ảnh
+final-keychain-smoke
+Móc khóa · 19:50 8/9/26 · 48,6 kB (ước lượng)
+Chưa có bản sao nào được xác nhận
+Mở
+Xóa
+Đang dùng 7,8 kB / 10.737,43 MB
+số ước lượng
+
+Mức dùng và hạn mức của origin do nhân báo. Đây là ước lượng của kho trình duyệt, không phải dung lượng ổ đĩa.
+
+Sao lưu và gói dự án
+Cài đặt và trợ giúp
+Cài đặt cá nhân
+Kết nối AI
+Chi phí của tôi
+Nhật ký và chẩn đoán
+Bảng phím tắt
+Giới thiệu, bản dựng và giấy phép
+‹
+Gập bảng thiết lập
+Chỉ số
+Khung xem
+Gợi ý
+Kích thước
+48 × 32 × 3,2 mm
+Bộ phận
+3
+Tam giác
+1.900
+Kiểm mesh
+đã kiểm đạt
+▾ Khung xem
+Vừa khung
+F
+Lưới
+G
+Nhìn từ trên
+T
+Nghiêng
+I
+Nhìn trước
+P
+Giữa bàn
+C
+ADAPTER_CAPABILITY_REQUIRED
+Đo
+M
+Khối đang chọn
+— không chọn khối nào
+source:slab:9734118213826577556 · body
+source:slab:2945095659212322029 · region
+source:slab:8115522688655946948 · region
+mech:keyring · body
+Cùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set.
+Chi tiết khối
+Nhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.
+Thế hệ tài liệu 2
+Mô hình đang vẽ: bản sửa 2
+1 vấn đề cần xem
+Mở nhật ký
+
+PROPOSAL_REQUIRED
+
+Tách tầng
+Xoay bằng chuột trái, dời bằng chuột phải hoặc hai ngón, lăn để phóng. F vừa khung, M đo trên lưới tessellation — không phải phép đo vật in.
+Quay lại
+Xuất (7 lựa chọn)
+Đã xong: Nhân đã nhận xác nhận.
+Đã chuyển sang bước 2.

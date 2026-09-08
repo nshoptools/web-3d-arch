@@ -1,0 +1,14 @@
+[
+  {
+    "original": "src/integration/source-catalog.mjs",
+    "fixture": "tests/release/fixtures/integration/source-catalog.mjs",
+    "sha256": "a3199101237836ca9d6753fe3116ec9fee1e9e53678f0a7537924a5d7e8896cd",
+    "bytes": 12137
+  },
+  {
+    "original": "src/input/source-contract.mjs",
+    "fixture": "tests/release/fixtures/input/source-contract.mjs",
+    "sha256": "94553265d3b1b513ce712a6dc599835191bd2037bdefe7d74c685268740bf9ed",
+    "bytes": 7324
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "src/storage/store.mjs": "4f851726edc9fee113d616233d15f4947916374f78721f5fd7311c0cd152c542",
+  "src/storage/package.mjs": "6abd31a50436dcbeff9f3894d861281a0dbb1fee8e7ede0f06f318d9aa4c773f",
+  "src/app/jobs.mjs": "cf061887dcfde6e255a333f20b938dccdd79a454c09cefa5ba2bfcd77118ddcb",
+  "src/ui/account/SettingsDialog.tsx": "9de2b98863bd61d4f2f045c7e9be984aeb8d65a202d999b4ef9ad0628ea04d19",
+  "src/ui/text/TextControls.tsx": "929c3478d26ebe06bef73212a6d662ca50f21f71fc587d136e3d6cf4c02e812e",
+  "src/app/projects.mjs": "09b92a3221c88451218ac20653ad0538b541c6915ded5392d3457fe89660f2cb",
+  "src/integration/product-source-contexts.mjs": "470da3185fc1a3daa5f1bc18964d84b8cc8afdb108f3b328faf10b9cabf1c245"
+}

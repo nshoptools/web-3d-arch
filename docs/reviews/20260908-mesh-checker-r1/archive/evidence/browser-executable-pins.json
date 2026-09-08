@@ -1,0 +1,101 @@
+{
+  "at": "2026-09-08T09:45:01.4535563Z",
+  "note": "Installed pinned browser executables, read-only. Live browser versions are in each browser result; process command lines were not captured.",
+  "files": [
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\chrome_proxy.exe",
+      "bytes": 2553344,
+      "sha256": "ebd42fcdfdbf0190e5529b52007e8db63f90278be0fc9f50b90335816ad0658b"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\chrome_pwa_launcher.exe",
+      "bytes": 3182592,
+      "sha256": "6cecc8211f28dbc4de35a273bfca52a7ad412369b3619742464a2affaa3a8b41"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\chrome.exe",
+      "bytes": 4508160,
+      "sha256": "9b07943f834485b43c9d54caea2951c78715f9f07070a80ab6658465ebd3e711"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\elevated_tracing_service.exe",
+      "bytes": 4485120,
+      "sha256": "366c945c051d26aa7bf8bcf47e7e253150f3374c2c0242e46cd69d3574b7a8d2"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\elevation_service.exe",
+      "bytes": 3840512,
+      "sha256": "c1578332b06ead38adc70199f9d60028d9e57b44b3007bea85c098e564e11ee6"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\notification_helper.exe",
+      "bytes": 2786304,
+      "sha256": "082bbd227a9b58282b54a20c3ffa52a669d47b130dff7551c0ce1cd4953905c2"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium-1243\\chrome-win64\\setup.exe",
+      "bytes": 6154240,
+      "sha256": "1b18972e19dedd6a8adc33d1ddbf91fffcc202d27e273920305922e6f5321db9"
+    },
+    {
+      "path": ".toolchain\\playwright\\chromium_headless_shell-1243\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+      "bytes": 211550720,
+      "sha256": "addfa79abb060e1e514e155ed745d4bf96140bca402735958bb4e223aea0b98c"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\firefox.exe",
+      "bytes": 1362432,
+      "sha256": "425a0a0fb606f567a303bdcea727476e124c0deb589050b13668af688da17fcb"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\nmhproxy.exe",
+      "bytes": 653312,
+      "sha256": "1300d1ff8876bb531e4a421f934f22f35eda2060cd5a8389c16510ee33000e83"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\pingsender.exe",
+      "bytes": 72192,
+      "sha256": "df07bd91cd2edee73636a74359b28b153759887f87cb53598ce0eebfeaa91617"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\plugin-container.exe",
+      "bytes": 193536,
+      "sha256": "797680460a53aab09e5fd634bea71bb8785ccd97bcff998b92213ef0d6f9ee42"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\private_browsing.exe",
+      "bytes": 36352,
+      "sha256": "b7991850f6f89fffdab3aad4ca7f58a7e947c78a57917148a93a002b21bce356"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\desktop-launcher\\desktop-launcher.exe",
+      "bytes": 391680,
+      "sha256": "64970591a7d5e35e1766d1834832077f378e9839b25be40e6dc336d9187b761a"
+    },
+    {
+      "path": ".toolchain\\playwright\\firefox-1543\\firefox\\uninstall\\helper.exe",
+      "bytes": 1384407,
+      "sha256": "6ffa9b656209c3bfa1ddb69422d6958c5d479686c9da7217994a3bf2ec61f329"
+    },
+    {
+      "path": ".toolchain\\playwright\\webkit-2359\\Playwright.exe",
+      "bytes": 202752,
+      "sha256": "6dafcf2b72f53cfebeb0fcb44f85203b3f5dd1e09be47e0e02eeaaacf623bef3"
+    },
+    {
+      "path": ".toolchain\\playwright\\webkit-2359\\WebKitGPUProcess.exe",
+      "bytes": 10752,
+      "sha256": "dc5fcd801d29299becf7c6971c4c95a7eca45b46a955406318bdd0ab971825fb"
+    },
+    {
+      "path": ".toolchain\\playwright\\webkit-2359\\WebKitNetworkProcess.exe",
+      "bytes": 10752,
+      "sha256": "4ac8a531c55e895f4bdc885d6a8ab56617a74d8386d26c403437fef8906727b9"
+    },
+    {
+      "path": ".toolchain\\playwright\\webkit-2359\\WebKitWebProcess.exe",
+      "bytes": 10752,
+      "sha256": "cc25ded2251e6acd84106dbd834b9f765f2cf736f7e206dd6a1e9d10b3289988"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 - Ngày/phiên bản [cấu hình ghế](seat-config.json) đã áp dụng:
 - Công cụ / phiên bản; cách gọi hoặc tiếp tục phiên:
 - Model yêu cầu / model thực tế (model đích nếu dùng alias):
-- Effort / chế độ thực tế (nếu dùng Ultracode: xác minh chế độ đã bật và workflows khả dụng):
+- Effort / chế độ thực tế (mọi lượt Opus hiện hành phải dùng Max, Ultracode tắt):
 - Fast mode thực tế (Codex/Opus phải tắt theo cấu hình hiện hành):
 - Bằng chứng xác minh cấu hình (đường dẫn trong phòng review / metadata phiên):
 - Kiểm tra lựa chọn mới mạnh hơn: ngày, nguồn, kết quả / điều chưa xác minh:

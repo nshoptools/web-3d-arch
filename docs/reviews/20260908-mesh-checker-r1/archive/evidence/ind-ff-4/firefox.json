@@ -1,0 +1,1326 @@
+{
+  "crossOriginIsolated": true,
+  "trace": [
+    {
+      "name": "rectangular-solid",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 42,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 6
+      }
+    },
+    {
+      "name": "slanted-tetrahedron",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 6,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 4,
+        "triangles": 4,
+        "parts": 1,
+        "bytes": 312,
+        "components": 1,
+        "milliseconds": 2.0799999999999983
+      }
+    },
+    {
+      "name": "open-solid",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE",
+      "checks": {
+        "transport": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_EDGE_INCIDENCE",
+          "details": {
+            "edge": "0:2",
+            "incidence": 1
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 11,
+        "parts": 1,
+        "bytes": 496,
+        "milliseconds": 1.4600000000000009
+      }
+    },
+    {
+      "name": "inverted-solid",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_COMPONENT_WINDING",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_COMPONENT_WINDING",
+          "details": {
+            "part": 0,
+            "nesting": 0
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 42,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 7.400000000000006
+      }
+    },
+    {
+      "name": "duplicate-face",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_EDGE_INCIDENCE",
+      "checks": {
+        "transport": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_EDGE_INCIDENCE",
+          "details": {
+            "edge": "0:2",
+            "incidence": 3
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 13,
+        "parts": 1,
+        "bytes": 520,
+        "milliseconds": 1.3599999999999959
+      }
+    },
+    {
+      "name": "collinear-tetrahedron",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_DEGENERATE",
+      "checks": {
+        "transport": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_DEGENERATE",
+          "details": {
+            "face": 0
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 4,
+        "triangles": 4,
+        "parts": 1,
+        "bytes": 312,
+        "milliseconds": 0.9600000000000009
+      }
+    },
+    {
+      "name": "disconnected-vertex-link",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_VERTEX_LINK",
+      "checks": {
+        "transport": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_VERTEX_LINK",
+          "details": {
+            "vertex": 0
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 7,
+        "triangles": 8,
+        "parts": 1,
+        "bytes": 432,
+        "milliseconds": 1.4000000000000021
+      }
+    },
+    {
+      "name": "two-separated-shells",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 7.840000000000003
+      }
+    },
+    {
+      "name": "self-crossing-shells",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_SELF_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_SELF_INTERSECTION",
+          "details": {
+            "faces": [
+              12,
+              6
+            ],
+            "dimension": 1,
+            "shared": []
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 31,
+        "exactPairs": 25,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 5.740000000000002
+      }
+    },
+    {
+      "name": "touching-unwelded-shell-vertex",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_SELF_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_SELF_INTERSECTION",
+          "details": {
+            "faces": [
+              6,
+              12
+            ],
+            "dimension": 0,
+            "shared": []
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 109,
+        "exactPairs": 85,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 7.16
+      }
+    },
+    {
+      "name": "proper-cavity",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 7.859999999999999
+      }
+    },
+    {
+      "name": "incorrect-cavity-winding",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_COMPONENT_WINDING",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_COMPONENT_WINDING",
+          "details": {
+            "part": 0,
+            "nesting": 1
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 7.840000000000003
+      }
+    },
+    {
+      "name": "island-inside-cavity",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 162,
+        "exactPairs": 126,
+        "containmentWork": 72,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 24,
+        "triangles": 36,
+        "parts": 1,
+        "bytes": 1176,
+        "components": 3,
+        "milliseconds": 10.559999999999999
+      }
+    },
+    {
+      "name": "two-material-interior-crossing",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_MATERIAL_INTERSECTION",
+          "details": {
+            "faces": [
+              12,
+              6
+            ]
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 31,
+        "exactPairs": 25,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 6.5
+      }
+    },
+    {
+      "name": "contained-material",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_CONTAINMENT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_MATERIAL_CONTAINMENT",
+          "details": {
+            "part": 1,
+            "other": 0,
+            "vertex": 8
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 8.100000000000001
+      }
+    },
+    {
+      "name": "coincident-material",
+      "expected": "fail",
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_MATERIAL_COINCIDENT_INTERIOR",
+          "details": {
+            "faces": [
+              0,
+              12
+            ]
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 2,
+        "exactPairs": 2,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 3.4399999999999977
+      }
+    },
+    {
+      "name": "shared-material-face",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "pass",
+        "unionTopology": "requires-union-readback"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 192,
+        "exactPairs": 168,
+        "containmentWork": 12,
+        "sharedFacePairs": 4,
+        "boundaryContacts": 60,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 10.400000000000002
+      }
+    },
+    {
+      "name": "material-in-empty-cavity",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "requires-union-readback"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 162,
+        "exactPairs": 126,
+        "containmentWork": 48,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 24,
+        "triangles": 36,
+        "parts": 2,
+        "bytes": 1216,
+        "components": 3,
+        "milliseconds": 10.54
+      }
+    },
+    {
+      "name": "edge-only-material-contact",
+      "expected": "unverified",
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_ZERO_AREA_CONTACT",
+          "details": {
+            "parts": "0:1"
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 164,
+        "exactPairs": 140,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 46,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 10.080000000000005
+      }
+    },
+    {
+      "name": "point-only-material-contact",
+      "expected": "unverified",
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_ZERO_AREA_CONTACT",
+          "details": {
+            "parts": "0:1"
+          }
+        }
+      ],
+      "stats": {
+        "candidatePairs": 144,
+        "exactPairs": 120,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 25,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 9.840000000000003
+      }
+    },
+    {
+      "name": "binary64-small-gap",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "requires-union-readback"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 8.360000000000003
+      }
+    },
+    {
+      "name": "subnormal-solid",
+      "expected": "pass",
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 54,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 6.240000000000002
+      }
+    },
+    {
+      "name": "real-worker-cancel",
+      "code": "CANCELLED"
+    },
+    {
+      "name": "real-worker-reset",
+      "code": "PRIVATE_RESET"
+    },
+    {
+      "name": "watchdog-100ms",
+      "code": "MESH_WATCHDOG"
+    },
+    {
+      "name": "worker-stale-id",
+      "code": "MESH_WORKER_PROTOCOL"
+    },
+    {
+      "name": "full-distinct-identities",
+      "expectedGroups": 2,
+      "volumeMm3": 400,
+      "expectedVolumeMm3": 400,
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0
+            ],
+            "materialSource": 101,
+            "part": 0,
+            "rgba": 4278190335,
+            "slot": 1,
+            "sourceIndices": [
+              0
+            ]
+          },
+          {
+            "inputParts": [
+              1
+            ],
+            "materialSource": 102,
+            "part": 1,
+            "rgba": 65535,
+            "slot": 2,
+            "sourceIndices": [
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      },
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "pass",
+        "unionTopology": "requires-union-readback"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 192,
+        "exactPairs": 168,
+        "containmentWork": 24,
+        "sharedFacePairs": 4,
+        "boundaryContacts": 60,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 11.939999999999998
+      }
+    },
+    {
+      "name": "equal-slot-color-distinct-identities",
+      "expectedGroups": 2,
+      "volumeMm3": 400,
+      "expectedVolumeMm3": 400,
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0
+            ],
+            "materialSource": 101,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0
+            ]
+          },
+          {
+            "inputParts": [
+              1
+            ],
+            "materialSource": 102,
+            "part": 1,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      },
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "pass",
+        "unionTopology": "requires-union-readback"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 192,
+        "exactPairs": 168,
+        "containmentWork": 24,
+        "sharedFacePairs": 4,
+        "boundaryContacts": 60,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 11.060000000000002
+      }
+    },
+    {
+      "name": "same-full-material-union",
+      "expectedGroups": 1,
+      "volumeMm3": 400,
+      "expectedVolumeMm3": 400,
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0,
+              1
+            ],
+            "materialSource": 1,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0,
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      },
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 122,
+        "exactPairs": 106,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 12,
+        "triangles": 20,
+        "parts": 1,
+        "bytes": 696,
+        "components": 1,
+        "milliseconds": 8.899999999999999
+      }
+    },
+    {
+      "name": "neutral-analytical-union",
+      "expectedGroups": 1,
+      "volumeMm3": 400,
+      "expectedVolumeMm3": 400,
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0,
+              1
+            ],
+            "materialSource": 4294967295,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0,
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      },
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "diagnostics": [],
+      "stats": {
+        "candidatePairs": 122,
+        "exactPairs": 106,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 12,
+        "triangles": 20,
+        "parts": 1,
+        "bytes": 696,
+        "components": 1,
+        "milliseconds": 9.200000000000003
+      }
+    },
+    {
+      "name": "native-duplicate-membership",
+      "code": "MATERIAL_MAPPING_INVALID"
+    },
+    {
+      "name": "native-missing-membership",
+      "code": "FINAL_SNAPSHOT_COUNTS"
+    },
+    {
+      "name": "native-stale-source-index",
+      "code": "MATERIAL_MAPPING_STALE_SOURCE"
+    },
+    {
+      "name": "native-revision-mismatch",
+      "code": "STALE_REVISION"
+    },
+    {
+      "name": "native-union-cancel",
+      "code": "CANCELLED"
+    },
+    {
+      "name": "root-lease-ownership",
+      "releaseMessages": 1,
+      "sourceUnchanged": true
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "adjacent-source.arch",
+      "sha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+      "metadata": null
+    },
+    {
+      "name": "full-distinct-identities.arch",
+      "sha256": "adc6969cec0b178aac378d70b2e8b76520517e600a83ad34ea75c0abfa8ea9ab",
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0
+            ],
+            "materialSource": 101,
+            "part": 0,
+            "rgba": 4278190335,
+            "slot": 1,
+            "sourceIndices": [
+              0
+            ]
+          },
+          {
+            "inputParts": [
+              1
+            ],
+            "materialSource": 102,
+            "part": 1,
+            "rgba": 65535,
+            "slot": 2,
+            "sourceIndices": [
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      }
+    },
+    {
+      "name": "equal-slot-color-distinct-identities.arch",
+      "sha256": "3b95f878a410fa43c6da4c0782a402c7a48ba2c5471b63bb12a36f5999f83f03",
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0
+            ],
+            "materialSource": 101,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0
+            ]
+          },
+          {
+            "inputParts": [
+              1
+            ],
+            "materialSource": 102,
+            "part": 1,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      }
+    },
+    {
+      "name": "same-full-material-union.arch",
+      "sha256": "fa28d4a336fd8bbf4309115d6e512ea8dc6f56d87d82a22e8ab3fd3503e01398",
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0,
+              1
+            ],
+            "materialSource": 1,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0,
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      }
+    },
+    {
+      "name": "neutral-analytical-union.arch",
+      "sha256": "fa28d4a336fd8bbf4309115d6e512ea8dc6f56d87d82a22e8ab3fd3503e01398",
+      "metadata": {
+        "boundsMm": [
+          0,
+          0,
+          0,
+          20,
+          10,
+          2
+        ],
+        "coordinateFrame": "source-manufacturing-mm",
+        "format": "ARCH/1",
+        "geometry": "material-union",
+        "grouping": "slot-rgba-materialSource/1",
+        "groups": [
+          {
+            "inputParts": [
+              0,
+              1
+            ],
+            "materialSource": 4294967295,
+            "part": 0,
+            "rgba": 4294967295,
+            "slot": 1,
+            "sourceIndices": [
+              0,
+              1
+            ]
+          }
+        ],
+        "meshVerdict": "unverified",
+        "nativeWarningFlags": 0,
+        "revision": "1",
+        "sourceSnapshotGeneration": 1,
+        "sourceSnapshotId": 2,
+        "sourceSnapshotSha256": "18dedeb9b852869a61ad131153195145413759982d8ebea50539f461304de3e9",
+        "sourceUnchanged": true,
+        "version": "arch-final-scene-geometry/1"
+      }
+    }
+  ],
+  "capabilities": {
+    "text": null,
+    "raster": true,
+    "product": true,
+    "finalExport": true,
+    "finalFloat": true,
+    "finalSceneGeometry": true,
+    "printingVersions": {
+      "rootABI": 2,
+      "arch3mfABI": 1,
+      "kernel3mfABI": 2,
+      "epoch": 1
+    },
+    "geometryVersions": {
+      "mechanicsAbi": 2,
+      "mechanicsSemantics": 3,
+      "sourceAbi": 1,
+      "sourceSemantics": 2,
+      "datumExtension": 1
+    }
+  },
+  "browser": "155.0",
+  "harness": {
+    "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\cache\\bp\\ind-ff-4-f",
+    "pageMode": "new"
+  },
+  "errors": []
+}

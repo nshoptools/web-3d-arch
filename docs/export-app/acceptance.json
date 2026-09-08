@@ -1,0 +1,21 @@
+{
+ "schema":"arch-export-app-acceptance/1",
+ "scope":"implementation; not configured independent review or physical qualification",
+ "routes":[
+  {"id":"svg-color","requirement":"EXP-01","normal":"implemented","evidence":"Node committed paint exact-byte + existing prepared-font geometryToSvg; 3 browser Worker paint checks","dependency":"trusted committed-source serializer; production source selection remains parent-owned","oracle":"curves/gradient/clip/holes/color/provenance retained; no mesh operation"},
+  {"id":"svg-section","requirement":"EXP-01/GEO/OUT","normal":"implemented","evidence":"actual final helper WASM and 3 browser Workers","oracle":"20x10 blind-bore body: section at 1mm area184 with 2 rings, at3mm area200 with1 ring; in/back variant"},
+  {"id":"3mf-bambu-project","requirement":"EXP-01/OUT-01","normal":"implemented for inspection","evidence":"actual same-Module lib3mf and existing Bambu project serializer; 3 browser Workers","oracle":"real package XML/refs/slots/source IDs/sealed schedule; manual .16/.20/.25 retained; numeric three 1000mm3 parts","unverified":["slicer roundtrip in this run","physical"]},
+  {"id":"3mf-snapmaker-project","requirement":"EXP-01/OUT-01","normal":"implemented for inspection","evidence":"actual same-Module lib3mf and existing U1 project serializer; 3 browser Workers","oracle":"real package XML/refs/slots/extruders/source IDs/.25 first layer; numeric three 1000mm3 parts","unverified":["slicer roundtrip in this run","physical"]},
+  {"id":"stl-material-zip","requirement":"EXP-01/OUT-01","normal":"implemented","evidence":"actual final helper WASM and 3 browser Workers","oracle":"3 input parts to 2 slot/color groups volumes2000+1000; same color/different slot stays separate; common coordinates; same slot/different color warning"},
+  {"id":"stl-union","requirement":"EXP-01/OUT-01","normal":"implemented","evidence":"actual final helper WASM and 3 browser Workers","oracle":"overlapping cubes volume1500 not2000; normals/edge orientation; pattern-down and reflection volume120 restingZ0 without root changes"},
+  {"id":"png-viewport","requirement":"EXP-01","normal":"implemented provider binding","evidence":"real portable PNG encoder on explicitly synthetic frame; Node pixel decompression and 3 browser Workers","oracle":"2x2 RGBA with alpha; dimension/CRC failures; camera/source-view/session/cleanup staleness; displayed revision labelled","dependency":"production viewport complete-frame provider remains parent-owned"}
+ ],
+ "shared":[
+  {"requirement":"EXP-02","scope":"all applicable routes","checks":"exact controller ticket; authorization context/head/revision/state/options; WeakMap/root identity; actual ARCH hash/table and explicit trusted gates; source/frame/provider versions"},
+  {"requirement":"EXP-02","scope":"mesh","checks":"missing proof does not become invalid-input bit or stats inference; explicit inspection preserves fail/unverified; mandatory gates never bypassed"},
+  {"requirement":"EXP-02/OUT-01","scope":"3MF","checks":"actual build schedule hash binds committed domain schedule and user/profile origin to printing schedule; unknown proof disables only 3MF; invalid slot/profile/neutral Core rejected"},
+  {"requirement":"EXP-02","scope":"lifetime","checks":"own provider receipt release in finally including asynchronous cleanup race; caller model/primary/readers preserved; native generation cancel and failed output budget recover"},
+  {"requirement":"QA-02","scope":"seeded cases","checks":"24 malformed isometry/error/resource option reproducers, seed0xAE012069; no dispatch/no input mutation; counted as one regression test"}
+ ],
+ "notClaimed":["whole application composition/UI delivery","parent EngineClient RPC from our test transport","new native geometry implementation or R2 repair","full source shaping/layout/parser","actual viewport framing","slicer or printer qualification","aggregate G5/G6 feature pass"]
+}

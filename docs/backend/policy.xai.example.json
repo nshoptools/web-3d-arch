@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "allowedProviders": [
+    "xai-imagine"
+  ],
+  "quotas": {
+    "settingsBytes": 32000000,
+    "storageBytes": 240000000,
+    "storageObjects": 1000,
+    "syncBytesPerDay": 64000000,
+    "protectedRequestsPerMinute": 120,
+    "protectedConcurrency": 4,
+    "authRequestsPerMinute": 30,
+    "authConcurrency": 4
+  },
+  "ai": {
+    "requestsPerDay": 20,
+    "bytesPerDay": 120000000,
+    "concurrency": 1,
+    "money": [
+      {
+        "currency": "USD",
+        "perOperationMicros": 100000,
+        "perDayMicros": 1000000,
+        "perMonthMicros": 10000000
+      }
+    ]
+  }
+}

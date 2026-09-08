@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: accepted source owns bytes and catalog even when callers mutate both
+ok 1 - accepted source owns bytes and catalog even when callers mutate both
+  ---
+  duration_ms: 23.7546
+  type: 'test'
+  ...
+# Subtest: a font byte view with an offset is accepted without reading adjacent garbage
+ok 2 - a font byte view with an offset is accepted without reading adjacent garbage
+  ---
+  duration_ms: 8.7076
+  type: 'test'
+  ...
+# Subtest: normalization preserves original text and stable glyph placement
+ok 3 - normalization preserves original text and stable glyph placement
+  ---
+  duration_ms: 7.2406
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 215.1956

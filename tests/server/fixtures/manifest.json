@@ -1,0 +1,33 @@
+{
+  "fixtureVersion": 1,
+  "date": "2026-09-08",
+  "fixtures": [
+    {
+      "path": "square-1024.png",
+      "sha256": "e8fd5d7f171b7785ac9ec88ce6dea7bbbaba6b1b5d6815fcfb1698284a663898",
+      "bytes": 5399,
+      "width": 1024,
+      "height": 1024,
+      "source": "Synthetic 1024-square RGB(25,75,125) with white 16-square at top-left",
+      "rights": "Created in this run; no external media",
+      "encoder": "System.Drawing GDI+ native PNG/JPEG",
+      "oracle": "GDI+ decode, dimensions and two color samples independent of Node adapter parser",
+      "expected": "accept static PNG/JPEG, private artifact after job success"
+    },
+    {
+      "path": "square-1024.jpg",
+      "sha256": "163f8d1e72d29bf192b2b26810e2f6bec1196f9503dcc120c06d63708b4a40dd",
+      "bytes": 17016,
+      "width": 1024,
+      "height": 1024,
+      "source": "Synthetic 1024-square RGB(25,75,125) with white 16-square at top-left",
+      "rights": "Created in this run; no external media",
+      "encoder": "System.Drawing GDI+ native PNG/JPEG",
+      "oracle": "GDI+ decode, dimensions and two color samples independent of Node adapter parser",
+      "expected": "accept static PNG/JPEG, private artifact after job success"
+    }
+  ],
+  "contractFixture": "xai-contract.fixture.json",
+  "contractSha256": "7b441827ec51e0e34a9bb667617e87239954b8db72957f7937c87945b436eb62",
+  "liveProviderCaptured": false
+}

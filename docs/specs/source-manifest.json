@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-08",
+  "scope": "Permanent packaged inputs only",
+  "files": [
+    {
+      "id": "bambu-project-reference-v1",
+      "path": "tests/fixtures/printing-reference/v1/bambu-project.3mf",
+      "bytes": 11726478,
+      "sha256": "361859e04e686452a60b7e9cc3104e7f4e173ca35979dd2311b1d6c27664ca75",
+      "kind": "project-3mf",
+      "purpose": "Reference structure/adapter experiments; not a verified slicer golden",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    },
+    {
+      "id": "u1-project-invalid-slots-v1",
+      "path": "tests/fixtures/printing-reference/v1/u1-inconsistent-slots.3mf",
+      "bytes": 11695870,
+      "sha256": "deb8796125677b26936a4a76059a969b0c103432588827e94ab0f43c5092cece",
+      "kind": "project-3mf",
+      "purpose": "Negative slot-mapping fixture; never a U1 golden",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    },
+    {
+      "id": "printer-beds-reference-v1",
+      "path": "tests/fixtures/printing-reference/v1/printer-beds.json",
+      "bytes": 643081,
+      "sha256": "56a95d16b537feb3b806ea7d6b8d99aa75311a4764acaa0075a34665a8ed795d",
+      "kind": "printer-beds",
+      "purpose": "1057 unqualified printer-bed records for parser/placement audits",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    },
+    {
+      "id": "bambu-settings-v1",
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-bambu.js",
+      "bytes": 43485,
+      "sha256": "190f78c5e05e08d511edb42a5e65ff00f47cd60aa32b4aca34197fc3d11d22f9",
+      "kind": "json-literal",
+      "purpose": "Bambu settings literal; not executable code",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    },
+    {
+      "id": "u1-settings-v1",
+      "path": "tests/fixtures/slicer-profiles/v1/mau-3mf-u1.js",
+      "bytes": 25487,
+      "sha256": "e4070112c126244d2df6a0eff7295a2e3198a03b4025e49a686a5978bc490643",
+      "kind": "json-literal",
+      "purpose": "U1 settings literal; not executable code",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    },
+    {
+      "id": "parameters-core-v1",
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+      "kind": "parameter-catalog",
+      "purpose": "126 fields and included mode defaults; semantic validation pending O-02",
+      "authority": "Internal reference/test data, not certified product or hardware truth"
+    }
+  ]
+}

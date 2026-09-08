@@ -1,0 +1,1022 @@
+{
+  "version": "arch-pending-imported-csg/1",
+  "createdUtc": "2026-09-08T12:21:26.950676+00:00",
+  "productionCapability": "gated",
+  "implementationOnly": true,
+  "configuredReview": false,
+  "fast": "unverified",
+  "sourceCheckedManifestSha256": "5221c302b9671d30f82731a140d104b31eb2d8c467a0c957cf72e5da383e50dd",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "651461ed76060a9904a01427bc97fdc263595a0047390a0f4aa199267d5fc2fd",
+      "bytes": 11752
+    },
+    {
+      "path": "production.patch",
+      "sha256": "7d6d2933099193113d92975ad1e88d0b87859938ccefc2b8f0d8aa9f3e7127f6",
+      "bytes": 6174746
+    },
+    {
+      "path": "tests-tools.patch",
+      "sha256": "09310a360faeb5b2da41f83437ec145f851d9faa6b0310286039c87b579113fe",
+      "bytes": 76561
+    }
+  ],
+  "files": [
+    {
+      "path": "src/core/engine-client.mjs",
+      "preimageSha256": "2b0d4965f912cc5302f8a1ade5ebfa27e36ec7a34504287ed18a03ce7fc1973b",
+      "postimageSha256": "a7df90a2e6ecb78932e2975cf60df3aafde5555e32c7c9eade77720fe7fd965a",
+      "postimageBytes": 27837,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/core/engine-worker.mjs",
+      "preimageSha256": "26949583f22ee020dfc1d15abf632c5d210899a2fa41b11ead9367a2088267c6",
+      "postimageSha256": "6c66d4f27c5e92d55a9f39a4464075a96ddb4e13481637a2691ba8d40fec120e",
+      "postimageBytes": 27165,
+      "patch": "production.patch",
+      "requiresRebase": true
+    },
+    {
+      "path": "src/integration/final-scene-evidence.d.mts",
+      "preimageSha256": "72a209e45ae451cfa6e9df916441c35ad97794658ea9e7043ff4eb32ee4ce6e0",
+      "postimageSha256": "792be8a542f871e5ec8bfa29e4b6924a8c8bc66fd249d40da39391a10b7d29f4",
+      "postimageBytes": 6631,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/integration/final-scene-evidence.mjs",
+      "preimageSha256": "2a08898d189cfcab5ecbfaec370f2a8ac0febc431b9b1fce456d80589d533f8f",
+      "postimageSha256": "144d232b40d75ad2bae7a2eae033d380a8aebdc1ad36fad45cc3aba536ee7157",
+      "postimageBytes": 19753,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/Cargo.toml",
+      "preimageSha256": "c46a822b96c35116668ae3cd2ed2c24984527f002aa43471039ccbbf20f10f91",
+      "postimageSha256": "4365838eb4d2beb6c1b59511547c8bfaa28adbdc62e9390ef04529bb51616b7b",
+      "postimageBytes": 1098,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/build.rs",
+      "preimageSha256": "76b9f86f4f639d9c4d714f58450c1ed369b72cfcab20c5b35b7f78bcc69aa47d",
+      "postimageSha256": "57d0edc01e17e9bf1e33908e731e3e1c14c673128e7eead77a7624626102ecd4",
+      "postimageBytes": 2777,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/mod.rs",
+      "preimageSha256": "b54074a191919c563402589d78742420a6ccfe93f8d9c2db5cdbfa1c3c2e0b47",
+      "postimageSha256": "080b84af87df143fde059765093def8e8a65dd545b1e9a04bc3f026845eae4b0",
+      "postimageBytes": 6682,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_check.cpp.inc",
+      "preimageSha256": null,
+      "postimageSha256": "127f4e30d6dfd7b209e2e220414eca0d02bb313da8c9db7022fb7e63a2134868",
+      "postimageBytes": 9119,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_guard.cpp.inc",
+      "preimageSha256": null,
+      "postimageSha256": "4f2949cc8adc78dfce340c1dec8993c5deee724f1d0d5e8bdd9adb2177e3d900",
+      "postimageBytes": 844,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_guard.h",
+      "preimageSha256": null,
+      "postimageSha256": "eb0a979c933cbc8c0c67186df3529b8dd59d228f3a0506e47947b397b6772d8e",
+      "postimageBytes": 1519,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "preimageSha256": "5e18bdea26f33e7f513a79095a1f032029fa84682d2738c43b749b3a9a912787",
+      "postimageSha256": "d7046cfcde8a2c333e8c6f5438d803f59cc149867aebdb4ba935b44e597385b0",
+      "postimageBytes": 80281,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/native/CMakeLists.txt",
+      "preimageSha256": "4af8e1632bf718ee9ef4a9e384ad4eca6e41d86bde2ceabce6b728bff5d741aa",
+      "postimageSha256": "b960b417a72bdcbb352eadb56511d2a885e3284a5baccc7e436f522cf6f29767",
+      "postimageBytes": 4010,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/native/product-bridge.cpp",
+      "preimageSha256": "81b60eb448e7a78bb81b240f4516a07b13b4a7fd0e8627f827cfcfd4f7228f1b",
+      "postimageSha256": "a2a9e889fc41dcafd347bc86a2454ddf0db6023722d9a4c6595930e14dc21a0c",
+      "postimageBytes": 14186,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/native/product-bridge.h",
+      "preimageSha256": "244454e1b73f70984cc716746379db2230122a51496261218ec1f9c3b040632c",
+      "postimageSha256": "962625e9481463cba876efdf5302fea98d7fd8a02b06cf142eca76eda61f1be8",
+      "postimageBytes": 872,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/src/abi.rs",
+      "preimageSha256": "693ccac34116b120de740835ff5ef6f16e1b43786cad971952bde196124c5eee",
+      "postimageSha256": "1bdb3bfffcabf6a29a1990cb3a731e28420a68bacf1258b5551957ae52885a24",
+      "postimageBytes": 14244,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/src/abi/product_runtime.rs",
+      "preimageSha256": "e6229a6d689e2cad2b4d6d3f01699871bb76d9899592f3521601dd8bbcd9baec",
+      "postimageSha256": "6e56a5f7bd98b5805a10971641e79f3d3a20d79c1155f12a29d17cd853aaa8e3",
+      "postimageBytes": 21407,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/src/lib.rs",
+      "preimageSha256": "28170fae48b7d6cad825c534c202f43789b96dd6b88a6b4e4dd4b33b1041fe1d",
+      "postimageSha256": "f88d9adc9c1ec6a4fe47518e25d33a0ab7fd6534dbf2a7472fb7390e382fcb86",
+      "postimageBytes": 11039,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/kernel/src/snapshot.rs",
+      "preimageSha256": "69bb49dc766b3894a9789c76f2a12eb93cdcb71e9d1cb6ee271ddc7312a44dcb",
+      "postimageSha256": "cdad9844255e3b721a5c07e45476bea452d7666254cfeb9c37e2a37a45fd2222",
+      "postimageBytes": 4731,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/CMakeLists.txt",
+      "preimageSha256": null,
+      "postimageSha256": "8b105d5c7759cf57583ebfb522935437636b47a2d718ded9616c80d437d5c07a",
+      "postimageBytes": 3726,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/attach-to-kernel.cmake",
+      "preimageSha256": null,
+      "postimageSha256": "0fc231fad4a19752ecfa059374df45a177538ced4d671439433e82e6f149af3d",
+      "postimageBytes": 969,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/csg-exports.json",
+      "preimageSha256": null,
+      "postimageSha256": "782ef0c1ba4b6d75e956503898a3764c81239bb1b3da21a72632b2f328bafd8c",
+      "postimageBytes": 340,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/expat.cmake",
+      "preimageSha256": null,
+      "postimageSha256": "910aeb39688bd9b772076b2f6fdd03268fb4a68933ef7e419ed13f3fff5e4a2f",
+      "postimageBytes": 965,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/manifold-pins.cmake",
+      "preimageSha256": null,
+      "postimageSha256": "bb8246d2f6a788f95e3dd7bceb8b0750c8ebc903d3cf30faca7538facfe01c27",
+      "postimageBytes": 12355,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/required-exports.json",
+      "preimageSha256": null,
+      "postimageSha256": "f70c4383108b4c228cea9110d30a6428446ac429db7aa2a3d39c2e622b36717d",
+      "postimageBytes": 934,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/cmake/root-exports.json",
+      "preimageSha256": null,
+      "postimageSha256": "bfba58a11ecd5c3341dd46ab64ffb26586ba1b21edf68a65ab6a7fbb705b4532",
+      "postimageBytes": 225,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/csg-manifold-pins.json",
+      "preimageSha256": null,
+      "postimageSha256": "7a3ba5e68d083490a3057a5bf975709a9ad7a45de5f9da97c2581d57d2cc32d3",
+      "postimageBytes": 6940,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/expat-COPYING.txt",
+      "preimageSha256": null,
+      "postimageSha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "postimageBytes": 1144,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/cpp-base64-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "aa85a4b425bd0ffe295c08efddc253296c50afdabb39b8fe3f1ece0325266b2a",
+      "postimageBytes": 1191,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/LICENSE",
+      "preimageSha256": null,
+      "postimageSha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "postimageBytes": 5093,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/compiler-rt-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+      "postimageBytes": 16708,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/dlmalloc-notice.txt",
+      "preimageSha256": null,
+      "postimageSha256": "97b860afb98f4f1a5f6eb89fc986badf9a0f5cb07dffc976c8907c51788f5413",
+      "postimageBytes": 27267,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/libcxx-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "postimageBytes": 16703,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/libcxxabi-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "postimageBytes": 16706,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/musl-COPYRIGHT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b",
+      "postimageBytes": 6196,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fast-float-Apache-2.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06",
+      "postimageBytes": 10767,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fast-float-MIT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+      "postimageBytes": 1079,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fflate-MIT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "0a1df3a083d0c010560aa342e87959c8c1070e6fd54545741f083f22d0c8b551",
+      "postimageBytes": 1069,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/clipper2-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "postimageBytes": 1338,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/clipper2-no-iostream.patch",
+      "preimageSha256": null,
+      "postimageSha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039",
+      "postimageBytes": 5097,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/harfbuzz-COPYING.txt",
+      "preimageSha256": null,
+      "postimageSha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+      "postimageBytes": 1971,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/manifold-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "postimageBytes": 11357,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/lib3mf-BSD-2-Clause.txt",
+      "preimageSha256": null,
+      "postimageSha256": "0b9774586d7ce2374a17834e7734bb545c539f3c85acc99624ba2fda5900cccc",
+      "postimageBytes": 1292,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/libzip-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
+      "postimageBytes": 1454,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/COPYRIGHT-library.html",
+      "preimageSha256": null,
+      "postimageSha256": "68129500b616d5838629e68f55ff3aed5e096dacf60ce9eb41bbe599a563afa6",
+      "postimageBytes": 1512520,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/Apache-2.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "postimageBytes": 10280,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/BSD-2-Clause.txt",
+      "preimageSha256": null,
+      "postimageSha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "postimageBytes": 1267,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/CC-BY-SA-4.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+      "postimageBytes": 20137,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GCC-exception-3.1.txt",
+      "preimageSha256": null,
+      "postimageSha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+      "postimageBytes": 3320,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GPL-2.0-only.txt",
+      "preimageSha256": null,
+      "postimageSha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+      "postimageBytes": 17642,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GPL-3.0-or-later.txt",
+      "preimageSha256": null,
+      "postimageSha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+      "postimageBytes": 34795,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/ISC.txt",
+      "preimageSha256": null,
+      "postimageSha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+      "postimageBytes": 730,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/LLVM-exception.txt",
+      "preimageSha256": null,
+      "postimageSha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+      "postimageBytes": 919,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/MIT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "postimageBytes": 1078,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/NCSA.txt",
+      "preimageSha256": null,
+      "postimageSha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+      "postimageBytes": 1676,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/OFL-1.1.txt",
+      "preimageSha256": null,
+      "postimageSha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "postimageBytes": 4016,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/Unicode-3.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+      "postimageBytes": 1995,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/COPYRIGHT-library.html",
+      "preimageSha256": null,
+      "postimageSha256": "07ca08d0838ccbbfb79bf292741c7c4c45311f90784431d09af9a1e0b90a9469",
+      "postimageBytes": 1527758,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/Apache-2.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "postimageBytes": 10280,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/BSD-2-Clause.txt",
+      "preimageSha256": null,
+      "postimageSha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "postimageBytes": 1267,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/CC-BY-SA-4.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+      "postimageBytes": 20137,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GCC-exception-3.1.txt",
+      "preimageSha256": null,
+      "postimageSha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+      "postimageBytes": 3320,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GPL-2.0-only.txt",
+      "preimageSha256": null,
+      "postimageSha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+      "postimageBytes": 17642,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GPL-3.0-or-later.txt",
+      "preimageSha256": null,
+      "postimageSha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+      "postimageBytes": 34795,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/ISC.txt",
+      "preimageSha256": null,
+      "postimageSha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+      "postimageBytes": 730,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/LLVM-exception.txt",
+      "preimageSha256": null,
+      "postimageSha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+      "postimageBytes": 919,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/MIT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "postimageBytes": 1078,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/NCSA.txt",
+      "preimageSha256": null,
+      "postimageSha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+      "postimageBytes": 1676,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/OFL-1.1.txt",
+      "preimageSha256": null,
+      "postimageSha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "postimageBytes": 4016,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/Unicode-3.0.txt",
+      "preimageSha256": null,
+      "postimageSha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+      "postimageBytes": 1995,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/test/Inter-OFL.txt",
+      "preimageSha256": null,
+      "postimageSha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "postimageBytes": 4377,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/xmldom-MIT.txt",
+      "preimageSha256": null,
+      "postimageSha256": "4da724fc305d81606b245b324d4d2586916b9d248b23d82183df753ace0fdf71",
+      "postimageBytes": 1298,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/zlib-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "postimageBytes": 1002,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/three-LICENSE.txt",
+      "preimageSha256": null,
+      "postimageSha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "postimageBytes": 1081,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/LICENSE",
+      "preimageSha256": null,
+      "postimageSha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "postimageBytes": 1081,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/build/three.core.js",
+      "preimageSha256": null,
+      "postimageSha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759",
+      "postimageBytes": 1443056,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/build/three.module.js",
+      "preimageSha256": null,
+      "postimageSha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+      "postimageBytes": 650153,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/examples/jsm/loaders/OBJLoader.js",
+      "preimageSha256": null,
+      "postimageSha256": "86c8384e269b75a21d502d438e3f0dc2e09dc61b6e6da6b81947f5b119112bf8",
+      "postimageBytes": 22916,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/examples/jsm/loaders/STLLoader.js",
+      "preimageSha256": null,
+      "postimageSha256": "023ed97f848b633d8bcd53d4db3b996d29d0c644088700691297c552257d480b",
+      "postimageBytes": 10715,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/package.json",
+      "preimageSha256": null,
+      "postimageSha256": "1d5c438acdc1fe5a52fb8ede2e417afd91fec91d22275c40f7b739591b24e4df",
+      "postimageBytes": 3826,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/package.json",
+      "preimageSha256": null,
+      "postimageSha256": "4d9cf15ab13fa641b3816d849a6f5e8e3388aaf604664f30706b232595bf02b0",
+      "postimageBytes": 929,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/rust/root_runtime.rs",
+      "preimageSha256": null,
+      "postimageSha256": "c4eabc274e4600169a061f80376d09c81a4c6dd30e370ab508c094f3ba942e97",
+      "postimageBytes": 24679,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/rust/wire.rs",
+      "preimageSha256": null,
+      "postimageSha256": "0f60c03bc7da3404fae59793a9613cde99faad9c53718fb297c453f7fadfeadb",
+      "postimageBytes": 5183,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/app-adapter.d.mts",
+      "preimageSha256": null,
+      "postimageSha256": "8a995edd3393bd25134bcc4fef93864757f03af0ce27073143a52bc2955072ab",
+      "postimageBytes": 4850,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/app-adapter.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "905f3dfbb53d56402e260986c2ec3a9d046f5d9a85f6f9418d129edcbccde67d",
+      "postimageBytes": 19834,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/app-csg-transaction.d.mts",
+      "preimageSha256": null,
+      "postimageSha256": "27d2040322ccf1f8e07a17785cb556525bfbc5c691e15380bd8f3143da5879ab",
+      "postimageBytes": 2856,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/app-csg-transaction.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "5d7b454a645d828f15381f37aaeea1f0dce5902607e955a6e966ac13e4e70a5a",
+      "postimageBytes": 16719,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/candidate-qualification.d.mts",
+      "preimageSha256": null,
+      "postimageSha256": "b1db74f897007bfa0fd8e9e615cb7e3c72ea8fc3c02234b1339c3cfe2de3332f",
+      "postimageBytes": 866,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/candidate-qualification.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "a096bc838f5fa38c3d6f686d3dc10eec0abf68eebbe40d34262fa9f6baab5c4f",
+      "postimageBytes": 3712,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/imported-csg.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "69072de0bd23d864ac9e80205b956c9a34e562c2bb558b6079cb14c83e888046",
+      "postimageBytes": 9040,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/importer.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "c1d95e0583e26b32ce5fa28eda6c336573e2294880805c18690d6dd644a6e889",
+      "postimageBytes": 14087,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/decode_3mf.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "49fcd971f6747cb67bc2d44911c7434719a9dba749caf5d56892d96f503184ef",
+      "postimageBytes": 6698,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/decode_3mf_deferred.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "9cda729437a09b56360651258c9ebacaf2c32ffd6e00ab42369e36f439e951c2",
+      "postimageBytes": 111,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/imported_csg.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "568414595f928c0ff643139dccfdd42ed04a716c8cac774a5370170a5cb84d4a",
+      "postimageBytes": 32597,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/imported_csg.h",
+      "preimageSha256": null,
+      "postimageSha256": "e2888bce72c60f212801192fdd3cb26aa8754f7a4abd6a901480014147decc04",
+      "postimageBytes": 4654,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/internal.hpp",
+      "preimageSha256": null,
+      "postimageSha256": "c55cfab84028d32445dfce32401d8f5ca25186a1150ec8ffca0c0edd4817de54",
+      "postimageBytes": 2647,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/mesh_import.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "372f55e82a001ebd95f93166bf42db94e161bd6e83848225a3c7ca1e119ee160",
+      "postimageBytes": 26960,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/mesh_import.h",
+      "preimageSha256": null,
+      "postimageSha256": "e7bcc7750bd546c248475141f6a07108a65a6ca4944aea182d114e79a7eb9010",
+      "postimageBytes": 4379,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/package_guard.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "f8c5442f83d0c9e3635caf37b7b7f60e014c254995360a4847aa26cc7e2b3751",
+      "postimageBytes": 15891,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/root_gate.cpp",
+      "preimageSha256": null,
+      "postimageSha256": "ba8dbccb42e44c4fdbe2c355772d62a164eda34110b8230fb036279fc93ab171",
+      "postimageBytes": 2252,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/triangle_guard.hpp",
+      "preimageSha256": null,
+      "postimageSha256": "18b0513ec16916d1cab367b249d436ca1caddc3ab48f5007291796f6b58d0adb",
+      "postimageBytes": 7124,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/native/xml_reader.hpp",
+      "preimageSha256": null,
+      "postimageSha256": "c1d24eee0ee4aa734e39ee21ff4defb42a19d2aa226bd37d12d28795b09a64e0",
+      "postimageBytes": 5385,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/obj.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "c6cf8e054042f8eaae330fd83ee59894edc4c9cc45b97b19696cdef6c1a6459b",
+      "postimageBytes": 10464,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/root-app-adapter.d.mts",
+      "preimageSha256": null,
+      "postimageSha256": "eb619696b28cd2d9711a975c20bc65eebde0770c6ea1490fc31046a8ef76ce19",
+      "postimageBytes": 4308,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/root-app-adapter.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "78b11f4205b835fcafbf5821ad414b69cd4195119a570834ae59331de61ef509",
+      "postimageBytes": 16997,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/root-client.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "e853aba4b76543516ece6bca9702d10e2e6963a041f6d2849707202a783cca85",
+      "postimageBytes": 3820,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/root-runtime.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "8382d34b1bdb0684642c58a3af758a3b7af00517705ac1bfeeb61c078e341bc9",
+      "postimageBytes": 8679,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/scene-evidence.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "77f943b7c433d24e555d8e94ad8e14d4367c4741efa88f915ed8a22b4a8f051a",
+      "postimageBytes": 922,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/src/stl.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "bbf085059d0b8c1252f7b10b0fb83dfc509d453ce1b4b783f80abf10b8a33974",
+      "postimageBytes": 4886,
+      "patch": "production.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/prepare-root-native.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "6dd1956720133b971f0fe43e838250260019a438c25a0e15c081c42af0c49785",
+      "postimageBytes": 1898,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-browser.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "158130ef5ad3a8016b92743953b0c56a1bccad50eca361298a6c1c036f2f57fd",
+      "postimageBytes": 12142,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-extended.test.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "088b7d2029f47aa9625ec5920fdab1ada1cd84f8e779836a3b1a9df32953faef",
+      "postimageBytes": 8646,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-fixtures.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "55c11b14eb9338ab2985071bf50cd2e7241bbc2e308bcd816c6eab00fda56304",
+      "postimageBytes": 5555,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-history-browser.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "86e0d62537effba6644d68bf89e60f3a6706f82e0f5f2a323c8cd1adb3403b51",
+      "postimageBytes": 15387,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-native.rs",
+      "preimageSha256": null,
+      "postimageSha256": "0bf778d219d09544e95c23baa3c6e3e50096e57f6a196d05b05e249e7eb9317e",
+      "postimageBytes": 9058,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-node.test.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "23848d8bd2d134a3ff6aafa1c68fe5d1404fe80e971c5190672dd8bc50f0f0ee",
+      "postimageBytes": 4879,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/root-oracles.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "6395ce158ec38a5a9f693df575b85f10eeab0c3af9a28328df535abefc1d191b",
+      "postimageBytes": 3549,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tests/run-root-browser.mjs",
+      "preimageSha256": null,
+      "postimageSha256": "5cae09b8f37cc0d7b5f22c17ee393a58c1a532141481183b804cef0088092d99",
+      "postimageBytes": 5143,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "src/mesh-import/tools/build-root.ps1",
+      "preimageSha256": null,
+      "postimageSha256": "f45e92856dcd9750eccd6e89bb3281e67bda4308f2e41e557cbd4853c95ca693",
+      "postimageBytes": 5685,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    },
+    {
+      "path": "tools/kernel/build.ps1",
+      "preimageSha256": "511c9f8fba262732d7a91ea04d9e59ab22975b5bad78abbbcf22114bba3f20aa",
+      "postimageSha256": "84f21f956c50ecb64c73d400697a81dafc7260fb36c7bfd39acf88414255c2c1",
+      "postimageBytes": 8977,
+      "patch": "tests-tools.patch",
+      "requiresRebase": false
+    }
+  ],
+  "publicRepositoryPrerequisites": [
+    {
+      "path": "tests/product-runtime/fixtures.mjs",
+      "testedSha256": "543f0b15aa97e856b4792b51c32581f4cecdcf53be2e87b3fad8d19f4fc76dd2",
+      "bytes": 3620
+    },
+    {
+      "path": "tests/oracles/mesh-oracle.mjs",
+      "testedSha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119",
+      "bytes": 5889
+    },
+    {
+      "path": "tools/kernel/module-incoming-api.json",
+      "testedSha256": "0e4eb9b850e900111ae50fa3982bb9a5219b988024226b34b2a7e15eebddb837",
+      "bytes": 436
+    },
+    {
+      "path": "docs/development/toolchain-lock.json",
+      "testedSha256": "8170330745859ac69880285b2b83a3ed42619ad38f761033f44cfa22caa51095",
+      "bytes": 2464
+    }
+  ],
+  "omitted": "Evidence archives, old patches, optional3MF fixtures, legacy run-dependent tools, unused Three entrypoints. No old-room/private-data dependency.",
+  "runtimePins": {
+    "abi": 2,
+    "arch": 1,
+    "meshRuntime": 1,
+    "mechanicsSemantics": 3,
+    "sourceSemantics": 2,
+    "manifold": "3.5.3",
+    "manifoldRevision": "0edd9d54876f3135e431575214dd6d8a72866fee",
+    "manifoldSource": "https://github.com/elalish/manifold/tree/0edd9d54876f3135e431575214dd6d8a72866fee",
+    "three": "0.185.1",
+    "threeSource": "https://github.com/mrdoob/three.js/releases/tag/r185",
+    "emscripten": "6.0.9",
+    "rustNative": "1.98.1",
+    "rustWasm": "nightly-2026-09-07",
+    "harfbuzz": "14.4.0",
+    "harfbuzzRevision": "36cb489cb02ce4b92099669ba9f9bea348eff93f",
+    "clipper2Revision": "46f639177fe418f9689e8ddb74f08a870c71f5b4",
+    "serde_json": "1.0.149 float_roundtrip"
+  }
+}

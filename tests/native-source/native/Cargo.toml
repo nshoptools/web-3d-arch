@@ -1,0 +1,8 @@
+[package]
+name="arch-native-source-tests"
+version="0.1.0"
+edition="2024"
+[workspace]
+[dependencies]
+arch-kernel={path="../../../src/kernel",features=["test-fixtures"]}
+serde_json="=1.0.149"

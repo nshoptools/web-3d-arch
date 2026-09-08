@@ -1,0 +1,1249 @@
+{
+  "version": "arch-pending-csg-app/1",
+  "status": "candidate-not-promoted",
+  "at": "2026-09-08T14:23:10.502Z",
+  "files": [
+    {
+      "path": "docs/csg-derived-guard/README.md",
+      "bytes": 6558,
+      "sha256": "f21b2be704d40caf1cf00cfd0c241d4836df9dca42c19ce002759d086eef088e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/mesh-generated-base/API.md",
+      "bytes": 7290,
+      "sha256": "8c7189f11ff623366ce9f9a13c0049f9eea5d6c21aa50f400ebe5763913a7cb6",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/app/adapters.d.mts",
+      "bytes": 11401,
+      "sha256": "140173b8ddbf600538f36223badec5f48e46503172146b3bf975e4faf01ad8a6",
+      "preimageSha256": "0d53b837e1ab495802b41c89e7f15636e58ba664adb4f7f57664656cec5da2fe"
+    },
+    {
+      "path": "src/app/controller.mjs",
+      "bytes": 21080,
+      "sha256": "31dbe97923ee475259f90c3b0b7aedc3bbde14e60eea8c76f92a3762b4419606",
+      "preimageSha256": "f729069502eff8172683702c4a279dfe0a46c6ede84d13dee706f0febbd6eb62"
+    },
+    {
+      "path": "src/app/jobs.mjs",
+      "bytes": 15518,
+      "sha256": "c8b30693e3163d8d9b6c94570bf5d541c3d0aac46d0d4014b91d9aa75b348960",
+      "preimageSha256": "29c5a3f3c59a581de52716d418a9f5e905ed4dec37270b678de593e5a57e3db7"
+    },
+    {
+      "path": "src/app/mesh-transactions.mjs",
+      "bytes": 5284,
+      "sha256": "ab4275441da73fdaf17da84d7859830f54f27db29d4963ba6b30886e7e182f61",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/app/projects.mjs",
+      "bytes": 17962,
+      "sha256": "33ff4b960b46ccdec39fd80c9f23360a2ea3ba6a90dd333cf01522d7f54bb326",
+      "preimageSha256": "e97ddaef6d2332f00cc37ad64c80754f91010c856c84e366609659c54dd7e4e5"
+    },
+    {
+      "path": "src/app/proposals.mjs",
+      "bytes": 3265,
+      "sha256": "84d17907c935b680d2c978ed9b9a21116b5e78c460c749c77a184e86cd6dfed6",
+      "preimageSha256": "54c833739647222eac3364a007cdb66953ed7c46377e645ef2b0e6fcbda60720"
+    },
+    {
+      "path": "src/contracts/app-bridge.ts",
+      "bytes": 14939,
+      "sha256": "a9e0094f419d0456f636edb1dd5a996032e19a79aba2ea690468e2ef9b876e38",
+      "preimageSha256": "dc0086177ee06b48971193b6929944d5cb77b7a712401f4d93534ed79e4ce9b0"
+    },
+    {
+      "path": "src/core/engine-client.mjs",
+      "bytes": 28194,
+      "sha256": "2169230d9748174a88e660ace57165c42788dd790620b8a7da8e5bc7b2d4df59",
+      "preimageSha256": "31c684f22bc7200b1d29506b729a3c8c03259957fe07b75ee41fb79397ba5ccd"
+    },
+    {
+      "path": "src/core/engine-worker.mjs",
+      "bytes": 27579,
+      "sha256": "3b1ae39d43902434bf421473626a96d247bf2586ab02f525475271907d7164dd",
+      "preimageSha256": "d39b3229ed7566b7321ef2ecaef8929c0e38c5dbd2ec87c8e4a73a5be9d254bb"
+    },
+    {
+      "path": "src/integration/application.mjs",
+      "bytes": 5172,
+      "sha256": "82d5e57fe9cb4a0ae1b488bb937d1b90c93aa8877654c2fbe192b8195665f5cf",
+      "preimageSha256": "4d395489550d474636eb5a04ba54b2c1ab370079c6bbb463170149a66f0bf71a"
+    },
+    {
+      "path": "src/integration/final-scene-evidence.d.mts",
+      "bytes": 6631,
+      "sha256": "792be8a542f871e5ec8bfa29e4b6924a8c8bc66fd249d40da39391a10b7d29f4",
+      "preimageSha256": "72a209e45ae451cfa6e9df916441c35ad97794658ea9e7043ff4eb32ee4ce6e0"
+    },
+    {
+      "path": "src/integration/final-scene-evidence.mjs",
+      "bytes": 19753,
+      "sha256": "144d232b40d75ad2bae7a2eae033d380a8aebdc1ad36fad45cc3aba536ee7157",
+      "preimageSha256": "2a08898d189cfcab5ecbfaec370f2a8ac0febc431b9b1fce456d80589d533f8f"
+    },
+    {
+      "path": "src/integration/mesh-generated-base.d.mts",
+      "bytes": 4062,
+      "sha256": "1a63a51f484bfae85681d9ac8715ec6591f5fc7009129c0b6ec581b54a065c0b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/integration/mesh-generated-base.mjs",
+      "bytes": 17623,
+      "sha256": "bc25d5b28893c969d26eb4878e78165d3e444531c4a17b00d59af33578ac797b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/integration/mesh-services.d.mts",
+      "bytes": 1622,
+      "sha256": "41cdf8494f51f079e9a020db80c961b894d50e75ccc8fb61972866a3f58736da",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/integration/mesh-services.mjs",
+      "bytes": 11681,
+      "sha256": "25ad666382d82aedd627a44b705d4ee0d32719048b0dc8922f6fca36697f00d0",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/integration/product-adapters.d.mts",
+      "bytes": 13286,
+      "sha256": "81becca9dd051f0a5b3673e8dc5088d847998387bf88515d781eee992eafb68f",
+      "preimageSha256": "33be20d146a94b264d866d0fe60833f0bd0e3200e84d34d78d90b998e690ff06"
+    },
+    {
+      "path": "src/integration/product-adapters.mjs",
+      "bytes": 73063,
+      "sha256": "ed6d076dff4050cb1f5d3e358de46ab6d4fca09a141c1c194ce953c73edc4afd",
+      "preimageSha256": "2973af85c23be2c5ef50b795f86e05fa2c970853457a78da976d338c19eb5b4e"
+    },
+    {
+      "path": "src/integration/product-services.mjs",
+      "bytes": 6939,
+      "sha256": "7405109cffa0bf268bef38cf47d8055c814c6110c6277076bc84d160190c5712",
+      "preimageSha256": "608cb8f695a7b7bd4b9182c43ee95d4a4be33c5cc824877e66cf087fa46581dc"
+    },
+    {
+      "path": "src/integration/product-source-contexts.d.mts",
+      "bytes": 10809,
+      "sha256": "a3e3f9eab489fa950623b1b8fd2965cc025ca577aa916d58e8b3e327686abbb0",
+      "preimageSha256": "30ea820c099cba5a1bd455383bc145c155b4520d30a3d1dfb92aa24ffc8f18f0"
+    },
+    {
+      "path": "src/integration/product-source-contexts.mjs",
+      "bytes": 72822,
+      "sha256": "ecfe308df5b628299cb5b5627e5f098b59047f1c5e7697379395f6eca51cae0d",
+      "preimageSha256": "24cec2980f60659301f5d7d1d51feb491f97e84257e85c60735f47738b127c06"
+    },
+    {
+      "path": "src/integration/product-transactions.mjs",
+      "bytes": 6951,
+      "sha256": "9545f9ad2d41a3756bc629ae855481fdf0993e7d742625cba35bd4231b9a4be3",
+      "preimageSha256": "85b671e9d36f3e00e0234122d580f4b1126e0c96ff7e88a94f182d121df520ed"
+    },
+    {
+      "path": "src/kernel/Cargo.toml",
+      "bytes": 1098,
+      "sha256": "4365838eb4d2beb6c1b59511547c8bfaa28adbdc62e9390ef04529bb51616b7b",
+      "preimageSha256": "c46a822b96c35116668ae3cd2ed2c24984527f002aa43471039ccbbf20f10f91"
+    },
+    {
+      "path": "src/kernel/build.rs",
+      "bytes": 2777,
+      "sha256": "57d0edc01e17e9bf1e33908e731e3e1c14c673128e7eead77a7624626102ecd4",
+      "preimageSha256": "76b9f86f4f639d9c4d714f58450c1ed369b72cfcab20c5b35b7f78bcc69aa47d"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/mod.rs",
+      "bytes": 6682,
+      "sha256": "080b84af87df143fde059765093def8e8a65dd545b1e9a04bc3f026845eae4b0",
+      "preimageSha256": "b54074a191919c563402589d78742420a6ccfe93f8d9c2db5cdbfa1c3c2e0b47"
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_check.cpp.inc",
+      "bytes": 14414,
+      "sha256": "4286e02b77c95e4e5636133088a15a92dd643da8e245144db6a1aa535964ebf8",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_guard.cpp.inc",
+      "bytes": 960,
+      "sha256": "45eeb2383dc94b3528c6e8223dfe7edc08f2e6c1049c92df5e8ab16a57a41461",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/mechanics/src/derived_guard.h",
+      "bytes": 2281,
+      "sha256": "85d8d813201d20b3586d7b04a2675e97221a171d414a73cb9255e48ced51be22",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "bytes": 84140,
+      "sha256": "d29d8947597f978ed0cc622641310cf7f16051ea89c28a3a23d4dbcab7020ef2",
+      "preimageSha256": "fee003365191ee21f108270b2e7d75edeb56984e27d63da370405a52882c36f4"
+    },
+    {
+      "path": "src/kernel/native/CMakeLists.txt",
+      "bytes": 4010,
+      "sha256": "b960b417a72bdcbb352eadb56511d2a885e3284a5baccc7e436f522cf6f29767",
+      "preimageSha256": "4af8e1632bf718ee9ef4a9e384ad4eca6e41d86bde2ceabce6b728bff5d741aa"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.cpp",
+      "bytes": 15547,
+      "sha256": "be823f6205e0c17af501c2abc1a2b6218309b5dc254bdebabbfaebc7aebea9c2",
+      "preimageSha256": "9e836769cf9eaa976966db3ac449763139cafaf4643adcc40307ce5e5d339c34"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.h",
+      "bytes": 1021,
+      "sha256": "cae1bb141b4ec1f63e5edd1674b38ca04d90bc61b985337c3bf7fa49e0c1e389",
+      "preimageSha256": "1a7ce501b13691ba431065a71c61b539be5961dcf709f112daf3579c135266f0"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/SUPPORT-REGULARIZATION.md",
+      "bytes": 6837,
+      "sha256": "28f5f7bdc45b4b52d92d7cc66ac96c114560bb5e67e53196acc9870e7568b271",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 41219,
+      "sha256": "a4e1a1720bf068dda310cc711030101c25959782d1477fd051de52c8524e7473",
+      "preimageSha256": "6bd6e78bd951f019c87ead96cc389d9dbfc14315946223038e9cf94556881f32"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/support_regularization.h",
+      "bytes": 5142,
+      "sha256": "35ac07eb750dadfa751e1a3832f26560cf0844fe97547bd513bcd8a3c27a92f2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/CMakeLists.txt",
+      "bytes": 3468,
+      "sha256": "9fb0245e9f6a213885c47a83d9d03f3fee41b8a3353c7cc0e42d6170ec4212d1",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/chain-oracle.mjs",
+      "bytes": 1723,
+      "sha256": "6dfdcbdb1d969574f619930f12e10c08bb69f78649f854eb5322d78b63f261b9",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/bevietnampro-nfd.aprq",
+      "bytes": 26119,
+      "sha256": "73cb30b8c9d5e61f8a539bb3bf4f22ab6b0e5bd349b0b620fc3a63552f3bab6a",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/bevietnampro-nfd.arch",
+      "bytes": 196764,
+      "sha256": "c7f4a885fb07b8c6626411bb8b9a354f16010a9df44c70aa0b195788e1ccbb8a",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/bevietnampro-nfd.source.json",
+      "bytes": 8008,
+      "sha256": "1318608cb794536a316f2491e232429e64b6fa488e423f622ced2358e74d75dd",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/bevietnampro-nfd.svg",
+      "bytes": 4701,
+      "sha256": "261321939c58ba7df3ebf30d8f7481360cb31787b1740128e113f596b92485d3",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/derived-support.paths",
+      "bytes": 86219,
+      "sha256": "1da6c3685a3dcf2fa0117f67c86bf168f440d6319d597f181bfdbc294b5e3008",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/fixtures/source_assembly.before.cpp",
+      "bytes": 41158,
+      "sha256": "6bd6e78bd951f019c87ead96cc389d9dbfc14315946223038e9cf94556881f32",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/guards.mjs",
+      "bytes": 4036,
+      "sha256": "82da74665311bdf713429976f7fa91f9e334359fb9f09644fc0bde2cc1e1e491",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/preservation.mjs",
+      "bytes": 6625,
+      "sha256": "c7173461a3fd9db39df6d0c8fc86f7526309d19012bba311f3caa259cc2459f8",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/production-proof.mjs",
+      "bytes": 1874,
+      "sha256": "f3bba8a50964cf7c0a51b8fe703120348df50cb7ff83ad79f80dc5ce4d9c6cab",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/replay.cpp",
+      "bytes": 4429,
+      "sha256": "3f77378018aa64f2948f36095be6f5e39b0354e3a32846eb5ec8cdef9632ce3f",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/run.mjs",
+      "bytes": 6369,
+      "sha256": "b8e2393846f2ab37cbad136bd97cad2ee99b023c9ca3e160ffcaad70d6108769",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/source-domain/support_paths.cpp",
+      "bytes": 1715,
+      "sha256": "84d30eb1f3a291e5674e935c88ab4a123ea0fcd648dd4dc4a703e5ed2100e6a3",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/source-domain-check.ps1",
+      "bytes": 6476,
+      "sha256": "331a86fd0f3a1e91d4e3472dfe8a6f948cb2127a7524fdc0852a6d2a08989e18",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/kernel/src/abi.rs",
+      "bytes": 14244,
+      "sha256": "1bdb3bfffcabf6a29a1990cb3a731e28420a68bacf1258b5551957ae52885a24",
+      "preimageSha256": "693ccac34116b120de740835ff5ef6f16e1b43786cad971952bde196124c5eee"
+    },
+    {
+      "path": "src/kernel/src/abi/product_runtime.rs",
+      "bytes": 22184,
+      "sha256": "ed235c986225173da425f2933e204eb08f8926e90d47aff048caca8dd449dc2d",
+      "preimageSha256": "c594598c8c1a8b197a0b3391b3bdf72f31f7c0f12ac35891bba50856d788f7dc"
+    },
+    {
+      "path": "src/kernel/src/lib.rs",
+      "bytes": 11039,
+      "sha256": "f88d9adc9c1ec6a4fe47518e25d33a0ab7fd6534dbf2a7472fb7390e382fcb86",
+      "preimageSha256": "28170fae48b7d6cad825c534c202f43789b96dd6b88a6b4e4dd4b33b1041fe1d"
+    },
+    {
+      "path": "src/kernel/src/snapshot.rs",
+      "bytes": 4731,
+      "sha256": "cdad9844255e3b721a5c07e45476bea452d7666254cfeb9c37e2a37a45fd2222",
+      "preimageSha256": "69bb49dc766b3894a9789c76f2a12eb93cdcb71e9d1cb6ee271ddc7312a44dcb"
+    },
+    {
+      "path": "src/mesh-import/CMakeLists.txt",
+      "bytes": 3726,
+      "sha256": "8b105d5c7759cf57583ebfb522935437636b47a2d718ded9616c80d437d5c07a",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/attach-to-kernel.cmake",
+      "bytes": 969,
+      "sha256": "0fc231fad4a19752ecfa059374df45a177538ced4d671439433e82e6f149af3d",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/csg-exports.json",
+      "bytes": 340,
+      "sha256": "782ef0c1ba4b6d75e956503898a3764c81239bb1b3da21a72632b2f328bafd8c",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/expat.cmake",
+      "bytes": 965,
+      "sha256": "910aeb39688bd9b772076b2f6fdd03268fb4a68933ef7e419ed13f3fff5e4a2f",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/manifold-pins.cmake",
+      "bytes": 12355,
+      "sha256": "bb8246d2f6a788f95e3dd7bceb8b0750c8ebc903d3cf30faca7538facfe01c27",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/required-exports.json",
+      "bytes": 934,
+      "sha256": "f70c4383108b4c228cea9110d30a6428446ac429db7aa2a3d39c2e622b36717d",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/cmake/root-exports.json",
+      "bytes": 225,
+      "sha256": "bfba58a11ecd5c3341dd46ab64ffb26586ba1b21edf68a65ab6a7fbb705b4532",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/csg-manifold-pins.json",
+      "bytes": 6940,
+      "sha256": "7a3ba5e68d083490a3057a5bf975709a9ad7a45de5f9da97c2581d57d2cc32d3",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/expat-COPYING.txt",
+      "bytes": 1144,
+      "sha256": "31b15de82aa19a845156169a17a5488bf597e561b2c318d159ed583139b25e87",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/cpp-base64-LICENSE.txt",
+      "bytes": 1191,
+      "sha256": "aa85a4b425bd0ffe295c08efddc253296c50afdabb39b8fe3f1ece0325266b2a",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/LICENSE",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/compiler-rt-LICENSE.txt",
+      "bytes": 16708,
+      "sha256": "1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/dlmalloc-notice.txt",
+      "bytes": 27267,
+      "sha256": "97b860afb98f4f1a5f6eb89fc986badf9a0f5cb07dffc976c8907c51788f5413",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/libcxx-LICENSE.txt",
+      "bytes": 16703,
+      "sha256": "539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/libcxxabi-LICENSE.txt",
+      "bytes": 16706,
+      "sha256": "e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/emscripten/musl-COPYRIGHT.txt",
+      "bytes": 6196,
+      "sha256": "b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fast-float-Apache-2.0.txt",
+      "bytes": 10767,
+      "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fast-float-MIT.txt",
+      "bytes": 1079,
+      "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/fflate-MIT.txt",
+      "bytes": 1069,
+      "sha256": "0a1df3a083d0c010560aa342e87959c8c1070e6fd54545741f083f22d0c8b551",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/clipper2-LICENSE.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/harfbuzz-COPYING.txt",
+      "bytes": 1971,
+      "sha256": "ba8f810f2455c2f08e2d56bb49b72f37fcf68f1f4fade38977cfd7372050ad64",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/kernel/manifold-LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/lib3mf-BSD-2-Clause.txt",
+      "bytes": 1292,
+      "sha256": "0b9774586d7ce2374a17834e7734bb545c539f3c85acc99624ba2fda5900cccc",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/libzip-LICENSE.txt",
+      "bytes": 1454,
+      "sha256": "01c022eca6d566e2e8792fd0f091a28653b2a608319922bcd4de91c49d1438e1",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/COPYRIGHT-library.html",
+      "bytes": 1512520,
+      "sha256": "68129500b616d5838629e68f55ff3aed5e096dacf60ce9eb41bbe599a563afa6",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/Apache-2.0.txt",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/BSD-2-Clause.txt",
+      "bytes": 1267,
+      "sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/CC-BY-SA-4.0.txt",
+      "bytes": 20137,
+      "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GCC-exception-3.1.txt",
+      "bytes": 3320,
+      "sha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GPL-2.0-only.txt",
+      "bytes": 17642,
+      "sha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/GPL-3.0-or-later.txt",
+      "bytes": 34795,
+      "sha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/ISC.txt",
+      "bytes": 730,
+      "sha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/LLVM-exception.txt",
+      "bytes": 919,
+      "sha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/MIT.txt",
+      "bytes": 1078,
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/NCSA.txt",
+      "bytes": 1676,
+      "sha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/OFL-1.1.txt",
+      "bytes": 4016,
+      "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/1.98.1/licenses/Unicode-3.0.txt",
+      "bytes": 1995,
+      "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/COPYRIGHT-library.html",
+      "bytes": 1527758,
+      "sha256": "07ca08d0838ccbbfb79bf292741c7c4c45311f90784431d09af9a1e0b90a9469",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/Apache-2.0.txt",
+      "bytes": 10280,
+      "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/BSD-2-Clause.txt",
+      "bytes": 1267,
+      "sha256": "f32fb3b417a194167cfad068223fc975ba96c5960513a10f66a3c28720aec1df",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/CC-BY-SA-4.0.txt",
+      "bytes": 20137,
+      "sha256": "23ee78c8bae49cf08ea2f0c84945c66b987ebe4520881fb51b3dad4fb43d07c2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GCC-exception-3.1.txt",
+      "bytes": 3320,
+      "sha256": "a3966c9410ef94a1efbfa9ec04e9c1994026a70623fbf0885ce36737bfba3b54",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GPL-2.0-only.txt",
+      "bytes": 17642,
+      "sha256": "54b212ba1f97f6948fa5486239ab505dd820b02e50cbfd296b4062c8609a70af",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/GPL-3.0-or-later.txt",
+      "bytes": 34795,
+      "sha256": "05315fce6c35f79b8a35454828995fa26336f235895ac64557abc028f4ffcea2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/ISC.txt",
+      "bytes": 730,
+      "sha256": "0ff61769b238634e042ab759dddfd104a8e69d091e3600ae3410e401a6164381",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/LLVM-exception.txt",
+      "bytes": 919,
+      "sha256": "e34c58338bd89d43e709e226610d8f32b3e3c47f4ad9a99a8dc1d4ac7842488e",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/MIT.txt",
+      "bytes": 1078,
+      "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/NCSA.txt",
+      "bytes": 1676,
+      "sha256": "39cb0234065c92b9e6cee3830cbb52b1aa289aa8fe9ba2e66730fec5cf05c630",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/OFL-1.1.txt",
+      "bytes": 4016,
+      "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/rust/nightly-2026-09-07/licenses/Unicode-3.0.txt",
+      "bytes": 1995,
+      "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/test/Inter-OFL.txt",
+      "bytes": 4377,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/xmldom-MIT.txt",
+      "bytes": 1298,
+      "sha256": "4da724fc305d81606b245b324d4d2586916b9d248b23d82183df753ace0fdf71",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/printing-inherited/zlib-LICENSE.txt",
+      "bytes": 1002,
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/docs/licenses/three-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/LICENSE",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/build/three.core.js",
+      "bytes": 1443056,
+      "sha256": "3718df126d69c125362a03340913204470d8c50238605150e57f808840fb7759",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/build/three.module.js",
+      "bytes": 650153,
+      "sha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/examples/jsm/loaders/OBJLoader.js",
+      "bytes": 22916,
+      "sha256": "86c8384e269b75a21d502d438e3f0dc2e09dc61b6e6da6b81947f5b119112bf8",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/examples/jsm/loaders/STLLoader.js",
+      "bytes": 10715,
+      "sha256": "023ed97f848b633d8bcd53d4db3b996d29d0c644088700691297c552257d480b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/node_modules/three/package.json",
+      "bytes": 3826,
+      "sha256": "1d5c438acdc1fe5a52fb8ede2e417afd91fec91d22275c40f7b739591b24e4df",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/package.json",
+      "bytes": 929,
+      "sha256": "4d9cf15ab13fa641b3816d849a6f5e8e3388aaf604664f30706b232595bf02b0",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/rust/root_runtime.rs",
+      "bytes": 24679,
+      "sha256": "c4eabc274e4600169a061f80376d09c81a4c6dd30e370ab508c094f3ba942e97",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/rust/wire.rs",
+      "bytes": 5183,
+      "sha256": "0f60c03bc7da3404fae59793a9613cde99faad9c53718fb297c453f7fadfeadb",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/app-adapter.d.mts",
+      "bytes": 4850,
+      "sha256": "8a995edd3393bd25134bcc4fef93864757f03af0ce27073143a52bc2955072ab",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/app-adapter.mjs",
+      "bytes": 19834,
+      "sha256": "905f3dfbb53d56402e260986c2ec3a9d046f5d9a85f6f9418d129edcbccde67d",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/app-csg-transaction.d.mts",
+      "bytes": 2856,
+      "sha256": "27d2040322ccf1f8e07a17785cb556525bfbc5c691e15380bd8f3143da5879ab",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/app-csg-transaction.mjs",
+      "bytes": 16715,
+      "sha256": "c3404d8adc77ef59b2fa5e1b52bfa256569df0b9ef06467f93f4638f846176fd",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/candidate-qualification.d.mts",
+      "bytes": 866,
+      "sha256": "b1db74f897007bfa0fd8e9e615cb7e3c72ea8fc3c02234b1339c3cfe2de3332f",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/candidate-qualification.mjs",
+      "bytes": 3712,
+      "sha256": "a096bc838f5fa38c3d6f686d3dc10eec0abf68eebbe40d34262fa9f6baab5c4f",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/imported-csg.mjs",
+      "bytes": 9040,
+      "sha256": "69072de0bd23d864ac9e80205b956c9a34e562c2bb558b6079cb14c83e888046",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/importer.mjs",
+      "bytes": 14087,
+      "sha256": "c1d95e0583e26b32ce5fa28eda6c336573e2294880805c18690d6dd644a6e889",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/decode_3mf.cpp",
+      "bytes": 6698,
+      "sha256": "49fcd971f6747cb67bc2d44911c7434719a9dba749caf5d56892d96f503184ef",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/decode_3mf_deferred.cpp",
+      "bytes": 111,
+      "sha256": "9cda729437a09b56360651258c9ebacaf2c32ffd6e00ab42369e36f439e951c2",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/imported_csg.cpp",
+      "bytes": 33516,
+      "sha256": "a8c7fa3f21b0cf64b993231aa5fc1d3c407b7068f93efdf9d70c218786f1ca9d",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/imported_csg.h",
+      "bytes": 4654,
+      "sha256": "e2888bce72c60f212801192fdd3cb26aa8754f7a4abd6a901480014147decc04",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/internal.hpp",
+      "bytes": 2647,
+      "sha256": "c55cfab84028d32445dfce32401d8f5ca25186a1150ec8ffca0c0edd4817de54",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/mesh_import.cpp",
+      "bytes": 26960,
+      "sha256": "372f55e82a001ebd95f93166bf42db94e161bd6e83848225a3c7ca1e119ee160",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/mesh_import.h",
+      "bytes": 4379,
+      "sha256": "e7bcc7750bd546c248475141f6a07108a65a6ca4944aea182d114e79a7eb9010",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/package_guard.cpp",
+      "bytes": 15891,
+      "sha256": "f8c5442f83d0c9e3635caf37b7b7f60e014c254995360a4847aa26cc7e2b3751",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/root_gate.cpp",
+      "bytes": 2252,
+      "sha256": "ba8dbccb42e44c4fdbe2c355772d62a164eda34110b8230fb036279fc93ab171",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/triangle_guard.hpp",
+      "bytes": 7124,
+      "sha256": "18b0513ec16916d1cab367b249d436ca1caddc3ab48f5007291796f6b58d0adb",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/native/xml_reader.hpp",
+      "bytes": 5385,
+      "sha256": "c1d24eee0ee4aa734e39ee21ff4defb42a19d2aa226bd37d12d28795b09a64e0",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/obj.mjs",
+      "bytes": 10464,
+      "sha256": "c6cf8e054042f8eaae330fd83ee59894edc4c9cc45b97b19696cdef6c1a6459b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/root-app-adapter.d.mts",
+      "bytes": 4392,
+      "sha256": "b2d3885e09dbc4ee8f282a48b35a2eb8cf76a4365461276528d90ff6b5ed1882",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/root-app-adapter.mjs",
+      "bytes": 17131,
+      "sha256": "d990868f98f0e38eb235a425cccea38dc9257c7135692255826c07e9046661a7",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/root-client.mjs",
+      "bytes": 3820,
+      "sha256": "e853aba4b76543516ece6bca9702d10e2e6963a041f6d2849707202a783cca85",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/root-runtime.mjs",
+      "bytes": 8679,
+      "sha256": "8382d34b1bdb0684642c58a3af758a3b7af00517705ac1bfeeb61c078e341bc9",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/scene-evidence.mjs",
+      "bytes": 922,
+      "sha256": "77f943b7c433d24e555d8e94ad8e14d4367c4741efa88f915ed8a22b4a8f051a",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/src/stl.mjs",
+      "bytes": 4886,
+      "sha256": "bbf085059d0b8c1252f7b10b0fb83dfc509d453ce1b4b783f80abf10b8a33974",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/prepare-root-native.mjs",
+      "bytes": 1898,
+      "sha256": "6dd1956720133b971f0fe43e838250260019a438c25a0e15c081c42af0c49785",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-browser.mjs",
+      "bytes": 12142,
+      "sha256": "158130ef5ad3a8016b92743953b0c56a1bccad50eca361298a6c1c036f2f57fd",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-extended.test.mjs",
+      "bytes": 8646,
+      "sha256": "088b7d2029f47aa9625ec5920fdab1ada1cd84f8e779836a3b1a9df32953faef",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-fixtures.mjs",
+      "bytes": 5555,
+      "sha256": "55c11b14eb9338ab2985071bf50cd2e7241bbc2e308bcd816c6eab00fda56304",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-history-browser.mjs",
+      "bytes": 15387,
+      "sha256": "86e0d62537effba6644d68bf89e60f3a6706f82e0f5f2a323c8cd1adb3403b51",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-native.rs",
+      "bytes": 9058,
+      "sha256": "0bf778d219d09544e95c23baa3c6e3e50096e57f6a196d05b05e249e7eb9317e",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-node.test.mjs",
+      "bytes": 5370,
+      "sha256": "fc9c16cdf7ff5b6c62f7eaa7047de0cdd4eba85e4388df1261def7c9ad3e3342",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/root-oracles.mjs",
+      "bytes": 3549,
+      "sha256": "6395ce158ec38a5a9f693df575b85f10eeab0c3af9a28328df535abefc1d191b",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tests/run-root-browser.mjs",
+      "bytes": 5143,
+      "sha256": "5cae09b8f37cc0d7b5f22c17ee393a58c1a532141481183b804cef0088092d99",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/mesh-import/tools/build-root.ps1",
+      "bytes": 5685,
+      "sha256": "f45e92856dcd9750eccd6e89bb3281e67bda4308f2e41e557cbd4853c95ca693",
+      "preimageSha256": null
+    },
+    {
+      "path": "src/ui/sections/ParametersSection.tsx",
+      "bytes": 12835,
+      "sha256": "b3c08044dec16cbb7673d2c176943c127739d8e80a875618f7f72394ca9273e2",
+      "preimageSha256": "27217a3c3d73ce478c7af7f4e9f1e14694029cc9d60e6411689c6f511c8cf88a"
+    },
+    {
+      "path": "tests/csg-derived-guard/CMakeLists.txt",
+      "bytes": 1501,
+      "sha256": "d138dfa7503b4df7067e9bde92fdb3069a592cba931f15140bddbb2bebee1a58",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-derived-guard/mesh-audit.py",
+      "bytes": 2627,
+      "sha256": "1f51cfe9caef2b36715d1a89a80cabe568de3856d661c36cc6439c8fcd30741b",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-derived-guard/probe.cpp",
+      "bytes": 7279,
+      "sha256": "631f91fd59bcdf71421fee528680b7c7c7ab761c4377f64356d17c14393ce797",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-derived-guard/run.py",
+      "bytes": 5830,
+      "sha256": "0348449e91f02fcc481d5fab4439f62da816b96080577181c3fa193926528203",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-app/parameter-routing.test.mjs",
+      "bytes": 941,
+      "sha256": "dc55e520d6f13542c484e33bf365e8e0619e34f973d7f01c7fae94d9a538f2fe",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-app/proposal-handoff.test.mjs",
+      "bytes": 2994,
+      "sha256": "e0da04b85dbcd69ac83eef0d82255d2d64aeae427bf4ed91975035ac2bae8fa5",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/native.mjs",
+      "bytes": 8376,
+      "sha256": "f633bf708e6d4037fb84afe8405d7399be7e9db49ee72887682f612d668b2129",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/node.test.mjs",
+      "bytes": 13831,
+      "sha256": "dbbf55e38e0a98f99ced63d590f252d49cb68ffa90c5a522771fc7b59c78e682",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/prepare.mjs",
+      "bytes": 1207,
+      "sha256": "42475dfcc4c1f3ee489791bc8616730c0eb8cd61aaa0496483f3dbe4dcc0516c",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/raster-seed.mjs",
+      "bytes": 4495,
+      "sha256": "e6e29cf9210cda5cdb6a06c6f53794743072eaef58b94c307c3c4d283982f032",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/run.ps1",
+      "bytes": 1380,
+      "sha256": "5e4c0a9170a729d8a298508b6cac9e616ca62df6c2d58340409d30ebf446067a",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/runtime.mjs",
+      "bytes": 6289,
+      "sha256": "28902e9eef8656624e755251a66ad08e81f9b74eb7b1dc2bf96452f326aee558",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/seed.mjs",
+      "bytes": 9133,
+      "sha256": "6a624d1ff09b10683fbce4416c084cd0e6c3894d5e8f7062ee925c7d6a2d213d",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/mesh-generated-base/types.mts",
+      "bytes": 1143,
+      "sha256": "87037b5dfb802b2d91d4ae0beddbdbc51943ae0e1d8e89671b214c58762fd998",
+      "preimageSha256": null
+    },
+    {
+      "path": "tools/kernel/build.ps1",
+      "bytes": 8977,
+      "sha256": "84f21f956c50ecb64c73d400697a81dafc7260fb36c7bfd39acf88414255c2c1",
+      "preimageSha256": "511c9f8fba262732d7a91ea04d9e59ab22975b5bad78abbbcf22114bba3f20aa"
+    },
+    {
+      "path": "docs/csg-controller/API-EARLY.md",
+      "bytes": 7832,
+      "sha256": "023ce36c4ae247944ee259f7e1d9970ded0cd41eb46d821d98bba6a6a88cc10e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/csg-controller/README.md",
+      "bytes": 4719,
+      "sha256": "010989f256cf563d65f812dc147d791c84a31a4f84c96422f208b26abf9a86cd",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/cases.mjs",
+      "bytes": 11625,
+      "sha256": "f794d2e22cf3b41971c1bce3705d567c852a49d36134df32a165e31cd2ce3f27",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/driver.mjs",
+      "bytes": 8809,
+      "sha256": "31ef8aac767593678867f206c4473671ad449df52eaa01c153aa17fe892590c5",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/entry.mjs",
+      "bytes": 844,
+      "sha256": "e3ec801e31fad4afc44289bfc53907a254a77ec1dfc3b468ab943aed074a3063",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/fixtures.mjs",
+      "bytes": 8915,
+      "sha256": "baa58e2fbd2417611b18cf1d44065f30804b61c8f99be87d3f6c52255857d6ae",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/hai-mau-co-lo.svg",
+      "bytes": 207,
+      "sha256": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/observer.mjs",
+      "bytes": 4044,
+      "sha256": "3fa37c8e6260d6c50b33007053197ff0cf1e9b1f1347ba51d6459aaff819a6c9",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/run.mjs",
+      "bytes": 3792,
+      "sha256": "cc3b1997acac7a320910c9c80f66f89598f599c30d9320055b9d3a03b0a9a23b",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/run.ps1",
+      "bytes": 2505,
+      "sha256": "effc0c143ca5e16874c69667665aa9f53b1ddd106d40792971283396ff4b0be7",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/runtime.mjs",
+      "bytes": 6062,
+      "sha256": "4a21088261bd209043a2958d77f56472404f71fc8090ff0a5ce9c3f073c87892",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/stage.mjs",
+      "bytes": 10445,
+      "sha256": "b429c25de07d1c03a1e86af7f7dc9809eebdac8b2f6fdd68dfe87d45c7c68572",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/generate-tls.ps1",
+      "bytes": 3317,
+      "sha256": "fcce9d33cb91357c456987bd1b8de89b6f7b6c5e3e7c44cc99df188a4820c31f",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/mesh-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/readback.mjs",
+      "bytes": 6160,
+      "sha256": "2dc8ffa9ede47366744b5f3f648874ba8d2e6f7c80355eee66839fcaf382627d",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/scoped-https.mjs",
+      "bytes": 1280,
+      "sha256": "f5e1ebb3fb48505269f209f2e39a86254daf162a1db8e7d3a409605ac0ff5de8",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/synthetic-identity.mjs",
+      "bytes": 10556,
+      "sha256": "257834b4fca6afd0ef889716ec28c389d779c56b6a983ff007b817e32bc9e1ff",
+      "preimageSha256": null
+    },
+    {
+      "path": "tests/csg-controller/support/synthetic-tls.mjs",
+      "bytes": 1678,
+      "sha256": "bcdc5e35338de3455b90baa586523e632ff2eb3335e2646c4e774f0be17ce722",
+      "preimageSha256": null
+    }
+  ],
+  "evidence": [
+    {
+      "path": "root-node-r3.log",
+      "bytes": 403,
+      "sha256": "d4e8c08cb0873d6562eed4b601df1da5c63302e83116d8c5f5217a1ece25d106"
+    },
+    {
+      "path": "nfd-root-r3.log",
+      "bytes": 204,
+      "sha256": "bfb2158aabb0818476647bc341485359920d171d7df405a6e5d841db01eb2a19"
+    },
+    {
+      "path": "mesh-app-r2.log",
+      "bytes": 502,
+      "sha256": "aad267fc66ba5582af90f1f7ebe73c408bb59b7ccfa53cf6f941716f8225642f"
+    },
+    {
+      "path": "types-r3.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "root-native-r3-build.log",
+      "bytes": 1776,
+      "sha256": "566955af6aa0cfbe935f5ccdd1670fb49f3f959f3dbb4a2d90bd1d9619c828d8"
+    },
+    {
+      "path": "root-native-r3-rust.log",
+      "bytes": 551,
+      "sha256": "58a60c2d18569075ae186fe50d47c82ca707857b7e76e91af3b43d85d7fd0e13"
+    },
+    {
+      "path": "root-wasm-r3-build.log",
+      "bytes": 366,
+      "sha256": "c91f27b39e463c34ed1caa445d8a9f3bc699d0c182a2512f35e57a675fd2fd88"
+    },
+    {
+      "path": "root-wasm-r3-rust.log",
+      "bytes": 1090,
+      "sha256": "31f6e7b63b2977bc3d9101c447cad9e0ea90c63d19625ab69b3fd85eba894c71"
+    },
+    {
+      "path": "root-wasm-r3-link.log",
+      "bytes": 350,
+      "sha256": "8d493a9947b648a9f7fe0ce2084b9bccbb3a8ec2c2ba58dd40db51d307d6b51c"
+    },
+    {
+      "path": "root-node-r3/summary.json",
+      "bytes": 616,
+      "sha256": "6c179a4e4f0da75f74ace0fe0d6dd659b55d0796d952b19e619f61a2dc972657"
+    },
+    {
+      "path": "nfd-root-r3/summary.json",
+      "bytes": 592,
+      "sha256": "c688142d426f7e612b3250debbb0fe0530c0c83a95eba5c07683347e16276987"
+    }
+  ],
+  "modules": [
+    {
+      "file": "arch-kernel.mjs",
+      "bytes": 130574,
+      "sha256": "ac581980c67c307df5d2b863a2a1652c9d91c4e86827f5ad93ee0db01591fce7"
+    },
+    {
+      "file": "arch-kernel.wasm",
+      "bytes": 4528454,
+      "sha256": "4ecdda9b1bea91a1e1af01e2a54245c0c4b922280288f4a2bb7c937410eff474"
+    }
+  ],
+  "compiled": {
+    "printing": false,
+    "testFixtures": true
+  },
+  "review": {
+    "model": "grok-4.6",
+    "effort": "xhigh",
+    "fastMode": "no separate project requirement",
+    "sessionId": "01a08143-d4e0-78e3-a51b-4e9722be3b98",
+    "rawSHA256": "362c239d99c9ba7f33c841c4887764f3115879d3ba2cfc997957a1a4193478f4",
+    "method": "static code review; no dynamic review repro"
+  },
+  "mainProductWrites": false,
+  "releaseReady": false,
+  "bundle": {
+    "file": "candidate.zip",
+    "bytes": 1207303,
+    "sha256": "46d5dd80c324d1908c60cec18f4e4eb35ae98eac41aa76c30b68cded0977bea6"
+  },
+  "controllerAcceptance": {
+    "attempt": "actual-r4",
+    "cases": 1,
+    "passed": 0,
+    "notRun": 2,
+    "code": "MESH_POST_CSG_OR_TOPOLOGY_BLOCKED",
+    "harnessFilesVerified": 18,
+    "evidenceFilesVerified": 162
+  },
+  "evidenceBundle": {
+    "file": "evidence.zip",
+    "bytes": 265247,
+    "sha256": "bb2797c928c59cfb5d04230776218bbb7d4a5a5eb63709918a9343026c11ffa7"
+  }
+}

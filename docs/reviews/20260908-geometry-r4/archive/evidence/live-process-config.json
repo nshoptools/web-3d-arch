@@ -1,0 +1,6 @@
+{
+  "ProcessId": 23848,
+  "ParentProcessId": 26412,
+  "ExecutablePath": "C:\\Users\\voson\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe",
+  "CommandLine": "\"C:\\Users\\voson\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe\" exec --ignore-user-config --color never -C D:\\VoSon\\Code\\web-3d-arch -m gpt-6-astra -c \"model_reasoning_effort=\\\"max\\\"\" -c \"service_tier=\\\"default\\\"\" -c features.fast_mode=false -c \"approval_policy=\\\"never\\\"\" -s danger-full-access --json -o D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-geometry-review-r4\\reports\\response.md -"
+}

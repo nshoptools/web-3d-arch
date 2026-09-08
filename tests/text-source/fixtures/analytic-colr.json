@@ -1,0 +1,16 @@
+{
+  "id": "analytic-colr",
+  "path": "fixture/analytic-colr.ttf",
+  "bytes": 1380,
+  "sha256": "f30601e117de679a319ba7aafe1560b1a8ce1410a44736cfef87de6042bceb69",
+  "unitsPerEm": 1000,
+  "glyphCount": 9,
+  "color": true,
+  "colorFormat": "COLRv1",
+  "axes": {},
+  "source": {
+    "kind": "original-analytic-fixture",
+    "generator": "make-paint-fixture.py",
+    "fontTools": "4.64.0"
+  }
+}

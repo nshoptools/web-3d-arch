@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "xAI image adapter wire contract fixture",
+  "fixtureVersion": 1,
+  "accessedDate": "2026-09-08",
+  "provenance": {
+    "openapiUrl": "https://api.x.ai/api-docs/openapi.json",
+    "openapiSha256": "91be49b210491b3a4856952f4747af128b599f38c0d3b7185854b0905d7cbc9f",
+    "openapiInfoVersion": "1.0.0",
+    "howToUrl": "https://docs.x.ai/developers/model-capabilities/images/generation",
+    "pricingUrl": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+    "billingUrl": "https://docs.x.ai/developers/cost-tracking",
+    "liveResponseCaptured": false,
+    "syntheticFixtures": true
+  },
+  "notes": [
+    "Hand-authored contract subset, not an assertion that upstream OpenAPI is exhaustive.",
+    "quality appears in the current generation guide (2026-08-29) but not GenerateImageRequest in this OpenAPI snapshot; explicit low/medium required.",
+    "OpenAPI max_prompt_length unit is unspecified; adapter uses its UTF-8 byte count conservatively.",
+    "x-request-id is optional transport evidence, not guaranteed by image response schema.",
+    "Moderation/model fields are described in the guide but omitted by the REST response schema. Missing moderation is not a refusal.",
+    "Provider may resolve model alias internally; MODEL_VERSION states alias semantics only."
+  ],
+  "$defs": {
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model",
+        "prompt",
+        "n",
+        "aspect_ratio",
+        "resolution",
+        "quality",
+        "response_format"
+      ],
+      "properties": {
+        "model": {
+          "const": "grok-imagine-image-2.0"
+        },
+        "prompt": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 16000
+        },
+        "n": {
+          "const": 1
+        },
+        "aspect_ratio": {
+          "const": "1:1"
+        },
+        "resolution": {
+          "enum": [
+            "1k",
+            "2k"
+          ]
+        },
+        "quality": {
+          "enum": [
+            "low",
+            "medium"
+          ]
+        },
+        "response_format": {
+          "const": "b64_json"
+        }
+      }
+    },
+    "successfulResponse": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "model": {
+          "const": "grok-imagine-image-2.0"
+        },
+        "currency": {
+          "const": "USD"
+        },
+        "data": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "b64_json",
+              "mime_type"
+            ],
+            "properties": {
+              "b64_json": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 16000000,
+                "contentEncoding": "base64"
+              },
+              "mime_type": {
+                "enum": [
+                  "image/png",
+                  "image/jpeg"
+                ]
+              },
+              "url": {
+                "type": "null"
+              },
+              "file_output": {
+                "type": "null"
+              },
+              "respect_moderation": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "usage": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/usage"
+            }
+          ]
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "cost_in_usd_ticks"
+      ],
+      "properties": {
+        "cost_in_usd_ticks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "currency": {
+          "const": "USD"
+        }
+      }
+    },
+    "priceTier": {
+      "type": "object",
+      "required": [
+        "quality",
+        "resolution",
+        "price_per_image"
+      ],
+      "properties": {
+        "quality": {
+          "enum": [
+            "low",
+            "medium"
+          ]
+        },
+        "resolution": {
+          "enum": [
+            "1k",
+            "2k"
+          ]
+        },
+        "price_per_image": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "keyCheck": {
+      "type": "object",
+      "required": [
+        "team_blocked",
+        "api_key_blocked",
+        "api_key_disabled"
+      ],
+      "properties": {
+        "team_blocked": {
+          "type": "boolean"
+        },
+        "api_key_blocked": {
+          "type": "boolean"
+        },
+        "api_key_disabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ledgerUsage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currency",
+        "unit",
+        "costInUsdTicks",
+        "microsRounding",
+        "source"
+      ],
+      "properties": {
+        "currency": {
+          "const": "USD"
+        },
+        "unit": {
+          "const": "usd_tick"
+        },
+        "costInUsdTicks": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]{0,15})$"
+        },
+        "microsRounding": {
+          "const": "ceil"
+        },
+        "source": {
+          "const": "provider-response"
+        }
+      }
+    }
+  },
+  "requestExample": {
+    "model": "grok-imagine-image-2.0",
+    "prompt": "A blue architectural pavilion.",
+    "n": 1,
+    "aspect_ratio": "1:1",
+    "resolution": "1k",
+    "quality": "low",
+    "response_format": "b64_json"
+  },
+  "responseFixture": {
+    "file": "square-1024.png",
+    "field": "data[0].b64_json",
+    "mime_type": "image/png",
+    "width": 1024,
+    "height": 1024,
+    "usage": {
+      "cost_in_usd_ticks": 400000000
+    }
+  },
+  "expectedLedgerUsage": {
+    "currency": "USD",
+    "unit": "usd_tick",
+    "costInUsdTicks": "400000000",
+    "microsRounding": "ceil",
+    "source": "provider-response"
+  }
+}

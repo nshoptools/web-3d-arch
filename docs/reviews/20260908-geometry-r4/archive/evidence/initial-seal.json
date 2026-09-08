@@ -1,0 +1,16 @@
+{
+  "sealedAt": "2026-09-08T08:42:21.763Z",
+  "otherConclusionsRead": false,
+  "manifestSha256": "34b54a85cfe723c28973c987ea2510164d93b2431b6baadc0e5b092e84791a57",
+  "reports": [
+    {
+      "path": "reports/initial-findings.json",
+      "sha256": "0320659f07fa000817a1f501d57759296c9759af99cd4f7987260f3478b5fcc5"
+    },
+    {
+      "path": "reports/initial-review.md",
+      "sha256": "8ca661d63fcadc3f3ff047a4b718b94ecebb3881900e68ac64caadf43d122a40"
+    }
+  ],
+  "findingsCount": 0
+}

@@ -1,0 +1,56 @@
+[package]
+name = "arch-kernel"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[[bin]]
+name = "arch-kernel"
+path = "src/main.rs"
+
+[profile.release]
+panic = "abort"
+opt-level = 2
+lto = "thin"
+
+[dependencies]
+arch-vector-source = { path = "vector-source" }
+arch-raster-source = { path = "raster-source" }
+sha2 = "=0.10.9"
+rstar = "=0.13.0"
+serde_json = { version = "=1.0.149", features = ["float_roundtrip"] }
+
+[[example]]
+name = "final-export-probe"
+path = "final-scene-export/tests/native_probe.rs"
+required-features = ["test-fixtures"]
+
+[features]
+test-fixtures = []
+printing-tests = ["test-fixtures"]
+raster-runtime-tests = []
+
+[[example]]
+name = "raster-runtime-probe"
+path = "examples/raster-runtime-probe.rs"
+required-features = ["raster-runtime-tests"]
+
+[[example]]
+name = "unified_printing"
+path = "../printing/tests/unified-native.rs"
+required-features = ["printing-tests"]
+
+[[example]]
+name = "product-runtime-probe"
+path = "examples/product-runtime-probe.rs"
+
+[[example]]
+name = "mesh-root-probe"
+path = "../mesh-import/tests/root-native.rs"
+
+[[example]]
+name = "import-as-part-probe"
+path = "../mesh-import/tests/import-as-part-native.rs"

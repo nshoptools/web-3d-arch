@@ -1,0 +1,42 @@
+{
+  "node": "v24.19.0",
+  "python": "Python 3.13.15",
+  "powershell": "7.6.5",
+  "vite": "8.2.2",
+  "playwright": "1.63.0",
+  "rustc": "rustc 1.98.1 (48a229cea 2026-09-01)\nbinary: rustc\ncommit-hash: 48a229ceaefd4985c50990b14116b6d856af0985\ncommit-date: 2026-09-01\nhost: x86_64-pc-windows-msvc\nrelease: 1.98.1\nLLVM version: 22.1.8",
+  "browsers": [
+    {
+      "name": "chromium",
+      "revision": "1243",
+      "installByDefault": true,
+      "browserVersion": "153.0.8010.12",
+      "title": "Chrome for Testing"
+    },
+    {
+      "name": "firefox",
+      "revision": "1543",
+      "installByDefault": true,
+      "browserVersion": "155.0",
+      "title": "Firefox"
+    },
+    {
+      "name": "webkit",
+      "revision": "2359",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "26.6",
+      "title": "WebKit"
+    }
+  ],
+  "rootBinaries": "Supplied source-pinned native executable and production/instrumented Emscripten Modules; no independent root rebuild",
+  "mathProbe": "Compiled unmodified snapshot encode.rs and wire.rs in isolated stand-alone reviewer harness; check(g,p) stubbed only in mathematical harness; no native CSG or authority tested by that harness",
+  "sourceReferences": [
+    "src/kernel/final-scene-export/rust/encode.rs",
+    "src/kernel/final-scene-export/rust/wire.rs"
+  ],
+  "browserVersionScope": "Installed Playwright browsers.json revisions; test transcripts establish actual browser-type launches, not browser.version() receipts."
+}

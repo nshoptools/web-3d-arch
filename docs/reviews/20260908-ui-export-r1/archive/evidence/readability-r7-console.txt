@@ -1,0 +1,6 @@
+chromium FAIL V02-1280-14: Direction label remains readable at 1280px / 14px app text
+chromium FAIL V02-1280-28: Direction label remains readable at 1280px / 28px app text
+chromium PASS V02-320-28: Direction label remains readable at 320px / 28px app text
+webkit FAIL V02-1280-14: Direction label remains readable at 1280px / 14px app text
+webkit FAIL V02-1280-28: Direction label remains readable at 1280px / 28px app text
+webkit PASS V02-320-28: Direction label remains readable at 320px / 28px app text

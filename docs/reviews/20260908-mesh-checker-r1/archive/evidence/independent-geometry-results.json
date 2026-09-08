@@ -1,0 +1,5614 @@
+{
+  "seed": "0x91aa5eed",
+  "results": [
+    {
+      "name": "rectangular-solid",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 42,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 7.749600000000001
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "slanted-tetrahedron",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 6,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 4,
+        "triangles": 4,
+        "parts": 1,
+        "bytes": 312,
+        "components": 1,
+        "milliseconds": 0.3410000000000011
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "open-solid",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_EDGE_INCIDENCE",
+      "checks": {
+        "transport": "pass"
+      },
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 11,
+        "parts": 1,
+        "bytes": 496,
+        "milliseconds": 0.3089000000000013
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_EDGE_INCIDENCE",
+          "details": {
+            "edge": "0:2",
+            "incidence": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "inverted-solid",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_COMPONENT_WINDING",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 42,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 2.1736999999999966
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_COMPONENT_WINDING",
+          "details": {
+            "part": 0,
+            "nesting": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate-face",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_EDGE_INCIDENCE",
+      "checks": {
+        "transport": "pass"
+      },
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 13,
+        "parts": 1,
+        "bytes": 520,
+        "milliseconds": 0.24869999999999948
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_EDGE_INCIDENCE",
+          "details": {
+            "edge": "0:2",
+            "incidence": 3
+          }
+        }
+      ]
+    },
+    {
+      "name": "collinear-tetrahedron",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_DEGENERATE",
+      "checks": {
+        "transport": "pass"
+      },
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 4,
+        "triangles": 4,
+        "parts": 1,
+        "bytes": 312,
+        "milliseconds": 0.08209999999999695
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_DEGENERATE",
+          "details": {
+            "face": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "disconnected-vertex-link",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_VERTEX_LINK",
+      "checks": {
+        "transport": "pass"
+      },
+      "stats": {
+        "candidatePairs": 0,
+        "exactPairs": 0,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 7,
+        "triangles": 8,
+        "parts": 1,
+        "bytes": 432,
+        "milliseconds": 0.14149999999999352
+      },
+      "diagnostics": [
+        {
+          "stage": "topology",
+          "code": "MESH_VERTEX_LINK",
+          "details": {
+            "vertex": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "two-separated-shells",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 5.261200000000002
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "self-crossing-shells",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_SELF_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "stats": {
+        "candidatePairs": 31,
+        "exactPairs": 25,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 1.9857000000000085
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_SELF_INTERSECTION",
+          "details": {
+            "faces": [
+              12,
+              6
+            ],
+            "dimension": 1,
+            "shared": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "touching-unwelded-shell-vertex",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_SELF_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "stats": {
+        "candidatePairs": 109,
+        "exactPairs": 85,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 3.0444999999999993
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_SELF_INTERSECTION",
+          "details": {
+            "faces": [
+              6,
+              12
+            ],
+            "dimension": 0,
+            "shared": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "proper-cavity",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 3.1861999999999995
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "incorrect-cavity-winding",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_COMPONENT_WINDING",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 24,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 1,
+        "bytes": 840,
+        "components": 2,
+        "milliseconds": 3.0808999999999997
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_COMPONENT_WINDING",
+          "details": {
+            "part": 0,
+            "nesting": 1
+          }
+        }
+      ]
+    },
+    {
+      "name": "island-inside-cavity",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 162,
+        "exactPairs": 126,
+        "containmentWork": 72,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 24,
+        "triangles": 36,
+        "parts": 1,
+        "bytes": 1176,
+        "components": 3,
+        "milliseconds": 4.808099999999996
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "two-material-interior-crossing",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "stats": {
+        "candidatePairs": 31,
+        "exactPairs": 25,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 1.3038000000000096
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_MATERIAL_INTERSECTION",
+          "details": {
+            "faces": [
+              12,
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "contained-material",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_MATERIAL_CONTAINMENT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 2.8338000000000108
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_MATERIAL_CONTAINMENT",
+          "details": {
+            "part": 1,
+            "other": 0,
+            "vertex": 8
+          }
+        }
+      ]
+    },
+    {
+      "name": "coincident-material",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass"
+      },
+      "stats": {
+        "candidatePairs": 2,
+        "exactPairs": 2,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 0.979699999999994
+      },
+      "diagnostics": [
+        {
+          "stage": "selfIntersection",
+          "code": "MESH_MATERIAL_COINCIDENT_INTERIOR",
+          "details": {
+            "faces": [
+              0,
+              12
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "shared-material-face",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "pass",
+        "unionTopology": "requires-union-readback"
+      },
+      "stats": {
+        "candidatePairs": 192,
+        "exactPairs": 168,
+        "containmentWork": 12,
+        "sharedFacePairs": 4,
+        "boundaryContacts": 60,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 5.057000000000002
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "material-in-empty-cavity",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "requires-union-readback"
+      },
+      "stats": {
+        "candidatePairs": 162,
+        "exactPairs": 126,
+        "containmentWork": 48,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 24,
+        "triangles": 36,
+        "parts": 2,
+        "bytes": 1216,
+        "components": 3,
+        "milliseconds": 4.568300000000008
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "edge-only-material-contact",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "stats": {
+        "candidatePairs": 164,
+        "exactPairs": 140,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 46,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 3.8175999999999988
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_ZERO_AREA_CONTACT",
+          "details": {
+            "parts": "0:1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "point-only-material-contact",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass"
+      },
+      "stats": {
+        "candidatePairs": 144,
+        "exactPairs": 120,
+        "containmentWork": 12,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 25,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 3.2998000000000047
+      },
+      "diagnostics": [
+        {
+          "stage": "containment",
+          "code": "MESH_ZERO_AREA_CONTACT",
+          "details": {
+            "parts": "0:1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "binary64-small-gap",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "requires-union-readback"
+      },
+      "stats": {
+        "candidatePairs": 108,
+        "exactPairs": 84,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 16,
+        "triangles": 24,
+        "parts": 2,
+        "bytes": 880,
+        "components": 2,
+        "milliseconds": 2.6820999999999913
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "subnormal-solid",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED",
+      "checks": {
+        "transport": "pass",
+        "nondegenerate": "pass",
+        "closedEdges": "pass",
+        "orientedEdges": "pass",
+        "vertexLinks": "pass",
+        "selfIntersection": "pass",
+        "componentWinding": "pass",
+        "materialInteriors": "pass",
+        "sharedBoundaries": "not-applicable",
+        "unionTopology": "pass"
+      },
+      "stats": {
+        "candidatePairs": 54,
+        "exactPairs": 54,
+        "containmentWork": 0,
+        "sharedFacePairs": 0,
+        "boundaryContacts": 0,
+        "vertices": 8,
+        "triangles": 12,
+        "parts": 1,
+        "bytes": 504,
+        "components": 1,
+        "milliseconds": 1.3522999999999996
+      },
+      "diagnostics": []
+    },
+    {
+      "name": "offset-aligned-view",
+      "expected": "pass",
+      "actual": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "name": "offset-unaligned-view",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "SNAPSHOT_LAYOUT"
+    },
+    {
+      "name": "NaN",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "SNAPSHOT_COORDINATE"
+    },
+    {
+      "name": "plain-JSON",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_BYTE_BUDGET"
+    },
+    {
+      "name": "truncated",
+      "expected": "fail",
+      "actual": "fail",
+      "code": "SNAPSHOT_LENGTH"
+    },
+    {
+      "name": "pair-budget",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_PAIR_BUDGET"
+    },
+    {
+      "name": "byte-budget",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_BYTE_BUDGET"
+    },
+    {
+      "name": "vertex-budget",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "MESH_SIZE_BUDGET"
+    },
+    {
+      "name": "preaborted",
+      "expected": "unverified",
+      "actual": "unverified",
+      "code": "CANCELLED"
+    }
+  ],
+  "differential": [
+    {
+      "i": 0,
+      "lo": [
+        2,
+        -2,
+        3
+      ],
+      "hi": [
+        7,
+        0,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 1,
+      "lo": [
+        3,
+        2,
+        2
+      ],
+      "hi": [
+        7,
+        4,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 2,
+      "lo": [
+        0,
+        4,
+        -2
+      ],
+      "hi": [
+        5,
+        6,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 3,
+      "lo": [
+        3,
+        -1,
+        -2
+      ],
+      "hi": [
+        6,
+        4,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 4,
+      "lo": [
+        3,
+        1,
+        0
+      ],
+      "hi": [
+        4,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 5,
+      "lo": [
+        1,
+        5,
+        -1
+      ],
+      "hi": [
+        4,
+        7,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 6,
+      "lo": [
+        2,
+        0,
+        -2
+      ],
+      "hi": [
+        4,
+        1,
+        3
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 7,
+      "lo": [
+        -1,
+        2,
+        -3
+      ],
+      "hi": [
+        3,
+        7,
+        -2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 8,
+      "lo": [
+        0,
+        4,
+        1
+      ],
+      "hi": [
+        4,
+        6,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 9,
+      "lo": [
+        5,
+        3,
+        -2
+      ],
+      "hi": [
+        8,
+        6,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 10,
+      "lo": [
+        -1,
+        -3,
+        0
+      ],
+      "hi": [
+        4,
+        1,
+        3
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 11,
+      "lo": [
+        0,
+        -1,
+        0
+      ],
+      "hi": [
+        2,
+        4,
+        3
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 12,
+      "lo": [
+        5,
+        2,
+        -3
+      ],
+      "hi": [
+        8,
+        5,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 13,
+      "lo": [
+        4,
+        4,
+        3
+      ],
+      "hi": [
+        6,
+        9,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 14,
+      "lo": [
+        0,
+        -2,
+        3
+      ],
+      "hi": [
+        5,
+        2,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 15,
+      "lo": [
+        -3,
+        -1,
+        0
+      ],
+      "hi": [
+        2,
+        0,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 16,
+      "lo": [
+        0,
+        4,
+        2
+      ],
+      "hi": [
+        3,
+        9,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 17,
+      "lo": [
+        -2,
+        -1,
+        -2
+      ],
+      "hi": [
+        -1,
+        3,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 18,
+      "lo": [
+        2,
+        -3,
+        -1
+      ],
+      "hi": [
+        3,
+        2,
+        1
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 19,
+      "lo": [
+        -1,
+        0,
+        -1
+      ],
+      "hi": [
+        1,
+        3,
+        1
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 20,
+      "lo": [
+        -2,
+        2,
+        2
+      ],
+      "hi": [
+        3,
+        5,
+        6
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 21,
+      "lo": [
+        4,
+        -1,
+        -3
+      ],
+      "hi": [
+        8,
+        2,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 22,
+      "lo": [
+        1,
+        -2,
+        1
+      ],
+      "hi": [
+        4,
+        1,
+        6
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 23,
+      "lo": [
+        3,
+        5,
+        -2
+      ],
+      "hi": [
+        4,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 24,
+      "lo": [
+        -1,
+        4,
+        5
+      ],
+      "hi": [
+        1,
+        5,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 25,
+      "lo": [
+        1,
+        4,
+        -2
+      ],
+      "hi": [
+        5,
+        6,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 26,
+      "lo": [
+        4,
+        0,
+        1
+      ],
+      "hi": [
+        8,
+        2,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 27,
+      "lo": [
+        4,
+        0,
+        -3
+      ],
+      "hi": [
+        6,
+        3,
+        -2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 28,
+      "lo": [
+        -3,
+        4,
+        0
+      ],
+      "hi": [
+        2,
+        5,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 29,
+      "lo": [
+        -1,
+        -3,
+        0
+      ],
+      "hi": [
+        4,
+        -1,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 30,
+      "lo": [
+        1,
+        1,
+        4
+      ],
+      "hi": [
+        3,
+        5,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 31,
+      "lo": [
+        -1,
+        3,
+        1
+      ],
+      "hi": [
+        3,
+        7,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 32,
+      "lo": [
+        0,
+        -2,
+        5
+      ],
+      "hi": [
+        4,
+        0,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 33,
+      "lo": [
+        -1,
+        3,
+        -3
+      ],
+      "hi": [
+        3,
+        8,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 34,
+      "lo": [
+        1,
+        3,
+        4
+      ],
+      "hi": [
+        5,
+        8,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 35,
+      "lo": [
+        -3,
+        1,
+        -3
+      ],
+      "hi": [
+        -2,
+        5,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 36,
+      "lo": [
+        -3,
+        0,
+        4
+      ],
+      "hi": [
+        1,
+        3,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 37,
+      "lo": [
+        1,
+        -1,
+        5
+      ],
+      "hi": [
+        6,
+        0,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 38,
+      "lo": [
+        -1,
+        0,
+        0
+      ],
+      "hi": [
+        0,
+        2,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 39,
+      "lo": [
+        3,
+        -1,
+        0
+      ],
+      "hi": [
+        4,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 40,
+      "lo": [
+        -1,
+        3,
+        3
+      ],
+      "hi": [
+        4,
+        7,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 41,
+      "lo": [
+        5,
+        3,
+        -1
+      ],
+      "hi": [
+        8,
+        6,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 42,
+      "lo": [
+        -3,
+        5,
+        4
+      ],
+      "hi": [
+        2,
+        8,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 43,
+      "lo": [
+        2,
+        -2,
+        3
+      ],
+      "hi": [
+        3,
+        -1,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 44,
+      "lo": [
+        -1,
+        4,
+        3
+      ],
+      "hi": [
+        0,
+        6,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 45,
+      "lo": [
+        2,
+        -2,
+        1
+      ],
+      "hi": [
+        3,
+        2,
+        3
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 46,
+      "lo": [
+        3,
+        -1,
+        5
+      ],
+      "hi": [
+        4,
+        1,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 47,
+      "lo": [
+        2,
+        4,
+        2
+      ],
+      "hi": [
+        7,
+        9,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 48,
+      "lo": [
+        -3,
+        2,
+        1
+      ],
+      "hi": [
+        -1,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 49,
+      "lo": [
+        5,
+        -1,
+        -3
+      ],
+      "hi": [
+        9,
+        4,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 50,
+      "lo": [
+        -1,
+        -1,
+        -1
+      ],
+      "hi": [
+        1,
+        0,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 51,
+      "lo": [
+        0,
+        -3,
+        -3
+      ],
+      "hi": [
+        4,
+        2,
+        1
+      ],
+      "intersectionVolume": 6,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 52,
+      "lo": [
+        -2,
+        4,
+        5
+      ],
+      "hi": [
+        0,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 53,
+      "lo": [
+        -3,
+        5,
+        -2
+      ],
+      "hi": [
+        0,
+        7,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 54,
+      "lo": [
+        2,
+        3,
+        3
+      ],
+      "hi": [
+        6,
+        5,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 55,
+      "lo": [
+        -2,
+        -2,
+        1
+      ],
+      "hi": [
+        3,
+        -1,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 56,
+      "lo": [
+        0,
+        -3,
+        2
+      ],
+      "hi": [
+        1,
+        0,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 57,
+      "lo": [
+        0,
+        -2,
+        -2
+      ],
+      "hi": [
+        5,
+        2,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 58,
+      "lo": [
+        -3,
+        5,
+        -1
+      ],
+      "hi": [
+        0,
+        8,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 59,
+      "lo": [
+        0,
+        2,
+        1
+      ],
+      "hi": [
+        1,
+        7,
+        5
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 60,
+      "lo": [
+        2,
+        1,
+        1
+      ],
+      "hi": [
+        5,
+        3,
+        4
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 61,
+      "lo": [
+        0,
+        1,
+        2
+      ],
+      "hi": [
+        1,
+        5,
+        5
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 62,
+      "lo": [
+        5,
+        4,
+        1
+      ],
+      "hi": [
+        9,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 63,
+      "lo": [
+        1,
+        3,
+        3
+      ],
+      "hi": [
+        4,
+        8,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 64,
+      "lo": [
+        0,
+        1,
+        -1
+      ],
+      "hi": [
+        3,
+        5,
+        4
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 65,
+      "lo": [
+        -3,
+        -3,
+        3
+      ],
+      "hi": [
+        2,
+        1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 66,
+      "lo": [
+        3,
+        -3,
+        5
+      ],
+      "hi": [
+        7,
+        -2,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 67,
+      "lo": [
+        1,
+        -2,
+        1
+      ],
+      "hi": [
+        4,
+        1,
+        4
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 68,
+      "lo": [
+        2,
+        -2,
+        -2
+      ],
+      "hi": [
+        3,
+        -1,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 69,
+      "lo": [
+        -2,
+        5,
+        5
+      ],
+      "hi": [
+        -1,
+        7,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 70,
+      "lo": [
+        2,
+        -2,
+        4
+      ],
+      "hi": [
+        4,
+        -1,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 71,
+      "lo": [
+        -1,
+        4,
+        0
+      ],
+      "hi": [
+        0,
+        5,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 72,
+      "lo": [
+        5,
+        -1,
+        0
+      ],
+      "hi": [
+        7,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 73,
+      "lo": [
+        -3,
+        3,
+        -3
+      ],
+      "hi": [
+        -2,
+        8,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 74,
+      "lo": [
+        2,
+        -2,
+        4
+      ],
+      "hi": [
+        6,
+        -1,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 75,
+      "lo": [
+        2,
+        5,
+        5
+      ],
+      "hi": [
+        3,
+        6,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 76,
+      "lo": [
+        5,
+        -3,
+        1
+      ],
+      "hi": [
+        7,
+        -2,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 77,
+      "lo": [
+        -1,
+        0,
+        0
+      ],
+      "hi": [
+        0,
+        2,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 78,
+      "lo": [
+        2,
+        2,
+        -3
+      ],
+      "hi": [
+        5,
+        6,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 79,
+      "lo": [
+        1,
+        4,
+        0
+      ],
+      "hi": [
+        4,
+        6,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 80,
+      "lo": [
+        -1,
+        1,
+        -3
+      ],
+      "hi": [
+        1,
+        2,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 81,
+      "lo": [
+        -1,
+        4,
+        4
+      ],
+      "hi": [
+        1,
+        9,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 82,
+      "lo": [
+        4,
+        0,
+        1
+      ],
+      "hi": [
+        9,
+        2,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 83,
+      "lo": [
+        3,
+        3,
+        3
+      ],
+      "hi": [
+        8,
+        7,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 84,
+      "lo": [
+        5,
+        1,
+        -2
+      ],
+      "hi": [
+        10,
+        4,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 85,
+      "lo": [
+        4,
+        -2,
+        -2
+      ],
+      "hi": [
+        5,
+        3,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 86,
+      "lo": [
+        5,
+        1,
+        4
+      ],
+      "hi": [
+        10,
+        6,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 87,
+      "lo": [
+        4,
+        4,
+        3
+      ],
+      "hi": [
+        7,
+        8,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 88,
+      "lo": [
+        -1,
+        -1,
+        1
+      ],
+      "hi": [
+        4,
+        4,
+        5
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 89,
+      "lo": [
+        5,
+        4,
+        -3
+      ],
+      "hi": [
+        7,
+        8,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 90,
+      "lo": [
+        5,
+        -1,
+        2
+      ],
+      "hi": [
+        8,
+        1,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 91,
+      "lo": [
+        -3,
+        -1,
+        1
+      ],
+      "hi": [
+        -1,
+        1,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 92,
+      "lo": [
+        2,
+        -3,
+        5
+      ],
+      "hi": [
+        5,
+        -2,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 93,
+      "lo": [
+        2,
+        3,
+        -2
+      ],
+      "hi": [
+        6,
+        5,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 94,
+      "lo": [
+        0,
+        5,
+        5
+      ],
+      "hi": [
+        1,
+        7,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 95,
+      "lo": [
+        -3,
+        3,
+        5
+      ],
+      "hi": [
+        -2,
+        4,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 96,
+      "lo": [
+        0,
+        -1,
+        2
+      ],
+      "hi": [
+        3,
+        3,
+        7
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 97,
+      "lo": [
+        4,
+        -3,
+        -2
+      ],
+      "hi": [
+        9,
+        1,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 98,
+      "lo": [
+        -3,
+        3,
+        -2
+      ],
+      "hi": [
+        2,
+        8,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 99,
+      "lo": [
+        5,
+        3,
+        3
+      ],
+      "hi": [
+        9,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 100,
+      "lo": [
+        5,
+        -1,
+        1
+      ],
+      "hi": [
+        10,
+        1,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 101,
+      "lo": [
+        -2,
+        0,
+        5
+      ],
+      "hi": [
+        -1,
+        1,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 102,
+      "lo": [
+        1,
+        -2,
+        -3
+      ],
+      "hi": [
+        6,
+        1,
+        1
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 103,
+      "lo": [
+        1,
+        1,
+        2
+      ],
+      "hi": [
+        4,
+        6,
+        7
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 104,
+      "lo": [
+        5,
+        0,
+        0
+      ],
+      "hi": [
+        10,
+        1,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 105,
+      "lo": [
+        2,
+        2,
+        -1
+      ],
+      "hi": [
+        5,
+        7,
+        3
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 106,
+      "lo": [
+        4,
+        -3,
+        3
+      ],
+      "hi": [
+        6,
+        2,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 107,
+      "lo": [
+        -2,
+        -2,
+        3
+      ],
+      "hi": [
+        0,
+        -1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 108,
+      "lo": [
+        3,
+        4,
+        4
+      ],
+      "hi": [
+        6,
+        9,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 109,
+      "lo": [
+        -3,
+        -3,
+        5
+      ],
+      "hi": [
+        0,
+        0,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 110,
+      "lo": [
+        1,
+        -3,
+        1
+      ],
+      "hi": [
+        5,
+        -2,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 111,
+      "lo": [
+        4,
+        2,
+        3
+      ],
+      "hi": [
+        6,
+        7,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 112,
+      "lo": [
+        5,
+        -2,
+        4
+      ],
+      "hi": [
+        7,
+        2,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 113,
+      "lo": [
+        1,
+        -1,
+        -1
+      ],
+      "hi": [
+        6,
+        0,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 114,
+      "lo": [
+        -2,
+        -1,
+        2
+      ],
+      "hi": [
+        0,
+        3,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 115,
+      "lo": [
+        3,
+        4,
+        5
+      ],
+      "hi": [
+        6,
+        6,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 116,
+      "lo": [
+        4,
+        -2,
+        0
+      ],
+      "hi": [
+        8,
+        0,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 117,
+      "lo": [
+        3,
+        2,
+        -1
+      ],
+      "hi": [
+        7,
+        5,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 118,
+      "lo": [
+        2,
+        -1,
+        5
+      ],
+      "hi": [
+        4,
+        1,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 119,
+      "lo": [
+        -3,
+        2,
+        -1
+      ],
+      "hi": [
+        -1,
+        4,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 120,
+      "lo": [
+        5,
+        3,
+        5
+      ],
+      "hi": [
+        8,
+        8,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 121,
+      "lo": [
+        1,
+        1,
+        -2
+      ],
+      "hi": [
+        5,
+        4,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 122,
+      "lo": [
+        3,
+        3,
+        1
+      ],
+      "hi": [
+        5,
+        4,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 123,
+      "lo": [
+        -2,
+        4,
+        -1
+      ],
+      "hi": [
+        3,
+        7,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 124,
+      "lo": [
+        3,
+        3,
+        0
+      ],
+      "hi": [
+        6,
+        8,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 125,
+      "lo": [
+        1,
+        -1,
+        0
+      ],
+      "hi": [
+        4,
+        2,
+        1
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 126,
+      "lo": [
+        -1,
+        1,
+        4
+      ],
+      "hi": [
+        3,
+        5,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 127,
+      "lo": [
+        4,
+        3,
+        1
+      ],
+      "hi": [
+        5,
+        4,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 128,
+      "lo": [
+        -2,
+        5,
+        3
+      ],
+      "hi": [
+        2,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 129,
+      "lo": [
+        -1,
+        -1,
+        -2
+      ],
+      "hi": [
+        2,
+        4,
+        1
+      ],
+      "intersectionVolume": 6,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 130,
+      "lo": [
+        4,
+        5,
+        2
+      ],
+      "hi": [
+        8,
+        7,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 131,
+      "lo": [
+        -1,
+        2,
+        2
+      ],
+      "hi": [
+        0,
+        3,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 132,
+      "lo": [
+        0,
+        0,
+        2
+      ],
+      "hi": [
+        4,
+        4,
+        6
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 133,
+      "lo": [
+        -2,
+        -1,
+        -3
+      ],
+      "hi": [
+        3,
+        2,
+        1
+      ],
+      "intersectionVolume": 6,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 134,
+      "lo": [
+        2,
+        2,
+        5
+      ],
+      "hi": [
+        3,
+        7,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 135,
+      "lo": [
+        1,
+        1,
+        1
+      ],
+      "hi": [
+        5,
+        3,
+        5
+      ],
+      "intersectionVolume": 8,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 136,
+      "lo": [
+        -2,
+        1,
+        -2
+      ],
+      "hi": [
+        2,
+        2,
+        1
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 137,
+      "lo": [
+        3,
+        -3,
+        5
+      ],
+      "hi": [
+        7,
+        -2,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 138,
+      "lo": [
+        4,
+        5,
+        -2
+      ],
+      "hi": [
+        7,
+        6,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 139,
+      "lo": [
+        -3,
+        5,
+        0
+      ],
+      "hi": [
+        -2,
+        6,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 140,
+      "lo": [
+        -2,
+        4,
+        4
+      ],
+      "hi": [
+        -1,
+        5,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 141,
+      "lo": [
+        1,
+        4,
+        -1
+      ],
+      "hi": [
+        5,
+        5,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 142,
+      "lo": [
+        3,
+        -2,
+        1
+      ],
+      "hi": [
+        8,
+        -1,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 143,
+      "lo": [
+        -3,
+        -1,
+        4
+      ],
+      "hi": [
+        0,
+        0,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 144,
+      "lo": [
+        3,
+        3,
+        1
+      ],
+      "hi": [
+        5,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 145,
+      "lo": [
+        1,
+        3,
+        0
+      ],
+      "hi": [
+        2,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 146,
+      "lo": [
+        4,
+        -2,
+        3
+      ],
+      "hi": [
+        9,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 147,
+      "lo": [
+        4,
+        2,
+        -2
+      ],
+      "hi": [
+        9,
+        5,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 148,
+      "lo": [
+        1,
+        1,
+        3
+      ],
+      "hi": [
+        2,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 149,
+      "lo": [
+        -1,
+        0,
+        -3
+      ],
+      "hi": [
+        3,
+        5,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 150,
+      "lo": [
+        0,
+        -1,
+        5
+      ],
+      "hi": [
+        1,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 151,
+      "lo": [
+        -2,
+        0,
+        2
+      ],
+      "hi": [
+        0,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 152,
+      "lo": [
+        5,
+        4,
+        0
+      ],
+      "hi": [
+        6,
+        7,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 153,
+      "lo": [
+        -2,
+        -1,
+        -2
+      ],
+      "hi": [
+        0,
+        3,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 154,
+      "lo": [
+        -2,
+        -3,
+        0
+      ],
+      "hi": [
+        0,
+        1,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 155,
+      "lo": [
+        5,
+        2,
+        2
+      ],
+      "hi": [
+        8,
+        3,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 156,
+      "lo": [
+        4,
+        2,
+        -2
+      ],
+      "hi": [
+        8,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 157,
+      "lo": [
+        1,
+        -1,
+        0
+      ],
+      "hi": [
+        3,
+        2,
+        5
+      ],
+      "intersectionVolume": 12,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 158,
+      "lo": [
+        1,
+        0,
+        -1
+      ],
+      "hi": [
+        4,
+        2,
+        4
+      ],
+      "intersectionVolume": 12,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 159,
+      "lo": [
+        1,
+        3,
+        5
+      ],
+      "hi": [
+        5,
+        4,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 160,
+      "lo": [
+        -2,
+        -1,
+        -1
+      ],
+      "hi": [
+        3,
+        3,
+        3
+      ],
+      "intersectionVolume": 27,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 161,
+      "lo": [
+        5,
+        0,
+        1
+      ],
+      "hi": [
+        8,
+        5,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 162,
+      "lo": [
+        1,
+        0,
+        2
+      ],
+      "hi": [
+        6,
+        2,
+        6
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 163,
+      "lo": [
+        4,
+        -3,
+        -2
+      ],
+      "hi": [
+        6,
+        0,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 164,
+      "lo": [
+        3,
+        3,
+        -2
+      ],
+      "hi": [
+        8,
+        8,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 165,
+      "lo": [
+        5,
+        -1,
+        -1
+      ],
+      "hi": [
+        10,
+        1,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 166,
+      "lo": [
+        2,
+        2,
+        0
+      ],
+      "hi": [
+        3,
+        3,
+        2
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_COINCIDENT_INTERIOR"
+    },
+    {
+      "i": 167,
+      "lo": [
+        3,
+        0,
+        -2
+      ],
+      "hi": [
+        5,
+        1,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 168,
+      "lo": [
+        4,
+        4,
+        -2
+      ],
+      "hi": [
+        8,
+        6,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 169,
+      "lo": [
+        -1,
+        2,
+        -1
+      ],
+      "hi": [
+        1,
+        4,
+        4
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 170,
+      "lo": [
+        2,
+        5,
+        2
+      ],
+      "hi": [
+        3,
+        7,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 171,
+      "lo": [
+        -3,
+        1,
+        -1
+      ],
+      "hi": [
+        2,
+        2,
+        2
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 172,
+      "lo": [
+        5,
+        2,
+        5
+      ],
+      "hi": [
+        7,
+        7,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 173,
+      "lo": [
+        3,
+        0,
+        4
+      ],
+      "hi": [
+        7,
+        5,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 174,
+      "lo": [
+        3,
+        -1,
+        -2
+      ],
+      "hi": [
+        8,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 175,
+      "lo": [
+        -3,
+        -1,
+        -3
+      ],
+      "hi": [
+        -2,
+        2,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 176,
+      "lo": [
+        -2,
+        -3,
+        -3
+      ],
+      "hi": [
+        2,
+        -1,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 177,
+      "lo": [
+        4,
+        -2,
+        3
+      ],
+      "hi": [
+        9,
+        1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 178,
+      "lo": [
+        3,
+        0,
+        -1
+      ],
+      "hi": [
+        7,
+        4,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 179,
+      "lo": [
+        4,
+        5,
+        -3
+      ],
+      "hi": [
+        8,
+        10,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 180,
+      "lo": [
+        4,
+        5,
+        3
+      ],
+      "hi": [
+        5,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 181,
+      "lo": [
+        4,
+        1,
+        5
+      ],
+      "hi": [
+        6,
+        2,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 182,
+      "lo": [
+        -1,
+        0,
+        4
+      ],
+      "hi": [
+        2,
+        1,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 183,
+      "lo": [
+        -2,
+        -2,
+        1
+      ],
+      "hi": [
+        -1,
+        0,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 184,
+      "lo": [
+        -3,
+        1,
+        1
+      ],
+      "hi": [
+        0,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 185,
+      "lo": [
+        -2,
+        5,
+        5
+      ],
+      "hi": [
+        -1,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 186,
+      "lo": [
+        -2,
+        2,
+        3
+      ],
+      "hi": [
+        2,
+        5,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 187,
+      "lo": [
+        -2,
+        -1,
+        4
+      ],
+      "hi": [
+        2,
+        2,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 188,
+      "lo": [
+        0,
+        3,
+        5
+      ],
+      "hi": [
+        5,
+        8,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 189,
+      "lo": [
+        -3,
+        4,
+        3
+      ],
+      "hi": [
+        -1,
+        8,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 190,
+      "lo": [
+        -2,
+        5,
+        5
+      ],
+      "hi": [
+        3,
+        6,
+        10
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 191,
+      "lo": [
+        -1,
+        2,
+        1
+      ],
+      "hi": [
+        1,
+        3,
+        4
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 192,
+      "lo": [
+        5,
+        3,
+        -1
+      ],
+      "hi": [
+        8,
+        4,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 193,
+      "lo": [
+        0,
+        4,
+        5
+      ],
+      "hi": [
+        2,
+        7,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 194,
+      "lo": [
+        1,
+        1,
+        4
+      ],
+      "hi": [
+        2,
+        5,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 195,
+      "lo": [
+        4,
+        -3,
+        -2
+      ],
+      "hi": [
+        8,
+        1,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 196,
+      "lo": [
+        0,
+        5,
+        -1
+      ],
+      "hi": [
+        3,
+        10,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 197,
+      "lo": [
+        -1,
+        3,
+        3
+      ],
+      "hi": [
+        2,
+        5,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 198,
+      "lo": [
+        0,
+        -1,
+        0
+      ],
+      "hi": [
+        1,
+        4,
+        4
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 199,
+      "lo": [
+        -3,
+        -3,
+        2
+      ],
+      "hi": [
+        1,
+        -1,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 200,
+      "lo": [
+        -2,
+        -2,
+        3
+      ],
+      "hi": [
+        0,
+        1,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 201,
+      "lo": [
+        4,
+        -3,
+        0
+      ],
+      "hi": [
+        8,
+        -1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 202,
+      "lo": [
+        0,
+        5,
+        4
+      ],
+      "hi": [
+        3,
+        8,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 203,
+      "lo": [
+        -2,
+        3,
+        5
+      ],
+      "hi": [
+        3,
+        7,
+        10
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 204,
+      "lo": [
+        4,
+        4,
+        5
+      ],
+      "hi": [
+        5,
+        7,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 205,
+      "lo": [
+        -1,
+        2,
+        0
+      ],
+      "hi": [
+        1,
+        7,
+        5
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 206,
+      "lo": [
+        -3,
+        -2,
+        -3
+      ],
+      "hi": [
+        -1,
+        -1,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 207,
+      "lo": [
+        2,
+        -2,
+        -3
+      ],
+      "hi": [
+        4,
+        1,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 208,
+      "lo": [
+        -1,
+        -3,
+        -1
+      ],
+      "hi": [
+        0,
+        -1,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 209,
+      "lo": [
+        4,
+        -3,
+        5
+      ],
+      "hi": [
+        6,
+        0,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 210,
+      "lo": [
+        5,
+        0,
+        -3
+      ],
+      "hi": [
+        10,
+        5,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 211,
+      "lo": [
+        -1,
+        0,
+        4
+      ],
+      "hi": [
+        4,
+        3,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 212,
+      "lo": [
+        3,
+        -3,
+        0
+      ],
+      "hi": [
+        4,
+        1,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 213,
+      "lo": [
+        2,
+        3,
+        -2
+      ],
+      "hi": [
+        5,
+        5,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 214,
+      "lo": [
+        5,
+        0,
+        -3
+      ],
+      "hi": [
+        8,
+        3,
+        -2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 215,
+      "lo": [
+        -2,
+        -3,
+        4
+      ],
+      "hi": [
+        1,
+        -1,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 216,
+      "lo": [
+        3,
+        -3,
+        5
+      ],
+      "hi": [
+        7,
+        2,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 217,
+      "lo": [
+        2,
+        3,
+        1
+      ],
+      "hi": [
+        3,
+        8,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 218,
+      "lo": [
+        -2,
+        3,
+        -2
+      ],
+      "hi": [
+        2,
+        5,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 219,
+      "lo": [
+        -1,
+        -2,
+        -3
+      ],
+      "hi": [
+        2,
+        3,
+        -2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 220,
+      "lo": [
+        -2,
+        -1,
+        0
+      ],
+      "hi": [
+        1,
+        3,
+        2
+      ],
+      "intersectionVolume": 6,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 221,
+      "lo": [
+        4,
+        3,
+        5
+      ],
+      "hi": [
+        7,
+        4,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 222,
+      "lo": [
+        2,
+        -2,
+        2
+      ],
+      "hi": [
+        6,
+        3,
+        7
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 223,
+      "lo": [
+        0,
+        2,
+        2
+      ],
+      "hi": [
+        4,
+        3,
+        5
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 224,
+      "lo": [
+        4,
+        2,
+        5
+      ],
+      "hi": [
+        6,
+        3,
+        10
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 225,
+      "lo": [
+        -2,
+        0,
+        -1
+      ],
+      "hi": [
+        0,
+        2,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 226,
+      "lo": [
+        4,
+        -3,
+        -1
+      ],
+      "hi": [
+        6,
+        -2,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 227,
+      "lo": [
+        4,
+        5,
+        -3
+      ],
+      "hi": [
+        8,
+        9,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 228,
+      "lo": [
+        5,
+        4,
+        -1
+      ],
+      "hi": [
+        10,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 229,
+      "lo": [
+        -2,
+        -2,
+        2
+      ],
+      "hi": [
+        2,
+        -1,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 230,
+      "lo": [
+        5,
+        -1,
+        -1
+      ],
+      "hi": [
+        9,
+        4,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 231,
+      "lo": [
+        1,
+        4,
+        -1
+      ],
+      "hi": [
+        5,
+        6,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 232,
+      "lo": [
+        4,
+        1,
+        -2
+      ],
+      "hi": [
+        6,
+        6,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 233,
+      "lo": [
+        3,
+        -1,
+        2
+      ],
+      "hi": [
+        8,
+        4,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 234,
+      "lo": [
+        -2,
+        0,
+        2
+      ],
+      "hi": [
+        3,
+        3,
+        6
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 235,
+      "lo": [
+        0,
+        2,
+        4
+      ],
+      "hi": [
+        1,
+        5,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 236,
+      "lo": [
+        -1,
+        -2,
+        -1
+      ],
+      "hi": [
+        1,
+        1,
+        3
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 237,
+      "lo": [
+        2,
+        1,
+        -1
+      ],
+      "hi": [
+        7,
+        5,
+        1
+      ],
+      "intersectionVolume": 2,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 238,
+      "lo": [
+        0,
+        4,
+        5
+      ],
+      "hi": [
+        3,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 239,
+      "lo": [
+        5,
+        2,
+        3
+      ],
+      "hi": [
+        10,
+        7,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 240,
+      "lo": [
+        0,
+        1,
+        2
+      ],
+      "hi": [
+        2,
+        3,
+        4
+      ],
+      "intersectionVolume": 4,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 241,
+      "lo": [
+        5,
+        3,
+        1
+      ],
+      "hi": [
+        10,
+        4,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 242,
+      "lo": [
+        3,
+        2,
+        1
+      ],
+      "hi": [
+        6,
+        3,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 243,
+      "lo": [
+        5,
+        1,
+        4
+      ],
+      "hi": [
+        9,
+        3,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 244,
+      "lo": [
+        2,
+        3,
+        3
+      ],
+      "hi": [
+        4,
+        4,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 245,
+      "lo": [
+        -1,
+        -1,
+        5
+      ],
+      "hi": [
+        1,
+        4,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 246,
+      "lo": [
+        5,
+        2,
+        2
+      ],
+      "hi": [
+        6,
+        5,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 247,
+      "lo": [
+        -2,
+        0,
+        1
+      ],
+      "hi": [
+        -1,
+        2,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 248,
+      "lo": [
+        0,
+        0,
+        -2
+      ],
+      "hi": [
+        4,
+        2,
+        3
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 249,
+      "lo": [
+        0,
+        3,
+        5
+      ],
+      "hi": [
+        5,
+        6,
+        9
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 250,
+      "lo": [
+        3,
+        2,
+        5
+      ],
+      "hi": [
+        6,
+        3,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 251,
+      "lo": [
+        2,
+        -1,
+        0
+      ],
+      "hi": [
+        4,
+        1,
+        3
+      ],
+      "intersectionVolume": 3,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 252,
+      "lo": [
+        3,
+        3,
+        -2
+      ],
+      "hi": [
+        4,
+        8,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 253,
+      "lo": [
+        -3,
+        2,
+        3
+      ],
+      "hi": [
+        0,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 254,
+      "lo": [
+        3,
+        2,
+        -3
+      ],
+      "hi": [
+        8,
+        4,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 255,
+      "lo": [
+        -2,
+        4,
+        4
+      ],
+      "hi": [
+        3,
+        6,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 256,
+      "lo": [
+        5,
+        -1,
+        -3
+      ],
+      "hi": [
+        7,
+        1,
+        -1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 257,
+      "lo": [
+        -2,
+        2,
+        3
+      ],
+      "hi": [
+        1,
+        3,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 258,
+      "lo": [
+        -2,
+        -2,
+        3
+      ],
+      "hi": [
+        1,
+        3,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 259,
+      "lo": [
+        -1,
+        1,
+        5
+      ],
+      "hi": [
+        3,
+        3,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 260,
+      "lo": [
+        0,
+        5,
+        1
+      ],
+      "hi": [
+        3,
+        8,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 261,
+      "lo": [
+        4,
+        2,
+        -1
+      ],
+      "hi": [
+        8,
+        4,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 262,
+      "lo": [
+        0,
+        1,
+        -2
+      ],
+      "hi": [
+        4,
+        3,
+        3
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 263,
+      "lo": [
+        2,
+        -1,
+        5
+      ],
+      "hi": [
+        6,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 264,
+      "lo": [
+        0,
+        2,
+        5
+      ],
+      "hi": [
+        1,
+        7,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 265,
+      "lo": [
+        0,
+        0,
+        5
+      ],
+      "hi": [
+        5,
+        2,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 266,
+      "lo": [
+        -3,
+        4,
+        -3
+      ],
+      "hi": [
+        1,
+        5,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 267,
+      "lo": [
+        5,
+        2,
+        -3
+      ],
+      "hi": [
+        9,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 268,
+      "lo": [
+        -3,
+        0,
+        2
+      ],
+      "hi": [
+        2,
+        5,
+        7
+      ],
+      "intersectionVolume": 6,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 269,
+      "lo": [
+        -1,
+        3,
+        1
+      ],
+      "hi": [
+        1,
+        4,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 270,
+      "lo": [
+        1,
+        4,
+        4
+      ],
+      "hi": [
+        3,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 271,
+      "lo": [
+        4,
+        1,
+        5
+      ],
+      "hi": [
+        9,
+        4,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 272,
+      "lo": [
+        2,
+        0,
+        3
+      ],
+      "hi": [
+        3,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 273,
+      "lo": [
+        -1,
+        4,
+        3
+      ],
+      "hi": [
+        1,
+        8,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 274,
+      "lo": [
+        -3,
+        5,
+        4
+      ],
+      "hi": [
+        -2,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 275,
+      "lo": [
+        5,
+        -1,
+        2
+      ],
+      "hi": [
+        9,
+        1,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 276,
+      "lo": [
+        1,
+        1,
+        5
+      ],
+      "hi": [
+        3,
+        3,
+        10
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 277,
+      "lo": [
+        2,
+        -1,
+        4
+      ],
+      "hi": [
+        7,
+        4,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 278,
+      "lo": [
+        5,
+        3,
+        -1
+      ],
+      "hi": [
+        6,
+        7,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 279,
+      "lo": [
+        5,
+        4,
+        4
+      ],
+      "hi": [
+        10,
+        9,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 280,
+      "lo": [
+        3,
+        -2,
+        3
+      ],
+      "hi": [
+        7,
+        1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 281,
+      "lo": [
+        -3,
+        2,
+        3
+      ],
+      "hi": [
+        2,
+        6,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 282,
+      "lo": [
+        -2,
+        2,
+        -2
+      ],
+      "hi": [
+        0,
+        7,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 283,
+      "lo": [
+        4,
+        0,
+        1
+      ],
+      "hi": [
+        9,
+        2,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 284,
+      "lo": [
+        5,
+        -2,
+        4
+      ],
+      "hi": [
+        6,
+        3,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 285,
+      "lo": [
+        1,
+        -1,
+        5
+      ],
+      "hi": [
+        6,
+        2,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 286,
+      "lo": [
+        1,
+        4,
+        3
+      ],
+      "hi": [
+        5,
+        7,
+        6
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 287,
+      "lo": [
+        2,
+        0,
+        0
+      ],
+      "hi": [
+        7,
+        3,
+        5
+      ],
+      "intersectionVolume": 9,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 288,
+      "lo": [
+        -3,
+        5,
+        3
+      ],
+      "hi": [
+        1,
+        7,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 289,
+      "lo": [
+        -3,
+        -2,
+        4
+      ],
+      "hi": [
+        -2,
+        2,
+        7
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 290,
+      "lo": [
+        4,
+        4,
+        4
+      ],
+      "hi": [
+        5,
+        5,
+        8
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 291,
+      "lo": [
+        4,
+        -3,
+        0
+      ],
+      "hi": [
+        9,
+        -1,
+        4
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 292,
+      "lo": [
+        0,
+        1,
+        1
+      ],
+      "hi": [
+        5,
+        5,
+        6
+      ],
+      "intersectionVolume": 12,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 293,
+      "lo": [
+        3,
+        5,
+        -1
+      ],
+      "hi": [
+        6,
+        6,
+        0
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 294,
+      "lo": [
+        5,
+        3,
+        2
+      ],
+      "hi": [
+        8,
+        6,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 295,
+      "lo": [
+        -2,
+        3,
+        0
+      ],
+      "hi": [
+        2,
+        8,
+        2
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 296,
+      "lo": [
+        -1,
+        1,
+        -2
+      ],
+      "hi": [
+        4,
+        3,
+        3
+      ],
+      "intersectionVolume": 18,
+      "verdict": "fail",
+      "code": "MESH_MATERIAL_INTERSECTION"
+    },
+    {
+      "i": 297,
+      "lo": [
+        3,
+        -3,
+        -1
+      ],
+      "hi": [
+        6,
+        0,
+        3
+      ],
+      "intersectionVolume": 0,
+      "verdict": "unverified",
+      "code": "MESH_ZERO_AREA_CONTACT"
+    },
+    {
+      "i": 298,
+      "lo": [
+        0,
+        4,
+        0
+      ],
+      "hi": [
+        2,
+        5,
+        1
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    },
+    {
+      "i": 299,
+      "lo": [
+        5,
+        -2,
+        0
+      ],
+      "hi": [
+        9,
+        3,
+        5
+      ],
+      "intersectionVolume": 0,
+      "verdict": "pass",
+      "code": "MESH_QUALIFIED"
+    }
+  ],
+  "failures": [],
+  "unsafe": [],
+  "sourceOwnershipUnchanged": true
+}

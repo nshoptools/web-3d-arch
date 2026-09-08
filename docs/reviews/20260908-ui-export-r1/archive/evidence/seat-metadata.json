@@ -1,0 +1,41 @@
+{
+  "at": "2026-09-08T08:22:11.6347239Z",
+  "launch": [
+    {
+      "pid": 23048,
+      "parentPid": 19732,
+      "executable": "C:\\Users\\voson\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe",
+      "modelFlags": [
+        "-m gpt-6-astra"
+      ],
+      "effortFlags": [
+        "model_reasoning_effort=\\\"max"
+      ],
+      "fastFlags": [
+        "service_tier=\\\"default",
+        "features.fast_mode=false"
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "type": "session_meta",
+      "path": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\cache\\codex-home\\sessions\\2026\\09\\08\\rollout-2026-09-08T15-19-55-01a0801a-32d5-7c43-82f7-f6fd1648cd8a.jsonl",
+      "timestamp": "2026-09-08T08:19:56.036Z",
+      "cli_version": "0.153.4",
+      "originator": "Codex Desktop",
+      "cwd": "D:\\VoSon\\Code\\web-3d-arch",
+      "model_provider": "openai"
+    },
+    {
+      "type": "turn_context",
+      "timestamp": "2026-09-08T08:20:00.552Z",
+      "model": "gpt-6-astra",
+      "effort": "max",
+      "service_tier": null,
+      "fast_mode": null,
+      "collaboration_model": "gpt-6-astra",
+      "collaboration_effort": "max"
+    }
+  ]
+}

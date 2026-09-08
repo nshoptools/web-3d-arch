@@ -1,0 +1,404 @@
+{
+  "at": "2026-09-08T12:21:53.516Z",
+  "originalManifestSHA256": "e570a324b09182fea31bb34fe14adaf1cbb59d4f5a3d6e2d38bf06e1f94f283c",
+  "originalCount": 4874,
+  "selectedCount": 79,
+  "files": [
+    {
+      "path": "evidence/cavity-public-native/lego-roof-oblique-slit-2nm.arch",
+      "bytes": 226960,
+      "sha256": "4382462f197ccc1355dd5e2227e477b21e1641a726f65c003c9e48493c1abe19"
+    },
+    {
+      "path": "evidence/cavity-public-native/lego-roof-oblique-slit-2nm.json",
+      "bytes": 10403,
+      "sha256": "ba6b08e91c01064a438201115ee5f8c5b932734b8561f06f7f344ced38335fe6"
+    },
+    {
+      "path": "evidence/cavity-public-native/summary.json",
+      "bytes": 1981,
+      "sha256": "8b1df07f0c359fdeec879258138bacb0d1d2567cb6856087d77f1b742e26866a"
+    },
+    {
+      "path": "evidence/cavity-public-wasm/lego-roof-oblique-slit-2nm.arch",
+      "bytes": 226960,
+      "sha256": "4382462f197ccc1355dd5e2227e477b21e1641a726f65c003c9e48493c1abe19"
+    },
+    {
+      "path": "evidence/cavity-public-wasm/lego-roof-oblique-slit-2nm.json",
+      "bytes": 10402,
+      "sha256": "eb8a2e5fba72e54d66bfc420f7b9b72c5477d09759b2a06bdbe9398fa87d4293"
+    },
+    {
+      "path": "evidence/cavity-public-wasm/summary.json",
+      "bytes": 1983,
+      "sha256": "6c3a467f7f02ea65a5be5c1a22aeace47a189fcdf835c0edebd800c0ba325be9"
+    },
+    {
+      "path": "evidence/guard-public-native/roof-oblique-slit-2nm.arch",
+      "bytes": 15712,
+      "sha256": "df087df356cfd8616941ba7506ef4f83378d10e9b5964fb3fafe3c89b7051ed1"
+    },
+    {
+      "path": "evidence/guard-public-native/roof-oblique-slit-2nm.json",
+      "bytes": 7847,
+      "sha256": "8192c99f8222fa427de61a19cb06939be267b6d6038a65ad756b768d3854cadb"
+    },
+    {
+      "path": "evidence/guard-public-native/summary.json",
+      "bytes": 4026,
+      "sha256": "940f3b67205ffabcddcdedfaaf0e6616e862592832c0dde44da177b28b8ed82d"
+    },
+    {
+      "path": "evidence/guard-public-wasm/roof-oblique-slit-2nm.arch",
+      "bytes": 15712,
+      "sha256": "df087df356cfd8616941ba7506ef4f83378d10e9b5964fb3fafe3c89b7051ed1"
+    },
+    {
+      "path": "evidence/guard-public-wasm/roof-oblique-slit-2nm.json",
+      "bytes": 7846,
+      "sha256": "5e53edfc0d95ca4763bd6e82518c1ae966457661c955a78ce17d627340e905b1"
+    },
+    {
+      "path": "evidence/guard-public-wasm/summary.json",
+      "bytes": 4030,
+      "sha256": "f9c4efb0ad043f48d9936e73f02fcb6a862be51d66bae1610d3d6d7de6a60c4a"
+    },
+    {
+      "path": "evidence/independent-native/strap-notch-1.arch",
+      "bytes": 99768,
+      "sha256": "f8d51be7866b1fff0e7e4acb4a542f45a12d714fb6e3237ec67537c2d67f2ac0"
+    },
+    {
+      "path": "evidence/independent-native/strap-notch-1.json",
+      "bytes": 7824,
+      "sha256": "2b1c078c6a2b795043fb48cf354da200089b4f32e769c4b62dfe2fc4d10b5ca3"
+    },
+    {
+      "path": "evidence/independent-native/summary.json",
+      "bytes": 19840,
+      "sha256": "1a611c06bc73b81a9238500a5fa645e29715d3656d602779a9804cb8e24961d4"
+    },
+    {
+      "path": "evidence/independent-wasm/strap-notch-1.arch",
+      "bytes": 99768,
+      "sha256": "f8d51be7866b1fff0e7e4acb4a542f45a12d714fb6e3237ec67537c2d67f2ac0"
+    },
+    {
+      "path": "evidence/independent-wasm/strap-notch-1.json",
+      "bytes": 7823,
+      "sha256": "7e50bd2bda4e64e9dee9f0d78434e67cdf2bf773997ac9b82d4e0beacf0b03e5"
+    },
+    {
+      "path": "evidence/independent-wasm/summary.json",
+      "bytes": 19812,
+      "sha256": "91a5c5c95454ff7242cdeb4ef6ba5aafd906804d4e223edb6c248613bbbed571"
+    },
+    {
+      "path": "evidence/session-attestation.json",
+      "bytes": 1256,
+      "sha256": "dc100058399e9e231fc98ae95b3acd774cff573460fa8f790d127dab4aaf6404"
+    },
+    {
+      "path": "inputs/independent/lego-roof-oblique-slit-2nm.txt",
+      "bytes": 467,
+      "sha256": "b86eb3113088dd908216776f8bf628302fb79f806bd3bf6b157a99c71cecdbf5"
+    },
+    {
+      "path": "inputs/independent/lego-roof-oblique-slit-8nm.txt",
+      "bytes": 467,
+      "sha256": "1213c42096ec3669b7671ede19fcec60bd3da29ff3e14f699a1708cc3a24085a"
+    },
+    {
+      "path": "inputs/independent/partition-angled-mode0.txt",
+      "bytes": 534,
+      "sha256": "7e0f33867186bed300797c8764a0ad3e3c21d2aae139f1b3f2757158820e0e28"
+    },
+    {
+      "path": "inputs/independent/partition-angled-mode1.txt",
+      "bytes": 534,
+      "sha256": "008d8b0e44f44f3b4fa71aa9ecd6d75653997445e5fa961c8ba3181659099727"
+    },
+    {
+      "path": "inputs/independent/partition-angled-mode2.txt",
+      "bytes": 534,
+      "sha256": "6e4d2af01a9ae340c46bc3b36117937fbb5d30d62b24ec533e17105ba7256772"
+    },
+    {
+      "path": "inputs/independent/partition-angled-mode3.txt",
+      "bytes": 534,
+      "sha256": "45f4a973199e74f688e36654e25e065ce7a31e6441dd64e6c5c21ff45a78809a"
+    },
+    {
+      "path": "inputs/independent/partition-mode0-rim0.txt",
+      "bytes": 641,
+      "sha256": "d6fd13fdb6b341acd911a7d9ea3f802b4fd37c06896cd3b1d17149c9cbab655a"
+    },
+    {
+      "path": "inputs/independent/partition-mode0-rim1.txt",
+      "bytes": 641,
+      "sha256": "ffa3c927f2ef2df6dc72ec1fb840e8d0375fd615b0877f3aaa2db2f5778686ab"
+    },
+    {
+      "path": "inputs/independent/partition-mode1-rim0.txt",
+      "bytes": 641,
+      "sha256": "5dfd3724070a65793eea9a0a36d24a55b8b86f385cb19d34ca20dda9f226273b"
+    },
+    {
+      "path": "inputs/independent/partition-mode1-rim1.txt",
+      "bytes": 641,
+      "sha256": "c804c29c916e009202a7cc4e85f8e45703b11dd851a5b419007c5f77da326fd6"
+    },
+    {
+      "path": "inputs/independent/partition-mode2-rim0.txt",
+      "bytes": 641,
+      "sha256": "57c67c5c334299e440fb9558a0ab5e4c9aa509025024fe5729454f6716f699b7"
+    },
+    {
+      "path": "inputs/independent/partition-mode2-rim1.txt",
+      "bytes": 641,
+      "sha256": "84644e0b13bca30f5c1419de56186540b3220965281213014d24951e7b3c1baa"
+    },
+    {
+      "path": "inputs/independent/partition-mode3-rim0.txt",
+      "bytes": 641,
+      "sha256": "0658426fe59ca42720b50a86dc7ec42d5e4dc5d449ee56d3bfe13425e39f4617"
+    },
+    {
+      "path": "inputs/independent/partition-mode3-rim1.txt",
+      "bytes": 641,
+      "sha256": "0996abde4e800246d048a02866c70c5ddd0af563ac728a2b5b462f2c797e1add"
+    },
+    {
+      "path": "inputs/independent/roof-oblique-slit-2nm.txt",
+      "bytes": 373,
+      "sha256": "f6530a24b75cc18c8fafccd9a41346786227eb93a7b3c74d52027d7f0d0fbeaa"
+    },
+    {
+      "path": "inputs/independent/roof-oblique-slit-40nm.txt",
+      "bytes": 373,
+      "sha256": "254d3edd21bd1473d6efe4968f29eb23c02d7b3d41d9a9d61cfa35eda20df0a8"
+    },
+    {
+      "path": "inputs/independent/roof-oblique-slit-4nm.txt",
+      "bytes": 373,
+      "sha256": "2ba098f4b47fe0964edc031aa47e9cb03d02812af2eb8c4b0822bd4208481c03"
+    },
+    {
+      "path": "inputs/independent/roof-oblique-slit-8nm.txt",
+      "bytes": 373,
+      "sha256": "75b84c5f3054560de12e98351966975d913687b662659e60073e44780b9ec99f"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-exact.txt",
+      "bytes": 243,
+      "sha256": "487e86f2574da53ff3de3533b42069cad4f41e44929fa5445d19d2ea01afe435"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-near.txt",
+      "bytes": 250,
+      "sha256": "bb250581a0f7cd5533b381926b84c2c720d82082db86417e2fc746a7cb29e411"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-1.txt",
+      "bytes": 243,
+      "sha256": "3f85567fb881772212f25af2339c4e3b0859b57b27ec776f5e88cba3dade7d8a"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-10.txt",
+      "bytes": 245,
+      "sha256": "685713f6f6e491e835e59888c819c47e32fb89bb0b681cb8d8919c0fb241b97c"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-12.txt",
+      "bytes": 245,
+      "sha256": "63e14371f16e2a0830b8e76ce9cdfdad47947c45abc7635686f8ba9deb8cae57"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-16.txt",
+      "bytes": 246,
+      "sha256": "3d66226309317ab3ff41dd2bf6b8ab61a20dad1c2102bdba28d2f07c5173bee7"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-2.txt",
+      "bytes": 245,
+      "sha256": "c1e04cc5bc816b936dc553031887d55eeecc37cfcf2ea81c12e4405b2a47b0a1"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-20.txt",
+      "bytes": 248,
+      "sha256": "1df13eee4f8ae590cec877403dd1bede75c7898fe07b9db86ad2230a12ee79da"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-3.txt",
+      "bytes": 245,
+      "sha256": "16f35b76fa166a0df7224bb2a16aa0ade4ba0e740ec79a2476745472eed7c641"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-4.txt",
+      "bytes": 245,
+      "sha256": "830eba0407a7821f6dc83cf4bf776265c517bb2fbe6b31da05e8caef5cead7cf"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-5.txt",
+      "bytes": 245,
+      "sha256": "d0200257140819d14721f9f1d09f763d2f2c55f9afb3d784319f6ae1f1ab6392"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-6.txt",
+      "bytes": 245,
+      "sha256": "74aa4bcc9db42dfd69f61e860455a736452016ff9afe25fb028b240069b34f93"
+    },
+    {
+      "path": "inputs/independent/rounded-tall-width-8.txt",
+      "bytes": 245,
+      "sha256": "14588b2d4b218cb2d5624cdd2c0770cda1f17186f3a046a57010968cbc596ddd"
+    },
+    {
+      "path": "inputs/independent/rounded-wide-exact.txt",
+      "bytes": 243,
+      "sha256": "ef445cdec42ed7ad572fba300352234b0cd0163ecb6cf5283923ec6733db7d9d"
+    },
+    {
+      "path": "inputs/independent/strap-notch-1.txt",
+      "bytes": 312,
+      "sha256": "dab1b2ea3650d6f2dec74b02d95a72d7afd084ae098019e44c61142bc852ad5e"
+    },
+    {
+      "path": "inputs/independent/strap-notch-2.3.txt",
+      "bytes": 312,
+      "sha256": "86fd6b9f3600466359d27743c4fb436d0cfc69bf856c331774008efd30aa8859"
+    },
+    {
+      "path": "inputs/independent/strap-notch-2.599999.txt",
+      "bytes": 312,
+      "sha256": "5a81df38b8d6319d4dc1fc0f6fe1339e61c1ba125dbe2e9e51ddbfe3834435ce"
+    },
+    {
+      "path": "inputs/independent/strap-notch-2.6.txt",
+      "bytes": 312,
+      "sha256": "17367ac60502af0c0d22ff3650826afccd799c170152e844fbe0e972edab32e2"
+    },
+    {
+      "path": "inputs/independent/strap-notch-2.600001.txt",
+      "bytes": 312,
+      "sha256": "e6d74905bf720fa7acdfec470d9f511ceb3c42614fff054f998795495549bb87"
+    },
+    {
+      "path": "inputs/independent/strap-notch-3.txt",
+      "bytes": 312,
+      "sha256": "6e063115fcb45c2d936ed6560f5e9d8ec579e07027bd131f1c22dc965cb9f1b7"
+    },
+    {
+      "path": "inputs/source-manifest.json",
+      "bytes": 39892,
+      "sha256": "0b0a12030d0c9dede1ceacc80f2721ec43bc31d7078b1c0831779f9ce7f50cf9"
+    },
+    {
+      "path": "reports/cavity-independent.json",
+      "bytes": 3888,
+      "sha256": "ec169aa8ff383c87e4b94b6a035cf4c0a7857bfff0ec563f6cf25cf04e4041d4"
+    },
+    {
+      "path": "reports/corpus-independent-native.json",
+      "bytes": 192593,
+      "sha256": "eba38ea787aaf771e9565faa0f6ce4b947a03f73e0f667a17b96d7dba403503f"
+    },
+    {
+      "path": "reports/corpus-independent-wasm.json",
+      "bytes": 192591,
+      "sha256": "27ed376e6768cbe954ee8baf41ec885ed36f78d9768e542c2923ac7cd9190d0e"
+    },
+    {
+      "path": "reports/corpus-surface-parity.json",
+      "bytes": 43838,
+      "sha256": "67ed370a45f8dcc8eea0255b701065c8beecb69e2965f255c407ae6a25c4aeee"
+    },
+    {
+      "path": "reports/curved-r2-native.json",
+      "bytes": 9842,
+      "sha256": "7cbc21ee7bcf4783d900b7f3e18c62e5ad6693fd441f4fdfd95efb8fdf6f930d"
+    },
+    {
+      "path": "reports/curved-r2-wasm.json",
+      "bytes": 9842,
+      "sha256": "7cbc21ee7bcf4783d900b7f3e18c62e5ad6693fd441f4fdfd95efb8fdf6f930d"
+    },
+    {
+      "path": "reports/curved-resource-native.json",
+      "bytes": 9230,
+      "sha256": "009894892eda8beee2543ec35db79cc6c3929dfc87650a30797bd019922089ac"
+    },
+    {
+      "path": "reports/curved-resource-wasm.json",
+      "bytes": 9201,
+      "sha256": "5300ae80042822c2c9119785cd9f90f01d3bf9f3653421c906134c6f9d9dc225"
+    },
+    {
+      "path": "reports/full-source-surface-native.json",
+      "bytes": 58915,
+      "sha256": "f7240771592ea882834e33bfd5a1ea7e1d0f1dbf6b6be06adb2781f6a6fb6306"
+    },
+    {
+      "path": "reports/full-source-surface-wasm.json",
+      "bytes": 58915,
+      "sha256": "f7240771592ea882834e33bfd5a1ea7e1d0f1dbf6b6be06adb2781f6a6fb6306"
+    },
+    {
+      "path": "reports/guard-independent-native.json",
+      "bytes": 5073,
+      "sha256": "606d161e9032c57ff7625c047ae77bd9d83dfbe70e360113310ac1716aeb1e48"
+    },
+    {
+      "path": "reports/guard-independent-wasm.json",
+      "bytes": 5073,
+      "sha256": "606d161e9032c57ff7625c047ae77bd9d83dfbe70e360113310ac1716aeb1e48"
+    },
+    {
+      "path": "reports/initial-findings.json",
+      "bytes": 30103,
+      "sha256": "6549fbb57ebf9df2b51a66423e4641b2a36796d194a457474d0b5a897a06e05e"
+    },
+    {
+      "path": "reports/initial-review.md",
+      "bytes": 11491,
+      "sha256": "b659dd6c657591abfc30eed6716a9cfc1ce93011b0f07e60aa5d983fbe44b729"
+    },
+    {
+      "path": "reports/initial-seal.json",
+      "bytes": 762,
+      "sha256": "8f49b196e97a0b66d60143f3287a4b0c1a448834eaf493b9951db82567c9ab69"
+    },
+    {
+      "path": "reports/lateral-independent.json",
+      "bytes": 4295,
+      "sha256": "bb95ba222fb73df682bd51c1d7922ee9a84c3b7bd2f3c7e70ca43cdc87e72bfe"
+    },
+    {
+      "path": "reports/mechanics-cancellation.json",
+      "bytes": 994,
+      "sha256": "ec99cb480de31f04ee8d7a496e1f688777dd2425a1cfd6f7e59c7585ac54c756"
+    },
+    {
+      "path": "reports/mechanics-native-tests.json",
+      "bytes": 109996,
+      "sha256": "b70af1df4e2567fe1e59d1b6d474a6d2598afb3e4ce118afd96f2e6f2363c9ee"
+    },
+    {
+      "path": "reports/mechanics-wasm-tests.json",
+      "bytes": 109198,
+      "sha256": "de8556734d95672ba85d8833f4fe1388d4cc6423d04aff0f342826de9cbb63a5"
+    },
+    {
+      "path": "reports/rational-material-contract.json",
+      "bytes": 5916,
+      "sha256": "a09ab3a45a094995dd5a2a0c082bb91f609dc7097a2cb236855a0ac2ccb6f863"
+    },
+    {
+      "path": "reports/reproduction.md",
+      "bytes": 16942,
+      "sha256": "51503c0217a020e882ab45706ace693992b0439c3a115ff9df1309504cf76000"
+    }
+  ],
+  "scope": "Selected exact reports, original input cases and resulting native/WASM artifacts; full4874file historical build archive intentionally not duplicated. Each selected byte independently verified by parent."
+}

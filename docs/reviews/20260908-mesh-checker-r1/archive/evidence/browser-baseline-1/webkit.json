@@ -1,0 +1,698 @@
+{
+  "trace": [
+    {
+      "case": "real-validator-worker-valid-invalid-cancel",
+      "status": "pass"
+    },
+    {
+      "case": "keychain",
+      "status": "pass",
+      "snapshotSha256": "1caa01bc4357dec6940b99dde38df31557554244d3c2a04fef54800807f03a4a",
+      "snapshot": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 20812,
+          "exactPairs": 16739,
+          "containmentWork": 8924,
+          "sharedFacePairs": 48,
+          "boundaryContacts": 160,
+          "vertices": 954,
+          "triangles": 1900,
+          "parts": 4,
+          "bytes": 45984,
+          "components": 4,
+          "milliseconds": 486.71999999999997
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialReadback": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 20891,
+          "exactPairs": 16810,
+          "containmentWork": 11192,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 954,
+          "triangles": 1904,
+          "parts": 3,
+          "bytes": 45992,
+          "components": 3,
+          "milliseconds": 541.86
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "union": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "not-applicable",
+          "unionTopology": "pass"
+        },
+        "stats": {
+          "candidatePairs": 20602,
+          "exactPairs": 16553,
+          "containmentWork": 0,
+          "sharedFacePairs": 0,
+          "boundaryContacts": 0,
+          "vertices": 950,
+          "triangles": 1900,
+          "parts": 1,
+          "bytes": 45768,
+          "components": 1,
+          "milliseconds": 474.6
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialTableDigest": "dad7d8d6f29b2761a4472e6783900c09d496e94c4b76b16f5aa86f402bffc767",
+      "projectScheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "materialCount": 3,
+      "milliseconds": 3005.8
+    },
+    {
+      "case": "clicky",
+      "status": "pass",
+      "snapshotSha256": "0cb0eb352ef10f12b20437fa90f2124907a30d47bab4685ca0e9965b7c36a2e9",
+      "snapshot": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 146516,
+          "exactPairs": 131288,
+          "containmentWork": 21312,
+          "sharedFacePairs": 23796,
+          "boundaryContacts": 10643,
+          "vertices": 3040,
+          "triangles": 6064,
+          "parts": 9,
+          "bytes": 146216,
+          "components": 9,
+          "milliseconds": 4593
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialReadback": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 72895,
+          "exactPairs": 63035,
+          "containmentWork": 14072,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 2652,
+          "triangles": 5292,
+          "parts": 4,
+          "bytes": 127440,
+          "components": 4,
+          "milliseconds": 1846.7600000000002
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "union": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "not-applicable",
+          "unionTopology": "pass"
+        },
+        "stats": {
+          "candidatePairs": 72654,
+          "exactPairs": 62797,
+          "containmentWork": 5288,
+          "sharedFacePairs": 0,
+          "boundaryContacts": 0,
+          "vertices": 2648,
+          "triangles": 5288,
+          "parts": 1,
+          "bytes": 127176,
+          "components": 2,
+          "milliseconds": 1681.5
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialTableDigest": "e0413e05fae01376d1d738f0ea9199b0f7a788b718729d4e88cce3a62ad1b966",
+      "projectScheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "materialCount": 4,
+      "milliseconds": 10469.68
+    },
+    {
+      "case": "strap",
+      "status": "pass",
+      "snapshotSha256": "a8d15e99ab5f3aee607a5c070e334d22c4b151bedac5f6168c578bc5f0eac96d",
+      "snapshot": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 62230,
+          "exactPairs": 38673,
+          "containmentWork": 24608,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 2072,
+          "triangles": 4140,
+          "parts": 3,
+          "bytes": 99656,
+          "components": 3,
+          "milliseconds": 1289.28
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialReadback": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 62230,
+          "exactPairs": 38673,
+          "containmentWork": 24608,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 2072,
+          "triangles": 4140,
+          "parts": 3,
+          "bytes": 99656,
+          "components": 3,
+          "milliseconds": 1469.72
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "union": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "not-applicable",
+          "unionTopology": "pass"
+        },
+        "stats": {
+          "candidatePairs": 61846,
+          "exactPairs": 38315,
+          "containmentWork": 0,
+          "sharedFacePairs": 0,
+          "boundaryContacts": 0,
+          "vertices": 2068,
+          "triangles": 4136,
+          "parts": 1,
+          "bytes": 99432,
+          "components": 1,
+          "milliseconds": 1171.8999999999999
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialTableDigest": "5855a627446c4f94d0bdf380ba341456ac99b58f4e3bd14c5f63b85eec761fb3",
+      "projectScheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "materialCount": 3,
+      "milliseconds": 5619.66
+    },
+    {
+      "case": "lego",
+      "status": "pass",
+      "snapshotSha256": "e2cc7aaca8ead6895bd9d1dddcd0386b156164c62063e81f78ef5fc9325312cb",
+      "snapshot": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 418389,
+          "exactPairs": 340987,
+          "containmentWork": 258536,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 21568,
+          "triangles": 43128,
+          "parts": 3,
+          "bytes": 1035416,
+          "components": 3,
+          "milliseconds": 10571.08
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialReadback": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 418389,
+          "exactPairs": 340987,
+          "containmentWork": 258536,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 21568,
+          "triangles": 43128,
+          "parts": 3,
+          "bytes": 1035416,
+          "components": 3,
+          "milliseconds": 10500.900000000001
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "union": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "not-applicable",
+          "unionTopology": "pass"
+        },
+        "stats": {
+          "candidatePairs": 418100,
+          "exactPairs": 340730,
+          "containmentWork": 0,
+          "sharedFacePairs": 0,
+          "boundaryContacts": 0,
+          "vertices": 21564,
+          "triangles": 43124,
+          "parts": 1,
+          "bytes": 1035192,
+          "components": 1,
+          "milliseconds": 9380.66
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialTableDigest": "484f44583059e7f91186353408d19296b25fa1d3c12c4995d53f452d6d0db552",
+      "projectScheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "materialCount": 3,
+      "milliseconds": 39291.759999999995
+    },
+    {
+      "case": "charm",
+      "status": "pass",
+      "snapshotSha256": "56db1537e0faca91c42f05285e518f8c4ef981202dc357df89f6f6bdbd66f8df",
+      "snapshot": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 65011,
+          "exactPairs": 51959,
+          "containmentWork": 10184,
+          "sharedFacePairs": 1016,
+          "boundaryContacts": 1504,
+          "vertices": 2532,
+          "triangles": 5044,
+          "parts": 6,
+          "bytes": 121664,
+          "components": 6,
+          "milliseconds": 1172.76
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialReadback": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "pass",
+          "unionTopology": "requires-union-readback"
+        },
+        "stats": {
+          "candidatePairs": 55231,
+          "exactPairs": 44219,
+          "containmentWork": 10184,
+          "sharedFacePairs": 44,
+          "boundaryContacts": 132,
+          "vertices": 2532,
+          "triangles": 5052,
+          "parts": 4,
+          "bytes": 121680,
+          "components": 4,
+          "milliseconds": 894.1999999999999
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "union": {
+        "version": "arch-mesh-qualification/1",
+        "verdict": "pass",
+        "code": "MESH_QUALIFIED",
+        "format": "ARCH/1",
+        "checks": {
+          "transport": "pass",
+          "nondegenerate": "pass",
+          "closedEdges": "pass",
+          "orientedEdges": "pass",
+          "vertexLinks": "pass",
+          "selfIntersection": "pass",
+          "componentWinding": "pass",
+          "materialInteriors": "pass",
+          "sharedBoundaries": "not-applicable",
+          "unionTopology": "pass"
+        },
+        "stats": {
+          "candidatePairs": 54942,
+          "exactPairs": 43962,
+          "containmentWork": 5048,
+          "sharedFacePairs": 0,
+          "boundaryContacts": 0,
+          "vertices": 2528,
+          "triangles": 5048,
+          "parts": 1,
+          "bytes": 121416,
+          "components": 2,
+          "milliseconds": 1092.3799999999999
+        },
+        "diagnostics": [],
+        "scope": {
+          "coordinates": "exact-represented-bytes",
+          "repair": false,
+          "epsilonWelding": false,
+          "globalPipelineError": "unverified",
+          "physicalFit": "unqualified",
+          "thinFeatures": "unverified",
+          "designIntent": "unverified",
+          "slicer": "unverified"
+        }
+      },
+      "materialTableDigest": "4370cc64b92b24aaf43f5caadcd06abf9933d84e898ee6f23a4d3ba8ae3bc8d2",
+      "projectScheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "materialCount": 4,
+      "milliseconds": 4635.0999999999985
+    }
+  ],
+  "errors": [],
+  "crossOriginIsolated": true,
+  "versions": {
+    "mechanicsAbi": 2,
+    "mechanicsSemantics": 3,
+    "sourceAbi": 1,
+    "sourceSemantics": 2,
+    "datumExtension": 1
+  },
+  "finalSceneGeometry": true,
+  "engine": "webkit",
+  "browser": "26.6",
+  "profile": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\cache\\browser-profiles\\baseline-1-w",
+  "profileLength": 116,
+  "browserErrors": []
+}

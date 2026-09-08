@@ -1,0 +1,34 @@
+[
+  {
+    "bytes": 96,
+    "license": "project LICENSE",
+    "path": "synthetic-rgba.png",
+    "recipe": "png=0.18.1 RGBA8 + sRGB, no EXIF",
+    "sha256": "aeda6eeeaa66005ba10d81639791ca4836d6750bb0275cebc083be15de7ac934",
+    "source": "self-created numeric pixel data in tests/support/fixtures.rs; no third-party image artwork"
+  },
+  {
+    "bytes": 204,
+    "license": "project LICENSE",
+    "path": "synthetic-rgba.webp",
+    "recipe": "image=0.25.10 / image-webp=0.2.4 VP8L lossless RGBA8",
+    "sha256": "a51d4998069b1ce05e51feb6a8b66f6e5a0e6f1ce30c47a47b827292ba11ccbc",
+    "source": "self-created numeric pixel data in tests/support/fixtures.rs; no third-party image artwork"
+  },
+  {
+    "bytes": 694,
+    "license": "project LICENSE",
+    "path": "synthetic-rgb.jpg",
+    "recipe": "image=0.25.10 JPEG RGB8 quality=100",
+    "sha256": "04ba6b6708d8a34d30115f8d7b2c31c74940253f81836af3068dc95d600593aa",
+    "source": "self-created numeric pixel data in tests/support/fixtures.rs; no third-party image artwork"
+  },
+  {
+    "bytes": 730,
+    "license": "project LICENSE",
+    "path": "synthetic-exif6.jpg",
+    "recipe": "same JPEG + synthetic EXIF IFD0 orientation=6",
+    "sha256": "85d98daf68d28509669f8a27b619b4cc7c499c6f78a929f9cf5eda1b42f54096",
+    "source": "self-created numeric pixel data in tests/support/fixtures.rs; no third-party image artwork"
+  }
+]

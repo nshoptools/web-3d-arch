@@ -1,0 +1,425 @@
+{
+  "at": "2026-09-08T09:40:33.207Z",
+  "node": 43,
+  "types": true,
+  "acceptance": {
+    "status": "qualified",
+    "expected": "complete",
+    "qualified": 15,
+    "materialOnly": 0,
+    "unavailable": 0,
+    "expectedProducts": 15,
+    "products": [
+      {
+        "engine": "chromium",
+        "case": "keychain",
+        "status": "pass"
+      },
+      {
+        "engine": "chromium",
+        "case": "clicky",
+        "status": "pass"
+      },
+      {
+        "engine": "chromium",
+        "case": "strap",
+        "status": "pass"
+      },
+      {
+        "engine": "chromium",
+        "case": "lego",
+        "status": "pass"
+      },
+      {
+        "engine": "chromium",
+        "case": "charm",
+        "status": "pass"
+      },
+      {
+        "engine": "firefox",
+        "case": "keychain",
+        "status": "pass"
+      },
+      {
+        "engine": "firefox",
+        "case": "clicky",
+        "status": "pass"
+      },
+      {
+        "engine": "firefox",
+        "case": "strap",
+        "status": "pass"
+      },
+      {
+        "engine": "firefox",
+        "case": "lego",
+        "status": "pass"
+      },
+      {
+        "engine": "firefox",
+        "case": "charm",
+        "status": "pass"
+      },
+      {
+        "engine": "webkit",
+        "case": "keychain",
+        "status": "pass"
+      },
+      {
+        "engine": "webkit",
+        "case": "clicky",
+        "status": "pass"
+      },
+      {
+        "engine": "webkit",
+        "case": "strap",
+        "status": "pass"
+      },
+      {
+        "engine": "webkit",
+        "case": "lego",
+        "status": "pass"
+      },
+      {
+        "engine": "webkit",
+        "case": "charm",
+        "status": "pass"
+      }
+    ]
+  },
+  "wasm": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd",
+  "integration": {
+    "version": 1,
+    "at": "2026-09-08T08:39:36.405Z",
+    "manifestSha256": "91cc8ee95719cd4c64b8df1a6b4fc52bf71c9051c9c325257e572deb0290a409",
+    "files": [
+      {
+        "path": "src/core/mesh-predicates.mjs",
+        "candidate": "work/final-scene-evidence/src/core/mesh-predicates.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 5656,
+        "sha256": "a5c2794d305302de1492d75c931089cf2195a47b57ddb802d46458dec053f0e0"
+      },
+      {
+        "path": "src/core/mesh-qualification.mjs",
+        "candidate": "work/final-scene-evidence/src/core/mesh-qualification.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 12331,
+        "sha256": "bea5ab4f1d4c78f2bff15ff437842c9b950eb98a91a95c6d6ef28d886e6cd09f"
+      },
+      {
+        "path": "src/core/mesh-qualification.d.mts",
+        "candidate": "work/final-scene-evidence/src/core/mesh-qualification.d.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 1333,
+        "sha256": "212ef7895a74f25b633904fd857b45504194fc6523e95d12a879fdc2a95949d7"
+      },
+      {
+        "path": "src/core/mesh-qualification-worker.mjs",
+        "candidate": "work/final-scene-evidence/src/core/mesh-qualification-worker.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 377,
+        "sha256": "5fd81fec26d5e025685822d65dda3d261719c50cefa6aba7ea0ecb9cc8694d57"
+      },
+      {
+        "path": "src/core/mesh-qualification-client.mjs",
+        "candidate": "work/final-scene-evidence/src/core/mesh-qualification-client.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 2283,
+        "sha256": "8d8f9700b5ee566bbb57e20292212b49be290ce1a81863032bcea87df5bebddb"
+      },
+      {
+        "path": "src/core/mesh-qualification-client.d.mts",
+        "candidate": "work/final-scene-evidence/src/core/mesh-qualification-client.d.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 423,
+        "sha256": "46cdb11ec0abb04776940bb8875e17d455354c92c2fcfe300e9bd4e5ea8af959"
+      },
+      {
+        "path": "src/integration/final-scene-evidence.mjs",
+        "candidate": "work/final-scene-evidence/src/integration/final-scene-evidence.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 19319,
+        "sha256": "2a08898d189cfcab5ecbfaec370f2a8ac0febc431b9b1fce456d80589d533f8f"
+      },
+      {
+        "path": "src/integration/final-scene-evidence.d.mts",
+        "candidate": "work/final-scene-evidence/src/integration/final-scene-evidence.d.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6486,
+        "sha256": "72a209e45ae451cfa6e9df916441c35ad97794658ea9e7043ff4eb32ee4ce6e0"
+      },
+      {
+        "path": "src/integration/final-scene-gates.mjs",
+        "candidate": "work/final-scene-evidence/src/integration/final-scene-gates.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4354,
+        "sha256": "d332dd8e40757ab9779fe80202bc0b388ceaf94d587f9ef5687aa43aef4f87d0"
+      },
+      {
+        "path": "src/integration/final-scene-gates.d.mts",
+        "candidate": "work/final-scene-evidence/src/integration/final-scene-gates.d.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 445,
+        "sha256": "073da7dc32794c11a05b8ef9cc37ecb30a79fdd57162dbedea30b958cc5badc2"
+      },
+      {
+        "path": "src/integration/material-source-ledger.mjs",
+        "candidate": "work/final-scene-evidence/src/integration/material-source-ledger.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6764,
+        "sha256": "e838fa5e51892a02f1f374d73547a1f3b1b40a482b85ef4a75486c4964dfd47e"
+      },
+      {
+        "path": "src/integration/material-source-ledger.d.mts",
+        "candidate": "work/final-scene-evidence/src/integration/material-source-ledger.d.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 1467,
+        "sha256": "08e1563951ae9137986578780edf8f27620ea81564fb3062fa135f62dd3e6dc3"
+      },
+      {
+        "path": "tests/final-scene/fixtures.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 2069,
+        "sha256": "6773c8d7441aa02b7982c9dc8f9b60e364628d29a656063564dcfbe7df030d82"
+      },
+      {
+        "path": "tests/final-scene/qualification.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/qualification.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4220,
+        "sha256": "4b5e44eee45dedf432537c79c94137f0812e81537e5e07c0864e39adbaaa8989"
+      },
+      {
+        "path": "tests/final-scene/provider-fixture.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/provider-fixture.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 3088,
+        "sha256": "b738143878e8ac50b94389089d2207811496a3458e598b069c3ee1d26fe45b18"
+      },
+      {
+        "path": "tests/final-scene/provider.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/provider.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 12588,
+        "sha256": "f5a60a1f2811ea0bbc3667825850025b3706b206982eac3d079de4d875693afe"
+      },
+      {
+        "path": "tests/final-scene/provider-analysis.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/provider-analysis.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6911,
+        "sha256": "a1ab0728e290100d69afb690421ccf8db3895446316c35ef1cfdabda8afc3ed9"
+      },
+      {
+        "path": "tests/final-scene/material-ledger.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/material-ledger.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4225,
+        "sha256": "d17952e50e7ef94063091057fdfe8e0bb2d911659ff26b7dc7d4d40e500a6691"
+      },
+      {
+        "path": "tests/final-scene/gates.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/gates.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4978,
+        "sha256": "89671c36a48e63ef4a39ff7cef44d8810aeaef0f74b68c6a61977908a240eb82"
+      },
+      {
+        "path": "tests/final-scene/types.test.mts",
+        "candidate": "work/final-scene-evidence/tests/final-scene/types.test.mts",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 1388,
+        "sha256": "7822220a881735777ab09c716cbb959db4c0fec7221f47afcf72988669b859e7"
+      },
+      {
+        "path": "tests/final-scene/run.ps1",
+        "candidate": "work/final-scene-evidence/tests/final-scene/run.ps1",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 2846,
+        "sha256": "3b4fd021ce00fa6208e7d230d6d4109857837827243d8decd281cca1aa36bab8"
+      },
+      {
+        "path": "tests/final-scene/browser-page.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/browser-page.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6828,
+        "sha256": "7ae58ae5469e53387b54ec9e1a0a735df89f96c09ca7ac69b0448e0e897c8aca"
+      },
+      {
+        "path": "tests/final-scene/browser.test.mjs",
+        "candidate": "work/final-scene-evidence/tests/final-scene/browser.test.mjs",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 8456,
+        "sha256": "9bcd05bd8f36af2a4f22d3920da574bd42312e770abfb1aa01c202e607b178b2"
+      },
+      {
+        "path": "tests/final-scene/fixtures/manifest.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/manifest.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 2674,
+        "sha256": "0cf2d0181be94b4e346500b06925b306444152f8a302f0dfdcd620f657957ecf"
+      },
+      {
+        "path": "tests/final-scene/fixtures/keychain.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/keychain.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 26133,
+        "sha256": "b687fd7bc92f911049859c270403b991452cc27d768dced6f656351caf724631"
+      },
+      {
+        "path": "tests/final-scene/fixtures/clicky.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/clicky.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 26133,
+        "sha256": "54859e3a89fb8949938af941dc0be49f45bcd9a02bdfe0bbe5ad487626559153"
+      },
+      {
+        "path": "tests/final-scene/fixtures/strap.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/strap.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 26130,
+        "sha256": "b7ea527d8e2b01b1ba27b52aa87143dd692abb40387ddb80e3cc64e7be5b0cad"
+      },
+      {
+        "path": "tests/final-scene/fixtures/lego.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/lego.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 26129,
+        "sha256": "fd7c564b824b58a837ce71c61b80fce3ac8b9e5164b379e14fb7e744e97e31f1"
+      },
+      {
+        "path": "tests/final-scene/fixtures/charm.json",
+        "candidate": "work/final-scene-evidence/tests/final-scene/fixtures/charm.json",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 26130,
+        "sha256": "ec2e6a038d6f2be0f41290470baee98a62e97bb299d2c05cdeb8a8bde56f80fc"
+      },
+      {
+        "path": "docs/final-scene-evidence/API-EARLY.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/API-EARLY.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6248,
+        "sha256": "9f8db9bc00a0b17ddd90bae52c84ea8bab56f27e06addc6e1cde9362ffeaddc2"
+      },
+      {
+        "path": "docs/final-scene-evidence/DESIGN.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/DESIGN.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 5457,
+        "sha256": "ba56b987c447fa0af87d8fa9247c3f20c999a685ea2fef451fdf9e7c4ad728e1"
+      },
+      {
+        "path": "docs/final-scene-evidence/GATES-LIFECYCLE.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/GATES-LIFECYCLE.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4078,
+        "sha256": "f775c1009a92f627cd40cdc6978d9e1025d1ea69a71d6fc157c10442f21e42f5"
+      },
+      {
+        "path": "docs/final-scene-evidence/INTEGRATION.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/INTEGRATION.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4721,
+        "sha256": "6843ebf6c9d8df8261bc329e493b22e6d60a08ec6e20a1389585e736772722fa"
+      },
+      {
+        "path": "docs/final-scene-evidence/MATERIAL-LEDGER.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/MATERIAL-LEDGER.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4170,
+        "sha256": "cf9f94a9ea7b910f05beb045f87b6290b7591de7b7b3c80a10ee367caa85e38f"
+      },
+      {
+        "path": "docs/final-scene-evidence/ROOT-BOUNDARY.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/ROOT-BOUNDARY.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 4612,
+        "sha256": "6ff23682d02779af8d9d80ba8344bea0a10c27f8aa1739df197511fff3c94e9b"
+      },
+      {
+        "path": "docs/final-scene-evidence/TESTING.md",
+        "candidate": "work/final-scene-evidence/docs/final-scene-evidence/TESTING.md",
+        "action": "add",
+        "preimageExists": false,
+        "preimageSha256": null,
+        "bytes": 6580,
+        "sha256": "9432ba2f46942d2dff2e5d4b3e62f986b17511c259e6fb091df7f5ca874b7ebb"
+      }
+    ],
+    "independentReview": false
+  },
+  "independentReview": "active separate frozen snapshot",
+  "scope": "Real root+checker Workers for5products/3engines with2color holed SVG; not wholeapp/slicer/physical fit"
+}

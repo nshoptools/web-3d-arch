@@ -1,0 +1,42 @@
+[
+  {
+    "path": "work/module/arch-kernel.mjs",
+    "sha256": "960e60152d28edf4445a41533156ea250dd92ce86361fe8f96057cda05eb7fc0",
+    "bytes": 137540
+  },
+  {
+    "path": "work/module/arch-kernel.wasm",
+    "sha256": "697fc77866ac64b1fe598bf15c9d1bb95bb95970c85d57961630fa3004e69fb3",
+    "bytes": 5784325
+  },
+  {
+    "path": "work/rust-target/release/final-float-native-tests.exe",
+    "sha256": "e8b9cdee243575e9a83ba42eb6aaa811e8ff73b89502d615d0941783d297524c",
+    "bytes": 3738624
+  },
+  {
+    "path": "work/float-inputs/source.svg",
+    "sha256": "a8ff441eb779d293458ea97445f081fac7e467f36f5c69f31f1bc175993b87dc",
+    "bytes": 229
+  },
+  {
+    "path": "work/float-inputs/clicky.aprq",
+    "sha256": "7734a4a7ae7fe6df02ebc3e83cb54cc1b6299981baf37c1493d9cfe389782258",
+    "bytes": 15251
+  },
+  {
+    "path": "work/float-inputs/assembly.aprq",
+    "sha256": "ce16d53fb36404b616501cc48782a8fbbb66a143cd720415dcd4f63d27e4c56c",
+    "bytes": 15250
+  },
+  {
+    "path": "evidence/native-root/confirmed.stl",
+    "sha256": "77ffcd7c23559dfaac803235aaecf0d07cc95320a1179c61de0eab82bcdb817d",
+    "bytes": 242084
+  },
+  {
+    "path": "evidence/native-root/material-union.arch",
+    "sha256": "c518a95fc600cd082b3b11902bed13ca3fb20514767714a561ba3565098b87dd",
+    "bytes": 146216
+  }
+]

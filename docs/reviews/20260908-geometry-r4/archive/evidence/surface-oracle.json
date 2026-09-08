@@ -1,0 +1,330 @@
+{
+  "passed": true,
+  "count": 14,
+  "results": [
+    {
+      "name": "inverse edge subdivision of tetrahedron",
+      "passed": true,
+      "expected": {
+        "components": 1,
+        "euler": [
+          2
+        ],
+        "vertices": 4,
+        "faces": 4
+      },
+      "observed": {
+        "metadata": {
+          "algorithm": "nearest-binary32-paired-edge-link-quotient/1",
+          "candidateTriangles": 4,
+          "candidateVertices": 4,
+          "candidateVolumeMm3": 0.16666666666666666,
+          "collapsedEdges": 1,
+          "components": [
+            {
+              "edges": 6,
+              "euler": 2,
+              "faces": 4,
+              "orientation": 1,
+              "vertices": 4,
+              "volumeMm3": 0.16666666666666666
+            }
+          ],
+          "confirmed": false,
+          "contextHash": "ce7717b70b5a15ee951ffcd350815f8756bc219acfc0a7f1f0db0363a04e39b2",
+          "geometryHash": "7c93a5c86a0aae166c45fbeb507d31a3d070d239f71259c73356349584472f03",
+          "hausdorffUpperBoundMm": 9.313225746154793e-10,
+          "maximumDisplacementMm": 9.313225746154785e-10,
+          "proof": "affine original-triangle image; collapsed images covered by retained edges; full link condition; exact dyadic embedding predicates",
+          "proposalHash": "35d46dd09325bb2e7d7c945cfc2c2250098cf89432766811da2d48c5d5f11d43",
+          "qualification": {
+            "ambientIsotopy": "unverified",
+            "materialPolicy": "union STL only; original material mapping retained",
+            "physicalFit": "unqualified",
+            "wholePipelineErrorBoundMm": null
+          },
+          "removedDegenerateFaceImages": 2,
+          "requestedLimitMm": 0.004,
+          "requiresConfirmation": true,
+          "residentBytes": 964,
+          "sourceTriangles": 6,
+          "sourceVertices": 5,
+          "version": "arch-final-float-conditioning/1",
+          "workLimit": 50000000,
+          "workUnits": 90,
+          "workingAdmissionBytes": 1065984
+        },
+        "ok": true,
+        "exactRationalSquaredDisplacementBound": true
+      }
+    },
+    {
+      "name": "no collision",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_NOT_NEEDED",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_NOT_NEEDED",
+        "ok": false
+      }
+    },
+    {
+      "name": "binary32 ties to even",
+      "passed": true,
+      "expected": {
+        "components": 1,
+        "euler": [
+          2
+        ],
+        "vertices": 4,
+        "faces": 4
+      },
+      "observed": {
+        "metadata": {
+          "algorithm": "nearest-binary32-paired-edge-link-quotient/1",
+          "candidateTriangles": 4,
+          "candidateVertices": 4,
+          "candidateVolumeMm3": 0.16666666666666666,
+          "collapsedEdges": 1,
+          "components": [
+            {
+              "edges": 6,
+              "euler": 2,
+              "faces": 4,
+              "orientation": 1,
+              "vertices": 4,
+              "volumeMm3": 0.16666666666666666
+            }
+          ],
+          "confirmed": false,
+          "contextHash": "ee7cecd92b2ad20242c483e9b89f84a3fd4f9122236da68874a5d309d9ad0aa3",
+          "geometryHash": "7c93a5c86a0aae166c45fbeb507d31a3d070d239f71259c73356349584472f03",
+          "hausdorffUpperBoundMm": 5.960464477539068e-08,
+          "maximumDisplacementMm": 5.960464477539063e-08,
+          "proof": "affine original-triangle image; collapsed images covered by retained edges; full link condition; exact dyadic embedding predicates",
+          "proposalHash": "6dcfab4b860aea603dbf8ff453446e7c131d17cef1c1c7491d4e787066eeb8cd",
+          "qualification": {
+            "ambientIsotopy": "unverified",
+            "materialPolicy": "union STL only; original material mapping retained",
+            "physicalFit": "unqualified",
+            "wholePipelineErrorBoundMm": null
+          },
+          "removedDegenerateFaceImages": 2,
+          "requestedLimitMm": 0.004,
+          "requiresConfirmation": true,
+          "residentBytes": 964,
+          "sourceTriangles": 6,
+          "sourceVertices": 5,
+          "version": "arch-final-float-conditioning/1",
+          "workLimit": 50000000,
+          "workUnits": 90,
+          "workingAdmissionBytes": 1065984
+        },
+        "ok": true,
+        "exactRationalSquaredDisplacementBound": true
+      }
+    },
+    {
+      "name": "just above tie",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_NOT_NEEDED",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_NOT_NEEDED",
+        "ok": false
+      }
+    },
+    {
+      "name": "exact source alias",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_SOURCE_ALIAS",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_SOURCE_ALIAS",
+        "ok": false
+      }
+    },
+    {
+      "name": "three point collision class",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_CLUSTER_LIMIT",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_CLUSTER_LIMIT",
+        "ok": false
+      }
+    },
+    {
+      "name": "tetrahedron forbidden edge",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_LINK_CONDITION",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_LINK_CONDITION",
+        "ok": false
+      }
+    },
+    {
+      "name": "two separated components",
+      "passed": true,
+      "expected": {
+        "components": 2,
+        "euler": [
+          2,
+          2
+        ],
+        "vertices": 8,
+        "faces": 8
+      },
+      "observed": {
+        "metadata": {
+          "algorithm": "nearest-binary32-paired-edge-link-quotient/1",
+          "candidateTriangles": 8,
+          "candidateVertices": 8,
+          "candidateVolumeMm3": 0.3333333333333333,
+          "collapsedEdges": 1,
+          "components": [
+            {
+              "edges": 6,
+              "euler": 2,
+              "faces": 4,
+              "orientation": 1,
+              "vertices": 4,
+              "volumeMm3": 0.16666666666666666
+            },
+            {
+              "edges": 6,
+              "euler": 2,
+              "faces": 4,
+              "orientation": 1,
+              "vertices": 4,
+              "volumeMm3": 0.16666666666666666
+            }
+          ],
+          "confirmed": false,
+          "contextHash": "bcb255ad0e0f6411fa4079f4d33ce3b45885356b436b4ed9bebc7b58ea55bf88",
+          "geometryHash": "96fd81fdde936e43d5da1defd2f8bd985fdc2e1bafd626aba38af05603690d8a",
+          "hausdorffUpperBoundMm": 9.313225746154793e-10,
+          "maximumDisplacementMm": 9.313225746154785e-10,
+          "proof": "affine original-triangle image; collapsed images covered by retained edges; full link condition; exact dyadic embedding predicates",
+          "proposalHash": "27137a420de5ea813bf88dd89c14a07cec6cc8cd4e4e02793bb03cbed3a90bdd",
+          "qualification": {
+            "ambientIsotopy": "unverified",
+            "materialPolicy": "union STL only; original material mapping retained",
+            "physicalFit": "unqualified",
+            "wholePipelineErrorBoundMm": null
+          },
+          "removedDegenerateFaceImages": 2,
+          "requestedLimitMm": 0.004,
+          "requiresConfirmation": true,
+          "residentBytes": 1316,
+          "sourceTriangles": 10,
+          "sourceVertices": 9,
+          "version": "arch-final-float-conditioning/1",
+          "workLimit": 50000000,
+          "workUnits": 169,
+          "workingAdmissionBytes": 1078272
+        },
+        "ok": true,
+        "exactRationalSquaredDisplacementBound": true
+      }
+    },
+    {
+      "name": "nested surfaces",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_COMPONENT_RELATION_UNPROVEN",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_COMPONENT_RELATION_UNPROVEN",
+        "ok": false
+      }
+    },
+    {
+      "name": "interpenetrating surfaces",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_SELF_INTERSECTION",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_SELF_INTERSECTION:3:4",
+        "ok": false
+      }
+    },
+    {
+      "name": "disjoint surfaces overlapping AABBs",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_COMPONENT_RELATION_UNPROVEN",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_COMPONENT_RELATION_UNPROVEN",
+        "ok": false
+      }
+    },
+    {
+      "name": "nonedge collision across components",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_LINK_CONDITION",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_LINK_CONDITION",
+        "ok": false
+      }
+    },
+    {
+      "name": "unsupported dyadic exponent span",
+      "passed": true,
+      "expected": "FLOAT_CONDITIONING_EXACT_RANGE",
+      "observed": {
+        "error": "FLOAT_CONDITIONING_EXACT_RANGE",
+        "ok": false
+      }
+    },
+    {
+      "name": "embedded genus one torus with inverse edge subdivision",
+      "passed": true,
+      "expected": {
+        "components": 1,
+        "euler": [
+          0
+        ],
+        "vertices": 64,
+        "faces": 128
+      },
+      "observed": {
+        "metadata": {
+          "algorithm": "nearest-binary32-paired-edge-link-quotient/1",
+          "candidateTriangles": 128,
+          "candidateVertices": 64,
+          "candidateVolumeMm3": 63.99998695892472,
+          "collapsedEdges": 1,
+          "components": [
+            {
+              "edges": 192,
+              "euler": 0,
+              "faces": 128,
+              "orientation": 1,
+              "vertices": 64,
+              "volumeMm3": 63.99998695892472
+            }
+          ],
+          "confirmed": false,
+          "contextHash": "9140060156644d4af2556161ce88b0d5f307efeeea28f246c0cad2506d42067a",
+          "geometryHash": "75fc3ee045964dd72f42c2d5e29140fb325baed2cdcf712e5e0dc01c689d135a",
+          "hausdorffUpperBoundMm": 5.387130669391062e-07,
+          "maximumDisplacementMm": 5.387130669391057e-07,
+          "proof": "affine original-triangle image; collapsed images covered by retained edges; full link condition; exact dyadic embedding predicates",
+          "proposalHash": "90af0c653fda700326de71080cc4de1da3590f44641919a29d30651965784257",
+          "qualification": {
+            "ambientIsotopy": "unverified",
+            "materialPolicy": "union STL only; original material mapping retained",
+            "physicalFit": "unqualified",
+            "wholePipelineErrorBoundMm": null
+          },
+          "removedDegenerateFaceImages": 2,
+          "requestedLimitMm": 0.004,
+          "requiresConfirmation": true,
+          "residentBytes": 8036,
+          "sourceTriangles": 130,
+          "sourceVertices": 65,
+          "version": "arch-final-float-conditioning/1",
+          "workLimit": 50000000,
+          "workUnits": 6372,
+          "workingAdmissionBytes": 1381376
+        },
+        "ok": true,
+        "exactRationalSquaredDisplacementBound": true
+      }
+    }
+  ],
+  "qualification": "Standalone captured mathematical algorithm only, no CSG/root authority; exact rational squared displacement checks for accepted synthetic meshes"
+}

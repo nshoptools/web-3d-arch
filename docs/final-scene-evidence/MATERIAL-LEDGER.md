@@ -1,0 +1,21 @@
+# Stable uint32 material transport ledger — early binding
+
+Proposed durable location, using an existing extensible field:
+source.metadata.productBindings.adoptionProvenance.materialSourceLedger
+
+Parent/Halley owns storing this ledger inside the same atomic source/material adoption transaction, BEFORE building the model. Preserve other adoptionProvenance fields. This provider does not write projects or alter Halley's identityLedger. The existing full stable material IDs and uint64 identity ledger remain authoritative; this is an additional uint32 transport selector ledger only.
+
+Exports from src/integration/material-source-ledger.mjs:
+- planMaterialSourceIds({projectId,materialIds,ledger:null|previous}) -> {version:'arch-material-source-plan/1', ledger, bindings, requiresPersistence}. Pure, deterministic. New IDs are assigned by sorted full NFC material ID (ordinal UTF-16 order), starting at 1 and retaining all older entries. Existing assignments are never changed/reused, even when a material is absent from the current model. No color/slot/order/truncated hash/uint64 conversion is involved.
+- resolveMaterialSourceIds({projectId,materialIds,ledger}) -> bindings. Pure read-only lookup. Missing/uncommitted allocations throw; it NEVER silently creates a ledger.
+- materialSourceIdsFromState(context, inspection) -> bindings. Concrete callback joining full native part material IDs to current app.materials, after exact owned inspection's source id/revision/rawHash and productBindings project/source bindings agree. It reads only the explicit persisted ledger at the path above. No source-binding authority is inferred from a color or native success flag.
+
+Ledger schema: version arch-material-source-ledger/1; projectId; allocationRevision; nextId; entries[{materialId,materialSourceId}]; digest; provenance with fixed algorithm/version, ordering, full-ID identity and retained-retired-entry policy. digest is lowercase SHA-256 of canonical JSON of every other ledger field, entries sorted by ordinal full ID. The existing synchronous domain/hash implementation computes it; lookup verifies it again. No identifier is shortened to derive u32 values. Digest is integrity only, not authentication. Strict exact keys, unique strings and uint32 IDs, contiguous allocation history, bounded JSON <=32KiB and <=256 entries. Exhaustion rejects without recycling. Unknown versions reject read-only and leave the supplied data untouched. Plan results are frozen copies; callers must persist a changed plan and rebuild against its new domain head before resolving it for export.
+
+The helper is not proof that an arbitrary caller owns the project. Authorization remains the parent's authoritative context and the product inspector. FinalScene private evidence still checks exact model/root/head/session on publication and reads. Persisting an imported ledger requires the normal schema/import copy-on-write and user boundary, not any privilege from this helper.
+
+No new Halley productBindings field is required if adoptionProvenance remains the existing bounded JSON record. Parent should relay this location to Halley. If that record is deliberately sealed more narrowly in the final bridge, return the plan to parent and coordinate a single allowed ledger field; do not hide it elsewhere or repeatedly allocate on export.
+
+For source replacement/re-adoption, pass the ledger from the OLD authoritative base state to planMaterialSourceIds, then attach its returned ledger to the NEW adoption result. A fresh imported SourceResult is not a reason to restart allocation. This preserves retired project material IDs when Halley's initializer replaces adoptionProvenance. Imported foreign-project ledgers are not adopted silently; projectId mismatch blocks. This is parent/Halley composition work, not an additional controller mutation by the helper.
+
+The six committed-state/ledger tests have now passed, including order independence, uint64 strings retained verbatim, retired assignments after roundtrip, uncommitted allocation refusal, collisions/unknown versions/wrong project, source binding mismatch and a 32KiB retained-ledger budget rejection without pruning.

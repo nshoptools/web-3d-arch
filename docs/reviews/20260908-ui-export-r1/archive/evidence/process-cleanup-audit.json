@@ -1,0 +1,12 @@
+{
+  "at": "2026-09-08T08:53:13.1728854Z",
+  "matchingOwnedTestProcesses": [],
+  "scope": "Read-only process-name and assigned-room command-line filter; command lines not emitted. All browser contexts and servers were explicitly closed by their runner.",
+  "environment": {
+    "PROJECT_REVIEW_RUN": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1",
+    "TEMP": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\temp",
+    "TMP": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\temp",
+    "XDG_CACHE_HOME": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\cache",
+    "CODEX_HOME": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\cache\\codex-home"
+  }
+}

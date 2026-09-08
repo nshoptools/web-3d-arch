@@ -1,0 +1,809 @@
+{
+  "catalog": "parameters-core-v1",
+  "version": "1.0.1",
+  "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+  "fields": [
+    {
+      "id": "k",
+      "abiId": 1,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "res",
+      "abiId": 2,
+      "enum": [
+        "360",
+        "520",
+        "720",
+        "960",
+        "1280"
+      ],
+      "delegated": true
+    },
+    {
+      "id": "smooth",
+      "abiId": 3,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "minA",
+      "abiId": 4,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "denoise",
+      "abiId": 5,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "eps",
+      "abiId": 6,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "tension",
+      "abiId": 7,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "size",
+      "abiId": 8,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "outline",
+      "abiId": 9,
+      "enum": [
+        "silhouette",
+        "round",
+        "circle",
+        "square"
+      ],
+      "delegated": true
+    },
+    {
+      "id": "cornerR",
+      "abiId": 10,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "offset",
+      "abiId": 11,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "weld",
+      "abiId": 12,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "minFeature",
+      "abiId": 13,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "fillHoles",
+      "abiId": 14,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "topBevel",
+      "abiId": 15,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "topBevelR",
+      "abiId": 16,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "topBevelShape",
+      "abiId": 17,
+      "enum": [
+        "tron",
+        "vat",
+        "bac"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "bevelGop",
+      "abiId": 18,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "bevelChu",
+      "abiId": 19,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "topBevelSeg",
+      "abiId": 20,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "layerH",
+      "abiId": 21,
+      "enum": [
+        "0.08",
+        "0.10",
+        "0.12",
+        "0.16",
+        "0.20",
+        "0.24",
+        "0.28",
+        "0.30"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "layerStep",
+      "abiId": 22,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "baseH",
+      "abiId": 23,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "plateT",
+      "abiId": 24,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "artMode",
+      "abiId": 25,
+      "enum": [
+        "noi",
+        "chim",
+        "phang",
+        "phang2"
+      ],
+      "delegated": true
+    },
+    {
+      "id": "flatTop",
+      "abiId": 26,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "artH",
+      "abiId": 27,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "rimOn",
+      "abiId": 28,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "rimH",
+      "abiId": 29,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "splitObj",
+      "abiId": 30,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "layerBand",
+      "abiId": 31,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "bandCore",
+      "abiId": 32,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "bandCap",
+      "abiId": 33,
+      "enum": null,
+      "delegated": true
+    },
+    {
+      "id": "ringOn",
+      "abiId": 34,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "ringOuterD",
+      "abiId": 35,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "ringInnerD",
+      "abiId": 36,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "ringTren",
+      "abiId": 37,
+      "enum": [
+        "hinh",
+        "chu"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "ringAngle",
+      "abiId": 38,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "ringOverlap",
+      "abiId": 39,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "ringH",
+      "abiId": 40,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoOn",
+      "abiId": 41,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoPitch",
+      "abiId": 42,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoHoleD",
+      "abiId": 43,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoHoleH",
+      "abiId": 44,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoThua",
+      "abiId": 45,
+      "enum": [
+        "du",
+        "nua",
+        "tu"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "legoHoDu",
+      "abiId": 46,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoWall",
+      "abiId": 47,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoRong",
+      "abiId": 48,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoOffX",
+      "abiId": 49,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoOffY",
+      "abiId": 50,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoXeOn",
+      "abiId": 51,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoXeW",
+      "abiId": 52,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoTaiOn",
+      "abiId": 53,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoTaiW",
+      "abiId": 54,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoTaiL",
+      "abiId": 55,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoTaiCo",
+      "abiId": 56,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoRanhOn",
+      "abiId": 57,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoRanhR",
+      "abiId": 58,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "legoRanhZ",
+      "abiId": 59,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmGan",
+      "abiId": 60,
+      "enum": [
+        "roi",
+        "lien"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "charmCoD",
+      "abiId": 61,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmCoH",
+      "abiId": 62,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmVanhD",
+      "abiId": 63,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmVanhH",
+      "abiId": 64,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmVat",
+      "abiId": 65,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmChotD",
+      "abiId": 66,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmChotH",
+      "abiId": 67,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmClr",
+      "abiId": 68,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmRap",
+      "abiId": 69,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmOffX",
+      "abiId": 70,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "charmOffY",
+      "abiId": 71,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapD",
+      "abiId": 72,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapAngle",
+      "abiId": 73,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapZ",
+      "abiId": 74,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapOff",
+      "abiId": 75,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapSlot",
+      "abiId": 76,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapSlotDir",
+      "abiId": 77,
+      "enum": [
+        "ngang",
+        "doc"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "strapCham",
+      "abiId": 78,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "strapSeg",
+      "abiId": 79,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "rotObj",
+      "abiId": 80,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "skirtH",
+      "abiId": 81,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "wallT",
+      "abiId": 82,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "rib",
+      "abiId": 83,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "crossL",
+      "abiId": 84,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "crossW",
+      "abiId": 85,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "clr",
+      "abiId": 86,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "socketD",
+      "abiId": 87,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "postH",
+      "abiId": 88,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "postD1",
+      "abiId": 89,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "postD2",
+      "abiId": 90,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "collarH",
+      "abiId": 91,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "stemH",
+      "abiId": 92,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "linkBody",
+      "abiId": 93,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "housing",
+      "abiId": 94,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "autoSize",
+      "abiId": 95,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "plateHole",
+      "abiId": 96,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hSocketD",
+      "abiId": 97,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hMouth",
+      "abiId": 98,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRecess",
+      "abiId": 99,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "pinW",
+      "abiId": 100,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "pinD",
+      "abiId": 101,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hFloor",
+      "abiId": 102,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hWall",
+      "abiId": 103,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hBossW",
+      "abiId": 104,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "gap",
+      "abiId": 105,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "rimOver",
+      "abiId": 106,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "travel",
+      "abiId": 107,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hStopOn",
+      "abiId": 108,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hStopW",
+      "abiId": 109,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingOn",
+      "abiId": 110,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingH",
+      "abiId": 111,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingOuterD",
+      "abiId": 112,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingInnerD",
+      "abiId": 113,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingAngle",
+      "abiId": 114,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "hRingOverlap",
+      "abiId": 115,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "assemble",
+      "abiId": 116,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impOn",
+      "abiId": 117,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impOp",
+      "abiId": 118,
+      "enum": [
+        "them",
+        "han",
+        "tru"
+      ],
+      "delegated": false
+    },
+    {
+      "id": "impScale",
+      "abiId": 119,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impX",
+      "abiId": 120,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impY",
+      "abiId": 121,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impZ",
+      "abiId": 122,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impRX",
+      "abiId": 123,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impRY",
+      "abiId": 124,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impRZ",
+      "abiId": 125,
+      "enum": null,
+      "delegated": false
+    },
+    {
+      "id": "impVox",
+      "abiId": 126,
+      "enum": null,
+      "delegated": false
+    }
+  ]
+}

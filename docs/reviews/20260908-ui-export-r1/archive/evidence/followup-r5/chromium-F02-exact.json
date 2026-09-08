@@ -1,0 +1,96 @@
+{
+  "state": {
+    "section": "export",
+    "panelCollapsed": false,
+    "drawerOpen": true,
+    "searchOpen": false,
+    "groupClosed": {},
+    "paramQuery": "",
+    "paramMode": "compact",
+    "materialSelected": null,
+    "armedDelete": null,
+    "emojiHardPrintFilter": false,
+    "blockPopup": null,
+    "sourceIntent": "file",
+    "toasts": [],
+    "log": [
+      {
+        "id": "log-2-92eea988",
+        "tone": "error",
+        "text": "Lệnh không hoàn tất được.",
+        "at": "2026-09-08T08:41:09.888Z",
+        "detail": "OLD_BRIDGE_REJECTION_DETAIL",
+        "code": "BRIDGE_CALL_REJECTED"
+      }
+    ],
+    "dialogs": [],
+    "announcement": "",
+    "alert": "Lệnh không hoàn tất được."
+  },
+  "calls": [
+    {
+      "id": 1,
+      "method": "queryFonts",
+      "input": "",
+      "pending": true
+    },
+    {
+      "id": 2,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        null,
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 3,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        "favorite",
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 4,
+      "method": "queryFonts",
+      "input": "",
+      "pending": true
+    },
+    {
+      "id": 5,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        null,
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 6,
+      "method": "queryEmoji",
+      "input": [
+        "",
+        "favorite",
+        0
+      ],
+      "pending": true
+    },
+    {
+      "id": 7,
+      "method": "dispatch",
+      "input": {
+        "type": "export.configure",
+        "id": "stl-union",
+        "projectRevision": 0,
+        "field": "filename",
+        "value": "Previous request"
+      },
+      "pending": false
+    }
+  ]
+}

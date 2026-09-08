@@ -1,0 +1,63 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {resolve} from 'node:path';
+import {readFileSync,mkdirSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {artifactHost} from './localhost.mjs';
+import {verifyRelease} from '../../tools/release/verify.mjs';
+import {put,jsonBytes,environment,hash} from '../../tools/application/core.mjs';
+import {directory} from './helpers.mjs';
+test('actual compiled product shell on portable HTTPS artifact: bootstrap, synthetic auth, PNG Worker, private paths and cache',{timeout:600000},async t=>{
+ const evidencePath=process.env.APPLICATION_BUILD_ACCEPTANCE;assert.ok(evidencePath);
+ const acceptance=JSON.parse(readFileSync(evidencePath)),artifact=acceptance.packaged.directory,check=verifyRelease(artifact,acceptance.packaged.sha256),f=await artifactHost(t,artifact);
+ const root=directory('chromium'),runtime=resolve(environment().root,'.toolchain/app-runtime/node_modules');
+ const playwright=await import(pathToFileURL(resolve(runtime,'playwright/index.mjs')).href);
+ assert.equal(JSON.parse(readFileSync(resolve(runtime,'playwright/package.json'))).version,'1.63.0');
+ const browserPin=JSON.parse(readFileSync(resolve(runtime,'playwright-core/browsers.json'))).browsers.find(b=>b.name==='chromium');
+ assert.deepEqual([browserPin.revision,browserPin.browserVersion],['1243','153.0.8010.12']);
+ for(const d of ['profile','downloads','artifacts','appdata','localappdata'])mkdirSync(resolve(root,d));
+ const context=await playwright.chromium.launchPersistentContext(resolve(root,'profile'),{headless:true,ignoreHTTPSErrors:true,acceptDownloads:false,
+  downloadsPath:resolve(root,'downloads'),artifactsDir:resolve(root,'artifacts'),serviceWorkers:'allow',
+  args:['--ignore-certificate-errors','--disable-background-networking'],
+  env:{...process.env,APPDATA:resolve(root,'appdata'),LOCALAPPDATA:resolve(root,'localappdata')}});
+ t.after(()=>context.close());const allowed=new Set([f.origin,f.idp.origin]),requests=[],errors=[];
+ await context.route('**/*',route=>{const url=new URL(route.request().url());return allowed.has(url.origin)?route.continue():route.abort('blockedbyclient');});
+ const page=context.pages()[0]??await context.newPage();page.on('request',r=>requests.push(new URL(r.url()).pathname));page.on('pageerror',e=>errors.push(e.message.slice(0,300)));
+ const response=await page.goto(f.origin+'/',{waitUntil:'domcontentloaded',timeout:30000});
+ assert.equal(response.status(),200);assert.equal(response.headers()['cross-origin-opener-policy'],'same-origin');assert.equal(response.headers()['cross-origin-embedder-policy'],'require-corp');
+ await page.waitForFunction(()=>document.querySelector('#app.arch-application-host button'),{},{timeout:90000});
+ assert.equal(await page.locator('.bootstrap-message').count(),0);
+ const shell=await page.evaluate(()=>({title:document.title,secure:isSecureContext,isolated:crossOriginIsolated,buttons:document.querySelectorAll('#app button').length}));
+ assert.equal(shell.secure,true);assert.equal(shell.isolated,true);assert.ok(shell.buttons>4);
+ const frontend=JSON.parse(readFileSync(resolve(acceptance.prepared.directory,'frontend-receipt.json'))),png='/'+frontend.workerEntries.find(r=>r.source.replaceAll('\\','/').endsWith('/png-worker.mjs')).file;
+ const pngResult=await page.evaluate(async url=>{
+  const bytes=await new Promise((yes,no)=>{const w=new Worker(url,{type:'module'}),timer=setTimeout(()=>{w.terminate();no(Error('PNG_DEADLINE'));},20000);
+   w.onmessage=e=>{clearTimeout(timer);w.terminate();e.data.error?no(Error(e.data.error)):yes(e.data.bytes);};
+   w.onerror=()=>{clearTimeout(timer);w.terminate();no(Error('PNG_WORKER'))};
+   w.postMessage({type:'encode-png',id:1,image:{width:2,height:1,data:new Uint8ClampedArray([255,0,0,255,0,128,255,255])}});});
+  const bitmap=await createImageBitmap(new Blob([bytes],{type:'image/png'})),canvas=new OffscreenCanvas(2,1),ctx=canvas.getContext('2d');ctx.drawImage(bitmap,0,0);bitmap.close();
+  return {signature:[...bytes.slice(0,8)],pixels:[...ctx.getImageData(0,0,2,1).data],bytes:bytes.length};
+ },png);
+ assert.deepEqual(pngResult.signature,[137,80,78,71,13,10,26,10]);assert.deepEqual(pngResult.pixels,[255,0,0,255,0,128,255,255]);
+ const start=await page.evaluate(async()=>{const r=await fetch('/api/v1/auth/start',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({deviceId:localStorage.getItem('arch-device-v1')})});return {status:r.status,json:await r.json()};});
+ assert.equal(start.status,200);await page.goto(f.origin+f.idp.issue(start.json.authorizationUrl));await page.waitForURL(f.origin+'/');
+ await page.waitForFunction(()=>document.querySelector('#app.arch-application-host button'),{},{timeout:90000});
+ const auth=await page.evaluate(async()=>{const r=await fetch('/api/v1/me'),m=await r.json();return {status:r.status,role:m.user?.role,cache:r.headers.get('cache-control')};});
+ assert.equal(auth.status,200);assert.equal(auth.role,'owner');assert.match(auth.cache,/no-store/);
+ const bindings=check.manifest.bindings,engine=await f.get(bindings.engine.moduleUrl);assert.equal(engine.status,200);assert.equal(hash(engine.bytes),bindings.engine.module.sha256);assert.match(engine.headers['cache-control'],/immutable/);
+ const etag=await f.get(bindings.engine.moduleUrl,{'if-none-match':engine.headers.etag});assert.equal(etag.status,304);
+ const front=await f.get(bindings.entry);assert.match(front.headers['cache-control'],/must-revalidate/);assert.equal(front.headers['content-type'],'text/javascript; charset=utf-8');
+ for(const path of ['/src/main.mjs','/src/server/credentials.mjs','/customer/user.keys','/tests/recipe.mjs'])assert.equal((await f.get(path)).status,404);
+ await page.evaluate(async()=>{await navigator.serviceWorker.register('/host-sw.js',{scope:'/',updateViaCache:'none'});await navigator.serviceWorker.ready;});
+ await page.waitForFunction(()=>!!navigator.serviceWorker.controller);
+ const before=await page.evaluate(()=>performance.timeOrigin);
+ await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.evaluate(()=>dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true})))]);
+ await page.waitForFunction(()=>document.querySelector('#app.arch-application-host button'),{},{timeout:90000});
+ assert.notEqual(await page.evaluate(()=>performance.timeOrigin),before);
+ const cachePaths=await page.evaluate(async()=>{await fetch('/release-bindings.json');await fetch('/api/v1/me');const paths=[];for(const k of await caches.keys()){const c=await caches.open(k);for(const r of await c.keys())paths.push(new URL(r.url).pathname);}return paths;});
+ assert.ok(cachePaths.every(p=>!p.startsWith('/api/')&&!p.includes('.keys')));
+ assert.equal(errors.length,0,JSON.stringify(errors));
+ assert.ok(requests.every(p=>!p.startsWith('/src/')&&!p.startsWith('/tests/')));
+ const result={version:'arch-application-smoke/1',status:'passed',artifactSHA256:acceptance.packaged.sha256,browser:{engine:'chromium',revision:browserPin.revision,version:browserPin.browserVersion},shell,pngResult,auth,requests:[...new Set(requests)].sort(),cachePaths,bfcachePersistedReload:true,syntheticIdentity:true,syntheticTLS:true,paidAI:false,applicationComplete:false,runtimeProof:'parent-required',independentReview:false};
+ put(resolve(environment().run,'evidence',process.env.APPLICATION_BUILD_LABEL+'-browser.json'),jsonBytes(result));
+});

@@ -1,0 +1,84 @@
+{
+  "version": "arch-image-source-pins/1",
+  "retrievedOn": "2026-09-08",
+  "officialSnapshots": [
+    {
+      "name": "xai-openapi.json",
+      "url": "https://api.x.ai/api-docs/openapi.json",
+      "bytes": 219254,
+      "sha256": "91be49b210491b3a4856952f4747af128b599f38c0d3b7185854b0905d7cbc9f",
+      "retrievedAt": "2026-09-08T03:07:12.431Z"
+    },
+    {
+      "name": "xai-editing.md",
+      "url": "https://docs.x.ai/developers/model-capabilities/images/editing.md",
+      "bytes": 3166,
+      "sha256": "7eef300bdb5bf28f4edfd50b7e8c68c216b3b96b3d3e3e11df6305c8f755e66a",
+      "retrievedAt": "2026-09-08T03:07:13.128Z"
+    },
+    {
+      "name": "xai-model.md",
+      "url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0.md",
+      "bytes": 370,
+      "sha256": "3d48ddd5954bc31154de71a89c2d0b1717b4d010f3da7c8f994ef46bf5b70280",
+      "retrievedAt": "2026-09-08T03:07:13.754Z"
+    },
+    {
+      "name": "jpeg-js-0.4.4.tgz",
+      "url": "https://registry.npmjs.org/jpeg-js/-/jpeg-js-0.4.4.tgz",
+      "bytes": 21818,
+      "sha256": "269f988267bc71efe58baf97e8b2da064b5bbbbb8b0eab11e2149049935e1160",
+      "retrievedAt": "2026-09-08T03:07:14.053Z"
+    },
+    {
+      "name": "jpeg-js-metadata.json",
+      "url": "https://registry.npmjs.org/jpeg-js/0.4.4",
+      "bytes": 2720,
+      "sha256": "e2b9536e77f1031f63cae96ce4e854b773cf10c1736eb515b7229596d454ee47",
+      "retrievedAt": "2026-09-08T03:07:16.012Z"
+    },
+    {
+      "name": "xai-model.html",
+      "url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+      "bytes": 359148,
+      "sha256": "6d5944af37cfa19cce7126865ff10b11841309b494b826b42691ae5d88879d5a",
+      "retrievedAt": "2026-09-08T03:33:24.350Z"
+    },
+    {
+      "name": "Apache-2.0.txt",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "retrievedAt": "2026-09-08T03:39:02.962Z"
+    }
+  ],
+  "dependency": {
+    "name": "jpeg-js",
+    "version": "0.4.4",
+    "gitRevision": "9ccd35fb5f55a6c4f1902ac5b0f270f675750c27",
+    "registryIntegrity": "sha512-WZzeDOEtTOBK4Mdsar0IqEU5sMr3vSV2RqkAIzUEV2BHnUfKGyswWFPFwK5EeDo93K3FohSHbLAjj0s1Wzd+dg==",
+    "installRequired": false,
+    "changes": "None; decoder.js renamed jpeg-decoder.cjs only",
+    "licenses": [
+      "Apache-2.0 decoder header",
+      "BSD-3-Clause package license"
+    ],
+    "files": [
+      {
+        "path": "src/server/codecs/jpeg-decoder.cjs",
+        "bytes": 40593,
+        "sha256": "a3f175fd6f62d142aad94d3bd90f3a30be4e076baf9b6a6fa31c8e84d9d4aa9f"
+      },
+      {
+        "path": "src/server/codecs/jpeg-js.LICENSE",
+        "bytes": 1448,
+        "sha256": "c0a8512eabe960492fefd4f287523eb3b5ca1518ca37ef0ec83344cd7f089cb8"
+      },
+      {
+        "path": "src/server/codecs/Apache-2.0.txt",
+        "bytes": 11358,
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ]
+  }
+}

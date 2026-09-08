@@ -1,0 +1,13 @@
+{
+  "name": "@web-3d-arch/printing",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "fflate": "0.8.3",
+    "@xmldom/xmldom": "0.9.12"
+  }
+}

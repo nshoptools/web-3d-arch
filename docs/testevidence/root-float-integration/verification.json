@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "at": "2026-09-08T08:24:22.162Z",
+  "production": {
+    "physicalFit": "unqualified",
+    "version": "arch-final-float-parent-tests/1",
+    "passed": true,
+    "finishedAt": "2026-09-08T08:06:39.9864617Z",
+    "tapSha256": "4dd80491b73870b4558a10bffbb7b880c142fd2031d33da32adb5baba7f4474a",
+    "binaryInputs": [
+      {
+        "bytes": 138932,
+        "sha256": "950225880c23476f9a6523111ac5a33aebb24f1d89bfa1d8f60bff1b1cc1c375",
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.mjs"
+      },
+      {
+        "bytes": 5752782,
+        "sha256": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd",
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.wasm"
+      },
+      {
+        "bytes": 3732480,
+        "sha256": "90eeda56b6f2927307700caab72fa07dd44bea337c46050f30702c82d356deae",
+        "path": "tmp/reviews/codex/runs/20260908-root-float-main-r1/work/rust-target/release/final-float-native-tests.exe"
+      }
+    ],
+    "fileOracle": true,
+    "nativeProbe": true,
+    "mode": "Production",
+    "independentSeatReview": false,
+    "counts": {
+      "skipped": 0,
+      "fail": 0,
+      "todo": 0,
+      "cancelled": 0,
+      "pass": 4,
+      "tests": 4
+    },
+    "wholePipelineBound": "unverified"
+  },
+  "instrumented": {
+    "counts": {
+      "todo": 0,
+      "pass": 7,
+      "cancelled": 0,
+      "skipped": 0,
+      "tests": 7,
+      "fail": 0
+    },
+    "nativeProbe": true,
+    "wholePipelineBound": "unverified",
+    "independentSeatReview": false,
+    "physicalFit": "unqualified",
+    "tapSha256": "a8a6b663a4758a77b6ab343658c1421cb092fd599fbbb3727a33f072a0ec869e",
+    "passed": true,
+    "binaryInputs": [
+      {
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.mjs",
+        "bytes": 139272,
+        "sha256": "fd944a38a6cdcb7944d8d290850d0cf87f94ebdcb90c83b459ab3565a2411267"
+      },
+      {
+        "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.wasm",
+        "bytes": 5779724,
+        "sha256": "5be43fa184772190a0a76eb7baac18b28fc821c4e64ba934ea0c344fa9963953"
+      },
+      {
+        "path": "tmp/reviews/codex/runs/20260908-root-float-main-r1/work/rust-target/release/final-float-native-tests.exe",
+        "bytes": 3732480,
+        "sha256": "90eeda56b6f2927307700caab72fa07dd44bea337c46050f30702c82d356deae"
+      }
+    ],
+    "fileOracle": true,
+    "finishedAt": "2026-09-08T08:07:41.1497134Z",
+    "mode": "Instrumented",
+    "version": "arch-final-float-parent-tests/1"
+  },
+  "nativeRustGroups": 16,
+  "nativeChecks": 43,
+  "independentReview": "active",
+  "runtimeProduction": {
+    "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.wasm",
+    "bytes": 5752782,
+    "sha256": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd"
+  },
+  "runtimeInstrumented": {
+    "path": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module-float-tests/arch-kernel.wasm",
+    "bytes": 5779724,
+    "sha256": "5be43fa184772190a0a76eb7baac18b28fc821c4e64ba934ea0c344fa9963953"
+  },
+  "limits": [
+    "local bound relative to captured native union only",
+    "ambient isotopy and whole source pipeline error unverified",
+    "physical fit and target slicer unqualified"
+  ],
+  "releaseReady": false
+}

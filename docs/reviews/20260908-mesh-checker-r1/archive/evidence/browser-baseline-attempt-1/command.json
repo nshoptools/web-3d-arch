@@ -1,0 +1,10 @@
+{
+  "start": "2026-09-08T09:22:10.3294609Z",
+  "end": "2026-09-08T09:25:32.7254809Z",
+  "executable": "D:\\VoSon\\Code\\web-3d-arch\\.toolchain\\emsdk\\node\\24.19.0_64bit\\node.exe",
+  "arguments": [
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\browser-harness\\browser.test.mjs"
+  ],
+  "scriptSha256": "9daa7e8366548be2018433a106b52a4fdf3e1f6ba38964c65bf9ec53f144c0d4",
+  "exit": 0
+}

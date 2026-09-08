@@ -1,0 +1,19 @@
+{
+  "seed": 20260908,
+  "oracle": "Independent Python Fraction polygon half-plane clipping and segment/plane intersection; excludes permitted shared simplex",
+  "cases": 24000,
+  "categories": {
+    "coplanar=False,shared=0": 4000,
+    "coplanar=False,shared=1": 4000,
+    "coplanar=False,shared=2": 4000,
+    "coplanar=True,shared=0": 4000,
+    "coplanar=True,shared=1": 4000,
+    "coplanar=True,shared=2": 4000
+  },
+  "mismatches": [],
+  "elapsedSeconds": 6.940742015838623,
+  "corpus": "work/triangle-corpus.jsonl",
+  "corpusSha256": "f50ce30530484f5b4b37c6200f2156ff0004bc3b36225e42b19265e660d4960a",
+  "probeUses": "Unmodified captured encode.rs and wire.rs; standalone harness has no native CSG/root lifecycle and stubs cancellation for pure mathematical calls",
+  "exitCode": 0
+}

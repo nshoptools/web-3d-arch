@@ -1,0 +1,82 @@
+[
+  {
+    "selector": "[data-export-field=\"filename\"]",
+    "metrics": {
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "client": 318,
+        "scroll": 318
+      },
+      "row": {
+        "left": 35,
+        "right": 285,
+        "width": 250
+      },
+      "bad": [],
+      "viewport": 320,
+      "scale": 1
+    },
+    "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\comprehensive-r2\\chromium-V01-320-14-0.png"
+  },
+  {
+    "selector": "[data-export-field=\"errorMm\"]",
+    "metrics": {
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "client": 318,
+        "scroll": 318
+      },
+      "row": {
+        "left": 35,
+        "right": 285,
+        "width": 250
+      },
+      "bad": [],
+      "viewport": 320,
+      "scale": 1
+    },
+    "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\comprehensive-r2\\chromium-V01-320-14-1.png"
+  },
+  {
+    "selector": "[data-export-field=\"orientation\"]",
+    "metrics": {
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "client": 318,
+        "scroll": 318
+      },
+      "row": {
+        "left": 35,
+        "right": 285,
+        "width": 250
+      },
+      "bad": [],
+      "viewport": 320,
+      "scale": 1
+    },
+    "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\comprehensive-r2\\chromium-V01-320-14-2.png"
+  },
+  {
+    "selector": "[data-export-receipt=\"LONG\"]",
+    "metrics": {
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "client": 318,
+        "scroll": 318
+      },
+      "row": {
+        "left": 24,
+        "right": 296,
+        "width": 272
+      },
+      "bad": [],
+      "viewport": 320,
+      "scale": 1
+    },
+    "screenshot": "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\comprehensive-r2\\chromium-V01-320-14-3.png"
+  }
+]

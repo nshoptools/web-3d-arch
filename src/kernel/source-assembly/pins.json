@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 2,
+  "libraries": [
+    {
+      "name": "Manifold",
+      "version": "3.5.3",
+      "revision": "0edd9d54876f3135e431575214dd6d8a72866fee",
+      "source": "https://github.com/elalish/manifold",
+      "internalParallelism": false,
+      "license": "Apache-2.0",
+      "licenseSha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "sourcePath": ".toolchain/manifold",
+      "link": "static",
+      "licenseFile": "licenses/Manifold-Apache-2.0.txt"
+    },
+    {
+      "name": "Clipper2",
+      "revision": "46f639177fe418f9689e8ddb74f08a870c71f5b4",
+      "source": "https://codeload.github.com/AngusJohnson/Clipper2/tar.gz/46f639177fe418f9689e8ddb74f08a870c71f5b4",
+      "archiveSha256": "73F5783E0C88299976334F48E3E356C756B96212C652ECC8BCEEC3BD99455BCB",
+      "patch": "licenses/clipper2-no-iostream.patch",
+      "patchSha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039",
+      "derivedTreeSha256": "6316DC4C346683B329F362B78D9D2C324AD628175716F1CCD280C12D305A62CB",
+      "treeHashRecipe": "SHA256 of UTF-8 ordinal-sorted relativePath:UPPERCASE_SHA256 lines, LF-terminated",
+      "license": "BSL-1.0",
+      "licenseSha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+      "configureDownloads": false,
+      "originalPath": ".toolchain/clipper2-original",
+      "derivedPath": ".toolchain/clipper2-derived",
+      "link": "static",
+      "licenseFile": "licenses/Clipper2-Boost-1.0.txt"
+    }
+  ],
+  "tools": {
+    "CMake": "4.4.3",
+    "Ninja": "1.13.2.git.kitware.jobserver-pipe-1",
+    "Emscripten": "6.0.9",
+    "emsdkReleaseHash": "f04ea239d533260dd1db760dd2d668d5f9a88d6b",
+    "MSVC": "19.51.36256.0",
+    "Node": "v24.19.0",
+    "Rust": "Not invoked; parent pins 1.98.1/nightly-2026-09-07"
+  },
+  "integratedInputs": {
+    "domain": "src/domain/index.mjs",
+    "catalogSha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+    "rootRuntimeAbi": 2,
+    "rootCppGeometryAbi": 1,
+    "packedMeshAbi": 1,
+    "mechanicsAbi": 2
+  },
+  "oracle": {
+    "path": "tests/oracles/indexed-oracle.mjs",
+    "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119",
+    "origin": "Wave1 frozen main mesh oracle; separate spatial-oracle.mjs supplies independent numeric sections/volumes/probes"
+  }
+}

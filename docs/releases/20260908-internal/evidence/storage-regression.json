@@ -1,0 +1,952 @@
+{
+  "runId": "2026-09-08T11-44-08-936Z",
+  "startedAt": "2026-09-08T11:44:08.986Z",
+  "platform": "win32",
+  "node": "v24.19.0",
+  "originPrivate": true,
+  "whitelist": [
+    "/harness.html",
+    "/harness.mjs",
+    "/cases.mjs",
+    "/batch-cases.mjs",
+    "/src/access.mjs",
+    "/src/bytes.mjs",
+    "/src/common.mjs",
+    "/src/head.mjs",
+    "/src/history.mjs",
+    "/src/idb.mjs",
+    "/src/index.mjs",
+    "/src/journal.mjs",
+    "/src/manifest.mjs",
+    "/src/online-grant.mjs",
+    "/src/package.mjs",
+    "/src/replica.mjs",
+    "/src/store.mjs",
+    "/src/zip.mjs"
+  ],
+  "hashes": {
+    "tests/storage/harness.html": "c55929e0ec572badb92ae920d3b581640a15af42829c56c095a1be0cc26bd69d",
+    "tests/storage/harness.mjs": "0224bd7b99d94d949b701f795b40efd8e331007b5660bd50ec92e3724df2edde",
+    "tests/storage/cases.mjs": "cf49626feb3a109c583a8d7cd24262eacc15d34ad7bc68db7fd9d3ee21bc5361",
+    "tests/storage/batch-cases.mjs": "c9c4d3851453bdb8dedc62494220e0c95ea6543dfa2e77e1a7100591fae59ebb",
+    "src/storage/access.mjs": "ccd6ce9d85c0bccdd628dfb95e465c13263f6c5cb9b8a2a466e80ab14bbd520e",
+    "src/storage/bytes.mjs": "6533ee096cf2eb6b96f1bfa7ed49a6d90550d6d20bdf7fbe13ae4e28f1de6e3b",
+    "src/storage/common.mjs": "c3b89e339fe3f9c02475892aef068460d8f0a6865590cca1464824e8b46318e0",
+    "src/storage/head.mjs": "97334809ccbe92241f41d25aca9abe8b9bb8e682db6ebb2fcd3291980f24e584",
+    "src/storage/history.mjs": "029ab49f0cf4546fcc86c00042e6d554be4c89ba1746d51e5fc2d61efce77b6f",
+    "src/storage/idb.mjs": "0342c233c93e0d30e4cc4743d11488cf7e8eb05305092cbd18c809be6ab025dd",
+    "src/storage/index.mjs": "d50ee46f4e6b5d2ddd425fb6a12ff0e2e4070c4d68d48dfc968953ff89c7b7ce",
+    "src/storage/journal.mjs": "0c7bc4f23c404cb2ce837c76972e3177df3489230807a419b10458d8774b1227",
+    "src/storage/manifest.mjs": "2af9e638c946fea82088dde921c5d26e06330fabae83943a0b3385bd8bca612f",
+    "src/storage/online-grant.mjs": "cbef337244f190e63ad21abda9f9a2c31f330e3ee9b314fa6d7af4a65a3983dc",
+    "src/storage/package.mjs": "6abd31a50436dcbeff9f3894d861281a0dbb1fee8e7ede0f06f318d9aa4c773f",
+    "src/storage/replica.mjs": "f219e67b03cf8bf8fa85f0703213101b9c6e2091fd8bb4908e5e27d5a7260ee5",
+    "src/storage/store.mjs": "83a91efe38d60bb8dcca81e1d7988c7b2665c1f62a05632601aeb0477a7b05ef",
+    "src/storage/zip.mjs": "3638a0dc53f30b62a29bae31fa08791c1a14c4f6653315be2f9b1ba4b777b3bc"
+  },
+  "browsers": [
+    {
+      "name": "chromium",
+      "version": "153.0.8010.12",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "capabilities": [
+        {
+          "backend": "opfs",
+          "selectedBackend": "opfs",
+          "opfs": {
+            "status": "supported",
+            "probe": "create-write-close-read-verify-remove"
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 10737422552,
+            "usage": 4312,
+            "usageDetails": {
+              "fileSystem": 442,
+              "indexedDB": 3870
+            }
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        },
+        {
+          "backend": "idb",
+          "selectedBackend": "idb",
+          "opfs": {
+            "status": "not-probed",
+            "category": "read-access",
+            "reason": "No existing OPFS namespace is readable; write probe disabled",
+            "error": {
+              "code": "NotFoundError",
+              "message": "A requested file or directory could not be found at the time an operation was processed.",
+              "details": {}
+            }
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 10737991477,
+            "usage": 573237,
+            "usageDetails": {
+              "fileSystem": 7707,
+              "indexedDB": 565530
+            }
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "firefox",
+      "version": "155.0",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "capabilities": [
+        {
+          "backend": "opfs",
+          "selectedBackend": "opfs",
+          "opfs": {
+            "status": "supported",
+            "probe": "create-write-close-read-verify-remove"
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 540672
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        },
+        {
+          "backend": "idb",
+          "selectedBackend": "idb",
+          "opfs": {
+            "status": "not-probed",
+            "category": "read-access",
+            "reason": "No existing OPFS namespace is readable; write probe disabled",
+            "error": {
+              "code": "NotFoundError",
+              "message": "Entry not found",
+              "details": {}
+            }
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 10737418240,
+            "usage": 1040665
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "name": "webkit",
+      "version": "26.6",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Safari/605.1.15",
+      "capabilities": [
+        {
+          "backend": "opfs",
+          "selectedBackend": null,
+          "opfs": {
+            "status": "unavailable",
+            "category": "verification-failed",
+            "error": {
+              "code": "OPFS_PROBE",
+              "message": "OPFS closed bytes differ.",
+              "details": {
+                "expected": [
+                  7,
+                  3,
+                  1
+                ],
+                "observed": [],
+                "fileSize": 0,
+                "readLength": 0
+              }
+            }
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 1048576000,
+            "usage": 144
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        },
+        {
+          "backend": "idb",
+          "selectedBackend": "idb",
+          "opfs": {
+            "status": "not-probed",
+            "category": "read-access",
+            "reason": "No existing OPFS namespace is readable; write probe disabled",
+            "error": {
+              "code": "NotFoundError",
+              "message": "The object can not be found here.",
+              "details": {}
+            }
+          },
+          "indexedDB": {
+            "status": "supported",
+            "durability": "strict hint requested; browser/OS persistence not guaranteed"
+          },
+          "fallback": {
+            "allowed": true,
+            "when": [
+              "unsupported"
+            ],
+            "automaticMidCommit": false
+          },
+          "locks": {
+            "status": "supported"
+          },
+          "persist": {
+            "requested": false,
+            "granted": null
+          },
+          "estimate": {
+            "quota": 1048576000,
+            "usage": 495
+          },
+          "database": {
+            "version": 1,
+            "readOnly": false
+          },
+          "cloudReplica": {
+            "status": "unsupported"
+          },
+          "physicalCrashDurability": {
+            "status": "unverified"
+          }
+        }
+      ],
+      "pageErrors": []
+    }
+  ],
+  "results": [
+    {
+      "browser": "chromium",
+      "name": "sourceLossAndHashCorruptionFallback",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 11375,
+      "details": [
+        {
+          "action": "remove",
+          "issues": [
+            {
+              "manifestHash": "4aa40881b453782635f5f718c032cd037b9373e3fb8f759832fada33e7148417",
+              "code": "NotFoundError",
+              "message": "A requested file or directory could not be found at the time an operation was processed.",
+              "details": {}
+            }
+          ],
+          "rescueComplete": false
+        },
+        {
+          "action": "corrupt",
+          "issues": [
+            {
+              "manifestHash": "7a0186e85e154ae3af0bc4b44585021e1f75ed69178d9d3634a2b6b5255d1b2a",
+              "code": "ASSET_HASH",
+              "message": "Asset bytes failed SHA-256 verification.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "manifestCorruptionFallbackAndConservativeGC",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 5017,
+      "details": {
+        "rawCorruptManifestRetained": true,
+        "issues": [
+          {
+            "code": "MANIFEST_HASH",
+            "hash": "baee9bf7e562e6975dc9bb30f621cbfb2fd874522517a1b97e8e8a0591d78cd7",
+            "actualHash": "54ba5b435a22196b89fe419e61abd5995eda99129ee25b0d21fd4b1d83cac1a7"
+          }
+        ]
+      }
+    },
+    {
+      "browser": "chromium",
+      "name": "unknownVersionsPreserveRaw",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 7331,
+      "details": [
+        {
+          "version": 0,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        },
+        {
+          "version": 2,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "malformedRawMetadataRescuesVerifiedPrevious",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 7557,
+      "details": {
+        "invalidUTF8Preserved": true,
+        "unknownHeadFieldsPreserved": true,
+        "previousVerified": true
+      }
+    },
+    {
+      "browser": "chromium",
+      "name": "rescueCapturesOneGenerationDuringConcurrentCommits",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 14802,
+      "details": [
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 1,
+          "currentRevision": 2,
+          "complete": true,
+          "importable": true
+        },
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 3,
+          "currentRevision": 4,
+          "complete": true,
+          "importable": true
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "sourceLossAndHashCorruptionFallback",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 17453,
+      "details": [
+        {
+          "action": "remove",
+          "issues": [
+            {
+              "manifestHash": "8860cf456757ff1ac4e78813427f029e909ffb97a36b0319099f8f9f0526c8f1",
+              "code": "MISSING_ASSET",
+              "message": "IndexedDB blob is missing.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        },
+        {
+          "action": "corrupt",
+          "issues": [
+            {
+              "manifestHash": "393b46fbabc727c0ac954a13ab467ffd5191de7981ad578ca1895c74c4386822",
+              "code": "ASSET_HASH",
+              "message": "Asset bytes failed SHA-256 verification.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "manifestCorruptionFallbackAndConservativeGC",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 3455,
+      "details": {
+        "rawCorruptManifestRetained": true,
+        "issues": [
+          {
+            "code": "MANIFEST_HASH",
+            "hash": "c48591fc5b48ca26eb39dffa5681288fd036bb89284d86f15fed809f4c9f7df3",
+            "actualHash": "e52e3f8e9d649285522a4b3f1c20653d22c3756c22a833c0eebc6717ef7c752a"
+          }
+        ]
+      }
+    },
+    {
+      "browser": "chromium",
+      "name": "unknownVersionsPreserveRaw",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 7771,
+      "details": [
+        {
+          "version": 0,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        },
+        {
+          "version": 2,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        }
+      ]
+    },
+    {
+      "browser": "chromium",
+      "name": "malformedRawMetadataRescuesVerifiedPrevious",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 4161,
+      "details": {
+        "invalidUTF8Preserved": true,
+        "unknownHeadFieldsPreserved": true,
+        "previousVerified": true
+      }
+    },
+    {
+      "browser": "chromium",
+      "name": "rescueCapturesOneGenerationDuringConcurrentCommits",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 6628,
+      "details": [
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 1,
+          "currentRevision": 2,
+          "complete": true,
+          "importable": true
+        },
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 3,
+          "currentRevision": 4,
+          "complete": true,
+          "importable": true
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "sourceLossAndHashCorruptionFallback",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 23074,
+      "details": [
+        {
+          "action": "remove",
+          "issues": [
+            {
+              "manifestHash": "6c603f731a66f55506b581615c463d140ca78986c6d37f4f4b6518bfd7032672",
+              "code": "NotFoundError",
+              "message": "Entry not found",
+              "details": {}
+            }
+          ],
+          "rescueComplete": false
+        },
+        {
+          "action": "corrupt",
+          "issues": [
+            {
+              "manifestHash": "0f8393821629d4aba6cf6f741d045c3a6771c0b272393c3ffa7977283b22ab38",
+              "code": "ASSET_HASH",
+              "message": "Asset bytes failed SHA-256 verification.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "manifestCorruptionFallbackAndConservativeGC",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 15910,
+      "details": {
+        "rawCorruptManifestRetained": true,
+        "issues": [
+          {
+            "code": "MANIFEST_HASH",
+            "hash": "a1349321500fac012be3b99ce5d7ba0568645b1dcf350f12c89dbee5e7ace211",
+            "actualHash": "034337e8d2c0cd8e336c33d84e4bd55f1ae0311ea50e5c8796d3c356e1a0b8fd"
+          }
+        ]
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "unknownVersionsPreserveRaw",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 9671,
+      "details": [
+        {
+          "version": 0,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        },
+        {
+          "version": 2,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "malformedRawMetadataRescuesVerifiedPrevious",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 6396,
+      "details": {
+        "invalidUTF8Preserved": true,
+        "unknownHeadFieldsPreserved": true,
+        "previousVerified": true
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "rescueCapturesOneGenerationDuringConcurrentCommits",
+      "backend": "opfs",
+      "status": "pass",
+      "durationMs": 57703,
+      "details": [
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 1,
+          "currentRevision": 2,
+          "complete": true,
+          "importable": true
+        },
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 3,
+          "currentRevision": 4,
+          "complete": true,
+          "importable": true
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "sourceLossAndHashCorruptionFallback",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 9123,
+      "details": [
+        {
+          "action": "remove",
+          "issues": [
+            {
+              "manifestHash": "07cbde6b976a905672dc4610eda30f528348c167300df35b63585ce6cae5f099",
+              "code": "MISSING_ASSET",
+              "message": "IndexedDB blob is missing.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        },
+        {
+          "action": "corrupt",
+          "issues": [
+            {
+              "manifestHash": "f9bde493e63572ff63662c2a76a62f8be2d005a9d73e2d64ef9c293a6d4ebb41",
+              "code": "ASSET_HASH",
+              "message": "Asset bytes failed SHA-256 verification.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "manifestCorruptionFallbackAndConservativeGC",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 7378,
+      "details": {
+        "rawCorruptManifestRetained": true,
+        "issues": [
+          {
+            "code": "MANIFEST_HASH",
+            "hash": "c99c4ec88c269d3111bbedc2add97f2644ef71725be92c59916275b92c49539d",
+            "actualHash": "6d3fe99d8d34db709544d6f0b2987d605338f43df3ae9793058f1f8ec632a059"
+          }
+        ]
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "unknownVersionsPreserveRaw",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 8592,
+      "details": [
+        {
+          "version": 0,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        },
+        {
+          "version": 2,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        }
+      ]
+    },
+    {
+      "browser": "firefox",
+      "name": "malformedRawMetadataRescuesVerifiedPrevious",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 4506,
+      "details": {
+        "invalidUTF8Preserved": true,
+        "unknownHeadFieldsPreserved": true,
+        "previousVerified": true
+      }
+    },
+    {
+      "browser": "firefox",
+      "name": "rescueCapturesOneGenerationDuringConcurrentCommits",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 17805,
+      "details": [
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 1,
+          "currentRevision": 2,
+          "complete": true,
+          "importable": true
+        },
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 3,
+          "currentRevision": 4,
+          "complete": true,
+          "importable": true
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "backend": "opfs",
+      "name": "capability",
+      "status": "unavailable",
+      "details": {
+        "selectedBackend": null,
+        "opfs": {
+          "status": "unavailable",
+          "category": "verification-failed",
+          "error": {
+            "code": "OPFS_PROBE",
+            "message": "OPFS closed bytes differ.",
+            "details": {
+              "expected": [
+                7,
+                3,
+                1
+              ],
+              "observed": [],
+              "fileSize": 0,
+              "readLength": 0
+            }
+          }
+        },
+        "indexedDB": {
+          "status": "supported",
+          "durability": "strict hint requested; browser/OS persistence not guaranteed"
+        },
+        "fallback": {
+          "allowed": true,
+          "when": [
+            "unsupported"
+          ],
+          "automaticMidCommit": false
+        },
+        "locks": {
+          "status": "supported"
+        },
+        "persist": {
+          "requested": false,
+          "granted": null
+        },
+        "estimate": {
+          "quota": 1048576000,
+          "usage": 144
+        },
+        "database": {
+          "version": 1,
+          "readOnly": false
+        },
+        "cloudReplica": {
+          "status": "unsupported"
+        },
+        "physicalCrashDurability": {
+          "status": "unverified"
+        }
+      }
+    },
+    {
+      "browser": "webkit",
+      "name": "sourceLossAndHashCorruptionFallback",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 66325,
+      "details": [
+        {
+          "action": "remove",
+          "issues": [
+            {
+              "manifestHash": "b48853208e886c9b18e828244d127752dd5c015581723ebb288dc9e0de34671f",
+              "code": "MISSING_ASSET",
+              "message": "IndexedDB blob is missing.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        },
+        {
+          "action": "corrupt",
+          "issues": [
+            {
+              "manifestHash": "12730c7d24c32164907ac2283b69b1eda0da10d2fc3ab70d17be4f853d795b83",
+              "code": "ASSET_HASH",
+              "message": "Asset bytes failed SHA-256 verification.",
+              "details": {
+                "hash": "2ec6e29a3949791b2c5b1007164c45c3eeafe3689a321242a72ca99168e08978"
+              }
+            }
+          ],
+          "rescueComplete": false
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "name": "manifestCorruptionFallbackAndConservativeGC",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 17372,
+      "details": {
+        "rawCorruptManifestRetained": true,
+        "issues": [
+          {
+            "code": "MANIFEST_HASH",
+            "hash": "9986d417e2d1caea536a4329f5aff701292792e61951d6c5ee77f49db64b1ff8",
+            "actualHash": "9e1767c52d03c577fb0a6cc2cf7c79e133417663ca24bfdbe11cb339d9bd094d"
+          }
+        ]
+      }
+    },
+    {
+      "browser": "webkit",
+      "name": "unknownVersionsPreserveRaw",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 21028,
+      "details": [
+        {
+          "version": 0,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        },
+        {
+          "version": 2,
+          "reason": "UNSUPPORTED_MANIFEST_VERSION"
+        }
+      ]
+    },
+    {
+      "browser": "webkit",
+      "name": "malformedRawMetadataRescuesVerifiedPrevious",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 19024,
+      "details": {
+        "invalidUTF8Preserved": true,
+        "unknownHeadFieldsPreserved": true,
+        "previousVerified": true
+      }
+    },
+    {
+      "browser": "webkit",
+      "name": "rescueCapturesOneGenerationDuringConcurrentCommits",
+      "backend": "idb",
+      "status": "pass",
+      "durationMs": 37064,
+      "details": [
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 1,
+          "currentRevision": 2,
+          "complete": true,
+          "importable": true
+        },
+        {
+          "capturedRevision": 1,
+          "concurrentCommits": 3,
+          "currentRevision": 4,
+          "complete": true,
+          "importable": true
+        }
+      ]
+    }
+  ],
+  "scope": {
+    "realIDB": true,
+    "realOPFS": true,
+    "physicalCrashProof": false
+  },
+  "completedAt": "2026-09-08T11:54:41.119Z",
+  "counts": {
+    "pass": 25,
+    "fail": 0,
+    "unavailable": 1
+  },
+  "exitCode": 2
+}

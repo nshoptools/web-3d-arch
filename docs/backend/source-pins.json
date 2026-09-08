@@ -1,0 +1,92 @@
+[
+  {
+    "id": "xai-openapi",
+    "url": "https://api.x.ai/api-docs/openapi.json",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:05.0574943Z",
+    "file": "inputs/xai-openapi.raw.json",
+    "bytes": 219254,
+    "sha256": "91be49b210491b3a4856952f4747af128b599f38c0d3b7185854b0905d7cbc9f"
+  },
+  {
+    "id": "xai-model",
+    "url": "https://docs.x.ai/developers/models/grok-imagine-image-2.0",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:06.1356426Z",
+    "file": "inputs/xai-model.html",
+    "bytes": 359493,
+    "sha256": "a40f1dc1805ab3735c2521f0183713537866aee53193023df125244c980529b0"
+  },
+  {
+    "id": "xai-generation",
+    "url": "https://docs.x.ai/developers/model-capabilities/images/generation",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:07.443179Z",
+    "file": "inputs/xai-generation.html",
+    "bytes": 657859,
+    "sha256": "a2210477b75cbdbe9998e2ec9069e30ae21ad429bea1d1e2b73d51f644fd7acb"
+  },
+  {
+    "id": "xai-cost-tracking",
+    "url": "https://docs.x.ai/developers/cost-tracking",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:08.3216728Z",
+    "file": "inputs/xai-cost-tracking.html",
+    "bytes": 577055,
+    "sha256": "d70446acf4b87abdccf4a53ed1c6c32fb880f18b984e969b753a3aa931b1340d"
+  },
+  {
+    "id": "xai-debugging",
+    "url": "https://docs.x.ai/developers/debugging",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:09.4343131Z",
+    "file": "inputs/xai-debugging.html",
+    "bytes": 382953,
+    "sha256": "c21abecaf16a39b70f79ac0c16a84ce85080971acf6d70649689aed62ac12b60"
+  },
+  {
+    "id": "google-deprecation",
+    "url": "https://ai.google.dev/gemini-api/docs/deprecations?hl=en",
+    "accessedDate": "2026-09-08",
+    "retrievedAt": "2026-09-07T20:19:10.5696968Z",
+    "file": "inputs/google-deprecation.html",
+    "bytes": 115996,
+    "sha256": "c249cf9e24e13c2c67787fa625b79ff74ed8687b84a28e1d2db226b5e9884a4d"
+  },
+  {
+    "id": "node-zlib",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/zlib.md",
+    "version": "v24.19.0",
+    "retrievedAt": "2026-09-07T20:28:36.18811Z",
+    "file": "inputs/node-v24.19.0-zlib.md",
+    "bytes": 51076,
+    "sha256": "51e6c7403d062a4364922a01e3baee675fd6ac19d225c31a2df9ad4e202f4ac9"
+  },
+  {
+    "id": "node-http",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/http.md",
+    "version": "v24.19.0",
+    "retrievedAt": "2026-09-07T20:28:37.2506713Z",
+    "file": "inputs/node-v24.19.0-http.md",
+    "bytes": 140768,
+    "sha256": "3123f04015b1b32c7fcf8084f738b1845ae438a95bfe52dc22c5afdb7c4bcb33"
+  },
+  {
+    "id": "node-sqlite",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/sqlite.md",
+    "version": "v24.19.0",
+    "retrievedAt": "2026-09-07T20:28:37.8266741Z",
+    "file": "inputs/node-v24.19.0-sqlite.md",
+    "bytes": 60985,
+    "sha256": "34f9c9acd713f986af071c209e88ba447e0eefe166a5df8e93d9027826e2a8fa"
+  },
+  {
+    "id": "node-crypto",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/crypto.md",
+    "version": "v24.19.0",
+    "retrievedAt": "2026-09-07T20:28:39.4504202Z",
+    "file": "inputs/node-v24.19.0-crypto.md",
+    "bytes": 231772,
+    "sha256": "8b66ba9f8fab08967d96846774d4a0710a81813bea14721d338909dab81b1aa0"
+  }
+]

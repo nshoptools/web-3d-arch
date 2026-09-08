@@ -1,0 +1,14 @@
+{
+  "scope": "Real Chromium tabs.setZoom(2) through an isolated, locally generated extension. Captured React UI; deferred bridge.",
+  "before": {
+    "width": 1252,
+    "height": 799,
+    "dpr": 1
+  },
+  "after": {
+    "width": 626,
+    "height": 399,
+    "dpr": 2
+  },
+  "zoom": 2
+}

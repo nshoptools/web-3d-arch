@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-08T10:39:51.0997036Z",
+  "syntax": "passed",
+  "failClosedCases": 4,
+  "requestedEffort": "max",
+  "fastMode": false,
+  "ultracode": false,
+  "scope": "launcher configuration, not model execution attestation",
+  "launcherSha256": "8E177A0D1DE045E9C58245A869C086AD4F4D570355B6E794143FE22D2DD56CC1",
+  "configSha256": "FBD45F672AE2D5FFDAFF5D802F92CBCFF40A84CD60CFCD90FE8E0FF54BB7A25D"
+}

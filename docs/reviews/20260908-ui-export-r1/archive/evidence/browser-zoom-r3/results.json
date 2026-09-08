@@ -1,0 +1,7 @@
+{
+  "scope": "Real Chromium tabs.setZoom(2) through an isolated, locally generated extension. Captured React UI; deferred bridge.",
+  "pass": false,
+  "error": "page.waitForFunction: Timeout 30000ms exceeded.\n    at D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\work\\browser-review\\zoom.mjs:14:216",
+  "errors": [],
+  "denied": []
+}

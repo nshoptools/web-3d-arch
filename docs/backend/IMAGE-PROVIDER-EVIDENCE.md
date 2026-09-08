@@ -1,0 +1,19 @@
+# xAI reference contract evidence — 2026-09-08
+Read before enabling this candidate's exact reference capability. No account, key, live inference or billing record was used.
+
+Official sources:
+- [Image editing guide](https://docs.x.ai/developers/model-capabilities/images/editing): JSON POST /v1/images/edits, image.url data URI/public URL, type image_url. Our adapter only accepts server-owned checked data URIs made from uploaded originals.
+- [REST OpenAPI](https://api.x.ai/api-docs/openapi.json): EditImageRequest image/images mutually exclusive; single image must omit aspect_ratio; n/resolution/response_format supported. The quality property is absent in EditImageRequest. ImagePricingTier specifies medium as default when quality is omitted.
+- [Exact model pricing](https://docs.x.ai/developers/models/grok-imagine-image-2.0): input image USD0.01, output low1k0.04/2k0.06 and medium1k0.06/2k0.08. The model Markdown export omits input price/tier detail; the fuller HTML snapshot is pinned separately. Do not treat the sparse Markdown export as the full evidence.
+- Original generation guide divergence is retained in ADAPTER-ISSUES A-02; generation still uses existing explicit quality. Editing deliberately sends no undocumented quality field and exposes medium only.
+
+Quote reference cap: exactly one input at10,000micros + one medium output at60,000(1k) or80,000(2k). n1, no batch/multi-reference/mask/storage_options/public-file outputs/user/account identifiers. API endpoint is fixed https://api.x.ai/v1/images/edits. Reference application limits are8MB/4.194304Mpx; input byte size does not cause an unbounded per-token calculation because the published price is per image. The app advertises only the bounded subset implemented here.
+
+Fresh non-generating model metadata verifies exact model ID, image modality, prompt byte allowance and the selected output tier in documented USD ticks. No input-price field is defined by that metadata schema, so input price remains dated publication evidence. Reference quoting is disabled before2026-09-08T03:07:12.431Z and all pricing expires2026-10-08T00:00:00Z. A future contract must be fetched and explicitly pinned; do not guess missing fields or extend expiry without evidence.
+The provider alias is mutable, not an immutable weights revision; read modelVersion literally as alias:grok-imagine-image-2.0. A response may omit model/version; same-ID backend changes cannot be detected. The bound is app admission, not a provider enforced spend cap. Actual above cap is recorded completely and circuit blocks further quotes; B-05 can reconcile actual/bounds. Taxes, FX, funding and outside-app spend are excluded.
+
+Transport reuses bounded HTTPS allowlist/DNS pinning/no redirects with final synchronous authorization. Maximum explicit reference request10,750,000bytes; shared transport hard ceiling widened from1MB to12MB, while other callers retain their existing smaller limits. No remote arbitrary URL or key forwarding. Provider URL/file output remains PROVIDER_OUTPUT_URL_UNSUPPORTED; inline JPEG/PNG unsupported codec features remain PROVIDER_IMAGE_FORMAT_UNSUPPORTED. Such response failures do not turn unknown actual into0 or erase known actual.
+
+No provider status/idempotency/cancel promise was found for this endpoint. Billable retry count remains0. A fully received bounded response is decoded independently of the cancelled request signal so late responses stay in the original owner's tray; decode still has its own CPU/memory/deadline bounds. Cancellation before send still blocks network. This is not a refund guarantee.
+
+See image-source-pins.json for raw snapshot/tarball/license hashes; private original snapshots are in the run inputs/upstream directory. Exact request fields, price, source buffers, post-send cancellation and owning-user retrieval are exercised with synthetic providers and genuine loopback HTTP, not live provider success.

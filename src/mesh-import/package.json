@@ -1,0 +1,34 @@
+{
+  "name": "@web-3d-arch/mesh-import",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "three": "0.185.1"
+  },
+  "exports": {
+    ".": "./src/importer.mjs",
+    "./csg": "./src/imported-csg.mjs",
+    "./app-adapter": {
+      "types": "./src/app-adapter.d.mts",
+      "import": "./src/app-adapter.mjs"
+    },
+    "./root-app-adapter": {
+      "types": "./src/root-app-adapter.d.mts",
+      "import": "./src/root-app-adapter.mjs"
+    },
+    "./app-csg-transaction": {
+      "types": "./src/app-csg-transaction.d.mts",
+      "import": "./src/app-csg-transaction.mjs"
+    },
+    "./candidate-qualification": {
+      "types": "./src/candidate-qualification.d.mts",
+      "import": "./src/candidate-qualification.mjs"
+    },
+    "./root-client": "./src/root-client.mjs",
+    "./root-runtime": "./src/root-runtime.mjs"
+  }
+}

@@ -1,0 +1,2872 @@
+{
+  "schemaVersion": 3,
+  "engineVersion": "arch-mechanics/0.3.0",
+  "mechanicsAbi": 2,
+  "sourceAbi": 2,
+  "adr": "MECH-ADR-004",
+  "catalogSha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+  "fieldCount": 126,
+  "note": "Field bindings are not feature acceptance. Native retains nominal mm on the domain storage grid; integer counts use the domain quantum. Source assembly semantics2 supplies style/slab formulas from canonical typed regions.",
+  "zeroModes": {
+    "ringH": "explicit mode 3 auto body height; explicit mm zero invalid",
+    "legoRanhZ": "mode 4 auto body midpoint only for preset/auto zero; user scalar zero stays literal",
+    "skirtH": "literal zero disables"
+  },
+  "sourceExtensions": {
+    "attachments": "explicit text/text-base footprint, Z extent, stable ID, provenance; eyelet selects exact ID",
+    "bevelOverrides": "user source-body/slab target, enabled/radius/shape/steps/provenance; orphan rejects",
+    "bedText": "kinds4/5: manufacturing bed Z0, group2 and identity preview; kinds0..3 retain source body datum",
+    "datums": "source height tags128..134 extension1; mechanics datum11 skirt bottom; see ADR-003"
+  },
+  "conditionalCapabilities": {
+    "topBevel": "round/chamfer/actual schedule steps with common material cutter and positive support",
+    "ringTren": "body or explicit validated text host",
+    "strapCham": "axial capsule/oblique/piecewise planar mouths with exterior-domain and resource guards",
+    "autoSize": "proposal only, no input mutation"
+  },
+  "fields": [
+    {
+      "id": "k",
+      "abiId": 1,
+      "catalogDefault": 4,
+      "catalogDomain": [
+        2,
+        16
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "res",
+      "abiId": 2,
+      "catalogDefault": "520",
+      "catalogDomain": [
+        "360",
+        "520",
+        "720",
+        "960",
+        "1280"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "smooth",
+      "abiId": 3,
+      "catalogDefault": 3,
+      "catalogDomain": [
+        0,
+        6
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "minA",
+      "abiId": 4,
+      "catalogDefault": 5,
+      "catalogDomain": [
+        0,
+        100
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "denoise",
+      "abiId": 5,
+      "catalogDefault": 1,
+      "catalogDomain": [
+        0,
+        3
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "eps",
+      "abiId": 6,
+      "catalogDefault": 35,
+      "catalogDomain": [
+        0,
+        100
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "tension",
+      "abiId": 7,
+      "catalogDefault": 65,
+      "catalogDomain": [
+        0,
+        100
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "size",
+      "abiId": 8,
+      "catalogDefault": 45,
+      "catalogDomain": [
+        12,
+        160
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "outline",
+      "abiId": 9,
+      "catalogDefault": "silhouette",
+      "catalogDomain": [
+        "silhouette",
+        "round",
+        "circle",
+        "square"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "cornerR",
+      "abiId": 10,
+      "catalogDefault": 3,
+      "catalogDomain": [
+        0,
+        14
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "offset",
+      "abiId": 11,
+      "catalogDefault": 1.5,
+      "catalogDomain": [
+        0,
+        8
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "weld",
+      "abiId": 12,
+      "catalogDefault": 0.8,
+      "catalogDomain": [
+        0,
+        5
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "minFeature",
+      "abiId": 13,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0.2,
+        4
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "fillHoles",
+      "abiId": 14,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "topBevel",
+      "abiId": 15,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "topBevelR",
+      "abiId": 16,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0.2,
+        3
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "topBevelShape",
+      "abiId": 17,
+      "catalogDefault": "tron",
+      "catalogDomain": [
+        "tron",
+        "vat",
+        "bac"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "bevelGop",
+      "abiId": 18,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "bevelChu",
+      "abiId": 19,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "topBevelSeg",
+      "abiId": 20,
+      "catalogDefault": 3,
+      "catalogDomain": [
+        1,
+        12
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-003",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "layerH",
+      "abiId": 21,
+      "catalogDefault": "0.20",
+      "catalogDomain": [
+        "0.08",
+        "0.10",
+        "0.12",
+        "0.16",
+        "0.20",
+        "0.24",
+        "0.28",
+        "0.30"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "schedule-alias",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "layerStep",
+      "abiId": 22,
+      "catalogDefault": 3,
+      "catalogDomain": [
+        1,
+        10
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "metadata-only",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "baseH",
+      "abiId": 23,
+      "catalogDefault": 2.4,
+      "catalogDomain": [
+        0.6,
+        24
+      ],
+      "catalogStep": 0.2,
+      "products": [
+        "keychain",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "plateT",
+      "abiId": 24,
+      "catalogDefault": 1.6,
+      "catalogDomain": [
+        0.8,
+        5
+      ],
+      "catalogStep": 0.2,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "artMode",
+      "abiId": 25,
+      "catalogDefault": "noi",
+      "catalogDomain": [
+        "noi",
+        "chim",
+        "phang",
+        "phang2"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "flatTop",
+      "abiId": 26,
+      "catalogDefault": 1,
+      "catalogDomain": [
+        0.2,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "artH",
+      "abiId": 27,
+      "catalogDefault": 0.8,
+      "catalogDomain": [
+        0.2,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "rimOn",
+      "abiId": 28,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "strap",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain",
+        "strap",
+        "charm"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "rimH",
+      "abiId": 29,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0.2,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "strap",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain",
+        "strap",
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "splitObj",
+      "abiId": 30,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "layerBand",
+      "abiId": 31,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "bandCore",
+      "abiId": 32,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1
+    },
+    {
+      "id": "bandCap",
+      "abiId": 33,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0.2,
+        3
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "source-context-dependency",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": "t\u1ea5t c\u1ea3",
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "ringOn",
+      "abiId": 34,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "ringOuterD",
+      "abiId": 35,
+      "catalogDefault": 8,
+      "catalogDomain": [
+        4,
+        18
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "ringInnerD",
+      "abiId": 36,
+      "catalogDefault": 4,
+      "catalogDomain": [
+        1.5,
+        10
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "ringTren",
+      "abiId": 37,
+      "catalogDefault": "hinh",
+      "catalogDomain": [
+        "hinh",
+        "chu"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "ringAngle",
+      "abiId": 38,
+      "catalogDefault": 90,
+      "catalogDomain": [
+        0,
+        360
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "ringOverlap",
+      "abiId": 39,
+      "catalogDefault": 1.5,
+      "catalogDomain": [
+        0,
+        10
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "ringH",
+      "abiId": 40,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        24
+      ],
+      "catalogStep": 0.2,
+      "products": [
+        "keychain"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoOn",
+      "abiId": 41,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoPitch",
+      "abiId": 42,
+      "catalogDefault": 8,
+      "catalogDomain": [
+        4,
+        32
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoHoleD",
+      "abiId": 43,
+      "catalogDefault": 4.9,
+      "catalogDomain": [
+        1,
+        12
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoHoleH",
+      "abiId": 44,
+      "catalogDefault": 1.8,
+      "catalogDomain": [
+        0.4,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoThua",
+      "abiId": 45,
+      "catalogDefault": "du",
+      "catalogDomain": [
+        "du",
+        "nua",
+        "tu"
+      ],
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoHoDu",
+      "abiId": 46,
+      "catalogDefault": 0.3,
+      "catalogDomain": [
+        0,
+        1.5
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": "one-sided for sparse masks: diameter + 2*value",
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoWall",
+      "abiId": 47,
+      "catalogDefault": 0.8,
+      "catalogDomain": [
+        0.4,
+        4
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoRong",
+      "abiId": 48,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoOffX",
+      "abiId": 49,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -20,
+        20
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoOffY",
+      "abiId": 50,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -20,
+        20
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoXeOn",
+      "abiId": 51,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoXeW",
+      "abiId": 52,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0.2,
+        2
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoTaiOn",
+      "abiId": 53,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoTaiW",
+      "abiId": 54,
+      "catalogDefault": 2.4,
+      "catalogDomain": [
+        0.6,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoTaiL",
+      "abiId": 55,
+      "catalogDefault": 12,
+      "catalogDomain": [
+        3,
+        30
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoTaiCo",
+      "abiId": 56,
+      "catalogDefault": 1.2,
+      "catalogDomain": [
+        0.4,
+        3
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoRanhOn",
+      "abiId": 57,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "legoRanhR",
+      "abiId": 58,
+      "catalogDefault": 0.8,
+      "catalogDomain": [
+        0.2,
+        3
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "legoRanhZ",
+      "abiId": 59,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        20
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "lego"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "lego"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmGan",
+      "abiId": 60,
+      "catalogDefault": "roi",
+      "catalogDomain": [
+        "roi",
+        "lien"
+      ],
+      "catalogStep": null,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "charmCoD",
+      "abiId": 61,
+      "catalogDefault": 12.5,
+      "catalogDomain": [
+        4,
+        24
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmCoH",
+      "abiId": 62,
+      "catalogDefault": 3,
+      "catalogDomain": [
+        0.6,
+        12
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmVanhD",
+      "abiId": 63,
+      "catalogDefault": 14.5,
+      "catalogDomain": [
+        5,
+        28
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmVanhH",
+      "abiId": 64,
+      "catalogDefault": 1.6,
+      "catalogDomain": [
+        0.4,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmVat",
+      "abiId": 65,
+      "catalogDefault": 0.8,
+      "catalogDomain": [
+        0,
+        3
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmChotD",
+      "abiId": 66,
+      "catalogDefault": 6,
+      "catalogDomain": [
+        2,
+        20
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmChotH",
+      "abiId": 67,
+      "catalogDefault": 2,
+      "catalogDomain": [
+        0.6,
+        8
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmClr",
+      "abiId": 68,
+      "catalogDefault": 0.2,
+      "catalogDomain": [
+        0,
+        0.8
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": "diametral: socket diameter = pin diameter + value",
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmRap",
+      "abiId": 69,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "charm"
+      ],
+      "stage": "metadata-only",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "charmOffX",
+      "abiId": 70,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -60,
+        60
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "charmOffY",
+      "abiId": 71,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -60,
+        60
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "charm"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "charm"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapD",
+      "abiId": 72,
+      "catalogDefault": 4,
+      "catalogDomain": [
+        2,
+        12
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapAngle",
+      "abiId": 73,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        180
+      ],
+      "catalogStep": 5,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapZ",
+      "abiId": 74,
+      "catalogDefault": 5,
+      "catalogDomain": [
+        1,
+        20
+      ],
+      "catalogStep": 0.2,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapOff",
+      "abiId": 75,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -30,
+        30
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapSlot",
+      "abiId": 76,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        24
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapSlotDir",
+      "abiId": 77,
+      "catalogDefault": "ngang",
+      "catalogDomain": [
+        "ngang",
+        "doc"
+      ],
+      "catalogStep": null,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "strapCham",
+      "abiId": 78,
+      "catalogDefault": 0.6,
+      "catalogDomain": [
+        0,
+        2
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "strapSeg",
+      "abiId": 79,
+      "catalogDefault": 18,
+      "catalogDomain": [
+        6,
+        40
+      ],
+      "catalogStep": 2,
+      "products": [
+        "strap"
+      ],
+      "stage": "retired-provenance-requires-explicit-migration",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 2
+    },
+    {
+      "id": "rotObj",
+      "abiId": 80,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        355
+      ],
+      "catalogStep": 5,
+      "products": [
+        "strap"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "strap"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "skirtH",
+      "abiId": 81,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        16
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-003",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "wallT",
+      "abiId": 82,
+      "catalogDefault": 1.6,
+      "catalogDomain": [
+        0.6,
+        4
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "rib",
+      "abiId": 83,
+      "catalogDefault": 1.2,
+      "catalogDomain": [
+        0,
+        4
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "crossL",
+      "abiId": 84,
+      "catalogDefault": 4.1,
+      "catalogDomain": [
+        3,
+        6
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "crossW",
+      "abiId": 85,
+      "catalogDefault": 1.35,
+      "catalogDomain": [
+        0.8,
+        2
+      ],
+      "catalogStep": 0.01,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "clr",
+      "abiId": 86,
+      "catalogDefault": 0.05,
+      "catalogDomain": [
+        0,
+        0.4
+      ],
+      "catalogStep": 0.01,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": "one-sided: crossL/W + 2*clr",
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "socketD",
+      "abiId": 87,
+      "catalogDefault": 5.5,
+      "catalogDomain": [
+        2,
+        9
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "postH",
+      "abiId": 88,
+      "catalogDefault": 7,
+      "catalogDomain": [
+        3,
+        12
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "postD1",
+      "abiId": 89,
+      "catalogDefault": 5.7,
+      "catalogDomain": [
+        4,
+        10
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "postD2",
+      "abiId": 90,
+      "catalogDefault": 6,
+      "catalogDomain": [
+        4,
+        11
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-003",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "collarH",
+      "abiId": 91,
+      "catalogDefault": 1.85,
+      "catalogDomain": [
+        0,
+        5
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-003",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "stemH",
+      "abiId": 92,
+      "catalogDefault": 3.6,
+      "catalogDomain": [
+        1,
+        12
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "linkBody",
+      "abiId": 93,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "housing",
+      "abiId": 94,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "autoSize",
+      "abiId": 95,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "plateHole",
+      "abiId": 96,
+      "catalogDefault": 14.05,
+      "catalogDomain": [
+        13.2,
+        15.5
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hSocketD",
+      "abiId": 97,
+      "catalogDefault": 5.15,
+      "catalogDomain": [
+        3,
+        9
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hMouth",
+      "abiId": 98,
+      "catalogDefault": 15.4,
+      "catalogDomain": [
+        14.5,
+        20
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRecess",
+      "abiId": 99,
+      "catalogDefault": 2,
+      "catalogDomain": [
+        1.5,
+        10
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "pinW",
+      "abiId": 100,
+      "catalogDefault": 11.5,
+      "catalogDomain": [
+        8,
+        14
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "pinD",
+      "abiId": 101,
+      "catalogDefault": 1.7,
+      "catalogDomain": [
+        0.5,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hFloor",
+      "abiId": 102,
+      "catalogDefault": 1.5,
+      "catalogDomain": [
+        0.8,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hWall",
+      "abiId": 103,
+      "catalogDefault": 2,
+      "catalogDomain": [
+        1,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hBossW",
+      "abiId": 104,
+      "catalogDefault": 2,
+      "catalogDomain": [
+        1,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "gap",
+      "abiId": 105,
+      "catalogDefault": 0.25,
+      "catalogDomain": [
+        0.05,
+        0.8
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": "strictly positive one-sided offset(P,gap)",
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "rimOver",
+      "abiId": 106,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -10,
+        6
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "travel",
+      "abiId": 107,
+      "catalogDefault": 4.2,
+      "catalogDomain": [
+        2,
+        8
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-002-v2",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hStopOn",
+      "abiId": 108,
+      "catalogDefault": true,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "hStopW",
+      "abiId": 109,
+      "catalogDefault": 1.5,
+      "catalogDomain": [
+        0.4,
+        4
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRingOn",
+      "abiId": 110,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "hRingH",
+      "abiId": 111,
+      "catalogDefault": 6,
+      "catalogDomain": [
+        1,
+        30
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": "nominal-mm or explicit aligned feature-layer interval",
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRingOuterD",
+      "abiId": 112,
+      "catalogDefault": 8,
+      "catalogDomain": [
+        4,
+        18
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRingInnerD",
+      "abiId": 113,
+      "catalogDefault": 4,
+      "catalogDomain": [
+        1.5,
+        10
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRingAngle",
+      "abiId": 114,
+      "catalogDefault": 90,
+      "catalogDomain": [
+        0,
+        360
+      ],
+      "catalogStep": 1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "hRingOverlap",
+      "abiId": 115,
+      "catalogDefault": 1.5,
+      "catalogDomain": [
+        0,
+        10
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "clicky"
+      ],
+      "stage": "mechanics",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "assemble",
+      "abiId": 116,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "clicky"
+      ],
+      "stage": "metadata-only",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "clicky"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "impOn",
+      "abiId": 117,
+      "catalogDefault": false,
+      "catalogDomain": null,
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-003",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "impOp",
+      "abiId": 118,
+      "catalogDefault": "them",
+      "catalogDomain": [
+        "them",
+        "han",
+        "tru"
+      ],
+      "catalogStep": null,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1
+    },
+    {
+      "id": "impScale",
+      "abiId": 119,
+      "catalogDefault": 100,
+      "catalogDomain": [
+        1,
+        400
+      ],
+      "catalogStep": 0.5,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impX",
+      "abiId": 120,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -80,
+        80
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impY",
+      "abiId": 121,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -80,
+        80
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impZ",
+      "abiId": 122,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        -60,
+        60
+      ],
+      "catalogStep": 0.1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impRX",
+      "abiId": 123,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        355
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impRY",
+      "abiId": 124,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        355
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impRZ",
+      "abiId": 125,
+      "catalogDefault": 0,
+      "catalogDomain": [
+        0,
+        355
+      ],
+      "catalogStep": 1,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "parent-mesh-executor",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    },
+    {
+      "id": "impVox",
+      "abiId": 126,
+      "catalogDefault": 0.25,
+      "catalogDomain": [
+        0.1,
+        1
+      ],
+      "catalogStep": 0.05,
+      "products": [
+        "keychain",
+        "clicky",
+        "strap",
+        "lego",
+        "charm"
+      ],
+      "stage": "retired-provenance-requires-explicit-migration",
+      "heightPolicy": null,
+      "clearanceConvention": null,
+      "formula": "MECH-ADR-001-v1 (retained by ADR-002)",
+      "physicalQualification": "unqualified",
+      "legacyProducts": [
+        "keychain"
+      ],
+      "storageQuantum": 1e-06
+    }
+  ],
+  "mechanicsSemantics": 2,
+  "finalGuards": "whole-volume walls/openings and conservative positive roof after feature cuts and material partition; explicit query budget and flexure exemptions",
+  "remediationR2": {
+    "mechanicsSemanticsVersion": 3,
+    "sourceHeightSemanticsVersion": 2,
+    "abiUnchanged": true,
+    "roofFloor": "final host full-domain uniform envelope or outward-rounded facet intervals",
+    "sourceIntervals": "manufacturing Z; declared datum/reference validated; downward top spans"
+  }
+}

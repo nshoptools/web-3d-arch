@@ -1,11 +1,18 @@
 # Ba phòng review độc lập
 
+**Chỉ đạo hiện hành ngày 2026-09-08: ngừng sử dụng Opus.** Hub/Codex/Grok
+tiếp tục dự án. Không gọi, tiếp tục, fork hoặc giao agent con Opus; không tự
+khởi động lại khi quota reset. Giữ phòng/bằng chứng Opus cũ để thẩm định.
+
 Trước khi gọi hoặc tiếp tục một ghế, đọc [cấu hình model/effort hiện hành](../../docs/reviews/seat-config.json)
 và [quy tắc áp dụng, kiểm chứng, cập nhật](../../docs/reviews/SEAT-CONFIG.md).
 Người gọi phải áp dụng cấu hình thật trong CLI/giao diện/công cụ điều phối;
 ghế review ghi cấu hình đã xác minh vào báo cáo. Không âm thầm dùng mặc định
 hoặc hạ cấu hình. Kiểm tra lựa chọn mới mạnh hơn trước mỗi đợt review theo
-quy tắc cập nhật, không coi cấu hình hiện tại là cố định vĩnh viễn.
+quy tắc cập nhật, không coi cấu hình hiện tại là cố định vĩnh viễn. Riêng Opus,
+yêu cầu chủ dự án ngày 2026-09-08 bắt buộc **Max / Fast off cho mọi lượt gọi**,
+kể cả triển khai và tiếp tục phiên cũ; không tự đổi ràng buộc này khi nâng cấp.
+Dùng `tools/agents/start-opus.ps1` để áp dụng cấu hình và cô lập thực tế.
 
 | Ghế | Phòng ghi riêng |
 | --- | --- |
@@ -21,6 +28,11 @@ Từ gốc repo, bắt đầu phiên PowerShell bằng:
 
 Thay ghế và mã phiên tương ứng. Lệnh tạo sáu thư mục trong phiên và chuyển
 TEMP/cache về đó. Dot-source lại trong mỗi tiến trình PowerShell mới.
+
+Riêng Grok native trên Windows, khởi chạy bằng `tools/reviews/start-grok.ps1`;
+launcher tự gọi `project-env.ps1 -Seat grok`. Đọc
+[quy trình cô lập Grok](../../docs/reviews/GROK-WINDOWS-ISOLATION.md) trước khi
+chạy: chỉ đổi TEMP không giữ được đường `/tmp` viết cứng trong repo.
 
 | Thư mục của phiên | Nội dung |
 | --- | --- |

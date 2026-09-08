@@ -18,6 +18,9 @@ desktop.ini
 .toolchain/
 
 # Thư mục phù du & Thư mục báo cáo trong quá trình phát triển
+/docs/ideas/
+/tmp/ideas/
+/tmp/data/
 tmp/*
 !tmp/reviews/
 tmp/reviews/*

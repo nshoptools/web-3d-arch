@@ -1,0 +1,78 @@
+{
+  "before": {
+    "observation": {
+      "csp": [],
+      "styles": []
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 900,
+      "scrollWidth": 1280,
+      "scrollHeight": 900
+    },
+    "step": "2",
+    "readouts": "Kích thước\n48 × 32 × 3,2 mm\nBộ phận\n3\nTam giác\n1.900\nKiểm mesh\nđã kiểm đạt",
+    "exports": [
+      {
+        "exportOption": "project",
+        "exportPrerequisite": "project-bytes",
+        "exportEnabled": "true",
+        "text": "Rescue project package\narch-project.zip\nchưa kiểm\nproject\ncần byte đã lưu cục bộ\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được."
+      },
+      {
+        "exportOption": "settings",
+        "exportPrerequisite": "account-settings",
+        "exportEnabled": "true",
+        "text": "Cài đặt cá nhân (JSON)\njson\nchưa kiểm\nsettings\ncần đăng nhập và kết nối mạng\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được."
+      },
+      {
+        "exportOption": "svg-color",
+        "exportPrerequisite": "committed-source",
+        "exportEnabled": "true",
+        "text": "SVG nguồn màu\nsvg\nchưa kiểm\nsvg-color\ncần nguồn đã chốt\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n2 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\n\nThiết lập ở đây thuộc riêng đường xuất “SVG nguồn màu”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn."
+      },
+      {
+        "exportOption": "svg-section",
+        "exportPrerequisite": "matching-model",
+        "exportEnabled": "true",
+        "text": "SVG mặt cắt scene cuối\nsvg\nđã kiểm đạt\nsvg-section\ncần mô hình khớp bản sửa\nXuất\nCài đặt của đường xuất này\n13 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\nHướng xuất · pose\nHệ chế tạo\nĐường xuất này giữ hệ chế tạo gốc.\nĐặt đáy trên bàn\nĐường xuất này giữ hệ chế tạo gốc.\nrestOnBed\nGiới hạn sai số bước xuất · errorMm\nmm\nGiới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.\nMiền 0.000001–0.004 mm · bước 0.000001 mm\nMặt cắt · sectionMode\nMột cao độ\nDãy cao độ\nCao độ Z · zMm\nmm\nMiền -10000–10000 mm · bước 0.000001 mm\nZ bắt đầu · startMm\nmm\nTrường được giữ cho chế độ mặt cắt tương ứng.\nMiền -10000–10000 mm · bước 0.000001 mm\nZ kết thúc · endMm\nmm\nTrường được giữ cho chế độ mặt cắt tương ứng.\nMiền -10000–10000 mm · bước 0.000001 mm\nBước cao độ · stepMm\nmm\nTrường được giữ cho chế độ mặt cắt tương ứng.\nMiền 0.000001–10000 mm · bước 0.000001 mm\nĐơn vị SVG · units\nmm\ninch\nMặt nhìn · side\nTrước\nSau\nMàu mặt cắt · color\nĐen\nTheo vật liệu\n\nThiết lập ở đây thuộc riêng đường xuất “SVG mặt cắt scene cuối”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án."
+      },
+      {
+        "exportOption": "3mf-bambu-project",
+        "exportPrerequisite": "matching-model",
+        "exportEnabled": "false",
+        "exportReasonCode": "PRINTING_INSPECTION_REQUIRED",
+        "text": "3MF dự án Bambu\n3mf\nchưa kiểm\n3mf-bambu-project\ncần mô hình khớp bản sửa\nXuất\nThis slicer project route is available for inspection. Slicer roundtrip and physical print qualification are unverified.\nPRINTING_INSPECTION_REQUIRED\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\nHướng xuất · pose\nHệ chế tạo\nĐường xuất này giữ hệ chế tạo gốc.\nĐặt đáy trên bàn\nĐường xuất này giữ hệ chế tạo gốc.\nrestOnBed\n\nThiết lập ở đây thuộc riêng đường xuất “3MF dự án Bambu”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn."
+      },
+      {
+        "exportOption": "3mf-snapmaker-project",
+        "exportPrerequisite": "matching-model",
+        "exportEnabled": "false",
+        "exportReasonCode": "PRINTING_INSPECTION_REQUIRED",
+        "text": "3MF dự án Snapmaker\n3mf\nchưa kiểm\n3mf-snapmaker-project\ncần mô hình khớp bản sửa\nXuất\nThis slicer project route is available for inspection. Slicer roundtrip and physical print qualification are unverified.\nPRINTING_INSPECTION_REQUIRED\nCài đặt của đường xuất này\n4 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\nHướng xuất · pose\nHệ chế tạo\nĐường xuất này giữ hệ chế tạo gốc.\nĐặt đáy trên bàn\nĐường xuất này giữ hệ chế tạo gốc.\nrestOnBed\n\nThiết lập ở đây thuộc riêng đường xuất “3MF dự án Snapmaker”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn."
+      },
+      {
+        "exportOption": "stl-material-zip",
+        "exportPrerequisite": "matching-model",
+        "exportEnabled": "true",
+        "text": "ZIP STL theo khe và màu (mm)\nzip\nđã kiểm đạt\nstl-material-zip\ncần mô hình khớp bản sửa\nXuất\nCài đặt của đường xuất này\n5 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\nHướng xuất · pose\nHệ chế tạo\nLật hoa văn xuống và đặt đáy trên bàn\nĐặt đáy trên bàn\nrestOnBed\nGiới hạn sai số bước xuất · errorMm\nmm\nGiới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.\nMiền 0.000001–0.004 mm · bước 0.000001 mm\n\nThiết lập ở đây thuộc riêng đường xuất “ZIP STL theo khe và màu (mm)”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án."
+      },
+      {
+        "exportOption": "stl-union",
+        "exportPrerequisite": "matching-model",
+        "exportEnabled": "true",
+        "text": "STL union scene cuối (mm)\nstl\nđã kiểm đạt\nstl-union\ncần mô hình khớp bản sửa\nXuất\nCài đặt của đường xuất này\n5 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\nHướng xuất · pose\nHệ chế tạo\nLật hoa văn xuống và đặt đáy trên bàn\nĐặt đáy trên bàn\nrestOnBed\nGiới hạn sai số bước xuất · errorMm\nmm\nGiới hạn riêng bước xuất; không phải bằng chứng sai số toàn chuỗi hoặc độ lắp vừa.\nMiền 0.000001–0.004 mm · bước 0.000001 mm\n\nThiết lập ở đây thuộc riêng đường xuất “STL union scene cuối (mm)”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án."
+      },
+      {
+        "exportOption": "png-viewport",
+        "exportPrerequisite": "renderer",
+        "exportEnabled": "true",
+        "text": "PNG khung xem\npng\nchưa kiểm\npng-viewport\ncần khung xem đang chạy\nXuất để kiểm tra\n\n⚠ Bản xuất để kiểm tra: serializer viết được tệp hợp lệ, nhưng kết quả kiểm hình học là “chưa kiểm”. Nhãn này không bảo đảm in được.\n\nCài đặt của đường xuất này\n2 thiết lập\nTên tệp · filename\nXuất để kiểm tra\nGiữ nguyên cảnh báo; không xác nhận mô hình đã sẵn sàng in.\ninspection\n\nThiết lập ở đây thuộc riêng đường xuất “PNG khung xem”. Giao diện gửi nguyên văn thứ bạn nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.\n\nNhãn trên nút chỉ mô tả kết quả kiểm của đường xuất này. Ý định “xuất để kiểm tra” là một thiết lập ở trên, do nhân công bố; bấm nút không bật nó thay bạn."
+      }
+    ]
+  },
+  "afterCapture": {
+    "csp": [],
+    "styles": []
+  }
+}

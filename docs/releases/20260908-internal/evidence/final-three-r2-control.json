@@ -1,0 +1,7 @@
+{
+  "reason": "R1 headless startup timed out at10s before any flow, root/CSS/JS allHTTP200. R2 uses visible Chromium, matching already successful stable human preview. Same input, all3cases and10s/45s/60s deadlines retained; no product delta or causal fix claim.",
+  "r1Exit": 1,
+  "caseCountExecutedR1": 0,
+  "difference": "runtime headless false only",
+  "r2ThreeSHA": "9cfc10c36141b5559a570aa0e8fc5b6898bf732b1268667dad7d7f2752a587dd"
+}

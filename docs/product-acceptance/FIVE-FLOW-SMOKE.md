@@ -1,0 +1,22 @@
+# Minimal next-artifact smoke and launch decision
+
+Do not rerun the broad campaigns for handover. A new artifact gets its own release/prepared/full engine pins and Verify result. Never combine f146 with this baseline's older generated module. Parent's fixes are not evidence for1147ad94 baseline; the next limited smoke must exercise the rebuilt production entry.
+
+| Flow | Concrete acceptance | Existing candidate route |
+|---|---|---|
+|1. Closed account + personal data|Known invited A signs in; settings JSON import/export/reset without project; B cannot read A settings or credentials. Export must preserve normalized profile and original incoming source bytes.|Interactions account reset plus Campaign SETTINGS-NOPROJECT; rebuilt settings export is an explicit retest, not baseline pass. Synthetic HTTP OIDC does not qualify external IdP navigation.|
+|2. SVG product + durable download|Original SVG with hole/seam; size and base thickness changed; real viewport; two undos; save, reopen; original source hash and exact revision; real STL and receipt match.|Downloads (direct export plus cold reopen); Focused CaseFilter ^SVG-ROUNDTRIP$ for warm reopen. Keep warm rescue race failure even if cold path passes.|
+|3. Default product choices|Keychain/clicky/strap/lego/charm default each builds through actual product processing; visible model and normal STL gate. Additional proposals are recorded as modified alternatives, not default pass.|Campaign PROD01..05; existing results cover four defaults Chromium/WebKit. Use a focused manual five-choice smoke on rebuilt artifact; don't repeat broad text/AI campaign to check these.|
+|4. Raster, NFD and colored sources|Original PNG retained after explicit consent; discard preserves head; exact NFD and original font; explicit colored library source; correct conversion can produce model. Failures remain feature blocks.|Focused NFD/COLOR; Interactions PROPOSAL-DISCARD; Campaign FLOW-RASTER. Known baseline text/color adoption gaps must be retested after the source owners' fix.|
+|5. Failure/privacy/cost and narrow UX|Malformed SVG retains old model/head; explicit local BYOK quote sends nothing until consent, one invocation, A ledger only; logout closes private Workers/revokes URLs before B;320/1280 keyboard critical flow.|Interactions. Provider is explicitly local test-only, never real paid billing. Running kernel cancellation remains unverified; prepared proposal discard is distinct.|
+
+## Launch guidance
+Do not declare general internal release ready from this baseline. Its invalid rescue package is a data-recovery blocker (parent now owns a fix); validate the rebuild's deterministic regression and actual download/import. Missing settings export blocks personal-data roundtrip (parent reports HTTP checks; actual rebuilt UI remains to verify). NFD text/source adoption and colored-source manufacturing are hard blockers for those advertised creation paths. A correct native refusal is not a supported feature.
+
+Four default products build; keycap default is not accepted while its size-adjustment chain persists. Genuine geometry gaps, known curved cases, pending CSG/import integration, slicer roundtrip, physical fit and global tolerance are feature/qualification limits, not data-loss claims. Expose truthful gates if these paths are disabled for a restricted preview.
+
+Baseline WebKit completed the full SVG/STL/receipt flow; Chromium/Firefox warm rescue problems remain separate.320px focus restoration failure is a usability issue, not demonstrated data loss. Dedicated printer profile library UI and HTTPS IdP browser navigation were not qualified by this artifact. Rescue after lease expiry and actual running-kernel cancellation are not claimed by this whole-product suite; earlier module tests are separate evidence.
+
+The parent can authorize a limited internal preview only with the tested SVG paths, honest disabled capabilities and explicit scope. A whole-product release needs the rebuilt artifact's five smoke flows plus the outstanding qualification gates; this sidecar does not silently approve them.
+
+Final-artifact STL conditioning check: require the exact current-model proposal with bounded displayed diff, no download or head advance before approval; discard preserves model/head, then prepare anew and explicitly approve. Receipt/artifact must bind the approved live revision and exact downloaded bytes; reject stale approval. This is mandatory new-artifact evidence, not a pass inherited from this baseline's direct STL export.

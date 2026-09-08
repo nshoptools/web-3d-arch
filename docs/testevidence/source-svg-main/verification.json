@@ -1,0 +1,195 @@
+{
+  "at": "2026-09-08T09:40:33.206Z",
+  "node": 26,
+  "types": true,
+  "browsers": 3,
+  "familiesPerBrowser": 5,
+  "independentReadbackChecks": 163,
+  "codeAndModuleStable": true,
+  "wasm": "211b392f097eb55c8b52898e7b6123cb4b4b4539bfc68a5223d2f9e4c4d0e4cd",
+  "integration": {
+    "version": 1,
+    "at": "2026-09-08T08:57:18.349Z",
+    "candidateFilesChecked": 125,
+    "manifestSha256": "f5ca3cde25dc74aaa65eb941ce0899fe086a1a0ef032ade8cab753844a3f6c8c",
+    "files": [
+      {
+        "path": "src/integration/source-svg-export.mjs",
+        "bytes": 31152,
+        "sha256": "0c17b75938092c61d0e5497b678aa89745d7ad1889adcfad00370ee247ff9fc3",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "src/integration/source-svg-export.d.mts",
+        "bytes": 1486,
+        "sha256": "b5f4792837c30d98dc403874c137edc2b5697d1d8fbe84b159fafcc39d2a34bc",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/browser-entry.mjs",
+        "bytes": 4477,
+        "sha256": "1914b51c1c972297b8cd9de2f09a4ca7d6929ea768f10d1923c766023277f32e",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/browser.test.mjs",
+        "bytes": 5869,
+        "sha256": "ba07e76b2ac262534cb3fb44b458881d61319f737fb5b5752b27c15753f015ae",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/cases.test.mjs",
+        "bytes": 18762,
+        "sha256": "67f6b88b531e13d82cebef9dfb5206ddbc2cd78bb0bb15f1f8120f0d7f5f1fc6",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/initial.test.mjs",
+        "bytes": 1162,
+        "sha256": "debf3626c65a5eed899a929f0c6425757a8ed5ae0230e98907de8f36fe41bb47",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/native-harness.mjs",
+        "bytes": 5072,
+        "sha256": "72304388162f31e7ca576bf0531f5275e3dc04360c80ad5c79af7946b6ef8b73",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/prepare.mjs",
+        "bytes": 5289,
+        "sha256": "b6c8ea062585abaae1f9b67e5b46f3fdcc85cab3486484f74759d046260d2703",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/readback.py",
+        "bytes": 5685,
+        "sha256": "c70fd9150a2fc40750c654fe248a175e01380dbc217e3580d35b322fb80fd5de",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/record.mjs",
+        "bytes": 1553,
+        "sha256": "4bf5bb698030eef6e3f7e1e4fd70bcdfc293efc91749b88dcd76ba38fc3d5017",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/run.ps1",
+        "bytes": 3283,
+        "sha256": "bc76436ca7daeba7cc47f2ebfd17e6c62c80ad5c10d0e38e61ebec862f41df8e",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/scenario.mjs",
+        "bytes": 6191,
+        "sha256": "a6ae84b900800a29a95320b5628a4ae0ae3c1ee13040456298de70d30848a3cc",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "tests/source-svg-export/types.test.mts",
+        "bytes": 1588,
+        "sha256": "5e9cfbc78d73654368c2ac83ddaabbfaedc2bbd14f503efb12748b319fdd1d7b",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "docs/source-svg-export/API-EARLY.md",
+        "bytes": 5222,
+        "sha256": "64c4be343f592f86b6a0bfc73e473e8d2c8272fe4b4c691c65dfd5f5ba240912",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "docs/source-svg-export/HANDOFF.md",
+        "bytes": 5007,
+        "sha256": "afa8da2b37a3fee5394e2572bdc513fca87e8b8e48fbee7bf7f82e8162101ade",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "docs/source-svg-export/README.md",
+        "bytes": 9286,
+        "sha256": "67ae9a90a9d7d0640ad7e4b656b3fd1a9b3fcd79c0a6a76b7afff128936fc91d",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      },
+      {
+        "path": "docs/source-svg-export/TESTING.md",
+        "bytes": 7614,
+        "sha256": "fa3f0fc227938793024d4e0e36ea9345a31f8c017575d95c162dd6c40e83d85f",
+        "mainPreimage": {
+          "exists": false,
+          "bytes": null,
+          "sha256": null
+        }
+      }
+    ],
+    "independentReview": false,
+    "upstreamPaletteBlocker": true
+  },
+  "limits": [
+    "Real source-only provider/root RPC; not full UI application",
+    "Explicit raster erase/reconversion material-ID conflict remains an upstream feature blocker",
+    "Type-only .mjs to .d.mts fixture closure fixed before full passing r2"
+  ]
+}

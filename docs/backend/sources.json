@@ -1,0 +1,44 @@
+[
+  {
+    "sha256": "34F9C9ACD713F986AF071C209E88BA447E0EEFE166A5DF8E93D9027826E2A8FA",
+    "status": "downloaded",
+    "bytes": 60985,
+    "retrievedAt": "2026-09-07T19:09:55.841577Z",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/sqlite.md",
+    "id": "node24-sqlite"
+  },
+  {
+    "sha256": "8B66BA9F8FAB08967D96846774D4A0710A81813BEA14721D338909DAB81B1AA0",
+    "status": "downloaded",
+    "bytes": 231772,
+    "retrievedAt": "2026-09-07T19:09:56.6378615Z",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/crypto.md",
+    "id": "node24-crypto"
+  },
+  {
+    "sha256": "3123F04015B1B32C7FCF8084F738B1845AE438A95BFE52DC22C5AFDB7C4BCB33",
+    "status": "downloaded",
+    "bytes": 140768,
+    "retrievedAt": "2026-09-07T19:09:57.980464Z",
+    "url": "https://raw.githubusercontent.com/nodejs/node/v24.19.0/doc/api/http.md",
+    "id": "node24-http"
+  },
+  {
+    "bytes": 437508,
+    "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+    "version": "OpenID Connect Core 1.0 incorporating errata set 2, 2023-12-15",
+    "id": "oidc-core-errata2",
+    "retrievedAt": "2026-09-07T19:34:00.4912565Z",
+    "sha256": "4D016752A645E8A3C259BAA4173B5A90CB6C82898CE868FC8444ADDE262A5AED",
+    "status": "downloaded"
+  },
+  {
+    "bytes": 261599,
+    "url": "https://www.rfc-editor.org/rfc/rfc9700.html",
+    "version": "RFC9700, January 2025",
+    "id": "oauth-security-bcp",
+    "retrievedAt": "2026-09-07T19:34:01.0092324Z",
+    "sha256": "C00E2234FCD79581BC29669C60D693AFAA42F67D9205BDDEE848F757AE975419",
+    "status": "downloaded"
+  }
+]

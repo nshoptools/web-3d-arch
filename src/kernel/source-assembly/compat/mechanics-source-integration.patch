@@ -1,0 +1,240 @@
+diff --git a/src/kernel/mechanics/src/mechanics.cpp b/src/kernel/mechanics/src/mechanics.cpp
+index 47de4277..63c89604 100644
+--- a/src/kernel/mechanics/src/mechanics.cpp
++++ b/src/kernel/mechanics/src/mechanics.cpp
+@@ -237,7 +237,7 @@ void Builder::initialize(){
+   }
+   for(uint32_t id=1;id<AM_FIELD_COUNT;id++){
+     auto& p=params[id];const auto& f=fields[id-1];
+-    need(p.origin<=AM_PRESET&&p.mode<=AM_AUTO_BODY_MIDPOINT&&p.datum<AM_DATUM_COUNT,"PARAMETER_TAG",id);
++    need(p.origin<=AM_PRESET&&p.mode<=AM_AUTO_BODY_MIDPOINT&&(p.datum<AM_DATUM_COUNT||(f.source==1&&f.kind==1&&p.datum>=128&&p.datum<135)),"PARAMETER_TAG",id);
+     need(std::isfinite(p.value),"NONFINITE_PARAMETER",id);
+     double val=p.value;
+     if(f.kind==1){
+@@ -305,22 +305,22 @@ void Builder::source_body(){
+     source_patches.push_back({footprint,body_z,body_z+body_h,(uint32_t)pieces.size()-1,false,r.source.source_id,0});
+   }else need(s.slab_count>0,"PREPARED_SLABS_EMPTY");
+   for(uint32_t i=0;i<s.slab_count;i++){
+-    const auto& slab=s.slabs[i];need(slab.kind<=AM_SOURCE_TEXT_BASE&&slab.slot>=1&&slab.slot<=16&&slab.origin<=AM_PRESET&&(slab.rgba&255)==255&&slab.semantic_id!=0&&slab.provenance_id!=0,"SOURCE_SLAB_METADATA");
++    const auto& slab=s.slabs[i];need(slab.kind<=AM_SOURCE_BED_TEXT_BASE&&slab.slot>=1&&slab.slot<=16&&slab.origin<=AM_PRESET&&(slab.rgba&255)==255&&slab.semantic_id!=0&&slab.provenance_id!=0,"SOURCE_SLAB_METADATA");
+     need(source_ids.insert(slab.semantic_id).second,"SOURCE_SEMANTIC_ID_DUPLICATE");
+-    const bool text=slab.kind==AM_SOURCE_TEXT||slab.kind==AM_SOURCE_TEXT_BASE;
+-    need((slab.kind==AM_SOURCE_BODY&&slab.role==AM_BODY)||(slab.kind==AM_SOURCE_ART&&(slab.role==AM_ARTWORK||slab.role==AM_RIM))||(slab.kind==AM_SOURCE_TEXT&&slab.role==AM_TEXT)||(slab.kind==AM_SOURCE_TEXT_BASE&&slab.role==AM_TEXT_BASE),"SOURCE_SLAB_ROLE");
++    const bool text=slab.kind>=AM_SOURCE_TEXT;const bool bed=slab.kind>=AM_SOURCE_BED_TEXT;const double source_base=bed?0:body_z;
++    need((slab.kind==AM_SOURCE_BODY&&slab.role==AM_BODY)||(slab.kind==AM_SOURCE_ART&&(slab.role==AM_ARTWORK||slab.role==AM_RIM))||((slab.kind==AM_SOURCE_TEXT||slab.kind==AM_SOURCE_BED_TEXT)&&slab.role==AM_TEXT)||((slab.kind==AM_SOURCE_TEXT_BASE||slab.kind==AM_SOURCE_BED_TEXT_BASE)&&slab.role==AM_TEXT_BASE),"SOURCE_SLAB_ROLE");
+     need(text==(slab.attachment_id!=0),"SOURCE_TEXT_ATTACHMENT_REQUIRED");
+     need(finite(slab.z0)&&finite(slab.z1)&&slab.z1>slab.z0&&slab.z0>=0,"SOURCE_SLAB_Z");
+     if(s.mode==AM_RAISED_BODY&&!text)need(slab.kind==AM_SOURCE_ART&&slab.z0>=body_h,"SOURCE_ART_MUST_BE_ABOVE_BODY");
+     auto shape=ring_set(slab.ring_start,slab.ring_count,slab.fill_rule);
+     const uint32_t role=slab.role;
+-    auto f=feature("source:slab:"+std::to_string(slab.semantic_id),2,AM_F_artMode,role,0,{slab.z0,slab.z1,0,0,0,0},slab.semantic_id,slab.provenance_id);
+-    auto mesh=prism(shape,body_z+slab.z0,body_z+slab.z1);
++    auto f=feature("source:slab:"+std::to_string(slab.semantic_id),2,AM_F_artMode,role,bed?2:0,{slab.z0,slab.z1,0,0,0,0},slab.semantic_id,slab.provenance_id);
++    auto mesh=prism(shape,source_base+slab.z0,source_base+slab.z1);
+     for(auto& p:pieces)need(!nonempty(mesh^p.mesh),"SOURCE_MATERIAL_INTERIOR_OVERLAP");
+     ArchMechMaterial m{role,slab.rgba,slab.slot,slab.origin,slab.provenance_id};
+     if(m.origin!=AM_USER&&palette[role].origin==AM_USER)m=palette[role];
+-    add(mesh,f,role,0,&m);
+-    source_patches.push_back({shape,body_z+slab.z0,body_z+slab.z1,(uint32_t)pieces.size()-1,text,slab.semantic_id,slab.attachment_id});
++    add(mesh,f,role,bed?2:0,&m);
++    source_patches.push_back({shape,source_base+slab.z0,source_base+slab.z1,(uint32_t)pieces.size()-1,text,slab.semantic_id,slab.attachment_id});
+   }
+   need(nonempty(group(0)),"SOURCE_BODY_EMPTY");
+   // A source contract must supply a physical lower body host. It may retain holes and islands.
+@@ -332,8 +332,11 @@ void Builder::source_body(){
+       if(s.slabs[i].z0>0)first=std::min(first,s.slabs[i].z0);
+       if(s.slabs[i].z1>0)first=std::min(first,s.slabs[i].z1);
+     }
+-    std::vector<Manifold> body;for(const auto& p:source_patches)if(!p.text)body.push_back(pieces[p.piece].mesh);
+-    const CrossSection support(Manifold::BatchBoolean(body,manifold::OpType::Add).Slice(body_z+first/2),CrossSection::FillRule::NonZero);
++    // Validate the typed slab partition at an interior Z interval directly.
++    // Manifold::Slice interpolates triangle edges, adding a second rounding path
++    // to an exact supplied footprint (visible on curved circle contours).
++    std::vector<CrossSection> body;for(const auto& p:source_patches)if(!p.text&&p.z0<body_z+first/2&&p.z1>body_z+first/2)body.push_back(p.shape);
++    const CrossSection support=CrossSection::BatchBoolean(body,manifold::OpType::Add);
+     need(contained(footprint,support)&&contained(support,footprint),"SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT");
+   }
+   std::set<uint64_t> ids;
+@@ -341,9 +344,11 @@ void Builder::source_body(){
+     const auto& a=s.attachments[i];need(a.semantic_id&&a.provenance_id&&ids.insert(a.semantic_id).second,"SOURCE_ATTACHMENT_ID");
+     need((a.role==AM_TEXT||a.role==AM_TEXT_BASE)&&finite(a.z0)&&finite(a.z1)&&a.z0>=0&&a.z1>a.z0,"SOURCE_ATTACHMENT_METADATA");
+     auto shape=ring_set(a.ring_start,a.ring_count,a.fill_rule);std::vector<CrossSection> lower;
++    int attachment_group=-1;for(const auto& p:source_patches)if(p.attachment==a.semantic_id){int g=(int)pieces[p.piece].group;need(attachment_group<0||attachment_group==g,"MIXED_ATTACHMENT_DATUM");attachment_group=g;}
++    double attachment_base=attachment_group==2?0:body_z;
+     double lo=LIMIT,hi=-LIMIT;
+-    for(const auto& p:source_patches)if(p.attachment==a.semantic_id){lo=std::min(lo,p.z0);hi=std::max(hi,p.z1);if(near(p.z0,body_z+a.z0))lower.push_back(p.shape);}
+-    need(near(lo,body_z+a.z0)&&near(hi,body_z+a.z1),"SOURCE_ATTACHMENT_EXTENT_MISMATCH");
++    for(const auto& p:source_patches)if(p.attachment==a.semantic_id){lo=std::min(lo,p.z0);hi=std::max(hi,p.z1);if(near(p.z0,attachment_base+a.z0))lower.push_back(p.shape);}
++    need(near(lo,attachment_base+a.z0)&&near(hi,attachment_base+a.z1),"SOURCE_ATTACHMENT_EXTENT_MISMATCH");
+     auto support=CrossSection::BatchBoolean(lower,manifold::OpType::Add);
+     need(contained(shape,support)&&contained(support,shape),"SOURCE_ATTACHMENT_FOOTPRINT_MISMATCH");
+   }
+@@ -407,21 +412,36 @@ Manifold Builder::bounded_ball(double radius,uint32_t f,double tolerance){
+ }
+ 
+ Manifold Builder::perimeter_groove(const CrossSection& shape,double radius,double z,uint32_t f){
+-  auto profile=circle(radius,true,f,r.mating_tolerance_mm);
+-  auto ball=bounded_ball(radius,f,r.mating_tolerance_mm);
++  // Inside half of the boundary tube. At convex vertices the two incident
++  // inward strips already cover the entire inside sphere sector. Adding a
++  // complete sphere there is redundant and creates near-tangent CSG slivers
++  // on finely flattened source curves. Reentrant vertices require a sector.
++  auto disk=circle(radius,true,f,r.mating_tolerance_mm/2);
++  auto half=(disk^rect(4*radius,4*radius,2*radius,0)).Translate({0,radius});
++  const uint32_t n=std::max(8u,4u*(uint32_t)std::ceil(PI/std::acos(radius/(radius+r.mating_tolerance_mm/4))/4));
++  need(n<=4096,"GROOVE_ANGULAR_RESOURCE_LIMIT");
++  const double sec=1/std::cos(PI/n);
+   std::vector<Manifold> tools;size_t edges=0;
+   for(const auto& path:shape.ToPolygons()){
+-    // Include external perimeter only; source hole contours are preserved.
+     double area=0;for(size_t i=0;i<path.size();i++){auto a=path[i],b=path[(i+1)%path.size()];area+=a.x*b.y-a.y*b.x;}
+     if(area<=0)continue;
+-    edges+=path.size();need(edges<=256,"GROOVE_EDGE_RESOURCE_LIMIT");
++    edges+=path.size();need(edges<=512,"GROOVE_EDGE_RESOURCE_LIMIT");
+     for(size_t i=0;i<path.size();i++){
+       auto a=path[i],b=path[(i+1)%path.size()],d=b-a;const double length=std::hypot(d.x,d.y),angle=std::atan2(d.y,d.x)*180/PI;
+-      tools.push_back(Manifold::Extrude(profile.ToPolygons(),length).Rotate(90,0,angle+90).Translate({a.x,a.y,z}));
+-      tools.push_back(ball.Translate({a.x,a.y,z}));
++      need(length>=2e-6,"GROOVE_EDGE_BELOW_RESOLUTION");
++      tools.push_back(Manifold::Extrude(half.ToPolygons(),length).Rotate(90,0,angle+90).Translate({a.x,a.y,z-radius}));
++      const auto previous=a-path[(i+path.size()-1)%path.size()];
++      const double turn=std::atan2(previous.x*d.y-previous.y*d.x,previous.x*d.x+previous.y*d.y);
++      if(turn<0)tools.push_back(Manifold::Revolve(half.Scale({sec,1}).ToPolygons(),n,-turn*180/PI).Rotate(0,0,angle+90).Translate({a.x,a.y,z-radius}));
+     }
+   }
+-  return Manifold::BatchBoolean(tools,manifold::OpType::Add);
++  out.curves.push_back({f,n,2,0,radius,-2e-8,(radius+r.mating_tolerance_mm/4)*sec-radius+2e-8,r.mating_tolerance_mm});
++  const double numericBudget=std::min(1e-7,r.mating_tolerance_mm/1000);
++  // Explicit library topology tolerance on the single shared cutter, before
++  // applying it to any material. No per-material offset or coordinate weld.
++  out.curves.push_back({f,0,2,0,0,-numericBudget,numericBudget,r.mating_tolerance_mm});
++  auto tube=evaluate(Manifold::BatchBoolean(tools,manifold::OpType::Add));
++  return evaluate(tube.SetTolerance(numericBudget));
+ }
+ 
+ void Builder::source_bevel(){
+@@ -489,7 +509,7 @@ void Builder::source_bevel(){
+ }
+ 
+ void Builder::eyelet(bool tray){
+-  const uint32_t g=tray?1:0;uint32_t role=tray?AM_TRAY:AM_BODY;
++  uint32_t g=tray?1:0;uint32_t role=tray?AM_TRAY:AM_BODY;
+   const uint32_t outer=tray?AM_F_hRingOuterD:AM_F_ringOuterD,inner=tray?AM_F_hRingInnerD:AM_F_ringInnerD;
+   const uint32_t angle=tray?AM_F_hRingAngle:AM_F_ringAngle,overlap=tray?AM_F_hRingOverlap:AM_F_ringOverlap,hid=tray?AM_F_hRingH:AM_F_ringH;
+   const double ro=v(outer)/2,ri=v(inner)/2,h=v(hid),ol=v(overlap),a=v(angle)*PI/180;
+@@ -499,8 +519,8 @@ void Builder::eyelet(bool tray){
+     const ArchMechAttachment* attachment=nullptr;
+     for(uint32_t i=0;i<r.source.attachment_count;i++)if(r.source.attachments[i].semantic_id==r.source.eyelet_attachment_id)attachment=&r.source.attachments[i];
+     need(attachment,"TEXT_ATTACHMENT_REQUIRED",AM_F_ringTren);
+-    std::vector<Manifold> selected;for(const auto& p:source_patches)if(p.attachment==attachment->semantic_id)selected.push_back(pieces[p.piece].mesh);
+-    host=Manifold::BatchBoolean(selected,manifold::OpType::Add);z=body_z+attachment->z0;role=attachment->role;host_id=attachment->semantic_id;
++    std::vector<Manifold> selected;for(const auto& p:source_patches)if(p.attachment==attachment->semantic_id){selected.push_back(pieces[p.piece].mesh);g=pieces[p.piece].group;}
++    host=Manifold::BatchBoolean(selected,manifold::OpType::Add);z=(g==2?0:body_z)+attachment->z0;role=attachment->role;host_id=attachment->semantic_id;
+   }
+   auto bb=host.BoundingBox(),anchor=bb;
+   if(!tray&&e(AM_F_ringTren)==1)for(uint32_t i=0;i<r.source.attachment_count;i++)if(r.source.attachments[i].semantic_id==host_id){
+@@ -648,7 +668,13 @@ void Builder::lego(){
+     need(center<body_h&&center+radius<body_h,"LEGO_GROOVE_REQUIRES_POSITIVE_ROOF",AM_F_legoRanhZ);
+     for(const auto& component:footprint.Decompose())need(!offset(component,-radius).IsEmpty(),"LEGO_GROOVE_ERASES_BODY",AM_F_legoRanhR);
+     auto f=feature("mech:lego:perimeter-groove",1,AM_F_legoRanhR,AM_BODY,0,{radius,body_z+center,body_h-center-radius,0,0,0});
+-    cut(perimeter_groove(footprint,radius,body_z+center,f),0);
++    auto groove=perimeter_groove(footprint,radius,body_z+center,f);
++    const double numericBudget=std::min({1e-7,r.mating_tolerance_mm/1000,v(AM_F_meshJoinTolerance)/1000});
++    for(auto& piece:pieces)if(piece.group==0){
++      auto result=evaluate(piece.mesh-groove);
++      piece.mesh=evaluate(result.AsOriginal().Simplify(numericBudget));
++    }
++    out.curves.push_back({f,0,2,0,0,-numericBudget,numericBudget,r.mating_tolerance_mm});
+   }
+ }
+ 
+@@ -809,7 +835,7 @@ void Builder::finish(){
+   const auto main=group(0);need(nonempty(main),"NO_MAIN_BODY_AFTER_FEATURES");
+   auto second=group(1);
+   if(nonempty(second)){auto a=main.BoundingBox(),bb=second.BoundingBox();secondary_x=a.max.x+5-bb.min.x;}
+-  std::array<std::vector<Manifold>,2> claimed;
++  std::array<std::vector<Manifold>,3> claimed;
+   std::vector<Piece> disjoint;
+   for(auto& p:pieces){
+     auto original=p.mesh;
+@@ -825,11 +851,15 @@ void Builder::finish(){
+     need(p.mesh.Status()==Manifold::Error::NoError,"KERNEL_PARTITION",0,AM_KERNEL_ERROR);
+     if(!p.mesh.IsEmpty())disjoint.push_back(std::move(p));
+   }
++  // Detached text must not collide after the secondary part is laid out.
++  std::vector<Manifold> manufacturing;for(auto& p:disjoint){auto mesh=p.mesh;if(p.group==1)mesh=mesh.Translate({secondary_x,0,0});if(rot&&p.group!=2)mesh=mesh.Rotate(0,0,rot);manufacturing.push_back(evaluate(mesh));}
++  for(size_t i=0;i<disjoint.size();i++)for(size_t j=0;j<i;j++)if(disjoint[i].group!=disjoint[j].group&&(disjoint[i].group==2||disjoint[j].group==2))
++    need(!nonempty(manufacturing[i]^manufacturing[j]),"DETACHED_TEXT_PLACEMENT_COLLISION");
+   double highest=0;
+   for(auto& p:disjoint){
+     auto mesh=evaluate(p.mesh);
+     if(p.group==1)mesh=mesh.Translate({secondary_x,0,0});
+-    if(rot)mesh=mesh.Rotate(0,0,rot);
++    if(rot&&p.group!=2)mesh=mesh.Rotate(0,0,rot);
+     const auto bb=mesh.BoundingBox();
+     need(finite(bb.min.x)&&finite(bb.min.y)&&finite(bb.min.z)&&finite(bb.max.x)&&finite(bb.max.y)&&finite(bb.max.z)&&bb.min.z>=-1e-7,"MANUFACTURING_COORDINATE_RANGE");
+     highest=std::max(highest,bb.max.z);
+@@ -869,8 +899,8 @@ void Builder::finish(){
+     out.parts.push_back(part);
+     ArchMechPartInfo info{};info.feature_index=p.feature;info.role=p.role;info.slot=p.material.slot;info.origin=p.material.origin;info.provenance_id=p.material.provenance_id;info.assembly_group=p.group;
+     info.preview_transform[0]=info.preview_transform[5]=info.preview_transform[10]=info.preview_transform[15]=1;
+-    if(r.product==AM_CLICKY){info.preview_transform[12]=p.group?-secondary_x:0;info.preview_transform[14]=p.group?0:cap_preview_z;}
+-    if(r.product==AM_CHARM&&e(AM_F_charmGan)==0){info.preview_transform[12]=p.group?-secondary_x:0;info.preview_transform[14]=p.group?button_preview_z:0;}
++    if(p.group!=2&&r.product==AM_CLICKY){info.preview_transform[12]=p.group?-secondary_x:0;info.preview_transform[14]=p.group?0:cap_preview_z;}
++    if(p.group!=2&&r.product==AM_CHARM&&e(AM_F_charmGan)==0){info.preview_transform[12]=p.group?-secondary_x:0;info.preview_transform[14]=p.group?button_preview_z:0;}
+     out.part_info.push_back(info);
+   }
+   uint32_t n=0;out.layers.push_back(0);while(boundary(n)<highest-1e-10){++n;out.layers.push_back(boundary(n));}
+@@ -937,3 +967,5 @@ extern "C" int arch_mech_view(const ArchMechResult* result,ArchMechView* v){
+ extern "C" void arch_mech_destroy(ArchMechResult* result){delete result;}
+ static_assert(sizeof(ArchMechPart)==40&&offsetof(ArchMechPart,volume_mm3)==32,"Main material-part ABI prefix");
+ static_assert(sizeof(ArchMechParam)==40&&offsetof(ArchMechParam,value)==24,"Parameter ABI");
++
++extern "C" uint32_t arch_mech_source_datum_extension_version(){return 1;}
+diff --git a/src/kernel/mechanics/src/mechanics.h b/src/kernel/mechanics/src/mechanics.h
+index 05dd8340..f01470b6 100644
+--- a/src/kernel/mechanics/src/mechanics.h
++++ b/src/kernel/mechanics/src/mechanics.h
+@@ -19,7 +19,7 @@ enum ArchMechDatum { AM_BED, AM_BODY_BOTTOM, AM_CAP_UNDERSIDE, AM_POST_TIP,
+   AM_CHARM_FLANGE_TOP, AM_CHARM_NECK_TOP, AM_ATTACHMENT_BOTTOM, AM_DATUM_COUNT };
+ enum ArchMechVerdict { AM_OK, AM_INVALID, AM_UNSUPPORTED, AM_NEEDS_ACCEPTANCE, AM_KERNEL_ERROR, AM_CANCELLED };
+ enum ArchMechSourceMode { AM_RAISED_BODY, AM_PREPARED_SLABS };
+-enum ArchMechSlabKind { AM_SOURCE_ART, AM_SOURCE_BODY, AM_SOURCE_TEXT, AM_SOURCE_TEXT_BASE };
++enum ArchMechSlabKind { AM_SOURCE_ART, AM_SOURCE_BODY, AM_SOURCE_TEXT, AM_SOURCE_TEXT_BASE, AM_SOURCE_BED_TEXT, AM_SOURCE_BED_TEXT_BASE };
+ enum ArchMechCurveFrame { AM_CURVE_MANUFACTURING, AM_CURVE_BEFORE_MOUTH_SHEAR };
+ // Numeric IDs are frozen in parameter_ids.h, enum values use catalog order.
+ typedef struct {
+@@ -138,6 +138,8 @@ uint32_t arch_mech_control_stage(const ArchMechControl*);
+ void arch_mech_control_destroy(ArchMechControl*);
+ ArchMechResult* arch_mech_build_controlled(const ArchMechRequest*,ArchMechControl*,uint32_t generation);
+ uint32_t arch_mech_abi_version(void);
++// Source semantics1: height tags128..134 and detached bed text slab kinds4/5.
++uint32_t arch_mech_source_datum_extension_version(void);
+ uint32_t arch_mech_field_id(const char* name);
+ const char* arch_mech_field_name(uint32_t id);
+ ArchMechParam arch_mech_default_parameter(uint32_t product, uint32_t id);
+diff --git a/src/kernel/mechanics/src/domain-adapter.mjs b/src/kernel/mechanics/src/domain-adapter.mjs
+index 35d66273..037cb1b3 100644
+--- a/src/kernel/mechanics/src/domain-adapter.mjs
++++ b/src/kernel/mechanics/src/domain-adapter.mjs
+@@ -9,6 +9,9 @@ export const DATUMS=Object.freeze({
+   'mech:mx:collar.bottom':4,'mech:tray:floor.top':5,'mech:tray:pin-pocket.top':6,
+   'mech:tray:body-pocket.top':7,'mech:charm:flange.top':8,'mech:charm:neck.top':9,
+   'source:attachment.bottom':10,
++  'source:art.bottom':128,'source:rim.bottom':129,'source:flat.bottom':130,
++  'source:recess.top':131,'source:core-cap.top':132,'source:text.bottom':133,
++  'source:text-base.bottom':134,
+ });
+ export class MechanicsContractError extends Error {constructor(code,field){super(`${code}${field?': '+field:''}`);this.code=code;this.field=field;}}
+ const requireValue=(condition,code,field)=>{if(!condition)throw new MechanicsContractError(code,field);};
+@@ -35,7 +38,9 @@ export function createMechanicsDomainAdapter(domain){
+       if(schema.type==='height'){
+         const value=entry.value;
+         if(value.heightMode==='auto'){requireValue(id==='ringH'&&value.mode==='body-height','AUTO_MODE',id);r.mode=3;}
+-        else if(value.heightMode==='mm'){r.mode=1;r.value=value.mm;}
++        else if(value.heightMode==='mm'){r.mode=1;r.value=value.mm;
++          if(value.datum){r.referenceLayer=value.referenceLayer;r.datum=value.datum.kind==='bed'?0:DATUMS[value.datum.featureId];requireValue(r.datum!==undefined,'ORPHAN_DATUM',id);}
++        }
+         else {
+           requireValue(value.heightMode==='layers','HEIGHT_MODE',id);r.mode=2;r.layerCount=value.layers;r.referenceLayer=value.referenceLayer;
+           r.datum=value.datum.kind==='bed'?0:DATUMS[value.datum.featureId];requireValue(r.datum!==undefined,'ORPHAN_DATUM',id);

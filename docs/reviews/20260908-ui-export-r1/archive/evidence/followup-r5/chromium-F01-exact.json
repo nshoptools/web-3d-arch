@@ -1,0 +1,26 @@
+{
+  "sameValue": {
+    "id": 7,
+    "method": "dispatch",
+    "input": {
+      "type": "export.configure",
+      "id": "stl-union",
+      "projectRevision": 0,
+      "field": "errorMm",
+      "value": "0.004"
+    },
+    "pending": true
+  },
+  "newDraft": {
+    "id": 8,
+    "method": "dispatch",
+    "input": {
+      "type": "export.configure",
+      "id": "stl-union",
+      "projectRevision": 0,
+      "field": "errorMm",
+      "value": "0.006"
+    },
+    "pending": true
+  }
+}

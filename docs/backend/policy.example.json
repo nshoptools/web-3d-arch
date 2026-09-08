@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "allowedProviders": [],
+  "quotas": {
+    "settingsBytes": 32000000,
+    "storageBytes": 64000000,
+    "storageObjects": 1000,
+    "syncBytesPerDay": 64000000,
+    "protectedRequestsPerMinute": 120,
+    "protectedConcurrency": 4,
+    "authRequestsPerMinute": 30,
+    "authConcurrency": 4
+  },
+  "ai": {
+    "requestsPerDay": 20,
+    "bytesPerDay": 64000000,
+    "concurrency": 1,
+    "money": []
+  }
+}

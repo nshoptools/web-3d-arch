@@ -1,0 +1,2997 @@
+{
+  "version": "arch-csg-guard-controller-fixture/1",
+  "semantics": {
+    "schema": "APMS/1",
+    "mechanicsAbi": 2,
+    "mechanicsSemantics": 3,
+    "sourceSemantics": 2,
+    "datumProbeVersion": 0,
+    "sourceVerdict": 0,
+    "mechanicsVerdict": 0,
+    "exportBlocked": false,
+    "fitQualification": "unqualified",
+    "revision": "1",
+    "sourceId": "14492980766699310678",
+    "provenanceId": "15511711636994161846",
+    "product": 0,
+    "sourceOperations": 32,
+    "sourceToleranceMm": 0.001,
+    "matingToleranceMm": 0.001,
+    "exportToleranceMm": 0.004,
+    "sourceTransform": [
+      2.2499998875000053,
+      0,
+      0,
+      2.2499998875000053,
+      -22.5,
+      -11.249999437500026
+    ],
+    "bodyDatumZ": 0,
+    "totalErrorBoundMm": null,
+    "parts": [
+      {
+        "meshPart": 0,
+        "id": "source:slab:17418185339274325469",
+        "featureIndex": 0,
+        "role": 0,
+        "slot": 4,
+        "origin": 0,
+        "assemblyGroup": 0,
+        "provenanceId": "15511711636994161846",
+        "sourceId": "17418185339274325469",
+        "previewTransform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "meshPart": 1,
+        "id": "source:slab:1418539335897375248",
+        "featureIndex": 1,
+        "role": 1,
+        "slot": 1,
+        "origin": 0,
+        "assemblyGroup": 0,
+        "provenanceId": "9231262781575937352",
+        "sourceId": "1418539335897375248",
+        "previewTransform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "meshPart": 2,
+        "id": "source:slab:14704399586199030131",
+        "featureIndex": 2,
+        "role": 1,
+        "slot": 2,
+        "origin": 0,
+        "assemblyGroup": 0,
+        "provenanceId": "15944002440517866284",
+        "sourceId": "14704399586199030131",
+        "previewTransform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "meshPart": 3,
+        "id": "mech:keyring",
+        "featureIndex": 3,
+        "role": 0,
+        "slot": 4,
+        "origin": 0,
+        "assemblyGroup": 0,
+        "provenanceId": "12286827315462731885",
+        "sourceId": "14492980766699310678",
+        "previewTransform": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    ],
+    "features": [
+      {
+        "id": "source:slab:17418185339274325469",
+        "kind": 2,
+        "parameterId": 25,
+        "role": 0,
+        "group": 0,
+        "sourceId": "17418185339274325469",
+        "provenanceId": "15511711636994161846",
+        "dimensions": [
+          0,
+          2.4,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "source:slab:1418539335897375248",
+        "kind": 2,
+        "parameterId": 25,
+        "role": 1,
+        "group": 0,
+        "sourceId": "1418539335897375248",
+        "provenanceId": "9231262781575937352",
+        "dimensions": [
+          2.4,
+          3.2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "source:slab:14704399586199030131",
+        "kind": 2,
+        "parameterId": 25,
+        "role": 1,
+        "group": 0,
+        "sourceId": "14704399586199030131",
+        "provenanceId": "15944002440517866284",
+        "dimensions": [
+          2.4,
+          3.2,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "mech:keyring",
+        "kind": 0,
+        "parameterId": 35,
+        "role": 0,
+        "group": 0,
+        "sourceId": "14492980766699310678",
+        "provenanceId": "44",
+        "dimensions": [
+          9.33793123216848e-16,
+          15.2499990016222,
+          0,
+          2.4,
+          8,
+          4
+        ]
+      },
+      {
+        "id": "mech:keyring:bore",
+        "kind": 1,
+        "parameterId": 36,
+        "role": 0,
+        "group": 0,
+        "sourceId": "14492980766699310678",
+        "provenanceId": "45",
+        "dimensions": [
+          9.33793123216848e-16,
+          15.2499990016222,
+          0,
+          2.4,
+          4,
+          0
+        ]
+      }
+    ],
+    "curves": [
+      {
+        "featureIndex": 3,
+        "segments": 100,
+        "side": 0,
+        "frame": 0,
+        "radius": 4,
+        "signedMin": -0.0019737785370736,
+        "signedMax": 2e-08,
+        "requestedTolerance": 0.004
+      },
+      {
+        "featureIndex": 4,
+        "segments": 144,
+        "side": 1,
+        "frame": 0,
+        "radius": 2,
+        "signedMin": -2e-08,
+        "signedMax": 0.00047607912936310445,
+        "requestedTolerance": 0.001
+      }
+    ],
+    "intervals": [
+      {
+        "fieldId": 23,
+        "datum": 1,
+        "mode": 1,
+        "conversionAvailable": true,
+        "referenceLayer": 0,
+        "z0": 0,
+        "z1": 2.4,
+        "floorDelta": 0,
+        "ceilDelta": 0,
+        "nearestDelta": 0
+      },
+      {
+        "fieldId": 40,
+        "datum": 1,
+        "mode": 3,
+        "conversionAvailable": true,
+        "referenceLayer": 0,
+        "z0": 0,
+        "z1": 2.4,
+        "floorDelta": 0,
+        "ceilDelta": 0,
+        "nearestDelta": 0
+      }
+    ],
+    "diagnostics": [
+      {
+        "code": 100,
+        "fieldId": 0,
+        "message": "PRESET_UNQUALIFIED: geometry computation does not certify hardware fit, printing or slicer compatibility"
+      },
+      {
+        "code": 101,
+        "fieldId": 0,
+        "message": "ERROR_LEDGER: analytic circle flatten bound recorded; whole arbitrary boolean/source pipeline bound remains unverified"
+      }
+    ],
+    "proposals": [],
+    "layerBoundaries": [
+      0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1,
+      1.2,
+      1.4,
+      1.6,
+      1.8,
+      2,
+      2.2,
+      2.4,
+      2.6,
+      2.8,
+      3,
+      3.2
+    ],
+    "parameters": [
+      {
+        "fieldId": 1,
+        "field": "k",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4,
+        "provenanceId": "2"
+      },
+      {
+        "fieldId": 2,
+        "field": "res",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "3"
+      },
+      {
+        "fieldId": 3,
+        "field": "smooth",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3,
+        "provenanceId": "4"
+      },
+      {
+        "fieldId": 4,
+        "field": "minA",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 5,
+        "provenanceId": "5"
+      },
+      {
+        "fieldId": 5,
+        "field": "denoise",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "6"
+      },
+      {
+        "fieldId": 6,
+        "field": "eps",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 35,
+        "provenanceId": "7"
+      },
+      {
+        "fieldId": 7,
+        "field": "tension",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 65,
+        "provenanceId": "8"
+      },
+      {
+        "fieldId": 8,
+        "field": "size",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 45,
+        "provenanceId": "9"
+      },
+      {
+        "fieldId": 9,
+        "field": "outline",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "10"
+      },
+      {
+        "fieldId": 10,
+        "field": "cornerR",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3,
+        "provenanceId": "11"
+      },
+      {
+        "fieldId": 11,
+        "field": "offset",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.5,
+        "provenanceId": "12"
+      },
+      {
+        "fieldId": 12,
+        "field": "weld",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.8,
+        "provenanceId": "13"
+      },
+      {
+        "fieldId": 13,
+        "field": "minFeature",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "14"
+      },
+      {
+        "fieldId": 14,
+        "field": "fillHoles",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "15"
+      },
+      {
+        "fieldId": 15,
+        "field": "topBevel",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "16"
+      },
+      {
+        "fieldId": 16,
+        "field": "topBevelR",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "17"
+      },
+      {
+        "fieldId": 17,
+        "field": "topBevelShape",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "18"
+      },
+      {
+        "fieldId": 18,
+        "field": "bevelGop",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "19"
+      },
+      {
+        "fieldId": 19,
+        "field": "bevelChu",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "20"
+      },
+      {
+        "fieldId": 20,
+        "field": "topBevelSeg",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3,
+        "provenanceId": "21"
+      },
+      {
+        "fieldId": 21,
+        "field": "layerH",
+        "mode": 0,
+        "origin": 1,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.2,
+        "provenanceId": "50"
+      },
+      {
+        "fieldId": 22,
+        "field": "layerStep",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3,
+        "provenanceId": "22"
+      },
+      {
+        "fieldId": 23,
+        "field": "baseH",
+        "mode": 1,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2.4,
+        "provenanceId": "40"
+      },
+      {
+        "fieldId": 24,
+        "field": "plateT",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 25,
+        "field": "artMode",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "23"
+      },
+      {
+        "fieldId": 26,
+        "field": "flatTop",
+        "mode": 1,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "24"
+      },
+      {
+        "fieldId": 27,
+        "field": "artH",
+        "mode": 1,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.8,
+        "provenanceId": "25"
+      },
+      {
+        "fieldId": 28,
+        "field": "rimOn",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "41"
+      },
+      {
+        "fieldId": 29,
+        "field": "rimH",
+        "mode": 1,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "42"
+      },
+      {
+        "fieldId": 30,
+        "field": "splitObj",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "26"
+      },
+      {
+        "fieldId": 31,
+        "field": "layerBand",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "27"
+      },
+      {
+        "fieldId": 32,
+        "field": "bandCore",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "28"
+      },
+      {
+        "fieldId": 33,
+        "field": "bandCap",
+        "mode": 1,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "29"
+      },
+      {
+        "fieldId": 34,
+        "field": "ringOn",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "43"
+      },
+      {
+        "fieldId": 35,
+        "field": "ringOuterD",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 8,
+        "provenanceId": "44"
+      },
+      {
+        "fieldId": 36,
+        "field": "ringInnerD",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4,
+        "provenanceId": "45"
+      },
+      {
+        "fieldId": 37,
+        "field": "ringTren",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "46"
+      },
+      {
+        "fieldId": 38,
+        "field": "ringAngle",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 90,
+        "provenanceId": "47"
+      },
+      {
+        "fieldId": 39,
+        "field": "ringOverlap",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.5,
+        "provenanceId": "48"
+      },
+      {
+        "fieldId": 40,
+        "field": "ringH",
+        "mode": 3,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "49"
+      },
+      {
+        "fieldId": 41,
+        "field": "legoOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 42,
+        "field": "legoPitch",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 43,
+        "field": "legoHoleD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4.9,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 44,
+        "field": "legoHoleH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 45,
+        "field": "legoThua",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 46,
+        "field": "legoHoDu",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.3,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 47,
+        "field": "legoWall",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 48,
+        "field": "legoRong",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 49,
+        "field": "legoOffX",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 50,
+        "field": "legoOffY",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 51,
+        "field": "legoXeOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 52,
+        "field": "legoXeW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 53,
+        "field": "legoTaiOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 54,
+        "field": "legoTaiW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2.4,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 55,
+        "field": "legoTaiL",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 12,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 56,
+        "field": "legoTaiCo",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 57,
+        "field": "legoRanhOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 58,
+        "field": "legoRanhR",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 59,
+        "field": "legoRanhZ",
+        "mode": 4,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 60,
+        "field": "charmGan",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 61,
+        "field": "charmCoD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 12.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 62,
+        "field": "charmCoH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 63,
+        "field": "charmVanhD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 14.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 64,
+        "field": "charmVanhH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 65,
+        "field": "charmVat",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 66,
+        "field": "charmChotD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 67,
+        "field": "charmChotH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 68,
+        "field": "charmClr",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 69,
+        "field": "charmRap",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 70,
+        "field": "charmOffX",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 71,
+        "field": "charmOffY",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 72,
+        "field": "strapD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 73,
+        "field": "strapAngle",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 74,
+        "field": "strapZ",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 75,
+        "field": "strapOff",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 76,
+        "field": "strapSlot",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 77,
+        "field": "strapSlotDir",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 78,
+        "field": "strapCham",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 79,
+        "field": "strapSeg",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 18,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 80,
+        "field": "rotObj",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 81,
+        "field": "skirtH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 82,
+        "field": "wallT",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 83,
+        "field": "rib",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 84,
+        "field": "crossL",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4.1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 85,
+        "field": "crossW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.35,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 86,
+        "field": "clr",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.05,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 87,
+        "field": "socketD",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 5.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 88,
+        "field": "postH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 7,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 89,
+        "field": "postD1",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 5.7,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 90,
+        "field": "postD2",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 91,
+        "field": "collarH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.85,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 92,
+        "field": "stemH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 3.6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 93,
+        "field": "linkBody",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 94,
+        "field": "housing",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 95,
+        "field": "autoSize",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 96,
+        "field": "plateHole",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 14.05,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 97,
+        "field": "hSocketD",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 5.15,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 98,
+        "field": "hMouth",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 15.4,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 99,
+        "field": "hRecess",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 100,
+        "field": "pinW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 11.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 101,
+        "field": "pinD",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.7,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 102,
+        "field": "hFloor",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 103,
+        "field": "hWall",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 104,
+        "field": "hBossW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 105,
+        "field": "gap",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.25,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 106,
+        "field": "rimOver",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 107,
+        "field": "travel",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4.2,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 108,
+        "field": "hStopOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 109,
+        "field": "hStopW",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 110,
+        "field": "hRingOn",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 111,
+        "field": "hRingH",
+        "mode": 1,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 6,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 112,
+        "field": "hRingOuterD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 8,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 113,
+        "field": "hRingInnerD",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 4,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 114,
+        "field": "hRingAngle",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 90,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 115,
+        "field": "hRingOverlap",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 1.5,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 116,
+        "field": "assemble",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 117,
+        "field": "impOn",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "30"
+      },
+      {
+        "fieldId": 118,
+        "field": "impOp",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "31"
+      },
+      {
+        "fieldId": 119,
+        "field": "impScale",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 100,
+        "provenanceId": "32"
+      },
+      {
+        "fieldId": 120,
+        "field": "impX",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "33"
+      },
+      {
+        "fieldId": 121,
+        "field": "impY",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "34"
+      },
+      {
+        "fieldId": 122,
+        "field": "impZ",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "35"
+      },
+      {
+        "fieldId": 123,
+        "field": "impRX",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "36"
+      },
+      {
+        "fieldId": 124,
+        "field": "impRY",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "37"
+      },
+      {
+        "fieldId": 125,
+        "field": "impRZ",
+        "mode": 0,
+        "origin": 0,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0,
+        "provenanceId": "38"
+      },
+      {
+        "fieldId": 126,
+        "field": "impVox",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.25,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 127,
+        "field": "strapTolerance",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.001,
+        "provenanceId": "1"
+      },
+      {
+        "fieldId": 128,
+        "field": "meshJoinTolerance",
+        "mode": 0,
+        "origin": 2,
+        "datum": 0,
+        "referenceLayer": 0,
+        "layerCount": 0,
+        "value": 0.004,
+        "provenanceId": "1"
+      }
+    ],
+    "sourceContacts": [
+      {
+        "slabA": 1,
+        "slabB": 2,
+        "kind": 0,
+        "areaMm2": 17.999998400000006,
+        "z0": 2.4,
+        "z1": 3.2
+      },
+      {
+        "slabA": 0,
+        "slabB": 1,
+        "kind": 1,
+        "areaMm2": 425.2499415949007,
+        "z0": 2.4,
+        "z1": 2.4
+      },
+      {
+        "slabA": 0,
+        "slabB": 2,
+        "kind": 1,
+        "areaMm2": 506.2499775364975,
+        "z0": 2.4,
+        "z1": 2.4
+      }
+    ],
+    "lineage": [
+      {
+        "sourceId": "14492980766699310678",
+        "slabId": "17418185339274325469",
+        "materialProvenanceId": "12286827315462731885",
+        "stage": 10,
+        "band": 0
+      },
+      {
+        "sourceId": "10078775098429335472",
+        "slabId": "1418539335897375248",
+        "materialProvenanceId": "13440901658734445464",
+        "stage": 14,
+        "band": 1
+      },
+      {
+        "sourceId": "17678753900020123614",
+        "slabId": "14704399586199030131",
+        "materialProvenanceId": "10195264654605867423",
+        "stage": 14,
+        "band": 1
+      }
+    ],
+    "sourceIntervals": [
+      {
+        "fieldId": 23,
+        "datum": 1,
+        "mode": 1,
+        "conversionAvailable": true,
+        "referenceLayer": 0,
+        "semanticId": "14492980766699310678",
+        "z0": 0,
+        "z1": 2.4,
+        "coordinateFrame": "manufacturing-z"
+      },
+      {
+        "fieldId": 27,
+        "datum": 128,
+        "mode": 1,
+        "conversionAvailable": true,
+        "referenceLayer": 12,
+        "semanticId": "10078775098429335472",
+        "z0": 2.4,
+        "z1": 3.2,
+        "coordinateFrame": "manufacturing-z"
+      },
+      {
+        "fieldId": 27,
+        "datum": 128,
+        "mode": 1,
+        "conversionAvailable": true,
+        "referenceLayer": 12,
+        "semanticId": "17678753900020123614",
+        "z0": 2.4,
+        "z1": 3.2,
+        "coordinateFrame": "manufacturing-z"
+      }
+    ],
+    "sourceDiagnostics": [
+      {
+        "code": 0,
+        "fieldId": 12,
+        "semanticId": "0",
+        "message": "CONVEX_CLOSING_IDENTITY"
+      }
+    ],
+    "sourceProposals": [],
+    "sourceErrors": [
+      {
+        "stage": 1,
+        "segments": 244,
+        "radius": 1.5,
+        "signedMinMm": -0.00012434983476851066,
+        "signedMaxMm": 0.00012434983476851066
+      },
+      {
+        "stage": 6,
+        "segments": 112,
+        "radius": 0.3,
+        "signedMinMm": -0.0001180320850841404,
+        "signedMaxMm": 0.0001180320850841404
+      },
+      {
+        "stage": 100,
+        "segments": 0,
+        "radius": 0,
+        "signedMinMm": -0.0003749637178679051,
+        "signedMaxMm": 0.0003749637178679051
+      },
+      {
+        "stage": 99,
+        "segments": 0,
+        "radius": 0,
+        "signedMinMm": -7.071067811865476e-07,
+        "signedMaxMm": 7.071067811865476e-07
+      }
+    ],
+    "inputRegions": [
+      {
+        "ringStart": 0,
+        "ringCount": 2,
+        "fillRule": 0,
+        "overrideHeight": false,
+        "semanticId": "10078775098429335472",
+        "provenanceId": "9231262781575937352",
+        "textGroup": "0",
+        "material": {
+          "role": 1,
+          "rgba": 10079487,
+          "slot": 1,
+          "origin": 0,
+          "provenanceId": "13440901658734445464"
+        },
+        "height": {
+          "fieldId": 0,
+          "field": null,
+          "mode": 0,
+          "origin": 0,
+          "datum": 0,
+          "referenceLayer": 0,
+          "layerCount": 0,
+          "value": 0,
+          "provenanceId": "0"
+        }
+      },
+      {
+        "ringStart": 2,
+        "ringCount": 1,
+        "fillRule": 0,
+        "overrideHeight": false,
+        "semanticId": "17678753900020123614",
+        "provenanceId": "15944002440517866284",
+        "textGroup": "0",
+        "material": {
+          "role": 1,
+          "rgba": 4000789503,
+          "slot": 2,
+          "origin": 0,
+          "provenanceId": "10195264654605867423"
+        },
+        "height": {
+          "fieldId": 0,
+          "field": null,
+          "mode": 0,
+          "origin": 0,
+          "datum": 0,
+          "referenceLayer": 0,
+          "layerCount": 0,
+          "value": 0,
+          "provenanceId": "0"
+        }
+      }
+    ],
+    "inputTexts": [],
+    "provenance": {
+      "kind": "arch-product-app/1",
+      "projectId": "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+      "sourceId": "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+      "sourceRevision": 0,
+      "rawHash": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+      "bindingsHash": "aacba097b1c7fc187556b1a90a5d39d778601df5397da8354fb743ab85df2be6",
+      "contextHash": "5679043f13b8fd0d8fdc5c7bf48ba349ee7756fff1b79be348fbb6fe426c95a6",
+      "contexts": [
+        {
+          "key": "art",
+          "sourceHash": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+          "derivationHash": null,
+          "regions": [
+            {
+              "nativeKey": "paint-0",
+              "sourceIndex": 0
+            },
+            {
+              "nativeKey": "paint-1",
+              "sourceIndex": 1
+            }
+          ]
+        }
+      ],
+      "sourceReceipt": null,
+      "identities": [
+        {
+          "kind": "source",
+          "key": "root",
+          "id": "14492980766699310678",
+          "sha256": "c92169385fae4e565db7ccd3d06df6aee8936a723f17d1bb672b517863d4ef4e",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "source",
+            "root"
+          ]
+        },
+        {
+          "kind": "provenance",
+          "key": "root",
+          "id": "15511711636994161846",
+          "sha256": "5744ab8c9d547cb62a4b59ce58e965da14153823049493ecbab14f4793441862",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "provenance",
+            "root"
+          ]
+        },
+        {
+          "kind": "region",
+          "key": "adopted:1",
+          "id": "10078775098429335472",
+          "sha256": "0bdf008d68eee7b0fa177435d2bd4b744327da6e8a1306751bae759a3feadb23",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "region",
+            "adopted:1"
+          ]
+        },
+        {
+          "kind": "region-provenance",
+          "key": "adopted:1",
+          "id": "9231262781575937352",
+          "sha256": "001c08972c1e3d483067b3e6737bb4f8cdfdda3268c83ccfaf2e66e2b0dd0a14",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "region-provenance",
+            "adopted:1"
+          ]
+        },
+        {
+          "kind": "region",
+          "key": "adopted:2",
+          "id": "17678753900020123614",
+          "sha256": "75578d018a4047dec2fefa30c8f755539f3b3f408bbdc3d9e80b214bf15e1b27",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "region",
+            "adopted:2"
+          ]
+        },
+        {
+          "kind": "region-provenance",
+          "key": "adopted:2",
+          "id": "15944002440517866284",
+          "sha256": "5d4479bea507532c38e746a197f68c6de1ccdc037b79ace414870dfe87788f7b",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "region-provenance",
+            "adopted:2"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-material-10936404984847714561",
+          "id": "13440901658734445464",
+          "sha256": "ba87acd87dd34398d801bb0f7c893784581032e6f4811f2c57c36a53791230dd",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-material-10936404984847714561"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-material-16649365721789964127",
+          "id": "10195264654605867423",
+          "sha256": "8d7cdb2fc0e0d99f1e3755af61a5a0a024d8c6ab56639a471534fa1dc84c7758",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-material-16649365721789964127"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-10414053696556424592",
+          "id": "16645303027953786842",
+          "sha256": "66fffee9cfeb5fdaa9f5e32a051afb2419bb1e9ad92158f76fb38bf19e3c4e6b",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-10414053696556424592"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-10744784337252251531",
+          "id": "18126933255136153161",
+          "sha256": "7b8fcdc1439b0e49f9d44342ef7119352b0a5fe8ae8e505890ce3c7d386aef61",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-10744784337252251531"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-11048577388633217906",
+          "id": "16207806025717074137",
+          "sha256": "e0edb1b52f4d48d9e6743b8284aa7e7d657414f978f31a954bc37d0661152e55",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-11048577388633217906"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-11164497784414540467",
+          "id": "11902606389841098879",
+          "sha256": "a52e8d72e7c5f87fdd3bf26066c2ce40ace78e256b63a0e7bcb15ab6f7cc80ad",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-11164497784414540467"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-12629717977112982120",
+          "id": "15894087637739306582",
+          "sha256": "dc93247efc60fe56efbbe998da7a391c49acc2723e3a9f381fa5693da55b2740",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-12629717977112982120"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-15052918768068197446",
+          "id": "15613234522085976860",
+          "sha256": "d8ad5a134bcceb1ca08bf037ce67a182272308bd8aea34173e3ee3e02484cff3",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-15052918768068197446"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-16373351748787857030",
+          "id": "18026884637834787610",
+          "sha256": "fa2c5c114d16bb1a20e28875dca9dba73122b0baddc041fd075902c5b4fcb3cd",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-16373351748787857030"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-16830368369537969842",
+          "id": "12286827315462731885",
+          "sha256": "aa83945852b8f86ddee94f3c6012e4b43ef0a8f554fba2aff29ac50d542d234b",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-16830368369537969842"
+          ]
+        },
+        {
+          "kind": "material",
+          "key": "product-role-17745779244319346743",
+          "id": "11969258838619795201",
+          "sha256": "261b597f74a32f011811f791b8b5835b2561410c3288f617b4528120bc1cc9cb",
+          "tuple": [
+            "arch-product-identity/1",
+            "5a9aab7e-0e13-4e0b-84dc-1f6b5d8961b6",
+            "7134bb6c-bd89-4728-9473-0a470a1b19ba",
+            "material",
+            "product-role-17745779244319346743"
+          ]
+        }
+      ],
+      "regionSources": [
+        {
+          "contextSlot": 0,
+          "sourceIndex": 0,
+          "sourceKey": "paint-0",
+          "stableSourceKey": "adopted:1",
+          "semanticId": "10078775098429335472"
+        },
+        {
+          "contextSlot": 0,
+          "sourceIndex": 1,
+          "sourceKey": "paint-1",
+          "stableSourceKey": "adopted:2",
+          "semanticId": "17678753900020123614"
+        }
+      ],
+      "materials": [
+        {
+          "id": "product-material-10936404984847714561",
+          "role": 0,
+          "rgba": 10079487,
+          "slot": 1,
+          "origin": 0,
+          "provenanceId": "13440901658734445464"
+        },
+        {
+          "id": "product-material-16649365721789964127",
+          "role": 0,
+          "rgba": 4000789503,
+          "slot": 2,
+          "origin": 0,
+          "provenanceId": "10195264654605867423"
+        },
+        {
+          "id": "product-role-10414053696556424592",
+          "role": 0,
+          "rgba": 4294967295,
+          "slot": 3,
+          "origin": 0,
+          "provenanceId": "16645303027953786842"
+        },
+        {
+          "id": "product-role-10744784337252251531",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "18126933255136153161"
+        },
+        {
+          "id": "product-role-11048577388633217906",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "16207806025717074137"
+        },
+        {
+          "id": "product-role-11164497784414540467",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "11902606389841098879"
+        },
+        {
+          "id": "product-role-12629717977112982120",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "15894087637739306582"
+        },
+        {
+          "id": "product-role-15052918768068197446",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "15613234522085976860"
+        },
+        {
+          "id": "product-role-16373351748787857030",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "18026884637834787610"
+        },
+        {
+          "id": "product-role-16830368369537969842",
+          "role": 0,
+          "rgba": 808795135,
+          "slot": 4,
+          "origin": 0,
+          "provenanceId": "12286827315462731885"
+        },
+        {
+          "id": "product-role-17745779244319346743",
+          "role": 0,
+          "rgba": 4294967295,
+          "slot": 3,
+          "origin": 0,
+          "provenanceId": "11969258838619795201"
+        }
+      ],
+      "roleBindings": {
+        "body": "product-role-16830368369537969842",
+        "artwork": "product-role-11048577388633217906",
+        "rim": "product-role-17745779244319346743",
+        "skirt": "product-role-10744784337252251531",
+        "stem": "product-role-12629717977112982120",
+        "tray": "product-role-15052918768068197446",
+        "fastener": "product-role-16373351748787857030",
+        "text": "product-role-10414053696556424592",
+        "textBase": "product-role-11164497784414540467"
+      },
+      "textStateHash": null,
+      "sourceArtifacts": {
+        "version": "arch-product-artifacts/1",
+        "overlay": null,
+        "sourceTextStateHash": "0bff648fc6c88ad2eef8881fbb5aa3d6ba63cc80fd910602f4a291142b60a217"
+      },
+      "sourceGeometry": [
+        {
+          "sourceKey": "adopted:1",
+          "contextKey": "art",
+          "geometryHash": "7e9fe2addf67c18111c6a40a0e594df8aba47898bbbb89d166960f6e8d5c5dad",
+          "authoredKey": null
+        },
+        {
+          "sourceKey": "adopted:2",
+          "contextKey": "art",
+          "geometryHash": "b19d93de0ef14cb743142f98dd1e5d958bdd9855e3e553a3c738177915971a3b",
+          "authoredKey": null
+        }
+      ],
+      "domainProvenance": [
+        {
+          "kind": "catalog",
+          "catalogId": "parameters-core-v1",
+          "catalogVersion": "1.0.1",
+          "modeDefaults": [
+            {
+              "mode": "keychain",
+              "preset": {
+                "size": 45,
+                "outline": "silhouette",
+                "offset": 1.5,
+                "artMode": "noi",
+                "artH": 0.8,
+                "minFeature": 0.6,
+                "baseH": 2.4
+              }
+            },
+            {
+              "mode": "clicky",
+              "preset": {
+                "size": 40,
+                "outline": "silhouette",
+                "offset": 1.2,
+                "cornerR": 2.5,
+                "artMode": "noi",
+                "artH": 0.6,
+                "minFeature": 0.6,
+                "skirtH": 0
+              }
+            },
+            {
+              "mode": "strap",
+              "preset": {
+                "size": 40,
+                "outline": "silhouette",
+                "offset": 1.8,
+                "artMode": "noi",
+                "artH": 0.8,
+                "minFeature": 0.6,
+                "baseH": 10,
+                "strapZ": 5,
+                "strapD": 4,
+                "strapCham": 0.6,
+                "strapSlot": 0,
+                "strapSlotDir": "ngang"
+              }
+            },
+            {
+              "mode": "lego",
+              "preset": {
+                "size": 45,
+                "outline": "silhouette",
+                "offset": 1.5,
+                "artMode": "noi",
+                "artH": 0.8,
+                "minFeature": 0.6,
+                "baseH": 5.6,
+                "ringOn": false
+              }
+            },
+            {
+              "mode": "charm",
+              "preset": {
+                "size": 25,
+                "outline": "silhouette",
+                "offset": 1.5,
+                "artMode": "noi",
+                "artH": 0.8,
+                "minFeature": 0.5,
+                "baseH": 3,
+                "ringOn": false
+              }
+            }
+          ]
+        },
+        {
+          "kind": "parameter",
+          "id": "k",
+          "origin": "auto",
+          "value": 4,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "res",
+          "origin": "auto",
+          "value": "520",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "smooth",
+          "origin": "auto",
+          "value": 3,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "minA",
+          "origin": "auto",
+          "value": 5,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "denoise",
+          "origin": "auto",
+          "value": 1,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "eps",
+          "origin": "auto",
+          "value": 35,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "tension",
+          "origin": "auto",
+          "value": 65,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "size",
+          "origin": "auto",
+          "value": 45,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "outline",
+          "origin": "auto",
+          "value": "silhouette",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "cornerR",
+          "origin": "auto",
+          "value": 3,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "offset",
+          "origin": "auto",
+          "value": 1.5,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "weld",
+          "origin": "auto",
+          "value": 0.8,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "minFeature",
+          "origin": "auto",
+          "value": 0.6,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "fillHoles",
+          "origin": "auto",
+          "value": true,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "topBevel",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "topBevelR",
+          "origin": "auto",
+          "value": 0.6,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "topBevelShape",
+          "origin": "auto",
+          "value": "tron",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "bevelGop",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "bevelChu",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "topBevelSeg",
+          "origin": "auto",
+          "value": 3,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "layerStep",
+          "origin": "auto",
+          "value": 3,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "artMode",
+          "origin": "auto",
+          "value": "noi",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "flatTop",
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 1
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "artH",
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.8
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "splitObj",
+          "origin": "auto",
+          "value": true,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "layerBand",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "bandCore",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "bandCap",
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.6
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impOn",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impOp",
+          "origin": "auto",
+          "value": "them",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impScale",
+          "origin": "auto",
+          "value": 100,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impX",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impY",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impZ",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impRX",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impRY",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "impRZ",
+          "origin": "auto",
+          "value": 0,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "meshJoinTolerance",
+          "origin": "auto",
+          "value": {
+            "mode": "unselected"
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "baseH",
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 2.4
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "rimOn",
+          "origin": "auto",
+          "value": false,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "rimH",
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.6
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringOn",
+          "origin": "auto",
+          "value": true,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringOuterD",
+          "origin": "auto",
+          "value": 8,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringInnerD",
+          "origin": "auto",
+          "value": 4,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringTren",
+          "origin": "auto",
+          "value": "hinh",
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringAngle",
+          "origin": "auto",
+          "value": 90,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringOverlap",
+          "origin": "auto",
+          "value": 1.5,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "ringH",
+          "origin": "auto",
+          "value": {
+            "heightMode": "auto",
+            "mode": "body-height"
+          },
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "parameter",
+          "id": "layerH",
+          "origin": "user",
+          "value": 0.2,
+          "catalogVersion": "1.0.1",
+          "product": "keychain"
+        },
+        {
+          "kind": "first-plus-regular",
+          "version": 1,
+          "firstLayerHeight": 0.2,
+          "layerHeight": 0.2,
+          "sources": {
+            "firstLayerHeight": "user",
+            "layerHeight": "user"
+          },
+          "profileId": null,
+          "hash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836"
+        }
+      ],
+      "inactive": [
+        {
+          "id": "meshJoinTolerance",
+          "value": {
+            "mode": "unselected"
+          },
+          "origin": "auto",
+          "reason": "engine request provides an explicit tolerance; legacy value was not mapped"
+        }
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "source:slab:17418185339274325469",
+      "name": "source:slab:17418185339274325469",
+      "partIndex": 0,
+      "materialId": "product-role-16830368369537969842",
+      "materialProvenanceId": "12286827315462731885",
+      "geometryProvenanceId": "15511711636994161846",
+      "sourceId": "17418185339274325469",
+      "sourceSemanticIds": [
+        "14492980766699310678"
+      ],
+      "featureIndex": 0,
+      "role": 0,
+      "origin": 0,
+      "assemblyGroup": 0,
+      "slot": 4,
+      "rgba": 808795135,
+      "color": "#30353B",
+      "previewTransform": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "manufacturingTransform": "already-in-ARCH1-coordinates",
+      "sourceIndex": 0
+    },
+    {
+      "id": "source:slab:1418539335897375248",
+      "name": "source:slab:1418539335897375248",
+      "partIndex": 1,
+      "materialId": "product-material-10936404984847714561",
+      "materialProvenanceId": "13440901658734445464",
+      "geometryProvenanceId": "9231262781575937352",
+      "sourceId": "1418539335897375248",
+      "sourceSemanticIds": [
+        "10078775098429335472"
+      ],
+      "featureIndex": 1,
+      "role": 1,
+      "origin": 0,
+      "assemblyGroup": 0,
+      "slot": 1,
+      "rgba": 10079487,
+      "color": "#0099CC",
+      "previewTransform": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "manufacturingTransform": "already-in-ARCH1-coordinates",
+      "sourceIndex": 1
+    },
+    {
+      "id": "source:slab:14704399586199030131",
+      "name": "source:slab:14704399586199030131",
+      "partIndex": 2,
+      "materialId": "product-material-16649365721789964127",
+      "materialProvenanceId": "10195264654605867423",
+      "geometryProvenanceId": "15944002440517866284",
+      "sourceId": "14704399586199030131",
+      "sourceSemanticIds": [
+        "17678753900020123614"
+      ],
+      "featureIndex": 2,
+      "role": 1,
+      "origin": 0,
+      "assemblyGroup": 0,
+      "slot": 2,
+      "rgba": 4000789503,
+      "color": "#EE7733",
+      "previewTransform": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "manufacturingTransform": "already-in-ARCH1-coordinates",
+      "sourceIndex": 2
+    },
+    {
+      "id": "mech:keyring",
+      "name": "mech:keyring",
+      "partIndex": 3,
+      "materialId": "product-role-16830368369537969842",
+      "materialProvenanceId": "12286827315462731885",
+      "geometryProvenanceId": "12286827315462731885",
+      "sourceId": "14492980766699310678",
+      "sourceSemanticIds": [
+        "14492980766699310678"
+      ],
+      "featureIndex": 3,
+      "role": 0,
+      "origin": 0,
+      "assemblyGroup": 0,
+      "slot": 4,
+      "rgba": 808795135,
+      "color": "#30353B",
+      "previewTransform": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "manufacturingTransform": "already-in-ARCH1-coordinates",
+      "sourceIndex": 3
+    }
+  ],
+  "cut": {
+    "version": "arch-authored-csg-cuboid/1",
+    "targetId": "source:slab:17418185339274325469",
+    "resolvedTargetId": "source:slab:17418185339274325469",
+    "materialId": "product-role-16830368369537969842",
+    "partIndex": 0,
+    "operation": "difference",
+    "unit": "millimeter",
+    "bounds": {
+      "min": [
+        -22.4192,
+        -12.003949,
+        -0.25
+      ],
+      "max": [
+        -22.0192,
+        -11.603949,
+        2.65
+      ]
+    },
+    "expectedVolumeDelta": -0.383999999999999,
+    "evidence": {
+      "flatPrism": true,
+      "capLevels": [
+        0,
+        2.4
+      ],
+      "noProjectedBoundaryIntersectsRectangle": true,
+      "noOtherPartBoundingBoxOverlapsAffectedVolume": true,
+      "authoredDecimalPlaces": 6,
+      "selection": "actual descriptor/full material ID",
+      "halfWidthMm": 0.2
+    }
+  }
+}

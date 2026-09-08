@@ -1,0 +1,59 @@
+{
+  "at": "2026-09-08T09:19:21.0208368Z",
+  "powershell": "7.6.5",
+  "node": "v24.19.0",
+  "python": "Python 3.13.15",
+  "codex": "codex-cli 0.153.4",
+  "nodeSha256": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
+  "codexSha256": "444a3f0008050605cae73cd9b7a2dcac61294062dfaab56dd20430fd6498518b",
+  "playwright": "1.63.0",
+  "browserPins": [
+    {
+      "name": "chromium",
+      "revision": "1243",
+      "installByDefault": true,
+      "browserVersion": "153.0.8010.12",
+      "title": "Chrome for Testing"
+    },
+    {
+      "name": "chromium-headless-shell",
+      "revision": "1243",
+      "installByDefault": true,
+      "browserVersion": "153.0.8010.12",
+      "title": "Chrome Headless Shell"
+    },
+    {
+      "name": "firefox",
+      "revision": "1543",
+      "installByDefault": true,
+      "browserVersion": "155.0",
+      "title": "Firefox"
+    },
+    {
+      "name": "webkit",
+      "revision": "2359",
+      "installByDefault": true,
+      "revisionOverrides": {
+        "mac14": "2251",
+        "mac14-arm64": "2251"
+      },
+      "browserVersion": "26.6",
+      "title": "WebKit"
+    },
+    {
+      "name": "ffmpeg",
+      "revision": "1011",
+      "installByDefault": true
+    },
+    {
+      "name": "winldd",
+      "revision": "1007",
+      "installByDefault": false
+    },
+    {
+      "name": "android",
+      "revision": "1001",
+      "installByDefault": false
+    }
+  ]
+}

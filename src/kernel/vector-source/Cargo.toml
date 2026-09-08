@@ -1,0 +1,21 @@
+[package]
+name = "arch-vector-source"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+description = "Bounded, source-preserving SVG import into millimetre contours"
+license-file = "LICENSE"
+publish = false
+
+[workspace]
+
+[dependencies]
+usvg = { version = "=0.48.1", default-features = false }
+roxmltree = "=0.21.1"
+svgtypes = "=0.16.1"
+serde = { version = "=1.0.228", features = ["derive"] }
+sha2 = "=0.10.9"
+
+[dev-dependencies]
+serde_json = "=1.0.149"
+

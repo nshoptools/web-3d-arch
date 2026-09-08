@@ -1,0 +1,35 @@
+{
+  "at": "2026-09-08T12:38:57.175Z",
+  "reason": "Relocated private package input changed only release manifest inputSha256; correct prepared-plan binding to actual immutable release before accepting public UI smoke.",
+  "oldPreparedSHA256": "3b5270c9badd63d9596a38a2fc4da353398b695dce25491a18e5c9dda5567458",
+  "newPreparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+  "oldPlanSHA256": "f30c0309274b315fae612fa87e226c2d7abbc8149b203d597193182d09d0d709",
+  "actualReleaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+  "differentManifestFields": [
+    "inputSha256"
+  ],
+  "inputShaMatchesActualPackageInput": true,
+  "allOtherManifestFieldsIdentical": true,
+  "publicRuntimeSourceOrAssetChanges": 0,
+  "preparedChangedFiles": [
+    "release-plan.json",
+    "prepared.json"
+  ],
+  "input": {
+    "version": "product-acceptance-input/2",
+    "purpose": "whole-product",
+    "id": "final-internal-20260908",
+    "releaseRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal",
+    "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+    "preparedRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal",
+    "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+    "engine": {
+      "canonicalModuleSHA256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828",
+      "derivedModuleSHA256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+      "wasmSHA256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+      "buildReceiptSHA256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17"
+    }
+  },
+  "inputSHA256": "3ee43aa58efddfb937886696ec1b965cb44196988bf0a239dff02584aa65677b",
+  "validation": "Parent exact full-manifest equality except inputSha256 and recorded preimageCAS; Huygens full artifact verification required before launching. Existing3Worker+shell checks still refer to same exact public assets."
+}

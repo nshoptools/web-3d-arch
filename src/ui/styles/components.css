@@ -1,0 +1,850 @@
+/* Controls, panels, dialogs — UI-04, UI-05. */
+
+@layer components {
+  /* ---------------------------------------------------------------- button */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-block-size: var(--btn-h);
+    min-inline-size: var(--target-min);
+    padding: 6px 13px;
+    border-radius: var(--r2);
+    border: 1px solid var(--ln-control);
+    background: var(--b3);
+    color: var(--t1);
+    font-size: var(--fs-body);
+    line-height: 1.25;
+    text-align: center;
+    transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
+  }
+
+  .btn:hover:not(:disabled) { background: var(--b4); border-color: var(--ln-control); }
+  .btn:active:not(:disabled) { background: var(--b2); }
+
+  .btn--primary { background: var(--btn-primary-bg); border-color: #5b8cff; color: var(--btn-primary-fg); }
+  .btn--primary:hover:not(:disabled) { background: #4a7ae8; }
+  .btn--done { background: var(--btn-done-bg); border-color: #2fae86; color: var(--btn-done-fg); }
+  .btn--done:hover:not(:disabled) { background: #45dcac; }
+  .btn--danger { border-color: var(--err); color: var(--err); }
+  .btn--ghost { background: transparent; border-color: transparent; color: var(--t2); }
+  .btn--ghost:hover:not(:disabled) { background: var(--b3); color: var(--t1); }
+  .btn--small { min-block-size: var(--target-min); padding: 3px 9px; font-size: var(--fs-small); }
+  .btn--icon { padding: 6px; min-inline-size: var(--btn-h); }
+  .btn--block { inline-size: 100%; }
+
+  /* Disabled never changes meaning: it keeps its label and gains a reason.
+     aria-disabled keeps the control focusable so the reason is reachable. */
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    background: var(--b2);
+    color: var(--t2);
+    border-color: var(--ln);
+    border-style: dashed;
+    cursor: not-allowed;
+  }
+  .btn[aria-disabled='true']:hover { background: var(--b2); }
+  .btn--primary:disabled,
+  .btn--done:disabled,
+  .btn--primary[aria-disabled='true'],
+  .btn--done[aria-disabled='true'] { background: var(--b2); color: var(--t2); }
+
+  @media (pointer: coarse) {
+    .btn { min-block-size: 44px; }
+    .btn--small { min-block-size: 32px; }
+  }
+
+  /* UI-06, <= 720 px row: the header actions keep a 38 px target. */
+  @media (width <= 720px) {
+    .topbar__tools .btn--small { min-block-size: 38px; }
+  }
+
+  .btn__key {
+    margin-inline-start: 4px;
+    padding: 0 4px;
+    border-radius: 4px;
+    border: 1px solid var(--ln-control);
+    background: var(--b1);
+    color: var(--t2);
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .reason {
+    display: block;
+    color: var(--t2);
+    font-size: var(--fs-small);
+    margin-block-start: 3px;
+  }
+  .reason::before { content: '· '; }
+
+  /* ----------------------------------------------------------------- field */
+
+  .field { display: grid; gap: 4px; min-inline-size: 0; max-inline-size: 100%; overflow-x: clip; }
+  .field__label { color: var(--t2); font-size: var(--fs-label); }
+  .field__row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .field__unit { color: var(--t2); font-size: var(--fs-small); }
+
+  .input,
+  .select,
+  .textarea {
+    min-block-size: var(--input-h);
+    padding: 5px 8px;
+    background: var(--b2);
+    color: var(--t1);
+    border: 1px solid var(--ln-control);
+    border-radius: var(--r1);
+    min-inline-size: 0;
+    inline-size: 100%;
+  }
+  .textarea { resize: vertical; min-block-size: 68px; line-height: 1.4; }
+  /* A refused control is announced with aria-disabled and kept focusable so its
+     reason can be reached (UI-04), and a refused text box is readOnly. Painting
+     only the native :disabled state would leave every refused field in this
+     interface looking exactly like an editable one — the native flag is the one
+     state these controls no longer use. */
+  .input:disabled,
+  .select:disabled,
+  .textarea:disabled,
+  .input[readonly],
+  .textarea[readonly],
+  .input[aria-disabled='true'],
+  .select[aria-disabled='true'],
+  .textarea[aria-disabled='true'] { background: var(--b1); color: var(--t2); border-style: dashed; }
+  .input[aria-invalid='true'] { border-color: var(--err); }
+  .input--num { inline-size: 84px; flex: none; text-align: end; font-variant-numeric: tabular-nums; }
+  .input--hex { inline-size: var(--hex-w); flex: none; font-variant-numeric: tabular-nums; }
+
+  /* Native select keeps its own arrow, including under forced colours. */
+  /* Native select still sizes to its longest option unless the used width is
+     capped. min-inline-size:0 is not enough in Chromium; max-inline-size is. */
+  .select { appearance: auto; max-inline-size: 100%; }
+
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-block-size: var(--target-min);
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+  .check input { inline-size: 16px; block-size: 16px; margin: 2px 0 0; flex: none; accent-color: var(--accent); }
+  /* A refused box keeps its place in the tab order, so the refusal is said with
+     aria-disabled and has to be painted from that as well as from the native
+     flag other callers may still use. */
+  .check:has(input:disabled),
+  .check:has(input[aria-disabled='true']) { cursor: not-allowed; color: var(--t2); }
+  .check input[aria-disabled='true'] { filter: grayscale(1); opacity: 0.75; }
+  @media (pointer: coarse) { .check { min-block-size: 44px; align-items: center; } }
+
+  .slider { flex: 1 1 120px; min-inline-size: 96px; accent-color: var(--accent); block-size: var(--target-min); }
+
+  /* ----------------------------------------------------------------- group */
+
+  /* No overflow clipping here: it would cut the focus ring of the header
+     button (UI-04 requires focus to stay visible). */
+  .group {
+    border: 1px solid var(--ln);
+    border-radius: var(--r2);
+    background: var(--b2);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    /* clip, not hidden: hidden on one axis turns the other into auto and
+       would scroll the group. WebKit still inflates an ancestor's scrollWidth
+       from a native select's longest option unless a descendant clips it. */
+    overflow-x: clip;
+  }
+  .group__head {
+    border-start-start-radius: calc(var(--r2) - 1px);
+    border-start-end-radius: calc(var(--r2) - 1px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    inline-size: 100%;
+    padding: 8px 10px;
+    background: var(--b3);
+    border: 0;
+    border-inline-start: 3px solid var(--group-color, var(--ln2));
+    color: var(--t1);
+    text-align: start;
+    min-block-size: var(--target-min);
+  }
+  .group__head:hover { background: var(--b4); }
+  .group__name { flex: 1 1 auto; min-inline-size: 0; font-weight: 600; font-size: var(--fs-label); overflow-wrap: anywhere; }
+  .group__count { color: var(--t2); font-size: var(--fs-small); font-variant-numeric: tabular-nums; }
+  /* Every settings row in this interface sits in a group body, and how much
+     room a row has is decided here rather than by the size of the window: the
+     desktop panel is 344 px wide next to a 1280 px viewport, so a rule written
+     against the viewport gives a row in that panel the layout meant for a
+     desktop and the space of a phone (UI-06, UI-R1-08). */
+  .group__body { display: grid; gap: 8px; padding: 10px; container-type: inline-size; min-inline-size: 0; overflow-x: clip; }
+
+  .prow {
+    display: grid;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+    /* The label keeps a floor. A control's intrinsic width — a select is as
+       wide as its longest option — must not be able to take the column down to
+       nothing, because the label does not disappear when it runs out of room:
+       it wraps, one letter per line, and stays on screen as a vertical stack
+       taller than the panel. The control column gets a zero minimum instead, so
+       it is the one that gives way, and nothing overflows the row. */
+    grid-template-columns: minmax(min(100%, 14ch), 1fr) minmax(0, auto);
+    align-items: center;
+    gap: 4px 10px;
+    padding: 4px 0;
+    border-block-end: 1px solid rgb(43 52 74 / 0.5);
+  }
+  .prow:last-child { border-block-end: 0; }
+  .prow__label { min-inline-size: 0; font-size: var(--fs-label); overflow-wrap: anywhere; }
+  /* The controller's own name for the setting. Deliberately quieter than the
+     label, but it is still text the person is asked to read, so it grows with
+     the size they published instead of staying at 11 px forever (ACC-03). */
+  .prow__id { color: var(--t3); font-size: calc(11px * var(--ui-scale)); font-variant-numeric: tabular-nums; min-inline-size: 0; overflow-wrap: anywhere; }
+  .prow__control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    overflow-x: clip;
+  }
+  .prow__full { grid-column: 1 / -1; }
+  .prow[data-overridden='true'] .prow__label::after {
+    content: ' •';
+    color: var(--warn);
+  }
+
+  /* Below a readable two-column width the label takes its own line. Asked of
+     the row's own container, so the narrow desktop panel gets the same
+     treatment as a narrow window; the viewport rule stays as the answer for an
+     engine without container queries. */
+  @container (width <= 420px) {
+    .prow { grid-template-columns: minmax(0, 1fr); }
+    .prow__control { justify-content: flex-start; }
+  }
+
+  @media (width <= 420px) {
+    .prow { grid-template-columns: minmax(0, 1fr); }
+    .prow__control { justify-content: flex-start; }
+  }
+
+  /* ------------------------------------------------------------- materials */
+
+  .mrow {
+    display: grid;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid var(--ln);
+    border-radius: var(--r1);
+    background: var(--b2);
+  }
+  .mrow[data-selected='true'] { border-color: var(--accent); background: var(--b3); }
+  .mrow[data-selected='true'] .mrow__name::after { content: ' — đang chọn'; color: var(--accent-text); font-size: var(--fs-small); }
+  .mrow__top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mrow__bottom { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mrow__name { flex: 1 1 110px; min-inline-size: 0; font-size: var(--fs-label); overflow-wrap: anywhere; }
+  .mrow__pct { color: var(--t2); font-size: var(--fs-small); font-variant-numeric: tabular-nums; }
+  .mrow__note { flex-basis: 100%; color: var(--t2); font-size: var(--fs-small); }
+
+  .swatch {
+    position: relative;
+    inline-size: var(--swatch);
+    block-size: var(--swatch);
+    min-inline-size: var(--swatch);
+    padding: 0;
+    border: 1px solid var(--ln-control);
+    border-radius: var(--r1);
+    overflow: visible; /* focus ring must not be clipped */
+    background: none;
+  }
+  .swatch input[type='color'] {
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: calc(var(--r1) - 1px);
+    background: none;
+    cursor: pointer;
+  }
+  @media (pointer: coarse) { .swatch { inline-size: 40px; block-size: 40px; min-inline-size: 40px; } }
+
+  .slot-select { inline-size: var(--slot-w); flex: none; }
+
+  .slot-clash {
+    margin-block-start: 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--warn);
+    border-radius: var(--r1);
+    background: rgb(255 181 69 / 0.08);
+    color: var(--t1);
+    font-size: var(--fs-small);
+  }
+  .slot-clash__title { color: var(--warn); font-weight: 650; }
+
+  /* ----------------------------------------------------------------- chips */
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border: 1px solid var(--ln2);
+    border-radius: 999px;
+    background: var(--b3);
+    color: var(--t1);
+    font-size: var(--fs-small);
+    line-height: 1.35;
+    /* nowrap was right for a two-word verdict and wrong for a published
+       prerequisite sentence at 320 px with the interface text doubled. */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-inline-size: 100%;
+    min-inline-size: 0;
+  }
+  .chip--muted { color: var(--t2); background: var(--b2); }
+  .chip--ok { border-color: var(--ok); color: var(--ok); background: rgb(57 208 160 / 0.1); }
+  .chip--warn { border-color: var(--warn); color: var(--warn); background: rgb(255 181 69 / 0.1); }
+  .chip--err { border-color: var(--err); color: var(--err); background: rgb(255 107 107 / 0.1); }
+  .chip--glass { background: var(--glass-solid); border-color: var(--ln2); }
+  @supports (backdrop-filter: blur(2px)) {
+    .chip--glass { background: var(--glass); backdrop-filter: blur(4px); }
+  }
+
+  .chip button.chip__x {
+    all: unset;
+    cursor: pointer;
+    min-inline-size: 20px;
+    min-block-size: 20px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+  }
+  /* `all: unset` also removes the focus outline, so it is put back here. */
+  .chip button.chip__x:focus-visible {
+    box-shadow: var(--focus-ring);
+    outline: none;
+  }
+
+  /* --------------------------------------------------------------- surface */
+
+  .card {
+    border: 1px solid var(--ln);
+    border-radius: var(--r2);
+    background: var(--b2);
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    overflow-x: clip;
+  }
+  .card--glass { background: var(--glass-solid); border-color: var(--ln2); }
+  @supports (backdrop-filter: blur(2px)) {
+    .card--glass { background: var(--glass); backdrop-filter: blur(6px); }
+  }
+  .card__title { font-size: var(--fs-head); font-weight: 650; }
+  .muted { color: var(--t2); font-size: var(--fs-small); }
+  .muted-3 { color: var(--t3); font-size: var(--fs-small); }
+  .stack { display: grid; gap: 8px; align-content: start; min-inline-size: 0; max-inline-size: 100%; overflow-x: clip; }
+  .row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-inline-size: 0; max-inline-size: 100%; }
+  .row--end { justify-content: flex-end; }
+  .grow { flex: 1 1 auto; min-inline-size: 0; }
+
+  .empty {
+    display: grid;
+    gap: 10px;
+    justify-items: start;
+    padding: 14px;
+    border: 1px dashed var(--ln2);
+    border-radius: var(--r2);
+    background: var(--b2);
+  }
+  .empty__title { font-weight: 650; }
+
+  /* --------------------------------------------------------------- toolbar */
+
+  .toolbar {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    padding: 4px;
+    border: 1px solid var(--ln2);
+    border-radius: var(--r2);
+    background: var(--glass-solid);
+  }
+  @supports (backdrop-filter: blur(2px)) {
+    .toolbar { background: var(--glass); backdrop-filter: blur(6px); }
+  }
+
+  .tool {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-inline-size: 34px;
+    min-block-size: 34px;
+    padding: 4px 6px;
+    border: 1px solid transparent;
+    border-radius: var(--r1);
+    background: none;
+    color: var(--t2);
+    font-size: var(--fs-small);
+  }
+  .tool:hover:not(:disabled) { background: var(--b3); color: var(--t1); }
+  .tool[aria-checked='true'],
+  .tool[aria-pressed='true'] {
+    background: var(--b4);
+    border-color: var(--accent);
+    color: var(--t1);
+  }
+  /* Selection is never colour-only: the checked tool also carries a bar. */
+  .tool[aria-checked='true']::after,
+  .tool[aria-pressed='true']::after {
+    content: '';
+    position: absolute;
+    inset-inline: 6px;
+    inset-block-end: 2px;
+    block-size: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .tool:disabled,
+  .tool[aria-disabled='true'] {
+    color: var(--t3);
+    border-style: dashed;
+    border-color: var(--ln);
+    cursor: not-allowed;
+  }
+  .tool[aria-disabled='true']:hover { background: none; color: var(--t3); }
+  .swatch[aria-disabled='true'] { cursor: not-allowed; opacity: 0.75; border-style: dashed; }
+  @media (pointer: coarse) { .tool { min-inline-size: 44px; min-block-size: 44px; } }
+
+  /* ----------------------------------------------------------------- emoji */
+
+  .emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--emoji-cols, 9), minmax(0, 1fr));
+    gap: 4px;
+    block-size: 190px;
+    /* Containing block for its own absolutely positioned descendants, so the
+       grid clips them instead of leaking their height onto an ancestor. */
+    position: relative;
+    overflow-y: auto;
+    padding: 4px;
+    border: 1px solid var(--ln);
+    border-radius: var(--r1);
+    background: var(--b2);
+    overscroll-behavior: contain;
+  }
+  @media (width <= 1400px) { .emoji-grid { --emoji-cols: 7; } }
+  @media (width <= 1023px) { .emoji-grid { --emoji-cols: 6; } }
+  @media (width <= 420px) { .emoji-grid { --emoji-cols: 5; } }
+
+  .emoji-cell {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    min-inline-size: 32px;
+    min-block-size: 32px;
+    border: 1px solid transparent;
+    border-radius: var(--r1);
+    background: none;
+    padding: 2px;
+    cursor: pointer;
+  }
+  .emoji-cell img { inline-size: 100%; block-size: 100%; object-fit: contain; }
+  .emoji-cell[aria-selected='true'] { border-color: var(--accent); background: var(--b4); }
+  .emoji-cell:hover { background: var(--b3); }
+  .emoji-cell[data-hardprint='true'] { opacity: 0.55; }
+  .emoji-cell[data-hardprint='true']::after {
+    content: '!';
+    position: absolute;
+    color: var(--warn);
+  }
+  .emoji-grid__group {
+    grid-column: 1 / -1;
+    padding: 4px 2px 2px;
+    color: var(--t2);
+    font-size: var(--fs-small);
+    position: sticky;
+    inset-block-start: -4px;
+    background: var(--b2);
+  }
+
+  /* ---------------------------------------------------------------- dialog */
+
+  .dialog-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-search);
+    display: grid;
+    background: rgb(4 6 10 / 0.6);
+    padding: 16px;
+    overflow: auto;
+  }
+  .dialog-backdrop--center { place-items: center; }
+  .dialog-backdrop--search { align-content: start; justify-items: center; padding-block-start: 11vh; }
+
+  .dialog {
+    inline-size: min(560px, 100%);
+    max-block-size: calc(100dvh - 32px);
+    display: flex;
+    flex-direction: column;
+    background: var(--b1);
+    border: 1px solid var(--ln2);
+    border-radius: var(--r3);
+    box-shadow: 0 24px 60px rgb(0 0 0 / 0.55);
+  }
+  .dialog--wide { inline-size: min(760px, 100%); }
+  .dialog--search { inline-size: min(680px, 100%); }
+  .dialog__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-block-end: 1px solid var(--ln);
+    flex-wrap: wrap;
+  }
+  .dialog__title { flex: 1 1 200px; font-size: var(--fs-title); font-weight: 650; margin: 0; }
+  .dialog__body { padding: 14px; position: relative; overflow: auto; display: grid; gap: 12px; align-content: start; }
+  .dialog__foot {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 12px 14px;
+    border-block-start: 1px solid var(--ln);
+    flex-wrap: wrap;
+  }
+
+  @media (width <= 720px) {
+    .dialog-backdrop { padding: 8px; }
+    .dialog-backdrop--search { padding-block-start: 8px; }
+    .dialog { max-block-size: calc(100dvh - 16px); }
+  }
+
+  /* ----------------------------------------------------------------- popup */
+
+  .popup {
+    position: fixed;
+    z-index: var(--z-popup);
+    inline-size: clamp(238px, 24vw, 300px);
+    max-block-size: 78dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--b1);
+    border: 1px solid var(--ln2);
+    border-radius: var(--r3);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.5);
+  }
+  .popup__head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-block-end: 1px solid var(--ln);
+    cursor: grab;
+    touch-action: none;
+  }
+  .popup__title { flex: 1 1 auto; font-size: var(--fs-label); font-weight: 650; min-inline-size: 0; }
+  .popup__body { padding: 10px; overflow: auto; display: grid; gap: 10px; align-content: start; }
+  /* Prose stays prose: never split paragraphs into flex columns (UI-05). */
+  .popup__prose { display: block; color: var(--t2); font-size: var(--fs-small); }
+  .popup__prose p { margin: 0 0 6px; }
+
+  @media (width <= 720px) {
+    .popup {
+      inset: 8px;
+      inline-size: auto;
+      max-block-size: none;
+    }
+    .popup__head { cursor: default; }
+  }
+
+  /* ----------------------------------------------------------------- toast */
+
+  .toasts {
+    position: fixed;
+    inset-block-end: calc(12px + env(safe-area-inset-bottom));
+    inset-inline-end: 12px;
+    z-index: var(--z-toast);
+    display: grid;
+    gap: 8px;
+    justify-items: end;
+    max-inline-size: min(380px, calc(100vw - 24px));
+  }
+  .toast {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 9px 11px;
+    border: 1px solid var(--ln2);
+    border-radius: var(--r2);
+    background: var(--b3);
+    color: var(--t1);
+    font-size: var(--fs-small);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.45);
+  }
+  .toast--success { border-color: var(--ok); }
+  .toast--warning { border-color: var(--warn); }
+  .toast--error { border-color: var(--err); }
+  .toast__icon { flex: none; }
+  .toast__text { flex: 1 1 auto; min-inline-size: 0; overflow-wrap: anywhere; }
+
+  /* --------------------------------------------------------------- tooltip */
+
+  .tip-wrap { position: relative; display: inline-flex; }
+  .tip {
+    position: absolute;
+    z-index: var(--z-tooltip);
+    inset-block-end: calc(100% + 6px);
+    inset-inline-start: 0;
+    inline-size: max-content;
+    max-inline-size: 260px;
+    padding: 6px 8px;
+    border: 1px solid var(--ln2);
+    border-radius: var(--r1);
+    background: var(--b4);
+    color: var(--t1);
+    font-size: var(--fs-small);
+    pointer-events: none;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.4);
+  }
+
+  /* ---------------------------------------------------------- quick search */
+
+  .qs__input { font-size: var(--fs-head); min-block-size: 42px; }
+  .qs__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; max-block-size: 52dvh; position: relative; overflow: auto; }
+  .qs__group { padding: 8px 6px 2px; color: var(--t2); font-size: var(--fs-small); }
+  .qs__opt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: var(--r1);
+    border: 1px solid transparent;
+    min-block-size: var(--target-min);
+    cursor: pointer;
+  }
+  .qs__opt[aria-selected='true'] { background: var(--b3); border-color: var(--accent); }
+  .qs__opt[aria-disabled='true'] { color: var(--t2); cursor: not-allowed; }
+  .qs__opt-name { flex: 1 1 auto; min-inline-size: 0; overflow-wrap: anywhere; }
+  .qs__opt-value { color: var(--t2); font-size: var(--fs-small); font-variant-numeric: tabular-nums; }
+
+  /* ------------------------------------------------------------ progress */
+
+  .progress {
+    inline-size: 100%;
+    block-size: 8px;
+    border-radius: 4px;
+    background: var(--b4);
+    overflow: hidden;
+    border: 1px solid var(--ln);
+  }
+  .progress__bar { block-size: 100%; background: var(--accent); transition: inline-size var(--dur-slow) var(--ease); }
+  .progress__bar--indeterminate {
+    inline-size: 34%;
+    animation: progress-slide 1.1s var(--ease) infinite alternate;
+  }
+  @keyframes progress-slide {
+    from { transform: translateX(-15%); }
+    to { transform: translateX(215%); }
+  }
+  /* Reduced motion turns the shimmer into a static, text-backed state. */
+  @media (prefers-reduced-motion: reduce) {
+    .progress__bar--indeterminate { animation: none; inline-size: 100%; opacity: 0.55; }
+  }
+
+  /* ------------------------------------------------------------ diagnostics */
+
+  .diag {
+    display: grid;
+    gap: 4px;
+    padding: 8px 10px;
+    border: 1px solid var(--ln2);
+    border-inline-start-width: 3px;
+    border-radius: var(--r1);
+    background: var(--b2);
+    font-size: var(--fs-small);
+  }
+  .diag--info { border-inline-start-color: var(--accent); }
+  .diag--warning { border-inline-start-color: var(--warn); }
+  .diag--error { border-inline-start-color: var(--err); }
+  .diag__head { display: flex; gap: 6px; align-items: baseline; flex-wrap: wrap; }
+  .diag__sev { font-weight: 650; }
+  .diag--info .diag__sev { color: var(--accent-text); }
+  .diag--warning .diag__sev { color: var(--warn); }
+  .diag--error .diag__sev { color: var(--err); }
+  .diag__code { color: var(--t2); font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; font-size: 11px; }
+  .diag__msg { color: var(--t1); overflow-wrap: anywhere; }
+  .diag__detail { color: var(--t2); overflow-wrap: anywhere; }
+
+  /* ---------------------------------------------------------------- misc */
+
+  .kbd {
+    display: inline-block;
+    padding: 0 5px;
+    border: 1px solid var(--ln2);
+    border-block-end-width: 2px;
+    border-radius: 5px;
+    background: var(--b3);
+    color: var(--t1);
+    font-size: 11px;
+    line-height: 17px;
+    font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  }
+
+  .list-reset { list-style: none; margin: 0; padding: 0; min-inline-size: 0; max-inline-size: 100%; }
+
+  .scroll-y { overflow-y: auto; overscroll-behavior: contain; }
+
+  .divider { block-size: 1px; background: var(--ln); }
+
+  .code-block {
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--ln);
+    border-radius: var(--r1);
+    background: var(--b0);
+    color: var(--t2);
+    font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    font-size: 11.5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  /* Export settings and result records (UI-C10).
+     A file name, a hash and a core warning are all text this interface does not
+     get to shorten, so every one of them has to be able to wrap. `.chip` is
+     nowrap by default, which is right for a two-word label and wrong for a
+     format id at 320 px with the interface text doubled. */
+  .export-chips {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    min-inline-size: 0;
+  }
+
+  .export-chips .chip,
+  .export-chips .diag__code {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-inline-size: 0;
+  }
+
+  .export-name {
+    font-weight: 650;
+    overflow-wrap: anywhere;
+    min-inline-size: 0;
+  }
+
+  .export-hash {
+    font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    /* A hash is checked character by character against another screen, so it is
+       the last text that should be pinned below the published size (ACC-03). */
+    font-size: calc(11px * var(--ui-scale));
+    /* Unitless, so the lines of a wrapped hash keep their spacing when the text
+       grows instead of running into each other. */
+    line-height: 1.45;
+    color: var(--t2);
+    overflow-wrap: anywhere;
+    word-break: break-all;
+    min-inline-size: 0;
+  }
+
+  .export-warn {
+    color: var(--warn);
+    font-size: var(--fs-small);
+    overflow-wrap: anywhere;
+    min-inline-size: 0;
+  }
+
+  /* A byte count and an ISO timestamp are one long unbreakable token each, so
+     this line has to be allowed to break inside them the way the hash is. */
+  .export-meta {
+    color: var(--t3);
+    font-size: var(--fs-small);
+    overflow-wrap: anywhere;
+    min-inline-size: 0;
+  }
+
+  /* Personal printer profiles (UI-C11).
+
+     The wrapping classes above already carry the right behaviour for a name, a
+     hash and a core warning, so a profile row reuses them and adds these names
+     alongside for readable markup. The rules here are the ones the export block
+     has no equivalent for: a label/value list that stays two-column while there
+     is room and folds to one at 320 px with the interface text doubled. */
+  .profile-facts {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    margin: 0;
+    min-inline-size: 0;
+  }
+
+  .profile-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-inline-size: 0;
+  }
+
+  /* Two aligned columns once there is room for them.
+     This block has to come *after* the single-column rule above: the two
+     selectors have the same specificity, a media query adds none, and with the
+     pair in the other order the two-column layout never took effect at all.
+     The value column keeps a floor so a long label cannot squeeze a nozzle
+     list or a hash into a vertical stack, the same rule .prow follows. */
+  @media (width > 720px) {
+    .profile-facts { grid-template-columns: minmax(0, max-content) minmax(min(100%, 16ch), 1fr); }
+    .profile-fact { display: contents; }
+  }
+
+  .profile-facts dt {
+    margin: 0;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .profile-facts dd {
+    margin: 0;
+    min-inline-size: 0;
+  }
+
+  .profile-colours {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 10px;
+    min-inline-size: 0;
+  }
+
+  .profile-colour {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .profile-swatch {
+    inline-size: 12px;
+    block-size: 12px;
+    flex: none;
+    border-radius: 3px;
+    border: 1px solid var(--ln);
+  }
+
+  @media (forced-colors: active) {
+    /* The colour itself is not conveyed in forced-colors mode, and the raw
+       string next to it is what carries the information anyway. */
+    .profile-swatch { forced-color-adjust: none; }
+  }
+}

@@ -1,0 +1,774 @@
+/*
+ * Layout — UI-01, UI-03, UI-06.
+ * Mobile-first. Every breakpoint uses range syntax so a viewport that lands
+ * exactly on 720 / 1023 / 1180 / 1400 matches one rule and only one rule.
+ */
+
+@layer layout {
+  /* ---------------------------------------------------------------- shell */
+
+  /* Fills whatever box the host gives it. The demo shell provides that box;
+     an embedder must do the same (see mountApp in src/ui/index.tsx).
+     `block-size: 100%` is what makes the middle row definite: without it the
+     1fr row resolves against its own content, the panel body never reaches its
+     own scrollbar and the whole shell grows past the viewport, taking the top
+     bar and the stage with it (UI-01 "thân cuộn", UI-06 200% text).
+     `min-block-size` keeps the fallback for a host whose height is auto. */
+  .app {
+    display: grid;
+    block-size: 100%;
+    min-block-size: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    /* max-content, not auto: with a definite shell height an `auto` row is
+       frozen at its min-content size when space runs short, and at 320 CSS px
+       with 200% text that silently squeezes the header so the account menu and
+       the next-step button end up painted under the stage. A max-content row
+       keeps its content and lets the shell overflow its host instead, which is
+       what the host's own scrollbar is for (UI-06). */
+    grid-template-rows: max-content minmax(220px, 1fr) max-content max-content;
+    grid-template-areas:
+      'top'
+      'stage'
+      'next'
+      'tabs';
+    background: var(--b0);
+  }
+
+  /* Nothing above the shell may create a containing block for the fixed
+     overlays (dialogs, drawer, toasts): no transform, filter or clip here. */
+  .app[inert] { pointer-events: none; }
+
+  .app__top { grid-area: top; }
+  .app__rail { grid-area: rail; }
+  .app__panel { grid-area: panel; }
+  .app__stage { grid-area: stage; }
+  .app__next { grid-area: next; }
+  .app__tabs { grid-area: tabs; }
+
+  /* ---------------------------------------------------------------- topbar */
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: var(--topbar-h);
+    padding: 6px 10px;
+    padding-inline-start: max(10px, env(safe-area-inset-left));
+    padding-inline-end: max(10px, env(safe-area-inset-right));
+    background: var(--b1);
+    border-bottom: 1px solid var(--ln);
+    flex-wrap: wrap;
+  }
+
+  .topbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .topbar__mark {
+    display: grid;
+    place-items: center;
+    inline-size: 30px;
+    block-size: 30px;
+    border-radius: var(--r1);
+    background: linear-gradient(135deg, #3f6fe0, #6c4ce0);
+    color: #fff;
+    font-weight: 700;
+    flex: none;
+  }
+
+  .topbar__names { display: grid; min-width: 0; }
+  .topbar__name { font-size: var(--fs-head); font-weight: 650; line-height: 1.2; }
+  .topbar__sub { color: var(--t2); font-size: var(--fs-small); line-height: 1.2; }
+
+  .topbar__steps {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* At 320 CSS px with the interface text at 200% the two step buttons no
+       longer fit side by side; they wrap and each one wraps its own label
+       rather than pushing the header wider than the viewport (UI-06). */
+    flex-wrap: wrap;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+  .topbar__steps > li { min-inline-size: 0; max-inline-size: 100%; }
+  .topbar__spacer { flex: 1 1 12px; min-width: 0; }
+  .topbar__tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-inline-size: 0; max-inline-size: 100%; }
+
+  /* Long labels inside a header control wrap instead of forcing a scrollbar. */
+  .topbar__steps .btn,
+  .topbar__tools .btn {
+    max-inline-size: 100%;
+    flex-wrap: wrap;
+  }
+  .topbar__steps .btn > span,
+  .topbar__tools .btn > span {
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  /* > 1400: brand subtitle visible. At or below it is hidden (UI-06). */
+  .topbar__sub { display: none; }
+  @media (width > 1400px) {
+    .topbar__sub { display: block; }
+  }
+
+  /* ------------------------------------------------------------------ rail */
+
+  .rail {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    inline-size: var(--rail-w);
+    padding: 6px 4px;
+    background: var(--b1);
+    border-inline-end: 1px solid var(--ln);
+    overflow-y: auto;
+    padding-inline-start: max(4px, env(safe-area-inset-left));
+  }
+
+  .rail__item {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    padding: 7px 2px;
+    min-block-size: 56px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--r2);
+    color: var(--t2);
+    text-align: center;
+  }
+
+  .rail__item:hover:not(:disabled) { background: var(--b2); color: var(--t1); }
+
+  .rail__item[aria-selected='true'] {
+    background: var(--b3);
+    color: var(--t1);
+    border-color: var(--ln2);
+  }
+
+  /* 3 px marker for the selected section (UI-01). */
+  .rail__item[aria-selected='true']::before {
+    content: '';
+    position: absolute;
+    inset-block: 8px;
+    inset-inline-start: -4px;
+    inline-size: 3px;
+    border-radius: 2px;
+    background: var(--section-color, var(--accent));
+  }
+
+  /* Disabled uses aria-disabled so the reason stays reachable; opacity alone
+     would change the look without changing the meaning (UI-04). */
+  .rail__item[aria-disabled='true'],
+  .mobiletabs__item[aria-disabled='true'] {
+    color: var(--t3);
+    border-style: dashed;
+    border-color: var(--ln);
+    opacity: 1;
+  }
+  .rail__item[aria-disabled='true']:hover,
+  .mobiletabs__item[aria-disabled='true']:hover {
+    background: none;
+    color: var(--t3);
+    cursor: not-allowed;
+  }
+  .rail__icon { font-size: 18px; line-height: 1; }
+  .rail__label { font-size: var(--fs-small); line-height: 1.15; overflow-wrap: anywhere; }
+
+  .rail__badge {
+    position: absolute;
+    inset-block-start: 3px;
+    inset-inline-end: 5px;
+    min-inline-size: 18px;
+    padding: 0 4px;
+    border-radius: 9px;
+    background: var(--b4);
+    border: 1px solid var(--ln2);
+    color: var(--t1);
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  /* ----------------------------------------------------------------- panel */
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+    background: var(--b1);
+    border-inline-end: 1px solid var(--ln);
+    overflow: hidden;
+  }
+
+  .panel__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-wrap: wrap; /* no hardcoded height: header wraps with the font */
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--ln);
+    background: var(--b2);
+  }
+
+  .panel__titles { display: grid; gap: 2px; min-inline-size: 0; flex: 1 1 180px; }
+  .panel__title { font-size: var(--fs-head); font-weight: 650; line-height: 1.2; }
+  .panel__title::before {
+    content: '';
+    display: inline-block;
+    inline-size: 10px;
+    block-size: 10px;
+    margin-inline-end: 7px;
+    border-radius: 3px;
+    background: var(--section-color, var(--accent));
+    vertical-align: baseline;
+  }
+  .panel__sub { color: var(--t2); font-size: var(--fs-small); line-height: 1.3; }
+  .panel__widgets { display: flex; gap: 6px; flex-wrap: wrap; }
+
+  .panel__body {
+    flex: 1 1 auto;
+    min-block-size: 0;
+    /* A scroller only clips descendants it is the containing block for. The
+       visually-hidden labels in this panel are absolutely positioned, so
+       without this they escape the scroller, land on the nearest positioned
+       ancestor and give the host a phantom 3000px of scrollable height. */
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 12px;
+    display: grid;
+    align-content: start;
+    gap: 12px;
+  }
+
+  .panel__sticky {
+    position: sticky;
+    inset-block-start: -12px;
+    z-index: var(--z-label);
+    margin: -12px -12px 0;
+    padding: 12px;
+    background: var(--b1);
+    border-bottom: 1px solid var(--ln);
+  }
+
+  /* Collapse tab: 18x44 drawn, >= 24x44 hit target, no overlap with the rail. */
+  .panel-tab {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    translate: 0 -50%;
+    z-index: var(--z-panel-tab);
+    display: grid;
+    place-items: center;
+    inline-size: 26px;
+    block-size: var(--tab-h);
+    padding: 0;
+    background: var(--b3);
+    border: 1px solid var(--ln2);
+    border-radius: 0 var(--r2) var(--r2) 0;
+    color: var(--t2);
+  }
+  .panel-tab:hover { color: var(--t1); background: var(--b4); }
+  .panel-tab__glyph { inline-size: 18px; text-align: center; }
+
+  /* --------------------------------------------------------------- backdrop */
+
+  /* Desktop keeps the backdrop fully out of the grid (UI-01). */
+  .backdrop { display: none; }
+
+  /* ------------------------------------------------------------------ stage */
+
+  .stage-wrap {
+    position: relative;
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+
+  .stage {
+    position: absolute;
+    inset: var(--stage-gap) var(--stage-gap) 0;
+    border: 1px solid var(--ln);
+    border-radius: var(--r3);
+    background: var(--stage);
+    overflow: hidden;
+    display: grid;
+    /* One row and one column, both exactly the size of the stage. Without the
+       explicit minmax(0, 1fr) the single implicit track is content-sized, and a
+       tall overlay would stretch the drawing surface far past the visible box
+       instead of scrolling inside it. */
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
+    isolation: isolate; /* the documented stacking context for all overlays */
+  }
+
+  .stage__viewport {
+    grid-area: 1 / 1;
+    min-inline-size: 0;
+    min-block-size: 0;
+  }
+
+  .stage__viewport[data-mode='2d'] {
+    background-color: #ffffff;
+    background-image:
+      linear-gradient(45deg, #d7dde6 25%, transparent 25%),
+      linear-gradient(-45deg, #d7dde6 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #d7dde6 75%),
+      linear-gradient(-45deg, transparent 75%, #d7dde6 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  }
+  .stage__viewport[data-mode='2d'][data-checker='off'] { background-image: none; }
+  .stage__viewport[data-mode='3d'] { background: var(--canvas); }
+
+  /* ------------------------------------------------------- source canvas */
+
+  /* The 2D canvas of step 1 belongs to the interface; the 3D host next to it
+     is the element the bridge attaches its own renderer to. */
+  .srccanvas {
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
+
+  /* Taken out of flow on purpose. A <canvas> whose CSS height cannot resolve
+     falls back to its *attribute* height, and this component derives that
+     attribute from the measured box — in flow that is a feedback loop, and a
+     narrow viewport at 200% text grows the stage without bound. Out of flow the
+     canvas is sized by its containing block and can never grow it. */
+  .srccanvas__surface {
+    position: absolute;
+    inset: 0;
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    /* Pointer capture only works when the browser stops panning the page. */
+    touch-action: none;
+    /* The bitmap is the content: forced colours must not repaint it. */
+    forced-color-adjust: none;
+  }
+
+  /* The canvas fills a clipping box, so the shared box-shadow ring would be cut
+     off. An inset outline is drawn inside the same box instead. */
+  .srccanvas__surface:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+    box-shadow: none;
+  }
+  @media (forced-colors: active) {
+    .srccanvas__surface:focus-visible { outline-color: Highlight; }
+  }
+
+  .srccanvas__readout {
+    position: absolute;
+    inset-block-end: 8px;
+    inset-inline-start: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-inline-size: calc(100% - 16px);
+    pointer-events: none;
+    z-index: var(--z-label);
+  }
+
+  /* The banner shares the top-left corner with the readout strip of the layer
+     above it, and it carries the one control that makes a vector source
+     editable — so it has to win that overlap, not lose it silently. */
+  .srccanvas__banner {
+    position: absolute;
+    inset-block-start: 8px;
+    inset-inline-start: 8px;
+    max-inline-size: min(360px, calc(100% - 16px));
+    z-index: var(--z-warning);
+  }
+
+  /* The backdrop dims the drawing surface, and that is *all* it does. It takes
+     no pointer events and carries no z-index of its own, so it can neither
+     swallow a click aimed at a control on the layer above nor paint over one:
+     the warning banner, the stage bands and the tool bar all keep their own
+     stacking and stay both visible and clickable while it is showing.
+
+     No z-index here on purpose. Giving the container one would make it a
+     stacking context and trap the card below every band, which is exactly the
+     dead end this replaces. */
+  .srccanvas__notice {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    overflow: hidden;
+    background: var(--glass-solid);
+    pointer-events: none;
+  }
+
+  /* The card states the fact and nothing else — every control that answers it
+     is laid out in the stage band below — so it neither takes pointer events
+     nor rises above anything. */
+  .srccanvas__notice-card {
+    max-inline-size: 460px;
+    max-block-size: 100%;
+    overflow: hidden;
+  }
+
+  .stage__layer {
+    grid-area: 1 / 1;
+    position: relative;
+    pointer-events: none;
+    padding: 10px;
+    display: grid;
+    /* Four tracks. The first is the disclosure bar and is plain `auto`, so it is
+       never compressed below its content: it is the way back to anything the
+       user folded, and it must survive whatever the bands do. The two bands may
+       shrink below their content (min 0) and scroll inside themselves, and the
+       middle keeps at least a fifth of the stage. Without the explicit minimum a
+       tall toolbar at 200% text squeezes the other band to zero and covers the
+       whole drawing surface. */
+    grid-template-rows: auto minmax(0, auto) minmax(20%, 1fr) minmax(0, auto);
+    gap: 10px;
+    min-block-size: 0;
+  }
+
+  /* Folding every band buys the canvas the whole layer minus the bar; the
+     tighter gap keeps that win from being spent on empty tracks. */
+  .stage__layer[data-bands='collapsed'] { gap: 6px; }
+
+  .stage__bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    z-index: var(--z-corner);
+  }
+
+  /* Below 720 px the labels would wrap the bar onto three rows at 200% text,
+     and the bar is the row that must never grow. The icon and the accessible
+     name carry it there. */
+  @media (width <= 720px) {
+    .stage__bar-label {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+
+  .stage__layer > * { pointer-events: auto; }
+  /* The middle row is a spacer. Without this it would swallow every pointer
+     event aimed at the viewport underneath it. */
+  .stage__layer > .stage__spacer { pointer-events: none; }
+
+  .stage__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px; /* >= 12 px between readouts and the toolbar (UI-03) */
+    pointer-events: none;
+  }
+  .stage__top > * { pointer-events: auto; }
+
+  .stage__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    pointer-events: none;
+  }
+  .stage__bottom > * { pointer-events: auto; }
+
+  .stage__bottom-left { display: grid; gap: 8px; justify-items: start; min-inline-size: 0; }
+
+  /* At or below 1180 the toolbar drops under the readout strip (UI-03). */
+  @media (width <= 1180px) {
+    .stage__top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  /* The overlays float on top of the drawing surface of step 1, so each band is
+     capped and scrolls inside itself: nothing is clipped out of reach, and the
+     middle of the stage always stays canvas. The caps tighten where the bands
+     stack, because there they compete for the same short column. */
+  .stage__top,
+  .stage__bottom {
+    min-block-size: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+
+  .readouts {
+    z-index: var(--z-readout);
+    display: flex;
+    flex-wrap: wrap; /* wraps instead of scrolling: nothing is hidden */
+    gap: 6px;
+    max-inline-size: 100%;
+  }
+
+  /* A readout chip carries a whole measurement, so at 200% text it is wider than
+     a 320 px stage. The global `nowrap` is right for single-value chips but here
+     it turns the band into a horizontal scroller no keyboard can reach. */
+  .readouts .chip,
+  .srccanvas__readout .chip {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .stage-hints { z-index: var(--z-readout); }
+  .stage-tools { z-index: var(--z-ruler); }
+  .stage-corner { z-index: var(--z-corner); }
+  .stage-warnings { z-index: var(--z-warning); }
+
+  .stage-empty {
+    grid-area: 1 / 1;
+    z-index: var(--z-empty);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: var(--glass-solid);
+    overflow: auto;
+  }
+  @supports (backdrop-filter: blur(2px)) {
+    .stage-empty { background: var(--glass); backdrop-filter: blur(3px); }
+  }
+
+  .stage-busy {
+    grid-area: 1 / 1;
+    z-index: var(--z-busy);
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: rgb(9 13 20 / 0.72);
+    overflow: auto;
+  }
+
+  .stage-busy__card { z-index: var(--z-busy-top); }
+
+  /* Step 1 keeps the edited area visible: a pill, not a full cover. The offset
+     tracks the stage instead of assuming a one-line readout strip, so folding
+     the strip does not leave the pill hanging under an empty edge. */
+  .stage-busy--pill {
+    background: none;
+    place-items: start center;
+    pointer-events: none;
+    padding-block-start: clamp(8px, 12%, 56px);
+  }
+  .stage-busy--pill .stage-busy__card { pointer-events: auto; }
+
+  /* ---------------------------------------------------------------- nextbar */
+
+  .nextbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-block-size: var(--nextbar-h);
+    padding: 8px 10px;
+    background: var(--b1);
+    border-top: 1px solid var(--ln);
+    flex-wrap: wrap; /* long hint text wraps instead of being clipped */
+  }
+
+  .nextbar__hint {
+    flex: 1 1 200px;
+    min-inline-size: 0;
+    color: var(--t2);
+    font-size: var(--fs-small);
+  }
+
+  /* Hints live on the bar above 1180 and inside the stage at or below it. */
+  .nextbar__hint { display: none; }
+  @media (width > 1180px) {
+    .nextbar__hint { display: block; }
+    .stage-hints { display: none; }
+  }
+
+  /* ------------------------------------------------------------ mobile tabs */
+
+  .mobiletabs {
+    display: flex;
+    gap: 2px;
+    padding: 4px 4px calc(4px + env(safe-area-inset-bottom));
+    background: var(--b1);
+    border-top: 1px solid var(--ln);
+    overflow-x: auto;
+  }
+
+  .mobiletabs__item {
+    position: relative;
+    flex: 1 1 0;
+    min-inline-size: 48px;
+    min-block-size: 48px;
+    display: grid;
+    justify-items: center;
+    gap: 2px;
+    padding: 5px 2px;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--r2);
+    color: var(--t2);
+    font-size: 11px;
+  }
+  .mobiletabs__item[aria-selected='true'] {
+    background: var(--b3);
+    color: var(--t1);
+    border-color: var(--ln2);
+  }
+  .mobiletabs__item[aria-selected='true']::after {
+    content: '';
+    position: absolute;
+    inset-inline: 12px;
+    inset-block-end: 2px;
+    block-size: 3px;
+    border-radius: 2px;
+    background: var(--section-color, var(--accent));
+  }
+
+  /* ============================================================= 720 -> up */
+
+  @media (width > 720px) {
+    .app {
+      grid-template-columns: var(--rail-w) minmax(0, 1fr);
+      grid-template-rows: max-content minmax(220px, 1fr) max-content;
+      grid-template-areas:
+        'top top'
+        'rail stage'
+        'rail next';
+    }
+
+    .rail { display: flex; }
+    .app__tabs { display: none; }
+
+    /* 720 < w <= 1023: the panel slides in over the stage cell. It shares that
+       grid area with the stage, so it never adds a column or a row. */
+    .panel {
+      grid-area: stage;
+      justify-self: start;
+      align-self: stretch;
+      inline-size: var(--panel-w);
+      max-inline-size: calc(100% - 8px);
+      z-index: var(--z-drawer);
+      transform: translateX(-105%);
+      visibility: hidden;
+      transition: transform var(--dur-slow) var(--ease), visibility var(--dur-slow) var(--ease);
+      border-inline-end: 1px solid var(--ln2);
+      box-shadow: 12px 0 30px rgb(0 0 0 / 0.4);
+    }
+    .panel[data-open='true'] { transform: none; visibility: visible; }
+
+    .backdrop {
+      display: block;
+      grid-area: stage;
+      z-index: var(--z-backdrop);
+      background: rgb(4 6 10 / 0.55);
+      border: 0;
+      inline-size: 100%;
+      block-size: 100%;
+    }
+  }
+
+  /* ============================================================ 1023 -> up */
+
+  @media (width > 1023px) {
+    .app {
+      grid-template-columns: var(--rail-w) var(--panel-w) minmax(0, 1fr);
+      grid-template-areas:
+        'top top top'
+        'rail panel stage'
+        'rail panel next';
+    }
+
+    .panel {
+      grid-area: panel;
+      justify-self: stretch;
+      inline-size: auto;
+      max-inline-size: none;
+      transform: none;
+      visibility: visible;
+      transition: none;
+      box-shadow: none;
+      border-inline-end: 1px solid var(--ln);
+      z-index: auto;
+    }
+
+    /* Desktop collapse is a width variable, never a hidden grid item. */
+    .app[data-panel-collapsed='true'] { --panel-w: 0px; }
+    .app[data-panel-collapsed='true'] .panel { border-inline-end-width: 0; }
+
+    .backdrop { display: none; }
+  }
+
+  /* ============================================================== <= 720 */
+
+  @media (width <= 720px) {
+    .panel {
+      position: fixed;
+      inset-inline: 0;
+      inset-block-end: 0;
+      block-size: min(56dvh, 470px);
+      z-index: var(--z-drawer);
+      border: 1px solid var(--ln2);
+      border-radius: var(--r4) var(--r4) 0 0;
+      transform: translateY(105%);
+      transition: transform var(--dur-slow) var(--ease);
+      padding-block-end: env(safe-area-inset-bottom);
+      box-shadow: 0 -12px 30px rgb(0 0 0 / 0.45);
+    }
+    .panel[data-open='true'] { transform: none; }
+
+    .backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-backdrop);
+      background: rgb(4 6 10 / 0.55);
+      border: 0;
+      inline-size: 100%;
+    }
+
+    .panel-tab { display: none; }
+    .topbar { gap: 6px; }
+    .topbar__name { font-size: var(--fs-body); }
+  }
+
+  /* Short viewports and on-screen keyboards: the drawer must never eat the
+     whole screen or hide its own close/save row (UI-06). */
+  @media (height <= 520px) and (width <= 720px) {
+    .panel { block-size: min(72dvh, 340px); }
+  }
+
+  @media (height <= 520px) {
+    .rail__item { min-block-size: 46px; padding-block: 4px; }
+    .rail__icon { font-size: 15px; }
+  }
+}
+
+/* The controls this whole arrangement depends on are never the smallest ones on
+   screen. `components` is declared after `layout`, so `.btn--small` would win
+   from there whatever the specificity; the override layer is the one place a
+   layout rule can raise a component's floor. The global compact size is left
+   alone for every other surface. */
+@layer overrides {
+  .stage__bar .btn {
+    min-block-size: 32px;
+    min-inline-size: 32px;
+  }
+  @media (pointer: coarse) {
+    .stage__bar .btn {
+      min-block-size: 44px;
+      min-inline-size: 44px;
+    }
+  }
+}

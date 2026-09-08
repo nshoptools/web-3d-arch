@@ -1,0 +1,4 @@
+{
+  "message": "page.evaluate: Error: ANALYTIC_VOLUME_full-distinct-identities\n    at need (http://127.0.0.1:53885/review/independent-browser-page.mjs:5:37)\n    at Module.run (http://127.0.0.1:53885/review/independent-browser-page.mjs:32:140)\n    at async eval (eval at evaluate (:311:30), <anonymous>:1:10)\n    at async <anonymous>:337:30",
+  "stack": "page.evaluate: Error: ANALYTIC_VOLUME_full-distinct-identities\n    at need (http://127.0.0.1:53885/review/independent-browser-page.mjs:5:37)\n    at Module.run (http://127.0.0.1:53885/review/independent-browser-page.mjs:32:140)\n    at async eval (eval at evaluate (:311:30), <anonymous>:1:10)\n    at async <anonymous>:337:30\n    at D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-mesh-checker-review-r1\\work\\independent-browser-v2.mjs:28:27"
+}

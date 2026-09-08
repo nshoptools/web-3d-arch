@@ -1,0 +1,203 @@
+{
+  "scope": "Only three selected final smoke flows",
+  "artifact": {
+    "version": "product-acceptance-artifact-check/1",
+    "scope": "immutable artifact integrity; no whole-product functional verdict",
+    "input": {
+      "version": "product-acceptance-input/2",
+      "purpose": "whole-product",
+      "id": "final-internal-20260908",
+      "releaseRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal",
+      "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+      "preparedRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal",
+      "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+      "engine": {
+        "canonicalModuleSHA256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828",
+        "derivedModuleSHA256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+        "wasmSHA256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+        "buildReceiptSHA256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17"
+      }
+    },
+    "releaseRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal",
+    "preparedRoot": "D:\\VoSon\\Code\\web-3d-arch\\report\\build\\20260908-internal",
+    "manifestPath": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal\\public-manifest.json",
+    "webroot": "D:\\VoSon\\Code\\web-3d-arch\\report\\release\\20260908-internal\\public",
+    "packageBytes": 374874711,
+    "files": 21647,
+    "publicAssets": 21414,
+    "publicBytes": 360491890,
+    "buildId": "release-289cc2372b8b6c7a48266287ae1e9e38",
+    "preparedFileCount": 512,
+    "canonicalModuleSHA256": "cd92ea536fcdff3f53bed29fc42022229f8e2cd24a942fa87237fa89fed58828",
+    "derivedModuleSHA256": "0fd2608e295add773c399bf5624104392ae27996604dc6b89d28acccfbcae589",
+    "wasmSHA256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+    "buildReceiptSHA256": "2f3b120da8282f537ad511af042bebf3536984bf14cd5d09a41d38e98793ea17",
+    "releaseSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898",
+    "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6"
+  },
+  "results": [
+    {
+      "schema": "whole-product-acceptance-record/1",
+      "id": "SETTINGS-JSON",
+      "engine": "chromium",
+      "requirements": [
+        "WEB-01",
+        "ACC-03",
+        "EXP-02",
+        "STO-01"
+      ],
+      "scope": "Final compiled product; exactly three targeted UI/HTTP/SQLite/Worker/WASM smoke flows. Local signed test identity.",
+      "steps": [
+        "SETTINGS-JSON"
+      ],
+      "expected": "No project required: UI JSON import and download roundtrip equals actual current-account HTTPS/SQLite settings, no credentials exported",
+      "actual": {
+        "settingsRevision": 1,
+        "values": {
+          "language": "vi"
+        },
+        "byteLength": 46,
+        "sha256": "d3fd325e089a40fe65edd942c806276bcfd9b5649b6330d19c01d4e0a0870ef2",
+        "noProject": true,
+        "transport": "actual HTTPS/SQLite; synthetic signed identity only"
+      },
+      "verdict": "pass",
+      "artifact": {
+        "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+        "manifestSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898"
+      },
+      "evidence": [
+        {
+          "path": "SETTINGS-JSON-result.json",
+          "sha256": "564846eea98c35e694800c0f40a3c0332e45445b6638a798cca73c127ace9291",
+          "bytes": 489
+        },
+        {
+          "path": "SETTINGS-JSON-ui.txt",
+          "sha256": "874c67ed56a781797756c6d007c8587619ca5426c792d7a1f85456c12593e58f",
+          "bytes": 11298
+        }
+      ]
+    },
+    {
+      "schema": "whole-product-acceptance-record/1",
+      "id": "ORDINARY-PRODUCT-STL",
+      "engine": "chromium",
+      "requirements": [
+        "WEB-01",
+        "ACC-03",
+        "EXP-02",
+        "STO-01"
+      ],
+      "scope": "Final compiled product; exactly three targeted UI/HTTP/SQLite/Worker/WASM smoke flows. Local signed test identity.",
+      "steps": [
+        "ORDINARY-PRODUCT-STL"
+      ],
+      "expected": "Actual ordinary keychain + SVG goes through compiled Worker/WASM and visible Three model to STL, independent mesh readback and current-revision receipt; explicit consent if proposed",
+      "actual": {
+        "model": {
+          "visibleRevision": 2,
+          "readouts": "Kích thước\n48 × 32 × 3,2 mm\nBộ phận\n3\nTam giác\n1.900\nKiểm mesh\nđã kiểm đạt"
+        },
+        "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+        "revision": 2,
+        "sha256": "ffb7a42dbb036c699e12f67653ac8dca21f3d7061f7529a65837bcbbd60ca810",
+        "byteLength": 95084,
+        "triangles": 1900,
+        "bounds": {
+          "min": [
+            -24,
+            -12.749999046325684,
+            0
+          ],
+          "max": [
+            24,
+            19.249998092651367,
+            3.200000047683716
+          ]
+        },
+        "mesh": {
+          "vertexCount": 950,
+          "faceCount": 1900,
+          "edgeCount": 2850,
+          "euler": 0,
+          "volume": 3752.9201799580555,
+          "area": 3048.157839069353,
+          "caps": {
+            "0": 1253.2167361072793,
+            "2.4000000953674316": 321.716813354897,
+            "3.200000047683716": 931.4999227523803
+          }
+        },
+        "receiptSHA256": "599302d31a1a269dd828a60bdc05893b7975adde43a4fa4839a590d26c800cdb",
+        "conditioning": {
+          "status": "not-proposed"
+        },
+        "projectIdentityBinding": "cross-checked against independent downloaded rescue in RESCUE-ZIP",
+        "qualificationLimit": "No added physical-fit, global-error or self-intersection proof from this independent reader"
+      },
+      "verdict": "pass",
+      "artifact": {
+        "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+        "manifestSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898"
+      },
+      "evidence": [
+        {
+          "path": "ORDINARY-PRODUCT-STL-result.json",
+          "sha256": "0f49b18f9678da1caa2154ee9ec025b5d0606d1ef601376e33b4eb09a7eb6661",
+          "bytes": 1535
+        },
+        {
+          "path": "ORDINARY-PRODUCT-STL-ui.txt",
+          "sha256": "d004f632cf22d4a974a765cf598e2ce7edbf936fdb15b57dd31201f371a7b564",
+          "bytes": 11903
+        }
+      ]
+    },
+    {
+      "schema": "whole-product-acceptance-record/1",
+      "id": "RESCUE-ZIP",
+      "engine": "chromium",
+      "requirements": [
+        "WEB-01",
+        "ACC-03",
+        "EXP-02",
+        "STO-01"
+      ],
+      "scope": "Final compiled product; exactly three targeted UI/HTTP/SQLite/Worker/WASM smoke flows. Local signed test identity.",
+      "steps": [
+        "RESCUE-ZIP"
+      ],
+      "expected": "Actual UI download has coherent selected manifest, complete CRC/size/SHA inventory, original SVG bytes and current project/revision; matches STL receipt when emitted",
+      "actual": {
+        "projectId": "9fb7583b-a4e9-4e2b-8993-8ea984030686",
+        "revision": 2,
+        "selectedManifestHash": "6f4af4458ab2d629669f4f57680f0b318fec1e69d115536e3ef2fe26a84773af",
+        "entries": 8,
+        "sha256": "89d013f2052059d87f737a5ae828bfa3ab0f941acdb043e672c91dc16eb69468",
+        "byteLength": 96373,
+        "originalSHA256": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88",
+        "receiptCrossBound": true,
+        "complete": true,
+        "issues": []
+      },
+      "verdict": "pass",
+      "artifact": {
+        "preparedSHA256": "029689a4e449e5f2137094090050ed3f50f6a9ea34423456df8fc5eeb41494f6",
+        "manifestSHA256": "720e815fbb0b5817b3a3a66918114393b0b60542ff73cd3e8b825d22d279a898"
+      },
+      "evidence": [
+        {
+          "path": "RESCUE-ZIP-result.json",
+          "sha256": "a1f7ecd03c0c6aca92d6594ac7295596d4271eb922676183c58619afa003e839",
+          "bytes": 704
+        },
+        {
+          "path": "RESCUE-ZIP-ui.txt",
+          "sha256": "60fba99affbeea8602bb40ef9fb3d0e0a68eabbbd8baef9d78dff65c2f4befd8",
+          "bytes": 4183
+        }
+      ]
+    }
+  ]
+}

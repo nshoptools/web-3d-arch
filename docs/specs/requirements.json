@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 2,
+  "version": "1.0.1",
+  "date": "2026-09-08",
+  "requirements": [
+    {
+      "id": "FND-01",
+      "title": "Mục đích và phạm vi",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-001"
+      ],
+      "testChecks": [
+        "AT-001.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "FND-02",
+      "title": "Khởi động, khả năng và offline",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-002"
+      ],
+      "testChecks": [
+        "AT-002.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "FND-03",
+      "title": "Luồng hai bước, sáu khu vực",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-001"
+      ],
+      "testChecks": [
+        "AT-001.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "SRC-01",
+      "title": "Nhập raster và SVG",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-003"
+      ],
+      "testChecks": [
+        "AT-003.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "SRC-02",
+      "title": "Chọn và tìm emoji",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-004"
+      ],
+      "testChecks": [
+        "AT-004.1",
+        "AT-004.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "SRC-03",
+      "title": "Tạo ảnh AI",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-005"
+      ],
+      "testChecks": [
+        "AT-005.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "SRC-04",
+      "title": "Chữ và font",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-006"
+      ],
+      "testChecks": [
+        "AT-006.1",
+        "AT-006.2",
+        "AT-006.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "MOD-01",
+      "title": "Loại sản phẩm và mẫu",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-007"
+      ],
+      "testChecks": [
+        "AT-007.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "MOD-02",
+      "title": "Lớp màu, vật liệu và lựa chọn tay",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-008"
+      ],
+      "testChecks": [
+        "AT-008.1",
+        "AT-008.2",
+        "AT-008.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "MOD-03",
+      "title": "Thông số và ràng buộc",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-009"
+      ],
+      "testChecks": [
+        "AT-009.1",
+        "AT-009.2",
+        "AT-009.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EDT-01",
+      "title": "Bảy công cụ 2D và lịch sử",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-010"
+      ],
+      "testChecks": [
+        "AT-010.1",
+        "AT-010.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EDT-02",
+      "title": "Điều hướng 2D và nguồn gốc",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-011"
+      ],
+      "testChecks": [
+        "AT-011.1",
+        "AT-011.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "VIEW-01",
+      "title": "Xem và chỉnh 3D",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-012"
+      ],
+      "testChecks": [
+        "AT-012.1",
+        "AT-012.2",
+        "AT-012.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXP-01",
+      "title": "Bảy đường xuất",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-013"
+      ],
+      "testChecks": [
+        "AT-013.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXP-02",
+      "title": "Cửa chặn, cảnh báo và mức xác minh",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-014"
+      ],
+      "testChecks": [
+        "AT-014.1",
+        "AT-014.2",
+        "AT-014.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "DAT-01",
+      "title": "Dự án, journal và phục hồi",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-015"
+      ],
+      "testChecks": [
+        "AT-015.1",
+        "AT-015.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "DAT-02",
+      "title": "Thư viện, sao lưu và nhập gói",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-016"
+      ],
+      "testChecks": [
+        "AT-016.1",
+        "AT-016.2",
+        "AT-016.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "DAT-03",
+      "title": "Cài đặt, hồ sơ, tìm nhanh và xóa",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-017"
+      ],
+      "testChecks": [
+        "AT-017.1",
+        "AT-017.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "LIM-01",
+      "title": "Giới hạn và dữ liệu quá trần",
+      "document": "docs/specs/01-chuc-nang.md",
+      "testCases": [
+        "AT-018"
+      ],
+      "testChecks": [
+        "AT-018.1",
+        "AT-018.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-01",
+      "title": "Bố cục và sáu khu vực",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-024"
+      ],
+      "testChecks": [
+        "AT-024.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-02",
+      "title": "Token, chữ và chuyển động",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-025"
+      ],
+      "testChecks": [
+        "AT-025.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-03",
+      "title": "Khung thiết kế, lớp phủ và chồng lớp",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-024"
+      ],
+      "testChecks": [
+        "AT-024.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-04",
+      "title": "Điều khiển, bảng màu và emoji",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-025"
+      ],
+      "testChecks": [
+        "AT-025.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-05",
+      "title": "Popup, tìm kiếm, thông báo và phím tắt",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-026"
+      ],
+      "testChecks": [
+        "AT-026.1",
+        "AT-026.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "UI-06",
+      "title": "Responsive và trợ năng",
+      "document": "docs/specs/02-giao-dien.md",
+      "testCases": [
+        "AT-025"
+      ],
+      "testChecks": [
+        "AT-025.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ARC-01",
+      "title": "Kiến trúc và trách nhiệm",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-019",
+        "AT-034"
+      ],
+      "testChecks": [
+        "AT-019.1",
+        "AT-019.2",
+        "AT-034.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "GEO-01",
+      "title": "Hình học chủ và chung biên",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-020"
+      ],
+      "testChecks": [
+        "AT-020.1",
+        "AT-020.2",
+        "AT-020.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "GEO-02",
+      "title": "Đơn vị, sai số và chính sách Z",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-021"
+      ],
+      "testChecks": [
+        "AT-021.1",
+        "AT-021.2",
+        "AT-021.3",
+        "AT-021.4"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "GEO-03",
+      "title": "Cơ khí và hiệu chuẩn",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-022"
+      ],
+      "testChecks": [
+        "AT-022.1",
+        "AT-022.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "GEO-04",
+      "title": "Ghép lưới nhập và mô hình theo lớp",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-040"
+      ],
+      "testChecks": [
+        "AT-040.1",
+        "AT-040.2",
+        "AT-040.3",
+        "AT-040.4",
+        "AT-040.5"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ABI-01",
+      "title": "Dữ liệu qua nhân và vòng đời bộ nhớ",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-023"
+      ],
+      "testChecks": [
+        "AT-023.1",
+        "AT-023.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "VEC-01",
+      "title": "Nhập vector và graph màu",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-003"
+      ],
+      "testChecks": [
+        "AT-003.2",
+        "AT-003.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "WEB-01",
+      "title": "Worker, PWA và cô lập",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-002"
+      ],
+      "testChecks": [
+        "AT-002.1",
+        "AT-002.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "STO-01",
+      "title": "Commit bền và nhiều nơi lưu",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-015"
+      ],
+      "testChecks": [
+        "AT-015.2",
+        "AT-015.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "OUT-01",
+      "title": "Multi-material, lưới và 3MF",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-013"
+      ],
+      "testChecks": [
+        "AT-013.2",
+        "AT-013.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "SEC-01",
+      "title": "Dịch vụ, quyền và nguồn không tin cậy",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-027"
+      ],
+      "testChecks": [
+        "AT-027.1",
+        "AT-027.2",
+        "AT-027.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "LIC-01",
+      "title": "Nguồn, giấy phép và phát hành",
+      "document": "docs/specs/03-ky-thuat.md",
+      "testCases": [
+        "AT-028"
+      ],
+      "testChecks": [
+        "AT-028.1",
+        "AT-028.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "QA-01",
+      "title": "Verdict và mức xác minh",
+      "document": "docs/specs/04-nghiem-thu.md",
+      "testCases": [
+        "AT-039"
+      ],
+      "testChecks": [
+        "AT-039.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "QA-02",
+      "title": "Corpus, oracle và tính độc lập",
+      "document": "docs/specs/04-nghiem-thu.md",
+      "testCases": [
+        "AT-039"
+      ],
+      "testChecks": [
+        "AT-039.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "QA-03",
+      "title": "Các chiến dịch nghiệm thu bắt buộc",
+      "document": "docs/specs/04-nghiem-thu.md",
+      "testCases": [
+        "AT-039"
+      ],
+      "testChecks": [
+        "AT-039.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "QA-04",
+      "title": "Duy trì đặc tả và chứng cứ",
+      "document": "docs/specs/04-nghiem-thu.md",
+      "testCases": [
+        "AT-039"
+      ],
+      "testChecks": [
+        "AT-039.4"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ACC-01",
+      "title": "Nhóm kín và vòng đời thành viên",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-029"
+      ],
+      "testChecks": [
+        "AT-029.1",
+        "AT-029.2",
+        "AT-029.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ACC-02",
+      "title": "Ma trận quyền và sở hữu",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-030"
+      ],
+      "testChecks": [
+        "AT-030.1",
+        "AT-030.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ACC-03",
+      "title": "Phạm vi cài đặt và thứ tự áp dụng",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-007",
+        "AT-030"
+      ],
+      "testChecks": [
+        "AT-007.2",
+        "AT-007.3",
+        "AT-030.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "ACC-04",
+      "title": "Offline, đổi người dùng và vòng đời dữ liệu",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-031"
+      ],
+      "testChecks": [
+        "AT-031.1",
+        "AT-031.2",
+        "AT-031.3",
+        "AT-031.4"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "AI-01",
+      "title": "Từng người tự trả nhà cung cấp",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-005"
+      ],
+      "testChecks": [
+        "AT-005.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "AI-02",
+      "title": "Kho secret và biên tin cậy",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-032"
+      ],
+      "testChecks": [
+        "AT-032.1",
+        "AT-032.2",
+        "AT-032.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "AI-03",
+      "title": "Giao dịch, hạn mức và retry",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-033"
+      ],
+      "testChecks": [
+        "AT-033.1",
+        "AT-033.2",
+        "AT-033.3",
+        "AT-033.4",
+        "AT-033.5"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "AI-04",
+      "title": "Giao diện và nghiệm thu riêng tư",
+      "document": "docs/specs/07-nguoi-dung-va-ai.md",
+      "testCases": [
+        "AT-005"
+      ],
+      "testChecks": [
+        "AT-005.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXT-01",
+      "title": "Module và chiều phụ thuộc",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-034"
+      ],
+      "testChecks": [
+        "AT-034.1",
+        "AT-034.2",
+        "AT-034.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXT-02",
+      "title": "Hợp đồng job và artifact",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-035"
+      ],
+      "testChecks": [
+        "AT-035.1",
+        "AT-035.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXT-03",
+      "title": "Version, migration và sự bền vững của ID",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-036"
+      ],
+      "testChecks": [
+        "AT-036.1",
+        "AT-036.2",
+        "AT-036.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXT-04",
+      "title": "Adapter định dạng, máy in và năng lực",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-034"
+      ],
+      "testChecks": [
+        "AT-034.1"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXP-03",
+      "title": "Hồ sơ bàn in và bố trí vật thật",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-037"
+      ],
+      "testChecks": [
+        "AT-037.1",
+        "AT-037.2",
+        "AT-037.3"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    },
+    {
+      "id": "EXT-05",
+      "title": "Cổng triển khai và phát hành",
+      "document": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "testCases": [
+        "AT-038"
+      ],
+      "testChecks": [
+        "AT-038.1",
+        "AT-038.2"
+      ],
+      "requirementStatus": "baseline",
+      "implementationStatus": "specified",
+      "productVerification": "unverified"
+    }
+  ]
+}

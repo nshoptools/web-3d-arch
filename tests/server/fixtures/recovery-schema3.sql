@@ -1,0 +1,21 @@
+CREATE TABLE users(id TEXT PRIMARY KEY, issuer TEXT NOT NULL, subject TEXT NOT NULL, role TEXT NOT NULL CHECK(role IN ('owner','member')), status TEXT NOT NULL CHECK(status IN ('invited','active','suspended','deleted')), auth_version INTEGER NOT NULL DEFAULT 1, created INTEGER NOT NULL, deleted INTEGER, UNIQUE(issuer,subject));
+        CREATE TABLE invites(id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), token_hash TEXT UNIQUE NOT NULL, expires INTEGER NOT NULL, consumed INTEGER, revoked INTEGER);
+        CREATE TABLE sessions(hash TEXT PRIMARY KEY, public_id TEXT UNIQUE NOT NULL, user_id TEXT NOT NULL REFERENCES users(id), auth_version INTEGER NOT NULL, device_id TEXT NOT NULL, created INTEGER NOT NULL, last_seen INTEGER NOT NULL, reauth_until INTEGER NOT NULL DEFAULT 0);
+        CREATE TABLE policy(id INTEGER PRIMARY KEY CHECK(id=1), version INTEGER NOT NULL, json TEXT NOT NULL);
+        CREATE TABLE settings(user_id TEXT PRIMARY KEY REFERENCES users(id), revision INTEGER NOT NULL, json TEXT NOT NULL, provenance TEXT NOT NULL);
+        CREATE TABLE conflicts(id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), base_revision INTEGER NOT NULL, current_json TEXT NOT NULL, incoming_json TEXT NOT NULL, created INTEGER NOT NULL);
+        CREATE TABLE credentials(id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), provider_id TEXT NOT NULL, endpoint_id TEXT NOT NULL, label TEXT NOT NULL, status TEXT NOT NULL, version INTEGER NOT NULL, key_version TEXT NOT NULL, sealed TEXT, checked INTEGER);
+        CREATE TABLE budgets(user_id TEXT PRIMARY KEY REFERENCES users(id), revision INTEGER NOT NULL, json TEXT NOT NULL);
+        CREATE TABLE jobs(id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), operation_id TEXT NOT NULL, idem TEXT NOT NULL, payload_hash TEXT NOT NULL, payload TEXT, credential_id TEXT NOT NULL, credential_version INTEGER NOT NULL, provider_id TEXT NOT NULL, endpoint_id TEXT NOT NULL, adapter_version TEXT NOT NULL, model_id TEXT NOT NULL, model_version TEXT NOT NULL, project_id TEXT NOT NULL, project_revision TEXT NOT NULL, session_id TEXT NOT NULL, auth_version INTEGER NOT NULL, quote TEXT NOT NULL, quote_hash TEXT NOT NULL, created INTEGER NOT NULL, updated INTEGER NOT NULL, state TEXT NOT NULL CHECK(state IN ('prepared','reserved','submitted','running','succeeded','failed','cancelled','unknown')), seq INTEGER NOT NULL DEFAULT 0, submitted INTEGER, day TEXT, month TEXT, currency TEXT NOT NULL, cap INTEGER NOT NULL, byte_cap INTEGER NOT NULL, actual INTEGER, accounting TEXT NOT NULL DEFAULT 'none', cancel_requested INTEGER NOT NULL DEFAULT 0, closed_reason TEXT, request_id TEXT, error_code TEXT, UNIQUE(user_id,operation_id), UNIQUE(user_id,idem));
+        CREATE INDEX jobs_user_period ON jobs(user_id,day,month,currency);
+        CREATE TABLE job_events(job_id TEXT NOT NULL REFERENCES jobs(id), seq INTEGER NOT NULL, state TEXT NOT NULL, at INTEGER NOT NULL, PRIMARY KEY(job_id,seq));
+        CREATE TABLE settlements(job_id TEXT NOT NULL REFERENCES jobs(id), event_id TEXT NOT NULL, event_hash TEXT NOT NULL, PRIMARY KEY(job_id,event_id));
+        CREATE TABLE artifacts(id TEXT PRIMARY KEY, user_id TEXT NOT NULL REFERENCES users(id), job_id TEXT NOT NULL REFERENCES jobs(id), media_type TEXT NOT NULL, bytes BLOB NOT NULL, hash TEXT NOT NULL, created INTEGER NOT NULL);
+        CREATE TABLE tombstones(user_id TEXT NOT NULL REFERENCES users(id), operation_id TEXT NOT NULL, idem TEXT NOT NULL, payload_hash TEXT NOT NULL, job_id TEXT NOT NULL, PRIMARY KEY(user_id,operation_id), UNIQUE(user_id,idem));
+        CREATE TABLE counters(user_id TEXT NOT NULL, dimension TEXT NOT NULL, period TEXT NOT NULL, used INTEGER NOT NULL, PRIMARY KEY(user_id,dimension,period));
+        CREATE TABLE audit(id TEXT PRIMARY KEY, actor_id TEXT, target_id TEXT, action TEXT NOT NULL, at INTEGER NOT NULL);
+        CREATE TABLE deletion_tasks(user_id TEXT PRIMARY KEY REFERENCES users(id), requested INTEGER NOT NULL, backup_purge_deadline INTEGER NOT NULL, status TEXT NOT NULL);
+        
+CREATE TABLE operational_state(key TEXT PRIMARY KEY,value TEXT NOT NULL);
+ALTER TABLE jobs ADD COLUMN provider_usage TEXT;
+PRAGMA user_version=3;

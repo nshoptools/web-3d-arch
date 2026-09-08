@@ -3,6 +3,17 @@
 Áp dụng cho mọi người và mọi ghế AI (Grok, Opus/Claude, Codex), ở mọi phiên
 làm việc, kể cả triển khai, thử nghiệm và review. Đọc tệp này trước khi thao tác.
 
+## Phân công phát triển
+
+Theo chỉ đạo mới nhất ngày 2026-09-08, **ngừng sử dụng Opus**; không gọi mới,
+tiếp tục, fork hoặc giao agent con Opus, kể cả khi hạn mức mở lại. Hub điều phối,
+Grok tiếp nhận thiết kế/dựng giao diện; Codex phụ trách backend, nghiệp vụ,
+nhân xử lý, thuật toán UI phức tạp, tích hợp và kiểm thử. Hub/Codex/Grok chủ động
+phân chia lại khi cần và bố trí review độc lập với người triển khai. Giữ lại và
+thẩm định phần Opus đã viết. Trước khi lập kế hoạch hoặc
+triển khai, đọc [phạm vi và thứ tự khởi động](docs/development/README.md) để giữ
+đúng phân công, hợp đồng tích hợp và các mốc đã thống nhất.
+
 ## Cô lập trong dự án
 
 - Mọi tệp/thư mục do công việc tạo ra **phải nằm trong repo này**. Xác định gốc
@@ -15,6 +26,11 @@ làm việc, kể cả triển khai, thử nghiệm và review. Đọc tệp nà
 - Trước khi chạy công cụ có ghi tệp, dot-source `tools/project-env.ps1` với đúng
   ghế và mã phiên. Cấu hình cả thư mục output/profile riêng của công cụ nếu nó
   không dùng TEMP/cache từ môi trường. Không giả định biến môi trường là sandbox.
+- Grok native trên Windows phải chạy qua `tools/reviews/start-grok.ps1`, kể cả
+  khi tiếp tục phiên; launcher tự chuẩn bị môi trường ghế Grok. Đọc
+  [quy trình cô lập Grok](docs/reviews/GROK-WINDOWS-ISOLATION.md). Không gọi raw
+  `grok.exe`: `/tmp` viết cứng bỏ qua TEMP. Chỉ launcher được tạo alias tạm đã
+  kiểm chứng trỏ vào repo; không tạo junction hoặc dọn `tmp` ở gốc ổ đĩa.
 - Kiểm tra đường dẫn tuyệt đối sau khi resolve, kể cả symlink/junction. Không dùng
   liên kết trỏ ra ngoài để lách quy tắc. Nếu không thể giữ đầu ra trong dự án,
   dừng thao tác đó và báo nguyên nhân.
@@ -52,6 +68,16 @@ Cấu hình không khóa vĩnh viễn: trước mỗi đợt review, kiểm tra 
 và khả năng sử dụng thực tế; khi xác minh có model, effort hoặc thuộc tính mới
 mạnh hơn, cập nhật cấu hình cùng ngày, nguồn và lý do theo hướng dẫn trên.
 Quy tắc này không tự cho phép khởi chạy ghế khác hoặc sửa cấu hình cấp máy.
+
+**Opus hiện bị ngừng theo yêu cầu mới nhất của chủ dự án.** Launcher chặn mọi
+lượt gọi; không tự mở lại vì quota được làm mới hoặc chính sách nâng cấp.
+Chỉ khi chủ dự án cho phép sử dụng lại, ràng buộc cấu hình đã ghi trước đó mới
+được áp dụng: **mọi lượt gọi trong dự án**
+(triển khai, review, tiếp tục, fork và agent con) bắt buộc dùng **Effort Max,
+Fast mode tắt**. Luôn khởi chạy qua `tools/agents/start-opus.ps1`; không gọi CLI
+trực tiếp để bỏ qua cấu hình/cô lập của launcher. Không tự đổi sang Ultracode
+hoặc effort khác theo quy tắc nâng cấp; chỉ thay ràng buộc này khi chủ dự án
+đưa ra yêu cầu mới. Phiên cũ phải được áp dụng lại Max/Fast off khi tiếp tục.
 
 ## Review độc lập
 

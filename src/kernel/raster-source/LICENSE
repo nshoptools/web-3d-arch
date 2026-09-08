@@ -1,0 +1,84 @@
+web-3d-arch — GIẤY PHÉP SỬ DỤNG NỘI BỘ
+======================================
+
+Bản quyền (c) 2026 NshopTools. Giữ mọi quyền.
+
+
+PHẠM VI
+-------
+Trong giấy phép này, "trang web" gồm: mã nguồn trong kho này, bản dựng sinh ra
+từ nó, mọi tài nguyên đi kèm (giao diện, hình ảnh, mô hình 3D, phông chữ, biểu
+tượng, nội dung văn bản), và bản đang chạy mà chủ bản quyền cho bạn truy cập.
+
+
+ĐƯỢC PHÉP
+---------
+Người được chủ bản quyền cho phép truy cập được:
+
+  · dùng trang web cho công việc nội bộ của tổ chức mình;
+  · tự dựng và chạy một bản trên máy mình hoặc trên hạ tầng nội bộ của tổ
+    chức, miễn là chỉ người trong tổ chức truy cập được;
+  · tạo bản sao lưu mã nguồn và bản dựng;
+  · đọc mã nguồn — kể cả phần chạy trong trình duyệt — để hiểu và để kiểm tra.
+
+
+KHÔNG ĐƯỢC PHÉP, TRỪ KHI CÓ VĂN BẢN ĐỒNG Ý CỦA CHỦ BẢN QUYỀN
+--------------------------------------------------------------
+  · đưa trang web lên Internet công khai, hay cho người ngoài tổ chức truy cập;
+  · sao chép mã, giao diện, hình ảnh hay mô hình 3D của trang sang sản phẩm
+    khác — việc trình duyệt cho xem mã phía client (View Source, DevTools) là
+    do cách web hoạt động, không phải là sự cho phép dùng lại;
+  · thu thập tự động (crawl, scrape), tải hàng loạt, hay nhân bản (mirror) trang;
+  · nhúng trang vào site khác, hay gọi các endpoint của trang như một API cho
+    phần mềm khác;
+  · bán, cho thuê, cấp phép lại, hay cung cấp trang như một dịch vụ cho bên
+    thứ ba;
+  · vượt qua các biện pháp kiểm soát truy cập (đăng nhập, giới hạn tần suất);
+  · gỡ bỏ hay che giấu thông báo bản quyền và giấy phép này, ở chân trang hay
+    trong phần đầu tệp mã nguồn.
+
+
+KHÔNG BẢO HÀNH
+--------------
+TRANG WEB ĐƯỢC CUNG CẤP "NGUYÊN TRẠNG", KHÔNG KÈM BẢO ĐẢM NÀO, DÙ MINH THỊ HAY
+MẶC ĐỊNH, BAO GỒM NHƯNG KHÔNG GIỚI HẠN Ở CÁC BẢO ĐẢM VỀ KHẢ NĂNG BÁN ĐƯỢC,
+SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ, VÀ KHÔNG VI PHẠM. TRONG MỌI TRƯỜNG HỢP,
+TÁC GIẢ HAY CHỦ BẢN QUYỀN KHÔNG CHỊU TRÁCH NHIỆM VỚI BẤT KỲ KHIẾU NẠI, THIỆT
+HẠI HAY TRÁCH NHIỆM NÀO, DÙ TRONG MỘT VỤ KIỆN HỢP ĐỒNG, VI PHẠM DÂN SỰ HAY
+KHÁC, PHÁT SINH TỪ HOẶC LIÊN QUAN TỚI TRANG WEB HOẶC VIỆC SỬ DỤNG TRANG WEB.
+
+Nói riêng, chủ bản quyền không cam kết trang luôn truy cập được: bản đang chạy
+có thể đổi, tạm dừng hay bị gỡ bất cứ lúc nào mà không báo trước, và dữ liệu
+bạn tạo hay tải lên có thể mất. Hãy tự giữ bản sao những gì bạn cần.
+
+Trang cũng không cam kết chạy đúng trên mọi trình duyệt, thiết bị hay cấu hình
+đồ hoạ.
+
+⚠️ Những gì trang hiển thị hay xuất ra (ảnh, mô hình, tệp tải về) là để tham
+khảo. Trang **không biết** chúng có đúng cho việc bạn định dùng hay không. Hãy
+mở bằng phần mềm chuyên dụng và **kiểm tra trước khi dùng vào việc thật**.
+
+
+THÀNH PHẦN CỦA BÊN THỨ BA
+--------------------------
+Trang web dùng một số thư viện, phông chữ, biểu tượng và tài nguyên của bên thứ
+ba. Chúng giữ giấy phép riêng của chúng; giấy phép này không thay thế và không
+mở rộng các giấy phép đó. Khi phân phối bản dựng, phải giữ nguyên các thông báo
+giấy phép mà chúng yêu cầu.
+
+  · 30 họ font chữ (53 tệp) và Noto Emoji: SIL Open Font License 1.1.
+    Giữ đầy đủ thông báo bản quyền/giấy phép riêng tại
+    src/assets/fonts/licenses/ và src/assets/emoji/licenses/notoemoji/.
+  · Dữ liệu Unicode Emoji: Unicode License v3, kèm tại
+    src/assets/emoji/licenses/unicode/LICENSE.txt.
+  · opentype.js 2.0.0: MIT, kèm tại src/assets/opentype/LICENSE.
+  · harfbuzzjs 1.6.1: MIT, kèm tại src/assets/harfbuzz/LICENSE; phần lõi
+    HarfBuzz giữ COPYING riêng tại src/assets/harfbuzz/licenses/harfbuzz-COPYING.
+    Nguồn, phiên bản và hash: src/assets/harfbuzz/assets-lock.json.
+  · Nguồn, phiên bản và hash: src/assets/assets-lock.json.
+  · Noto Emoji màu: các font theo OFL-1.1, kèm tại
+    src/assets/emoji/color/fonts/LICENSE; artwork SVG/PNG theo thông báo
+    Apache-2.0 tại src/assets/emoji/color/svg/LICENSE và bản đầy đủ tại
+    src/assets/emoji/color/licenses/Apache-2.0.txt. Các nguồn cờ giữ điều khoản
+    riêng tại src/assets/emoji/color/third_party/region-flags/LICENSE.
+    Nguồn, revision và hash riêng: src/assets/emoji/color/assets-lock.json.

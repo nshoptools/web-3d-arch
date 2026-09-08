@@ -1,0 +1,1723 @@
+{
+  "schemaVersion": 3,
+  "at": "2026-09-08T01:41:19.594Z",
+  "engineVersion": "arch-mechanics/0.2.1",
+  "scope": "mechanical v1 from validated typed source context",
+  "fullApplicationAcceptance": false,
+  "configuredReview": false,
+  "physicalFit": "unqualified",
+  "products": [
+    "keychain",
+    "clicky",
+    "strap",
+    "lego",
+    "charm"
+  ],
+  "trialFamilies": [
+    "MX post/socket",
+    "switch tray",
+    "lego bores",
+    "charm fastener"
+  ],
+  "rows": [
+    {
+      "id": "body",
+      "feature": "Body, holes and disconnected components",
+      "products": "all five",
+      "oracle": "20x10x2.4 volume 480; 4x4 hole volume 441.6; disconnected island retained",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "body-hole-islands",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\001-body.bin",
+                "evidence\\fixtures-native\\002-hole.bin",
+                "evidence\\fixtures-native\\003-islands.bin"
+              ]
+            },
+            {
+              "id": "five-products-three-sizes",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\008-product-0-26.bin",
+                "evidence\\fixtures-native\\009-product-1-26.bin",
+                "evidence\\fixtures-native\\010-product-2-26.bin",
+                "evidence\\fixtures-native\\011-product-3-26.bin",
+                "evidence\\fixtures-native\\012-product-4-26.bin",
+                "evidence\\fixtures-native\\013-product-0-40.bin",
+                "evidence\\fixtures-native\\014-product-1-40.bin",
+                "evidence\\fixtures-native\\015-product-2-40.bin",
+                "evidence\\fixtures-native\\016-product-3-40.bin",
+                "evidence\\fixtures-native\\017-product-4-40.bin",
+                "evidence\\fixtures-native\\018-product-0-64.bin",
+                "evidence\\fixtures-native\\019-product-1-64.bin",
+                "evidence\\fixtures-native\\020-product-2-64.bin",
+                "evidence\\fixtures-native\\021-product-3-64.bin",
+                "evidence\\fixtures-native\\022-product-4-64.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "body-hole-islands",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\001-body.bin",
+                "evidence\\fixtures-wasm\\002-hole.bin",
+                "evidence\\fixtures-wasm\\003-islands.bin"
+              ]
+            },
+            {
+              "id": "five-products-three-sizes",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\008-product-0-26.bin",
+                "evidence\\fixtures-wasm\\009-product-1-26.bin",
+                "evidence\\fixtures-wasm\\010-product-2-26.bin",
+                "evidence\\fixtures-wasm\\011-product-3-26.bin",
+                "evidence\\fixtures-wasm\\012-product-4-26.bin",
+                "evidence\\fixtures-wasm\\013-product-0-40.bin",
+                "evidence\\fixtures-wasm\\014-product-1-40.bin",
+                "evidence\\fixtures-wasm\\015-product-2-40.bin",
+                "evidence\\fixtures-wasm\\016-product-3-40.bin",
+                "evidence\\fixtures-wasm\\017-product-4-40.bin",
+                "evidence\\fixtures-wasm\\018-product-0-64.bin",
+                "evidence\\fixtures-wasm\\019-product-1-64.bin",
+                "evidence\\fixtures-wasm\\020-product-2-64.bin",
+                "evidence\\fixtures-wasm\\021-product-3-64.bin",
+                "evidence\\fixtures-wasm\\022-product-4-64.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eyelet-body",
+      "feature": "Body/tray eyelets with open bore",
+      "products": "keychain/clicky",
+      "oracle": "8/4 mm annulus; positive contact, bore opening, explicit-zero rejection",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "keychain-eyelet-openings",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\004-eyelet.bin",
+                "evidence\\fixtures-native\\005-eyelet-no-contact.bin",
+                "evidence\\fixtures-native\\006-eyelet-zero-explicit.bin",
+                "evidence\\fixtures-native\\007-eyelet-text-host.bin"
+              ]
+            },
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\037-mx-tray.bin",
+                "evidence\\fixtures-native\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-native\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-native\\040-tray-eyelet.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "keychain-eyelet-openings",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\004-eyelet.bin",
+                "evidence\\fixtures-wasm\\005-eyelet-no-contact.bin",
+                "evidence\\fixtures-wasm\\006-eyelet-zero-explicit.bin",
+                "evidence\\fixtures-wasm\\007-eyelet-text-host.bin"
+              ]
+            },
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\037-mx-tray.bin",
+                "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eyelet-text",
+      "feature": "Explicit text footprint eyelet",
+      "products": "keychain",
+      "oracle": "Host 7001; center (33,6.5), open bore, positive annulus contact; missing host invalid",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-text-host-and-independent-text-bevel",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\125-v1-text-eyelet.bin",
+                "evidence\\fixtures-native\\126-v1-text-bevel-0.bin",
+                "evidence\\fixtures-native\\127-v1-text-bevel-1.bin",
+                "evidence\\fixtures-native\\128-v1-text-bevel-2.bin",
+                "evidence\\fixtures-native\\129-v1-text-orphan-attachment.bin",
+                "evidence\\fixtures-native\\130-v1-text-eyelet-and-bevel.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-text-host-and-independent-text-bevel",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\125-v1-text-eyelet.bin",
+                "evidence\\fixtures-wasm\\126-v1-text-bevel-0.bin",
+                "evidence\\fixtures-wasm\\127-v1-text-bevel-1.bin",
+                "evidence\\fixtures-wasm\\128-v1-text-bevel-2.bin",
+                "evidence\\fixtures-wasm\\129-v1-text-orphan-attachment.bin",
+                "evidence\\fixtures-wasm\\130-v1-text-eyelet-and-bevel.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strap-bore",
+      "feature": "Circular and horizontal/vertical capsule bore",
+      "products": "strap",
+      "oracle": "4 mm diameter, independent axis/offset/rotation probes, positive floor/roof",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "strap-horizontal-vertical-slot-and-rotation",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\023-strap.bin",
+                "evidence\\fixtures-native\\024-slot-0.bin",
+                "evidence\\fixtures-native\\025-slot-1.bin",
+                "evidence\\fixtures-native\\026-strap-angle.bin",
+                "evidence\\fixtures-native\\027-strap-rotate.bin",
+                "evidence\\fixtures-native\\028-strap-floor.bin",
+                "evidence\\fixtures-native\\029-strap-chamfer-oblique.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "strap-horizontal-vertical-slot-and-rotation",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\023-strap.bin",
+                "evidence\\fixtures-wasm\\024-slot-0.bin",
+                "evidence\\fixtures-wasm\\025-slot-1.bin",
+                "evidence\\fixtures-wasm\\026-strap-angle.bin",
+                "evidence\\fixtures-wasm\\027-strap-rotate.bin",
+                "evidence\\fixtures-wasm\\028-strap-floor.bin",
+                "evidence\\fixtures-wasm\\029-strap-chamfer-oblique.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strap-mouth",
+      "feature": "Capsule, oblique and corner-mouth chamfer",
+      "products": "strap",
+      "oracle": "Axial lead .6; radius 2.3 at depth .3; angles 0/30/45/90/120; capsule extension retained",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-strap-capsule-oblique-and-corner-mouths",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\131-v1-strap-0-0.bin",
+                "evidence\\fixtures-native\\132-v1-strap-0-1.bin",
+                "evidence\\fixtures-native\\133-v1-strap-30-0.bin",
+                "evidence\\fixtures-native\\134-v1-strap-30-1.bin",
+                "evidence\\fixtures-native\\135-v1-strap-45-0.bin",
+                "evidence\\fixtures-native\\136-v1-strap-45-1.bin",
+                "evidence\\fixtures-native\\137-v1-strap-90-0.bin",
+                "evidence\\fixtures-native\\138-v1-strap-90-1.bin",
+                "evidence\\fixtures-native\\139-v1-strap-120-0.bin",
+                "evidence\\fixtures-native\\140-v1-strap-120-1.bin",
+                "evidence\\fixtures-native\\141-v1-strap-capsule-end.bin",
+                "evidence\\fixtures-native\\142-v1-strap-capsule-floor.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-native\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-native\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-native\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-native\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-native\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-native\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-native\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-native\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-strap-capsule-oblique-and-corner-mouths",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\131-v1-strap-0-0.bin",
+                "evidence\\fixtures-wasm\\132-v1-strap-0-1.bin",
+                "evidence\\fixtures-wasm\\133-v1-strap-30-0.bin",
+                "evidence\\fixtures-wasm\\134-v1-strap-30-1.bin",
+                "evidence\\fixtures-wasm\\135-v1-strap-45-0.bin",
+                "evidence\\fixtures-wasm\\136-v1-strap-45-1.bin",
+                "evidence\\fixtures-wasm\\137-v1-strap-90-0.bin",
+                "evidence\\fixtures-wasm\\138-v1-strap-90-1.bin",
+                "evidence\\fixtures-wasm\\139-v1-strap-120-0.bin",
+                "evidence\\fixtures-wasm\\140-v1-strap-120-1.bin",
+                "evidence\\fixtures-wasm\\141-v1-strap-capsule-end.bin",
+                "evidence\\fixtures-wasm\\142-v1-strap-capsule-floor.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lego-bores",
+      "feature": "Blind/sparse grid, bosses, hollow/cross slots/tabs",
+      "products": "lego",
+      "oracle": "40x30 grid 15/7/3 bores; diameter 4.9/5.5/5.5; depth 1.8; roof and openings",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "lego-grid-mask-depth-hollow-and-tabs",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\030-lego-0.bin",
+                "evidence\\fixtures-native\\031-lego-1.bin",
+                "evidence\\fixtures-native\\032-lego-2.bin",
+                "evidence\\fixtures-native\\033-lego-hollow.bin",
+                "evidence\\fixtures-native\\034-lego-source-hole.bin",
+                "evidence\\fixtures-native\\035-lego-groove-default.bin",
+                "evidence\\fixtures-native\\036-lego-roof-proposal.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "lego-grid-mask-depth-hollow-and-tabs",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\030-lego-0.bin",
+                "evidence\\fixtures-wasm\\031-lego-1.bin",
+                "evidence\\fixtures-wasm\\032-lego-2.bin",
+                "evidence\\fixtures-wasm\\033-lego-hollow.bin",
+                "evidence\\fixtures-wasm\\034-lego-source-hole.bin",
+                "evidence\\fixtures-wasm\\035-lego-groove-default.bin",
+                "evidence\\fixtures-wasm\\036-lego-roof-proposal.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lego-groove",
+      "feature": "Default-on semicircular external border groove",
+      "products": "lego",
+      "oracle": "R=.8, auto center 2.8, numeric cross sections/analytic volume; literal user zero retained; holes/islands/colors/concave corner",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-groove-default-analytic-and-source",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\107-v1-groove.bin",
+                "evidence\\fixtures-native\\108-v1-groove-literal-zero-wall-loss.bin",
+                "evidence\\fixtures-native\\109-v1-groove-literal-zero.bin",
+                "evidence\\fixtures-native\\110-v1-groove-hole.bin",
+                "evidence\\fixtures-native\\111-v1-groove-islands.bin",
+                "evidence\\fixtures-native\\112-v1-groove-colors.bin",
+                "evidence\\fixtures-native\\113-v1-groove-roof.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-native\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-native\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-native\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-native\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-native\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-native\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-native\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-native\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-groove-default-analytic-and-source",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\107-v1-groove.bin",
+                "evidence\\fixtures-wasm\\108-v1-groove-literal-zero-wall-loss.bin",
+                "evidence\\fixtures-wasm\\109-v1-groove-literal-zero.bin",
+                "evidence\\fixtures-wasm\\110-v1-groove-hole.bin",
+                "evidence\\fixtures-wasm\\111-v1-groove-islands.bin",
+                "evidence\\fixtures-wasm\\112-v1-groove-colors.bin",
+                "evidence\\fixtures-wasm\\113-v1-groove-roof.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cap",
+      "feature": "Hollow cap, skirt and ribs",
+      "products": "clicky",
+      "oracle": "Open underside, hollow interior, wall probes, three sizes 26/40/64; skirt zero disables",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\037-mx-tray.bin",
+                "evidence\\fixtures-native\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-native\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-native\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "five-products-three-sizes",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\008-product-0-26.bin",
+                "evidence\\fixtures-native\\009-product-1-26.bin",
+                "evidence\\fixtures-native\\010-product-2-26.bin",
+                "evidence\\fixtures-native\\011-product-3-26.bin",
+                "evidence\\fixtures-native\\012-product-4-26.bin",
+                "evidence\\fixtures-native\\013-product-0-40.bin",
+                "evidence\\fixtures-native\\014-product-1-40.bin",
+                "evidence\\fixtures-native\\015-product-2-40.bin",
+                "evidence\\fixtures-native\\016-product-3-40.bin",
+                "evidence\\fixtures-native\\017-product-4-40.bin",
+                "evidence\\fixtures-native\\018-product-0-64.bin",
+                "evidence\\fixtures-native\\019-product-1-64.bin",
+                "evidence\\fixtures-native\\020-product-2-64.bin",
+                "evidence\\fixtures-native\\021-product-3-64.bin",
+                "evidence\\fixtures-native\\022-product-4-64.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\037-mx-tray.bin",
+                "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "five-products-three-sizes",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\008-product-0-26.bin",
+                "evidence\\fixtures-wasm\\009-product-1-26.bin",
+                "evidence\\fixtures-wasm\\010-product-2-26.bin",
+                "evidence\\fixtures-wasm\\011-product-3-26.bin",
+                "evidence\\fixtures-wasm\\012-product-4-26.bin",
+                "evidence\\fixtures-wasm\\013-product-0-40.bin",
+                "evidence\\fixtures-wasm\\014-product-1-40.bin",
+                "evidence\\fixtures-wasm\\015-product-2-40.bin",
+                "evidence\\fixtures-wasm\\016-product-3-40.bin",
+                "evidence\\fixtures-wasm\\017-product-4-40.bin",
+                "evidence\\fixtures-wasm\\018-product-0-64.bin",
+                "evidence\\fixtures-wasm\\019-product-1-64.bin",
+                "evidence\\fixtures-wasm\\020-product-2-64.bin",
+                "evidence\\fixtures-wasm\\021-product-3-64.bin",
+                "evidence\\fixtures-wasm\\022-product-4-64.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mx",
+      "feature": "MX post, collar and cross socket",
+      "products": "clicky, trial family 1",
+      "oracle": "5.5 mm socket/1.85 mm collar; open tip and positive roof; cross enlarges by 2*clr",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\037-mx-tray.bin",
+                "evidence\\fixtures-native\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-native\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-native\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-native\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-native\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-native\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-native\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-native\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-native\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-native\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-native\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-native\\050-negative-clearance.bin",
+                "evidence\\fixtures-native\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-native\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-native\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-native\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\037-mx-tray.bin",
+                "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-wasm\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-wasm\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-wasm\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-wasm\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-wasm\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-wasm\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-wasm\\050-negative-clearance.bin",
+                "evidence\\fixtures-wasm\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-wasm\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-wasm\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-wasm\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tray",
+      "feature": "Switch tray cavities, floor, wall, stop, eyelet and travel",
+      "products": "clicky, trial family 2",
+      "oracle": "1.7 mm pin pocket; positive floor; nested pocket probes; continuous printed-solid sweep plus independent sections at five travel states",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\037-mx-tray.bin",
+                "evidence\\fixtures-native\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-native\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-native\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-native\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-native\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-native\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-native\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-native\\157-v1-control-generation.bin",
+                "evidence\\fixtures-native\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-native\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-native\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-native\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-native\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-native\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-native\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-native\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-native\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-native\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-native\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-native\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\037-mx-tray.bin",
+                "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+              ]
+            },
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-wasm\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-wasm\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-wasm\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-wasm\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-wasm\\157-v1-control-generation.bin",
+                "evidence\\fixtures-wasm\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-wasm\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-wasm\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-wasm\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-wasm\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-wasm\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-wasm\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-wasm\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-wasm\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-wasm\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-wasm\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-wasm\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charm",
+      "feature": "Integral/separate flange, neck, pin, socket and chamfer",
+      "products": "charm, trial family 4",
+      "oracle": "14.5 mm flange; 6 mm pin; diametral clearance; integral/separate bounds and probes",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "charm-integral-separate-fit-and-flange",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\055-charm.bin",
+                "evidence\\fixtures-native\\056-charm-integral.bin",
+                "evidence\\fixtures-native\\057-charm-no-roof.bin",
+                "evidence\\fixtures-native\\058-charm-offset.bin"
+              ]
+            },
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-native\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-native\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-native\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-native\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-native\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-native\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-native\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-native\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-native\\050-negative-clearance.bin",
+                "evidence\\fixtures-native\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-native\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-native\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-native\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "charm-integral-separate-fit-and-flange",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\055-charm.bin",
+                "evidence\\fixtures-wasm\\056-charm-integral.bin",
+                "evidence\\fixtures-wasm\\057-charm-no-roof.bin",
+                "evidence\\fixtures-wasm\\058-charm-offset.bin"
+              ]
+            },
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-wasm\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-wasm\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-wasm\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-wasm\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-wasm\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-wasm\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-wasm\\050-negative-clearance.bin",
+                "evidence\\fixtures-wasm\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-wasm\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-wasm\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-wasm\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "top-surfaces",
+      "feature": "Round/chamfer/step exposed tops",
+      "products": "all five",
+      "oracle": "Independent round/chamfer volume and sections; true h0/h step intervals, positive floor, concave rolling corner",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-native\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-native\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-native\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-native\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-native\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-native\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-native\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-native\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-native\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-native\\124-v1-block-bevel-orphan.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-native\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-native\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-native\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-native\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-native\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-native\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-native\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-native\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-wasm\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-wasm\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-wasm\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-wasm\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-wasm\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-wasm\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-wasm\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-wasm\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-wasm\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-wasm\\124-v1-block-bevel-orphan.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text-surfaces",
+      "feature": "Text/base bevel independent of main body",
+      "products": "all five with text context",
+      "oracle": "Round/chamfer/steps; body volume unchanged; counter/dot and user colors remain",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-text-host-and-independent-text-bevel",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\125-v1-text-eyelet.bin",
+                "evidence\\fixtures-native\\126-v1-text-bevel-0.bin",
+                "evidence\\fixtures-native\\127-v1-text-bevel-1.bin",
+                "evidence\\fixtures-native\\128-v1-text-bevel-2.bin",
+                "evidence\\fixtures-native\\129-v1-text-orphan-attachment.bin",
+                "evidence\\fixtures-native\\130-v1-text-eyelet-and-bevel.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-text-host-and-independent-text-bevel",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\125-v1-text-eyelet.bin",
+                "evidence\\fixtures-wasm\\126-v1-text-bevel-0.bin",
+                "evidence\\fixtures-wasm\\127-v1-text-bevel-1.bin",
+                "evidence\\fixtures-wasm\\128-v1-text-bevel-2.bin",
+                "evidence\\fixtures-wasm\\129-v1-text-orphan-attachment.bin",
+                "evidence\\fixtures-wasm\\130-v1-text-eyelet-and-bevel.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "material-preservation",
+      "feature": "Material/Z preservation and shared boundaries",
+      "products": "all five",
+      "oracle": "Joined bevel across Z=1.4 material transition; seam x=0 within 1e-12; independent-valley option; disjoint Z kept; interior overlap invalid",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "source-color-seams-styles-and-binding",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\080-colors-0.bin",
+                "evidence\\fixtures-native\\081-colors-1.bin",
+                "evidence\\fixtures-native\\082-colors-2.bin",
+                "evidence\\fixtures-native\\083-colors-3.bin",
+                "evidence\\fixtures-native\\084-colors-4.bin",
+                "evidence\\fixtures-native\\085-prepared-style-0.bin",
+                "evidence\\fixtures-native\\086-prepared-style-1.bin",
+                "evidence\\fixtures-native\\087-prepared-style-2.bin",
+                "evidence\\fixtures-native\\088-prepared-style-3.bin",
+                "evidence\\fixtures-native\\089-prepared-role-overrides.bin",
+                "evidence\\fixtures-native\\090-stale-source.bin",
+                "evidence\\fixtures-native\\091-missing-source-binding.bin",
+                "evidence\\fixtures-native\\092-unprepared-flat.bin",
+                "evidence\\fixtures-native\\093-source-fillet.bin",
+                "evidence\\fixtures-native\\094-disjoint-z-same-xy.bin",
+                "evidence\\fixtures-native\\095-overlap-z.bin",
+                "evidence\\fixtures-native\\096-point-touch.bin",
+                "evidence\\fixtures-native\\097-below-grid.bin"
+              ]
+            },
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-native\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-native\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-native\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-native\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-native\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-native\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-native\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-native\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-native\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-native\\124-v1-block-bevel-orphan.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "source-color-seams-styles-and-binding",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\080-colors-0.bin",
+                "evidence\\fixtures-wasm\\081-colors-1.bin",
+                "evidence\\fixtures-wasm\\082-colors-2.bin",
+                "evidence\\fixtures-wasm\\083-colors-3.bin",
+                "evidence\\fixtures-wasm\\084-colors-4.bin",
+                "evidence\\fixtures-wasm\\085-prepared-style-0.bin",
+                "evidence\\fixtures-wasm\\086-prepared-style-1.bin",
+                "evidence\\fixtures-wasm\\087-prepared-style-2.bin",
+                "evidence\\fixtures-wasm\\088-prepared-style-3.bin",
+                "evidence\\fixtures-wasm\\089-prepared-role-overrides.bin",
+                "evidence\\fixtures-wasm\\090-stale-source.bin",
+                "evidence\\fixtures-wasm\\091-missing-source-binding.bin",
+                "evidence\\fixtures-wasm\\092-unprepared-flat.bin",
+                "evidence\\fixtures-wasm\\093-source-fillet.bin",
+                "evidence\\fixtures-wasm\\094-disjoint-z-same-xy.bin",
+                "evidence\\fixtures-wasm\\095-overlap-z.bin",
+                "evidence\\fixtures-wasm\\096-point-touch.bin",
+                "evidence\\fixtures-wasm\\097-below-grid.bin"
+              ]
+            },
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-wasm\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-wasm\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-wasm\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-wasm\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-wasm\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-wasm\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-wasm\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-wasm\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-wasm\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-wasm\\124-v1-block-bevel-orphan.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overrides",
+      "feature": "Role and per-source bevel overrides",
+      "products": "all five",
+      "oracle": "User role/slab slot/color/u64 provenance retained; disabled bevel remains; orphan override invalid",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "source-color-seams-styles-and-binding",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\080-colors-0.bin",
+                "evidence\\fixtures-native\\081-colors-1.bin",
+                "evidence\\fixtures-native\\082-colors-2.bin",
+                "evidence\\fixtures-native\\083-colors-3.bin",
+                "evidence\\fixtures-native\\084-colors-4.bin",
+                "evidence\\fixtures-native\\085-prepared-style-0.bin",
+                "evidence\\fixtures-native\\086-prepared-style-1.bin",
+                "evidence\\fixtures-native\\087-prepared-style-2.bin",
+                "evidence\\fixtures-native\\088-prepared-style-3.bin",
+                "evidence\\fixtures-native\\089-prepared-role-overrides.bin",
+                "evidence\\fixtures-native\\090-stale-source.bin",
+                "evidence\\fixtures-native\\091-missing-source-binding.bin",
+                "evidence\\fixtures-native\\092-unprepared-flat.bin",
+                "evidence\\fixtures-native\\093-source-fillet.bin",
+                "evidence\\fixtures-native\\094-disjoint-z-same-xy.bin",
+                "evidence\\fixtures-native\\095-overlap-z.bin",
+                "evidence\\fixtures-native\\096-point-touch.bin",
+                "evidence\\fixtures-native\\097-below-grid.bin"
+              ]
+            },
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-native\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-native\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-native\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-native\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-native\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-native\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-native\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-native\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-native\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-native\\124-v1-block-bevel-orphan.bin"
+              ]
+            },
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\037-mx-tray.bin",
+                "evidence\\fixtures-native\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-native\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-native\\040-tray-eyelet.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "source-color-seams-styles-and-binding",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\080-colors-0.bin",
+                "evidence\\fixtures-wasm\\081-colors-1.bin",
+                "evidence\\fixtures-wasm\\082-colors-2.bin",
+                "evidence\\fixtures-wasm\\083-colors-3.bin",
+                "evidence\\fixtures-wasm\\084-colors-4.bin",
+                "evidence\\fixtures-wasm\\085-prepared-style-0.bin",
+                "evidence\\fixtures-wasm\\086-prepared-style-1.bin",
+                "evidence\\fixtures-wasm\\087-prepared-style-2.bin",
+                "evidence\\fixtures-wasm\\088-prepared-style-3.bin",
+                "evidence\\fixtures-wasm\\089-prepared-role-overrides.bin",
+                "evidence\\fixtures-wasm\\090-stale-source.bin",
+                "evidence\\fixtures-wasm\\091-missing-source-binding.bin",
+                "evidence\\fixtures-wasm\\092-unprepared-flat.bin",
+                "evidence\\fixtures-wasm\\093-source-fillet.bin",
+                "evidence\\fixtures-wasm\\094-disjoint-z-same-xy.bin",
+                "evidence\\fixtures-wasm\\095-overlap-z.bin",
+                "evidence\\fixtures-wasm\\096-point-touch.bin",
+                "evidence\\fixtures-wasm\\097-below-grid.bin"
+              ]
+            },
+            {
+              "id": "v1-top-bevel-round-chamfer-steps-material",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\114-v1-bevel-0.bin",
+                "evidence\\fixtures-wasm\\115-v1-bevel-1.bin",
+                "evidence\\fixtures-wasm\\116-v1-bevel-material-joined.bin",
+                "evidence\\fixtures-wasm\\117-v1-bevel-material-separate.bin",
+                "evidence\\fixtures-wasm\\118-v1-bevel-steps-0.16.bin",
+                "evidence\\fixtures-wasm\\119-v1-bevel-steps-0.2.bin",
+                "evidence\\fixtures-wasm\\120-v1-bevel-steps-0.25.bin",
+                "evidence\\fixtures-wasm\\121-v1-bevel-hole.bin",
+                "evidence\\fixtures-wasm\\122-v1-bevel-floor.bin",
+                "evidence\\fixtures-wasm\\123-v1-block-bevel-override.bin",
+                "evidence\\fixtures-wasm\\124-v1-block-bevel-orphan.bin"
+              ]
+            },
+            {
+              "id": "mx-tray-dimensions-nominal-and-tip",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\037-mx-tray.bin",
+                "evidence\\fixtures-wasm\\038-mx-invalid-wall.bin",
+                "evidence\\fixtures-wasm\\039-mx-invalid-roof.bin",
+                "evidence\\fixtures-wasm\\040-tray-eyelet.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nominal-schedule",
+      "feature": "Nominal mm and datum interval schedule",
+      "products": "all five",
+      "oracle": "h .16/.20/.25, h0 separate; 12 layers=.16+11*.20=2.36; nominal 2.4/1.7/5.5/1.85 retained; wrong datum invalid",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "schedule-explicit-interval-and-no-snap",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\059-schedule-0.16-0.2.bin",
+                "evidence\\fixtures-native\\060-nominal-0.16-0.2.bin",
+                "evidence\\fixtures-native\\061-schedule-0.2-0.16.bin",
+                "evidence\\fixtures-native\\062-nominal-0.2-0.16.bin",
+                "evidence\\fixtures-native\\063-schedule-0.2-0.2.bin",
+                "evidence\\fixtures-native\\064-nominal-0.2-0.2.bin",
+                "evidence\\fixtures-native\\065-schedule-0.25-0.2.bin",
+                "evidence\\fixtures-native\\066-nominal-0.25-0.2.bin",
+                "evidence\\fixtures-native\\067-schedule-0.25-0.25.bin",
+                "evidence\\fixtures-native\\068-nominal-0.25-0.25.bin",
+                "evidence\\fixtures-native\\069-nominal-body.bin",
+                "evidence\\fixtures-native\\070-feature-datum.bin",
+                "evidence\\fixtures-native\\071-datum-orphan.bin",
+                "evidence\\fixtures-native\\072-datum-wrong-face.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "schedule-explicit-interval-and-no-snap",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\059-schedule-0.16-0.2.bin",
+                "evidence\\fixtures-wasm\\060-nominal-0.16-0.2.bin",
+                "evidence\\fixtures-wasm\\061-schedule-0.2-0.16.bin",
+                "evidence\\fixtures-wasm\\062-nominal-0.2-0.16.bin",
+                "evidence\\fixtures-wasm\\063-schedule-0.2-0.2.bin",
+                "evidence\\fixtures-wasm\\064-nominal-0.2-0.2.bin",
+                "evidence\\fixtures-wasm\\065-schedule-0.25-0.2.bin",
+                "evidence\\fixtures-wasm\\066-nominal-0.25-0.2.bin",
+                "evidence\\fixtures-wasm\\067-schedule-0.25-0.25.bin",
+                "evidence\\fixtures-wasm\\068-nominal-0.25-0.25.bin",
+                "evidence\\fixtures-wasm\\069-nominal-body.bin",
+                "evidence\\fixtures-wasm\\070-feature-datum.bin",
+                "evidence\\fixtures-wasm\\071-datum-orphan.bin",
+                "evidence\\fixtures-wasm\\072-datum-wrong-face.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clearance",
+      "feature": "Declared clearance signs and conventions",
+      "products": "four trial families",
+      "oracle": "Positive enlarges void; negative rejected; tray gap zero rejected; one-side versus diametral measured",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-native\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-native\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-native\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-native\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-native\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-native\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-native\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-native\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-native\\050-negative-clearance.bin",
+                "evidence\\fixtures-native\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-native\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-native\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-native\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            },
+            {
+              "id": "lego-grid-mask-depth-hollow-and-tabs",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\030-lego-0.bin",
+                "evidence\\fixtures-native\\031-lego-1.bin",
+                "evidence\\fixtures-native\\032-lego-2.bin",
+                "evidence\\fixtures-native\\033-lego-hollow.bin",
+                "evidence\\fixtures-native\\034-lego-source-hole.bin",
+                "evidence\\fixtures-native\\035-lego-groove-default.bin",
+                "evidence\\fixtures-native\\036-lego-roof-proposal.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "clearance-positive-sign-and-zero",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\041-mx-clearance-0.bin",
+                "evidence\\fixtures-wasm\\042-mx-clearance-0.05.bin",
+                "evidence\\fixtures-wasm\\043-mx-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\044-charm-clearance-0.bin",
+                "evidence\\fixtures-wasm\\045-charm-clearance-0.2.bin",
+                "evidence\\fixtures-wasm\\046-charm-clearance-0.6.bin",
+                "evidence\\fixtures-wasm\\047-tray-gap-0.05.bin",
+                "evidence\\fixtures-wasm\\048-tray-gap-0.25.bin",
+                "evidence\\fixtures-wasm\\049-tray-gap-0.6.bin",
+                "evidence\\fixtures-wasm\\050-negative-clearance.bin",
+                "evidence\\fixtures-wasm\\051-invalid-clearance-gap--0.05.bin",
+                "evidence\\fixtures-wasm\\052-invalid-clearance-gap-0.bin",
+                "evidence\\fixtures-wasm\\053-invalid-clearance-legoHoDu--0.01.bin",
+                "evidence\\fixtures-wasm\\054-invalid-clearance-charmClr--0.01.bin"
+              ]
+            },
+            {
+              "id": "lego-grid-mask-depth-hollow-and-tabs",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\030-lego-0.bin",
+                "evidence\\fixtures-wasm\\031-lego-1.bin",
+                "evidence\\fixtures-wasm\\032-lego-2.bin",
+                "evidence\\fixtures-wasm\\033-lego-hollow.bin",
+                "evidence\\fixtures-wasm\\034-lego-source-hole.bin",
+                "evidence\\fixtures-wasm\\035-lego-groove-default.bin",
+                "evidence\\fixtures-wasm\\036-lego-roof-proposal.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curves",
+      "feature": "Signed pin/hole/surface flattening",
+      "products": "all applicable",
+      "oracle": "Three sizes and .001/.0005/.0001 tolerances; actual radial/cross-section measurements, analytic bounds and source preservation",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "mating-tolerance-signed-deviation-three-levels",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\098-precision-4-0.001.bin",
+                "evidence\\fixtures-native\\099-precision-6-0.001.bin",
+                "evidence\\fixtures-native\\100-precision-10-0.001.bin",
+                "evidence\\fixtures-native\\101-precision-4-0.0005.bin",
+                "evidence\\fixtures-native\\102-precision-6-0.0005.bin",
+                "evidence\\fixtures-native\\103-precision-10-0.0005.bin",
+                "evidence\\fixtures-native\\104-precision-4-0.0001.bin",
+                "evidence\\fixtures-native\\105-precision-6-0.0001.bin",
+                "evidence\\fixtures-native\\106-precision-10-0.0001.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-native\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-native\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-native\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-native\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-native\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-native\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-native\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-native\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "mating-tolerance-signed-deviation-three-levels",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\098-precision-4-0.001.bin",
+                "evidence\\fixtures-wasm\\099-precision-6-0.001.bin",
+                "evidence\\fixtures-wasm\\100-precision-10-0.001.bin",
+                "evidence\\fixtures-wasm\\101-precision-4-0.0005.bin",
+                "evidence\\fixtures-wasm\\102-precision-6-0.0005.bin",
+                "evidence\\fixtures-wasm\\103-precision-10-0.0005.bin",
+                "evidence\\fixtures-wasm\\104-precision-4-0.0001.bin",
+                "evidence\\fixtures-wasm\\105-precision-6-0.0001.bin",
+                "evidence\\fixtures-wasm\\106-precision-10-0.0001.bin"
+              ]
+            },
+            {
+              "id": "v1-concave-corners-and-tolerance-budgets",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\143-v1-concave-groove-0.001.bin",
+                "evidence\\fixtures-wasm\\144-v1-concave-bevel-0.001.bin",
+                "evidence\\fixtures-wasm\\145-v1-capsule-tolerance-0.001.bin",
+                "evidence\\fixtures-wasm\\146-v1-concave-groove-0.0005.bin",
+                "evidence\\fixtures-wasm\\147-v1-concave-bevel-0.0005.bin",
+                "evidence\\fixtures-wasm\\148-v1-capsule-tolerance-0.0005.bin",
+                "evidence\\fixtures-wasm\\149-v1-concave-groove-0.0001.bin",
+                "evidence\\fixtures-wasm\\150-v1-concave-bevel-0.0001.bin",
+                "evidence\\fixtures-wasm\\151-v1-capsule-tolerance-0.0001.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "preview-proposal",
+      "feature": "Preview separate; proposals never mutate",
+      "products": "clicky/charm and auto sizing",
+      "oracle": "Assembly flag leaves binary mesh SHA identical; export gate separate; proposed values require accepted new request",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "assembly-is-preview-only-and-proposals-immutable",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\073-assembly-off-1.bin",
+                "evidence\\fixtures-native\\074-assembly-on-1.bin",
+                "evidence\\fixtures-native\\075-assembly-off-4.bin",
+                "evidence\\fixtures-native\\076-assembly-on-4.bin",
+                "evidence\\fixtures-native\\077-small-tray.bin",
+                "evidence\\fixtures-native\\078-accepted-size.bin",
+                "evidence\\fixtures-native\\079-invalid-no-auto.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "assembly-is-preview-only-and-proposals-immutable",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\073-assembly-off-1.bin",
+                "evidence\\fixtures-wasm\\074-assembly-on-1.bin",
+                "evidence\\fixtures-wasm\\075-assembly-off-4.bin",
+                "evidence\\fixtures-wasm\\076-assembly-on-4.bin",
+                "evidence\\fixtures-wasm\\077-small-tray.bin",
+                "evidence\\fixtures-wasm\\078-accepted-size.bin",
+                "evidence\\fixtures-wasm\\079-invalid-no-auto.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "invalid-fuzz",
+      "feature": "Invalid input, resource guards and seeded combinations",
+      "products": "all five",
+      "oracle": "No mesh on invalid/proposal/cancel; finite/domain/source guards; seeds 0x6d656368 (24) and 0x6d656332 (12) with reproducers",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "seeded-corners-and-fuzz-regressions",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\170-fuzz-0.bin",
+                "evidence\\fixtures-native\\171-fuzz-1.bin",
+                "evidence\\fixtures-native\\172-fuzz-2.bin",
+                "evidence\\fixtures-native\\173-fuzz-3.bin",
+                "evidence\\fixtures-native\\174-fuzz-4.bin",
+                "evidence\\fixtures-native\\175-fuzz-5.bin",
+                "evidence\\fixtures-native\\176-fuzz-6.bin",
+                "evidence\\fixtures-native\\177-fuzz-7.bin",
+                "evidence\\fixtures-native\\178-fuzz-8.bin",
+                "evidence\\fixtures-native\\179-fuzz-9.bin",
+                "evidence\\fixtures-native\\180-fuzz-10.bin",
+                "evidence\\fixtures-native\\181-fuzz-11.bin",
+                "evidence\\fixtures-native\\182-fuzz-12.bin",
+                "evidence\\fixtures-native\\183-fuzz-13.bin",
+                "evidence\\fixtures-native\\184-fuzz-14.bin",
+                "evidence\\fixtures-native\\185-fuzz-15.bin",
+                "evidence\\fixtures-native\\186-fuzz-16.bin",
+                "evidence\\fixtures-native\\187-fuzz-17.bin",
+                "evidence\\fixtures-native\\188-fuzz-18.bin",
+                "evidence\\fixtures-native\\189-fuzz-19.bin",
+                "evidence\\fixtures-native\\190-fuzz-20.bin",
+                "evidence\\fixtures-native\\191-fuzz-21.bin",
+                "evidence\\fixtures-native\\192-fuzz-22.bin",
+                "evidence\\fixtures-native\\193-fuzz-23.bin",
+                "evidence\\fixtures-native\\194-bad-baseH-nan.bin",
+                "evidence\\fixtures-native\\195-bad-baseH-inf.bin",
+                "evidence\\fixtures-native\\196-bad-size-161.bin",
+                "evidence\\fixtures-native\\197-bad-layerH-0.31.bin",
+                "evidence\\fixtures-native\\198-badmaterial.bin",
+                "evidence\\fixtures-native\\199-extreme-tolerance.bin"
+              ]
+            },
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-native\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-native\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-native\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-native\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-native\\157-v1-control-generation.bin",
+                "evidence\\fixtures-native\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-native\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-native\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-native\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-native\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-native\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-native\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-native\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-native\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-native\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-native\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-native\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "seeded-corners-and-fuzz-regressions",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\170-fuzz-0.bin",
+                "evidence\\fixtures-wasm\\171-fuzz-1.bin",
+                "evidence\\fixtures-wasm\\172-fuzz-2.bin",
+                "evidence\\fixtures-wasm\\173-fuzz-3.bin",
+                "evidence\\fixtures-wasm\\174-fuzz-4.bin",
+                "evidence\\fixtures-wasm\\175-fuzz-5.bin",
+                "evidence\\fixtures-wasm\\176-fuzz-6.bin",
+                "evidence\\fixtures-wasm\\177-fuzz-7.bin",
+                "evidence\\fixtures-wasm\\178-fuzz-8.bin",
+                "evidence\\fixtures-wasm\\179-fuzz-9.bin",
+                "evidence\\fixtures-wasm\\180-fuzz-10.bin",
+                "evidence\\fixtures-wasm\\181-fuzz-11.bin",
+                "evidence\\fixtures-wasm\\182-fuzz-12.bin",
+                "evidence\\fixtures-wasm\\183-fuzz-13.bin",
+                "evidence\\fixtures-wasm\\184-fuzz-14.bin",
+                "evidence\\fixtures-wasm\\185-fuzz-15.bin",
+                "evidence\\fixtures-wasm\\186-fuzz-16.bin",
+                "evidence\\fixtures-wasm\\187-fuzz-17.bin",
+                "evidence\\fixtures-wasm\\188-fuzz-18.bin",
+                "evidence\\fixtures-wasm\\189-fuzz-19.bin",
+                "evidence\\fixtures-wasm\\190-fuzz-20.bin",
+                "evidence\\fixtures-wasm\\191-fuzz-21.bin",
+                "evidence\\fixtures-wasm\\192-fuzz-22.bin",
+                "evidence\\fixtures-wasm\\193-fuzz-23.bin",
+                "evidence\\fixtures-wasm\\194-bad-baseH-nan.bin",
+                "evidence\\fixtures-wasm\\195-bad-baseH-inf.bin",
+                "evidence\\fixtures-wasm\\196-bad-size-161.bin",
+                "evidence\\fixtures-wasm\\197-bad-layerH-0.31.bin",
+                "evidence\\fixtures-wasm\\198-badmaterial.bin",
+                "evidence\\fixtures-wasm\\199-extreme-tolerance.bin"
+              ]
+            },
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-wasm\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-wasm\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-wasm\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-wasm\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-wasm\\157-v1-control-generation.bin",
+                "evidence\\fixtures-wasm\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-wasm\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-wasm\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-wasm\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-wasm\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-wasm\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-wasm\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-wasm\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-wasm\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-wasm\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-wasm\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-wasm\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "feature": "Generation-tagged single-use control",
+      "products": "all five",
+      "oracle": "Before/stale/wrong-generation tests on both; separate native in-flight observers; no partial mesh",
+      "geometryVerdict": "pass",
+      "fit": "unqualified",
+      "executions": [
+        {
+          "target": "native",
+          "groups": [
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-native\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-native\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-native\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-native\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-native\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-native\\157-v1-control-generation.bin",
+                "evidence\\fixtures-native\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-native\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-native\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-native\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-native\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-native\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-native\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-native\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-native\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-native\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-native\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-native\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        },
+        {
+          "target": "wasm",
+          "groups": [
+            {
+              "id": "v1-combinations-cancellation-and-seeded-surfaces",
+              "verdict": "pass",
+              "artifacts": [
+                "evidence\\fixtures-wasm\\152-v1-cap-tray-bevel-0.bin",
+                "evidence\\fixtures-wasm\\153-v1-cap-tray-bevel-1.bin",
+                "evidence\\fixtures-wasm\\154-v1-cap-tray-bevel-2.bin",
+                "evidence\\fixtures-wasm\\155-v1-cancel-before.bin",
+                "evidence\\fixtures-wasm\\156-v1-cancel-stale.bin",
+                "evidence\\fixtures-wasm\\157-v1-control-generation.bin",
+                "evidence\\fixtures-wasm\\158-v1-surface-fuzz-0.bin",
+                "evidence\\fixtures-wasm\\159-v1-surface-fuzz-1.bin",
+                "evidence\\fixtures-wasm\\160-v1-surface-fuzz-2.bin",
+                "evidence\\fixtures-wasm\\161-v1-surface-fuzz-3.bin",
+                "evidence\\fixtures-wasm\\162-v1-surface-fuzz-4.bin",
+                "evidence\\fixtures-wasm\\163-v1-surface-fuzz-5.bin",
+                "evidence\\fixtures-wasm\\164-v1-surface-fuzz-6.bin",
+                "evidence\\fixtures-wasm\\165-v1-surface-fuzz-7.bin",
+                "evidence\\fixtures-wasm\\166-v1-surface-fuzz-8.bin",
+                "evidence\\fixtures-wasm\\167-v1-surface-fuzz-9.bin",
+                "evidence\\fixtures-wasm\\168-v1-surface-fuzz-10.bin",
+                "evidence\\fixtures-wasm\\169-v1-surface-fuzz-11.bin"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "applicationChecks": [
+    {
+      "id": "AT-001.1",
+      "verdict": "unverified",
+      "scope": "Five-product typed geometry passes; source parsing/UI source routes remain parent integration."
+    },
+    {
+      "id": "AT-008.2",
+      "verdict": "unverified",
+      "scope": "Role/slab/bevel user overrides survive generation; UI reset/transaction scope belongs to parent."
+    },
+    {
+      "id": "AT-008.3",
+      "verdict": "unverified",
+      "scope": "Orphan/slot diagnostics exist; general source split/merge provenance remains parent."
+    },
+    {
+      "id": "AT-009.1",
+      "verdict": "unverified",
+      "scope": "126 field contract mapped; UI control accessibility/apply command is outside this library."
+    },
+    {
+      "id": "AT-009.2",
+      "verdict": "unverified",
+      "scope": "Finite/domain/disabled values and no-publish controls tested; whole UI/schema campaign not asserted."
+    },
+    {
+      "id": "AT-009.3",
+      "verdict": "unverified",
+      "scope": "Legacy values require explicit migration; parent owns imported-mesh migration transactions."
+    },
+    {
+      "id": "AT-019.1",
+      "verdict": "unverified",
+      "scope": "Component native/WASM static builds and numeric parity pass; final Rust/source/browser integration belongs to parent."
+    },
+    {
+      "id": "AT-020.1",
+      "verdict": "unverified",
+      "scope": "Same analytic rectangle-hole shape passes from typed context, not from the corpus SVG parser."
+    },
+    {
+      "id": "AT-020.2",
+      "verdict": "unverified",
+      "scope": "Same analytic seam passes from typed slabs, not the full shared-seam SVG route."
+    },
+    {
+      "id": "AT-020.3",
+      "verdict": "unverified",
+      "scope": "Holes/islands/concave cuts tested; general source self-intersection corpus remains parent."
+    },
+    {
+      "id": "AT-021.1",
+      "verdict": "unverified",
+      "scope": "Local signed curve budgets measured; entire source/transform/boolean budget remains unverified."
+    },
+    {
+      "id": "AT-021.2",
+      "verdict": "pass",
+      "scope": "Mechanical interval component: independent 12-layer 2.36 mm result and feature-datum interval checks."
+    },
+    {
+      "id": "AT-021.3",
+      "verdict": "unverified",
+      "scope": "Both schedules measured; printer-profile change/confirmation/undo belongs to parent domain/UI."
+    },
+    {
+      "id": "AT-021.4",
+      "verdict": "pass",
+      "scope": "Mechanical interval component: nominal 2.40 mm with floor -.04/ceil +.16, no automatic snapping."
+    },
+    {
+      "id": "AT-022.1",
+      "verdict": "unverified",
+      "scope": "No physical coupons or printer actions."
+    },
+    {
+      "id": "AT-022.2",
+      "verdict": "unverified",
+      "scope": "No physical force/fit/fatigue qualification."
+    }
+  ],
+  "parentDependencies": [
+    "source parser/shaper/raster and actual style/rim/band/core slab formulas",
+    "arbitrary imported-mesh CSG",
+    "full-pipeline signed error and general self-intersection corpus",
+    "runtime ABI-2 job/lease/watchdog, Rust final link, browsers and exporters",
+    "UI, source split/merge history, storage, 3MF and physical qualification"
+  ],
+  "mechanicsSemantics": 2,
+  "additionalRemediation": {
+    "native": 83,
+    "wasm": 83,
+    "domain": 22,
+    "sourceIntegrationNative": 140,
+    "sourceIntegrationWasm": 140,
+    "adjudication": "parent pending",
+    "report": "remediation-acceptance.json"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-08",
+  "status": "provisional; O-01 full source/product-level integration remains open",
+  "runtimeABI": 2,
+  "snapshotFormat": "ARCH/1",
+  "node": "24.19.0",
+  "rustNative": "1.98.1",
+  "rustWasm": "nightly-2026-09-07",
+  "rustWasmCommit": "5a2be9f5f",
+  "rustTarget": "wasm32-unknown-emscripten",
+  "rustBuildStd": [
+    "std",
+    "panic_abort"
+  ],
+  "emsdk": "6.0.9",
+  "emsdkReleaseHash": "f04ea239d533260dd1db760dd2d668d5f9a88d6b",
+  "cmake": "4.4.3",
+  "ninja": "1.13.2",
+  "manifold": {
+    "version": "3.5.3",
+    "revision": "0edd9d54876f3135e431575214dd6d8a72866fee",
+    "source": "https://github.com/elalish/manifold",
+    "internalParallelism": false,
+    "license": "../licenses/kernel/manifold-LICENSE.txt",
+    "licenseSha256": "C71D239DF91726FC519C6EB72D318EC65820627232B2F796219E87DCF35D0AB4"
+  },
+  "clipper2": {
+    "revision": "46f639177fe418f9689e8ddb74f08a870c71f5b4",
+    "source": "https://codeload.github.com/AngusJohnson/Clipper2/tar.gz/46f639177fe418f9689e8ddb74f08a870c71f5b4",
+    "archiveSha256": "73F5783E0C88299976334F48E3E356C756B96212C652ECC8BCEEC3BD99455BCB",
+    "patch": "../licenses/kernel/clipper2-no-iostream.patch",
+    "patchSha256": "88763E9A0B2AD9EC036BAEAF00317090621AA98C9754869E856BA16080EA8039",
+    "derivedTreeSha256": "6316DC4C346683B329F362B78D9D2C324AD628175716F1CCD280C12D305A62CB",
+    "treeHashRecipe": "SHA256 of UTF-8 ordinal-sorted relativePath:UPPERCASE_SHA256 lines, LF-terminated",
+    "license": "../licenses/kernel/clipper2-LICENSE.txt",
+    "licenseSha256": "C9BFF75738922193E67FA726FA225535870D2AA1059F91452C411736284AD566",
+    "configureDownloads": false
+  },
+  "harfbuzz": {
+    "revision": "36cb489cb02ce4b92099669ba9f9bea348eff93f",
+    "source": "https://codeload.github.com/harfbuzz/harfbuzz/tar.gz/36cb489cb02ce4b92099669ba9f9bea348eff93f",
+    "archiveSha256": "0AFA12C8EF4BC4FFEBD99E5D2A4A2C56DFE329C661FEDA08A9BC878B7352BE89",
+    "matchesValidatedHarfbuzzjs": "1.6.1",
+    "unifiedModuleVerified": true,
+    "extractionNote": "Original archive retained; build tree omits the CLAUDE.md symlink to AGENTS.md. No compiled source or license changed.",
+    "version": "14.4.0",
+    "scope": "Native and WASM full53font shaping/outlines/variation parity; webCOLRv1graphs and3browserWorkers memorygrowth parity; not full text-to-print qualification",
+    "binding": "harfbuzz-binding.json"
+  }
+}

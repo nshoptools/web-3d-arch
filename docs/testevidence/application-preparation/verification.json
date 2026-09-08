@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "at": "2026-09-08T07:41:51.801Z",
+  "scope": {
+    "node": 7,
+    "passed": 7,
+    "failed": 0,
+    "run": "20260908-app-preparation-r1",
+    "latest": "node-r2.log",
+    "types": true,
+    "scope": "Same visible lease/ticket, distinct evidence verdict, cancellation/newbuild, owned source inputs, coalescing, access retirement and invalid-source printer refresh; synthetic geometry, no wholeapp qualification."
+  },
+  "receiptRegression": {
+    "node": 8,
+    "passed": 8,
+    "failed": 0,
+    "run": "20260908-app-preparation-r1",
+    "latest": "node-r2.log",
+    "scope": "Real controller/history with labelled synthetic exporter; includes cancel during prepared-output confirmation, no late download or receipt."
+  },
+  "log": {
+    "path": "tmp/reviews/codex/runs/20260908-app-preparation-r1/evidence/node-r2.log",
+    "bytes": 1775,
+    "sha256": "0dbec3a3e6bcbd4631d10f0e46f7860a94aa0f6498546b5603b207e08fd8c8e7"
+  },
+  "sourcePins": [
+    {
+      "path": "src/app/jobs.mjs",
+      "bytes": 15176,
+      "sha256": "cf061887dcfde6e255a333f20b938dccdd79a454c09cefa5ba2bfcd77118ddcb"
+    },
+    {
+      "path": "src/app/controller.mjs",
+      "bytes": 19409,
+      "sha256": "e791d971e75fd59531f9333c9be4b3ec90273b8aa38d0aff521c24bf8f31e548"
+    },
+    {
+      "path": "src/app/adapters.d.mts",
+      "bytes": 8788,
+      "sha256": "a5d6c1c62ef7aa753738059386f349eb0c1e8cede6089e43a2accb4bd8648555"
+    },
+    {
+      "path": "src/integration/preparation-scheduler.mjs",
+      "bytes": 1606,
+      "sha256": "efeef28bc4d042866cd3af0242a34f83feac1c33de862e0b9c674d672cb979c7"
+    },
+    {
+      "path": "src/integration/preparation-scheduler.d.mts",
+      "bytes": 435,
+      "sha256": "9f259948ce916ad1171c396633640adb7486d9d8e297250af7f9e5d0c93b5018"
+    },
+    {
+      "path": "tests/app/preparation.node.test.mjs",
+      "bytes": 6594,
+      "sha256": "fda9232ac0ea2fffafe3b9e1442c745f27d6e4acc5ba08b01f052a1e99999715"
+    },
+    {
+      "path": "tests/app/export-controls.node.test.mjs",
+      "bytes": 13034,
+      "sha256": "afbcb1c0f1a528762ba63b625ead7862123f54a473118254e1a339fb9c4f76d9"
+    }
+  ],
+  "releaseReady": false
+}

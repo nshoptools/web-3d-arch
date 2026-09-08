@@ -1,0 +1,538 @@
+{
+  "version": 1,
+  "results": [
+    {
+      "id": "r2-roof-after-bevel-0",
+      "pass": true,
+      "verdict": 1,
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 2
+        }
+      }
+    },
+    {
+      "id": "r2-roof-after-bevel-0.6",
+      "pass": true,
+      "verdict": 1,
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0.6,
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 2
+        }
+      }
+    },
+    {
+      "id": "r2-valid-plain",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        }
+      }
+    },
+    {
+      "id": "r2-valid-small-bevel",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.39999990000000035,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.6
+        }
+      }
+    },
+    {
+      "id": "r2-valid-chamfer",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.3999998999999999,
+        0.39999990000000035,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0.6
+        }
+      }
+    },
+    {
+      "id": "r2-valid-bevel-chamfer",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.3999998999999999,
+        0.19999990000000017,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0.6,
+          "topBevel": 1,
+          "topBevelShape": 1,
+          "topBevelR": 0.2
+        }
+      }
+    },
+    {
+      "id": "r2-valid-round-bevel",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.39999990000000035,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "topBevel": 1,
+          "topBevelShape": 0,
+          "topBevelR": 0.6
+        }
+      }
+    },
+    {
+      "id": "r2-valid-steps",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.5999998999999997,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "topBevel": 1,
+          "topBevelShape": 2,
+          "topBevelR": 0.6,
+          "topBevelSeg": 2
+        }
+      }
+    },
+    {
+      "id": "r2-valid-rotated",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.5999999000000001,
+        0.5999998999999997,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0.4,
+          "strapAngle": 17
+        }
+      }
+    },
+    {
+      "id": "r2-valid-quarter-turn",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "strapAngle": 90
+        }
+      }
+    },
+    {
+      "id": "r2-valid-offset",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.5999999000000001,
+        0.5999998999999997,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0.4,
+          "strapOff": 3
+        }
+      }
+    },
+    {
+      "id": "r2-valid-horizontal-capsule",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "strapSlot": 1.4
+        }
+      }
+    },
+    {
+      "id": "r2-valid-vertical-capsule",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.3999998999999999,
+        0.39999990000000035,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0,
+          "strapSlot": 1.2,
+          "strapSlotDir": 1
+        }
+      }
+    },
+    {
+      "id": "r2-material-prepared",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "prepared"
+      }
+    },
+    {
+      "id": "r2-material-colors",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "colors"
+      }
+    },
+    {
+      "id": "r2-material-hole",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "hole"
+      }
+    },
+    {
+      "id": "r2-material-islands",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.9999999,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "islands"
+      }
+    },
+    {
+      "id": "r2-roof-gap",
+      "pass": true,
+      "verdict": 1,
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "strap-roof-gap"
+      }
+    },
+    {
+      "id": "r2-floor-gap",
+      "pass": true,
+      "verdict": 1,
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "strap-floor-gap"
+      }
+    },
+    {
+      "id": "r2-roof-skin-0.000001",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        9.00000000139778e-7,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "strap-roof-gap",
+        "roof-skin": 0.000001
+      }
+    },
+    {
+      "id": "r2-roof-skin-0.02",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.019999899999999574,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "strap-roof-gap",
+        "roof-skin": 0.02
+      }
+    },
+    {
+      "id": "r2-roof-skin-0.2",
+      "pass": true,
+      "verdict": 0,
+      "guard": [
+        0.9999999,
+        0.19999990000000017,
+        1e-7,
+        0,
+        0,
+        0
+      ],
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "set": {
+          "baseH": 6,
+          "strapZ": 3,
+          "strapD": 4,
+          "strapCham": 0
+        },
+        "variant": "strap-roof-gap",
+        "roof-skin": 0.2
+      }
+    }
+  ]
+}

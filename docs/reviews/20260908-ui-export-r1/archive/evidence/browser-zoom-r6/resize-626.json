@@ -1,0 +1,17 @@
+{
+  "width": 626,
+  "bounds": {
+    "left": 10,
+    "top": 10,
+    "width": 1280,
+    "height": 900,
+    "windowState": "normal"
+  },
+  "currentWidth": 626,
+  "requestedWidth": 1280,
+  "actual": {
+    "innerWidth": 626,
+    "outerWidth": 1280,
+    "devicePixelRatio": 2
+  }
+}

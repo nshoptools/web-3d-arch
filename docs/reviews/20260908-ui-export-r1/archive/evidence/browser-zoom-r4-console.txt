@@ -1,0 +1,118 @@
+{
+  "scope": "Real Chromium tabs.setZoom(2) through an isolated, locally generated extension. Captured React UI; deferred bridge.",
+  "before": {
+    "width": 1252,
+    "height": 799,
+    "dpr": 1
+  },
+  "after": {
+    "width": 626,
+    "height": 399,
+    "dpr": 2
+  },
+  "zoom": 2,
+  "pass": true,
+  "browser": "153.0.8010.12",
+  "metrics": [
+    {
+      "viewport": 626,
+      "dpr": 2,
+      "focused": true,
+      "left": 413.5,
+      "right": 591,
+      "top": 293.7109375,
+      "bottom": 327.7109375,
+      "panel": {
+        "left": 1,
+        "right": 625,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    },
+    {
+      "viewport": 626,
+      "dpr": 2,
+      "focused": true,
+      "left": 315.5,
+      "right": 591,
+      "top": 293.8046875,
+      "bottom": 327.8046875,
+      "panel": {
+        "left": 1,
+        "right": 625,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    },
+    {
+      "viewport": 626,
+      "dpr": 2,
+      "focused": true,
+      "left": 35,
+      "right": 187.6953125,
+      "top": 291.7421875,
+      "bottom": 329.7421875,
+      "panel": {
+        "left": 1,
+        "right": 625,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    },
+    {
+      "viewport": 320,
+      "dpr": 2,
+      "focused": true,
+      "left": 35,
+      "right": 212.5,
+      "top": 293.5234375,
+      "bottom": 327.5234375,
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    },
+    {
+      "viewport": 320,
+      "dpr": 2,
+      "focused": true,
+      "left": 35,
+      "right": 285,
+      "top": 293.8046875,
+      "bottom": 327.8046875,
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    },
+    {
+      "viewport": 320,
+      "dpr": 2,
+      "focused": true,
+      "left": 35,
+      "right": 187.6953125,
+      "top": 291.8359375,
+      "bottom": 329.8359375,
+      "panel": {
+        "left": 1,
+        "right": 319,
+        "top": 222.859375,
+        "bottom": 398.5
+      }
+    }
+  ],
+  "shots": [
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-626-0.png",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-626-1.png",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-626-2.png",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-320-0.png",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-320-1.png",
+    "D:\\VoSon\\Code\\web-3d-arch\\tmp\\reviews\\codex\\runs\\20260908-ui-export-review-r1\\evidence\\browser-zoom-r4\\zoom-320-2.png"
+  ],
+  "errors": [],
+  "denied": []
+}

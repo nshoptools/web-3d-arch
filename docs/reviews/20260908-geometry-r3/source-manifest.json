@@ -1,0 +1,2366 @@
+{
+  "kind": "independent-geometry-review-snapshot",
+  "capturedUtc": "2026-09-08T04:55:42.061Z",
+  "scope": "mechanics3/source2/root product/final scene exports; no whole-app acceptance",
+  "files": [
+    {
+      "path": "src/kernel/build.rs",
+      "bytes": 2659,
+      "sha256": "76b9f86f4f639d9c4d714f58450c1ed369b72cfcab20c5b35b7f78bcc69aa47d"
+    },
+    {
+      "path": "src/kernel/Cargo.lock",
+      "bytes": 15180,
+      "sha256": "3c2dade86bfba5df4b9a1cbb37164af4f9fcd47b09dcdc69a0c4a163849fe532"
+    },
+    {
+      "path": "src/kernel/Cargo.toml",
+      "bytes": 969,
+      "sha256": "c46a822b96c35116668ae3cd2ed2c24984527f002aa43471039ccbbf20f10f91"
+    },
+    {
+      "path": "src/kernel/conditioning.ts",
+      "bytes": 8011,
+      "sha256": "21e3ee45a8d9858adc6396c0f73bffb81304a29ccc7661e50e52d082afc5d787"
+    },
+    {
+      "path": "src/kernel/examples/product-runtime-probe.rs",
+      "bytes": 7579,
+      "sha256": "009029e69a22ca0434b7696de64887a3a115852c91c0d9400f280a6860272328"
+    },
+    {
+      "path": "src/kernel/examples/raster-runtime-probe.rs",
+      "bytes": 334,
+      "sha256": "99e44eb954ede17b882429fd89512f674cbf1b81dcbb1116a39c20711c65ddcf"
+    },
+    {
+      "path": "src/kernel/final-scene-export/CMakeLists.txt",
+      "bytes": 996,
+      "sha256": "13a6ab4dad70634ea77d14b02501e28d6df8a3452aac7cdbed0a1c605a2d294e"
+    },
+    {
+      "path": "src/kernel/final-scene-export/docs/acceptance.json",
+      "bytes": 8579,
+      "sha256": "a71f8f2cb4c35d3feca8dae48a45c85b3be20f104ffa70cb26f7349920b82f1c"
+    },
+    {
+      "path": "src/kernel/final-scene-export/docs/ACCEPTANCE.md",
+      "bytes": 3788,
+      "sha256": "71f920b92168914d2cbfbf33fd1b290fc9cb8f2516867c532968f06e8833a8ba"
+    },
+    {
+      "path": "src/kernel/final-scene-export/docs/API-EARLY.md",
+      "bytes": 5559,
+      "sha256": "a580ddae94dcfc074767fb82dbd14a1523128fb5dcfb12fd4de2c8af33c86663"
+    },
+    {
+      "path": "src/kernel/final-scene-export/docs/API.md",
+      "bytes": 13986,
+      "sha256": "77b509adbbd333bc80c7fda02b3fad6f82e94e804e11ff2b930a2cfb0b71e42a"
+    },
+    {
+      "path": "src/kernel/final-scene-export/docs/DECISIONS.md",
+      "bytes": 6862,
+      "sha256": "694a6699d8970888aa916b1828ae0dddfa40e3f16184f59ba0c5722c2c80d0b0"
+    },
+    {
+      "path": "src/kernel/final-scene-export/hooks/preimages.json",
+      "bytes": 1477,
+      "sha256": "c702d6ce132f7aefbfb33e8ba24e653635d9b04f2bbba97ff9ca710e67fb0746"
+    },
+    {
+      "path": "src/kernel/final-scene-export/hooks/README.md",
+      "bytes": 2374,
+      "sha256": "6ada62e2f71d8823b88b16e140edc45c6fb1f16583f6b584ffdf0995ee4fd224"
+    },
+    {
+      "path": "src/kernel/final-scene-export/hooks/root-hooks.json",
+      "bytes": 2153,
+      "sha256": "15e665787ad028bfbd796f9f689b24595237524e0c55d67ffa5c075bff1d0ed4"
+    },
+    {
+      "path": "src/kernel/final-scene-export/licenses/clipper2-LICENSE.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/final-scene-export/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/final-scene-export/licenses/manifold-LICENSE.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/final-scene-export/licenses/README.md",
+      "bytes": 1801,
+      "sha256": "a946ce03fb49e607f6840d468351eef05c30b7b718db419591895ee0238b8917"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/exports.json",
+      "bytes": 298,
+      "sha256": "6fcfa02156125dbf18e103313700de8cec9284690fbe3cd6a09bf3068728df81"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/final-export-runtime.h",
+      "bytes": 1220,
+      "sha256": "d51a6822110fb6fb0e624758bbbc5b2aa7e26c1d1d05c5988ec0d1da3c943e48"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/final_scene_export.cpp",
+      "bytes": 19349,
+      "sha256": "613b8d88f80df6d395aac152219f30618f0054c43e18d37d23783926b014a874"
+    },
+    {
+      "path": "src/kernel/final-scene-export/native/final_scene_export.h",
+      "bytes": 3467,
+      "sha256": "0f6a2b5433b6632829d3ac2914308673699a9a0b5d3c5a0ca6d4d7c6991ac503"
+    },
+    {
+      "path": "src/kernel/final-scene-export/pins/dependency-sources.json",
+      "bytes": 179456,
+      "sha256": "44c2b44f96e1bc1c3bf8b8926216feb9c851452df0522b6a4c3595451feccce3"
+    },
+    {
+      "path": "src/kernel/final-scene-export/pins/root-toolchain-lock.json",
+      "bytes": 2464,
+      "sha256": "8170330745859ac69880285b2b83a3ed42619ad38f761033f44cfa22caa51095"
+    },
+    {
+      "path": "src/kernel/final-scene-export/README.md",
+      "bytes": 3267,
+      "sha256": "42b64c25d956242ceb3d4addbe63e8c775555e3a3370b6ee5f0e2a2d0e386ed6"
+    },
+    {
+      "path": "src/kernel/final-scene-export/runtime-helper.mjs",
+      "bytes": 3927,
+      "sha256": "92b856d0447ad866286bb0cbfc7d38e18b57e91f3fd2d3298bd3c90d2e9f79a6"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/encode.rs",
+      "bytes": 14393,
+      "sha256": "2ba1ee4c62beefd9bbd9e651602e8e71f67fd3d34521080b06f89b3b75478918"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/mod.rs",
+      "bytes": 6511,
+      "sha256": "a9dc849c9d141aa9fab5b6818bb4a8e32c9b4328be38bd1ef1f731305857f01e"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/test_fixture.rs",
+      "bytes": 1478,
+      "sha256": "1a8230c9e91b64122b081f0170a2be30df07dca944aadaa43bc4b6dd510540cd"
+    },
+    {
+      "path": "src/kernel/final-scene-export/rust/wire.rs",
+      "bytes": 8538,
+      "sha256": "41097ab119b906fc177d3317aca7111580904a6d8cb97574cdf9875baf39bfd6"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/browser-worker.mjs",
+      "bytes": 1577,
+      "sha256": "c84312aa1e781053b5e9337ad0f47d15cbd72e5dae028a0d268a369d7762ce76"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/browser.mjs",
+      "bytes": 6110,
+      "sha256": "7dd76c5f160f7558c1eec8ee4fa8592df092a2f6725a935b10b994149f6cbaaa"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/cases.mjs",
+      "bytes": 8720,
+      "sha256": "26b7f740aee072c4af26b897da5887be0043030cacaff162faebad8bfb392a09"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/fixture.cpp",
+      "bytes": 3391,
+      "sha256": "bd66af8f7f4cc3071c1bbec1c4b2212fe88e572e686828881fb467ca3aaf27a3"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/module-api.mjs",
+      "bytes": 5864,
+      "sha256": "d59fcc475d4bc527daf7613a1a174aebf80ff9aa055c7e0d63ae8496d16fcd88"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/native-runtime.mjs",
+      "bytes": 1991,
+      "sha256": "51f98d03243421a44756358995b69626cc17f3e5f43111aeb69e601dd5c7affe"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/native_probe.rs",
+      "bytes": 7255,
+      "sha256": "b7847994993bbd7b88f3d0f0bc5e7fc4c8f15fed963902c3c4ab59becab7a0d3"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/options.mjs",
+      "bytes": 1635,
+      "sha256": "39aa9860cfda9781158d493ef55a3421872463a8d6a23a90bfb190a79ce9a60e"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/oracles.mjs",
+      "bytes": 6890,
+      "sha256": "9d88641abf41ae2b2cb8ace4be4de80dfcbf1c4e4d8193059b62fb3636560606"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/parity.mjs",
+      "bytes": 1652,
+      "sha256": "e8f480f88db433e824bea5dc016e4a7d0c216cf306d575edc8a3be01ebc8970d"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/run-native.mjs",
+      "bytes": 1684,
+      "sha256": "6c4e796d207afd38a122f95be209da5c3d9dd385ad67c1b11c0f17cccb2ff926"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/run-wasm.mjs",
+      "bytes": 2718,
+      "sha256": "1e76142d73c5761cff328607ab075c8d6dcbf2c12c7d7149cedfbc00d3c74cf8"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tests/runtime-helper.test.mjs",
+      "bytes": 1529,
+      "sha256": "2b652bb281bf742a7592203fe7bd471028f41dade18d351859b6f3b7bb7fe69f"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tools/build.ps1",
+      "bytes": 4911,
+      "sha256": "d2aa11e237ee0071ea5053e0853bc607ba56016b668b29355055f2f7645bee06"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tools/check-evidence.mjs",
+      "bytes": 5496,
+      "sha256": "82d6bfb68a6be63ac8fd0e9059966e20746f4a7530305030dbf25560cff50ea8"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tools/prepare.mjs",
+      "bytes": 4209,
+      "sha256": "2fdf533c1ac67737a6eebc1bd815bda911c4c50a57a42b9a3f33024806b9e517"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tools/provenance.mjs",
+      "bytes": 4996,
+      "sha256": "c5f4b4818e9dcc25ce95737d9717c00d7b3e9ade9810f1d0747bc79de2a7ee09"
+    },
+    {
+      "path": "src/kernel/final-scene-export/tools/seal.mjs",
+      "bytes": 11604,
+      "sha256": "2cb6c7972b7900120439cfc7426a2db85d311639b32f54c66c96071b0342051d"
+    },
+    {
+      "path": "src/kernel/mechanics/CMakeLists.txt",
+      "bytes": 2877,
+      "sha256": "d13d7766c85aaeecfb5bbf4a762119f34d5d6c2928edc71cd65244cff33a5e21"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-001-v1.md",
+      "bytes": 11757,
+      "sha256": "fe40f8ad0ee9a37d17b3a9b42d11f107f2499a2b8fd49bff1476b2b1bf6001d0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-002-v2.md",
+      "bytes": 10565,
+      "sha256": "db5344c04e8224b43703f2894874a90e5af87442e2fffbb4761932b5466bfe35"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-003-final-geometry-and-datums.md",
+      "bytes": 7648,
+      "sha256": "f4c8588db5ca65c70fcd1223f2bb5995f80963bee209f4bbafc866daf63083b0"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/ADR-004-final-strap-guard.md",
+      "bytes": 4109,
+      "sha256": "479c82f4cf078ce8260f4f78978ea1b63e1bee0cee39fe38147873ba5a6d5082"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/API.md",
+      "bytes": 17245,
+      "sha256": "e9cc0bdba90d42b5d5057412cdc6768ec4dd5ce64990afe430564ee7d00b7b0c"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/catalog-lock.json",
+      "bytes": 13390,
+      "sha256": "5e76951cfd843124c4f9f2eeb549601f12d7438256bae3361037552e06b363b1"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/remediation-acceptance.json",
+      "bytes": 7654,
+      "sha256": "4d14412d5b193acc5311a4799ec3ea05f23444d7891bc5491b003a6bdee89359"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/semantic-contract.json",
+      "bytes": 70335,
+      "sha256": "92fbf4db63dfe12c738859b97bf645ff35b52e49e5088cf70e266e5935a28f88"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.json",
+      "bytes": 78780,
+      "sha256": "1b1b038b71835fc510e4d8aa87d2294bb86af31969f1b30e5a5321f42bba62bf"
+    },
+    {
+      "path": "src/kernel/mechanics/docs/v1-acceptance.md",
+      "bytes": 4448,
+      "sha256": "e7a8766ab55ce3c82565b5602fddcee628fd1342736689cf3ac05ac4bf121f81"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/mechanics/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/mechanics/pins.json",
+      "bytes": 2345,
+      "sha256": "43a8beda47ffde1762f88604f21eed98aed7bedeac24f070f82bc9b99516d4d1"
+    },
+    {
+      "path": "src/kernel/mechanics/README.md",
+      "bytes": 3161,
+      "sha256": "6d6d1cc4483437f9eabeadc1c777eed0fb7c84b02512208d13f2391fb171a939"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog-map.mjs",
+      "bytes": 8239,
+      "sha256": "c51ea0c52eb68d681b1dd05be13856efafbbd57bb70ad9c64b8ce2058a46f720"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog.inc",
+      "bytes": 5883,
+      "sha256": "cd6d5f2a431ebd485cf6665a3e21cb4d53838a0bd17c1eb4e688499616173fb4"
+    },
+    {
+      "path": "src/kernel/mechanics/src/catalog_quantum.inc",
+      "bytes": 993,
+      "sha256": "7ddfb6ea4b1daf07e66bc8d6ec91b6c22b64b2afa50af825187258e04a0bc31a"
+    },
+    {
+      "path": "src/kernel/mechanics/src/domain-adapter.mjs",
+      "bytes": 6842,
+      "sha256": "7cc3493e6d9f0ba836e654dedcea039af93905da8cbdc2b3eb67091c6bc2ed27"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.cpp",
+      "bytes": 74959,
+      "sha256": "83afc8ec9b609d46b6aa928934cdde59366449df99bdcfb9022904389ba1ff20"
+    },
+    {
+      "path": "src/kernel/mechanics/src/mechanics.h",
+      "bytes": 7906,
+      "sha256": "671a8031c41ca53dca0c7fb285de65adc94cc90733cbfc491c3d2a758dd75725"
+    },
+    {
+      "path": "src/kernel/mechanics/src/parameter_ids.h",
+      "bytes": 2880,
+      "sha256": "252be9c95f8b380b74da6875fa460d0635867e7e413a3aee527886c0aa0de4a3"
+    },
+    {
+      "path": "src/kernel/mechanics/src/tunnel_guard.cpp.inc",
+      "bytes": 9322,
+      "sha256": "5190a3df11ccd67af72232fc1cc8e9b4ee9a1cde372a7d5815a5d6b4730d73b5"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/cancellation.mjs",
+      "bytes": 2239,
+      "sha256": "7f11f7c23260705f1b8857fb6c2026a74bea50f75ed4660c376ef6b26bcc51d7"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/domain-adapter.test.mjs",
+      "bytes": 4010,
+      "sha256": "19db5d953cb0c2283406ef56913eb6a30b8e3975110422b5af10ca18fabbd76d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/fixture.cpp",
+      "bytes": 18747,
+      "sha256": "a5259018e462fddb100bd38e97dd5e1d62b5c24d125ccfb9e0bdc1dcbd4454bc"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/oracles/mechanical-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/parity.mjs",
+      "bytes": 3946,
+      "sha256": "740ae6cf35eb91cf6720ae2140b7c73702bf84aaba5f8cc3ff1a84cd8042463d"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-domain.mjs",
+      "bytes": 4983,
+      "sha256": "23db3fe54f2baeac59a067ce4d90aef552aab010107ea495ddf5e6f4305759e9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation-parity.mjs",
+      "bytes": 3402,
+      "sha256": "2e317f96e46ddb568002f33bd98e2d92a5c418303e1a91a6ae98da26b28680a9"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/remediation.mjs",
+      "bytes": 9930,
+      "sha256": "7a924fed0f1d910e3741c1ba969a26dff3362dd43906787768918cb0e6e32ac7"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/run.mjs",
+      "bytes": 32891,
+      "sha256": "d5feef4a8df18ff9c5c3c1a8af389b3dc4f606e8366aeb366260154be6f52e1e"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-parity.mjs",
+      "bytes": 3635,
+      "sha256": "ee2cf9d5b9e35733e322b814d507d4ca32734b5048910b8dc7170ea9e69fb17f"
+    },
+    {
+      "path": "src/kernel/mechanics/tests/source-regression.mjs",
+      "bytes": 13402,
+      "sha256": "e567b5d2ac12d6b195201bc0cbbaca023c726878357aeaa34e3d52826a497127"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/build.ps1",
+      "bytes": 2484,
+      "sha256": "fa13edd6e855db47ea6839cb7e77018e8c3ba3fd0bb401965baaaef588c90c69"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/check.ps1",
+      "bytes": 1131,
+      "sha256": "a28e0f28c9837fbfc1b2e47696f326b539bece149be5063e23dcdc8d016e6850"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/finalize-report.mjs",
+      "bytes": 12814,
+      "sha256": "bbf871a94d2c55168e5390235ffd95b8047d2cd97284aba830b85ad0902d845a"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/generate-catalog.mjs",
+      "bytes": 3957,
+      "sha256": "9d0cdcccbed446a26fae762124200a718d02d8c7f6d8b1d00a1886d18779578b"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/inspect-degenerate.mjs",
+      "bytes": 731,
+      "sha256": "047b7323d20b597af773b2110cf545e5c7b2286fbae57d5b967e187905f53feb"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/verify-pins.mjs",
+      "bytes": 1341,
+      "sha256": "5f6ecd3656ed80d7da47d91f23c11017101c7ad0d7112a1a63fdad87e8cd4f88"
+    },
+    {
+      "path": "src/kernel/mechanics/tools/write-handoff.mjs",
+      "bytes": 17061,
+      "sha256": "dc4b6fd0a6a87150de2961eb288cf302bf2fad1ef53f1db66625f883728df4f2"
+    },
+    {
+      "path": "src/kernel/native/CMakeLists.txt",
+      "bytes": 3779,
+      "sha256": "4af8e1632bf718ee9ef4a9e384ad4eca6e41d86bde2ceabce6b728bff5d741aa"
+    },
+    {
+      "path": "src/kernel/native/conditioning-api.cpp",
+      "bytes": 5639,
+      "sha256": "d323da9420245c0a83ec328aedcae04a7afb8ca6a15aaef2e75b1180485c4b8d"
+    },
+    {
+      "path": "src/kernel/native/conditioning-internal.h",
+      "bytes": 762,
+      "sha256": "a8a3f49bc18e426136e066ccafd83a26763bae76fe3ac56295dc2a0886124771"
+    },
+    {
+      "path": "src/kernel/native/conditioning.cpp",
+      "bytes": 20152,
+      "sha256": "badb0d56de4bce772acf282aaa2aacdb5d44315c4d49949550be8f27cc70d93a"
+    },
+    {
+      "path": "src/kernel/native/conditioning.h",
+      "bytes": 3121,
+      "sha256": "2bafc99118ab1e75b8b198cf658f8fd5758ff0767ffc0c9197fd1cb722f82d92"
+    },
+    {
+      "path": "src/kernel/native/geometry.cpp",
+      "bytes": 17600,
+      "sha256": "b0125e3c57726a3ac11e840b7a53a52f0d7b5bedf1f09892169bbf5079484600"
+    },
+    {
+      "path": "src/kernel/native/geometry.h",
+      "bytes": 3519,
+      "sha256": "fd6a6d40b63a1fea07cf66956d85e001cb9f5262088f8c8d2b3d3c6ff510f5a4"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.cpp",
+      "bytes": 14039,
+      "sha256": "81b60eb448e7a78bb81b240f4516a07b13b4a7fd0e8627f827cfcfd4f7228f1b"
+    },
+    {
+      "path": "src/kernel/native/product-bridge.h",
+      "bytes": 761,
+      "sha256": "244454e1b73f70984cc716746379db2230122a51496261218ec1f9c3b040632c"
+    },
+    {
+      "path": "src/kernel/native/product-exports.json",
+      "bytes": 421,
+      "sha256": "1b14c53383fa2c572eb9a134c108b8a469ae413acf80abaab4cd813c9200fdd0"
+    },
+    {
+      "path": "src/kernel/native/product-runtime.h",
+      "bytes": 1888,
+      "sha256": "e940352a8e12665d0c34830669bd29d92f7ad2c8d56069805c758ac903014afb"
+    },
+    {
+      "path": "src/kernel/native/raster-exports.json",
+      "bytes": 286,
+      "sha256": "42cfaf796e353f2e601ed22b7d0bad65166c09ba929c4925ee75d0251888ce23"
+    },
+    {
+      "path": "src/kernel/native/raster-runtime.h",
+      "bytes": 9769,
+      "sha256": "408e8009f3b6a50bf4ab2fe54ae85998ea8f533b0755b31062f323e778dc23b7"
+    },
+    {
+      "path": "src/kernel/native/runtime.h",
+      "bytes": 4119,
+      "sha256": "ac2641d8e8cf45bf8cc967fe1691643702eb7c0a8a9059781f866b0b9f1bcf89"
+    },
+    {
+      "path": "src/kernel/native/smoke.cpp",
+      "bytes": 760,
+      "sha256": "7c2f2e457ac1a7d6f705c51a2a8edbcb161b36759dba33abcc7db913c6d45c0a"
+    },
+    {
+      "path": "src/kernel/raster-source/Cargo.lock",
+      "bytes": 11128,
+      "sha256": "ae7484f4796a8ea90a4044951590e749841ba08c92d5be96041204defe1c0d9f"
+    },
+    {
+      "path": "src/kernel/raster-source/Cargo.toml",
+      "bytes": 562,
+      "sha256": "5bd0e782f72f889e218600e012b743689a91cda96c0d048f1a49bf9b5244d193"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/dependencies.json",
+      "bytes": 53197,
+      "sha256": "a392506f46bf293d270675f1bdafedf1038bb1482bf7a18d38b0d0c364abec33"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/geometry-semantics.md",
+      "bytes": 9159,
+      "sha256": "17876c082a1402e0760cd52b9a94261ca640dd19b69c3afe4eac2277b3246a23"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/host-integration.md",
+      "bytes": 12439,
+      "sha256": "163b54296a4b2a16bc05f9fda637a658ba1d5dafbbc03f7045e0ad0144bcd674"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/adler2-2.0.1/LICENSE-0BSD",
+      "bytes": 665,
+      "sha256": "861399f8c21c042b110517e76dc6b63a2b334276c8cf17412fc3c8908ca8dc17"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/adler2-2.0.1/LICENSE-APACHE",
+      "bytes": 10860,
+      "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/adler2-2.0.1/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/autocfg-1.5.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/autocfg-1.5.1/LICENSE-MIT",
+      "bytes": 1054,
+      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/bitflags-2.13.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/bitflags-2.13.1/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/block-buffer-0.10.4/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/block-buffer-0.10.4/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/bytemuck-1.25.2/LICENSE-APACHE",
+      "bytes": 10398,
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/bytemuck-1.25.2/LICENSE-MIT",
+      "bytes": 1110,
+      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/bytemuck-1.25.2/LICENSE-ZLIB",
+      "bytes": 851,
+      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/byteorder-1.5.0/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/byteorder-1.5.0/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/byteorder-1.5.0/UNLICENSE",
+      "bytes": 1211,
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/byteorder-lite-0.1.0/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/byteorder-lite-0.1.0/UNLICENSE",
+      "bytes": 1211,
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/cfg-if-1.0.4/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/cfg-if-1.0.4/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/cpufeatures-0.2.17/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/cpufeatures-0.2.17/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/crc32fast-1.5.1/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/crc32fast-1.5.1/LICENSE-MIT",
+      "bytes": 1097,
+      "sha256": "61d383b05b87d78f94d2937e2580cce47226d17823c0430fbcad09596537efcf"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/crypto-common-0.1.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/crypto-common-0.1.7/LICENSE-MIT",
+      "bytes": 1065,
+      "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/digest-0.10.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/digest-0.10.7/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/fdeflate-0.3.7/LICENSE-APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/fdeflate-0.3.7/LICENSE-MIT",
+      "bytes": 1036,
+      "sha256": "c77a4cf9da729987d0fe7ccd811e3bd27393914ddf3d23467c18cc22954513b3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/flate2-1.1.10/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/flate2-1.1.10/LICENSE-MIT",
+      "bytes": 1062,
+      "sha256": "025436edff4cfcdde17a5811fdea78892d8482efd1abdec5a17872d07a4f2112"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/generic-array-0.14.7/LICENSE",
+      "bytes": 1107,
+      "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/hash32-0.3.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/hash32-0.3.1/LICENSE-MIT",
+      "bytes": 1058,
+      "sha256": "c986bcdb83103d4ddf58aeb7b5302359782e54dc4eea14a0cc27c62dcbd50729"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/heapless-0.8.0/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/heapless-0.8.0/LICENSE-MIT",
+      "bytes": 1058,
+      "sha256": "035e70219855119df4273b3c5b97543ae82e0dd60c520416e759107c602f651b"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/image-0.25.10/LICENSE-APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/image-0.25.10/LICENSE-MIT",
+      "bytes": 1036,
+      "sha256": "c77a4cf9da729987d0fe7ccd811e3bd27393914ddf3d23467c18cc22954513b3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/image-webp-0.2.4/LICENSE-APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/image-webp-0.2.4/LICENSE-MIT",
+      "bytes": 1036,
+      "sha256": "c77a4cf9da729987d0fe7ccd811e3bd27393914ddf3d23467c18cc22954513b3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/itoa-1.0.18/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/itoa-1.0.18/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libc-0.2.189/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libc-0.2.189/LICENSE-MIT",
+      "bytes": 1066,
+      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libm-0.2.16/LICENSE.txt",
+      "bytes": 14088,
+      "sha256": "3823dda7cf046602f4b4e77ec8e227863dc4736037cc85bb33d9f19febe16bb7"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libwebp-1.6.0-fixture-tool/AUTHORS",
+      "bytes": 3279,
+      "sha256": "f251be89fd442bd9d701360730aea163cc8e2076ff03528f59267dc2c4f8b60a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libwebp-1.6.0-fixture-tool/COPYING",
+      "bytes": 1496,
+      "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/libwebp-1.6.0-fixture-tool/PATENTS",
+      "bytes": 1436,
+      "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/memchr-2.8.3/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/memchr-2.8.3/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/memchr-2.8.3/UNLICENSE",
+      "bytes": 1211,
+      "sha256": "7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.8.9/LICENSE",
+      "bytes": 1213,
+      "sha256": "4108245a1f2df9d4e94df8abed5b4ba0759bb2f9b40a6b939f1be141077ae50b"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.8.9/LICENSE-APACHE.md",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.8.9/LICENSE-MIT.md",
+      "bytes": 1212,
+      "sha256": "799e9ca9d179295ef372f25d3769cdda7d25bb2668add6a6a1e22d1e4c678b8d"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.8.9/LICENSE-ZLIB.md",
+      "bytes": 984,
+      "sha256": "0a54e647fe54104658b5e563c04c6f9edf251710e47bce692e0bd990a4ddaa39"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.9.1/LICENSE",
+      "bytes": 1213,
+      "sha256": "4108245a1f2df9d4e94df8abed5b4ba0759bb2f9b40a6b939f1be141077ae50b"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.9.1/LICENSE-APACHE.md",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.9.1/LICENSE-MIT.md",
+      "bytes": 1212,
+      "sha256": "799e9ca9d179295ef372f25d3769cdda7d25bb2668add6a6a1e22d1e4c678b8d"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/miniz_oxide-0.9.1/LICENSE-ZLIB.md",
+      "bytes": 984,
+      "sha256": "0a54e647fe54104658b5e563c04c6f9edf251710e47bce692e0bd990a4ddaa39"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/moxcms-0.8.1/LICENSE-APACHE.md",
+      "bytes": 11348,
+      "sha256": "90bf2d659c43045111b65c733ab2a6d4cbcb422a098368c8c58a9ba3db4ed0c5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/moxcms-0.8.1/LICENSE.md",
+      "bytes": 1506,
+      "sha256": "2aa92cada6431e75615e3fe6cb1a9082c98f777d48ae1c087c0da0e37f7b8bff"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/num-traits-0.2.19/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/num-traits-0.2.19/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/png-0.18.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/png-0.18.1/LICENSE-MIT",
+      "bytes": 1048,
+      "sha256": "eaf40297c75da471f7cda1f3458e8d91b4b2ec866e609527a13acfa93b638652"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/proc-macro2-1.0.107/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/proc-macro2-1.0.107/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/pxfm-0.1.30/LICENSE-APACHE.md",
+      "bytes": 11348,
+      "sha256": "90bf2d659c43045111b65c733ab2a6d4cbcb422a098368c8c58a9ba3db4ed0c5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/pxfm-0.1.30/LICENSE.md",
+      "bytes": 1506,
+      "sha256": "2aa92cada6431e75615e3fe6cb1a9082c98f777d48ae1c087c0da0e37f7b8bff"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/quick-error-2.0.1/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/quick-error-2.0.1/LICENSE-MIT",
+      "bytes": 1070,
+      "sha256": "058f01fe181608d027fcde7e528fc03ea3cf90f30903c407644b0a9bbc54f500"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/quote-1.0.47/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/quote-1.0.47/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/rstar-0.13.0/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/rstar-0.13.0/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "9b3a76c27bac8f3e0ff2d1f64f65941c50310ae3ff69318cea230bd4a36822c5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_core-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_core-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_derive-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_derive-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_json-1.0.149/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/serde_json-1.0.149/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/sha2-0.10.9/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/sha2-0.10.9/LICENSE-MIT",
+      "bytes": 1138,
+      "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/simd-adler32-0.3.10/LICENSE.md",
+      "bytes": 1078,
+      "sha256": "42a35170233e83e18856792e748de4c1ce4a63b2afce9a370c89ef3fe23f9f2d"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/smallvec-1.16.0/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/smallvec-1.16.0/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/stable_deref_trait-1.2.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/stable_deref_trait-1.2.1/LICENSE-MIT",
+      "bytes": 1056,
+      "sha256": "5e05b024f653a5ce199e77cbbbd42fb5553562ec714b819421ed0c3e552a75d7"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/syn-2.0.119/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/syn-2.0.119/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/typenum-1.20.1/LICENSE",
+      "bytes": 17,
+      "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/typenum-1.20.1/LICENSE-APACHE",
+      "bytes": 10835,
+      "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/typenum-1.20.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/unicode-ident-1.0.24/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/unicode-ident-1.0.24/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/unicode-ident-1.0.24/LICENSE-UNICODE",
+      "bytes": 1995,
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/version_check-0.9.5/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/version_check-0.9.5/LICENSE-MIT",
+      "bytes": 1085,
+      "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zlib-rs-0.6.7/LICENSE",
+      "bytes": 856,
+      "sha256": "e72111c52b7d96ebe25348dee19f0744f444d3c95ae6b1ecb6ccaecc5bce05ba"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zmij-1.0.23/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-core-0.5.3/LICENSE-APACHE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-core-0.5.3/LICENSE-MIT",
+      "bytes": 1073,
+      "sha256": "d30047bca3b516639339a3c279bb84c3483124fb5a9dafe3c75056a85090e745"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-core-0.5.3/LICENSE-ZLIB",
+      "bytes": 859,
+      "sha256": "d201d14804d3bcd3b944147173175e4abfbd838b7c8069b6bd3452496bf13e6c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-jpeg-0.5.15/LICENSE-APACHE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-jpeg-0.5.15/LICENSE-MIT",
+      "bytes": 1073,
+      "sha256": "d30047bca3b516639339a3c279bb84c3483124fb5a9dafe3c75056a85090e745"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/licenses/zune-jpeg-0.5.15/LICENSE-ZLIB",
+      "bytes": 859,
+      "sha256": "d201d14804d3bcd3b944147173175e4abfbd838b7c8069b6bd3452496bf13e6c"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/parameters-proposal.json",
+      "bytes": 4845,
+      "sha256": "bb15f6e3bfa523c28d8488cfe8d18b50238b99f2608f675e8b6d6aeb4d18c949"
+    },
+    {
+      "path": "src/kernel/raster-source/docs/runtime-binding-proposal.h",
+      "bytes": 8531,
+      "sha256": "7c6dc47eca83634ae52d387e00fe981299df1cd051f81c1ef229ab1ec0a5a30e"
+    },
+    {
+      "path": "src/kernel/raster-source/examples/generate_fixtures.rs",
+      "bytes": 2388,
+      "sha256": "9ccaeb547b4f1ceb3e2002173628bb027199773925b3a6518fed4fee1ca85d80"
+    },
+    {
+      "path": "src/kernel/raster-source/examples/generate_vp8_input.rs",
+      "bytes": 990,
+      "sha256": "42c9ac7e727628eb69338cb4d54e0169bfde33fda6c0a8b80368d97a7561ed67"
+    },
+    {
+      "path": "src/kernel/raster-source/examples/parity_harness.rs",
+      "bytes": 565,
+      "sha256": "ce406d9d7c1b61f701f4d76dcaa10c867b65b856b3f0dc35e6dccff4ef1b64d4"
+    },
+    {
+      "path": "src/kernel/raster-source/LICENSE",
+      "bytes": 5000,
+      "sha256": "b0e592f2221200f9873e30d3457a31805d864f851941601f39488e77e49ed2b3"
+    },
+    {
+      "path": "src/kernel/raster-source/README.md",
+      "bytes": 13936,
+      "sha256": "51356a39761cfa8898be50dd56ba76ea399f5f8cd3ed95d820ded9b2d9aa25cf"
+    },
+    {
+      "path": "src/kernel/raster-source/scripts/collect-notices.ps1",
+      "bytes": 5250,
+      "sha256": "7ff8ecc6a6dd3c1faec5041d19e4e9f3bc5c85755ebecc8919639166e61a7434"
+    },
+    {
+      "path": "src/kernel/raster-source/scripts/parity-runner.mjs",
+      "bytes": 5152,
+      "sha256": "75527526c034e3c53ed5bb77dac7831ff5ede654c56a79dbd8a61c2c9f43d1c1"
+    },
+    {
+      "path": "src/kernel/raster-source/scripts/parity-worker.js",
+      "bytes": 620,
+      "sha256": "92d9abbaa0d1d5fcfc93e1100103c41420b9f8518883973e5ec153372eb2d103"
+    },
+    {
+      "path": "src/kernel/raster-source/scripts/run-parity.ps1",
+      "bytes": 4302,
+      "sha256": "64cdf173480ffe2ee4a5b2fd5f6655cb63a411c9b3f81743599045a2adff9253"
+    },
+    {
+      "path": "src/kernel/raster-source/scripts/run-tests.ps1",
+      "bytes": 2095,
+      "sha256": "b72dcc86748afef505ed6797c8cc33b1b9229b1d0b8eed3ec2d7519a4d359e5a"
+    },
+    {
+      "path": "src/kernel/raster-source/src/decode.rs",
+      "bytes": 18206,
+      "sha256": "5e0e70ad5a5cd5a65fa2877d1300b3155887b9b1d9646e6752a72b33ca81cbda"
+    },
+    {
+      "path": "src/kernel/raster-source/src/flat.rs",
+      "bytes": 8279,
+      "sha256": "542f23dd7f3820e1b7f7a54248e299d6b2dddd22de27798ee4f27a6725a842ce"
+    },
+    {
+      "path": "src/kernel/raster-source/src/geometry.rs",
+      "bytes": 41693,
+      "sha256": "712570e28e231fb0a0971864ffd02b3e1ee0db375e30766cf9f1dcb7afa28143"
+    },
+    {
+      "path": "src/kernel/raster-source/src/graph.rs",
+      "bytes": 14369,
+      "sha256": "d13343643a7cbdb3ad302ae306c1adab81d8e902c34bd09fa8dcd7ccee338818"
+    },
+    {
+      "path": "src/kernel/raster-source/src/lib.rs",
+      "bytes": 23844,
+      "sha256": "6a7fb95ff08bb0a58692e79d5924899cd1c75fbab2a24bfd7412030a3173b1b4"
+    },
+    {
+      "path": "src/kernel/raster-source/src/process.rs",
+      "bytes": 27953,
+      "sha256": "67ccdc41cc91aa704f3944a1b0edd7a3b5bdf8a6bc5f1669f8e12a3c342ec59f"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/decoding.rs",
+      "bytes": 14233,
+      "sha256": "716a99c4c56930ca1217fd9d8b1403eda8a5a1eebdf3cb3390249723276c4f1f"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/grid-2x1-golden.json",
+      "bytes": 2920,
+      "sha256": "ec13f16daeaa11cf612973bed7e23ade23f9284140891f358b2684d58cfa3cf2"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/README.md",
+      "bytes": 2730,
+      "sha256": "110b205c5d8cb26b7f443d25e9a04a40faaae867028e0af2b17034c3a8cf52de"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-exif6.jpg",
+      "bytes": 730,
+      "sha256": "85d98daf68d28509669f8a27b619b4cc7c499c6f78a929f9cf5eda1b42f54096"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-lossy-vp8.webp",
+      "bytes": 236,
+      "sha256": "ab37ca4265d8a52ca10b04a54c4f28bdcda6be88d1c59a9b046d683fc5927ef7"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-manifest.json",
+      "bytes": 1375,
+      "sha256": "5ed94f13b5db4fee81b47c9c1ce5c409de52aa42cb5821a385c4baf2a8d414ca"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-rgb.jpg",
+      "bytes": 694,
+      "sha256": "04ba6b6708d8a34d30115f8d7b2c31c74940253f81836af3068dc95d600593aa"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-rgba.png",
+      "bytes": 96,
+      "sha256": "aeda6eeeaa66005ba10d81639791ca4836d6750bb0275cebc083be15de7ac934"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-rgba.webp",
+      "bytes": 204,
+      "sha256": "a51d4998069b1ce05e51feb6a8b66f6e5a0e6f1ce30c47a47b827292ba11ccbc"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/synthetic-vp8-input.png",
+      "bytes": 242,
+      "sha256": "540f1f39ce11675cdc69e4eb220ae9413c2633d7f4adb076eca7aa7c5e2e0b08"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/fixtures/vp8-manifest.json",
+      "bytes": 1674,
+      "sha256": "ae36dd0e5a5e8d0459279923db61818b916113723cfd21253c5083f5e45868b6"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/geometry.rs",
+      "bytes": 15947,
+      "sha256": "4b23c86f0bb446c9d888756f8344b129f4fab5342c16dc4393c5b93e3747a4e0"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/processing.rs",
+      "bytes": 16356,
+      "sha256": "23c9ed31bcc42c0d9b722b75001c59f5d2ce346636bb1bb37a413e8312d05cb4"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/support/fixtures.rs",
+      "bytes": 2523,
+      "sha256": "442efeefd9373b12cf48ff525c6da85db53d6ee359fddcbbc858b7a88e8a7614"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/support/parity_cases.rs",
+      "bytes": 7183,
+      "sha256": "a4b3172bbcdfdd886d565214b319107b9a8f488dbd1384066e96e084514788ac"
+    },
+    {
+      "path": "src/kernel/raster-source/tests/topology.rs",
+      "bytes": 8398,
+      "sha256": "d01115e3afcb21483f97df9f2bc8e5da2c1c3a1db8687fd5084c6802c5f11acf"
+    },
+    {
+      "path": "src/kernel/raster-source/THIRD-PARTY-NOTICES.md",
+      "bytes": 3204,
+      "sha256": "3288b4e7c71e4c2eba70e2876e761141139b1f65d949f125d758945d7d1343ea"
+    },
+    {
+      "path": "src/kernel/source-assembly/CMakeLists.txt",
+      "bytes": 1813,
+      "sha256": "48fc89e116e42e6551cc4fd1025a6b372408b90c10fd4b5e3a767d01c7acc2f2"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/mechanics-source-integration.patch",
+      "bytes": 18572,
+      "sha256": "dbf2bfe1dcbc7bd813fad31156872142162a14dd65c87546a5bd775466497693"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/patch-detached.mjs",
+      "bytes": 3600,
+      "sha256": "c61f765d5ec1075fec2e79dafc43e9ada332ff926e5c9ed5f2ed525595421ad3"
+    },
+    {
+      "path": "src/kernel/source-assembly/compat/perimeter-groove.cpp.inc",
+      "bytes": 2268,
+      "sha256": "6e0e8b477bd6fc6b9d3a25f1e1827b6590855cf91432ddb1cd9dbbea39ae030c"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/acceptance.json",
+      "bytes": 14063,
+      "sha256": "fb7cbd328c6f008fb6835a902e6199f23a9c625b1ec7e8c29c28e7abff98122f"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ACCEPTANCE.md",
+      "bytes": 3454,
+      "sha256": "468371a0a18085bd6b79b57c04c0537a88600abcf940f9902af941cf2dd7c044"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ADR-001-source-semantics.md",
+      "bytes": 5308,
+      "sha256": "2ff5f57536bf92a454c8944c5ebb214ff31b26c5a2a796ac071473b791f7cb29"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/ADR-002-height-faces.md",
+      "bytes": 4520,
+      "sha256": "1402313c4a72e6281b03d1434ab324b9471e712da533f51a1ce2ecc55026fd3a"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API-EARLY.md",
+      "bytes": 6959,
+      "sha256": "762b5d9c28f6c9cf27020ff71189dbfb6abdf40e192c374c49d5524e36d50a15"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/API.md",
+      "bytes": 4442,
+      "sha256": "0b05aa5aea4bf124aae7c9b2cdfb402f484276769a276455eb7ad0c635527e9b"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/FIELD-BINDINGS.md",
+      "bytes": 4521,
+      "sha256": "060986c589c741769ecec4bddc4aefc76960e62940b4139f379e133130b75581"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/NUMERICS.md",
+      "bytes": 4554,
+      "sha256": "b9a07248dc59af83f5d702265f1ec43e093925405d721c4ffb9c0d0d590feded"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-BUILD-AND-TEST.md",
+      "bytes": 4392,
+      "sha256": "9e2acf49f23c380d40cf3a1fd760479090d9079e3bdaa157c55d38d0be8aca67"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-FIXTURE-ADJUDICATION.md",
+      "bytes": 1686,
+      "sha256": "90bb2af615f27208791ad2fccf5f21b77929caf172c4cf1a4aa61cdda246a802"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/r2-preimage-manifest.json",
+      "bytes": 14493,
+      "sha256": "fd000cdf2b475910237dc7106962a01037fc3c607bb6a2c9b8da3b31dd35b40c"
+    },
+    {
+      "path": "src/kernel/source-assembly/docs/R2-ROOT-INTEGRATION.md",
+      "bytes": 4403,
+      "sha256": "dc8e04803bfaa84bcf5bd90d1d6f04041b0a5c1146afff97b471d5875c239b90"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Clipper2-Boost-1.0.txt",
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/clipper2-no-iostream.patch",
+      "bytes": 5097,
+      "sha256": "88763e9a0b2ad9ec036baeaf00317090621aa98c9754869e856ba16080ea8039"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-Apache-2.0.txt",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/Manifold-AUTHORS.txt",
+      "bytes": 378,
+      "sha256": "074a43d4b1626a34a0a14a036d00100524dd463604b2570c4d76c7baa63608f3"
+    },
+    {
+      "path": "src/kernel/source-assembly/licenses/README.md",
+      "bytes": 919,
+      "sha256": "863c2103a3f35a946fac7d94777c52c9823826629cd530707e7d45d12b837827"
+    },
+    {
+      "path": "src/kernel/source-assembly/pins.json",
+      "bytes": 2342,
+      "sha256": "799002eb591ffebc34fb9f0764650316688fcbebcef884b57295adcd54611314"
+    },
+    {
+      "path": "src/kernel/source-assembly/README.md",
+      "bytes": 2874,
+      "sha256": "ed89143aed6c42f86b5a6447c203e24ff223713d7462d8c5b36424d971babcce"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source-datums.mjs",
+      "bytes": 758,
+      "sha256": "5ddf91811957187b62ca3c6d3e26aa736c2c70c728700e6166853277e4c2071f"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.cpp",
+      "bytes": 36867,
+      "sha256": "edb65d95604c9e760355c17072187c6f143ae65979bf7224af091573f2c0d557"
+    },
+    {
+      "path": "src/kernel/source-assembly/src/source_assembly.h",
+      "bytes": 5205,
+      "sha256": "2f377e139946210e634fa9263823fc472a771cc3bcebcf14b32f3c63f5d2d760"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/bridge-regression.mjs",
+      "bytes": 3794,
+      "sha256": "cbc9989e41bdc7084ad36bae602baa358525068d12388e8c80e5725b37da7748"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/domain-bindings.mjs",
+      "bytes": 2358,
+      "sha256": "74364d52c25fc3968c102e9ba9fc3de60bdef8ab7c941ace9401867877c51124"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/fixture.cpp",
+      "bytes": 16780,
+      "sha256": "8a1506de61bca7d35a2a14dc7efb21fdb7633373d675f45d45639c913c37d942"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/mechanics_fixture.cpp",
+      "bytes": 16547,
+      "sha256": "5e6d5eeaaeabf82b1753ac3feea353b41d2c561319f9460d21d2dce04e284a8a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/indexed-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/oracles/spatial-oracle.mjs",
+      "bytes": 3401,
+      "sha256": "ef412cebbcd2b7200997e1a4982439eaa6a04a6a6d99b06c0035822b8f407d4f"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/parity.mjs",
+      "bytes": 3325,
+      "sha256": "575dbba374b4b1dcfd52424abb08b84804bcf062c026d8d007a740f10c1df32b"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2/CMakeLists.txt",
+      "bytes": 2457,
+      "sha256": "87b01a4bf9b6db54cef7aa2a2ed00a2201a485fa869f47c1ee4f8b827f10a29a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2-domain.mjs",
+      "bytes": 4012,
+      "sha256": "8ff72cf079f01e6edbfce8caaeaf4acc06f5215e6253d361700b99fc4509f525"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2-parity.mjs",
+      "bytes": 2983,
+      "sha256": "35bc3b9e5c411f34108e2f6af66ad413196f3a0f6938b897161968546fb991e3"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/r2.mjs",
+      "bytes": 14134,
+      "sha256": "b7f20e96d472b6404ba511343be0ff4886e8712feadc395cf88460277bfc055d"
+    },
+    {
+      "path": "src/kernel/source-assembly/tests/run.mjs",
+      "bytes": 13779,
+      "sha256": "cb85b098c88ee931a42af93bb123e852a521501601d83d2a647eadb8bbfcc115"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/build.ps1",
+      "bytes": 2244,
+      "sha256": "7826f06de8af5ec413cb929e678bfc30e76ac21ec352662a2bf44b575081911a"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/handoff.mjs",
+      "bytes": 11602,
+      "sha256": "8bbc84866465b644155406b04191e26c20848a8bffc8592225adfdc8f673c0df"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/prepare-bridge.mjs",
+      "bytes": 5683,
+      "sha256": "57342718ab2726445736b0e516d620b14be2176a930c185f6f922faed28996fb"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/r2-check.ps1",
+      "bytes": 3967,
+      "sha256": "8aaee1d1397a2fda63411a76208a8843c7675e640fd6591b3ebff958b029863e"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/test-env.mjs",
+      "bytes": 869,
+      "sha256": "2702f6638f60f794bd9486b754f880b1637e1634e679271af95d841895099015"
+    },
+    {
+      "path": "src/kernel/source-assembly/tools/verify-pins.mjs",
+      "bytes": 1327,
+      "sha256": "9254e0702555c80725a0edd903ad4b1dfb738f0b5cc352e65d71ecd2263dfda0"
+    },
+    {
+      "path": "src/kernel/src/abi/product_runtime/bundle.rs",
+      "bytes": 3535,
+      "sha256": "02f8b5eaceb9df37e64029b9861a95750b36b39f897a58c90cbc667cc74c8e97"
+    },
+    {
+      "path": "src/kernel/src/abi/product_runtime.rs",
+      "bytes": 19979,
+      "sha256": "35c31d13dfc276e93012ad98a790fc5a6992d7490a68c141c39839ad54169b54"
+    },
+    {
+      "path": "src/kernel/src/abi/raster_runtime/mod.rs",
+      "bytes": 14954,
+      "sha256": "07257e24bb2bc34940630b226603e03d1b788ecfd94b6dfdc68905973c410bb8"
+    },
+    {
+      "path": "src/kernel/src/abi/raster_runtime/pack.rs",
+      "bytes": 14453,
+      "sha256": "27c77c3346842bc1e54e2a9a8d5cc72314cb2cf99b9c477f6a4547fdb62429f1"
+    },
+    {
+      "path": "src/kernel/src/abi/raster_runtime/quantize.rs",
+      "bytes": 5946,
+      "sha256": "cdb542c720737ed5bc2f7036329fc113a316472acc25e2c7cc8fbeab6b8340c1"
+    },
+    {
+      "path": "src/kernel/src/abi/raster_runtime/test_suite.rs",
+      "bytes": 15159,
+      "sha256": "e6b3911e259de63067003404f15b00823083b9a56341934cca7a32115b65c05a"
+    },
+    {
+      "path": "src/kernel/src/abi/raster_runtime/wire.rs",
+      "bytes": 6981,
+      "sha256": "e68cbf073c97cb7b61283518ed54ff20c0c1d80b5af666ab9f12a1b95dc5f825"
+    },
+    {
+      "path": "src/kernel/src/abi.rs",
+      "bytes": 13540,
+      "sha256": "7bbc67183dfed5b304efe350e910f12b0048e8f5d48d9cbc1166b0fce2a4c4e5"
+    },
+    {
+      "path": "src/kernel/src/lib.rs",
+      "bytes": 10746,
+      "sha256": "77916abb4f30a88235ef757ba2f38796797e07f9ea740118e0906b4e132d5663"
+    },
+    {
+      "path": "src/kernel/src/main.rs",
+      "bytes": 1255,
+      "sha256": "d8c89641bf2e753dcdc983569b3cdd2178e3ef49e4cf52993872bdb624bbe18d"
+    },
+    {
+      "path": "src/kernel/src/snapshot.rs",
+      "bytes": 4618,
+      "sha256": "69bb49dc766b3894a9789c76f2a12eb93cdcb71e9d1cb6ee271ddc7312a44dcb"
+    },
+    {
+      "path": "src/kernel/src/vector.rs",
+      "bytes": 6936,
+      "sha256": "4d34210e8821da92d7bc2e708ed205ec90b49b3389522b284a700c81649c6c69"
+    },
+    {
+      "path": "src/kernel/vector-source/Cargo.lock",
+      "bytes": 9504,
+      "sha256": "070476eb575a94cbdce90ed0d05e3f1a175d186485a9f89cdc004d199f909a46"
+    },
+    {
+      "path": "src/kernel/vector-source/Cargo.toml",
+      "bytes": 465,
+      "sha256": "0df8410ac133a7f8a8883c008649d8d1c7c29919bc9062fad377c8ded63674c7"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/DEPENDENCIES.md",
+      "bytes": 2859,
+      "sha256": "9c110ffc5419552784cc989512fc662fba84b9d5fa5c6156b99232559e84ef81"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/dependency-inventory.json",
+      "bytes": 27763,
+      "sha256": "3690cdb109f25f239148442d4aea7361bd21a1a3c67bc439ff8f7b7d17c65c54"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayref-0.3.9/LICENSE",
+      "bytes": 1336,
+      "sha256": "1bc7e6f475b3ec99b7e2643411950ae2368c250dd4c5c325f80f9811362a94a1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayvec-0.7.8/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/arrayvec-0.7.8/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/autocfg-1.5.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/autocfg-1.5.1/LICENSE-MIT",
+      "bytes": 1054,
+      "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/block-buffer-0.10.4/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/block-buffer-0.10.4/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "d5c22aa3118d240e877ad41c5d9fa232f9c77d757d4aac0c2f943afc0a95e0ef"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-APACHE",
+      "bytes": 10398,
+      "sha256": "e3ba223bb1423f0aad8c3dfce0fe3148db48926d41e6fbc3afbbf5ff9e1c89cb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-MIT",
+      "bytes": 1110,
+      "sha256": "9df9ba60a11af705f2e451b53762686e615d86f76b169cf075c3237730dbd7e2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/bytemuck-1.25.2/LICENSE-ZLIB",
+      "bytes": 851,
+      "sha256": "84b34dd7608f7fb9b17bd588a6bf392bf7de504e2716f024a77d89f1b145a151"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cfg-if-1.0.4/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cfg-if-1.0.4/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cpufeatures-0.2.17/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/cpufeatures-0.2.17/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "ae9baa7beea910273c2f384c2a6b721fb7bd02bda3436074a1072e4ee689f985"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/crypto-common-0.1.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/crypto-common-0.1.7/LICENSE-MIT",
+      "bytes": 1065,
+      "sha256": "3521672491a3479422d5fe1aca6645dd2984090f85da6e5205abfb18fb7a6897"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/data-url-0.3.2/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/data-url-0.3.2/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "b38f11f6096706e6de553dabe2a7ed142d59b6fa8c97e290c67496154745cdd5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/digest-0.10.7/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/digest-0.10.7/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "9e0dfd2dd4173a530e238cb6adb37aa78c34c6bc7444e0e10c1ab5d8881f63ba"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/euclid-0.22.14/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/euclid-0.22.14/LICENSE-MIT",
+      "bytes": 1067,
+      "sha256": "62065228e42caebca7e7d7db1204cbb867033de5982ca4009928915e4095f3a3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/float-cmp-0.9.0/LICENSE",
+      "bytes": 1075,
+      "sha256": "40be1e77825d7e49485a2e43d89bed29dfff29f8f529e71d3c683656021f0d08"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/generic-array-0.14.7/LICENSE",
+      "bytes": 1107,
+      "sha256": "c09aae9d3c77b531f56351a9947bc7446511d6b025b3255312d3e3442a9a7583"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/imagesize-0.15.0/LICENSE",
+      "bytes": 1064,
+      "sha256": "fa0d694967d5c279e70a5c7b7e4b9929e4c1c8c1b8506998e66fc2f1547b200a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/itoa-1.0.18/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/itoa-1.0.18/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/kurbo-0.13.1/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/kurbo-0.13.1/LICENSE-MIT",
+      "bytes": 1055,
+      "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/libc-0.2.189/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/libc-0.2.189/LICENSE-MIT",
+      "bytes": 1066,
+      "sha256": "123a331b5dbf04c30097fa43b8f858bc85df671fe776de498d01f3d6b7c1f69e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/log-0.4.34/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/log-0.4.34/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/memchr-2.8.3/COPYING",
+      "bytes": 126,
+      "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/memchr-2.8.3/LICENSE-MIT",
+      "bytes": 1081,
+      "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/num-traits-0.2.19/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/num-traits-0.2.19/LICENSE-MIT",
+      "bytes": 1071,
+      "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/pico-args-0.5.0/LICENSE",
+      "bytes": 1061,
+      "sha256": "f71452d91682fdae0ca948b18cfed53a953d1237740dd80371c76a5c1c7bbe91"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/polycool-0.4.0/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/polycool-0.4.0/LICENSE-MIT",
+      "bytes": 1055,
+      "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/proc-macro2-1.0.107/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/proc-macro2-1.0.107/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/quote-1.0.47/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/quote-1.0.47/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/roxmltree-0.21.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/roxmltree-0.21.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "fffe218c1e349e1d482a05677f2ce850502f88298174d77f6ac7c04821db7899"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_core-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_core-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_derive-1.0.228/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_derive-1.0.228/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_json-1.0.149/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/serde_json-1.0.149/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/sha2-0.10.9/LICENSE-APACHE",
+      "bytes": 10849,
+      "sha256": "a9040321c3712d8fd0b09cf52b17445de04a23a10165049ae187cd39e5c86be5"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/sha2-0.10.9/LICENSE-MIT",
+      "bytes": 1138,
+      "sha256": "b4eb00df6e2a4d22518fcaa6a2b4646f249b3a3c9814509b22bd2091f1392ff1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/simplecss-0.2.2/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/simplecss-0.2.2/LICENSE-MIT",
+      "bytes": 1082,
+      "sha256": "0b5f24524360e15bcf9fb79bca875f5aa62f01f94f2988e23238c7ec0e6e8784"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/siphasher-1.0.3/COPYING",
+      "bytes": 281,
+      "sha256": "c962ee4d1d05ddc138b202b2540219ebc57893fcf97b364852094a9a94ce1365"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/smallvec-1.16.0/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/smallvec-1.16.0/LICENSE-MIT",
+      "bytes": 1072,
+      "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/strict-num-0.1.1/LICENSE",
+      "bytes": 1060,
+      "sha256": "3085885678bb161f6c472bbd331f66a2550b555eb76128f7f8247779128199c0"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/svgtypes-0.16.1/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/svgtypes-0.16.1/LICENSE-MIT",
+      "bytes": 1061,
+      "sha256": "f3c9fe731c701ed77fd5fbaac573872af04dc5869385eb9bd5e3c73c42713814"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/syn-2.0.119/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/syn-2.0.119/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/tiny-skia-path-0.12.0/LICENSE",
+      "bytes": 1564,
+      "sha256": "6d41e05f1d54fe726997cb0334ec539f1dff50600b1d5d90462ec2b392770ced"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE",
+      "bytes": 17,
+      "sha256": "db11fec9946737df39ca3898d9cd8c10ec6f6c3a884a6802b0ad0b81b4e8f23a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE-APACHE",
+      "bytes": 10835,
+      "sha256": "516b24e051bf5630880ebbd55c40a25ce9552ebaf8970a53e8976eb70e522406"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/typenum-1.20.1/LICENSE-MIT",
+      "bytes": 1083,
+      "sha256": "a825bd853ab71619a4923d7b4311221427848070ff44d990da39b0b274c1683f"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-APACHE",
+      "bytes": 9723,
+      "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/unicode-ident-1.0.24/LICENSE-UNICODE",
+      "bytes": 1995,
+      "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/usvg-0.48.1/LICENSE-APACHE",
+      "bytes": 10173,
+      "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/usvg-0.48.1/LICENSE-MIT",
+      "bytes": 1057,
+      "sha256": "f5d934dc281b44e0003ee461ac740b18b6629a454decd872c774d34e4ee0b21d"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/version_check-0.9.5/LICENSE-APACHE",
+      "bytes": 10847,
+      "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/version_check-0.9.5/LICENSE-MIT",
+      "bytes": 1085,
+      "sha256": "b7e650f3fce5c53249d1cdc608b54df156a97edd636cf9d23498d0cfe7aec63e"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/licenses/zmij-1.0.23/LICENSE-MIT",
+      "bytes": 1023,
+      "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+    },
+    {
+      "path": "src/kernel/vector-source/docs/TESTING.md",
+      "bytes": 3010,
+      "sha256": "95cfd77556ce14b40f68af528068dc0a62c88a1bce339274d739da259fd07670"
+    },
+    {
+      "path": "src/kernel/vector-source/examples/g1_export.rs",
+      "bytes": 648,
+      "sha256": "a4ac883ffe8d3186230f6b0b2e177f4be398d660a33bade3f7b733964beccfc9"
+    },
+    {
+      "path": "src/kernel/vector-source/LICENSE",
+      "bytes": 5000,
+      "sha256": "b0e592f2221200f9873e30d3457a31805d864f851941601f39488e77e49ed2b3"
+    },
+    {
+      "path": "src/kernel/vector-source/README.md",
+      "bytes": 12713,
+      "sha256": "34b3d671d34882d60a926349066faea0680f9a1228eec5f778788c081890aee6"
+    },
+    {
+      "path": "src/kernel/vector-source/run-tests.ps1",
+      "bytes": 2644,
+      "sha256": "d33add68afb40c2afc67425f03f397e4f094c0425b65fe43e738e93c36f93b86"
+    },
+    {
+      "path": "src/kernel/vector-source/src/flatten.rs",
+      "bytes": 5706,
+      "sha256": "fd89d352e533358da35a677ec06f865e95dc73f1a9f41b2da2b8edcef2a058de"
+    },
+    {
+      "path": "src/kernel/vector-source/src/lib.rs",
+      "bytes": 13150,
+      "sha256": "bedc4a25865feaadd579cb8d5f3b50eb61cd37b7ddc5f333a84bde2a4f78cf10"
+    },
+    {
+      "path": "src/kernel/vector-source/src/preflight.rs",
+      "bytes": 39353,
+      "sha256": "8ae7781caa661fef88df055d08d0ec608da8acb7c1b95a3140784e0ed4e0d3cc"
+    },
+    {
+      "path": "src/kernel/vector-source/src/resolve.rs",
+      "bytes": 19027,
+      "sha256": "fc7607f4a6e0dc08622656cb5434af9d97bb18e751c0255fd25bb84c4cff35bc"
+    },
+    {
+      "path": "src/kernel/vector-source/tests/fixtures/corpus-v1/rectangle-hole.svg",
+      "bytes": 168,
+      "sha256": "07e2d061680bffe7915f733c40a3ea6bb6ed28de119d997a38947ead4bb55187"
+    },
+    {
+      "path": "src/kernel/vector-source/tests/fixtures/corpus-v1/shared-seam.svg",
+      "bytes": 177,
+      "sha256": "6deec001cb76b5d9c998d259ef9a8c84e3dfcf6b4f353e912ece3788bcbf5648"
+    },
+    {
+      "path": "src/kernel/vector-source/tests/svg_contract.rs",
+      "bytes": 29232,
+      "sha256": "648c351ac7b4ea6ccc0a10dc6cbaf2be5326a965dae75a85099eb7d0c2d54021"
+    },
+    {
+      "path": "src/core/engine-client.mjs",
+      "bytes": 21893,
+      "sha256": "e1950fb45555a8bc8a1ce980eecb40a64137aa41759b3a5e74838facdafee288"
+    },
+    {
+      "path": "src/core/engine-raster-runtime.mjs",
+      "bytes": 1553,
+      "sha256": "b3e14e417e83017909fb21e5fb4df02facbed92b351dad95243a1c047b29667d"
+    },
+    {
+      "path": "src/core/engine-text-renderer.mjs",
+      "bytes": 844,
+      "sha256": "716e4be4a1beca377aa38cb4865638c70d202d76cfc7b155303b0505aa1d5b7d"
+    },
+    {
+      "path": "src/core/engine-text-service.mjs",
+      "bytes": 2837,
+      "sha256": "5069ea06542abe24f93139ab978418b4e441421f3496e352aec057af191d5d15"
+    },
+    {
+      "path": "src/core/engine-worker.mjs",
+      "bytes": 19695,
+      "sha256": "20bc87bcc0f47d3c3d2a2bf7c25f3b99e15f8610df4b5bfdc8e074eb44a23953"
+    },
+    {
+      "path": "src/core/png-client.mjs",
+      "bytes": 2117,
+      "sha256": "6815d425aa235379ff4238389d8203dbc74b4a5f8c485e5b8af74a70afbe82bd"
+    },
+    {
+      "path": "src/core/png-encode.mjs",
+      "bytes": 2499,
+      "sha256": "fc0948c22ece70710a1624a2f19186031407fec761484f1392504cb208d93d51"
+    },
+    {
+      "path": "src/core/png-worker.mjs",
+      "bytes": 466,
+      "sha256": "d1168f76e63fba6f854219baf0611ae3b38df31df95a6703024819cc852685c0"
+    },
+    {
+      "path": "src/core/product-export-descriptor.mjs",
+      "bytes": 4435,
+      "sha256": "50aff0b7b71d444597d8b64f9479f0a1cfe68a6d7dc2a91c419e1c5fd995232c"
+    },
+    {
+      "path": "src/core/product-operations.d.ts",
+      "bytes": 4437,
+      "sha256": "2c383aa868938c13e69fd8e2a75092d126e726acc70ee53122b80e251b650827"
+    },
+    {
+      "path": "src/core/product-operations.mjs",
+      "bytes": 15192,
+      "sha256": "9a457c75b6581649880bef3c3631384ae1b87b449a8acaee10c84ad5325825ec"
+    },
+    {
+      "path": "src/core/product-source-operations.mjs",
+      "bytes": 3212,
+      "sha256": "7a64d778b2d4a0e689b72591f1b4e629f2b26f3e5134701db3d768eabeba832a"
+    },
+    {
+      "path": "src/core/product-worker-hook.mjs",
+      "bytes": 620,
+      "sha256": "f03593828ffb3a38dbf35f9fa7d23dbe231419d3e7c1933fd4a6ecabe36e6e01"
+    },
+    {
+      "path": "src/core/raster-operations.d.mts",
+      "bytes": 5395,
+      "sha256": "5c79707f7b0ce29cd045a2a90c8fb69858232fa3e9dc5313411868bedeadc87c"
+    },
+    {
+      "path": "src/core/raster-operations.mjs",
+      "bytes": 18639,
+      "sha256": "1871a734d5e669d643bccc45a2f7c945ccb889624550da7f57b1631e3119fc9f"
+    },
+    {
+      "path": "src/core/raster-schema.mjs",
+      "bytes": 18861,
+      "sha256": "08d59cf7b671cb60585b81ab37527a2ed793637b5a350dde8ac6b77788edb1b7"
+    },
+    {
+      "path": "src/core/source-preview.mjs",
+      "bytes": 6039,
+      "sha256": "266e1b8973f3d13a6ea238720908260ade4ca03401c9560dd530d25dfa81f4ae"
+    },
+    {
+      "path": "src/core/text-operations.mjs",
+      "bytes": 21471,
+      "sha256": "caf96746b82bd79ab632fb50583db9b562dc9cb4ae5cc772338a1504b1711a38"
+    },
+    {
+      "path": "src/domain/catalog.mjs",
+      "bytes": 47966,
+      "sha256": "c5625133b33c3a82ec9e08045533cc9b82e15b77aac72713e717fed7afc90428"
+    },
+    {
+      "path": "src/domain/decimal.mjs",
+      "bytes": 3875,
+      "sha256": "15c665b2922c78518ec6e5dba768b8111b97486368e55d2f74d9c713a60e208e"
+    },
+    {
+      "path": "src/domain/hash.mjs",
+      "bytes": 2333,
+      "sha256": "46bf8d2a20f58d2c42c8d93b0c2809313efe27e30d3142c00352cfcc7081a799"
+    },
+    {
+      "path": "src/domain/index.mjs",
+      "bytes": 309,
+      "sha256": "1221aea123ca7f5b95cdfa4019b401251656349cac3aa7c5235dfadf2d5d56d8"
+    },
+    {
+      "path": "src/domain/json-number.mjs",
+      "bytes": 1010,
+      "sha256": "a314bf3c76d19bc3098f5795a769825c7be12b2e6a053b31cad28543c798b0f4"
+    },
+    {
+      "path": "src/domain/layers.mjs",
+      "bytes": 7556,
+      "sha256": "9cc8b7a81be82d0cc77ad960e4e0348560363a7a21c2e7ed8a447521e83e1e13"
+    },
+    {
+      "path": "src/domain/migration.mjs",
+      "bytes": 7722,
+      "sha256": "d45819d1bbebb134225874a5bce91b7f35cbc921a2e9f008db40a876e63a2be5"
+    },
+    {
+      "path": "src/domain/persistence.mjs",
+      "bytes": 1930,
+      "sha256": "2acf58ddf7dcf42aa6387eacb95fcae66db8461c8253d5332d9738da38ab6c26"
+    },
+    {
+      "path": "src/domain/project.mjs",
+      "bytes": 5535,
+      "sha256": "87eaf806241c0f54b7b7bb5d5a5ebfcb7d8ecf4e2b7133a81d74572b5d93701e"
+    },
+    {
+      "path": "src/domain/safe.mjs",
+      "bytes": 6181,
+      "sha256": "d2965be81a9999da8ea4d10def2b8f87c2d3cee3d5381a600f174706e149b350"
+    },
+    {
+      "path": "src/domain/schema.mjs",
+      "bytes": 26848,
+      "sha256": "8c4899993315bc5ff42fa63aafabbcd44bf93142093cfcdb6ac23f9e211bf523"
+    },
+    {
+      "path": "src/domain/transactions.mjs",
+      "bytes": 10302,
+      "sha256": "6cf7e530690dc377dd7eedc8445002cda986126ce1bf18ca3e0c6539666165e2"
+    },
+    {
+      "path": "src/viewport/arch-view.mjs",
+      "bytes": 4793,
+      "sha256": "8455c47815309665abcf201877b8e0763320b1e4beeb86a89a7bfda4f7f758c1"
+    },
+    {
+      "path": "src/viewport/three-viewport.mjs",
+      "bytes": 9848,
+      "sha256": "dee3e89f6f623391c4267e6098bf3dc5f39ec8e05235539e7dfd172c63d05162"
+    },
+    {
+      "path": "tests/oracles/mesh-oracle.mjs",
+      "bytes": 5889,
+      "sha256": "ad7a04b2d27390d24793a22651192d797a6255f09cda56e32f641996c9a55119"
+    },
+    {
+      "path": "tests/product-runtime/browser.test.mjs",
+      "bytes": 12841,
+      "sha256": "4227d9c91ac145516592a1b366530fd67d33eebbb9e645a56a3346359669921a"
+    },
+    {
+      "path": "tests/product-runtime/environment.mjs",
+      "bytes": 814,
+      "sha256": "0d042ca45991bbe270aadb826b41c8b9eede89eecd6b6e1d6f27e05da6f2f9f3"
+    },
+    {
+      "path": "tests/product-runtime/fixtures.mjs",
+      "bytes": 3620,
+      "sha256": "543f0b15aa97e856b4792b51c32581f4cecdcf53be2e87b3fad8d19f4fc76dd2"
+    },
+    {
+      "path": "tests/product-runtime/oracles.mjs",
+      "bytes": 4946,
+      "sha256": "f8e24b783a9a64fa47c6d1ebdba78a1858bbb4f357e5251b4803461a1dfa488b"
+    },
+    {
+      "path": "tests/product-runtime/r2-root.test.mjs",
+      "bytes": 6812,
+      "sha256": "f14e284c144a46129747b5a7748f38b3fffba382c0cd80429b91a691276119a9"
+    },
+    {
+      "path": "tests/product-runtime/run-native-raster.mjs",
+      "bytes": 2247,
+      "sha256": "fb5df7a9697f20d982ef567f6fb86219742c1e4aa4c18f037f4a8fbb74e6b9fb"
+    },
+    {
+      "path": "tests/product-runtime/run-native-special.mjs",
+      "bytes": 4628,
+      "sha256": "aeb698eb8e2b488e5392094729ae6b0ee59796153c25317740f6720a77cf25c4"
+    },
+    {
+      "path": "tests/product-runtime/run-native.mjs",
+      "bytes": 1996,
+      "sha256": "85d4d8dfdf4a8eb92aeab397b1172b70ba52b62a7db7c492d057f0d05c4f2d45"
+    },
+    {
+      "path": "tests/product-runtime/runtime.test.mjs",
+      "bytes": 20454,
+      "sha256": "28f288b790ac55f9991b86eb5ea938055da5ee4c8c984a709cb839090c73cc9a"
+    },
+    {
+      "path": "docs/specs/01-chuc-nang.md",
+      "bytes": 25899,
+      "sha256": "380a3acee82d765fb2a976b5aefd252a0d5dd43f8f4057d5b1be562d69f46122"
+    },
+    {
+      "path": "docs/specs/02-giao-dien.md",
+      "bytes": 12420,
+      "sha256": "c11941f66b2296cbbc275bc8cd799e7feb1a2c6b9f09cda631a4589d721267dc"
+    },
+    {
+      "path": "docs/specs/03-ky-thuat.md",
+      "bytes": 28928,
+      "sha256": "3608208ccb37b1e2521c71fec07e644da53e1cd1d14bbcda8ae0a09821fac157"
+    },
+    {
+      "path": "docs/specs/04-nghiem-thu.md",
+      "bytes": 9624,
+      "sha256": "82df989bb710cc895df65f050e1883d2db3d277786f76058922edc3548715899"
+    },
+    {
+      "path": "docs/specs/05-quyet-dinh-va-truy-vet.md",
+      "bytes": 11191,
+      "sha256": "7979086f8e82bdb6e851dd7cc1b4ac6e950a347749e5d6b9515dd85cb45dcbf1"
+    },
+    {
+      "path": "docs/specs/06-danh-muc-thong-so.md",
+      "bytes": 8396,
+      "sha256": "4e337f428be436513f9260d7a902a5b6217d61a295ca566c13666c276dcdce19"
+    },
+    {
+      "path": "docs/specs/07-nguoi-dung-va-ai.md",
+      "bytes": 17116,
+      "sha256": "ab71053116b7bebe94929827ea77815e480f81227e966c09cd207ea1ffd76468"
+    },
+    {
+      "path": "docs/specs/08-mo-rong-va-lo-trinh.md",
+      "bytes": 9726,
+      "sha256": "818ce7a5da1a32227fa35eb28b72d3f0a24a99f2c1212fe53e21770dc958e588"
+    },
+    {
+      "path": "docs/specs/parameters-reference.json",
+      "bytes": 47784,
+      "sha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee"
+    },
+    {
+      "path": "docs/specs/README.md",
+      "bytes": 3740,
+      "sha256": "b1ce54c06b58ad246b52c9ec665d645f4c497e33c0ce5e2b11d731a2c71acd15"
+    },
+    {
+      "path": "docs/specs/requirements.json",
+      "bytes": 21988,
+      "sha256": "070db3cc10ad95bf01b2fd3ac494d7e230a38ec17c6c86a569a3d080f56d7e3f"
+    },
+    {
+      "path": "docs/specs/source-manifest.json",
+      "bytes": 2722,
+      "sha256": "949c2e2af220edadb44caabaa2a63e5f39e2f6feea9fb1ff33309a5ac1daffa7"
+    },
+    {
+      "path": "docs/specs/traceability.json",
+      "bytes": 19242,
+      "sha256": "e901183b7ac4f29fa9369b41922f761db9bf48da06ffeb4d43b68b810184cbe2"
+    },
+    {
+      "path": "docs/assets/INPUT-CONTRACT.md",
+      "bytes": 7158,
+      "sha256": "ecfd1c86cc13887c36d6555a521bb62db80db29543fe9dbcbd5c65e5be722f94"
+    },
+    {
+      "path": "tools/kernel/build.ps1",
+      "bytes": 7650,
+      "sha256": "cd0433e0b30fd2aa5915b9f7c721488148714b44000e41424ddf9905d342182d"
+    },
+    {
+      "path": "tools/kernel/prepare-clipper.ps1",
+      "bytes": 4247,
+      "sha256": "0bfbb079c029761f1db68e7761f41c4e206efb4431397d0841e47eab73871504"
+    },
+    {
+      "path": "tools/kernel/prepare-harfbuzz-binding.mjs",
+      "bytes": 3050,
+      "sha256": "516e6cb1b34676b29ce61fba658df3dda3419afb1005ed4450f4f88f7f004b89"
+    },
+    {
+      "path": "tools/kernel/prepare-harfbuzz.ps1",
+      "bytes": 400,
+      "sha256": "10bdabff2bc1b95f312829266c4e7b213376997d6f3ba9f3b280c7fdc4785703"
+    },
+    {
+      "path": "tools/kernel/prepare-harfbuzz.py",
+      "bytes": 3094,
+      "sha256": "02cae8799a7cdbee4a0b453e45b3777495bdd70372afe262529a8e3a78954962"
+    },
+    {
+      "path": "tools/kernel/verify-link-freshness.ps1",
+      "bytes": 2608,
+      "sha256": "fa909f60810b7883eb0673c011a4e4ee8dc46509ed28661602ff63c418c2838f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "runtime/arch-kernel.mjs",
+      "bytes": 138184,
+      "sha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+      "source": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.mjs"
+    },
+    {
+      "path": "runtime/arch-kernel.wasm",
+      "bytes": 5596192,
+      "sha256": "16080c207725662ab85215783b3e012e3195f5e9f835874bc0069d9421c98300",
+      "source": "tmp/reviews/codex/runs/20260908-implementation-wave1/work/module/arch-kernel.wasm"
+    }
+  ]
+}

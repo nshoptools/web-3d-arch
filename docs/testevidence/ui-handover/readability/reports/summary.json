@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "status": "pass",
+  "scope": "UI-only implementation verification of captured React AppShell using controlled DeferredBridge; no native/backend/production-site qualification and no configured independent review",
+  "groups": [
+    {
+      "run": "20260908-ui-final-extra",
+      "phase": "extra-final",
+      "exit": 0,
+      "checksPerEngine": 11,
+      "totalPassed": 33,
+      "browsers": [
+        {
+          "engine": "chromium",
+          "version": "153.0.8010.12",
+          "passed": 11,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        },
+        {
+          "engine": "firefox",
+          "version": "155.0",
+          "passed": 11,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "passed": 11,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        }
+      ],
+      "sourceManifest": "f1756404c0df7b160a220e7c9a989c85decdd8531b9c335c5ae00f9e6323f247",
+      "results": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/extra-final/results.json",
+      "cleanup": true
+    },
+    {
+      "run": "20260908-ui-final-readability",
+      "phase": "readability-final",
+      "exit": 0,
+      "checksPerEngine": 3,
+      "totalPassed": 9,
+      "browsers": [
+        {
+          "engine": "chromium",
+          "version": "153.0.8010.12",
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        },
+        {
+          "engine": "firefox",
+          "version": "155.0",
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        },
+        {
+          "engine": "webkit",
+          "version": "26.6",
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "deniedRequests": 0
+        }
+      ],
+      "sourceManifest": "2d2ee2f48fcc9e18fc2de917d9bdb50d37dfa7a7c5aa6fe2e04a3f6b2ce65e52",
+      "results": "tmp/reviews/codex/runs/20260908-ui-final-readability/evidence/readability-final/results.json",
+      "cleanup": true
+    }
+  ],
+  "totalPassed": 42,
+  "totalFailed": 0,
+  "targets": [
+    {
+      "id": "UI-R1-05",
+      "case": "K02",
+      "status": "pass",
+      "meaning": "First Escape drops field draft; second closes mobile drawer"
+    },
+    {
+      "id": "UI-R1-06",
+      "case": "K03",
+      "status": "pass",
+      "meaning": "Disabled field reasons retain keyboard focus target"
+    },
+    {
+      "id": "UI-R1-07",
+      "case": "K04",
+      "status": "pass",
+      "meaning": "Declared unit/min/max appear in accessible input description"
+    },
+    {
+      "id": "UI-R1-08",
+      "case": "V02-1280-14 / V02-1280-28 / V02-320-28",
+      "status": "pass",
+      "meaning": "Direction label word remains on one line at all three selected sizes"
+    }
+  ],
+  "sameProductCaptureAcrossGroups": true,
+  "mainSourceStillMatchesCapture": true,
+  "changedMainPaths": [],
+  "productionEdits": 0,
+  "assertionEdits": 0,
+  "lifecycleExecuted": false,
+  "followupExecuted": false,
+  "optionalKeyboard": "Initial unadapted K05 run interrupted before first case per scope correction; no pass claimed. No owned processes remained in that check.",
+  "harness": "Only two owner-authorized changes in own runner snapshots: extra-only branch; fresh context.newPage(). Original main runner remains unchanged.",
+  "metrics": [
+    {
+      "engine": "chromium",
+      "cases": [
+        {
+          "id": "V02-1280-14",
+          "labelFont": "13px",
+          "controlFont": "14px",
+          "wordRects": 1,
+          "labelWidth": 275
+        },
+        {
+          "id": "V02-1280-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 275
+        },
+        {
+          "id": "V02-320-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 250
+        }
+      ]
+    },
+    {
+      "engine": "firefox",
+      "cases": [
+        {
+          "id": "V02-1280-14",
+          "labelFont": "13px",
+          "controlFont": "14px",
+          "wordRects": 1,
+          "labelWidth": 276.41668701171875
+        },
+        {
+          "id": "V02-1280-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 276.41668701171875
+        },
+        {
+          "id": "V02-320-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 252.0500030517578
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "cases": [
+        {
+          "id": "V02-1280-14",
+          "labelFont": "13px",
+          "controlFont": "14px",
+          "wordRects": 1,
+          "labelWidth": 275
+        },
+        {
+          "id": "V02-1280-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 275
+        },
+        {
+          "id": "V02-320-28",
+          "labelFont": "26px",
+          "controlFont": "28px",
+          "wordRects": 1,
+          "labelWidth": 250
+        }
+      ]
+    }
+  ],
+  "seatConfigSHA256": "c860626780d060058de32d3607758e5377ff1f613a87f056be3629255d2d3d65",
+  "references": [
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/inputs/source-manifest.json",
+      "sha256": "f1756404c0df7b160a220e7c9a989c85decdd8531b9c335c5ae00f9e6323f247",
+      "bytes": 19325
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/source-integrity.json",
+      "sha256": "af395375b493995ae6e59e97afb75a46c6d89551fb0adfd01e98a0e4528dfae1",
+      "bytes": 126
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/reports/harness-adaptation.json",
+      "sha256": "a16d9dd9e8b68a40ca84adf17ab11cdeb7e7830a26d6de25a0d5ac4a338f8b67",
+      "bytes": 3280
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/reports/exit.json",
+      "sha256": "920ebc10ab273c1920a718ac3b14131f9a944f2715073f8cfedc5df8f7e1dca5",
+      "bytes": 65
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/runner.log",
+      "sha256": "b063acf6590c50bf7e30833fc339e4c12b9a80ae01b379c719446b16bec4cb32",
+      "bytes": 2988
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/extra-final/results.json",
+      "sha256": "04266784beeb47e2cc871467e8b0d27be9bba9ae953cf2f7091a903f2ef0190b",
+      "bytes": 74764
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-extra/evidence/extra-final/cleanup.json",
+      "sha256": "dacb308ff2141bfca7fc2c7daa7018d0ef57ac52d22de13a6f32e52c28016627",
+      "bytes": 200
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/inputs/source-manifest.json",
+      "sha256": "2d2ee2f48fcc9e18fc2de917d9bdb50d37dfa7a7c5aa6fe2e04a3f6b2ce65e52",
+      "bytes": 19391
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/evidence/source-integrity.json",
+      "sha256": "db2babd4a292732ff47896909bb99bbc613d77536d2c0a53f1cf5ecacd60c659",
+      "bytes": 126
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/reports/harness-adaptation.json",
+      "sha256": "debbbabd019fda9baacf47abc2f2139fd4453b85c4f660f207b77264ed7d9e1e",
+      "bytes": 3293
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/reports/exit.json",
+      "sha256": "fd190462c9c8af03cf5060e5d04bb26064670051823d3511dabd0023d540509d",
+      "bytes": 65
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/evidence/runner.log",
+      "sha256": "b752dcd641e0eb15f0997d1aef86e47378431a1023e291d751daaffe1f5d8a46",
+      "bytes": 768
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/evidence/readability-final/results.json",
+      "sha256": "2f3926c77f3a98d724792ec38d326bfd2bd582c239d139efe1f9cd6f676955df",
+      "bytes": 9262
+    },
+    {
+      "path": "tmp/reviews/codex/runs/20260908-ui-final-readability/evidence/readability-final/cleanup.json",
+      "sha256": "046f9c4dae7d98169be5f5894e08cfafd3e17a5ccc7f7f9851be9c51f51f9949",
+      "bytes": 200
+    }
+  ]
+}

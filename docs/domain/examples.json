@@ -1,0 +1,6705 @@
+{
+  "label": "Synthetic domain data; no generated mesh or verified manufacturing result.",
+  "initial": {
+    "kind": "web-3d-arch.project-domain",
+    "schemaVersion": 1,
+    "revision": 0,
+    "product": "keychain",
+    "sourceKind": "svg",
+    "schedule": {
+      "version": 1,
+      "kind": "first-plus-regular",
+      "firstLayerHeight": 0.2,
+      "layerHeight": 0.2,
+      "sources": {
+        "firstLayerHeight": "user",
+        "layerHeight": "user"
+      },
+      "profileId": null,
+      "hash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836"
+    },
+    "parameters": {
+      "common": {
+        "k": {
+          "origin": "auto",
+          "value": 4
+        },
+        "res": {
+          "origin": "auto",
+          "value": "520"
+        },
+        "smooth": {
+          "origin": "auto",
+          "value": 3
+        },
+        "minA": {
+          "origin": "auto",
+          "value": 5
+        },
+        "denoise": {
+          "origin": "auto",
+          "value": 1
+        },
+        "eps": {
+          "origin": "auto",
+          "value": 35
+        },
+        "tension": {
+          "origin": "auto",
+          "value": 65
+        },
+        "size": {
+          "origin": "auto",
+          "value": 45
+        },
+        "outline": {
+          "origin": "auto",
+          "value": "silhouette"
+        },
+        "cornerR": {
+          "origin": "auto",
+          "value": 3
+        },
+        "offset": {
+          "origin": "auto",
+          "value": 1.5
+        },
+        "weld": {
+          "origin": "auto",
+          "value": 0.8
+        },
+        "minFeature": {
+          "origin": "auto",
+          "value": 0.6
+        },
+        "fillHoles": {
+          "origin": "auto",
+          "value": true
+        },
+        "topBevel": {
+          "origin": "auto",
+          "value": false
+        },
+        "topBevelR": {
+          "origin": "auto",
+          "value": 0.6
+        },
+        "topBevelShape": {
+          "origin": "auto",
+          "value": "tron"
+        },
+        "bevelGop": {
+          "origin": "auto",
+          "value": false
+        },
+        "bevelChu": {
+          "origin": "auto",
+          "value": false
+        },
+        "topBevelSeg": {
+          "origin": "auto",
+          "value": 3
+        },
+        "layerStep": {
+          "origin": "auto",
+          "value": 3
+        },
+        "artMode": {
+          "origin": "auto",
+          "value": "noi"
+        },
+        "flatTop": {
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 1
+          }
+        },
+        "artH": {
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.8
+          }
+        },
+        "splitObj": {
+          "origin": "auto",
+          "value": true
+        },
+        "layerBand": {
+          "origin": "auto",
+          "value": false
+        },
+        "bandCore": {
+          "origin": "auto",
+          "value": false
+        },
+        "bandCap": {
+          "origin": "auto",
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.6
+          }
+        },
+        "impOn": {
+          "origin": "auto",
+          "value": false
+        },
+        "impOp": {
+          "origin": "auto",
+          "value": "them"
+        },
+        "impScale": {
+          "origin": "auto",
+          "value": 100
+        },
+        "impX": {
+          "origin": "auto",
+          "value": 0
+        },
+        "impY": {
+          "origin": "auto",
+          "value": 0
+        },
+        "impZ": {
+          "origin": "auto",
+          "value": 0
+        },
+        "impRX": {
+          "origin": "auto",
+          "value": 0
+        },
+        "impRY": {
+          "origin": "auto",
+          "value": 0
+        },
+        "impRZ": {
+          "origin": "auto",
+          "value": 0
+        },
+        "meshJoinTolerance": {
+          "origin": "auto",
+          "value": {
+            "mode": "unselected"
+          }
+        }
+      },
+      "byProduct": {
+        "keychain": {
+          "baseH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 2.4
+            }
+          },
+          "rimOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "rimH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0.6
+            }
+          },
+          "ringOn": {
+            "origin": "auto",
+            "value": true
+          },
+          "ringOuterD": {
+            "origin": "auto",
+            "value": 8
+          },
+          "ringInnerD": {
+            "origin": "auto",
+            "value": 4
+          },
+          "ringTren": {
+            "origin": "auto",
+            "value": "hinh"
+          },
+          "ringAngle": {
+            "origin": "auto",
+            "value": 90
+          },
+          "ringOverlap": {
+            "origin": "auto",
+            "value": 1.5
+          },
+          "ringH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "auto",
+              "mode": "body-height"
+            }
+          }
+        },
+        "clicky": {
+          "plateT": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.6
+            }
+          },
+          "skirtH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0
+            }
+          },
+          "wallT": {
+            "origin": "auto",
+            "value": 1.6
+          },
+          "rib": {
+            "origin": "auto",
+            "value": 1.2
+          },
+          "crossL": {
+            "origin": "auto",
+            "value": 4.1
+          },
+          "crossW": {
+            "origin": "auto",
+            "value": 1.35
+          },
+          "clr": {
+            "origin": "auto",
+            "value": 0.05
+          },
+          "socketD": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 5.5
+            }
+          },
+          "postH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 7
+            }
+          },
+          "postD1": {
+            "origin": "auto",
+            "value": 5.7
+          },
+          "postD2": {
+            "origin": "auto",
+            "value": 6
+          },
+          "collarH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.85
+            }
+          },
+          "stemH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 3.6
+            }
+          },
+          "linkBody": {
+            "origin": "auto",
+            "value": true
+          },
+          "housing": {
+            "origin": "auto",
+            "value": true
+          },
+          "autoSize": {
+            "origin": "auto",
+            "value": true
+          },
+          "plateHole": {
+            "origin": "auto",
+            "value": 14.05
+          },
+          "hSocketD": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 5.15
+            }
+          },
+          "hMouth": {
+            "origin": "auto",
+            "value": 15.4
+          },
+          "hRecess": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 2
+            }
+          },
+          "pinW": {
+            "origin": "auto",
+            "value": 11.5
+          },
+          "pinD": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.7
+            }
+          },
+          "hFloor": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.5
+            }
+          },
+          "hWall": {
+            "origin": "auto",
+            "value": 2
+          },
+          "hBossW": {
+            "origin": "auto",
+            "value": 2
+          },
+          "gap": {
+            "origin": "auto",
+            "value": 0.25
+          },
+          "rimOver": {
+            "origin": "auto",
+            "value": 0
+          },
+          "travel": {
+            "origin": "auto",
+            "value": 4.2
+          },
+          "hStopOn": {
+            "origin": "auto",
+            "value": true
+          },
+          "hStopW": {
+            "origin": "auto",
+            "value": 1.5
+          },
+          "hRingOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "hRingH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 6
+            }
+          },
+          "hRingOuterD": {
+            "origin": "auto",
+            "value": 8
+          },
+          "hRingInnerD": {
+            "origin": "auto",
+            "value": 4
+          },
+          "hRingAngle": {
+            "origin": "auto",
+            "value": 90
+          },
+          "hRingOverlap": {
+            "origin": "auto",
+            "value": 1.5
+          },
+          "assemble": {
+            "origin": "auto",
+            "value": false
+          }
+        },
+        "strap": {
+          "baseH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 10
+            }
+          },
+          "rimOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "rimH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0.6
+            }
+          },
+          "strapD": {
+            "origin": "auto",
+            "value": 4
+          },
+          "strapAngle": {
+            "origin": "auto",
+            "value": 0
+          },
+          "strapZ": {
+            "origin": "auto",
+            "value": 5
+          },
+          "strapOff": {
+            "origin": "auto",
+            "value": 0
+          },
+          "strapSlot": {
+            "origin": "auto",
+            "value": 0
+          },
+          "strapSlotDir": {
+            "origin": "auto",
+            "value": "ngang"
+          },
+          "strapCham": {
+            "origin": "auto",
+            "value": 0.6
+          },
+          "rotObj": {
+            "origin": "auto",
+            "value": 0
+          },
+          "strapTolerance": {
+            "origin": "auto",
+            "value": {
+              "mode": "unselected"
+            }
+          }
+        },
+        "lego": {
+          "baseH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 5.6
+            }
+          },
+          "legoOn": {
+            "origin": "auto",
+            "value": true
+          },
+          "legoPitch": {
+            "origin": "auto",
+            "value": 8
+          },
+          "legoHoleD": {
+            "origin": "auto",
+            "value": 4.9
+          },
+          "legoHoleH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.8
+            }
+          },
+          "legoThua": {
+            "origin": "auto",
+            "value": "du"
+          },
+          "legoHoDu": {
+            "origin": "auto",
+            "value": 0.3
+          },
+          "legoWall": {
+            "origin": "auto",
+            "value": 0.8
+          },
+          "legoRong": {
+            "origin": "auto",
+            "value": false
+          },
+          "legoOffX": {
+            "origin": "auto",
+            "value": 0
+          },
+          "legoOffY": {
+            "origin": "auto",
+            "value": 0
+          },
+          "legoXeOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "legoXeW": {
+            "origin": "auto",
+            "value": 0.6
+          },
+          "legoTaiOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "legoTaiW": {
+            "origin": "auto",
+            "value": 2.4
+          },
+          "legoTaiL": {
+            "origin": "auto",
+            "value": 12
+          },
+          "legoTaiCo": {
+            "origin": "auto",
+            "value": 1.2
+          },
+          "legoRanhOn": {
+            "origin": "auto",
+            "value": true
+          },
+          "legoRanhR": {
+            "origin": "auto",
+            "value": 0.8
+          },
+          "legoRanhZ": {
+            "origin": "auto",
+            "value": 0
+          }
+        },
+        "charm": {
+          "baseH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 3
+            }
+          },
+          "rimOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "rimH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0.6
+            }
+          },
+          "charmGan": {
+            "origin": "auto",
+            "value": "roi"
+          },
+          "charmCoD": {
+            "origin": "auto",
+            "value": 12.5
+          },
+          "charmCoH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 3
+            }
+          },
+          "charmVanhD": {
+            "origin": "auto",
+            "value": 14.5
+          },
+          "charmVanhH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1.6
+            }
+          },
+          "charmVat": {
+            "origin": "auto",
+            "value": 0.8
+          },
+          "charmChotD": {
+            "origin": "auto",
+            "value": 6
+          },
+          "charmChotH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 2
+            }
+          },
+          "charmClr": {
+            "origin": "auto",
+            "value": 0.2
+          },
+          "charmRap": {
+            "origin": "auto",
+            "value": false
+          },
+          "charmOffX": {
+            "origin": "auto",
+            "value": 0
+          },
+          "charmOffY": {
+            "origin": "auto",
+            "value": 0
+          }
+        }
+      }
+    },
+    "content": {
+      "source": {
+        "id": "source:fixture",
+        "purpose": "domain-only synthetic fixture"
+      },
+      "text": [
+        "Tiếng Việt"
+      ],
+      "overrides": {
+        "regions": {
+          "r1": {
+            "origin": "user",
+            "color": "#abcdef",
+            "slot": 3
+          }
+        }
+      }
+    },
+    "provenance": {
+      "catalogId": "parameters-core-v1",
+      "catalogVersion": "1.0.1",
+      "modeDefaults": [
+        {
+          "mode": "keychain",
+          "preset": {
+            "size": 45,
+            "outline": "silhouette",
+            "offset": 1.5,
+            "artMode": "noi",
+            "artH": 0.8,
+            "minFeature": 0.6,
+            "baseH": 2.4
+          }
+        },
+        {
+          "mode": "clicky",
+          "preset": {
+            "size": 40,
+            "outline": "silhouette",
+            "offset": 1.2,
+            "cornerR": 2.5,
+            "artMode": "noi",
+            "artH": 0.6,
+            "minFeature": 0.6,
+            "skirtH": 0
+          }
+        },
+        {
+          "mode": "strap",
+          "preset": {
+            "size": 40,
+            "outline": "silhouette",
+            "offset": 1.8,
+            "artMode": "noi",
+            "artH": 0.8,
+            "minFeature": 0.6,
+            "baseH": 10,
+            "strapZ": 5,
+            "strapD": 4,
+            "strapCham": 0.6,
+            "strapSlot": 0,
+            "strapSlotDir": "ngang"
+          }
+        },
+        {
+          "mode": "lego",
+          "preset": {
+            "size": 45,
+            "outline": "silhouette",
+            "offset": 1.5,
+            "artMode": "noi",
+            "artH": 0.8,
+            "minFeature": 0.6,
+            "baseH": 5.6,
+            "ringOn": false
+          }
+        },
+        {
+          "mode": "charm",
+          "preset": {
+            "size": 25,
+            "outline": "silhouette",
+            "offset": 1.5,
+            "artMode": "noi",
+            "artH": 0.8,
+            "minFeature": 0.5,
+            "baseH": 3,
+            "ringOn": false
+          }
+        }
+      ]
+    }
+  },
+  "switchPreview": {
+    "ok": true,
+    "command": {
+      "id": "product.switch",
+      "args": {
+        "product": "clicky"
+      }
+    },
+    "baseRevision": 0,
+    "beforeHash": "sha256:b1cd331de93bcc42447f85f718e2e3c75619140663ff4572db330e49c2e508a3",
+    "afterHash": "sha256:9fe1b5a6763763681c7a3e4cdaab289a89f2e55e63479067373c079cbd723f61",
+    "candidate": {
+      "kind": "web-3d-arch.project-domain",
+      "schemaVersion": 1,
+      "revision": 1,
+      "product": "clicky",
+      "sourceKind": "svg",
+      "schedule": {
+        "version": 1,
+        "kind": "first-plus-regular",
+        "firstLayerHeight": 0.2,
+        "layerHeight": 0.2,
+        "sources": {
+          "firstLayerHeight": "user",
+          "layerHeight": "user"
+        },
+        "profileId": null,
+        "hash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836"
+      },
+      "parameters": {
+        "common": {
+          "k": {
+            "origin": "auto",
+            "value": 4
+          },
+          "res": {
+            "origin": "auto",
+            "value": "520"
+          },
+          "smooth": {
+            "origin": "auto",
+            "value": 3
+          },
+          "minA": {
+            "origin": "auto",
+            "value": 5
+          },
+          "denoise": {
+            "origin": "auto",
+            "value": 1
+          },
+          "eps": {
+            "origin": "auto",
+            "value": 35
+          },
+          "tension": {
+            "origin": "auto",
+            "value": 65
+          },
+          "size": {
+            "origin": "auto",
+            "value": 40
+          },
+          "outline": {
+            "origin": "auto",
+            "value": "silhouette"
+          },
+          "cornerR": {
+            "origin": "auto",
+            "value": 2.5
+          },
+          "offset": {
+            "origin": "auto",
+            "value": 1.2
+          },
+          "weld": {
+            "origin": "auto",
+            "value": 0.8
+          },
+          "minFeature": {
+            "origin": "auto",
+            "value": 0.6
+          },
+          "fillHoles": {
+            "origin": "auto",
+            "value": true
+          },
+          "topBevel": {
+            "origin": "auto",
+            "value": false
+          },
+          "topBevelR": {
+            "origin": "auto",
+            "value": 0.6
+          },
+          "topBevelShape": {
+            "origin": "auto",
+            "value": "tron"
+          },
+          "bevelGop": {
+            "origin": "auto",
+            "value": false
+          },
+          "bevelChu": {
+            "origin": "auto",
+            "value": false
+          },
+          "topBevelSeg": {
+            "origin": "auto",
+            "value": 3
+          },
+          "layerStep": {
+            "origin": "auto",
+            "value": 3
+          },
+          "artMode": {
+            "origin": "auto",
+            "value": "noi"
+          },
+          "flatTop": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 1
+            }
+          },
+          "artH": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0.6
+            }
+          },
+          "splitObj": {
+            "origin": "auto",
+            "value": true
+          },
+          "layerBand": {
+            "origin": "auto",
+            "value": false
+          },
+          "bandCore": {
+            "origin": "auto",
+            "value": false
+          },
+          "bandCap": {
+            "origin": "auto",
+            "value": {
+              "heightMode": "mm",
+              "mm": 0.6
+            }
+          },
+          "impOn": {
+            "origin": "auto",
+            "value": false
+          },
+          "impOp": {
+            "origin": "auto",
+            "value": "them"
+          },
+          "impScale": {
+            "origin": "auto",
+            "value": 100
+          },
+          "impX": {
+            "origin": "auto",
+            "value": 0
+          },
+          "impY": {
+            "origin": "auto",
+            "value": 0
+          },
+          "impZ": {
+            "origin": "auto",
+            "value": 0
+          },
+          "impRX": {
+            "origin": "auto",
+            "value": 0
+          },
+          "impRY": {
+            "origin": "auto",
+            "value": 0
+          },
+          "impRZ": {
+            "origin": "auto",
+            "value": 0
+          },
+          "meshJoinTolerance": {
+            "origin": "auto",
+            "value": {
+              "mode": "unselected"
+            }
+          }
+        },
+        "byProduct": {
+          "keychain": {
+            "baseH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 2.4
+              }
+            },
+            "rimOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "rimH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 0.6
+              }
+            },
+            "ringOn": {
+              "origin": "auto",
+              "value": true
+            },
+            "ringOuterD": {
+              "origin": "auto",
+              "value": 8
+            },
+            "ringInnerD": {
+              "origin": "auto",
+              "value": 4
+            },
+            "ringTren": {
+              "origin": "auto",
+              "value": "hinh"
+            },
+            "ringAngle": {
+              "origin": "auto",
+              "value": 90
+            },
+            "ringOverlap": {
+              "origin": "auto",
+              "value": 1.5
+            },
+            "ringH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "auto",
+                "mode": "body-height"
+              }
+            }
+          },
+          "clicky": {
+            "plateT": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.6
+              }
+            },
+            "skirtH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 0
+              }
+            },
+            "wallT": {
+              "origin": "auto",
+              "value": 1.6
+            },
+            "rib": {
+              "origin": "auto",
+              "value": 1.2
+            },
+            "crossL": {
+              "origin": "auto",
+              "value": 4.1
+            },
+            "crossW": {
+              "origin": "auto",
+              "value": 1.35
+            },
+            "clr": {
+              "origin": "auto",
+              "value": 0.05
+            },
+            "socketD": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 5.5
+              }
+            },
+            "postH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 7
+              }
+            },
+            "postD1": {
+              "origin": "auto",
+              "value": 5.7
+            },
+            "postD2": {
+              "origin": "auto",
+              "value": 6
+            },
+            "collarH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.85
+              }
+            },
+            "stemH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 3.6
+              }
+            },
+            "linkBody": {
+              "origin": "auto",
+              "value": true
+            },
+            "housing": {
+              "origin": "auto",
+              "value": true
+            },
+            "autoSize": {
+              "origin": "auto",
+              "value": true
+            },
+            "plateHole": {
+              "origin": "auto",
+              "value": 14.05
+            },
+            "hSocketD": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 5.15
+              }
+            },
+            "hMouth": {
+              "origin": "auto",
+              "value": 15.4
+            },
+            "hRecess": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 2
+              }
+            },
+            "pinW": {
+              "origin": "auto",
+              "value": 11.5
+            },
+            "pinD": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.7
+              }
+            },
+            "hFloor": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.5
+              }
+            },
+            "hWall": {
+              "origin": "auto",
+              "value": 2
+            },
+            "hBossW": {
+              "origin": "auto",
+              "value": 2
+            },
+            "gap": {
+              "origin": "auto",
+              "value": 0.25
+            },
+            "rimOver": {
+              "origin": "auto",
+              "value": 0
+            },
+            "travel": {
+              "origin": "auto",
+              "value": 4.2
+            },
+            "hStopOn": {
+              "origin": "auto",
+              "value": true
+            },
+            "hStopW": {
+              "origin": "auto",
+              "value": 1.5
+            },
+            "hRingOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "hRingH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 6
+              }
+            },
+            "hRingOuterD": {
+              "origin": "auto",
+              "value": 8
+            },
+            "hRingInnerD": {
+              "origin": "auto",
+              "value": 4
+            },
+            "hRingAngle": {
+              "origin": "auto",
+              "value": 90
+            },
+            "hRingOverlap": {
+              "origin": "auto",
+              "value": 1.5
+            },
+            "assemble": {
+              "origin": "auto",
+              "value": false
+            }
+          },
+          "strap": {
+            "baseH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 10
+              }
+            },
+            "rimOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "rimH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 0.6
+              }
+            },
+            "strapD": {
+              "origin": "auto",
+              "value": 4
+            },
+            "strapAngle": {
+              "origin": "auto",
+              "value": 0
+            },
+            "strapZ": {
+              "origin": "auto",
+              "value": 5
+            },
+            "strapOff": {
+              "origin": "auto",
+              "value": 0
+            },
+            "strapSlot": {
+              "origin": "auto",
+              "value": 0
+            },
+            "strapSlotDir": {
+              "origin": "auto",
+              "value": "ngang"
+            },
+            "strapCham": {
+              "origin": "auto",
+              "value": 0.6
+            },
+            "rotObj": {
+              "origin": "auto",
+              "value": 0
+            },
+            "strapTolerance": {
+              "origin": "auto",
+              "value": {
+                "mode": "unselected"
+              }
+            }
+          },
+          "lego": {
+            "baseH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 5.6
+              }
+            },
+            "legoOn": {
+              "origin": "auto",
+              "value": true
+            },
+            "legoPitch": {
+              "origin": "auto",
+              "value": 8
+            },
+            "legoHoleD": {
+              "origin": "auto",
+              "value": 4.9
+            },
+            "legoHoleH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.8
+              }
+            },
+            "legoThua": {
+              "origin": "auto",
+              "value": "du"
+            },
+            "legoHoDu": {
+              "origin": "auto",
+              "value": 0.3
+            },
+            "legoWall": {
+              "origin": "auto",
+              "value": 0.8
+            },
+            "legoRong": {
+              "origin": "auto",
+              "value": false
+            },
+            "legoOffX": {
+              "origin": "auto",
+              "value": 0
+            },
+            "legoOffY": {
+              "origin": "auto",
+              "value": 0
+            },
+            "legoXeOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "legoXeW": {
+              "origin": "auto",
+              "value": 0.6
+            },
+            "legoTaiOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "legoTaiW": {
+              "origin": "auto",
+              "value": 2.4
+            },
+            "legoTaiL": {
+              "origin": "auto",
+              "value": 12
+            },
+            "legoTaiCo": {
+              "origin": "auto",
+              "value": 1.2
+            },
+            "legoRanhOn": {
+              "origin": "auto",
+              "value": true
+            },
+            "legoRanhR": {
+              "origin": "auto",
+              "value": 0.8
+            },
+            "legoRanhZ": {
+              "origin": "auto",
+              "value": 0
+            }
+          },
+          "charm": {
+            "baseH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 3
+              }
+            },
+            "rimOn": {
+              "origin": "auto",
+              "value": false
+            },
+            "rimH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 0.6
+              }
+            },
+            "charmGan": {
+              "origin": "auto",
+              "value": "roi"
+            },
+            "charmCoD": {
+              "origin": "auto",
+              "value": 12.5
+            },
+            "charmCoH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 3
+              }
+            },
+            "charmVanhD": {
+              "origin": "auto",
+              "value": 14.5
+            },
+            "charmVanhH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 1.6
+              }
+            },
+            "charmVat": {
+              "origin": "auto",
+              "value": 0.8
+            },
+            "charmChotD": {
+              "origin": "auto",
+              "value": 6
+            },
+            "charmChotH": {
+              "origin": "auto",
+              "value": {
+                "heightMode": "mm",
+                "mm": 2
+              }
+            },
+            "charmClr": {
+              "origin": "auto",
+              "value": 0.2
+            },
+            "charmRap": {
+              "origin": "auto",
+              "value": false
+            },
+            "charmOffX": {
+              "origin": "auto",
+              "value": 0
+            },
+            "charmOffY": {
+              "origin": "auto",
+              "value": 0
+            }
+          }
+        }
+      },
+      "content": {
+        "source": {
+          "id": "source:fixture",
+          "purpose": "domain-only synthetic fixture"
+        },
+        "text": [
+          "Tiếng Việt"
+        ],
+        "overrides": {
+          "regions": {
+            "r1": {
+              "origin": "user",
+              "color": "#abcdef",
+              "slot": 3
+            }
+          }
+        }
+      },
+      "provenance": {
+        "catalogId": "parameters-core-v1",
+        "catalogVersion": "1.0.1",
+        "modeDefaults": [
+          {
+            "mode": "keychain",
+            "preset": {
+              "size": 45,
+              "outline": "silhouette",
+              "offset": 1.5,
+              "artMode": "noi",
+              "artH": 0.8,
+              "minFeature": 0.6,
+              "baseH": 2.4
+            }
+          },
+          {
+            "mode": "clicky",
+            "preset": {
+              "size": 40,
+              "outline": "silhouette",
+              "offset": 1.2,
+              "cornerR": 2.5,
+              "artMode": "noi",
+              "artH": 0.6,
+              "minFeature": 0.6,
+              "skirtH": 0
+            }
+          },
+          {
+            "mode": "strap",
+            "preset": {
+              "size": 40,
+              "outline": "silhouette",
+              "offset": 1.8,
+              "artMode": "noi",
+              "artH": 0.8,
+              "minFeature": 0.6,
+              "baseH": 10,
+              "strapZ": 5,
+              "strapD": 4,
+              "strapCham": 0.6,
+              "strapSlot": 0,
+              "strapSlotDir": "ngang"
+            }
+          },
+          {
+            "mode": "lego",
+            "preset": {
+              "size": 45,
+              "outline": "silhouette",
+              "offset": 1.5,
+              "artMode": "noi",
+              "artH": 0.8,
+              "minFeature": 0.6,
+              "baseH": 5.6,
+              "ringOn": false
+            }
+          },
+          {
+            "mode": "charm",
+            "preset": {
+              "size": 25,
+              "outline": "silhouette",
+              "offset": 1.5,
+              "artMode": "noi",
+              "artH": 0.8,
+              "minFeature": 0.5,
+              "baseH": 3,
+              "ringOn": false
+            }
+          }
+        ]
+      }
+    },
+    "diff": [
+      {
+        "path": "/parameters/common/artH/value/mm",
+        "before": 0.8,
+        "after": 0.6
+      },
+      {
+        "path": "/parameters/common/cornerR/value",
+        "before": 3,
+        "after": 2.5
+      },
+      {
+        "path": "/parameters/common/offset/value",
+        "before": 1.5,
+        "after": 1.2
+      },
+      {
+        "path": "/parameters/common/size/value",
+        "before": 45,
+        "after": 40
+      },
+      {
+        "path": "/product",
+        "before": "keychain",
+        "after": "clicky"
+      },
+      {
+        "path": "/revision",
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "effects": [
+      {
+        "id": "size",
+        "before": {
+          "present": true,
+          "value": 45,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 40,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "cornerR",
+        "before": {
+          "present": true,
+          "value": 3,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "outline",
+              "oneOf": [
+                "round"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 2.5,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "outline",
+              "oneOf": [
+                "round"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "offset",
+        "before": {
+          "present": true,
+          "value": 1.5,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.2,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "baseH",
+        "before": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 2.4
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 2.4,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "plateT",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 1.6
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 1.6,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "artH",
+        "before": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.8
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 0.8,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.6
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 0.6,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "rimOn",
+        "before": {
+          "present": true,
+          "value": false,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "rimH",
+        "before": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 0.6
+          },
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "rimOn",
+              "equals": true
+            }
+          ],
+          "height": {
+            "mode": "mm",
+            "mm": 0.6,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "rimOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringOn",
+        "before": {
+          "present": true,
+          "value": true,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringOuterD",
+        "before": {
+          "present": true,
+          "value": 8,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringInnerD",
+        "before": {
+          "present": true,
+          "value": 4,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringTren",
+        "before": {
+          "present": true,
+          "value": "hinh",
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringAngle",
+        "before": {
+          "present": true,
+          "value": 90,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringOverlap",
+        "before": {
+          "present": true,
+          "value": 1.5,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "ringH",
+        "before": {
+          "present": true,
+          "value": {
+            "heightMode": "auto",
+            "mode": "body-height"
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "auto",
+            "resolution": "requires-field-resolver"
+          }
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "ringOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoPitch",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoHoleD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoHoleH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoThua",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoHoDu",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoThua",
+              "oneOf": [
+                "nua",
+                "tu"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoThua",
+              "oneOf": [
+                "nua",
+                "tu"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoWall",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoRong",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoOffX",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoOffY",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoXeOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoXeW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoXeOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoXeOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoTaiOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoTaiW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoTaiL",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoTaiCo",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoTaiOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoRanhOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoRanhR",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoRanhOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoRanhOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "legoRanhZ",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoRanhOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "legoOn",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "legoRanhOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmGan",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmCoD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmCoH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmVanhD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmVanhH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmVat",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmChotD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmChotH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmClr",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmRap",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "charmGan",
+              "oneOf": [
+                "roi"
+              ]
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmOffX",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "charmOffY",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapAngle",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapZ",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapOff",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapSlot",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapSlotDir",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "strapSlot",
+              "greaterThan": 0
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            },
+            {
+              "gate": "dependency",
+              "id": "strapSlot",
+              "greaterThan": 0
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "strapCham",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "rotObj",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "skirtH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 0
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 0,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "wallT",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.6,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "rib",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.2,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "crossL",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 4.1,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "crossW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.35,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "clr",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 0.05,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "socketD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 5.5
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 5.5,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "postH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 7
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 7,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "postD1",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 5.7,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "postD2",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 6,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "collarH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 1.85
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 1.85,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "stemH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 3.6
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 3.6,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "linkBody",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": true,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "housing",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": true,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "autoSize",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": true,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "plateHole",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 14.05,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hSocketD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 5.15
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 5.15,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "hMouth",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 15.4,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hRecess",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 2
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 2,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "pinW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 11.5,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "pinD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 1.7
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 1.7,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "hFloor",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 1.5
+          },
+          "applicable": true,
+          "reasons": [],
+          "height": {
+            "mode": "mm",
+            "mm": 1.5,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "hWall",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 2,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hBossW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 2,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "gap",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 0.25,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "rimOver",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 0,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "travel",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 4.2,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hStopOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": true,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hStopW",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hStopOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.5,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hRingOn",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": false,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "hRingH",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": {
+            "heightMode": "mm",
+            "mm": 6
+          },
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": {
+            "mode": "mm",
+            "mm": 6,
+            "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+            "manufacturing": {
+              "status": "unverified",
+              "reason": "datum-required"
+            },
+            "geometryVerified": false
+          }
+        }
+      },
+      {
+        "id": "hRingOuterD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 8,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "hRingInnerD",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 4,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "hRingAngle",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 90,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "hRingOverlap",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            },
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": 1.5,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "dependency",
+              "id": "hRingOn",
+              "equals": true
+            }
+          ],
+          "height": null
+        }
+      },
+      {
+        "id": "assemble",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            },
+            {
+              "gate": "dependency",
+              "id": "housing",
+              "equals": true
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": true,
+          "value": false,
+          "applicable": true,
+          "reasons": [],
+          "height": null
+        }
+      },
+      {
+        "id": "strapTolerance",
+        "before": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "keychain"
+            }
+          ],
+          "height": null
+        },
+        "after": {
+          "present": false,
+          "value": null,
+          "applicable": false,
+          "reasons": [
+            {
+              "gate": "product",
+              "product": "clicky"
+            }
+          ],
+          "height": null
+        }
+      }
+    ],
+    "profileCompatibility": null,
+    "verification": {
+      "data": "valid",
+      "geometry": "unsupported",
+      "fit": "unverified"
+    },
+    "requiresAcceptance": true
+  },
+  "heights": {
+    "nominalPin": {
+      "original": {
+        "heightMode": "mm",
+        "mm": 1.7
+      },
+      "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "options": [
+        {
+          "rounding": "floor",
+          "value": {
+            "heightMode": "layers",
+            "layers": 8,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 1.6,
+          "deltaMm": -0.1
+        },
+        {
+          "rounding": "ceil",
+          "value": {
+            "heightMode": "layers",
+            "layers": 9,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 1.8,
+          "deltaMm": 0.1
+        },
+        {
+          "rounding": "nearest-ties-even",
+          "value": {
+            "heightMode": "layers",
+            "layers": 8,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 1.6,
+          "deltaMm": -0.1
+        }
+      ],
+      "requiresAcceptance": true,
+      "geometryVerified": false,
+      "datumVerified": "declared"
+    },
+    "nominalSocket": {
+      "original": {
+        "heightMode": "mm",
+        "mm": 5.5
+      },
+      "scheduleHash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836",
+      "options": [
+        {
+          "rounding": "floor",
+          "value": {
+            "heightMode": "layers",
+            "layers": 27,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 5.4,
+          "deltaMm": -0.1
+        },
+        {
+          "rounding": "ceil",
+          "value": {
+            "heightMode": "layers",
+            "layers": 28,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 5.6,
+          "deltaMm": 0.1
+        },
+        {
+          "rounding": "nearest-ties-even",
+          "value": {
+            "heightMode": "layers",
+            "layers": 28,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 5.6,
+          "deltaMm": 0.1
+        }
+      ],
+      "requiresAcceptance": true,
+      "geometryVerified": false,
+      "datumVerified": "declared"
+    },
+    "first016": {
+      "original": {
+        "heightMode": "mm",
+        "mm": 2.4
+      },
+      "scheduleHash": "sha256:4e699a89ea2038f90cd7deaaf2eab1415f1a213420aada90074e337fa64f58d7",
+      "options": [
+        {
+          "rounding": "floor",
+          "value": {
+            "heightMode": "layers",
+            "layers": 12,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.36,
+          "deltaMm": -0.04
+        },
+        {
+          "rounding": "ceil",
+          "value": {
+            "heightMode": "layers",
+            "layers": 13,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.56,
+          "deltaMm": 0.16
+        },
+        {
+          "rounding": "nearest-ties-even",
+          "value": {
+            "heightMode": "layers",
+            "layers": 12,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.36,
+          "deltaMm": -0.04
+        }
+      ],
+      "requiresAcceptance": true,
+      "geometryVerified": false,
+      "datumVerified": "declared"
+    },
+    "first025": {
+      "original": {
+        "heightMode": "mm",
+        "mm": 2.4
+      },
+      "scheduleHash": "sha256:859f79da2a65c5674f64a59d5e81ea94f271972c5e6b119de7c51b407ccc681a",
+      "options": [
+        {
+          "rounding": "floor",
+          "value": {
+            "heightMode": "layers",
+            "layers": 11,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.25,
+          "deltaMm": -0.15
+        },
+        {
+          "rounding": "ceil",
+          "value": {
+            "heightMode": "layers",
+            "layers": 12,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.45,
+          "deltaMm": 0.05
+        },
+        {
+          "rounding": "nearest-ties-even",
+          "value": {
+            "heightMode": "layers",
+            "layers": 12,
+            "datum": {
+              "kind": "bed"
+            },
+            "referenceLayer": 0
+          },
+          "mm": 2.45,
+          "deltaMm": 0.05
+        }
+      ],
+      "requiresAcceptance": true,
+      "geometryVerified": false,
+      "datumVerified": "declared"
+    }
+  },
+  "strap": {
+    "legacy": {
+      "id": "strapSeg",
+      "value": 18,
+      "unit": "segments"
+    },
+    "targetId": "strapTolerance",
+    "bound": {
+      "convention": "circle-inscribed-equal-angle",
+      "conventionVersion": "1",
+      "diameterMm": 4,
+      "segments": 18,
+      "lowerMm": 0.030384,
+      "upperMm": 0.030385,
+      "deviationSign": "inward",
+      "quantization": "outward enclosure to 0.000001 mm",
+      "geometryVerified": false,
+      "exclusions": [
+        "historical-generator-convention",
+        "nonuniform-scale",
+        "slot",
+        "chamfer",
+        "mesh-topology",
+        "manufactured-fit"
+      ]
+    },
+    "proposedValue": null,
+    "requiresAcceptance": true,
+    "blockers": [
+      "Historical tessellation convention must be established; count alone is insufficient."
+    ],
+    "budgets": {
+      "exportMm": 0.004,
+      "matingMm": 0.001,
+      "withinExportTarget": false,
+      "withinMatingTarget": false
+    },
+    "numericIdentity": false,
+    "geometryVerified": false,
+    "fit": "unverified"
+  },
+  "legacy": {
+    "status": "preview",
+    "source": {
+      "raw": "{\"catalogVersion\":\"1.0.1\",\"product\":\"keychain\",\"values\":{\"k\":4,\"res\":\"520\",\"smooth\":3,\"minA\":5,\"denoise\":1,\"eps\":35,\"tension\":65,\"size\":45,\"outline\":\"silhouette\",\"cornerR\":3,\"offset\":1.5,\"weld\":0.8,\"minFeature\":0.6,\"fillHoles\":true,\"topBevel\":false,\"topBevelR\":0.6,\"topBevelShape\":\"tron\",\"bevelGop\":false,\"bevelChu\":false,\"topBevelSeg\":3,\"layerH\":\"0.20\",\"layerStep\":3,\"baseH\":2.4,\"plateT\":1.6,\"artMode\":\"noi\",\"flatTop\":1,\"artH\":0.8,\"rimOn\":false,\"rimH\":0.6,\"splitObj\":true,\"layerBand\":false,\"bandCore\":false,\"bandCap\":0.6,\"ringOn\":true,\"ringOuterD\":8,\"ringInnerD\":4,\"ringTren\":\"hinh\",\"ringAngle\":90,\"ringOverlap\":1.5,\"ringH\":0,\"legoOn\":true,\"legoPitch\":8,\"legoHoleD\":4.9,\"legoHoleH\":1.8,\"legoThua\":\"du\",\"legoHoDu\":0.3,\"legoWall\":0.8,\"legoRong\":false,\"legoOffX\":0,\"legoOffY\":0,\"legoXeOn\":false,\"legoXeW\":0.6,\"legoTaiOn\":false,\"legoTaiW\":2.4,\"legoTaiL\":12,\"legoTaiCo\":1.2,\"legoRanhOn\":true,\"legoRanhR\":0.8,\"legoRanhZ\":0,\"charmGan\":\"roi\",\"charmCoD\":12.5,\"charmCoH\":3,\"charmVanhD\":14.5,\"charmVanhH\":1.6,\"charmVat\":0.8,\"charmChotD\":6,\"charmChotH\":2,\"charmClr\":0.2,\"charmRap\":false,\"charmOffX\":0,\"charmOffY\":0,\"strapD\":4,\"strapAngle\":0,\"strapZ\":5,\"strapOff\":0,\"strapSlot\":0,\"strapSlotDir\":\"ngang\",\"strapCham\":0.6,\"strapSeg\":18,\"rotObj\":0,\"skirtH\":0,\"wallT\":1.6,\"rib\":1.2,\"crossL\":4.1,\"crossW\":1.35,\"clr\":0.05,\"socketD\":5.5,\"postH\":7,\"postD1\":5.7,\"postD2\":6,\"collarH\":1.85,\"stemH\":3.6,\"linkBody\":true,\"housing\":true,\"autoSize\":true,\"plateHole\":14.05,\"hSocketD\":5.15,\"hMouth\":15.4,\"hRecess\":2,\"pinW\":11.5,\"pinD\":1.7,\"hFloor\":1.5,\"hWall\":2,\"hBossW\":2,\"gap\":0.25,\"rimOver\":0,\"travel\":4.2,\"hStopOn\":true,\"hStopW\":1.5,\"hRingOn\":false,\"hRingH\":6,\"hRingOuterD\":8,\"hRingInnerD\":4,\"hRingAngle\":90,\"hRingOverlap\":1.5,\"assemble\":false,\"impOn\":false,\"impOp\":\"them\",\"impScale\":100,\"impX\":0,\"impY\":0,\"impZ\":0,\"impRX\":0,\"impRY\":0,\"impRZ\":0,\"impVox\":0.25}}",
+      "sha256": "499d4ddbb0999431178fcba730d695cabbd0e122f0bc6e5c4dead9cffdf8ac6b",
+      "catalogVersion": "1.0.1"
+    },
+    "product": "keychain",
+    "schedule": {
+      "version": 1,
+      "kind": "first-plus-regular",
+      "firstLayerHeight": 0.2,
+      "layerHeight": 0.2,
+      "sources": {
+        "firstLayerHeight": "user",
+        "layerHeight": "user"
+      },
+      "profileId": null,
+      "hash": "sha256:89c533c610e3ecfd3c61cec1735193dc77645edff3faeefd48329be919038836"
+    },
+    "rows": [
+      {
+        "id": "k",
+        "disposition": "keep-value",
+        "legacyValue": 4,
+        "proposedValue": 4,
+        "requiresAcceptance": true,
+        "reason": "Target material/color count; segmentation and profile slot capacity are separate.",
+        "blockers": [
+          {
+            "id": "O-02/segmentation-palette",
+            "reason": "Target material/color count; segmentation and profile slot capacity are separate."
+          }
+        ]
+      },
+      {
+        "id": "res",
+        "disposition": "keep-value",
+        "legacyValue": "520",
+        "proposedValue": "520",
+        "requiresAcceptance": true,
+        "reason": "Raster processing resolution in pixels; never mechanical precision.",
+        "blockers": []
+      },
+      {
+        "id": "smooth",
+        "disposition": "keep-value",
+        "legacyValue": 3,
+        "proposedValue": 3,
+        "requiresAcceptance": true,
+        "reason": "Raster region smoothing candidate strength index.",
+        "blockers": [
+          {
+            "id": "O-02/smoothing-definition",
+            "reason": "Raster region smoothing candidate strength index."
+          }
+        ]
+      },
+      {
+        "id": "minA",
+        "disposition": "keep-value",
+        "legacyValue": 5,
+        "proposedValue": 5,
+        "requiresAcceptance": true,
+        "reason": "Small raster region merge candidate threshold; area unit not established.",
+        "blockers": [
+          {
+            "id": "O-02/area-threshold-unit",
+            "reason": "Small raster region merge candidate threshold; area unit not established."
+          }
+        ]
+      },
+      {
+        "id": "denoise",
+        "disposition": "keep-value",
+        "legacyValue": 1,
+        "proposedValue": 1,
+        "requiresAcceptance": true,
+        "reason": "Raster denoise candidate strength index.",
+        "blockers": [
+          {
+            "id": "O-02/denoise-definition",
+            "reason": "Raster denoise candidate strength index."
+          }
+        ]
+      },
+      {
+        "id": "eps",
+        "disposition": "keep-value",
+        "legacyValue": 35,
+        "proposedValue": 35,
+        "requiresAcceptance": true,
+        "reason": "Contour simplification candidate index; not a physical tolerance.",
+        "blockers": [
+          {
+            "id": "O-02/contour-tolerance-map",
+            "reason": "Contour simplification candidate index; not a physical tolerance."
+          }
+        ]
+      },
+      {
+        "id": "tension",
+        "disposition": "keep-value",
+        "legacyValue": 65,
+        "proposedValue": 65,
+        "requiresAcceptance": true,
+        "reason": "Curve smoothing candidate index; not a curvature guarantee.",
+        "blockers": [
+          {
+            "id": "O-02/curve-tension-map",
+            "reason": "Curve smoothing candidate index; not a curvature guarantee."
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "disposition": "keep-mm",
+        "legacyValue": 45,
+        "proposedValue": 45,
+        "requiresAcceptance": true,
+        "reason": "Long edge of source-derived design in mm, before required fit adjustments.",
+        "blockers": [
+          {
+            "id": "O-02/source-bounds",
+            "reason": "Long edge of source-derived design in mm, before required fit adjustments."
+          }
+        ]
+      },
+      {
+        "id": "outline",
+        "disposition": "keep-value",
+        "legacyValue": "silhouette",
+        "proposedValue": "silhouette",
+        "requiresAcceptance": true,
+        "reason": "Base footprint construction family.",
+        "blockers": [
+          {
+            "id": "O-02/footprint-geometry",
+            "reason": "Base footprint construction family."
+          }
+        ]
+      },
+      {
+        "id": "cornerR",
+        "disposition": "keep-mm",
+        "legacyValue": 3,
+        "proposedValue": 3,
+        "requiresAcceptance": true,
+        "reason": "Rounded-frame XY corner radius in mm.",
+        "blockers": [
+          {
+            "id": "O-02/corner-bounds",
+            "reason": "Rounded-frame XY corner radius in mm."
+          }
+        ]
+      },
+      {
+        "id": "offset",
+        "disposition": "keep-mm",
+        "legacyValue": 1.5,
+        "proposedValue": 1.5,
+        "requiresAcceptance": true,
+        "reason": "Outward footprint offset distance in mm.",
+        "blockers": [
+          {
+            "id": "O-02/offset-topology",
+            "reason": "Outward footprint offset distance in mm."
+          }
+        ]
+      },
+      {
+        "id": "weld",
+        "disposition": "keep-mm",
+        "legacyValue": 0.8,
+        "proposedValue": 0.8,
+        "requiresAcceptance": true,
+        "reason": "Candidate bridging distance for disconnected features in mm.",
+        "blockers": [
+          {
+            "id": "O-02/bridge-definition",
+            "reason": "Candidate bridging distance for disconnected features in mm."
+          }
+        ]
+      },
+      {
+        "id": "minFeature",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": 0.6,
+        "requiresAcceptance": true,
+        "reason": "Minimum retained source feature width in mm.",
+        "blockers": [
+          {
+            "id": "O-02/feature-measure",
+            "reason": "Minimum retained source feature width in mm."
+          }
+        ]
+      },
+      {
+        "id": "fillHoles",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Fill base interior holes; does not discard original source holes.",
+        "blockers": [
+          {
+            "id": "O-02/base-hole-scope",
+            "reason": "Fill base interior holes; does not discard original source holes."
+          }
+        ]
+      },
+      {
+        "id": "topBevel",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable top bevel default on generated blocks.",
+        "blockers": [
+          {
+            "id": "O-02/bevel-geometry",
+            "reason": "Enable top bevel default on generated blocks."
+          }
+        ]
+      },
+      {
+        "id": "topBevelR",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": 0.6,
+        "requiresAcceptance": true,
+        "reason": "Physical top edge radius/chamfer size; not layer count.",
+        "blockers": [
+          {
+            "id": "O-02/bevel-shape-metric",
+            "reason": "Physical top edge radius/chamfer size; not layer count."
+          }
+        ]
+      },
+      {
+        "id": "topBevelShape",
+        "disposition": "keep-value",
+        "legacyValue": "tron",
+        "proposedValue": "tron",
+        "requiresAcceptance": true,
+        "reason": "Round/chamfer45/stepped bevel family.",
+        "blockers": [
+          {
+            "id": "O-02/bevel-shape-contract",
+            "reason": "Round/chamfer45/stepped bevel family."
+          }
+        ]
+      },
+      {
+        "id": "bevelGop",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Union eligible disconnected regions before bevel.",
+        "blockers": [
+          {
+            "id": "O-02/bevel-union-scope",
+            "reason": "Union eligible disconnected regions before bevel."
+          }
+        ]
+      },
+      {
+        "id": "bevelChu",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Apply bevel to text strokes and text base.",
+        "blockers": [
+          {
+            "id": "O-02/text-bevel-support",
+            "reason": "Apply bevel to text strokes and text base."
+          }
+        ]
+      },
+      {
+        "id": "topBevelSeg",
+        "disposition": "keep-value",
+        "legacyValue": 3,
+        "proposedValue": 3,
+        "requiresAcceptance": true,
+        "reason": "Integer number of visible bevel steps, not mesh precision.",
+        "blockers": [
+          {
+            "id": "O-02/step-datum",
+            "reason": "Integer number of visible bevel steps, not mesh precision."
+          }
+        ]
+      },
+      {
+        "id": "layerH",
+        "disposition": "keep-mm",
+        "targetId": "schedule.layerHeight",
+        "legacyValue": "0.20",
+        "proposedValue": 0.2,
+        "requiresAcceptance": true,
+        "reason": "No legacy first-layer value exists. Supplied snapshot schedule stays authoritative until explicitly changed."
+      },
+      {
+        "id": "layerStep",
+        "disposition": "keep-value",
+        "legacyValue": 3,
+        "proposedValue": 3,
+        "requiresAcceptance": true,
+        "reason": "Quick increment in layer counts; UI preference without geometric effect.",
+        "blockers": []
+      },
+      {
+        "id": "baseH",
+        "disposition": "keep-mm",
+        "legacyValue": 2.4,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 2.4
+        },
+        "requiresAcceptance": true,
+        "reason": "Body/base nominal thickness; layer conversion requires an explicit lower surface datum.",
+        "blockers": [
+          {
+            "id": "O-02/body-datum",
+            "reason": "Body/base nominal thickness; layer conversion requires an explicit lower surface datum."
+          }
+        ]
+      },
+      {
+        "id": "plateT",
+        "disposition": "keep-mm",
+        "legacyValue": 1.6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.6
+        },
+        "requiresAcceptance": true,
+        "reason": "Keycap top plate thickness measured from its lower surface.",
+        "blockers": [
+          {
+            "id": "O-02/cap-plate-datum",
+            "reason": "Keycap top plate thickness measured from its lower surface."
+          }
+        ]
+      },
+      {
+        "id": "artMode",
+        "disposition": "keep-value",
+        "legacyValue": "noi",
+        "proposedValue": "noi",
+        "requiresAcceptance": true,
+        "reason": "Raised/recessed/flat1/flat2 artwork composition family.",
+        "blockers": [
+          {
+            "id": "O-02/art-mode-formulas",
+            "reason": "Raised/recessed/flat1/flat2 artwork composition family."
+          }
+        ]
+      },
+      {
+        "id": "flatTop",
+        "disposition": "keep-mm",
+        "legacyValue": 1,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1
+        },
+        "requiresAcceptance": true,
+        "reason": "Upper color thickness in flat artwork modes.",
+        "blockers": [
+          {
+            "id": "O-02/flat-color-datum",
+            "reason": "Upper color thickness in flat artwork modes."
+          }
+        ]
+      },
+      {
+        "id": "artH",
+        "disposition": "keep-mm",
+        "legacyValue": 0.8,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 0.8
+        },
+        "requiresAcceptance": true,
+        "reason": "Artwork relief height or recess depth; mode selects sign and reference surface.",
+        "blockers": [
+          {
+            "id": "O-02/art-relief-datum",
+            "reason": "Artwork relief height or recess depth; mode selects sign and reference surface."
+          }
+        ]
+      },
+      {
+        "id": "rimOn",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable distinct colored support under artwork.",
+        "blockers": [
+          {
+            "id": "O-02/rim-scope",
+            "reason": "Enable distinct colored support under artwork."
+          }
+        ]
+      },
+      {
+        "id": "rimH",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 0.6
+        },
+        "requiresAcceptance": true,
+        "reason": "Colored artwork support thickness, separate from body thickness.",
+        "blockers": [
+          {
+            "id": "O-02/rim-datum",
+            "reason": "Colored artwork support thickness, separate from body thickness."
+          }
+        ]
+      },
+      {
+        "id": "splitObj",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Enable individual artwork object heights in raised mode.",
+        "blockers": [
+          {
+            "id": "O-02/object-height-schema",
+            "reason": "Enable individual artwork object heights in raised mode."
+          }
+        ]
+      },
+      {
+        "id": "layerBand",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Use height bands for material allocation.",
+        "blockers": [
+          {
+            "id": "O-02/band-region-mapping",
+            "reason": "Use height bands for material allocation."
+          }
+        ]
+      },
+      {
+        "id": "bandCore",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Use base material for eligible inner core volume.",
+        "blockers": [
+          {
+            "id": "O-02/core-material-partition",
+            "reason": "Use base material for eligible inner core volume."
+          }
+        ]
+      },
+      {
+        "id": "bandCap",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 0.6
+        },
+        "requiresAcceptance": true,
+        "reason": "Thickness of upper color over a base-material core.",
+        "blockers": [
+          {
+            "id": "O-02/core-cap-datum",
+            "reason": "Thickness of upper color over a base-material core."
+          }
+        ]
+      },
+      {
+        "id": "ringOn",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Enable the keychain eyelet.",
+        "blockers": []
+      },
+      {
+        "id": "ringOuterD",
+        "disposition": "keep-mm",
+        "legacyValue": 8,
+        "proposedValue": 8,
+        "requiresAcceptance": true,
+        "reason": "Nominal eyelet outside diameter; must exceed bore diameter.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-strength",
+            "reason": "Nominal eyelet outside diameter; must exceed bore diameter."
+          }
+        ]
+      },
+      {
+        "id": "ringInnerD",
+        "disposition": "keep-mm",
+        "legacyValue": 4,
+        "proposedValue": 4,
+        "requiresAcceptance": true,
+        "reason": "Nominal eyelet bore diameter.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-fit",
+            "reason": "Nominal eyelet bore diameter."
+          }
+        ]
+      },
+      {
+        "id": "ringTren",
+        "disposition": "keep-value",
+        "legacyValue": "hinh",
+        "proposedValue": "hinh",
+        "requiresAcceptance": true,
+        "reason": "Attach eyelet to image or text semantic host.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-host-resolution",
+            "reason": "Attach eyelet to image or text semantic host."
+          }
+        ]
+      },
+      {
+        "id": "ringAngle",
+        "disposition": "keep-value",
+        "legacyValue": 90,
+        "proposedValue": 90,
+        "requiresAcceptance": true,
+        "reason": "Eyelet position angle in degrees around chosen host.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-angle-frame",
+            "reason": "Eyelet position angle in degrees around chosen host."
+          }
+        ]
+      },
+      {
+        "id": "ringOverlap",
+        "disposition": "keep-mm",
+        "legacyValue": 1.5,
+        "proposedValue": 1.5,
+        "requiresAcceptance": true,
+        "reason": "Eyelet/body overlap distance in mm.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-contact",
+            "reason": "Eyelet/body overlap distance in mm."
+          }
+        ]
+      },
+      {
+        "id": "ringH",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": {
+          "heightMode": "auto",
+          "mode": "body-height"
+        },
+        "requiresAcceptance": true,
+        "reason": "Eyelet thickness; explicit auto body-height enum replaces legacy numeric zero.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-datum",
+            "reason": "Eyelet thickness; explicit auto body-height enum replaces legacy numeric zero."
+          }
+        ]
+      },
+      {
+        "id": "legoOn",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Enable bottom connector bores.",
+        "blockers": []
+      },
+      {
+        "id": "legoPitch",
+        "disposition": "keep-mm",
+        "legacyValue": 8,
+        "proposedValue": 8,
+        "requiresAcceptance": true,
+        "reason": "Nominal center-to-center connector grid pitch.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal center-to-center connector grid pitch."
+          }
+        ]
+      },
+      {
+        "id": "legoHoleD",
+        "disposition": "keep-mm",
+        "legacyValue": 4.9,
+        "proposedValue": 4.9,
+        "requiresAcceptance": true,
+        "reason": "Nominal bore diameter before separately specified clearance.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal bore diameter before separately specified clearance."
+          }
+        ]
+      },
+      {
+        "id": "legoHoleH",
+        "disposition": "keep-mm",
+        "legacyValue": 1.8,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.8
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal bore depth from bore opening face; not implicitly nine layers.",
+        "blockers": [
+          {
+            "id": "O-02/bore-datum",
+            "reason": "Nominal bore depth from bore opening face; not implicitly nine layers."
+          }
+        ]
+      },
+      {
+        "id": "legoThua",
+        "disposition": "keep-value",
+        "legacyValue": "du",
+        "proposedValue": "du",
+        "requiresAcceptance": true,
+        "reason": "Full/checkerboard/quarter grid mask.",
+        "blockers": [
+          {
+            "id": "O-02/grid-mask-phase",
+            "reason": "Full/checkerboard/quarter grid mask."
+          }
+        ]
+      },
+      {
+        "id": "legoHoDu",
+        "disposition": "keep-mm",
+        "legacyValue": 0.3,
+        "proposedValue": 0.3,
+        "requiresAcceptance": true,
+        "reason": "Positive extra clearance in sparse-grid mode; side/diameter convention pending.",
+        "blockers": [
+          {
+            "id": "O-02/clearance-convention",
+            "reason": "Positive extra clearance in sparse-grid mode; side/diameter convention pending."
+          }
+        ]
+      },
+      {
+        "id": "legoWall",
+        "disposition": "keep-mm",
+        "legacyValue": 0.8,
+        "proposedValue": 0.8,
+        "requiresAcceptance": true,
+        "reason": "Nominal lateral wall thickness around bores.",
+        "blockers": [
+          {
+            "id": "O-02/bore-wall-topology",
+            "reason": "Nominal lateral wall thickness around bores."
+          }
+        ]
+      },
+      {
+        "id": "legoRong",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Hollow base while retaining walls around bores.",
+        "blockers": [
+          {
+            "id": "O-02/hollow-roof",
+            "reason": "Hollow base while retaining walls around bores."
+          }
+        ]
+      },
+      {
+        "id": "legoOffX",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Grid translation on design X in mm.",
+        "blockers": [
+          {
+            "id": "O-02/grid-frame",
+            "reason": "Grid translation on design X in mm."
+          }
+        ]
+      },
+      {
+        "id": "legoOffY",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Grid translation on design Y in mm.",
+        "blockers": [
+          {
+            "id": "O-02/grid-frame",
+            "reason": "Grid translation on design Y in mm."
+          }
+        ]
+      },
+      {
+        "id": "legoXeOn",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable cross-shaped flexure cuts around bores.",
+        "blockers": [
+          {
+            "id": "O-02/flexure-fatigue",
+            "reason": "Enable cross-shaped flexure cuts around bores."
+          }
+        ]
+      },
+      {
+        "id": "legoXeW",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": 0.6,
+        "requiresAcceptance": true,
+        "reason": "Cross-cut width in mm.",
+        "blockers": [
+          {
+            "id": "O-02/flexure-fatigue",
+            "reason": "Cross-cut width in mm."
+          }
+        ]
+      },
+      {
+        "id": "legoTaiOn",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable breakaway alignment tabs.",
+        "blockers": [
+          {
+            "id": "O-02/tab-strength",
+            "reason": "Enable breakaway alignment tabs."
+          }
+        ]
+      },
+      {
+        "id": "legoTaiW",
+        "disposition": "keep-mm",
+        "legacyValue": 2.4,
+        "proposedValue": 2.4,
+        "requiresAcceptance": true,
+        "reason": "Tab width in mm.",
+        "blockers": []
+      },
+      {
+        "id": "legoTaiL",
+        "disposition": "keep-mm",
+        "legacyValue": 12,
+        "proposedValue": 12,
+        "requiresAcceptance": true,
+        "reason": "Tab length in mm.",
+        "blockers": []
+      },
+      {
+        "id": "legoTaiCo",
+        "disposition": "keep-mm",
+        "legacyValue": 1.2,
+        "proposedValue": 1.2,
+        "requiresAcceptance": true,
+        "reason": "Breakaway neck width; must not exceed tab width.",
+        "blockers": [
+          {
+            "id": "O-02/tab-strength",
+            "reason": "Breakaway neck width; must not exceed tab width."
+          }
+        ]
+      },
+      {
+        "id": "legoRanhOn",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Enable semicircular perimeter groove.",
+        "blockers": [
+          {
+            "id": "O-02/groove-geometry",
+            "reason": "Enable semicircular perimeter groove."
+          }
+        ]
+      },
+      {
+        "id": "legoRanhR",
+        "disposition": "keep-mm",
+        "legacyValue": 0.8,
+        "proposedValue": 0.8,
+        "requiresAcceptance": true,
+        "reason": "Groove circle radius in mm.",
+        "blockers": [
+          {
+            "id": "O-02/groove-clearance",
+            "reason": "Groove circle radius in mm."
+          }
+        ]
+      },
+      {
+        "id": "legoRanhZ",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Groove center coordinate; legacy zero has no proven auto meaning.",
+        "blockers": [
+          {
+            "id": "O-02/groove-datum-zero",
+            "reason": "Groove center coordinate; legacy zero has no proven auto meaning."
+          }
+        ]
+      },
+      {
+        "id": "charmGan",
+        "disposition": "keep-value",
+        "legacyValue": "roi",
+        "proposedValue": "roi",
+        "requiresAcceptance": true,
+        "reason": "Separate or integral retaining button assembly.",
+        "blockers": [
+          {
+            "id": "O-02/charm-assembly",
+            "reason": "Separate or integral retaining button assembly."
+          }
+        ]
+      },
+      {
+        "id": "charmCoD",
+        "disposition": "keep-mm",
+        "legacyValue": 12.5,
+        "proposedValue": 12.5,
+        "requiresAcceptance": true,
+        "reason": "Nominal neck diameter through sandal hole.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal neck diameter through sandal hole."
+          }
+        ]
+      },
+      {
+        "id": "charmCoH",
+        "disposition": "keep-mm",
+        "legacyValue": 3,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 3
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal neck height matching strap thickness; retain mm.",
+        "blockers": [
+          {
+            "id": "O-02/charm-neck-datum",
+            "reason": "Nominal neck height matching strap thickness; retain mm."
+          }
+        ]
+      },
+      {
+        "id": "charmVanhD",
+        "disposition": "keep-mm",
+        "legacyValue": 14.5,
+        "proposedValue": 14.5,
+        "requiresAcceptance": true,
+        "reason": "Nominal retaining flange diameter; exceeds neck diameter.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal retaining flange diameter; exceeds neck diameter."
+          }
+        ]
+      },
+      {
+        "id": "charmVanhH",
+        "disposition": "keep-mm",
+        "legacyValue": 1.6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.6
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal retaining flange thickness; retain mm.",
+        "blockers": [
+          {
+            "id": "O-02/charm-flange-datum",
+            "reason": "Nominal retaining flange thickness; retain mm."
+          }
+        ]
+      },
+      {
+        "id": "charmVat",
+        "disposition": "keep-mm",
+        "legacyValue": 0.8,
+        "proposedValue": 0.8,
+        "requiresAcceptance": true,
+        "reason": "Lead-in bevel distance at retaining flange.",
+        "blockers": [
+          {
+            "id": "O-02/charm-bevel-metric",
+            "reason": "Lead-in bevel distance at retaining flange."
+          }
+        ]
+      },
+      {
+        "id": "charmChotD",
+        "disposition": "keep-mm",
+        "legacyValue": 6,
+        "proposedValue": 6,
+        "requiresAcceptance": true,
+        "reason": "Nominal separate-button mating pin diameter.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal separate-button mating pin diameter."
+          }
+        ]
+      },
+      {
+        "id": "charmChotH",
+        "disposition": "keep-mm",
+        "legacyValue": 2,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 2
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal insertion depth of separate pin/socket pair.",
+        "blockers": [
+          {
+            "id": "O-02/charm-pin-datum",
+            "reason": "Nominal insertion depth of separate pin/socket pair."
+          }
+        ]
+      },
+      {
+        "id": "charmClr",
+        "disposition": "keep-mm",
+        "legacyValue": 0.2,
+        "proposedValue": 0.2,
+        "requiresAcceptance": true,
+        "reason": "Positive socket-pin clearance; radial/diametral convention pending.",
+        "blockers": [
+          {
+            "id": "O-02/clearance-convention",
+            "reason": "Positive socket-pin clearance; radial/diametral convention pending."
+          }
+        ]
+      },
+      {
+        "id": "charmRap",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Assembly view preference; does not change manufacturing geometry.",
+        "blockers": []
+      },
+      {
+        "id": "charmOffX",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Button displacement in design X in mm.",
+        "blockers": [
+          {
+            "id": "O-02/button-frame",
+            "reason": "Button displacement in design X in mm."
+          }
+        ]
+      },
+      {
+        "id": "charmOffY",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Button displacement in design Y in mm.",
+        "blockers": [
+          {
+            "id": "O-02/button-frame",
+            "reason": "Button displacement in design Y in mm."
+          }
+        ]
+      },
+      {
+        "id": "strapD",
+        "disposition": "keep-mm",
+        "legacyValue": 4,
+        "proposedValue": 4,
+        "requiresAcceptance": true,
+        "reason": "Nominal circular hole diameter, used in explicit tessellation-bound migration.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal circular hole diameter, used in explicit tessellation-bound migration."
+          }
+        ]
+      },
+      {
+        "id": "strapAngle",
+        "disposition": "keep-value",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Tube direction angle in degrees; frame must be resolved.",
+        "blockers": [
+          {
+            "id": "O-02/tube-angle-frame",
+            "reason": "Tube direction angle in degrees; frame must be resolved."
+          }
+        ]
+      },
+      {
+        "id": "strapZ",
+        "disposition": "keep-mm",
+        "legacyValue": 5,
+        "proposedValue": 5,
+        "requiresAcceptance": true,
+        "reason": "Tube center coordinate in mm; never layer-snapped.",
+        "blockers": [
+          {
+            "id": "O-02/tube-center-datum",
+            "reason": "Tube center coordinate in mm; never layer-snapped."
+          }
+        ]
+      },
+      {
+        "id": "strapOff",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Signed displacement of hole from design center.",
+        "blockers": [
+          {
+            "id": "O-02/tube-offset-axis",
+            "reason": "Signed displacement of hole from design center."
+          }
+        ]
+      },
+      {
+        "id": "strapSlot",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Additional slot extension; zero means circular, never auto.",
+        "blockers": [
+          {
+            "id": "O-02/slot-length-convention",
+            "reason": "Additional slot extension; zero means circular, never auto."
+          }
+        ]
+      },
+      {
+        "id": "strapSlotDir",
+        "disposition": "keep-value",
+        "legacyValue": "ngang",
+        "proposedValue": "ngang",
+        "requiresAcceptance": true,
+        "reason": "Slot extension direction on design axes.",
+        "blockers": [
+          {
+            "id": "O-02/slot-frame",
+            "reason": "Slot extension direction on design axes."
+          }
+        ]
+      },
+      {
+        "id": "strapCham",
+        "disposition": "keep-mm",
+        "legacyValue": 0.6,
+        "proposedValue": 0.6,
+        "requiresAcceptance": true,
+        "reason": "Hole entry chamfer distance; zero disables bevel.",
+        "blockers": [
+          {
+            "id": "O-02/tube-bevel-metric",
+            "reason": "Hole entry chamfer distance; zero disables bevel."
+          }
+        ]
+      },
+      {
+        "id": "strapSeg",
+        "disposition": "replace-capability",
+        "targetId": "strapTolerance",
+        "legacyValue": 18,
+        "proposedValue": {
+          "mode": "unselected"
+        },
+        "numericMapping": "none",
+        "preview": {
+          "legacy": {
+            "id": "strapSeg",
+            "value": 18,
+            "unit": "segments"
+          },
+          "targetId": "strapTolerance",
+          "bound": {
+            "convention": "circle-inscribed-equal-angle",
+            "conventionVersion": "1",
+            "diameterMm": 4,
+            "segments": 18,
+            "lowerMm": 0.030384,
+            "upperMm": 0.030385,
+            "deviationSign": "inward",
+            "quantization": "outward enclosure to 0.000001 mm",
+            "geometryVerified": false,
+            "exclusions": [
+              "historical-generator-convention",
+              "nonuniform-scale",
+              "slot",
+              "chamfer",
+              "mesh-topology",
+              "manufactured-fit"
+            ]
+          },
+          "proposedValue": null,
+          "requiresAcceptance": true,
+          "blockers": [
+            "Historical tessellation convention must be established; count alone is insufficient."
+          ],
+          "budgets": {
+            "exportMm": 0.004,
+            "matingMm": 0.001,
+            "withinExportTarget": false,
+            "withinMatingTarget": false
+          },
+          "numericIdentity": false,
+          "geometryVerified": false,
+          "fit": "unverified"
+        },
+        "requiresSelection": true,
+        "reason": "Radius and tessellation convention are required, then an accepted bounded tolerance."
+      },
+      {
+        "id": "rotObj",
+        "disposition": "keep-value",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Whole design rotation in degrees.",
+        "blockers": [
+          {
+            "id": "O-02/object-rotation-frame",
+            "reason": "Whole design rotation in degrees."
+          }
+        ]
+      },
+      {
+        "id": "skirtH",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 0
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal cap skirt height; zero meaning unresolved, preserved without claiming auto.",
+        "blockers": [
+          {
+            "id": "O-02/skirt-zero-semantics",
+            "reason": "Nominal cap skirt height; zero meaning unresolved, preserved without claiming auto."
+          }
+        ]
+      },
+      {
+        "id": "wallT",
+        "disposition": "keep-mm",
+        "legacyValue": 1.6,
+        "proposedValue": 1.6,
+        "requiresAcceptance": true,
+        "reason": "Nominal keycap side-wall thickness.",
+        "blockers": [
+          {
+            "id": "O-02/wall-topology",
+            "reason": "Nominal keycap side-wall thickness."
+          }
+        ]
+      },
+      {
+        "id": "rib",
+        "disposition": "keep-mm",
+        "legacyValue": 1.2,
+        "proposedValue": 1.2,
+        "requiresAcceptance": true,
+        "reason": "Nominal reinforcement rib thickness; zero disables ribs.",
+        "blockers": [
+          {
+            "id": "O-02/rib-topology",
+            "reason": "Nominal reinforcement rib thickness; zero disables ribs."
+          }
+        ]
+      },
+      {
+        "id": "crossL",
+        "disposition": "keep-mm",
+        "legacyValue": 4.1,
+        "proposedValue": 4.1,
+        "requiresAcceptance": true,
+        "reason": "Nominal MX cross branch length.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal MX cross branch length."
+          }
+        ]
+      },
+      {
+        "id": "crossW",
+        "disposition": "keep-mm",
+        "legacyValue": 1.35,
+        "proposedValue": 1.35,
+        "requiresAcceptance": true,
+        "reason": "Nominal MX cross branch width.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal MX cross branch width."
+          }
+        ]
+      },
+      {
+        "id": "clr",
+        "disposition": "keep-mm",
+        "legacyValue": 0.05,
+        "proposedValue": 0.05,
+        "requiresAcceptance": true,
+        "reason": "Positive MX cavity enlargement; one-sided versus total-width convention pending.",
+        "blockers": [
+          {
+            "id": "O-02/clearance-convention",
+            "reason": "Positive MX cavity enlargement; one-sided versus total-width convention pending."
+          }
+        ]
+      },
+      {
+        "id": "socketD",
+        "disposition": "keep-mm",
+        "legacyValue": 5.5,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 5.5
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal MX socket depth 5.50 mm; no implicit layer conversion.",
+        "blockers": [
+          {
+            "id": "O-02/socket-datum",
+            "reason": "Nominal MX socket depth 5.50 mm; no implicit layer conversion."
+          }
+        ]
+      },
+      {
+        "id": "postH",
+        "disposition": "keep-mm",
+        "legacyValue": 7,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 7
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal MX post height 7.00 mm.",
+        "blockers": [
+          {
+            "id": "O-02/post-datum",
+            "reason": "Nominal MX post height 7.00 mm."
+          }
+        ]
+      },
+      {
+        "id": "postD1",
+        "disposition": "keep-mm",
+        "legacyValue": 5.7,
+        "proposedValue": 5.7,
+        "requiresAcceptance": true,
+        "reason": "Nominal main post diameter.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal main post diameter."
+          }
+        ]
+      },
+      {
+        "id": "postD2",
+        "disposition": "keep-mm",
+        "legacyValue": 6,
+        "proposedValue": 6,
+        "requiresAcceptance": true,
+        "reason": "Nominal collar diameter at cap.",
+        "blockers": []
+      },
+      {
+        "id": "collarH",
+        "disposition": "keep-mm",
+        "legacyValue": 1.85,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.85
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal collar height 1.85 mm; retain fractional layer amount.",
+        "blockers": [
+          {
+            "id": "O-02/collar-datum",
+            "reason": "Nominal collar height 1.85 mm; retain fractional layer amount."
+          }
+        ]
+      },
+      {
+        "id": "stemH",
+        "disposition": "keep-mm",
+        "legacyValue": 3.6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 3.6
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal switch stem projection above switch top plane.",
+        "blockers": [
+          {
+            "id": "O-02/switch-top-datum",
+            "reason": "Nominal switch stem projection above switch top plane."
+          }
+        ]
+      },
+      {
+        "id": "linkBody",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Auto material sharing for body/skirt/post/ribs; preserve user role overrides.",
+        "blockers": [
+          {
+            "id": "O-02/role-material-schema",
+            "reason": "Auto material sharing for body/skirt/post/ribs; preserve user role overrides."
+          }
+        ]
+      },
+      {
+        "id": "housing",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Include a separately printable switch tray.",
+        "blockers": []
+      },
+      {
+        "id": "autoSize",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Permit a proposed atomic fit adjustment; not an automatic scalar setter.",
+        "blockers": [
+          {
+            "id": "O-02/fit-adjustment-command",
+            "reason": "Permit a proposed atomic fit adjustment; not an automatic scalar setter."
+          }
+        ]
+      },
+      {
+        "id": "plateHole",
+        "disposition": "keep-mm",
+        "legacyValue": 14.05,
+        "proposedValue": 14.05,
+        "requiresAcceptance": true,
+        "reason": "Nominal switch-body cavity width 14.05 mm.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal switch-body cavity width 14.05 mm."
+          }
+        ]
+      },
+      {
+        "id": "hSocketD",
+        "disposition": "keep-mm",
+        "legacyValue": 5.15,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 5.15
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal body-cavity depth measured from opening.",
+        "blockers": [
+          {
+            "id": "O-02/tray-socket-datum",
+            "reason": "Nominal body-cavity depth measured from opening."
+          }
+        ]
+      },
+      {
+        "id": "hMouth",
+        "disposition": "keep-mm",
+        "legacyValue": 15.4,
+        "proposedValue": 15.4,
+        "requiresAcceptance": true,
+        "reason": "Tray cavity mouth width supporting switch shoulder.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Tray cavity mouth width supporting switch shoulder."
+          }
+        ]
+      },
+      {
+        "id": "hRecess",
+        "disposition": "keep-mm",
+        "legacyValue": 2,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 2
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal switch recess depth from tray reference plane.",
+        "blockers": [
+          {
+            "id": "O-02/tray-recess-datum",
+            "reason": "Nominal switch recess depth from tray reference plane."
+          }
+        ]
+      },
+      {
+        "id": "pinW",
+        "disposition": "keep-mm",
+        "legacyValue": 11.5,
+        "proposedValue": 11.5,
+        "requiresAcceptance": true,
+        "reason": "Nominal switch-pin cavity width.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal switch-pin cavity width."
+          }
+        ]
+      },
+      {
+        "id": "pinD",
+        "disposition": "keep-mm",
+        "legacyValue": 1.7,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.7
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal switch-pin cavity depth 1.7 mm, retained exactly.",
+        "blockers": [
+          {
+            "id": "O-02/tray-pin-datum",
+            "reason": "Nominal switch-pin cavity depth 1.7 mm, retained exactly."
+          }
+        ]
+      },
+      {
+        "id": "hFloor",
+        "disposition": "keep-mm",
+        "legacyValue": 1.5,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 1.5
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal closed tray floor thickness.",
+        "blockers": [
+          {
+            "id": "O-02/tray-floor-datum",
+            "reason": "Nominal closed tray floor thickness."
+          }
+        ]
+      },
+      {
+        "id": "hWall",
+        "disposition": "keep-mm",
+        "legacyValue": 2,
+        "proposedValue": 2,
+        "requiresAcceptance": true,
+        "reason": "Nominal outer tray wall thickness.",
+        "blockers": []
+      },
+      {
+        "id": "hBossW",
+        "disposition": "keep-mm",
+        "legacyValue": 2,
+        "proposedValue": 2,
+        "requiresAcceptance": true,
+        "reason": "Nominal wall thickness around switch cavity.",
+        "blockers": []
+      },
+      {
+        "id": "gap",
+        "disposition": "keep-mm",
+        "legacyValue": 0.25,
+        "proposedValue": 0.25,
+        "requiresAcceptance": true,
+        "reason": "Positive cap-to-tray wall gap; side/total convention pending.",
+        "blockers": [
+          {
+            "id": "O-02/clearance-convention",
+            "reason": "Positive cap-to-tray wall gap; side/total convention pending."
+          }
+        ]
+      },
+      {
+        "id": "rimOver",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Signed wall-top difference relative to cap top in mm; zero is coplanar.",
+        "blockers": [
+          {
+            "id": "O-02/wall-top-datum",
+            "reason": "Signed wall-top difference relative to cap top in mm; zero is coplanar."
+          }
+        ]
+      },
+      {
+        "id": "travel",
+        "disposition": "keep-mm",
+        "legacyValue": 4.2,
+        "proposedValue": 4.2,
+        "requiresAcceptance": true,
+        "reason": "Nominal physical switch travel, never quantized to print layers.",
+        "blockers": [
+          {
+            "id": "O-02/hardware-fit",
+            "reason": "Nominal physical switch travel, never quantized to print layers."
+          }
+        ]
+      },
+      {
+        "id": "hStopOn",
+        "disposition": "keep-value",
+        "legacyValue": true,
+        "proposedValue": true,
+        "requiresAcceptance": true,
+        "reason": "Enable end-of-travel anti-tilt ledge.",
+        "blockers": [
+          {
+            "id": "O-02/travel-stop-interaction",
+            "reason": "Enable end-of-travel anti-tilt ledge."
+          }
+        ]
+      },
+      {
+        "id": "hStopW",
+        "disposition": "keep-mm",
+        "legacyValue": 1.5,
+        "proposedValue": 1.5,
+        "requiresAcceptance": true,
+        "reason": "Stop ledge width in mm.",
+        "blockers": [
+          {
+            "id": "O-02/travel-stop-interaction",
+            "reason": "Stop ledge width in mm."
+          }
+        ]
+      },
+      {
+        "id": "hRingOn",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable hanging eyelet on tray.",
+        "blockers": []
+      },
+      {
+        "id": "hRingH",
+        "disposition": "keep-mm",
+        "legacyValue": 6,
+        "proposedValue": {
+          "heightMode": "mm",
+          "mm": 6
+        },
+        "requiresAcceptance": true,
+        "reason": "Nominal tray eyelet height; explicit datum pending.",
+        "blockers": [
+          {
+            "id": "O-02/tray-eyelet-datum",
+            "reason": "Nominal tray eyelet height; explicit datum pending."
+          }
+        ]
+      },
+      {
+        "id": "hRingOuterD",
+        "disposition": "keep-mm",
+        "legacyValue": 8,
+        "proposedValue": 8,
+        "requiresAcceptance": true,
+        "reason": "Tray eyelet outside diameter; must exceed bore.",
+        "blockers": []
+      },
+      {
+        "id": "hRingInnerD",
+        "disposition": "keep-mm",
+        "legacyValue": 4,
+        "proposedValue": 4,
+        "requiresAcceptance": true,
+        "reason": "Tray eyelet bore diameter.",
+        "blockers": [
+          {
+            "id": "O-02/eyelet-fit",
+            "reason": "Tray eyelet bore diameter."
+          }
+        ]
+      },
+      {
+        "id": "hRingAngle",
+        "disposition": "keep-value",
+        "legacyValue": 90,
+        "proposedValue": 90,
+        "requiresAcceptance": true,
+        "reason": "Tray eyelet angle around tray host.",
+        "blockers": [
+          {
+            "id": "O-02/tray-eyelet-frame",
+            "reason": "Tray eyelet angle around tray host."
+          }
+        ]
+      },
+      {
+        "id": "hRingOverlap",
+        "disposition": "keep-mm",
+        "legacyValue": 1.5,
+        "proposedValue": 1.5,
+        "requiresAcceptance": true,
+        "reason": "Tray eyelet overlap distance into rim.",
+        "blockers": [
+          {
+            "id": "O-02/tray-eyelet-contact",
+            "reason": "Tray eyelet overlap distance into rim."
+          }
+        ]
+      },
+      {
+        "id": "assemble",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Keycap/tray assembly view preference; no manufacturing transform.",
+        "blockers": []
+      },
+      {
+        "id": "impOn",
+        "disposition": "keep-value",
+        "legacyValue": false,
+        "proposedValue": false,
+        "requiresAcceptance": true,
+        "reason": "Enable imported STL/OBJ feature on all five products.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-input-oracle",
+            "reason": "Enable imported STL/OBJ feature on all five products."
+          }
+        ]
+      },
+      {
+        "id": "impOp",
+        "disposition": "keep-value",
+        "legacyValue": "them",
+        "proposedValue": "them",
+        "requiresAcceptance": true,
+        "reason": "Separate part / union / subtract feature on mesh-scene branch.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-csg",
+            "reason": "Separate part / union / subtract feature on mesh-scene branch."
+          }
+        ]
+      },
+      {
+        "id": "impScale",
+        "disposition": "keep-value",
+        "legacyValue": 100,
+        "proposedValue": 100,
+        "requiresAcceptance": true,
+        "reason": "Uniform scale percentage applied to declared source units.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-units",
+            "reason": "Uniform scale percentage applied to declared source units."
+          }
+        ]
+      },
+      {
+        "id": "impX",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported part X translation in mm; preserve original bytes.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-bounds",
+            "reason": "Imported part X translation in mm; preserve original bytes."
+          }
+        ]
+      },
+      {
+        "id": "impY",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported part Y translation in mm; preserve original bytes.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-bounds",
+            "reason": "Imported part Y translation in mm; preserve original bytes."
+          }
+        ]
+      },
+      {
+        "id": "impZ",
+        "disposition": "keep-mm",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported mesh Z translation in mm; never snap vertices to layers.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-bounds",
+            "reason": "Imported mesh Z translation in mm; never snap vertices to layers."
+          }
+        ]
+      },
+      {
+        "id": "impRX",
+        "disposition": "keep-value",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported mesh rotation around X, in degrees.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-order",
+            "reason": "Imported mesh rotation around X, in degrees."
+          }
+        ]
+      },
+      {
+        "id": "impRY",
+        "disposition": "keep-value",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported mesh rotation around Y, in degrees.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-order",
+            "reason": "Imported mesh rotation around Y, in degrees."
+          }
+        ]
+      },
+      {
+        "id": "impRZ",
+        "disposition": "keep-value",
+        "legacyValue": 0,
+        "proposedValue": 0,
+        "requiresAcceptance": true,
+        "reason": "Imported mesh rotation around Z, in degrees.",
+        "blockers": [
+          {
+            "id": "O-02/mesh-transform-order",
+            "reason": "Imported mesh rotation around Z, in degrees."
+          }
+        ]
+      },
+      {
+        "id": "impVox",
+        "disposition": "replace-capability",
+        "targetId": "meshJoinTolerance",
+        "legacyValue": 0.25,
+        "legacyUnit": "mm",
+        "proposedValue": {
+          "mode": "unselected"
+        },
+        "numericMapping": "none",
+        "requiresSelection": true,
+        "reason": "Voxel cell size is not a mesh surface-error bound."
+      }
+    ],
+    "proposedValues": {
+      "k": 4,
+      "res": "520",
+      "smooth": 3,
+      "minA": 5,
+      "denoise": 1,
+      "eps": 35,
+      "tension": 65,
+      "size": 45,
+      "outline": "silhouette",
+      "cornerR": 3,
+      "offset": 1.5,
+      "weld": 0.8,
+      "minFeature": 0.6,
+      "fillHoles": true,
+      "topBevel": false,
+      "topBevelR": 0.6,
+      "topBevelShape": "tron",
+      "bevelGop": false,
+      "bevelChu": false,
+      "topBevelSeg": 3,
+      "layerStep": 3,
+      "baseH": {
+        "heightMode": "mm",
+        "mm": 2.4
+      },
+      "plateT": {
+        "heightMode": "mm",
+        "mm": 1.6
+      },
+      "artMode": "noi",
+      "flatTop": {
+        "heightMode": "mm",
+        "mm": 1
+      },
+      "artH": {
+        "heightMode": "mm",
+        "mm": 0.8
+      },
+      "rimOn": false,
+      "rimH": {
+        "heightMode": "mm",
+        "mm": 0.6
+      },
+      "splitObj": true,
+      "layerBand": false,
+      "bandCore": false,
+      "bandCap": {
+        "heightMode": "mm",
+        "mm": 0.6
+      },
+      "ringOn": true,
+      "ringOuterD": 8,
+      "ringInnerD": 4,
+      "ringTren": "hinh",
+      "ringAngle": 90,
+      "ringOverlap": 1.5,
+      "ringH": {
+        "heightMode": "auto",
+        "mode": "body-height"
+      },
+      "legoOn": true,
+      "legoPitch": 8,
+      "legoHoleD": 4.9,
+      "legoHoleH": {
+        "heightMode": "mm",
+        "mm": 1.8
+      },
+      "legoThua": "du",
+      "legoHoDu": 0.3,
+      "legoWall": 0.8,
+      "legoRong": false,
+      "legoOffX": 0,
+      "legoOffY": 0,
+      "legoXeOn": false,
+      "legoXeW": 0.6,
+      "legoTaiOn": false,
+      "legoTaiW": 2.4,
+      "legoTaiL": 12,
+      "legoTaiCo": 1.2,
+      "legoRanhOn": true,
+      "legoRanhR": 0.8,
+      "legoRanhZ": 0,
+      "charmGan": "roi",
+      "charmCoD": 12.5,
+      "charmCoH": {
+        "heightMode": "mm",
+        "mm": 3
+      },
+      "charmVanhD": 14.5,
+      "charmVanhH": {
+        "heightMode": "mm",
+        "mm": 1.6
+      },
+      "charmVat": 0.8,
+      "charmChotD": 6,
+      "charmChotH": {
+        "heightMode": "mm",
+        "mm": 2
+      },
+      "charmClr": 0.2,
+      "charmRap": false,
+      "charmOffX": 0,
+      "charmOffY": 0,
+      "strapD": 4,
+      "strapAngle": 0,
+      "strapZ": 5,
+      "strapOff": 0,
+      "strapSlot": 0,
+      "strapSlotDir": "ngang",
+      "strapCham": 0.6,
+      "strapTolerance": {
+        "mode": "unselected"
+      },
+      "rotObj": 0,
+      "skirtH": {
+        "heightMode": "mm",
+        "mm": 0
+      },
+      "wallT": 1.6,
+      "rib": 1.2,
+      "crossL": 4.1,
+      "crossW": 1.35,
+      "clr": 0.05,
+      "socketD": {
+        "heightMode": "mm",
+        "mm": 5.5
+      },
+      "postH": {
+        "heightMode": "mm",
+        "mm": 7
+      },
+      "postD1": 5.7,
+      "postD2": 6,
+      "collarH": {
+        "heightMode": "mm",
+        "mm": 1.85
+      },
+      "stemH": {
+        "heightMode": "mm",
+        "mm": 3.6
+      },
+      "linkBody": true,
+      "housing": true,
+      "autoSize": true,
+      "plateHole": 14.05,
+      "hSocketD": {
+        "heightMode": "mm",
+        "mm": 5.15
+      },
+      "hMouth": 15.4,
+      "hRecess": {
+        "heightMode": "mm",
+        "mm": 2
+      },
+      "pinW": 11.5,
+      "pinD": {
+        "heightMode": "mm",
+        "mm": 1.7
+      },
+      "hFloor": {
+        "heightMode": "mm",
+        "mm": 1.5
+      },
+      "hWall": 2,
+      "hBossW": 2,
+      "gap": 0.25,
+      "rimOver": 0,
+      "travel": 4.2,
+      "hStopOn": true,
+      "hStopW": 1.5,
+      "hRingOn": false,
+      "hRingH": {
+        "heightMode": "mm",
+        "mm": 6
+      },
+      "hRingOuterD": 8,
+      "hRingInnerD": 4,
+      "hRingAngle": 90,
+      "hRingOverlap": 1.5,
+      "assemble": false,
+      "impOn": false,
+      "impOp": "them",
+      "impScale": 100,
+      "impX": 0,
+      "impY": 0,
+      "impZ": 0,
+      "impRX": 0,
+      "impRY": 0,
+      "impRZ": 0,
+      "meshJoinTolerance": {
+        "mode": "unselected"
+      }
+    },
+    "issues": [],
+    "requiresAcceptance": true,
+    "geometryVerified": false,
+    "fit": "unverified"
+  }
+}

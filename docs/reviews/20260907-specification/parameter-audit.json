@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-08",
+  "inputId": "parameters-core-v1",
+  "inputPath": "docs/specs/parameters-reference.json",
+  "inputSha256": "5de096d2591effab9a774c7b4da9349fba0c0935e7aed1981d272b0cb908ffee",
+  "scope": "Only packaged fields and included modeDefaults; no geometry certification",
+  "count": 126,
+  "types": {
+    "r": 94,
+    "s": 10,
+    "c": 22
+  },
+  "groups": {
+    "Màu & chi tiết": 7,
+    "Kích thước & dáng": 13,
+    "Chiều cao": 13,
+    "Lỗ móc khoá": 7,
+    "Ngàm Lego": 19,
+    "Charm dép": 12,
+    "Lỗ luồn dây đeo": 9,
+    "Thân clicky": 3,
+    "Trụ cắm MX": 9,
+    "Khay lắp switch": 24,
+    "Khối nhập thêm": 10
+  },
+  "defaultTypeDomainStepIssues": [],
+  "modeDefaultIssues": [],
+  "modeCount": 5,
+  "geometrySemantics": "unverified"
+}

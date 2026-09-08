@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "kind": "parent-remediation-evidence",
+  "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+  "mjsSha256": "65c5bfc89adcd0a8d34c4d47743c6cc05167688f6ecfe4179772a2d1f4029c62",
+  "nativeAndWasmBuild": "pass",
+  "rootNodeGroups": 2,
+  "browserGroups": 6,
+  "browser": {
+    "chromium": {
+      "scope": "Immutable root product payload and actual EngineClient/Worker export; explicit fixture material mapping, not application qualification",
+      "result": [
+        {
+          "product": "charm",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "clicky",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "keychain",
+          "blocked": false,
+          "codes": [
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION"
+          ],
+          "legacy": null,
+          "revision": "1",
+          "bytes": 95084,
+          "expectedRevision": "1"
+        }
+      ],
+      "errors": []
+    },
+    "firefox": {
+      "scope": "Immutable root product payload and actual EngineClient/Worker export; explicit fixture material mapping, not application qualification",
+      "result": [
+        {
+          "product": "charm",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "clicky",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "keychain",
+          "blocked": false,
+          "codes": [
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION"
+          ],
+          "legacy": null,
+          "revision": "1",
+          "bytes": 95084,
+          "expectedRevision": "1"
+        }
+      ],
+      "errors": []
+    },
+    "webkit": {
+      "scope": "Immutable root product payload and actual EngineClient/Worker export; explicit fixture material mapping, not application qualification",
+      "result": [
+        {
+          "product": "charm",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "clicky",
+          "blocked": true,
+          "codes": [
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW",
+            "ASSEMBLY_VIEW"
+          ],
+          "legacy": "ASSEMBLY_VIEW",
+          "revision": null,
+          "bytes": 0,
+          "expectedRevision": "1"
+        },
+        {
+          "product": "keychain",
+          "blocked": false,
+          "codes": [
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION",
+            "STALE_REVISION"
+          ],
+          "legacy": null,
+          "revision": "1",
+          "bytes": 95084,
+          "expectedRevision": "1"
+        }
+      ],
+      "errors": []
+    }
+  },
+  "sourceHashes": {
+    "src/kernel/src/abi.rs": "b3912faa071abd2b1b64d2ae7cd7be271c0f29ef406891426a06e43c644270a8",
+    "src/kernel/src/abi/product_runtime.rs": "e6229a6d689e2cad2b4d6d3f01699871bb76d9899592f3521601dd8bbcd9baec",
+    "src/kernel/final-scene-export/rust/mod.rs": "6714136ceb2987f5c406ee2f0c3a0170b16d73015405d60f768580897b943568",
+    "src/core/product-operations.d.ts": "b9301ad5226c1d7abc3de10c57a7394beb9b44f2c30b3bc4517646c0f627a580",
+    "tests/product-runtime/export-authority.test.mjs": "613af8cf712acc21c850d1d81456dd13aa9d277af2d30f47b0144b16557b6804",
+    "tests/kernel/final-export-rpc.test.mjs": "15cec067d6ee59e796a5727823f73e8ff70a7f03cf7333abe7f8be63f303f517"
+  },
+  "scope": "Snapshot assembly/revision authority plus existing union/ZIP/section RPC regression; current project authority remains application responsibility."
+}

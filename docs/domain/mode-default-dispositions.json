@@ -1,0 +1,454 @@
+[
+  {
+    "product": "keychain",
+    "originalPreset": {
+      "size": 45,
+      "outline": "silhouette",
+      "offset": 1.5,
+      "artMode": "noi",
+      "artH": 0.8,
+      "minFeature": 0.6,
+      "baseH": 2.4
+    },
+    "fields": [
+      {
+        "id": "size",
+        "legacyValue": 45,
+        "defaultValue": 45,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "outline",
+        "legacyValue": "silhouette",
+        "defaultValue": "silhouette",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "offset",
+        "legacyValue": 1.5,
+        "defaultValue": 1.5,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artMode",
+        "legacyValue": "noi",
+        "defaultValue": "noi",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artH",
+        "legacyValue": 0.8,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0.8
+        },
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "minFeature",
+        "legacyValue": 0.6,
+        "defaultValue": 0.6,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "baseH",
+        "legacyValue": 2.4,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 2.4
+        },
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      }
+    ]
+  },
+  {
+    "product": "clicky",
+    "originalPreset": {
+      "size": 40,
+      "outline": "silhouette",
+      "offset": 1.2,
+      "cornerR": 2.5,
+      "artMode": "noi",
+      "artH": 0.6,
+      "minFeature": 0.6,
+      "skirtH": 0
+    },
+    "fields": [
+      {
+        "id": "size",
+        "legacyValue": 40,
+        "defaultValue": 40,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "outline",
+        "legacyValue": "silhouette",
+        "defaultValue": "silhouette",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "offset",
+        "legacyValue": 1.2,
+        "defaultValue": 1.2,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "cornerR",
+        "legacyValue": 2.5,
+        "defaultValue": 2.5,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artMode",
+        "legacyValue": "noi",
+        "defaultValue": "noi",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artH",
+        "legacyValue": 0.6,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0.6
+        },
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "minFeature",
+        "legacyValue": 0.6,
+        "defaultValue": 0.6,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "skirtH",
+        "legacyValue": 0,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0
+        },
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      }
+    ]
+  },
+  {
+    "product": "strap",
+    "originalPreset": {
+      "size": 40,
+      "outline": "silhouette",
+      "offset": 1.8,
+      "artMode": "noi",
+      "artH": 0.8,
+      "minFeature": 0.6,
+      "baseH": 10,
+      "strapZ": 5,
+      "strapD": 4,
+      "strapCham": 0.6,
+      "strapSlot": 0,
+      "strapSlotDir": "ngang"
+    },
+    "fields": [
+      {
+        "id": "size",
+        "legacyValue": 40,
+        "defaultValue": 40,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "outline",
+        "legacyValue": "silhouette",
+        "defaultValue": "silhouette",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "offset",
+        "legacyValue": 1.8,
+        "defaultValue": 1.8,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artMode",
+        "legacyValue": "noi",
+        "defaultValue": "noi",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artH",
+        "legacyValue": 0.8,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0.8
+        },
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "minFeature",
+        "legacyValue": 0.6,
+        "defaultValue": 0.6,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "baseH",
+        "legacyValue": 10,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 10
+        },
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "strapZ",
+        "legacyValue": 5,
+        "defaultValue": 5,
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "strapD",
+        "legacyValue": 4,
+        "defaultValue": 4,
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "strapCham",
+        "legacyValue": 0.6,
+        "defaultValue": 0.6,
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "strapSlot",
+        "legacyValue": 0,
+        "defaultValue": 0,
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "strapSlotDir",
+        "legacyValue": "ngang",
+        "defaultValue": "ngang",
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      }
+    ]
+  },
+  {
+    "product": "lego",
+    "originalPreset": {
+      "size": 45,
+      "outline": "silhouette",
+      "offset": 1.5,
+      "artMode": "noi",
+      "artH": 0.8,
+      "minFeature": 0.6,
+      "baseH": 5.6,
+      "ringOn": false
+    },
+    "fields": [
+      {
+        "id": "size",
+        "legacyValue": 45,
+        "defaultValue": 45,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "outline",
+        "legacyValue": "silhouette",
+        "defaultValue": "silhouette",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "offset",
+        "legacyValue": 1.5,
+        "defaultValue": 1.5,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artMode",
+        "legacyValue": "noi",
+        "defaultValue": "noi",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artH",
+        "legacyValue": 0.8,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0.8
+        },
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "minFeature",
+        "legacyValue": 0.6,
+        "defaultValue": 0.6,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "baseH",
+        "legacyValue": 5.6,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 5.6
+        },
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "ringOn",
+        "legacyValue": false,
+        "defaultValue": false,
+        "scope": "product",
+        "disposition": "retain-provenance-inactive",
+        "reason": "Catalog preset references a field outside this product; keep original evidence without activating it."
+      }
+    ]
+  },
+  {
+    "product": "charm",
+    "originalPreset": {
+      "size": 25,
+      "outline": "silhouette",
+      "offset": 1.5,
+      "artMode": "noi",
+      "artH": 0.8,
+      "minFeature": 0.5,
+      "baseH": 3,
+      "ringOn": false
+    },
+    "fields": [
+      {
+        "id": "size",
+        "legacyValue": 25,
+        "defaultValue": 25,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "outline",
+        "legacyValue": "silhouette",
+        "defaultValue": "silhouette",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "offset",
+        "legacyValue": 1.5,
+        "defaultValue": 1.5,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artMode",
+        "legacyValue": "noi",
+        "defaultValue": "noi",
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "artH",
+        "legacyValue": 0.8,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 0.8
+        },
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "minFeature",
+        "legacyValue": 0.5,
+        "defaultValue": 0.5,
+        "scope": "common",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "baseH",
+        "legacyValue": 3,
+        "defaultValue": {
+          "heightMode": "mm",
+          "mm": 3
+        },
+        "scope": "product",
+        "disposition": "seed-auto-preserve-user",
+        "reason": "Only unset/auto entries receive this preset."
+      },
+      {
+        "id": "ringOn",
+        "legacyValue": false,
+        "defaultValue": false,
+        "scope": "product",
+        "disposition": "retain-provenance-inactive",
+        "reason": "Catalog preset references a field outside this product; keep original evidence without activating it."
+      }
+    ]
+  }
+]

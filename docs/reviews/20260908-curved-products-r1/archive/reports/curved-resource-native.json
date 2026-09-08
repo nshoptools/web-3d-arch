@@ -1,0 +1,409 @@
+{
+  "version": 2,
+  "seed": "0x20260908",
+  "results": [
+    {
+      "id": "groove-513-real-solids",
+      "pass": true,
+      "verdict": 0,
+      "ms": 17092.4355,
+      "dimensions": {
+        "grooveLipX": 19.39976217338672,
+        "expected": 19.4
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 513
+      }
+    },
+    {
+      "id": "groove-6000-preflight",
+      "pass": true,
+      "verdict": 1,
+      "ms": 1132.7049000000006,
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 6000
+      }
+    },
+    {
+      "id": "source-200001-point-budget",
+      "pass": true,
+      "verdict": 1,
+      "ms": 1252.9333000000006,
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 200001
+      }
+    },
+    {
+      "id": "strap-scan-1024",
+      "pass": true,
+      "verdict": 0,
+      "ms": 2798.166300000001,
+      "options": {
+        "product": 2,
+        "width": 40,
+        "height": 30,
+        "variant": "dense-ellipse",
+        "segments": 1024,
+        "set": {
+          "baseH": 10,
+          "strapZ": 5,
+          "strapCham": 0.6
+        }
+      }
+    },
+    {
+      "id": "seed-normal-0",
+      "pass": true,
+      "verdict": 0,
+      "ms": 16848.577800000003,
+      "dimensions": {
+        "grooveLipX": 19.399786630777747,
+        "expected": 19.4
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 569
+      }
+    },
+    {
+      "id": "seed-normal-1",
+      "pass": true,
+      "verdict": 0,
+      "ms": 19269.692500000005,
+      "dimensions": {
+        "grooveLipX": 19.399785775667585,
+        "expected": 19.4
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 567
+      }
+    },
+    {
+      "id": "seed-normal-2",
+      "pass": true,
+      "verdict": 0,
+      "ms": 17389.9032,
+      "dimensions": {
+        "grooveLipX": 19.39978889384857,
+        "expected": 19.4
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "dense-ellipse",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "segments": 575
+      }
+    },
+    {
+      "id": "groove-notch-0.000001-40",
+      "pass": true,
+      "verdict": 0,
+      "ms": 2753.316200000001,
+      "dimensions": {
+        "grooveLipX": 19.399999998510353,
+        "expected": 19.4,
+        "cornerSignedDeviations": [
+          -1.693915263611956e-8,
+          0.00017428413536069165,
+          0.0002051265465337071,
+          0.00000149005603156116
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.000001,
+        "tol": 0.001
+      }
+    },
+    {
+      "id": "groove-notch-0.000001-50",
+      "pass": true,
+      "verdict": 0,
+      "ms": 5640.272899999996,
+      "dimensions": {
+        "grooveLipX": 24.399999998509884,
+        "expected": 24.4,
+        "cornerSignedDeviations": [
+          -1.2197157395199554e-8,
+          0.00009260204322469878,
+          2.4265948983526187e-7,
+          0.00001943054521069687
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 50,
+        "height": 50,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.000001,
+        "tol": 0.0005
+      }
+    },
+    {
+      "id": "groove-notch-0.000001-60",
+      "pass": true,
+      "verdict": 0,
+      "ms": 19157.271500000003,
+      "dimensions": {
+        "grooveLipX": 29.399999998509884,
+        "expected": 29.4,
+        "cornerSignedDeviations": [
+          -8.68674587817253e-9,
+          0.00002695074435998812,
+          0.00005422571426516587,
+          0.000010429432337866196
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 60,
+        "height": 60,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.000001,
+        "tol": 0.00025
+      }
+    },
+    {
+      "id": "groove-notch-0.001-40",
+      "pass": true,
+      "verdict": 0,
+      "ms": 3624.7279999999882,
+      "dimensions": {
+        "grooveLipX": 19.399999998509884,
+        "expected": 19.4,
+        "cornerSignedDeviations": [
+          3.516672841819002e-9,
+          0.0001743177326791745,
+          0.00020515070911264477,
+          0.0000014979897662303898
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.001,
+        "tol": 0.001
+      }
+    },
+    {
+      "id": "groove-notch-0.001-50",
+      "pass": true,
+      "verdict": 0,
+      "ms": 8889.436200000011,
+      "dimensions": {
+        "grooveLipX": 24.399999998509884,
+        "expected": 24.4,
+        "cornerSignedDeviations": [
+          3.516672841819002e-9,
+          0.00009262723948499918,
+          2.60876437230273e-7,
+          0.000019436699447705763
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 50,
+        "height": 50,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.001,
+        "tol": 0.0005
+      }
+    },
+    {
+      "id": "groove-notch-0.001-60",
+      "pass": true,
+      "verdict": 0,
+      "ms": 17018.451799999995,
+      "dimensions": {
+        "grooveLipX": 29.399999998509884,
+        "expected": 29.4,
+        "cornerSignedDeviations": [
+          3.516672841819002e-9,
+          0.000026969670558596448,
+          0.000054239512689013836,
+          0.000010433280141608492
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 60,
+        "height": 60,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.001,
+        "tol": 0.00025
+      }
+    },
+    {
+      "id": "groove-notch-0.2-40",
+      "pass": true,
+      "verdict": 0,
+      "ms": 3667.758600000001,
+      "dimensions": {
+        "grooveLipX": 19.399999998509887,
+        "expected": 19.4,
+        "cornerSignedDeviations": [
+          0.00023612152332364023,
+          0.0003892637332727489,
+          0.0003563868736499165,
+          0.000046368861902235103
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 40,
+        "height": 40,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.2,
+        "tol": 0.001
+      }
+    },
+    {
+      "id": "groove-notch-0.2-50",
+      "pass": true,
+      "verdict": 0,
+      "ms": 24274.7561,
+      "dimensions": {
+        "grooveLipX": 24.39999999850988,
+        "expected": 24.4,
+        "cornerSignedDeviations": [
+          0.0001216917543921392,
+          0.0002033850638055723,
+          0.00007814441539022443,
+          0.00004256673340941042
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 50,
+        "height": 50,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.2,
+        "tol": 0.0005
+      }
+    },
+    {
+      "id": "groove-notch-0.2-60",
+      "pass": true,
+      "verdict": 0,
+      "ms": 20501.903500000015,
+      "dimensions": {
+        "grooveLipX": 29.399999998509884,
+        "expected": 29.4,
+        "cornerSignedDeviations": [
+          0.00006118490261430853,
+          0.00008264802628987766,
+          0.00009340399223156659,
+          0.00002206038357777107
+        ]
+      },
+      "options": {
+        "product": 3,
+        "width": 60,
+        "height": 60,
+        "variant": "shallow-notch",
+        "set": {
+          "baseH": 10,
+          "legoRanhOn": 1,
+          "legoRanhR": 0.6
+        },
+        "notch-depth": 0.2,
+        "tol": 0.00025
+      }
+    }
+  ]
+}
