@@ -1,0 +1,14 @@
+{
+  "reports": [
+    {
+      "code": "LIB3MF_TRANSACTION",
+      "message": "LIB3MF_TRANSACTION",
+      "detail": "READBACK_VERTICES",
+      "name": "EngineError",
+      "details": "(unserializable)",
+      "stack": "EngineError: LIB3MF_TRANSACTION\n    at worker.onmessage (https://127.0.0.1:5181/src/core/engine-client.mjs?t=1788984114941:123:24)",
+      "scope": "export:3mf-bambu-project"
+    }
+  ],
+  "errors": []
+}

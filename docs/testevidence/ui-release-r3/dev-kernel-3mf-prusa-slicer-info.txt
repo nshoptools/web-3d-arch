@@ -1,0 +1,56 @@
+[bambu-project.3mf]
+size_x = 43.000000
+size_y = 23.000000
+size_z = 2.400000
+min_x = -21.500000
+min_y = -11.500000
+min_z = -1.200000
+max_x = 21.500000
+max_y = 11.500000
+max_z = 1.200000
+number_of_facets = 988
+manifold = yes
+number_of_parts =  1
+volume = 2368.962646
+[bambu-project.3mf]
+size_x = 20.000000
+size_y = 20.000000
+size_z = 0.800000
+min_x = -10.000000
+min_y = -10.000000
+min_z = -0.400000
+max_x = 10.000000
+max_y = 10.000000
+max_z = 0.400000
+number_of_facets = 12
+manifold = yes
+number_of_parts =  1
+volume = 319.999939
+[bambu-project.3mf]
+size_x = 20.000000
+size_y = 20.000000
+size_z = 0.800000
+min_x = -10.000000
+min_y = -10.000000
+min_z = -0.400000
+max_x = 10.000000
+max_y = 10.000000
+max_z = 0.400000
+number_of_facets = 32
+manifold = yes
+number_of_parts =  1
+volume = 268.799957
+[bambu-project.3mf]
+size_x = 8.000000
+size_y = 6.500000
+size_z = 2.400000
+min_x = -4.000000
+min_y = -3.250000
+min_z = -1.200000
+max_x = 4.000000
+max_y = 3.250000
+max_z = 1.200000
+number_of_facets = 868
+manifold = yes
+number_of_parts =  1
+volume = 74.757683

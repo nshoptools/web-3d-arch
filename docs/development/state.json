@@ -1,8 +1,8 @@
 {
- "version": 28,
- "updatedAt": "2026-09-09T19:30:00+00:00",
+ "version": 29,
+ "updatedAt": "2026-09-10T06:00:00+07:00",
  "releaseReady": false,
- "phase": "Hub quality pass 2 2026-09-09 (Grok + Gemini independent reviews, both rounds): picture/emoji sources reach a model through a primary action that names the next source step; project packages restore under their own id and rebuild on open; parameter and colour edits apply without a consent dialog; waiting state named; one-row top bar, compact stage bands, folded viewport group, self-dismissing toasts, product-scoped materials, task-grouped export panel, Vietnamese names and diagnostics. Round 2 of both seats on the integrated build handled (stale-proposal dialogs close, mesh watchdog reported not thrown, one consent per source-conversion step, refusal diagnostics scoped, package-exists toast, print exports ordered, emoji card title, dev login mints sessions). Website package rebuild still blocked by the kernel receipt pin.",
+ "phase": "Hub release pass 3 2026-09-10 (Codex + Grok independent reviews): the three read-only audits reconciled against 48e69abc; fixed one session key for 3MF (F-01), save keeps the running job and pending consent (F-02), preemptions off the warning strip, sequenced diagnostics (F-06), section-step warning plus export refusal (F-05), kept nested rescue packages (F-03.2), renderer failure isolated (R-01), open-project button. New: the packaged 08-09 kernel rejects every real scene on 3MF write (READBACK_VERTICES; lib3MF 6-decimal text vs bit-exact float32 read-back); native source fixed with a 2e-6 mm tolerance and verified with a rebuilt, unqualified kernel only. Website package rebuild still blocked by kernel qualification and the receipt pin.",
  "agents": {
   "aiAdapters": {
    "id": "01a07d23-af29-7012-ba5f-4aed7b260563",

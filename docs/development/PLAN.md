@@ -83,6 +83,16 @@ Chromium; `tests/e2e` ba engine (test đổi nhãn nút chuyển raster; giao di
 nhãn “Chế độ chung của Xóa, Đường cắt và Khung cắt”). Chi tiết và số liệu trong
 `reports/HUB-QUALITY-R2.md` của phòng Hub.
 
+## Đợt phát hành vòng 3 10-09-2026 (Hub; Codex và Grok phản biện)
+
+Thẩm định ba báo cáo audit chỉ đọc trên `48e69abc` bằng mã và luồng live; sửa các mục còn
+đúng (khóa phiên 3MF, Lưu không hủy việc đang chạy, dải hủy/thay thế thành thông tin, mốc
+“đã xem” theo sequence, cảnh báo lưới bước mặt cắt, giữ gói cứu hộ lồng, cô lập lỗi WebGL,
+nút Mở); phát hiện và sửa trong nguồn native lỗi đọc lại 3MF (`READBACK_VERTICES`) làm gói
+08-09 không xuất được 3MF cho mô hình thật; kiểm chứng bằng nhân dựng lại (không đóng gói).
+Chi tiết ở [HANDOVER](../HANDOVER.md) và
+[testevidence/ui-release-r3](../testevidence/ui-release-r3/README.md).
+
 ## Phần còn thiếu trước phát hành đủ v1
 
 1. Sửa trực tiếp vector theo mm chưa có adapter. Codex đang đóng khoảng trống này; sửa raster có xác nhận không được tính là đã làm vector.

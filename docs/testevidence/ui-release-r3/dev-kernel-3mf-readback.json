@@ -1,0 +1,346 @@
+{
+ "file": "evidence/dev-kernel-3mf/exports/bambu-project.3mf",
+ "bytes": 31914,
+ "zip_ok": true,
+ "entries": [
+  [
+   "3D/3dmodel.model",
+   135093
+  ],
+  [
+   "Metadata/printing-manifest.json",
+   2184
+  ],
+  [
+   "Metadata/project_settings.config",
+   41297
+  ],
+  [
+   "Metadata/model_settings.config",
+   1241
+  ],
+  [
+   "[Content_Types].xml",
+   716
+  ],
+  [
+   "_rels/.rels",
+   263
+  ],
+  [
+   "3D/_rels/3dmodel.model.rels",
+   537
+  ]
+ ],
+ "model_unit": "millimeter",
+ "model_xmlns": "{http://schemas.microsoft.com/3dmanufacturing/core/2015/02}model",
+ "basematerials": {
+  "1": [
+   [
+    0,
+    "body",
+    "#30353BFF"
+   ],
+   [
+    1,
+    "adopted:2",
+    "#EE7733FF"
+   ],
+   [
+    2,
+    "adopted:1",
+    "#0099CCFF"
+   ]
+  ]
+ },
+ "objects": {
+  "3": {
+   "type": "model",
+   "name": "source:slab:17083663439669931123",
+   "pid": "1",
+   "pindex": "0",
+   "volume_mm3": 2368.963,
+   "area_mm2": 2284.754,
+   "bbox": [
+    [
+     -21.5,
+     -11.5,
+     0.0
+    ],
+    [
+     21.5,
+     11.5,
+     2.4
+    ]
+   ],
+   "closed_consistent": true,
+   "vertices": 496,
+   "triangles": 988,
+   "triangle_pids": [
+    [
+     null,
+     null
+    ]
+   ]
+  },
+  "4": {
+   "type": "model",
+   "name": "source:slab:9103186113007624917",
+   "pid": "1",
+   "pindex": "1",
+   "volume_mm3": 320.0,
+   "area_mm2": 864.0,
+   "bbox": [
+    [
+     0.0,
+     -10.0,
+     2.4
+    ],
+    [
+     20.0,
+     10.0,
+     3.2
+    ]
+   ],
+   "closed_consistent": true,
+   "vertices": 8,
+   "triangles": 12,
+   "triangle_pids": [
+    [
+     null,
+     null
+    ]
+   ]
+  },
+  "5": {
+   "type": "model",
+   "name": "source:slab:12508925224532591280",
+   "pid": "1",
+   "pindex": "2",
+   "volume_mm3": 268.8,
+   "area_mm2": 761.6,
+   "bbox": [
+    [
+     -20.0,
+     -10.0,
+     2.4
+    ],
+    [
+     0.0,
+     10.0,
+     3.2
+    ]
+   ],
+   "closed_consistent": true,
+   "vertices": 16,
+   "triangles": 32,
+   "triangle_pids": [
+    [
+     null,
+     null
+    ]
+   ]
+  },
+  "6": {
+   "type": "model",
+   "name": "mech:keyring",
+   "pid": "1",
+   "pindex": "0",
+   "volume_mm3": 74.758,
+   "area_mm2": 150.561,
+   "bbox": [
+    [
+     -4.0,
+     11.5,
+     0.0
+    ],
+    [
+     4.0,
+     18.0,
+     2.4
+    ]
+   ],
+   "closed_consistent": true,
+   "vertices": 434,
+   "triangles": 868,
+   "triangle_pids": [
+    [
+     null,
+     null
+    ]
+   ]
+  },
+  "2": {
+   "type": "model",
+   "name": "web-3d-arch assembly",
+   "pid": null,
+   "pindex": null,
+   "components": [
+    [
+     "3",
+     "identity"
+    ],
+    [
+     "4",
+     "identity"
+    ],
+    [
+     "5",
+     "identity"
+    ],
+    [
+     "6",
+     "identity"
+    ]
+   ]
+  }
+ },
+ "build": [
+  [
+   "2",
+   "identity"
+  ]
+ ],
+ "project_settings": {
+  "filament_colour": [
+   "#EE7733",
+   "#0099CC",
+   "#30353B",
+   "#FF8040"
+  ],
+  "filament_type": [
+   "PLA",
+   "PLA",
+   "PLA",
+   "PLA"
+  ],
+  "layer_height": "0.2",
+  "initial_layer_print_height": "0.2",
+  "printer_model": "Bambu Lab P1S",
+  "printer_settings_id": "Bambu Lab P1S 0.4 nozzle",
+  "print_settings_id": "0.20mm Standard @BBL X1C",
+  "filament_settings_id": [
+   "Bambu PLA Basic @BBL P1S 0.4 nozzle",
+   "Bambu PLA Basic @BBL P1S 0.4 nozzle",
+   "Bambu PLA Basic @BBL P1S 0.4 nozzle",
+   "Bambu PLA Basic @BBL P1S 0.4 nozzle"
+  ],
+  "nozzle_diameter": [
+   "0.4"
+  ]
+ },
+ "model_settings_excerpt": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><config><object id=\"2\"><metadata key=\"name\" value=\"web-3d-arch assembly\"/><metadata key=\"extruder\" value=\"3\"/><part id=\"3\" subtype=\"normal_part\"><metadata key=\"name\" value=\"source:slab:17083663439669931123\"/><metadata key=\"extruder\" value=\"3\"/><metadata key=\"matrix\" value=\"1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\"/></part><part id=\"4\" subtype=\"normal_part\"><metadata key=\"name\" value=\"source:slab:9103186113007624917\"/><metadata key=\"extruder\" value=\"1\"/><metadata key=\"matrix\" value=\"1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\"/></part><part id=\"5\" subtype=\"normal_part\"><metadata key=\"name\" value=\"source:slab:12508925224532591280\"/><metadata key=\"extruder\" value=\"2\"/><metadata key=\"matrix\" value=\"1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\"/></part><part id=\"6\" subtype=\"normal_part\"><metadata key=\"name\" value=\"mech:keyring\"/><metadata key=\"extruder\" value=\"3\"/><metadata key=\"matrix\" value=\"1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1\"/></part></object><plate><metadata key=\"plater_id\" value=\"1\"/><metadata key=\"plater_name\" value=\"\"/><metadata key=\"locked\" value=\"false\"/><model_instance><metadata key=\"object_id\" value=\"2\"/><metadata key=\"instance_id\" value=\"0\"/><metadata key=\"identify_id\" value=\"1\"/></model_instance></plate></config>",
+ "printing_manifest": {
+  "schemaVersion": 1,
+  "exporterVersion": "0.2.0",
+  "lib3mfVersion": "2.5.0",
+  "format": "export.3mf.bambu-project",
+  "adapterVersion": "0.1.0",
+  "kernelSnapshot": {
+   "runtimeABI": 2,
+   "format": "ARCH/1",
+   "generation": 22,
+   "vertexCount": 954,
+   "faceCount": 1900
+  },
+  "revision": "5",
+  "profileId": "internal-fixture-bambu-v1",
+  "profileHash": "8ca2bfe0e705fa9aac95e80c88ee9fea4d74208250c7140e06a73ced886aab04",
+  "scheduleHash": "3a1eb73c8fe8b70b7c5591b6cdc1a59c9ba0f46314968a6b65906ed800fa38a3",
+  "schedule": {
+   "schemaVersion": 1,
+   "kind": "constant-first-regular",
+   "profileId": "internal-fixture-bambu-v1",
+   "profileHash": "8ca2bfe0e705fa9aac95e80c88ee9fea4d74208250c7140e06a73ced886aab04",
+   "firstLayerHeight": 0.2,
+   "layerHeight": 0.2,
+   "origin": {
+    "firstLayerHeight": "user",
+    "layerHeight": "user"
+   }
+  },
+  "materialTableHash": "85651a9d9eed029003cec3d837968e6d50b7483ddbf213176a5dce89e381f5f1",
+  "materials": [
+   {
+    "id": "product-role-15508798135236311244",
+    "name": "body",
+    "type": "PLA",
+    "color": "#30353B",
+    "slot": 3,
+    "extruder": 1,
+    "index": 0
+   },
+   {
+    "id": "product-material-12093298860034715671",
+    "name": "adopted:2",
+    "type": "PLA",
+    "color": "#EE7733",
+    "slot": 1,
+    "extruder": 1,
+    "index": 1
+   },
+   {
+    "id": "product-material-13766606607917672076",
+    "name": "adopted:1",
+    "type": "PLA",
+    "color": "#0099CC",
+    "slot": 2,
+    "extruder": 1,
+    "index": 2
+   }
+  ],
+  "materialAliases": {
+   "product-role-15508798135236311244": 0,
+   "product-material-12093298860034715671": 1,
+   "product-material-13766606607917672076": 2
+  },
+  "sourceHashes": [
+   {
+    "id": "15475595444667501070",
+    "sha256": "3b7d19bb6c35a79ac569933e474a20f71845818af977e9850b25ea9549814d88"
+   }
+  ],
+  "parts": [
+   {
+    "id": "source:slab:17083663439669931123",
+    "name": "source:slab:17083663439669931123",
+    "resourceId": 3,
+    "materialIndex": 0,
+    "slot": 3,
+    "extruder": 1
+   },
+   {
+    "id": "source:slab:9103186113007624917",
+    "name": "source:slab:9103186113007624917",
+    "resourceId": 4,
+    "materialIndex": 1,
+    "slot": 1,
+    "extruder": 1
+   },
+   {
+    "id": "source:slab:12508925224532591280",
+    "name": "source:slab:12508925224532591280",
+    "resourceId": 5,
+    "materialIndex": 2,
+    "slot": 2,
+    "extruder": 1
+   },
+   {
+    "id": "mech:keyring",
+    "name": "mech:keyring",
+    "resourceId": 6,
+    "materialIndex": 0,
+    "slot": 3,
+    "extruder": 1
+   }
+  ],
+  "qualification": {
+   "purpose": "inspection",
+   "selfIntersection": "unverified",
+   "interPartOverlap": "unverified",
+   "bedPlacement": "unverified",
+   "slicer": "unverified",
+   "physicalFit": "unverified"
+  }
+ }
+}

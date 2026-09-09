@@ -115,6 +115,54 @@ kiểm thay); bộ nghiệm thu `tests/product-acceptance` chưa chạy lại (c
 release đã ghim). Máy chủ phát triển nay có đồng hồ chạy thật (`tools/development/dev-serve.mjs`),
 tránh “phiên hết hạn” giả sau 5 phút.
 
+## Cập nhật 10-09-2026 — đợt phát hành vòng 3 (Hub; Codex và Grok phản biện)
+
+Hub thẩm định ba báo cáo chỉ đọc (`report/audit-readonly/pro/…22-26-36`, `grok/…22-26-36`,
+`grok/…13-02-57`) trên `48e69abc` bằng mã và luồng live, rồi sửa những mục còn đúng
+(bảng phân xử: `tmp/reviews/codex/runs/20260910-hub-release-r3/reports/HUB-RELEASE-R3.md`;
+bằng chứng chắt lọc: [testevidence/ui-release-r3](testevidence/ui-release-r3/README.md)):
+
+- **3MF chặn vì khóa phiên lệch (F-01)**: settings authority đưa `epoch`, project context
+  đưa `epoch:generation`, adapter in so bằng tuyệt đối → mọi 3MF `PRINTING_CONTEXT_STALE`.
+  Nay một khóa chung (`applicationSessionKey`).
+- **Lưu hủy việc đang chạy (F-02)**: `project.save` hủy build/nhập/xuất và bỏ đề xuất đang
+  chờ dù thiết kế không đổi; live: kiểm mesh về “chưa kiểm”. Nay chỉ thay đổi thiết kế mới
+  hủy; lưu ghim lại đề xuất vào đầu mới; nhận nguồn sống sót qua Lưu.
+- **Dải “vấn đề” sau mỗi lần dựng lại**: lệnh đổi thông số bị lệnh mới chiếm nhân trả
+  `CANCELLED` như lỗi. Mã hủy/thay thế nay là thông tin (ở nhật ký), ô số không báo lỗi.
+- **Mốc “đã xem” (F-06)** theo `sequence` của chẩn đoán thay vì độ dài danh sách quay vòng.
+- **Dãy mặt cắt (F-05)**: giá trị lệch lưới bước được giữ, cảnh báo cạnh trường và đường
+  xuất từ chối `EXPORT_SECTION_STEP` trước khi dựng (không chặn theo từng phím).
+- **Cứu hộ (F-03.2)**: gói lồng giữ vì thiếu dữ liệu không còn bị bỏ khi gói ngoài đầy đủ.
+- **Không có WebGL (R-01)**: giao diện không còn biến mất; khung 3D báo lý do, dựng/xuất
+  hình học vẫn dùng được.
+- Nút “Mở” vô hiệu trên dự án đang mở; chi tiết lỗi của bộ ghi native đi tới chẩn đoán.
+
+**Phát hiện mới, chưa phát hành được: bộ ghi 3MF của gói 08-09 từ chối mọi mô hình thật.**
+Sau khi cổng mở, xuất 3MF Bambu thất bại `LIB3MF_TRANSACTION: READBACK_VERTICES`: lib3MF ghi
+tọa độ dạng chữ 6 chữ số thập phân, còn `validateWritten` trong
+`src/printing/src/native/arch3mf.cpp` đòi bằng tuyệt đối với float32 (108/487 tọa độ của mẫu
+không qua được; fixture hai hộp chỉ có tọa độ nguyên nên chưa từng lộ). Nguồn native đã sửa
+(dung sai 2e-6 mm). Hub dựng lại WASM từ nguồn hiện tại (`tools/kernel/build.ps1 -Target wasm
+-Printing`, cây phụ thuộc pin từ phiên `20260908-printing-wave2`) và lắp gói **chỉ để kiểm
+chứng** (`work/dev-package` trong phòng Hub, không có biên lai): 3MF xuất được, đọc lại bằng
+Python và PrusaSlicer đúng màu/khe/hình học (xem testevidence). Nhân đó **chưa qua nghiệm thu
+hình học** (mechanics/final-scene/product-source/CSG) nên chưa được đóng gói; gói 08-09 vẫn là
+bản dùng thử và **không xuất được 3MF nhiều màu**. ZIP STL theo khe và STL union của gói 08-09
+đọc lại đúng hình học, đơn vị mm và bảng màu/khe.
+
+Còn mở sau đợt này: nghiệm thu và đóng gói nhân mới (kể cả thứ tự khe cho vùng màu nhận từ
+nguồn: nhân dựng lại gán khe 1/2 ngược với nhân gói cho cùng SVG — cần kiểm tính tất định);
+tên vật liệu/phần trong 3MF là mã nội bộ (`adopted:1`, `source:slab:…`), chưa phải tên trên
+giao diện; F-03.1 (nhập cứu hộ chỉ mang tài sản của manifest được chọn) và F-04 (khôi phục
+dưới ID mới không dựng được) giữ nguyên có lý do; hạn mức ZIP cứu hộ 128 MiB nhỏ hơn tổng
+asset cho phép; cây `.toolchain/clipper2-derived` lệch pin (`unified-pins.json`) khiến
+`src/printing/tools/prepare.ps1` không chạy từ toolchain.
+
+Phản biện độc lập trên commit của đợt: Codex (`tmp/reviews/codex/runs/20260910-codex-release-r3`)
+và Grok (`tmp/reviews/grok/runs/20260910-grok-release-r3`, binary 1.0.25 chấp nhận sau bộ kiểm
+cô lập). {{SEAT_VERDICTS}}
+
 ## Những gì cần giữ
 
 | Vị trí | Nội dung |

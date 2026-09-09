@@ -73,7 +73,7 @@ foreach($PrintingName in @('tests','pass','fail','cancelled','skipped','todo')){
  if(-not $PrintingMatch.Success){throw 'Missing TAP count'}
  $PrintingCounts[$PrintingName]=[int]$PrintingMatch.Groups[1].Value
 }
-$PrintingPassed=$PrintingExit -eq 0 -and $PrintingCounts.tests -eq 33 -and $PrintingCounts.pass -eq 33 -and $PrintingCounts.fail -eq 0 -and $PrintingCounts.skipped -eq 0 -and $PrintingCounts.cancelled -eq 0 -and $PrintingCounts.todo -eq 0 -and $PrintingStable -and $PrintingOracle
+$PrintingPassed=$PrintingExit -eq 0 -and $PrintingCounts.tests -eq 37 -and $PrintingCounts.pass -eq 37 -and $PrintingCounts.fail -eq 0 -and $PrintingCounts.skipped -eq 0 -and $PrintingCounts.cancelled -eq 0 -and $PrintingCounts.todo -eq 0 -and $PrintingStable -and $PrintingOracle
 $PrintingResult=@{
  version='arch-printing-app-tests/1';status=if($PrintingPassed){'passed'}else{'failed'};counts=$PrintingCounts;syntax=$true;types=$true;codeStableDuringRun=$PrintingStable;
  independentReadback=$PrintingOracle;readbackFiles=12;negativeReaderControls=1;startedUtc=$PrintingStarted.ToString('o');finishedUtc=[DateTime]::UtcNow.ToString('o');

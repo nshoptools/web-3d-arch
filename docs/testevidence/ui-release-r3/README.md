@@ -1,0 +1,23 @@
+# Bằng chứng đợt phát hành vòng 3 (10-09-2026)
+
+Chắt lọc từ phòng Hub `tmp/reviews/codex/runs/20260910-hub-release-r3/` (không đưa vào Git).
+Cách chạy: `tools/development/dev-serve.mjs`, Chromium Playwright headless 1440×900, mẫu
+`docs/examples/hai-mau-co-lo.svg`, tài khoản thử nghiệm. “Trước” là `48e69abc`, “sau” là commit
+của đợt này trên `main`.
+
+| Tệp | Nội dung |
+| --- | --- |
+| `before-size-change-strip-1440.png` / `after-size-change-strip-1440.png` | Đổi cạnh dài 45 → 40 mm. Trước: dựng lại thành công vẫn hiện “Một vấn đề cần xem — CANCELLED” (lệnh cũ bị lệnh mới chiếm nhân). Sau: không còn dải. |
+| `before-save-during-build-1440.png` / `after-save-during-build-1440.png` | Bấm “Lưu dự án” trên thẻ bận trong lúc dựng lại. Trước: lượt kiểm mesh bị hủy (“chưa kiểm”), ba lỗi CANCELLED, ô số báo “Đã hủy thao tác”. Sau: kiểm mesh “đạt”, không lỗi, dự án đã lưu. |
+| `before-webgl-off-1440.png` / `after-webgl-off-1440.png` | Chromium `--disable-3d-apis`. Trước: toàn bộ giao diện biến mất (ngoại lệ `WEBGL_UNAVAILABLE` không được bắt). Sau: giao diện còn nguyên, khung 3D trống có lý do, STL/ZIP/SVG vẫn xuất được. |
+| `release-kernel-3mf-failure.json` | Với nhân gói 08-09, sau khi cổng 3MF mở (F-01 đã sửa), lệnh xuất 3MF Bambu thất bại `LIB3MF_TRANSACTION`, chi tiết native `READBACK_VERTICES`. |
+| `dev-kernel-3mf-exported-1440.png` | Cùng luồng với nhân dựng lại từ nguồn hiện tại (kèm dung sai đọc lại trong `arch3mf.cpp`): tệp 3MF tải về, không lỗi. Nhân này chưa nghiệm thu; không phải gói phát hành. |
+| `dev-kernel-3mf-readback.json` | Đọc lại 3MF bằng Python stdlib: 4 đối tượng lưới + assembly, đơn vị mm, `displaycolor` ba vật liệu đúng màu trên giao diện, `extruder` từng phần = khe, `filament_colour` theo khe, thể tích từng phần khớp ZIP STL (2.443,72 / 320,0 / 268,8 mm³). |
+| `dev-kernel-3mf-prusa-slicer-info.txt` | PrusaSlicer 2.9.6 `--info` đọc đủ bốn đối tượng, `manifold = yes`, thể tích khớp (bộ đọc thứ ba, không phải slicer đích). |
+
+Kiểm tự động của đợt: typecheck; 125 ca Node (`tests/app`, `tests/storage`, `tests/printing-app`,
+`tests/domain`); `tests/app/run.ps1` Chromium (Node/types/browser đều 0). Ca hồi quy mới:
+`tests/app/save-during-job.node.test.mjs`, `tests/printing-app/composition.test.mjs`, ca thêm trong
+`export-controls`, `package-roundtrip`, `source-adoption.cases`.
+
+Chưa kiểm: slicer đích (Bambu Studio, SnapmakerOrca), in thử, Firefox/WebKit trong đợt này.
