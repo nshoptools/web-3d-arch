@@ -136,8 +136,13 @@ class ProjectStore {
       await this.#recordClock();ctx.guard();
       const head=await readRecord(this.db,'heads',projectId,ctx.options);
       if(head)validateHead(head);
-      check(head&&[head.currentHash,head.previousHash,...(head.historyHashes??[]),...(head.previousHistoryHashes??[])].includes(manifestHash),
-        'HISTORY_REFERENCE','Requested manifest is not retained by the current head.');
+      let referenced=!!head&&[head.currentHash,head.previousHash,...(head.historyHashes??[]),...(head.previousHistoryHashes??[])].includes(manifestHash);
+      if(!referenced){
+        // A superseded generation retained by a recovery commit stays loadable until it is explicitly discarded.
+        const journals=await readRecords(this.db,'journals',ctx.options);ctx.guard();
+        referenced=journals.some(j=>j.projectId===projectId&&j.status==='conflict'&&j.manifestHash===manifestHash);
+      }
+      check(referenced,'HISTORY_REFERENCE','Requested manifest is not retained by the current head or a retained candidate.');
       return await this.#generation(manifestHash,projectId,ctx);
     }finally{ctx.finish();}
   }
@@ -232,8 +237,10 @@ class ProjectStore {
         // Inside IDB only synchronous epoch/grant guards run; no network await holds it open.
         await this.access.preflight(ctx.signal);ctx.guard();
         const ack={transactionId:job.id,generation:expectedRevision+1,stepId:'head.committed',hash:encoded.hash,status:'ok'};
+        // A verified-previous base supersedes the unreadable current generation: retain it instead of letting cleanup collect it.
         const result=await publishHead(this.db,job,encoded,{verifiedObjects,baseHead:base.head,
           verifiedBaseHash:base.manifestHash??null,retainManifests,ack,
+          supersededHash:base.recoveredPrevious===true?base.head.currentHash:null,
           syncCheckpoint:(name,detail)=>this.syncCheckpoint(name,{transactionId:job.id,...detail}),
           guard:ctx.guard,clockKey:this.clockKey,authVersion:this.access.authVersion,lastSeen:this.access.lastSeen},ctx.options);
         if(result.conflict)throw new StorageError('CONFLICT','Local CAS conflict; both committed and candidate copies are retained.',result);
@@ -241,7 +248,7 @@ class ProjectStore {
         let cleanup={status:'not-run'};
         try{cleanup=await this.#cleanup(ctx,job);}catch(error){cleanup={status:'pending',error:errorInfo(error)};if(error.crash===true)throw error;}
         ctx.guard();
-        return {ok:true,idempotent:false,manifestHash:encoded.hash,head:result.head,ack,cleanup};
+        return {ok:true,idempotent:false,manifestHash:encoded.hash,head:result.head,ack,cleanup,supersededRetained:result.supersededRetained??null};
       });
     }catch(error){
       if(['QuotaExceededError','NotAllowedError','SecurityError'].includes(error.name))this.writeBlocked=errorInfo(error);
@@ -353,8 +360,12 @@ class ProjectStore {
       if(transactionId)check(journal,'TRANSACTION_NOT_FOUND','Selected rescue transaction does not exist.');
       if(journal)check(journal.projectId===projectId,'PROJECT_MISMATCH','Conflict transaction belongs to another project.');
       check(head||journal,'PROJECT_NOT_FOUND','No local project or pending transaction found.');
+      // A whole-project rescue also packages generations a recovery commit superseded because they could not be read.
+      const superseded=transactionId?[]:(await readRecords(this.db,'journals',ctx.options))
+        .filter(j=>j.projectId===projectId&&j.status==='conflict'&&j.conflict?.reason==='SUPERSEDED_UNREADABLE_GENERATION').map(j=>j.manifestHash);
+      ctx.guard();
       const hashes=[...new Set([head?.currentHash,head?.previousHash,...(Array.isArray(head?.historyHashes)?head.historyHashes:[]),
-        ...(Array.isArray(head?.previousHistoryHashes)?head.previousHistoryHashes:[]),journal?.manifestHash]
+        ...(Array.isArray(head?.previousHistoryHashes)?head.previousHistoryHashes:[]),journal?.manifestHash,...superseded]
         .filter(hash=>typeof hash==='string'&&/^[a-f0-9]{64}$/.test(hash)))];
       const manifests=[],assets=new Map(),issues=[],inspections=new Map();
       if(head)try{validateHead(head);}catch(error){issues.push({code:'UNVERIFIED_REFERENCE_COVERAGE',reason:error.code});}

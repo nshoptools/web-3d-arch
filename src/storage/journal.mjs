@@ -76,7 +76,23 @@ export async function finishFailedJournal(db,job,error,{keepConflict=false}={}){
     t.store('journals').put(row);t.result(true);
   }));
 }
-export async function publishHead(db,job,encoded,{verifiedObjects,baseHead,verifiedBaseHash,retainManifests,ack,syncCheckpoint=()=>{},guard,clockKey,authVersion,lastSeen},options){
+/** A commit based on the verified previous generation supersedes a newer generation that could
+ * not be read. Keep that manifest as an explicit retained candidate with the same lifecycle as a
+ * CAS conflict candidate (GC root, pendingTransactions, rescue by transactionId, discardPending)
+ * so the next cleanup never collects the only copy of the newest saved data. */
+function retainSuperseded(t,rows,job,head,encoded,supersededHash){
+  if(!supersededHash||!head||supersededHash===encoded.hash)return null;
+  const manifest=rows.manifests.find(m=>m.hash===supersededHash);
+  if(!manifest||manifest.projectId!==job.projectId)return null;
+  const id='superseded:'+supersededHash,existing=rows.journals.find(j=>j.id===id);
+  if(existing)return existing.status==='conflict'?{transactionId:id,manifestHash:supersededHash,revision:head.revision}:null;
+  t.store('journals').put({id,owner:job.owner,projectId:job.projectId,expectedRevision:Math.max(0,head.revision-1),fingerprint:id,manifestHash:supersededHash,
+    fence:1,status:'conflict',pins:[],files:[],acks:[],
+    conflict:{reason:'SUPERSEDED_UNREADABLE_GENERATION',supersededRevision:head.revision,supersededHead:cloneJSON(head),candidateManifestHash:supersededHash,
+      supersededBy:{transactionId:job.id,revision:encoded.manifest.revision,manifestHash:encoded.hash}}});
+  return {transactionId:id,manifestHash:supersededHash,revision:head.revision};
+}
+export async function publishHead(db,job,encoded,{verifiedObjects,baseHead,verifiedBaseHash,retainManifests,ack,supersededHash=null,syncCheckpoint=()=>{},guard,clockKey,authVersion,lastSeen},options){
   const stores=['heads','index','journals','manifests','objects','meta'];
   return readStores(db,stores,'readwrite',(t,rows)=>{
     guard();const row=currentJob(rows.journals.find(r=>r.id===job.id),job);
@@ -115,11 +131,12 @@ export async function publishHead(db,job,encoded,{verifiedObjects,baseHead,verif
       previousHistoryHashes:head?.currentHash===verifiedBaseHash?(head?.historyHashes??[]):(head?.previousHistoryHashes??[]),
       transactionId:job.id};
     row.status='committed';row.pins=[];row.ack=ack;t.store('journals').put(row);
+    const supersededRetained=retainSuperseded(t,rows,job,head,encoded,supersededHash);
     t.store('index').put({projectId:job.projectId,revision:next.revision,manifestHash:encoded.hash,
       title:typeof encoded.manifest.document.title==='string'?encoded.manifest.document.title.slice(0,200):job.projectId});
     t.store('heads').put(next);
     syncCheckpoint('publish.after-write',{transaction:t.tx});guard();
-    t.result({conflict:false,head:next,ack});
+    t.result({conflict:false,head:next,ack,supersededRetained});
   },options);
 }
 

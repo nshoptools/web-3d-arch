@@ -4,16 +4,23 @@ import {newDocument,validateState,validateDocument,verifyDocument,contentEdit,do
 import {candidateHash} from './proposals.mjs';
 import {configureExport} from './export-configuration.mjs';
 import {declaredFormats,exportContext} from './export-policy.mjs';
+import {PROJECT_MESSAGES,libraryReason} from './project-messages.mjs';
 export const loadedAssets=loaded=>new Map((loaded.assets??[]).map(a=>[a.hash,{...a,bytes:new Uint8Array(a.bytes)}]));
+/** Library row that cannot be listed: `code` is the machine identifier, `reason` a Vietnamese sentence.
+ * `transient` marks a failed read (I/O, abort, lock) that is retried on the next refresh rather than cached. */
+const libraryIssue=(row,e,transient)=>{const code=typeof e.code==='string'?e.code:(transient?'LIBRARY_READ_RETRY':'PROJECT_READ_ONLY');return {id:row.projectId,title:row.title,revision:row.revision,code,reason:libraryReason(code,transient),transient};};
 export class ProjectOperations {
  async refreshLibrary(){
   if(!this.store)return;const epoch=this.epoch,store=this.store,rows=await store.listProjects({rescue:!store.status().canEdit}),entries=[],unrecognized=[];
   for(const row of rows){const cached=this.libraryCache.get(row.projectId);if(cached?.revision===row.revision){if(cached.entry)entries.push(cached.entry);if(cached.unknown)unrecognized.push(cached.unknown);continue;}
+  let loaded;
+  // A failed read says nothing about the stored data: report it, never cache it, retry on the next refresh.
+  try{loaded=await store.load(row.projectId);}catch(e){unrecognized.push(libraryIssue(row,e,true));continue;}
   try{
-   const loaded=await store.load(row.projectId);assert(loaded.status==='editable','PROJECT_READ_ONLY');const d=validateDocument(loaded.manifest.document);
+   assert(loaded.status==='editable',loaded.reason??(loaded.status==='unrecoverable'?'PROJECT_UNRECOVERABLE':'PROJECT_READ_ONLY'));const d=validateDocument(loaded.manifest.document);
    const entry=d.state.content.app.deleted?null:{id:row.projectId,name:d.state.content.app.name,product:d.state.product,updatedAt:d.updatedAt??'',sizeBytes:loaded.manifest.assets.reduce((n,a)=>n+a.byteLength,0),backup:null};
    this.libraryCache.set(row.projectId,{revision:row.revision,entry});if(entry)entries.push(entry);
-  }catch(e){const unknown={id:row.projectId,title:row.title,revision:row.revision,reason:typeof e.code==='string'?e.code:'PROJECT_READ_ONLY'};this.libraryCache.set(row.projectId,{revision:row.revision,unknown});unrecognized.push(unknown);}}
+  }catch(e){const unknown=libraryIssue(row,e,false);this.libraryCache.set(row.projectId,{revision:row.revision,unknown});unrecognized.push(unknown);}}
   assert(epoch===this.epoch,'ACCESS_CHANGED');this.library=entries;this.unrecognizedProjects=unrecognized;this.emit();
  }
  async persist(candidate,{id=this.projectId,expectedRevision=this.headRevision,signal,epoch=this.epoch}={}){
@@ -24,15 +31,31 @@ export class ProjectOperations {
   catch(e){
    if(epoch!==this.epoch)throw error('ACCESS_CHANGED');let loaded;try{loaded=await store.load(id);}catch{}
    if(loaded?.status==='editable'&&loaded.head.transactionId===transactionId&&canonicalJSON(loaded.manifest.document)===canonicalJSON(input.document)){
-    ack={head:loaded.head};this.diagnostics=this.diagnostics.concat({code:'COMMIT_ACK_RECOVERED',message:'Verified committed head after uncertain acknowledgement',severity:'warning'});
-   }else{if(e.code==='CONFLICT'){this.conflicts=this.conflicts.concat({projectId:id,transactionId,expectedRevision});this.emit();}throw e;}
+    ack={head:loaded.head};this.diagnostics=this.diagnostics.concat({code:'COMMIT_ACK_RECOVERED',message:PROJECT_MESSAGES.COMMIT_ACK_RECOVERED,severity:'warning'});
+   }else{if(e.code==='CONFLICT')await this.recordConflict({projectId:id,transactionId,expectedRevision,epoch,error:e});throw e;}
   }
-  this.guard(epoch);assert(ack.head,'COMMIT_ACK_INVALID');if(id!==this.projectId){this.projectContextGeneration++;this.clearExportReceipts();}this.doc=validateDocument(input.document);const kept=new Set([...Object.keys(this.doc.history.assets),...(this.doc.retainedAssets??[])]);this.assets=new Map([...candidate.assets].filter(([h])=>kept.has(h)));
+  // The generation is durable now: reflect it locally before any lease/lock check may reject this call.
+  assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');assert(ack.head,'COMMIT_ACK_INVALID');if(id!==this.projectId){this.projectContextGeneration++;this.clearExportReceipts();}this.doc=validateDocument(input.document);const kept=new Set([...Object.keys(this.doc.history.assets),...(this.doc.retainedAssets??[])]);this.assets=new Map([...candidate.assets].filter(([h])=>kept.has(h)));
   for(const [hash,url]of this.urls)if(!kept.has(hash)){this.objectURLs.revokeObjectURL(url);this.urls.delete(hash);}this.projectId=id;this.headRevision=ack.head.revision;this.readOnly=false;
   // The acknowledged document/bytes were already verified by commit (or exact ack recovery).
   this.libraryCache.set(id,{revision:ack.head.revision,entry:this.doc.state.content.app.deleted?null:{id,name:this.doc.state.content.app.name,product:this.doc.state.product,updatedAt:this.doc.updatedAt,sizeBytes:input.assets.reduce((n,a)=>n+a.bytes.byteLength,0),backup:null}});
-  if(candidate.pruned?.length)this.truncated=true;this.pendingChange=null;this.discardProposal();this.job?.abort.abort();this.discardPreview();this.selection=null;this.emit();
+  if(candidate.pruned?.length)this.truncated=true;this.pendingChange=null;this.discardProposal();this.job?.abort.abort();this.discardPreview();this.selection=null;
+  if(ack.supersededRetained)this.diagnostics=this.diagnostics.concat({code:'SUPERSEDED_GENERATION_RETAINED',message:PROJECT_MESSAGES.SUPERSEDED_GENERATION_RETAINED,severity:'warning',detail:'Bản '+ack.supersededRetained.revision+' được giữ lại với mã '+ack.supersededRetained.transactionId+'.'});
+  this.emit();
+  try{this.guard(epoch);}
+  catch(e){
+   // Durable commit, then the lease/lock check failed: local state already matches storage, so say so instead of implying a rollback.
+   this.diagnostics=this.diagnostics.concat({code:'COMMIT_DURABLE_BEFORE_LOCK',message:PROJECT_MESSAGES.COMMIT_DURABLE_BEFORE_LOCK,severity:'warning'});
+   e.details={...(e.details??{}),committed:true,headRevision:ack.head.revision};this.emit();throw e;
+  }
   try{await this.refreshLibrary();}catch(e){this.report(e);}return ack;
+ }
+ async recordConflict({projectId,transactionId,expectedRevision,epoch,error:e}){
+  // The losing candidate only duplicates this session's in-memory change; release its pins so it never holds
+  // storage. The CONFLICT diagnostic tells the person to reopen the project. A failed discard keeps the candidate rescuable.
+  let candidateDiscarded=false;
+  try{if(epoch===this.epoch&&typeof this.store?.discardPending==='function'){await this.store.discardPending(transactionId);candidateDiscarded=true;}}catch{}
+  this.conflicts=this.conflicts.concat({projectId,transactionId,expectedRevision,currentRevision:e.details?.currentHead?.revision??null,candidateDiscarded});this.emit();
  }
  async edit(state,command,{acceptPruning=false,assets=this.assets,signal}={}){
   this.requireProject();const base=this.doc,head=this.headRevision,epoch=this.epoch;
@@ -57,7 +80,12 @@ export class ProjectOperations {
   doc.retainedAssets=[...new Set([...(doc.retainedAssets??[]),...loaded.manifest.dependencies.filter(h=>!Object.hasOwn(doc.history.assets,h))])];
   assert(!doc.state.content.app.deleted,'PROJECT_DELETED');if(this.onlineSession)await this.preflight(epoch);this.guard(epoch);
   this.job?.abort.abort();this.discardProposal();this.discardPreview();this.clearVisible();this.clearExportReceipts();this.projectContextGeneration++;this.doc=doc;this.assets=assets;this.projectId=id;this.headRevision=loaded.headRevision;this.selection=null;this.readOnly=false;this.pendingChange=null;
-  if(loaded.recoveredPrevious)this.diagnostics=this.diagnostics.concat({code:'RECOVERED_PREVIOUS',message:'Loaded verified previous generation',severity:'warning'});this.emit();
+  if(loaded.recoveredPrevious){
+   const head=loaded.head?.revision,opened=loaded.manifest?.revision;
+   this.diagnostics=this.diagnostics.concat({code:'RECOVERED_PREVIOUS',message:PROJECT_MESSAGES.RECOVERED_PREVIOUS,severity:'warning',
+    ...(Number.isInteger(head)?{detail:'Bản lưu '+head+' không đọc được'+(Number.isInteger(opened)?'; đã mở bản '+opened:'')+'.'}:{})});
+  }
+  this.emit();
  }
  dispatch(command){return this.result(async()=>{
   assert(command&&typeof command.type==='string','COMMAND_REQUIRED');

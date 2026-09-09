@@ -7,17 +7,25 @@ và cập nhật đặc tả; không giữ một số px để làm mất chức
 
 ### UI-01 — Bố cục và sáu khu vực
 
-Giao diện tối, bảng thiết lập trái, khung thiết kế phải là vùng lớn nhất khi màn
-hình cho phép. Thanh trên 56 px; rail 74 px; panel 376 px, 344 px ở ≤1400 px;
-thanh việc kế tiếp 57 px, mobile 53 px. Dùng CSS grid, `minmax(0,1fr)` cho stage.
-Gập panel bằng biến chiều rộng ở desktop; mobile có trạng thái ngăn kéo riêng.
-Backdrop desktop `display:none`, không để phần tử trong grid vô hình sinh hàng.
+Giao diện có hai trạng thái tách bạch. **Chưa mở dự án**: màn hình bắt đầu thay
+cho không gian làm việc, gồm đúng hai việc có thể làm — *Tạo dự án mới* (chọn
+loại sản phẩm, một nút Tạo) và *Mở dự án đã lưu* (danh sách dự án, mở từ gói
+`.arch-project.zip`); không hiện rail/panel/stage, phím tắt khu vực và công cụ
+bị từ chối kèm lý do; chưa đăng nhập thì chỉ hiện thẻ đăng nhập. **Đang chỉnh
+sửa** (có dự án): giao diện tối, bảng thiết lập trái, khung thiết kế phải là vùng
+lớn nhất khi màn hình cho phép. Thanh trên 56 px; rail 74 px; panel 376 px,
+344 px ở ≤1400 px. Dùng CSS grid, `minmax(0,1fr)` cho stage. Gập panel bằng biến
+chiều rộng ở desktop; mobile có trạng thái ngăn kéo riêng. Backdrop desktop
+`display:none`, không để phần tử trong grid vô hình sinh hàng.
 
-Thanh trên: logo/tên/phụ đề, hai bước, tìm nhanh, trạng thái mạng, tải nguồn và
-đi tiếp. Bước hiện tại/hoàn thành/chưa có đầu vào phân biệt bằng chữ+biểu tượng+
-màu. Rail gồm icon + nhãn, vạch 3 px khu đang chọn; badge số màu, kết quả dựng và
-số dự án, không dùng dấu ✓ thay cho trạng thái mesh đã đạt. Rail và mobile tabs
-cùng registry; active/disabled/badge nhất quán.
+Thanh trên: logo/tên, tên dự án đang mở kèm trạng thái lưu, hai bước, tìm nhanh,
+trạng thái mạng, **một** nút hành động chính (Dựng 3D / Dựng lại / Xem mô hình /
+Xuất file, tự đổi theo trạng thái), menu trợ giúp và menu tài khoản. Một hành động
+không xuất hiện ở hai nơi trên cùng màn hình; tải nguồn nằm ở khu Ảnh nguồn,
+khung xem trống, kéo thả, dán và Ctrl+O. Bước hiện tại/hoàn thành/chưa có đầu vào
+phân biệt bằng chữ+biểu tượng+màu. Rail gồm icon + nhãn, vạch 3 px khu đang chọn;
+badge số màu, kết quả dựng và số dự án, không dùng dấu ✓ thay cho trạng thái mesh
+đã đạt. Rail và mobile tabs cùng registry; active/disabled/badge nhất quán.
 
 | Khu | Màu nhận diện | Phụ đề |
 | --- | --- | --- |
@@ -26,7 +34,7 @@ cùng registry; active/disabled/badge nhất quán.
 | Lớp màu | #38cfa0 | Vùng màu, vật liệu và khe filament |
 | Thông số | #ffab3d | Kích thước, chiều cao, lỗ và lắp ghép |
 | Xuất file | #ff7a9c | 3MF, STL, SVG và PNG |
-| Thư viện | #4dd0e1 | Dự án, sao lưu, cài đặt và trợ giúp |
+| Thư viện | #4dd0e1 | Tên, lưu, dự án đã lưu và sao lưu |
 
 Đầu panel có tên, phụ đề và tiện ích được wrap; không hardcode chiều cao theo
 một font. Thân cuộn, padding 12 px, chỉ preview chữ sticky. Vấu gập hình vẽ
@@ -75,7 +83,8 @@ phải có dấu hiệu còn nội dung và thao tác bàn phím; không giấu 
 scrollbar vô hình không có chỉ báo. Không coi công thức 34%/66% là bằng chứng
 không chồng khi đổi ngôn ngữ/zoom.
 
-Trạng thái stage: rỗng phủ toàn khung có ba lối bắt đầu (tải nguồn, emoji, chữ);
+Trạng thái stage: chưa có nguồn thì phủ toàn khung với các lối bắt đầu (tải tệp,
+chữ, emoji, AI khi có kết nối);
 bận bước 1 là pill giữ vùng đang sửa; bận bước 2 phủ mờ nhưng nút Hủy vẫn thao tác
 được. Lỗi/cảnh báo nằm đáy trái và có vùng đọc lại lâu dài. Khi rỗng, các toolbar
 không có nghĩa thực sự hidden/inert. Bận có tiến độ/công đoạn/job id; không khóa
@@ -86,10 +95,11 @@ nút góc 4; cảnh báo 5; rỗng 6; bận 7/8; vấu panel 9; popup 20; backdr
 panel trượt 60; tìm nhanh 200; toast 300; tooltip 400; skip link 999. Các giá trị
 là token, phải kiểm stacking context do transform/opacity/backdrop tạo ra.
 
-Thanh kế tiếp: bước 1 phụ=SVG màu, chính=Dựng 3D; bước 2 phụ=Quay lại, chính=mở
-lựa chọn xuất đang hợp lệ. Không cho “nút chính” ngầm chọn sai profile máy. Gợi ý
-nằm trên thanh khi đủ chỗ, dưới 1180 px chuyển vào stage; nội dung dài không bị
-cắt để giữ chiều cao cố định.
+Hành động chính: bước 1 là Dựng 3D (hoặc Dựng lại / Xem mô hình đã dựng), bước 2
+là mở lựa chọn xuất đang hợp lệ; ở bước 2 khi mô hình cũ có thêm nút Dựng lại.
+Tất cả nằm ở thanh trên, không có thanh việc kế tiếp riêng. Quay lại bước 1 bằng
+chip bước 1. Không cho “nút chính” ngầm chọn sai profile máy. Gợi ý ngữ cảnh nằm
+ở góc dưới trái của stage ở mọi bề rộng, gập được; nội dung dài không bị cắt.
 
 ### UI-04 — Điều khiển, bảng màu và emoji
 
@@ -153,7 +163,7 @@ label, palette và bảng phím được sinh cùng registry lệnh.
 | --- | --- |
 | w > 1400 | Desktop ba cột panel 376 |
 | 1180 < w ≤ 1400 | Panel 344, ẩn phụ đề thương hiệu |
-| 1023 < w ≤ 1180 | Gợi ý trong stage; toolbar dưới chỉ số; mạng còn ở vùng trạng thái |
+| 1023 < w ≤ 1180 | Toolbar dưới chỉ số; mạng còn ở vùng trạng thái |
 | 720 < w ≤ 1023 | Rail+stage; panel fixed từ trái có backdrop; hai bước còn qua tiêu đề/nút tiếp |
 | w ≤ 720 | Tabs đáy, drawer dưới cao mục tiêu min(56dvh,470px); header 50; search button 38 |
 

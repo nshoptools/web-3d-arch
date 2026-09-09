@@ -1,12 +1,12 @@
 # Dot-source: . ./tools/project-env.ps1 -Seat codex -RunId 20260905-font-assets
 [CmdletBinding()]
 param(
-    [ValidateSet('grok', 'opus', 'codex')][string]$Seat,
+    [ValidateSet('grok', 'opus', 'codex', 'gemini')][string]$Seat,
     [ValidatePattern('^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$')]
     [string]$RunId = ((Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + [guid]::NewGuid().ToString('N').Substring(0, 6))
 )
 $ErrorActionPreference = 'Stop'
-if (-not $Seat) { throw 'Specify -Seat grok, opus or codex; a review room must never be selected implicitly.' }
+if (-not $Seat) { throw 'Specify -Seat grok, opus, codex or gemini; a review room must never be selected implicitly.' }
 $ProjectRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $ProjectRun = Join-Path $ProjectRoot "tmp/reviews/$Seat/runs/$RunId"
 $ProjectDirs = @('inputs', 'work', 'evidence', 'reports', 'cache', 'temp')

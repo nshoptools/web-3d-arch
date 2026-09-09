@@ -28,9 +28,13 @@ tmp/reviews/*
 !tmp/reviews/grok/
 !tmp/reviews/opus/
 !tmp/reviews/codex/
+!tmp/reviews/gemini/
 tmp/reviews/*/*
 !tmp/reviews/*/README.md
 !tmp/reviews/*/runs/
 tmp/reviews/*/runs/*
 !tmp/reviews/*/runs/.gitkeep
 report/
+
+# Gemini configuration
+.gemini/

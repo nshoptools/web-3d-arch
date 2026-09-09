@@ -86,11 +86,12 @@ for(const [engine,type]of Object.entries({chromium,firefox,webkit}))test(`APP in
     await phase('load');await page.goto(origin);await page.waitForFunction(()=>globalThis.applicationTest,undefined,{timeout:60000});
     assert.deepEqual(await page.evaluate(()=>applicationTest.initialized),{ok:true});
     assert.equal(await page.evaluate(()=>applicationTest.controller.getSnapshot().session.status),'signed-in');
-    await page.getByRole('tab',{name:/Thư viện/}).first().click();
-    await page.getByRole('tabpanel',{name:'Khu Thư viện',exact:true}).getByRole('button',{name:'Tạo dự án',exact:true}).click();
+    // No project yet: the start screen carries the one create card.
+    await page.locator('[data-create-project]').first().getByRole('button',{name:'Tạo dự án',exact:true}).click();
     await page.waitForFunction(()=>applicationTest.controller.getSnapshot().project.id);
     await phase('import-via-ui');
-    const [chooser]=await Promise.all([page.waitForEvent('filechooser'),page.getByRole('button',{name:'Tải nguồn',exact:true}).first().click()]);
+    await page.getByRole('tab',{name:/Ảnh nguồn/}).first().click();
+    const [chooser]=await Promise.all([page.waitForEvent('filechooser'),page.locator('#w3a-source-import').click()]);
     await chooser.setFiles({name:'analytical-hole-seam.svg',mimeType:'image/svg+xml',buffer:Buffer.from(source)});
     await page.waitForFunction(()=>applicationTest.controller.getSnapshot().project.source?.kind==='svg'&&!applicationTest.controller.getSnapshot().job,undefined,{timeout:45000});
     await phase('resize');
@@ -99,7 +100,7 @@ for(const [engine,type]of Object.entries({chromium,firefox,webkit}))test(`APP in
     await page.waitForFunction(()=>applicationTest.controller.getSnapshot().project.step===2&&!applicationTest.controller.getSnapshot().job,undefined,{timeout:45000});
     assert.equal(await page.evaluate(()=>applicationTest.controller.getSnapshot().project.stats.widthMm),40);
     const revision=await page.evaluate(()=>applicationTest.controller.getSnapshot().project.revision);
-    await page.getByRole('button',{name:'Quay lại',exact:true}).click();
+    await page.locator('[data-step-chip="1"]').click();
     assert.equal(await page.evaluate(()=>applicationTest.controller.getSnapshot().project.revision),revision);
     await phase('undo-save-open');
     assert.equal((await page.evaluate(()=>applicationTest.controller.dispatch({type:'history.undo'}))).ok,true);
@@ -118,7 +119,7 @@ for(const [engine,type]of Object.entries({chromium,firefox,webkit}))test(`APP in
     assert.ok(Math.abs(oracle[1].volume-100*scale*scale*height)<.001);
     await writeFile(path.join(evidence,engine+'-'+exported.name),archive);
     await phase('convert-and-edit-via-ui');
-    await page.getByRole('button',{name:'Quay lại',exact:true}).click();
+    await page.locator('[data-step-chip="1"]').click();
     await page.getByRole('button',{name:'Chuyển nguồn sang ảnh raster để sửa',exact:true}).click();
     await page.getByRole('dialog').waitFor();
     await page.getByRole('dialog').getByRole('button',{name:'Áp dụng thay đổi',exact:true}).click();

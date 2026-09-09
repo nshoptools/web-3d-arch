@@ -10,31 +10,31 @@ const HASH=/^[a-f0-9]{64}$/,unsafe=new Set(['__proto__','prototype','constructor
 const isText=(x,max=512)=>typeof x==='string'&&x.length>0&&x.length<=max&&x.isWellFormed()&&!/[\x00-\x1f\x7f]/.test(x)&&!unsafe.has(x);
 const uint=x=>Number.isInteger(x)&&x>=0&&x<=0xffffffff;
 const REASONS=Object.freeze({
- PRINTING_SIGNED_OUT:'Sign in again before reading private printer profiles.',
- PRINTING_SETTINGS_REQUIRED:'Load the current account settings before choosing a printer.',
- PRINTING_SETTINGS_SCHEMA:'Import a settings schemaVersion 1 document with a bounded printerProfiles array.',
- PRINTING_PROFILE_REQUIRED:'Select an imported, valid sealed printer profile.',
- PRINTING_PROFILE_DUPLICATE:'Two imported records use the same profile ID. Remove or explicitly rename and reseal the intended record before selecting it.',
- PRINTING_PROFILE_INVALID:'The selected profile failed validation. Correct or replace its imported sealed record.',
- PRINTING_REFRESH_REQUIRED:'Printer preparation is absent or changed. Refresh printing after the current settings, model and validation evidence are ready.',
- PRINTING_CONTEXT_STALE:'The account, settings, project or evidence changed during preparation. Prepare the current selection again.',
- PRINTING_REFRESH_SUPERSEDED:'A newer printing preparation replaced this one.',
- PRINTING_MODEL_REQUIRED:'Build and apply a model for the current project before preparing target export.',
- PRINTING_FINAL_EVIDENCE_REQUIRED:'Wait for the current model final-scene evidence and explicit material bindings.',
- PRINTING_RUNTIME_UNVERIFIED:'Supply checked printing ABI and exact module/service evidence for this same active runtime.',
- PRINTING_PROJECT_SCHEDULE_MISMATCH:'Rebuild using the committed layer schedule; printing does not change layer values or origins.',
- PRINTING_PROJECT_PROFILE_MISMATCH:'The project uses heights from a different profile. Explicitly apply the intended profile and rebuild.',
- PRINTING_MATERIAL_UNMAPPED:'Bind each final-scene material ID to its current project material and explicit profile slot.',
- PRINTING_MATERIAL_CONFLICT:'The material ID, slot, color or physical-extruder mapping conflicts. Commit one consistent mapping before exporting.',
- PRINTING_NATIVE_ID_COLLISION:'Full material IDs need distinct explicit uint32 bindings; a narrowed or reused ID cannot qualify.',
- PRINTING_ADAPTER_MISMATCH:'Select a profile for the requested slicer and exact supported version.',
- PRINTING_DATA_LIMIT:'Printer metadata exceeds the declared JSON byte, node, depth or item limits.',
- PRINTING_DATA_ONLY:'Provide plain finite JSON without accessors, cycles, sparse arrays or prototype keys.',
- PRINTING_DISPOSED:'This printing binding was disposed. Use the current application binding.',
- CANCELLED:'Printing preparation was cancelled; no new preparation was published.',
+ PRINTING_SIGNED_OUT:'Hãy đăng nhập lại trước khi đọc hồ sơ máy in riêng.',
+ PRINTING_SETTINGS_REQUIRED:'Hãy tải cài đặt tài khoản hiện tại trước khi chọn máy in.',
+ PRINTING_SETTINGS_SCHEMA:'Hãy nhập tài liệu cài đặt schemaVersion 1 có mảng printerProfiles trong giới hạn.',
+ PRINTING_PROFILE_REQUIRED:'Hãy chọn một hồ sơ máy in đã nhập, hợp lệ và đã niêm phong.',
+ PRINTING_PROFILE_DUPLICATE:'Hai bản ghi đã nhập dùng cùng ID hồ sơ. Hãy xóa hoặc đổi tên rõ ràng và niêm phong lại bản cần dùng trước khi chọn.',
+ PRINTING_PROFILE_INVALID:'Hồ sơ đã chọn không qua kiểm tra. Hãy sửa hoặc thay bản ghi niêm phong đã nhập.',
+ PRINTING_REFRESH_REQUIRED:'Chưa có hoặc đã đổi phần chuẩn bị máy in. Hãy làm mới phần in sau khi cài đặt, mô hình và bằng chứng kiểm tra hiện tại sẵn sàng.',
+ PRINTING_CONTEXT_STALE:'Tài khoản, cài đặt, dự án hoặc bằng chứng đã đổi trong lúc chuẩn bị. Hãy chuẩn bị lại lựa chọn hiện tại.',
+ PRINTING_REFRESH_SUPERSEDED:'Một lần chuẩn bị in mới hơn đã thay thế lần này.',
+ PRINTING_MODEL_REQUIRED:'Hãy dựng và áp dụng mô hình cho dự án hiện tại trước khi chuẩn bị xuất cho máy in.',
+ PRINTING_FINAL_EVIDENCE_REQUIRED:'Hãy chờ bằng chứng cảnh cuối của mô hình hiện tại và ánh xạ vật liệu rõ ràng.',
+ PRINTING_RUNTIME_UNVERIFIED:'Hãy cung cấp ABI in đã kiểm và bằng chứng chính xác về module/dịch vụ cho đúng runtime đang chạy.',
+ PRINTING_PROJECT_SCHEDULE_MISMATCH:'Hãy dựng lại bằng lịch lớp đã lưu; phần in không thay đổi giá trị hay gốc của lớp.',
+ PRINTING_PROJECT_PROFILE_MISMATCH:'Dự án dùng chiều cao từ một hồ sơ khác. Hãy áp dụng rõ ràng hồ sơ cần dùng rồi dựng lại.',
+ PRINTING_MATERIAL_UNMAPPED:'Hãy gắn mỗi ID vật liệu của cảnh cuối với vật liệu dự án hiện tại và khe hồ sơ rõ ràng.',
+ PRINTING_MATERIAL_CONFLICT:'ID vật liệu, khe, màu hoặc ánh xạ đầu đùn vật lý bị xung đột. Hãy lưu một ánh xạ nhất quán trước khi xuất.',
+ PRINTING_NATIVE_ID_COLLISION:'ID vật liệu đầy đủ cần các giá trị uint32 riêng biệt và rõ ràng; ID bị thu hẹp hoặc dùng lại không đạt.',
+ PRINTING_ADAPTER_MISMATCH:'Hãy chọn hồ sơ đúng slicer và đúng phiên bản được hỗ trợ.',
+ PRINTING_DATA_LIMIT:'Metadata máy in vượt giới hạn byte JSON, số nút, độ sâu hoặc số mục đã công bố.',
+ PRINTING_DATA_ONLY:'Hãy cung cấp JSON thuần với số hữu hạn, không có accessor, vòng tham chiếu, mảng thưa hoặc khóa prototype.',
+ PRINTING_DISPOSED:'Liên kết in này đã bị hủy. Hãy dùng liên kết hiện tại của ứng dụng.',
+ CANCELLED:'Đã hủy chuẩn bị in; chưa công bố lần chuẩn bị mới nào.',
 });
 export class PrintingAdapterError extends Error{
- constructor(code){super(REASONS[code]??('Printing validation failed ('+code+'). Correct the imported profile or current project mapping.'));this.name='PrintingAdapterError';this.code=code;}
+ constructor(code){super(REASONS[code]??('Kiểm tra in thất bại ('+code+'). Hãy sửa hồ sơ đã nhập hoặc ánh xạ của dự án hiện tại.'));this.name='PrintingAdapterError';this.code=code;}
 }
 const need=(v,c)=>{if(!v)throw new PrintingAdapterError(c);};
 const codeOf=e=>typeof e?.code==='string'&&/^[a-zA-Z][a-zA-Z0-9_-]{1,95}$/.test(e.code)?e.code:'PRINTING_VALIDATION_FAILED';
@@ -201,7 +201,7 @@ export function createPrintingAdapters({settings,context,kernelLeases,finalScene
   }catch(e){return unavailable(e);}
  }
  return Object.freeze({version:PRINTING_APP_VERSION,
-  capabilities:Object.freeze([{id:'printer.list',available:true},{id:'printing.profile-validation',available:true},{id:'printing.target-qualified',available:false,reason:'Imported profiles and real inspection export are distinct from slicer/physical qualification.'}].map(Object.freeze)),
+  capabilities:Object.freeze([{id:'printer.list',available:true},{id:'printing.profile-validation',available:true},{id:'printing.target-qualified',available:false,reason:'Hồ sơ đã nhập và xuất để kiểm tra không thay cho việc kiểm định bằng slicer hay in thực tế.'}].map(Object.freeze)),
   list:async options=>(await refresh(options)).printers,refresh,describe,
   reset(){++serial;++accessSequence;lastAccess=null;epoch={};cache=null;},
   dispose(){++serial;epoch={};cache=null;disposed=true;}

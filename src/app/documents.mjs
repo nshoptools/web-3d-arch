@@ -103,8 +103,8 @@ export function parameterViews(state,canEdit){
  value:typeof value==='boolean'?value:auto?'auto:'+value.mode:layer?String(value.layers):f.type==='height'?String(value.mm):f.type==='tolerance'?'':String(value),
  unit:layer?'layers':f.unit??null,...(f.domain.kind==='range'?{min:String(f.domain.min),max:String(f.domain.max)}:{}),
  ...(numeric?{step:String(f.ui.increment??0.000001)}:{}),...(f.type==='enum'?{options:f.domain.values.map(value=>({value,label:value}))}:auto?{options:[{value:'auto:'+value.mode,label:value.mode}]}:{}),
- advanced:f.ui.advanced,visible:true,enabled,...(!enabled?{reason:!canEdit?'Authorize the current user and unlock this project before changing parameters.':!availability.applicable?'Parameter is retained but inactive':'Select a versioned tolerance through parent capability'}:{}),
- overridden:entries[f.id]?.origin==='user',derivedLabel:f.type==='height'?String(domain.resolveFieldMm(state,f.id))+' mm; geometry/fit unverified':f.verification.geometry};
+ advanced:f.ui.advanced,visible:true,enabled,...(!enabled?{reason:!canEdit?'Hãy đăng nhập và mở khóa dự án này trước khi đổi tham số.':!availability.applicable?'Tham số được giữ lại nhưng đang không có hiệu lực.':'Dung sai được chọn theo phiên bản qua chức năng của nhân, không sửa trực tiếp.'}:{}),
+ overridden:entries[f.id]?.origin==='user',derivedLabel:f.type==='height'?String(domain.resolveFieldMm(state,f.id))+' mm; chưa xác minh hình học/độ khớp':f.verification.geometry};
  });
 }
 export function setParameter(state,id,value){

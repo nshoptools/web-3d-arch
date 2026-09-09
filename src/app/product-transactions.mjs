@@ -42,9 +42,9 @@ export class ProductTransactionOperations {
     // selected until the user confirms this exact proposal. Reprobe then gets
     // a new job at the unchanged committed head and requires its own consent.
     try{await this.proposeOperation({kind:'align manufacturing face',control,changes:[
-     `Actual face ${selected.choice.faceZMm} mm is outside the layer schedule.`,
-     `Propose ${selected.choice.proposedFaceZMm} mm (delta ${selected.choice.deltaMm} mm): ${canonicalJSON(selected.choice.parameterChanges)}`,
-     'Reprobe the prospective geometry before source/material commit; a further datum confirmation is required.'
+     `Mặt thực tế ${selected.choice.faceZMm} mm nằm ngoài lịch lớp.`,
+     `Đề xuất ${selected.choice.proposedFaceZMm} mm (chênh ${selected.choice.deltaMm} mm): ${canonicalJSON(selected.choice.parameterChanges)}`,
+     'Dò lại hình học dự kiến trước khi lưu nguồn/vật liệu; cần thêm một lần xác nhận mốc chuẩn.'
     ],outputHash,verify:()=>candidateHash(output,map),apply:async()=>{
      this.jobGuard(job);this.finishJob(job);const nextJob=this.startJob('Probe explicitly selected face'),nextControl=this.jobControl(nextJob);
      try{const nextPlan=await plan.replan(nextControl,selected.index);return await this.proposeProductTransaction({plan:nextPlan,job:nextJob,control:nextControl,map,command});}

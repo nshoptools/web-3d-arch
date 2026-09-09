@@ -2,14 +2,23 @@ import assert from 'node:assert/strict';
 export class ProductUI {
  constructor(page,{step=45000}={}){this.page=page;this.timeout=step;}
  async tab(name){await this.page.getByRole('tab',{name:new RegExp(name)}).first().click();}
+ /** Unfold a collapsible group of the open panel by its title (source groups start folded). */
+ async openGroup(name){const head=this.page.getByRole('tabpanel').getByRole('button',{name:new RegExp('^'+name)}).first();await head.waitFor({timeout:this.timeout});if(await head.getAttribute('aria-expanded')==='false')await head.click();}
  async ready(){await this.page.getByRole('button',{name:/^Menu tài khoản của/}).waitFor({timeout:60000});}
  async idle(){await this.page.getByRole('group',{name:'Tiến độ xử lý',exact:true}).waitFor({state:'hidden',timeout:this.timeout});}
  async create(product,name){
-  await this.tab('Thư viện');const card=this.page.locator('#w3a-create-library');
-  await card.getByRole('combobox',{name:'Loại sản phẩm',exact:true}).selectOption(product);
-  await card.getByRole('combobox',{name:'Sau khi tạo xong, mở',exact:true}).selectOption('none');
-  const previousName=await this.page.getByRole('textbox',{name:'Tên dự án',exact:true}).inputValue().catch(()=>null);
-  await card.getByRole('button',{name:'Tạo dự án',exact:true}).click();
+  // With no project open the start screen carries the create card; with one
+  // open the same card sits in the library panel. Both publish [data-create-project].
+  const libraryTab=this.page.getByRole('tab',{name:/Thư viện/}).first();
+  const workspace=await libraryTab.count();
+  if(workspace)await this.tab('Thư viện');
+  const card=this.page.locator('[data-create-project]').first();await card.waitFor({timeout:this.timeout});
+  const radio=card.locator('[data-product="'+product+'"]');
+  if(await radio.count())await radio.first().click();
+  else await card.getByRole('combobox',{name:'Loại sản phẩm',exact:true}).selectOption(product);
+  const previousName=workspace?await this.page.getByRole('textbox',{name:'Tên dự án',exact:true}).inputValue().catch(()=>null):null;
+  await card.getByRole('button',{name:/^Tạo dự án/}).first().click();
+  await libraryTab.waitFor({timeout:this.timeout});await this.tab('Thư viện');
   if(previousName!==null)await this.page.waitForFunction(old=>Array.from(document.querySelectorAll('input')).some(e=>e.value==='Untitled'&&e.value!==old),previousName,{timeout:this.timeout});
   await this.page.getByRole('textbox',{name:'Tên dự án',exact:true}).waitFor({timeout:this.timeout});
   const field=this.page.getByRole('textbox',{name:'Tên dự án',exact:true});
@@ -18,7 +27,7 @@ export class ProductUI {
  }
  async importFile(file){
   await this.tab('Ảnh nguồn');
-  const [chooser]=await Promise.all([this.page.waitForEvent('filechooser'),this.page.getByRole('banner').getByRole('button',{name:'Tải nguồn',exact:true}).click()]);
+  const [chooser]=await Promise.all([this.page.waitForEvent('filechooser'),this.page.locator('#w3a-source-import').click()]);
   await chooser.setFiles(file);
   // Observe the actual async operation; no controller/adapter calls.
   await this.page.waitForFunction(name=>document.querySelector('[role="dialog"]')||(!document.querySelector('[aria-label="Tiến độ xử lý"]')&&document.body.innerText.includes(name))||document.querySelector('.toast--error'),file.name,{timeout:this.timeout});

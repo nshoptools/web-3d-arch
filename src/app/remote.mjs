@@ -56,7 +56,7 @@ export class RemoteServices {
    return {id:p.id,label:p.displayName??p.id,connected:c?.status==='active',models:p.models.map(m=>({id:m.id,label:m.displayName??m.id,modelVersion:m.version,supportsReference:m.referenceImages===true,referenceOptions:m.referenceOptions??null,referenceLimits:m.referenceLimits??null,
     qualities:(m.qualities??[]).map(id=>({id,label:id})),sizes:(m.sizes??[]).map(id=>({id,label:id})),legalOptions:p.prices?.tiers?.map(t=>({size:t.size,quality:t.quality}))??null})),
     currency,spent:null,reserved:moneyText(reserved),budget:budget?moneyText(budget.perMonthMicros):null,available:!!available,
-    reason:!p.allowed?'POLICY_BLOCKED':cs.length>1?'AI_CREDENTIAL_SELECTION_REQUIRED':!c||c.status!=='active'?'CONNECT_YOUR_AI':!legal?'MODEL_OPTIONS_UNDECLARED':!budget?'AI_BUDGET_REQUIRED':!this.ledgerComplete?'Ledger is a paginated subset; spent is unknown':undefined,
+    reason:!p.allowed?'POLICY_BLOCKED':cs.length>1?'AI_CREDENTIAL_SELECTION_REQUIRED':!c||c.status!=='active'?'CONNECT_YOUR_AI':!legal?'MODEL_OPTIONS_UNDECLARED':!budget?'AI_BUDGET_REQUIRED':!this.ledgerComplete?'Sổ chi phí mới tải một phần; chưa rõ số đã chi.':undefined,
     credential:c?{label:c.label,masked:c.masked,status:c.status,lastChecked:c.lastChecked}:null};
   });
  }
@@ -83,7 +83,7 @@ export class RemoteServices {
   const ctx=this.context(),a=j.accounting;
   return {id:j.id,operationId:j.operationId,providerId:j.providerId,modelId:j.modelId,createdAt:iso(j.createdAt),state:j.state,currency:a.currency,
    estimated:a.estimatedMicros===null?null:moneyText(a.estimatedMicros),actual:a.actualMicros===null?null:moneyText(a.actualMicros),reserved:moneyText(a.reservedMicros),accountingBasis:a.basis,periodUtc:a.day??'',unresolved:a.unresolved,
-   artifacts:j.artifacts.map(a=>({id:a.id,label:a.mediaType,canApply:!!ctx&&j.projectId===ctx.id&&j.projectRevision===String(ctx.revision),reason:'Application requires original project revision and explicit confirmation'}))};
+   artifacts:j.artifacts.map(a=>({id:a.id,label:a.mediaType,canApply:!!ctx&&j.projectId===ctx.id&&j.projectRevision===String(ctx.revision),reason:'Áp dụng cần đúng bản sửa dự án gốc và xác nhận rõ ràng.'}))};
  }
  async queryJobs(filter={}){
   const q=new URLSearchParams();

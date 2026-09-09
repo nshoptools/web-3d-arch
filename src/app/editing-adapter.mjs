@@ -7,7 +7,7 @@ export function createRasterEditingAdapter({encodePNG,createEditingClient,worker
  assert(typeof encodePNG==='function','PNG_ENCODER_REQUIRED');
  const available=typeof createEditingClient==='function'||typeof workerFactory==='function'||typeof Worker==='function',active=new Set();
  const factory=createEditingClient??(()=>defaultEditingClient({workerURL,workerFactory}));
- return {version:VERSION,capabilities:[{id:'source.edit',available,...(!available?{reason:'Dedicated Worker unavailable'}:{})}],
+ return {version:VERSION,capabilities:[{id:'source.edit',available,...(!available?{reason:'Không có Dedicated Worker để sửa ảnh nguồn.'}:{})}],
   reset(){for(const client of active)client.dispose();active.clear();},
   async edit({ticket,gesture,editor,color,source,raster,signal,onProgress}){
    assert(available,'EDIT_WORKER_UNAVAILABLE');assert(!signal.aborted,'CANCELLED');

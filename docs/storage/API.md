@@ -122,6 +122,15 @@ exportRescuePackage(store,id,{transactionId}) rescues a selected conflict candid
 discardPending(transactionId) explicitly fences that candidate, releases pins and
 cleans eligible bytes. It refuses committed transactions. No silent last writer wins.
 
+A commit whose verified base was the previous generation (load returned
+recoveredPrevious) supersedes a current generation that could not be read. Inside
+the publish transaction the store keeps that manifest as a retained candidate journal
+`superseded:<hash>` (status conflict, reason SUPERSEDED_UNREADABLE_GENERATION) and the
+result carries `supersededRetained`. It stays a cleanup root, is listed by
+pendingTransactions, loads through loadRetainedManifest, is packaged by a whole-project
+rescue and is released only by discardPending. previousHash still points at the
+verified previous generation.
+
 load(id) returns empty, editable, read-only or unrecoverable. Each editable result
 contains verified original bytes and manifest, current headRevision and
 recoveredPrevious. Failed current length/hash/missing reads fall back to previous.

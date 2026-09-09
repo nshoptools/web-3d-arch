@@ -196,7 +196,7 @@ test('EXP-02 PNG cleanup itself yields into a stale session; final guard still d
  const r=T.counters.frameReleases;T.before.release=async()=>{h.context.sessionKey={new:true};};await rejected(()=>h.exporter.export(h.input('png-viewport')),'EXPORT_CONTEXT_STALE');assert.equal(T.counters.frameReleases,r+1);
 }));
 test('EXP-02 old viewport frame keeps its displayed revision; no current-model relabelling',()=>fixture({model:false},async h=>{
- h.frame.displayedRevision=3;const a=await h.exporter.export(h.input('png-viewport'));assert.equal(a.metadata.service.frame.displayedRevision,3);assert.ok(a.metadata.warnings.some(w=>w.includes('revision 3')));
+ h.frame.displayedRevision=3;const a=await h.exporter.export(h.input('png-viewport'));assert.equal(a.metadata.service.frame.displayedRevision,3);assert.ok(a.metadata.warnings.some(w=>w.includes('bản sửa đang hiển thị 3')));
 }));
 test('EXP-02 assembly PNG is labelled as preview while assembly mesh export remains blocked',()=>fixture({},async h=>{
  h.evidence.gates.assemblyView=true;h.frame.view='assembly';const a=await h.exporter.export(h.input('png-viewport'));assert.equal(a.metadata.service.frame.view,'assembly');await rejected(()=>h.exporter.export(h.input('stl-union')),'ASSEMBLY_VIEW');

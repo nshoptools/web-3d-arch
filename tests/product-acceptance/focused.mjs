@@ -41,7 +41,7 @@ try{
  });
  await dismiss();
  await check('NFD-AS-SOURCE-UI',['SRC-04'],'Dùng chữ làm hình produces an adopted source using current exact NFD text and selected original font',async()=>{
-  await ui.create('keychain','focused-'+engine+'-nfd');await ui.tab('Ảnh nguồn');
+  await ui.create('keychain','focused-'+engine+'-nfd');await ui.tab('Ảnh nguồn');await ui.openGroup('Chữ');
   await page.locator('#text-panel-font-q').fill('Be Vietnam Pro');await page.locator('#text-panel-font').selectOption('bevietnampro');
   await page.waitForFunction(()=>document.querySelector('[data-role="text-preview"] .chip')?.textContent==='bevietnampro',undefined,{timeout:45000});
   const field=page.locator('#text-panel-value');await field.fill(vietnameseNFD);await field.blur();
@@ -62,7 +62,7 @@ try{
  });
  await dismiss();
  await check('COLOR-LIBRARY',['SRC-02','GEO-01'],'explicit original Noto COLRv1 asset adoption, conversion consent, original hash retention and actual build',async()=>{
-  await ui.create('keychain','focused-'+engine+'-color');const prior=await ui.revision();await ui.tab('Ảnh nguồn');
+  await ui.create('keychain','focused-'+engine+'-color');const prior=await ui.revision();await ui.tab('Ảnh nguồn');await ui.openGroup('Emoji');
   const group=page.getByRole('group',{name:'Bộ nguồn emoji',exact:true});await group.getByRole('button',{name:/Noto.*(?:COLR|màu)/}).first().click();
   await page.getByRole('searchbox',{name:'Tìm emoji',exact:true}).fill('1F600');
   const item=page.getByRole('listbox',{name:'Lưới emoji',exact:true}).getByRole('option').first();await item.waitFor();const selection=await item.getAttribute('aria-label');await item.click();

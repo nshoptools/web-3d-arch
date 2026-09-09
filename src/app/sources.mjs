@@ -50,7 +50,7 @@ export class SourceOperations {
  async convertSource(target){
   this.requireProject();assert(target==='raster','CONVERSION_TARGET');const source=this.doc.state.content.app.source,a=adapter(this.adapters.source);assert(source&&typeof a.convert==='function','SOURCE_CONVERSION_UNSUPPORTED');
   const file={name:source.name,mediaType:source.mediaType,bytes:new Uint8Array(this.assets.get(source.raw.hash).bytes)},state=freeze(data(this.doc.state));
-  return this.sourceJob(async control=>({file,result:await a.convert({...control,target,state,source:data(source),assets:new Map([...this.assets].map(([h,a])=>[h,new Uint8Array(a.bytes)]))})}),'source',{operation:'convert',forceProposal:true,changes:['Convert source to bounded raster for editing','Retain original source bytes and pre-edit raster']});
+  return this.sourceJob(async control=>({file,result:await a.convert({...control,target,state,source:data(source),assets:new Map([...this.assets].map(([h,a])=>[h,new Uint8Array(a.bytes)]))})}),'source',{operation:'convert',forceProposal:true,changes:['Chuyển nguồn sang raster có giới hạn để chỉnh sửa.','Giữ byte nguồn gốc và raster trước khi sửa.']});
  }
  async addAsset(bytes,kind,map){assert(bytes instanceof Uint8Array&&map.size<10000&&[...map.values()].reduce((n,a)=>n+a.byteLength,0)+bytes.byteLength<=512*1024*1024,'ASSET_BUDGET');bytes=boundedBytes(bytes);const hash=await sha256(bytes);if(!map.has(hash))map.set(hash,{hash,byteLength:bytes.length,bytes,kind});return {hash,byteLength:bytes.length};}
  async previewDescriptor(p,map){
@@ -144,7 +144,7 @@ export class SourceOperations {
      const apply=()=>confirmation?a.acceptProposal({...control,state:freeze(data(base)),confirmation:freeze(data(confirmation)),source:freeze(data(desc)),
       assets:new Map([...map].map(([hash,asset])=>[hash,new Uint8Array(asset.bytes)])),acceptedAtRevision:next.revision},stage):stage(null);
      job.stage='source confirmation';
-     await this.proposeOperation({kind:forceProposal?'source conversion':'source import',changes:reply.changes??(changes.length?changes:['Adopt validated derivative; keep original bytes']),
+     await this.proposeOperation({kind:forceProposal?'source conversion':'source import',changes:reply.changes??(changes.length?changes:['Áp dụng bản dẫn xuất đã kiểm; giữ byte gốc.']),
       outputHash,control,verify:()=>candidateHash(next,map),apply,release:()=>this.finishJob(job)});
     }
     return await stage(null);
@@ -168,7 +168,7 @@ export class SourceOperations {
     };
     job.stage='source confirmation';
     await this.proposeOperation({kind:forceProposal?'source conversion':'source import',
-     changes:reply.changes??(changes.length?changes:['Adopt validated derivative; keep original bytes']),
+     changes:reply.changes??(changes.length?changes:['Áp dụng bản dẫn xuất đã kiểm; giữ byte gốc.']),
      outputHash,control,verify:()=>candidateHash(next,map),apply,release:()=>this.finishJob(job)});
    }
    await this.enqueue(()=>{this.jobGuard(job);return this.edit(next,{type:'source.import',purpose,name:file.name},{assets:map,signal:job.abort.signal});});

@@ -87,7 +87,7 @@ try{
  });
  if(await page.getByRole('dialog').count())await page.keyboard.press('Escape');
  await check('FLOW-NFD',['SRC-04','VEC-01'],'actual original Be Vietnam Pro font, NFD string and production text pipeline','exact NFD source text/original font and real product build',async()=>{
-  await ui.create('keychain','acceptance-'+engine+'-nfd');await ui.tab('Ảnh nguồn');
+  await ui.create('keychain','acceptance-'+engine+'-nfd');await ui.tab('Ảnh nguồn');await ui.openGroup('Chữ');
   await page.locator('#text-panel-font-q').fill('Be Vietnam Pro');await page.locator('#text-panel-font').selectOption('bevietnampro');
   const text=page.locator('#text-panel-value');await text.fill(vietnameseNFD);await text.blur();
   await page.waitForFunction(value=>document.querySelector('[data-role="text-preview"] strong')?.textContent===value,vietnameseNFD,{timeout:45000});
@@ -98,7 +98,7 @@ try{
  });
  if(await page.getByRole('dialog').count())await page.keyboard.press('Escape');
  await check('FLOW-COLOR',['SRC-02','GEO-01'],'actual colored source library item and original assets','explicit Noto color collection choice, original colored asset adoption and real build',async()=>{
-  await ui.create('keychain','acceptance-'+engine+'-color');await ui.tab('Ảnh nguồn');
+  await ui.create('keychain','acceptance-'+engine+'-color');await ui.tab('Ảnh nguồn');await ui.openGroup('Emoji');
   const collections=await page.getByRole('group',{name:'Bộ nguồn emoji',exact:true}).innerText();
   const colorButton=page.getByRole('group',{name:'Bộ nguồn emoji',exact:true}).getByRole('button',{name:/Noto.*(?:COLR|màu)/}).first();
   assert.equal(await colorButton.count(),1,'explicit color source selector');await colorButton.click();

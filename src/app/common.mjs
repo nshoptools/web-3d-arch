@@ -1,6 +1,7 @@
 import {cloneJSON,parseJSON,canonicalJSON,sha256,check,keys,integer} from '../storage/common.mjs';
 import {EXPORT_MESSAGES} from './export-messages.mjs';
 import {PROFILE_MESSAGES} from './profile-messages.mjs';
+import {APP_MESSAGES} from './app-messages.mjs';
 export {cloneJSON,parseJSON,canonicalJSON,sha256,check,keys,integer};
 export const VERSION='arch-app-adapters/1';
 export const utf8=new TextEncoder();
@@ -10,8 +11,8 @@ export function error(code,message=code,details={}) {return Object.assign(new Er
 export function assert(ok,code,details){if(!ok)throw error(code,code,details);}
 export function diagnostic(e){
  const code=typeof e.code==='string'?e.code:(e.name==='AbortError'?'CANCELLED':e.name??'APP_OPERATION_FAILED');
- const message=Object.hasOwn(PROFILE_MESSAGES,code)?PROFILE_MESSAGES[code]:Object.hasOwn(EXPORT_MESSAGES,code)?EXPORT_MESSAGES[code]:typeof e.code==='string'?code:'Application operation failed';
- return {code,message,severity:'error',...(e.requestId?{detail:'Request '+e.requestId}:{})};
+ const message=Object.hasOwn(PROFILE_MESSAGES,code)?PROFILE_MESSAGES[code]:Object.hasOwn(EXPORT_MESSAGES,code)?EXPORT_MESSAGES[code]:Object.hasOwn(APP_MESSAGES,code)?APP_MESSAGES[code]:typeof e.code==='string'?code:'Thao tác của ứng dụng thất bại.';
+ return {code,message,severity:'error',...(e.requestId?{detail:'Yêu cầu '+e.requestId}:{})};
 }
 export function freeze(v){if(v&&typeof v==='object'&&!ArrayBuffer.isView(v)){Object.values(v).forEach(freeze);Object.freeze(v);}return v;}
 export function data(v){return cloneJSON(v);}

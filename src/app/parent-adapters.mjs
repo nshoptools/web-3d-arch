@@ -15,7 +15,7 @@ export function createEngineAdapter({client,readArchSnapshot,identity,selectReci
     const [widthMm,depthMm,heightMm]=snapshot.bounds.size;let released=false;
     const model={version:VERSION,ticket:data(ticket),generation,leaseId:'kernel-'+root.epoch+'-'+root.id,bytes:()=>{assert(!released,'LEASE_RELEASED');return root.bytes();},
      stats:{widthMm,depthMm,heightMm,triangles:snapshot.triangles.length/3,materialCount:snapshot.parts.length,verdict:'unverified'},
-     blocks:snapshot.parts.map(p=>({id:'part-'+p.index,label:'Part '+(p.index+1),kind:'body',materialId:null})),
+     blocks:snapshot.parts.map(p=>({id:'part-'+p.index,label:'Khối '+(p.index+1),kind:'body',materialId:null})),
      release(){if(!released){released=true;kernelLeases.delete(model);root.release();}}};
     kernelLeases.set(model,root);retained=true;return model;
    }finally{signal.removeEventListener('abort',cancel);if(!retained)root?.release();}
@@ -32,11 +32,11 @@ export function svgExtrusionRecipe({toleranceMm,authorizeScope}){
 }
 export function createThreeViewportAdapter({ThreeViewport,onSelection=()=>{},onDiagnostic=()=>{},onCapabilitiesChanged=()=>{}}){
  let viewport=null,printer=null;
- return {version:VERSION,capabilities:[{id:'viewport.webgl',available:false,reason:'Viewport has not been attached/probed'},{id:'viewport.center-bed',available:false,reason:'Select a verified bed profile before centering'}],
+ return {version:VERSION,capabilities:[{id:'viewport.webgl',available:false,reason:'Khung 3D chưa được gắn hoặc kiểm tra.'},{id:'viewport.center-bed',available:false,reason:'Hãy chọn hồ sơ bàn in đã kiểm chứng trước khi căn giữa.'}],
   attach(host){
    assert(!viewport,'VIEWPORT_ALREADY_ATTACHED');viewport=new ThreeViewport(host,{onSelection,onDiagnostic});if(printer)viewport.setPrinter(printer);
    this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:true}:c);onCapabilitiesChanged();
-   const attached=viewport;let detached=false;return ()=>{if(detached)return;detached=true;attached.dispose();if(viewport!==attached)return;viewport=null;this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:false,reason:'Viewport detached'}:c);onCapabilitiesChanged();};
+   const attached=viewport;let detached=false;return ()=>{if(detached)return;detached=true;attached.dispose();if(viewport!==attached)return;viewport=null;this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:false,reason:'Khung 3D đã được tháo.'}:c);onCapabilitiesChanged();};
   },
   setModel(input){if(viewport)viewport.setModel(input);},
   action(action){assert(viewport,'VIEWPORT_NOT_ATTACHED');return viewport.action(action);},
@@ -44,6 +44,6 @@ export function createThreeViewportAdapter({ThreeViewport,onSelection=()=>{},onD
   describeFrame(){return viewport?.describeFrame()??{status:'disabled',reasonCode:'PNG_VIEWPORT_UNAVAILABLE',reason:'Khung 3D chưa được gắn.'};},
   capturePNG(descriptor,control){assert(viewport,'VIEWPORT_NOT_ATTACHED');return viewport.capturePNG(descriptor,control);},
   setPrinter(profile){printer=profile;viewport?.setPrinter(profile);this.capabilities=this.capabilities.map(c=>c.id==='viewport.center-bed'?{id:c.id,available:!!profile}:c);onCapabilitiesChanged();},
-  clear(){viewport?.clear();},clearPrivateState(){viewport?.clear();viewport?.setPrinter(null);printer=null;this.capabilities=this.capabilities.map(c=>c.id==='viewport.center-bed'?{id:c.id,available:false,reason:'Select a verified bed profile before centering'}:c);}
+  clear(){viewport?.clear();},clearPrivateState(){viewport?.clear();viewport?.setPrinter(null);printer=null;this.capabilities=this.capabilities.map(c=>c.id==='viewport.center-bed'?{id:c.id,available:false,reason:'Hãy chọn hồ sơ bàn in đã kiểm chứng trước khi căn giữa.'}:c);}
  };
 }

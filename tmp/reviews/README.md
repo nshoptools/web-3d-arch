@@ -1,4 +1,4 @@
-# Ba phòng review độc lập
+# Các phòng review độc lập
 
 **Chỉ đạo hiện hành ngày 2026-09-08: ngừng sử dụng Opus.** Hub/Codex/Grok
 tiếp tục dự án. Không gọi, tiếp tục, fork hoặc giao agent con Opus; không tự
@@ -16,6 +16,7 @@ Dùng `tools/agents/start-opus.ps1` để áp dụng cấu hình và cô lập t
 
 | Ghế | Phòng ghi riêng |
 | --- | --- |
+| Gemini | `gemini/runs/<ma-phien>/` |
 | Grok | `grok/runs/<ma-phien>/` |
 | Opus / Claude | `opus/runs/<ma-phien>/` |
 | Codex | `codex/runs/<ma-phien>/` |

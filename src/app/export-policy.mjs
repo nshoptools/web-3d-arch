@@ -14,7 +14,7 @@ export function declaredFormats(adapter,context){
   assert(f&&typeof f.id==='string'&&/^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$/.test(f.id)&&!RESERVED.has(f.id)&&!ids.has(f.id),'EXPORT_REGISTRY_INVALID');ids.add(f.id);
   assert(text(f.label,200)&&typeof f.extension==='string'&&/^[A-Za-z0-9][A-Za-z0-9._-]{0,79}$/.test(f.extension)&&typeof f.enabled==='boolean'&&['pass','fail','unverified','unsupported'].includes(f.verdict),'EXPORT_REGISTRY_INVALID');
   return {id:f.id,label:f.label,extension:f.extension,enabled:f.enabled,verdict:f.verdict,prerequisite:f.prerequisite??'matching-model',
-   ...(!f.enabled?{reason:text(f.reason)??'This exporter cannot serialize the selected format.',reasonCode:text(f.reasonCode,80)??'UNSUPPORTED_EXPORTER'}:{})};
+   ...(!f.enabled?{reason:text(f.reason)??'Bộ xuất này chưa ghi được định dạng đã chọn.',reasonCode:text(f.reasonCode,80)??'UNSUPPORTED_EXPORTER'}:{})};
  });
 }
 function hasCommittedSource(source,assets){
@@ -25,27 +25,27 @@ function hasCommittedSource(source,assets){
 /** Pure gate selection shared by the public snapshot and the actual export command.
  * Adapter enabled is serialization readiness, not proof of geometry/fit qualification. */
 export function gateExport(option,{state,model,renderer,projectId,canEdit,assets}){
- if(!REQUIREMENTS.has(option.prerequisite)){const {prerequisite,...unknown}=option;return blocked(unknown,'UNSUPPORTED_EXPORTER','The exporter has not declared a supported data prerequisite.');}
- if(!state||!projectId)return blocked(option,'PROJECT_REQUIRED','Open a committed project before exporting.');
- if(!canEdit)return blocked(option,'PROJECT_LOCKED','Authorize the current user and unlock this project before exporting.');
+ if(!REQUIREMENTS.has(option.prerequisite)){const {prerequisite,...unknown}=option;return blocked(unknown,'UNSUPPORTED_EXPORTER','Bộ xuất chưa khai báo điều kiện dữ liệu được hỗ trợ.');}
+ if(!state||!projectId)return blocked(option,'PROJECT_REQUIRED','Hãy mở một dự án đã lưu trước khi xuất.');
+ if(!canEdit)return blocked(option,'PROJECT_LOCKED','Hãy đăng nhập và mở khóa dự án này trước khi xuất.');
  if(!option.enabled)return option;
  if(option.prerequisite==='committed-source'&&!hasCommittedSource(state.content.app.source,assets))
-  return blocked(option,'NO_SNAPSHOT','Commit a valid 2D source with its retained bytes before exporting.');
+  return blocked(option,'NO_SNAPSHOT','Hãy lưu một nguồn 2D hợp lệ cùng byte gốc trước khi xuất.');
  if(option.prerequisite==='renderer'&&!renderer?.available)
-  return blocked(option,'NO_SNAPSHOT','Attach an available viewport renderer before exporting its image.');
+  return blocked(option,'NO_SNAPSHOT','Hãy gắn khung 3D đang hoạt động trước khi xuất ảnh của nó.');
  if(option.prerequisite==='matching-model'){
-  if(!model)return blocked(option,'NO_SNAPSHOT','Build and apply a complete model before exporting this format.');
+  if(!model)return blocked(option,'NO_SNAPSHOT','Hãy dựng và áp dụng mô hình hoàn chỉnh trước khi xuất định dạng này.');
   if(model.ticket.projectId!==projectId||model.ticket.revision!==state.revision)
-   return blocked(option,'STALE_REVISION','Build and apply the current project revision before exporting this format.');
+   return blocked(option,'STALE_REVISION','Hãy dựng và áp dụng bản sửa hiện tại của dự án trước khi xuất định dạng này.');
   if(state.content.app.mesh&&!state.content.app.mesh.applied)
-   return blocked(option,'UNAPPLIED_MESH_EDIT','Apply imported mesh edits before exporting this mesh format.');
+   return blocked(option,'UNAPPLIED_MESH_EDIT','Hãy áp dụng các thay đổi của khối nhập trước khi xuất định dạng lưới này.');
  }
  const {reason,reasonCode,...enabled}=option;return {...enabled,enabled:true};
 }
 export function rescueOption({projectId,canRescue}){
- const option={id:'project',label:'Rescue project package',extension:'arch-project.zip',prerequisite:'project-bytes',enabled:true,verdict:'unverified'};
- if(!projectId)return blocked(option,'PROJECT_REQUIRED','Open a locally committed project before exporting its rescue package.');
- if(!canRescue)return blocked(option,'PROJECT_LOCKED','Rescue requires local bytes authorized for the current user.');
+ const option={id:'project',label:'Gói cứu hộ dự án',extension:'arch-project.zip',prerequisite:'project-bytes',enabled:true,verdict:'unverified'};
+ if(!projectId)return blocked(option,'PROJECT_REQUIRED','Hãy mở một dự án đã lưu trên máy trước khi xuất gói cứu hộ.');
+ if(!canRescue)return blocked(option,'PROJECT_LOCKED','Cứu hộ cần dữ liệu trên máy thuộc quyền của người dùng hiện tại.');
  return option;
 }
 export function settingsOption({authenticated,online,canDownload}){

@@ -617,7 +617,7 @@ export function createProductAdapters({operation,kernelLeases,context,withPrepar
   throw new ProductAppError('PRODUCT_GEOMETRY_PROPOSAL',{code:error.code,head:proposal.head});
  }
  const engine={version:VERSION,identity:freeze({id:'arch-product-app',version:'1'}),capabilities:[
-  {id:'geometry.build',available:true},{id:'geometry.import-csg',available:false,reason:'Actual parent import CSG is not bound.'}],
+  {id:'geometry.build',available:true},{id:'geometry.import-csg',available:false,reason:'Chức năng nhập CSG của nhân chưa được gắn.'}],
   async build(input){
    let root,model,requestRecord,success=false;
    try{

@@ -1,4 +1,19 @@
 import {assert,error,data,canonicalJSON,sha256,uuid} from './common.mjs';
+/** Human titles for the confirmation dialog. The machine `kind` stays untouched in
+ * `controller.pendingChange.kind`; an unknown kind is shown behind a generic prefix. */
+const PROPOSAL_TITLES=Object.freeze({
+ 'geometry parameter change':'Xác nhận thay đổi tham số hình học',
+ 'geometry approximation':'Xác nhận phép xấp xỉ hình học',
+ 'export conditioning':'Xác nhận điều chỉnh khi xuất',
+ 'export approximation':'Xác nhận phép xấp xỉ khi xuất',
+ 'source import':'Xác nhận nhập nguồn',
+ 'source conversion':'Xác nhận chuyển đổi nguồn',
+ 'align manufacturing face':'Xác nhận căn mặt chế tạo',
+ 'product source update':'Xác nhận cập nhật nguồn sản phẩm',
+ 'đơn vị và vật liệu khối nhập':'Xác nhận đơn vị và vật liệu khối nhập',
+ 'áp dụng khối nhập':'Xác nhận áp dụng khối nhập'
+});
+export function proposalTitle(kind){return Object.hasOwn(PROPOSAL_TITLES,kind)?PROPOSAL_TITLES[kind]:'Xác nhận: '+kind;}
 export async function candidateHash(state,assets){
  const hashes=[];for(const [hash,a]of assets){assert(await sha256(a.bytes)===hash,'PROPOSAL_OUTPUT_CHANGED');hashes.push(hash);}
  return sha256(canonicalJSON({state,assets:hashes.sort()}));
@@ -23,7 +38,7 @@ export class ProposalOperations {
    if(!transferred)ownedJob?.abort.abort();try{release();}finally{if(ownedJob&&!transferred)this.finishJob(ownedJob);}};
   const p={id:uuid(),kind,changes:data(changes),outputHash,verify,apply,release:releaseOnce,control,projectId:this.projectId,revision:this.doc.state.revision,headRevision:this.headRevision,epoch:this.epoch};
   this.pendingOperation=p;this.emit();const e=error('PROPOSAL_REQUIRED');
-  e.confirmation={title:'Confirm '+kind,changes:p.changes,retry:{type:'proposal.accept',id:p.id,confirmed:true}};throw e;
+  e.confirmation={title:proposalTitle(kind),changes:p.changes,retry:{type:'proposal.accept',id:p.id,confirmed:true}};throw e;
  }
  async acceptOperation(id,confirmed){
   const p=this.pendingOperation;assert(p?.id===id&&confirmed===true,'STALE_CONFIRMATION');
