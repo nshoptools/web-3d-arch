@@ -13,6 +13,8 @@ import {ProposalOperations} from './proposals.mjs';
 import {exportContext,declaredFormats,gateExport,rescueOption,settingsOption} from './export-policy.mjs';
 import {exportConfigurationView} from './export-configuration.mjs';
 import {createPrinterProfileLibrary} from './printer-profiles.mjs';
+/** Which scope each recorded refusal belongs to; the diagnostic objects themselves stay contract-shaped. */
+const diagnosticScopes=new WeakMap();
 const cap=(id,available,reason)=>({id,available:!!available,...(!available?{reason:typeof reason==='string'&&reason.trim()?reason:'Bản dựng hiện tại chưa cung cấp chức năng này.'}:{})});
 export function createAppController(options){return new AppController(options);}
 export class AppController {
@@ -40,10 +42,19 @@ export class AppController {
  emit(){this.version++;this.snapshot=this.makeSnapshot();for(const f of [...this.listeners]){try{f();}catch{}}void this.profileLibrary?.refresh().catch(()=>{});}
  subscribe(f){assert(typeof f==='function','LISTENER');this.listeners.add(f);return ()=>this.listeners.delete(f);}
  getSnapshot(){return this.snapshot;}
- report(e){if(e.code==='HISTORY_PRUNING_REQUIRED'&&this.pendingChange)e.confirmation={title:'Giảm lịch sử được giữ lại',changes:['Giữ bản chụp hiện tại; cắt bớt các giao dịch cũ nhất để về trong hạn mức.'],retry:{type:'proposal.accept',id:this.pendingChange.id,confirmed:true}};const d=diagnostic(e);
+ report(e,scope=null){if(e.code==='HISTORY_PRUNING_REQUIRED'&&this.pendingChange)e.confirmation={title:'Giảm lịch sử được giữ lại',changes:['Giữ bản chụp hiện tại; cắt bớt các giao dịch cũ nhất để về trong hạn mức.'],retry:{type:'proposal.accept',id:this.pendingChange.id,confirmed:true}};const d=diagnostic(e);
   // A refusal that carries a confirmation is a question shown in a dialog, not a problem to keep on the warning strip after it was answered.
+  if(scope)diagnosticScopes.set(d,scope);
   if(!e.confirmation)this.diagnostics=this.diagnostics.slice(-19).concat(d);this.emit();return {ok:false,diagnostic:d,...(e.confirmation?{confirmation:e.confirmation}:{})};}
- async result(fn){try{const value=await fn();return {ok:true,...value};}catch(e){try{await this.resetBarrier;}catch(reset){return this.report(reset);}return this.report(e);}}
+ /** A refusal is about the command that was refused. When a later command of the same scope succeeds,
+  * the earlier refusal is no longer a problem to review (Grok R-01: a refused file stayed on the strip after a good import). */
+ async result(fn,scope=null){
+  try{
+   const value=await fn();
+   if(scope&&this.diagnostics.some(d=>diagnosticScopes.get(d)===scope)){this.diagnostics=this.diagnostics.filter(d=>diagnosticScopes.get(d)!==scope);this.emit();}
+   return {ok:true,...value};
+  }catch(e){try{await this.resetBarrier;}catch(reset){return this.report(reset,scope);}return this.report(e,scope);}
+ }
  enqueue(fn){const epoch=this.epoch;const p=this.queue.then(()=>{assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(this.onlineSession)return this.preflight(epoch).then(()=>{this.guard(epoch);return fn();});return fn();});this.queue=p.catch(()=>{});return p;}
  editingAllowed(){const s=this.store?.status();return !!s&&!this.readOnly&&s.canEdit&&!s.writeBlocked&&!s.capabilities.database.readOnly;}
  guard(epoch=this.epoch){assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(!this.editingAllowed()){

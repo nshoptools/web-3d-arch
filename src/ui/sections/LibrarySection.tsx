@@ -52,7 +52,16 @@ export function LibrarySection() {
       const file = await chooseFile(ACCEPT_PROJECT)
       if (!file) return
       const result = await bridge.importFile(file, 'project')
-      if (result.ok) await rebuild()
+      if (!result.ok) return result
+      // The package of a project still in the library opens that project and
+      // says so as a diagnostic; the success sentence must not claim otherwise.
+      const latest = bridge.getSnapshot().diagnostics.at(-1)
+      if (latest?.code === 'PACKAGE_PROJECT_EXISTS') {
+        actions.toast('info', latest.message)
+        await rebuild()
+        return
+      }
+      await rebuild()
       return result
     },
     { success: 'Đã mở gói dự án.' },

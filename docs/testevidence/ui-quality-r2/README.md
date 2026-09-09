@@ -24,23 +24,30 @@ này. Bản đầy đủ (45 ảnh trước, 60 ảnh sau, aria snapshot) ở ph
 | Bộ kiểm | Kết quả | Phòng phiên / log |
 | --- | --- | --- |
 | `npx tsc -p tsconfig.json` | đạt | — |
-| `tests/app/run.ps1 -Seat codex -Browsers chromium` | Node 0, types 0, browser 0 (đạt) | `20260909-hub-quality-r2-app` |
-| Node: `tests/app/*.node.test.mjs`, `tests/storage/*.node.test.mjs`, `tests/domain`, `tests/product-app`, `tests/raster-adoption` với nhân canonical `report/build/20260908-internal` | đạt (các ca cần HTTP fixture đạt trong `run.ps1`; product-app 3 tệp và raster-adoption 5 ca đạt khi có `PRODUCT_APP_MODULE`/fixture) | `20260909-hub-quality-r2/evidence/tests/` |
+| `tests/app/run.ps1 -Seat codex -Browsers chromium` | Node 0, types 0, browser 0 (đạt) ở ba lần chạy (`-app`, `-app2`, `-app3` trên mã cuối) | `20260909-hub-quality-r2-app3` |
+| Node trên mã cuối: `tests/app/*.node.test.mjs`, `tests/storage/*.node.test.mjs`, `tests/domain`, `tests/product-app`, `tests/raster-adoption` với nhân canonical `report/build/20260908-internal` | 117 đạt / 1 lỗi môi trường (`portability.node.test.mjs` cần cây dàn dựng của `run.ps1`, ở đó đạt) | `20260909-hub-quality-r2/evidence/tests/node-final.log` |
 | `tests/storage/package-roundtrip.node.test.mjs` (thêm ca khôi phục dưới mã cũ) | 3/3 đạt | cùng trên |
-| `tests/ui/request-boundary/run.ps1 -Engines chromium` | đạt | `20260909-hub-quality-r2-rb` |
-| `tests/ui/export-consent/run.mjs` (Chromium, đủ nhóm; harness mở các nhóm gập trước khi điền) | 32/32 đạt ở lần chạy `ec4` | `20260909-hub-quality-r2-ec4` |
-| `tests/e2e/application.test.mjs` (Chromium, Firefox, WebKit) | đạt sau khi đổi nhãn nút chuyển raster trong test | `20260909-hub-quality-r2/evidence/tests/e2e-application.log` |
+| `tests/ui/request-boundary/run.ps1 -Engines chromium` | đạt (hai lần, lần cuối trên mã cuối) | `20260909-hub-quality-r2-rb2` |
+| `tests/ui/export-consent/run.mjs` (Chromium, đủ nhóm; harness mở các nhóm gập trước khi điền) | 32/32 đạt (`ec4`, `ec5`, `ec6` trên mã cuối) | `20260909-hub-quality-r2-ec6` |
+| `tests/e2e/application.test.mjs` (Chromium, Firefox, WebKit) | hai lần đầu lỗi vì test và giao diện lệch nhãn (nút chuyển raster; nhãn “Chế độ chung…” — giao diện đổi lại cho khớp); lần cuối trên mã cuối đạt cả ba engine | `20260909-hub-quality-r2/evidence/tests/e2e-application-4.log` |
 
 Chưa chạy: `tests/csg-controller/run.ps1` (input ghim candidate cũ, không kiểm cây
 hiện tại), `tests/product-acceptance` (cần gói release ghim). Firefox/WebKit của
 hai harness UI chưa chạy lại trong đợt này.
 
+Ảnh vòng 2 (sau khi sửa theo phản biện bản tích hợp) trong phòng Hub: `r6-01`…`r6-05`
+(emoji ba xác nhận rồi mô hình), `r5-04` (kéo thanh trượt một lần dựng).
+
 ## Phản biện độc lập
 
 - Grok 4.6 (xhigh), `tmp/reviews/grok/runs/20260909-grok-quality-r2/`: 14 phát hiện
   trên `1adf6d79` (13 tái hiện live), đối chiếu 14 hướng: đồng ý 10, sửa 3 (D1, D3,
-  D10), bác 1 (D14 là công cụ). Vòng 2 trên bản tích hợp: `20260909-grok-quality-r2b`.
+  D10), bác 1 (D14 là công cụ). Vòng 2 trên bản tích hợp `79315627`
+  (`20260909-grok-quality-r2b`, live): 8 `fixed`, 5 `partly`, 0 hồi quy, 4 mục mới
+  (R-01…R-04) — Hub sửa cả bốn; vòng 2c kiểm lại phần đã đổi: `20260909-grok-quality-r2c`.
 - Gemini 3.1 Pro (high), `tmp/reviews/gemini/runs/20260909-gemini-quality-r2/`: 3 phát
-  hiện live (đều trùng D3/D6/D7), đồng ý 14/14 hướng. Vòng 2: `20260909-gemini-quality-r2b`.
+  hiện live (đều trùng D3/D6/D7), đồng ý 14/14 hướng. Vòng 2 (`20260909-gemini-quality-r2b`):
+  lượt đầu chỉ đọc mã, lượt sau chạy live luồng SVG → dựng → Thông số → Xuất; F1–F3
+  `fixed`, không mục mới.
 - Bảng xử lý từng phát hiện và lý do các mục không sửa nằm ở
   `tmp/reviews/codex/runs/20260909-hub-quality-r2/reports/HUB-QUALITY-R2.md`.

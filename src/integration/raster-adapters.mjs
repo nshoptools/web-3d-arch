@@ -103,6 +103,7 @@ function changesFor(readable) {
   const changes=['Tách ảnh thành các vùng vật liệu từ điểm ảnh (quy tắc '+readable.semantics+'). Hình học dẫn xuất này là thứ sẽ được dựng và in, nên cần bạn xác nhận đúng bản này.'];
   changes.push(...readable.confirmationReasons.map(x=>REASON_TEXT[x]??('Xấp xỉ: '+x.slice(0,1500))));
   changes.push('Cỡ điểm ảnh xử lý không phải độ chính xác của máy in. Byte gốc và ảnh RGBA trước xử lý vẫn được giữ để sửa.');
+  changes.push('Sau khi áp dụng, các vùng này thành vật liệu của sản phẩm và mô hình được dựng ngay; màu và khe đổi được ở khu Lớp màu.');
   return [...new Set(changes)].slice(0,40);
 }
 function stableSummary(s,m) {

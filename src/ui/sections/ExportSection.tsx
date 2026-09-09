@@ -96,6 +96,15 @@ export function ExportSection() {
       const group = groupOf(option)
       if (group) byGroup[group].push(option)
     }
+    // Within the print group the file a person came for — enabled and with a
+    // passing geometry verdict — is the first button; test-only paths follow;
+    // shut paths last. The published order is kept inside each rank.
+    const rank = (option: ExportOption) =>
+      !option.enabled ? 2 : verdictApplies(exportPrerequisite(option)) && option.verdict !== 'pass' ? 1 : 0
+    byGroup.print = byGroup.print
+      .map((option, index) => ({ option, index }))
+      .sort((a, b) => rank(a.option) - rank(b.option) || a.index - b.index)
+      .map((entry) => entry.option)
     return byGroup
   }, [exports])
 

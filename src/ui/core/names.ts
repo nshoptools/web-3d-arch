@@ -9,6 +9,21 @@
 import type { MaterialView, ProductId, ProjectView } from '../../contracts/app-bridge.ts'
 
 /** The native roles a product prints, as `src/integration/product-transactions.mjs` lists them. */
+/**
+ * The emoji a source file stands for, read from the name the emoji adapter
+ * gives its selection file (`emoji-<collection>-<hex[-hex]>.arch-emoji.json`).
+ * Null when the name is not of that shape; nothing is guessed from bytes.
+ */
+export function emojiGlyphOf(name: string): string | null {
+  const match = /^emoji-.+?-([0-9a-f]{4,6}(?:-[0-9a-f]{4,6})*)\.arch-emoji\.json$/i.exec(name)
+  if (!match) return null
+  try {
+    return String.fromCodePoint(...match[1].split('-').map((hex) => Number.parseInt(hex, 16)))
+  } catch {
+    return null
+  }
+}
+
 export const PRODUCT_ROLES: Record<ProductId, readonly string[]> = {
   keychain: ['body', 'rim', 'artwork', 'text', 'textBase'],
   clicky: ['body', 'stem', 'tray', 'artwork', 'text', 'textBase'],

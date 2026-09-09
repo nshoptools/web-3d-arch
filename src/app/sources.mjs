@@ -214,7 +214,7 @@ export class SourceOperations {
   }
   assert(['source','mesh','font'].includes(purpose),'IMPORT_PURPOSE');
   await this.sourceJob(async()=>({file:{name:file.name,mediaType:file.type,bytes}}),purpose);
- });}
+ },'import:'+purpose);}
  editSource(gesture){return this.result(async()=>{
   this.requireProject();const s=this.doc.state,source=s.content.app.source,a=adapter(this.adapters.editing);
   assert(source?.raster&&gesture.projectRevision===s.revision&&gesture.sourceRevision===source.revision,'SOURCE_REVISION_CONFLICT');
@@ -233,7 +233,7 @@ export class SourceOperations {
     if(editLineage)src.metadata=boundedSourceMetadata({...src.metadata,productEditLineage:editLineage});});
    await this.enqueue(()=>{this.jobGuard(job);return this.edit(next,{type:'editor.gesture',id:gesture.id,tool:gesture.tool},{assets:map,signal:job.abort.signal});});
   }finally{this.finishJob(job);}
- });}
+ },'edit-source');}
  url(hash){if(!hash)return undefined;if(!this.urls.has(hash)){const a=this.assets.get(hash);if(!a)return undefined;this.urls.set(hash,this.objectURLs.createObjectURL(new Blob([a.bytes],{type:'image/png'})));}return this.urls.get(hash);}
  async queryEmoji(query,collectionId,offset){
   const a=adapter(this.adapters.source);assert(a.queryEmoji,'EMOJI_UNSUPPORTED');
@@ -265,5 +265,5 @@ export class SourceOperations {
   }catch{}
  }
  async queryFonts(query){const a=adapter(this.adapters.source);assert(a.queryFonts,'FONT_CATALOG_UNSUPPORTED');return a.queryFonts(query);}
- selectEmoji(id,collectionId){return this.result(async()=>{await this.rememberEmoji(id,collectionId);return this.sourceJob(async control=>{const a=adapter(this.adapters.source);assert(a.selectEmoji,'EMOJI_UNSUPPORTED');return a.selectEmoji({...control,id,collectionId});},'source');});}
+ selectEmoji(id,collectionId){return this.result(async()=>{await this.rememberEmoji(id,collectionId);return this.sourceJob(async control=>{const a=adapter(this.adapters.source);assert(a.selectEmoji,'EMOJI_UNSUPPORTED');return a.selectEmoji({...control,id,collectionId});},'source');},'import:source');}
 }

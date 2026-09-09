@@ -1,8 +1,8 @@
 {
- "version": 27,
- "updatedAt": "2026-09-09T14:30:00+00:00",
+ "version": 28,
+ "updatedAt": "2026-09-09T19:30:00+00:00",
  "releaseReady": false,
- "phase": "Hub quality pass 2 2026-09-09 (Grok + Gemini independent reviews, both rounds): picture/emoji sources reach a model through a primary action that names the next source step; project packages restore under their own id and rebuild on open; parameter and colour edits apply without a consent dialog; waiting state named; one-row top bar, compact stage bands, folded viewport group, self-dismissing toasts, product-scoped materials, task-grouped export panel, Vietnamese names and diagnostics. Website package rebuild still blocked by the kernel receipt pin.",
+ "phase": "Hub quality pass 2 2026-09-09 (Grok + Gemini independent reviews, both rounds): picture/emoji sources reach a model through a primary action that names the next source step; project packages restore under their own id and rebuild on open; parameter and colour edits apply without a consent dialog; waiting state named; one-row top bar, compact stage bands, folded viewport group, self-dismissing toasts, product-scoped materials, task-grouped export panel, Vietnamese names and diagnostics. Round 2 of both seats on the integrated build handled (stale-proposal dialogs close, mesh watchdog reported not thrown, one consent per source-conversion step, refusal diagnostics scoped, package-exists toast, print exports ordered, emoji card title, dev login mints sessions). Website package rebuild still blocked by the kernel receipt pin.",
  "agents": {
   "aiAdapters": {
    "id": "01a07d23-af29-7012-ba5f-4aed7b260563",

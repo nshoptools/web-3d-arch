@@ -7,6 +7,7 @@ import { CollapsibleGroup } from '../components/Group.tsx'
 import { TextControls } from '../text/TextControls.tsx'
 import { EmojiPicker } from '../emoji/EmojiPicker.tsx'
 import { formatNumber } from '../core/text.ts'
+import { emojiGlyphOf } from '../core/names.ts'
 
 const KIND_LABEL = {
   raster: 'Ảnh raster',
@@ -69,7 +70,9 @@ export function SourceSection() {
               />
             ) : null}
             <div className="grow">
-              <strong style={{ overflowWrap: 'anywhere' }}>{source.name}</strong>
+              <strong style={{ overflowWrap: 'anywhere' }} title={source.name}>
+                {source.kind === 'emoji' && emojiGlyphOf(source.name) ? `Emoji ${emojiGlyphOf(source.name)}` : source.name}
+              </strong>
               <div className="muted">
                 {KIND_LABEL[source.kind]}
                 {source.widthMm !== undefined && source.heightMm !== undefined

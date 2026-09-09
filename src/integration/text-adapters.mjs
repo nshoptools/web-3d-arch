@@ -99,6 +99,7 @@ export function createTextAdapters({catalog,invoke,context}){
         'Chuyển nguồn đã giữ thành ảnh '+v.width+'×'+v.height+' điểm (sRGB, RGBA8) để sửa.',
         'Giữ nguyên byte gốc, chữ, hash của font/hình và các bản ghi biến thể.',
         'Lấy mẫu có thể làm đổi chi tiết nhỏ; việc giảm màu vật liệu và độ chính xác chế tạo chưa được kiểm chứng.',
+        'Sau khi áp dụng, ảnh này là nguồn của dự án; tách vùng màu để dựng là bước riêng (nút “Tách vùng màu để dựng” trên thanh trên).',
       ]};
     }
     return result;

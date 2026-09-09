@@ -186,6 +186,8 @@ export const DIAGNOSTIC_TEXT: Record<string, string> = {
   PRODUCT_ADOPTION_BLOCKED: 'Nhân không nhận được nguồn này cho sản phẩm. Mở nhật ký để xem lý do; dự án giữ nguyên.',
   PRODUCT_ADOPTION_DECISION_REQUIRED: 'Nguồn này cần bạn quyết định cách gắn vùng màu trước khi nhận.',
   PRODUCT_TRANSACTION_RETIRED: 'Thay đổi này bị hủy vì dự án hoặc phiên đã đổi trong lúc chuẩn bị. Thao tác lại.',
+  MESH_WATCHDOG:
+    'Phép kiểm lưới không trả lời kịp, nên kết quả kiểm của mô hình này là “chưa kiểm”. Mô hình vẫn xem và xuất được; dựng lại để kiểm lại.',
   PRODUCT_PROPOSAL_CONSUMED: 'Đề xuất này đã được dùng hoặc đã hủy. Thao tác lại để lấy đề xuất mới.',
   PRODUCT_TEXT_SOURCE_FRAME_UNSUPPORTED:
     'Khối chữ đặt bên cạnh mô hình đang nằm ngoài vùng nhân hỗ trợ (tọa độ âm). Đưa vị trí X, Y về giá trị không âm.',

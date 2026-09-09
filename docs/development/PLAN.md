@@ -71,11 +71,17 @@ khối/vật liệu và mã lỗi bằng tiếng Việt, thư viện nói rõ gh
 đồng ý 13/14 hướng; Grok bác D14 (đồng hồ dev-serve là công cụ, không phải UI)
 và sửa D1/D3/D10 theo hướng đã áp dụng; Gemini đồng ý cả 14.
 
-Kiểm đã chạy thật trên bản tích hợp: typecheck; `tests/app/run.ps1` Chromium
+Vòng 2 trên bản tích hợp: Grok 8 `fixed` / 5 `partly` / 4 mục mới (đều đã sửa:
+hộp đề xuất hết hiệu lực tự đóng, watchdog kiểm lưới thành vấn đề cần xem, một
+xác nhận mỗi bước chuyển nguồn, dải xóa lượt từ chối cũ, toast mở gói đúng việc);
+Gemini live một phần, F1–F3 `fixed`, không mục mới.
+
+Kiểm đã chạy thật trên bản cuối: typecheck; `tests/app/run.ps1` Chromium
 (Node/types/browser đều 0); Node app/storage/product-app/domain/raster-adoption
-với nhân canonical; `tests/ui/export-consent` Chromium; `tests/ui/request-boundary`
-Chromium; `tests/e2e` ba engine (sau khi đổi nhãn nút chuyển raster trong test).
-Chi tiết và số liệu trong `reports/HUB-QUALITY-R2.md` của phòng Hub.
+với nhân canonical; `tests/ui/export-consent` và `tests/ui/request-boundary`
+Chromium; `tests/e2e` ba engine (test đổi nhãn nút chuyển raster; giao diện giữ
+nhãn “Chế độ chung của Xóa, Đường cắt và Khung cắt”). Chi tiết và số liệu trong
+`reports/HUB-QUALITY-R2.md` của phòng Hub.
 
 ## Phần còn thiếu trước phát hành đủ v1
 

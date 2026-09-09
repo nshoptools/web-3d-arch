@@ -130,7 +130,7 @@ export class ProjectOperations {
   if(command.type.startsWith('ai.')||command.type.startsWith('settings.')||command.type==='policy.update'||command.type==='emoji.favorite'){this.requireOnline();await this.networkCommand(command);if(command.type.startsWith('settings.')||command.type==='policy.update'){this.pendingChange=null;this.discardProposal();this.job?.abort.abort();this.discardPreview();this.emit();}return;}
   if(this.adapters.productTransactions?.handles({state:this.doc?.state,command})){await this.productCommand(data(command));return;}
   await this.enqueue(()=>this.projectCommand(data(command)));
- });}
+ },'command:'+String(command?.type??''));}
  async projectCommand(c){
   const epoch=this.epoch;
   if(c.type==='project.create'){this.guard();const candidate=await newDocument(c.product);await this.persist(candidate,{id:uuid(),expectedRevision:0,epoch});this.guard(epoch);this.clearVisible();this.emit();return;}

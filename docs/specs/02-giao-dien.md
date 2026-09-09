@@ -127,8 +127,14 @@ khi dirty màu cam và có chữ “Chưa áp dụng”.
 Sửa thông số hoặc màu thuần được áp dụng và dựng lại ngay, không qua hộp xác
 nhận. Hộp xác nhận chỉ mở khi có quyết định của người dùng: nhập hoặc chuyển
 nguồn, tách vùng màu, đổi loại sản phẩm, dùng chữ làm hình, chọn mặt hay khe.
+Mỗi bước chuyển nguồn (chuyển sang raster, tách vùng màu) hỏi đúng một lần; cập
+nhật sản phẩm theo sau áp dụng thẳng khi kế hoạch không mang quyết định, nên ảnh
+hoặc emoji đi tới mô hình qua ba xác nhận (nhận nguồn, chuyển, tách vùng).
 Dòng đầu của hộp nói việc vừa làm bằng lời người dùng (tệp nào, nguồn gì); hai
 nút là Bỏ qua và Áp dụng thay đổi, nhật ký và hủy việc nằm trong chi tiết kỹ thuật.
+Hộp có đề xuất không còn hiệu lực (đã dùng, đã hủy, dữ liệu đã đổi) báo một lần
+rồi tự đóng, không mời thử lại. Phép kiểm lưới không xong (watchdog) ghi thành
+vấn đề cần xem với kết quả “chưa kiểm”, không làm lệnh đã tạo mô hình thất bại.
 
 Hàng màu gồm swatch (mục tiêu 27 px), hex (78 px), phần trăm hoặc tên vai, NỀN nếu
 hợp lệ, khe (80 px), reset nếu có override; được wrap trên panel hẹp. Input color

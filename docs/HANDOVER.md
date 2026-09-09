@@ -92,6 +92,18 @@ Phản biện độc lập vòng 1 trên `1adf6d79`: Grok
 `tmp/reviews/gemini/runs/20260909-gemini-quality-r2/` (3 phát hiện, 14 hướng); vòng
 2 trên bản tích hợp: `20260909-grok-quality-r2b` và `20260909-gemini-quality-r2b`.
 
+Vòng 2 của hai ghế trên bản tích hợp `79315627` (worktree riêng, máy chủ 5280/5380
+do Hub chạy): Grok đi lại toàn bộ luồng live, ghi 8 phát hiện vòng 1 `fixed`, 5
+`partly`, không hồi quy, và nêu 4 mục mới; Hub sửa cả 4: hộp xác nhận có đề xuất
+đã hết hiệu lực tự đóng thay vì mời thử lại; phép kiểm lưới chạm watchdog thành
+vấn đề cần xem thay vì làm hỏng lệnh đã tạo mô hình; một xác nhận cho mỗi bước
+chuyển nguồn (cập nhật sản phẩm sau đó áp dụng thẳng khi không có quyết định, nên
+emoji còn ba xác nhận); lượt từ chối được xóa khỏi dải khi lệnh cùng loại thành
+công; toast khi mở gói của dự án còn sống nói đúng việc; nhóm in xếp đường xuất
+đạt kiểm lên đầu; thẻ nguồn emoji ghi “Emoji 😀”. Gemini vòng 2 chỉ chạy live
+được luồng SVG → dựng → Thông số → Xuất (ghi rõ trong báo cáo), F1–F3 `fixed`,
+không phát hiện mới. Chi tiết: `reports/HUB-QUALITY-R2.md` mục 7.
+
 Chưa làm: gói website mới (lý do như trên); `tests/csg-controller/run.ps1` không
 chạy được trên cây hiện tại vì input ghim candidate cũ (luồng CSG được `tests/e2e`
 kiểm thay); bộ nghiệm thu `tests/product-acceptance` chưa chạy lại (cần gói

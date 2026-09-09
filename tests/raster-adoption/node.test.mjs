@@ -106,6 +106,7 @@ test('fresh import then real erase/reconversion retains original bytes, full RGB
   assert.equal(conversion.diagnostic.code,'PROPOSAL_REQUIRED');assert.equal(canonicalJSON(c.doc.state),before);
   assert.equal(c.store.commits.length,count);
   const conversionIds=await confirmChain(conversion,{baseCommits:count,baseRevision:revision});
+  // The reconversion of an edited raster carries binding decisions (fresh identities for changed regions), so the product update after it still asks: two consents.
   assert.equal(conversionIds.length,2);assert.equal(c.store.commits.length,count+1);assert.equal(c.doc.state.revision,revision+1);
   const current=c.doc.state.content.app.source;assert.equal(current.id,original.id);assert.ok(current.revision>original.revision);
   assert.equal(current.raw.hash,original.raw.hash);assert.equal(current.raster.rgba,edited.raster.rgba);

@@ -41,11 +41,17 @@ export class ProductTransactionOperations {
  }
  async prepareProductAdoption({source,materials,materialDefaults,map,operation,command,sourceAuthority,text}){
   const state=freeze(data(this.doc.state)),job=this.startJob('Prepare source datums'),control=this.jobControl(job),intro=adoptionIntro(command,source,operation);
+  // A new source is adopted behind its own consent. A conversion or a region
+  // separation was just consented to in its own dialog; the product update that
+  // follows carries no decision, so it applies and rebuilds directly instead of
+  // opening a second dialog for the same act (Grok R-04). A plan that does carry
+  // a decision (bindings, faces, planes) still asks.
+  const adoption=operation!=='convert';
   try{
    if(this.onlineSession){await this.preflight(job.epoch,job.abort.signal);this.jobGuard(job);}
    const plan=await this.adapters.productTransactions.prepareAdoption({control,state,source:freeze(data(source)),materials:freeze(data(materials)),materialDefaults:freeze(data(materialDefaults)),
     operation,sourceAuthority,text,assets:new Map([...map].map(([h,a])=>[h,new Uint8Array(a.bytes)]))});
-   await this.proposeProductTransaction({plan,job,control,map,command,adoption:true,intro});
+   await this.proposeProductTransaction({plan,job,control,map,command,adoption,intro});
   }finally{if(this.pendingOperation?.control!==control)this.finishJob(job);}
  }
  async proposeProductTransaction({plan,job,control,map,command,adoption=true,intro=null}){

@@ -1,0 +1,1019 @@
+âœ” AFEX helper matches the independent wire fixture, preserving source identity and bigint revision (2.46ms)
+âœ” trusted gate/verdict inputs are mandatory, not fabricated by helper defaults (0.5499ms)
+âœ” no fractional-u32 cast, unsafe revision number, or NaN matrix (0.3934ms)
+âœ” UTF-8 user filename and material-source IDs retained byte for byte (0.2308ms)
+PASS domain adapter: five products, nominal mm, ABI 2, provenance, explicit datum, auto groove versus literal user zero, proposal command, convention mismatch
+âœ” AT-013.2 profiles are JSON literals; JS/prototype keys do not execute (94.2878ms)
+âœ” GEO-02 .16/.20 versus .25/.20 and user override snapshot remains authoritative (33.5322ms)
+âœ” OUT-01 slot, material count, physical head, version, nozzle and profile hashes gate output (147.636ms)
+âœ” normalization follows filament, extruder, matrix, multiple, fixed semantics (4.8152ms)
+âœ” SEC-01 unsafe ZIP paths, encryption, overlap, XML entities, expansion and corrupt CRC (21.793ms)
+âœ” material polymer and regular layer profile limits cannot be overridden by metadata (5.6456ms)
+âœ” printing slots use null/1..64; unknown app versions are preserved and rejected atomically (39.5629ms)
+âœ” OIDC navigation uses only trusted auth/start response, HTTPS without userinfo/fragment (19.0172ms)
+âœ” explicit Node pure-core test client maps gesture without duplicating algorithms; production default requires Worker (33.1031ms)
+âœ” native lease adapter keeps KernelLease and uses independent transport generations (1.2292ms)
+âœ” exact VN money decimals, precision, no grouping or nonfinite coercion (0.4715ms)
+âœ” three-step domain undo+redo monotonically advances revisions, strict stale branch blocked (417.2497ms)
+âœ” history budget requires explicit acceptance and preserves current (1104.6919ms)
+âœ” nominal mm, layer schedule and raw decimals survive document history; invalid content is atomic (155.5363ms)
+ok bridge transfers owned copy and preserves source bytes/expected token
+ok bridge rejects oversize before posting or changing resolution
+ok bridge rejects paint complexity beyond main budget
+ok bridge has one outstanding request and no queue
+ok bridge polls cancellation while waiting and informs main endpoint
+ok bridge polls stale source while waiting
+ok bridge deadline produces explicit renderer gap and cancellation
+ok bridge ignores responses for other request IDs
+ok disposing a bridge cancels waiting work and forbids reuse
+ok main endpoint has an explicit non-browser capability gap
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\docs\reviews\20260908-geometry-r4\archive\work\review-source\tests\product-runtime\fixtures.mjs' imported from D:\VoSon\Code\web-3d-arch\docs\reviews\20260908-geometry-r4\archive\work\worker-review.test.mjs
+    at eval (<anonymous>:1:1)
+Error: ENOENT: no such file or directory, lstat 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module'
+
+   at docs\reviews\20260908-mesh-checker-r1\archive\work\browser-harness\browser.test.mjs:9
+
+   7 | const pageMode=process.env.SCENE_BROWSER_PAGE??'new';assert.ok(['new','initial'].includes(pageMode));
+   8 | const expected=process.env.SCENE_EXPECTED_QUALIFICATION??'complete';assert.ok(['complete','legacy','material-only'].includes(expected));
+>  9 | const privateDirectory=value=>{const resolved=fs.realpathSync(value);assert.ok(resolved.startsWith(run+path.sep));return resolved;};
+     |                                                  ^
+  10 | const runtimeDirectory=privateDirectory(process.env.SCENE_RUNTIME_DIRECTORY??path.join(run,'work/module'));
+  11 | const overlay=process.env.SCENE_INPUT_OVERLAY?privateDirectory(process.env.SCENE_INPUT_OVERLAY):null;
+  12 | const out=path.join(run,'evidence/browser-'+tag);fs.mkdirSync(out,{recursive:true});const routes=new Map(),outcomes=[];
+    at privateDirectory (D:\VoSon\Code\web-3d-arch\docs\reviews\20260908-mesh-checker-r1\archive\work\browser-harness\browser.test.mjs:9:50)
+    at D:\VoSon\Code\web-3d-arch\docs\reviews\20260908-mesh-checker-r1\archive\work\browser-harness\browser.test.mjs:10:24
+AssertionError: The expression evaluated to a falsy value:
+
+  assert(!fs.existsSync(out))
+
+
+   at src\mesh-import\tests\import-as-part.test.mjs:11
+
+   9 | import {bindingInventory} from './root-fixtures.mjs';
+  10 | const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'evidence/import-as-part-wasm-'+(process.env.PROOF_TAG??'r1'));
+> 11 | assert(!fs.existsSync(out));fs.mkdirSync(out,{recursive:true});const sha=b=>createHash('sha256').update(b).digest('hex');
+     | ^
+  12 | const modulePath=path.resolve(process.env.ARCH_CSG_MODULE??path.join(run,'work/module/arch-kernel.mjs'));
+  13 | const M=await(await import(pathToFileURL(modulePath))).default({print:()=>{},printErr:()=>{}}),ops=createMeshRootOperations(M),productOps=createProductOperations(M);
+  14 | assert.equal(M._arch_mesh_operation_mask(),15);assert.equal(M._archcsg_operation_mask(),15);assert.deepEqual(meshOperationForParameters('them'),{operation:'import-as-part',materialPolicy:'requireDisjointMaterials',requiresTarget:false});
+    at D:\VoSon\Code\web-3d-arch\src\mesh-import\tests\import-as-part.test.mjs:11:1
+Error: fresh output
+
+   at src\mesh-import\tests\root-extended.test.mjs:5
+
+  3 | import{createProductOperations,readProductSemantics}from'../../core/product-operations.mjs';
+  4 | import{source,productFixture,inputFixture,bindingInventory,affine,selectionFor,commandFor,extendedCases,triangle,obj}from'./root-fixtures.mjs';
+> 5 | const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'evidence/root-extended-'+(process.env.PROOF_TAG??'r1'));if(fs.existsSync(out))throw Error('fresh output');fs.mkdirSync(out);
+    |                                                                                                                                                               ^
+  6 | const M=await(await import(pathToFileURL(path.join(run,'work/module/arch-kernel.mjs')))).default({print(){},printErr(){}});
+  7 | const ops=createMeshRootOperations(M),productOps=createProductOperations(M),sha=b=>createHash('sha256').update(b).digest('hex'),headHash=sha('root-product-fixture');let generation=0;
+  8 | const reset=()=>{assert.equal(M._arch_control_reset(++generation),1);return generation;};
+    at D:\VoSon\Code\web-3d-arch\src\mesh-import\tests\root-extended.test.mjs:5:159
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module\arch-kernel.mjs' imported from D:\VoSon\Code\web-3d-arch\src\mesh-import\tests\root-node.test.mjs
+
+   at src\mesh-import\tests\root-node.test.mjs:8
+
+   6 | const run=path.resolve(process.env.PROJECT_REVIEW_RUN),out=path.join(run,'evidence/root-node-'+(process.env.PROOF_TAG??'r2'));fs.mkdirSync(out,{recursive:true});
+   7 | const sha=b=>createHash('sha256').update(b).digest('hex');
+>  8 | const M=await (await import(pathToFileURL(path.resolve(process.env.ARCH_CSG_MODULE??path.join(run,'work/module/arch-kernel.mjs'))))).default({print:()=>{},printErr:()=>{}});
+     |                             ^
+   9 | const ops=createMeshRootOperations(M),productOps=createProductOperations(M);let generation=0;
+  10 | const reset=()=>{const g=++generation;assert.equal(M._arch_control_reset(g),1);return g;};
+  11 | const snapshot=id=>new Uint8Array(M.HEAPU8.subarray(M._arch_snapshot_ptr(id),M._arch_snapshot_ptr(id)+M._arch_snapshot_len(id)));
+    at D:\VoSon\Code\web-3d-arch\src\mesh-import\tests\root-node.test.mjs:8:29
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\build-printing-wasm-cross\arch3mf.mjs' imported from D:\VoSon\Code\web-3d-arch\src\printing\tests\wasm-node.test.mjs
+
+   at src\printing\tests\wasm-node.test.mjs:14
+
+  12 | const run=process.env.PROJECT_REVIEW_RUN,repo=process.env.PROJECT_ROOT;
+  13 | const binary=process.env.ARCH_PRINTING_TEST_MODULE??join(run,'work/build-printing-wasm-cross/arch3mf.mjs');
+> 14 | const factory=(await import(pathToFileURL(binary))).default;
+     |                             ^
+  15 | const module=await factory({wasmBinary:await readFile(binary.replace(/\.mjs$/,'.wasm'))});
+  16 | await mkdir(join(run,'evidence/wasm'),{recursive:true});
+  17 | test('AT-013.2 native C ABI built to WASM exports analytic cube, shared face, hole through lib3mf',async()=>{
+    at D:\VoSon\Code\web-3d-arch\src\printing\tests\wasm-node.test.mjs:14:29
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\stage.json'
+
+   at tests\app\portability.node.test.mjs:9
+
+   7 | import {spawnSync} from 'node:child_process';
+   8 | import {parseArgs,discoverRepo,loadContext,loadStage,ownPath,allocateBrowserProfile,chromiumProfileBudget} from './runner-env.mjs';
+>  9 | const scriptDir=dirname(fileURLToPath(import.meta.url)),runtime=dirname(dirname(scriptDir)),stage=JSON.parse(await readFile(join(runtime,'stage.json'),'utf8'));
+     |                                                                                                              ^
+  10 | test('run id must be explicit, bounded and unambiguous',()=>{
+  11 |  for(const args of [[],['--run-id',''],['--run-id','../other'],['--run-id','a','--run-id','b'],['--unknown','x'],['--run-id','x'.repeat(81)]])assert.throws(()=>parseArgs(args));
+  12 |  assert.equal(parseArgs(['--run-id','portable_run-2'])['run-id'],'portable_run-2');
+    at D:\VoSon\Code\web-3d-arch\tests\app\portability.node.test.mjs:9:110
+AssertionError: Supply APPLICATION_BUILD_INPUT: explicit pinned production inputs, no module/library defaults
+
+   at tests\application-build\acceptance.test.mjs:12
+
+  10 | import {directory,write} from './helpers.mjs';
+  11 | const inputPath=process.env.APPLICATION_BUILD_INPUT;
+> 12 | assert.ok(inputPath,'Supply APPLICATION_BUILD_INPUT: explicit pinned production inputs, no module/library defaults');
+     |        ^
+  13 | const input=parse(readPlain(inputPath,4*1024*1024));
+  14 | const root=directory('actual-acceptance');
+  15 | const evidence=resolve(root,'acceptance.json');
+    at D:\VoSon\Code\web-3d-arch\tests\application-build\acceptance.test.mjs:12:8
+AssertionError: Explicit prepared directory/SHA and fresh label required
+
+   at tests\application-build\owned-worker.test.mjs:11
+
+   9 | import {directory} from './helpers.mjs';
+  10 | const prepared=process.env.APPLICATION_OWNED_PREPARED,sha=process.env.APPLICATION_OWNED_SHA256,label=process.env.APPLICATION_BUILD_LABEL;
+> 11 | assert.ok(prepared&&sha&&label,'Explicit prepared directory/SHA and fresh label required');
+     |        ^
+  12 | const verification=verifyApplication(prepared,sha),input=JSON.parse(readFileSync(resolve(prepared,'package-input.json'))),pins=verification.receipt;
+  13 | assert.equal(pins.engineBuild.generatedAssignmentObserved,true);
+  14 | const assets=new Map(input.frontend.assets.map(a=>[a.url,{bytes:Buffer.from(checked({file:resolve(prepared,'frontend',a.file),sha256:a.sha256,bytes:a.bytes})),mime:a.url.endsWith('.wasm')?'application/wasm':a.url.endsWith('.css')?'text/css':'text/javascript'}]));
+    at D:\VoSon\Code\web-3d-arch\tests\application-build\owned-worker.test.mjs:11:8
+AssertionError: Explicit pinned application input required
+
+   at tests\application-build\receipt.test.mjs:8
+
+   6 | import {pin} from '../../tools/application/core.mjs';
+   7 | import {directory,write} from './helpers.mjs';
+>  8 | const inputPath=process.env.APPLICATION_BUILD_INPUT;assert.ok(inputPath,'Explicit pinned application input required');
+     |                                                            ^
+   9 | const input=JSON.parse(readFileSync(inputPath)),original=JSON.parse(readFileSync(input.engine.buildReceipt.file));
+  10 | test('canonical production receipt checks actual source, log, output and incoming API pins',()=>{
+  11 |  const result=validateEngineBuild(input.engine,input.sourceRoot);assert.equal(result.receipt.sha256,input.engine.buildReceipt.sha256);assert.equal(result.files.length,11);assert.ok(result.incomingModuleApi.includes('wasmBinary'));assert.equal(result.actualWorkerIntegrity,'requires-separate-execution-evidence');
+    at D:\VoSon\Code\web-3d-arch\tests\application-build\receipt.test.mjs:8:60
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\source-fixture-v2.json'
+
+   at tests\color-product\browser.test.mjs:9
+
+   7 | const hash=b=>createHash('sha256').update(b).digest('hex'),routes=new Map(),audits=new Map(),wasmReads=new Map(),captures=new Map();
+   8 | const modules=path.join(repo,'.toolchain/app-runtime/node_modules');assert.equal(JSON.parse(fs.readFileSync(path.join(modules,'playwright/package.json'))).version,'1.63.0');
+>  9 | const pw=await import(pathToFileURL(path.join(modules,'playwright/index.mjs'))),fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture-v2.json'))),out=path.join(run,'evidence/controller-browser-'+tag);fs.mkdirSync(out,{recursive:true});
+     |                                                                                                       ^
+  10 | function add(dir,prefix){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+  11 |  const p=path.join(dir,e.name),url=prefix+'/'+e.name;if(e.name==='node_modules'||url==='/src/assets')continue;assert.ok(!e.isSymbolicLink());
+  12 |  if(e.isDirectory())add(p,url);else if(/\.(mjs|js|cjs)$/.test(e.name)||prefix.startsWith('/tests/')&&e.name.endsWith('.json'))routes.set(url,fs.readFileSync(p));
+    at D:\VoSon\Code\web-3d-arch\tests\color-product\browser.test.mjs:9:103
+Error: Run environment, module and test TLS required
+
+   at tests\e2e\application.test.mjs:18
+
+  16 | import {readSTL,inspectMesh} from '../oracles/mesh-oracle.mjs';
+  17 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+> 18 | if(!run||!process.env.ARCH_WASM_MODULE||!process.env.APP_TEST_TLS)throw Error('Run environment, module and test TLS required');
+     |                                                                         ^
+  19 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),work=path.join(run,'work/app-e2e-'+stamp),evidence=path.join(run,'evidence/app-e2e-'+stamp);
+  20 | await mkdir(work,{recursive:true});await mkdir(evidence,{recursive:true});
+  21 | const webroot=path.join(work,'webroot'),module=await realpath(process.env.ARCH_WASM_MODULE);
+    at D:\VoSon\Code\web-3d-arch\tests\e2e\application.test.mjs:18:73
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\production-pair.json'
+
+   at tests\export-root-integration\export-module.mjs:7
+
+   5 | export async function loadExportModule(){
+   6 |  const run=process.env.PROJECT_REVIEW_RUN;if(!run)throw Error('own run environment required');
+>  7 |  const pin=JSON.parse(await fs.readFile(path.join(run,'inputs/production-pair.json'),'utf8')),dir=path.join(run,pin.moduleDirectory??'work/module');
+     |                       ^
+   8 |  const buffers={};for(const name of ['arch-kernel.mjs','arch-kernel.wasm']){
+   9 |   const b=await fs.readFile(path.join(dir,name));if(b.length!==pin.pins[name].bytes||createHash('sha256').update(b).digest('hex')!==pin.pins[name].sha256)throw Error('Production runtime pin changed');buffers[name]=new Uint8Array(b);
+  10 |  }
+    at loadExportModule (D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-module.mjs:7:23)
+    at D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-adapters.test.mjs:22:9
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\production-pair.json'
+
+   at tests\export-root-integration\export-module.mjs:7
+
+   5 | export async function loadExportModule(){
+   6 |  const run=process.env.PROJECT_REVIEW_RUN;if(!run)throw Error('own run environment required');
+>  7 |  const pin=JSON.parse(await fs.readFile(path.join(run,'inputs/production-pair.json'),'utf8')),dir=path.join(run,pin.moduleDirectory??'work/module');
+     |                       ^
+   8 |  const buffers={};for(const name of ['arch-kernel.mjs','arch-kernel.wasm']){
+   9 |   const b=await fs.readFile(path.join(dir,name));if(b.length!==pin.pins[name].bytes||createHash('sha256').update(b).digest('hex')!==pin.pins[name].sha256)throw Error('Production runtime pin changed');buffers[name]=new Uint8Array(b);
+  10 |  }
+    at loadExportModule (D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-module.mjs:7:23)
+    at D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-float-runtime.test.mjs:12:44
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\production-pair.json'
+
+   at tests\export-root-integration\export-module.mjs:7
+
+   5 | export async function loadExportModule(){
+   6 |  const run=process.env.PROJECT_REVIEW_RUN;if(!run)throw Error('own run environment required');
+>  7 |  const pin=JSON.parse(await fs.readFile(path.join(run,'inputs/production-pair.json'),'utf8')),dir=path.join(run,pin.moduleDirectory??'work/module');
+     |                       ^
+   8 |  const buffers={};for(const name of ['arch-kernel.mjs','arch-kernel.wasm']){
+   9 |   const b=await fs.readFile(path.join(dir,name));if(b.length!==pin.pins[name].bytes||createHash('sha256').update(b).digest('hex')!==pin.pins[name].sha256)throw Error('Production runtime pin changed');buffers[name]=new Uint8Array(b);
+  10 |  }
+    at loadExportModule (D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-module.mjs:7:23)
+    at D:\VoSon\Code\web-3d-arch\tests\export-root-integration\export-float.test.mjs:10:9
+Error: Own run/module required
+
+   at tests\final-float\runtime.test.mjs:3
+
+  1 | import test from'node:test';import assert from'node:assert/strict';import{readFile,writeFile,mkdir}from'node:fs/promises';import path from'node:path';import{pathToFileURL}from'node:url';import{createHash}from'node:crypto';
+  2 | import{createProductOperations}from'../../src/core/product-operations.mjs';import{encodeFinalFloatPrepare,encodeFinalFloatConfirmation,prepareFinalFloat,confirmFinalFloat,encodeFinalSceneGeometry,finalSceneGeometry}from'../../src/kernel/final-scene-export/float-runtime.mjs';import{encodeFinalExportOptions,exportFinalFileBytes}from'../../src/kernel/final-scene-export/runtime-helper.mjs';import{readSnapshot,readSTL,inspectMesh}from'../oracles/mesh-oracle.mjs';import{source,makeRequest}from'../product-runtime/fixtures.mjs';
+> 3 | const run=process.env.PROJECT_REVIEW_RUN,modulePath=process.env.ARCH_WASM_MODULE;if(!run||!modulePath)throw Error('Own run/module required');const out=path.join(run,'evidence/float-node');await mkdir(out,{recursive:true});const hash=b=>createHash('sha256').update(b).digest('hex'),M=await(await import(pathToFileURL(modulePath))).default({print:()=>{},printErr:()=>{}});let generation=0;const next=()=>{assert.equal(M._arch_control_reset(++generation),1);return generation;};
+    |                                                                                                             ^
+  4 | const copy=id=>M.HEAPU8.slice(M._arch_snapshot_ptr(id),M._arch_snapshot_ptr(id)+M._arch_snapshot_len(id));const input=b=>{const id=M._arch_input_create(b.length);assert.ok(id);M.HEAPU8.set(b,M._arch_input_ptr(id));return id;};const error=()=>new TextDecoder().decode(M.HEAPU8.slice(M._arch_error_ptr(),M._arch_error_ptr()+M._arch_error_len()));const output=id=>M.HEAPU8.slice(M._arch_final_output_ptr(id),M._arch_final_output_ptr(id)+M._arch_final_output_len(id));
+  5 | function config(id,revision='1'){const mesh=readSnapshot(copy(id));return {format:1,generation:mesh.generation,gates:0,verdict:1,inspection:0,revision,expectedRevision:revision,filename:'float',mapping:mesh.parts.map((p,part)=>({part,slot:1,rgba:p.color,source:p.source,materialSource:part+1,reserved:0}))};}
+  6 | function geom(c){return {revision:c.revision,expectedRevision:c.expectedRevision,mapping:c.mapping.map(({reserved,...x})=>x)};}
+    at D:\VoSon\Code\web-3d-arch\tests\final-float\runtime.test.mjs:3:109
+Error: PROJECT_REVIEW_RUN and ARCH_WASM_MODULE required
+
+   at tests\final-float\worker.test.mjs:3
+
+  1 | import test from 'node:test';import assert from 'node:assert/strict';import{readFile,writeFile,mkdir,readdir}from'node:fs/promises';import path from'node:path';import{fileURLToPath}from'node:url';import{createHash}from'node:crypto';import{createServer}from'node:http';
+  2 | import{build}from'vite';import{chromium,firefox,webkit}from'playwright';import{source,makeRequest}from'../product-runtime/fixtures.mjs';import{readSnapshot,readSTL,inspectMesh}from'../oracles/mesh-oracle.mjs';
+> 3 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN,modulePath=process.env.ARCH_WASM_MODULE;if(!run||!modulePath)throw Error('PROJECT_REVIEW_RUN and ARCH_WASM_MODULE required');
+    |                                                                                                                                                                   ^
+  4 | const out=path.join(run,'evidence/float-workers'),bundle=path.join(run,'work/float-worker-bundle');await mkdir(out,{recursive:true});const hash=b=>createHash('sha256').update(b).digest('hex');
+  5 | const configs={};for(const[product,changes,name]of [['clicky',[],'clicky'],['clicky',[{id:'assemble',value:true}],'assembly']]){const r=makeRequest(product,'noi',{sourceHash:hash(source),headHash:hash('float-'+name),changes});configs[name]={packed:Array.from(r.packed),revision:String(r.project.revision)};}
+  6 | await build({configFile:false,root,cacheDir:path.join(run,'cache/vite-float-workers'),logLevel:'warn',build:{target:'es2022',modulePreload:false,outDir:bundle,emptyOutDir:false,minify:false,rollupOptions:{input:path.join(root,'src/core/engine-worker.mjs'),output:{entryFileNames:'engine-worker.mjs',chunkFileNames:'chunks/[name]-[hash].mjs'}}}});
+    at D:\VoSon\Code\web-3d-arch\tests\final-float\worker.test.mjs:3:163
+Error: ENOENT: no such file or directory, lstat 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module'
+
+   at tests\final-scene\browser.test.mjs:9
+
+   7 | const pageMode=process.env.SCENE_BROWSER_PAGE??'new';assert.ok(['new','initial'].includes(pageMode));
+   8 | const expected=process.env.SCENE_EXPECTED_QUALIFICATION??'complete';assert.ok(['complete','legacy','material-only'].includes(expected));
+>  9 | const privateDirectory=value=>{const resolved=fs.realpathSync(value);assert.ok(resolved.startsWith(run+path.sep));return resolved;};
+     |                                                  ^
+  10 | const runtimeDirectory=privateDirectory(process.env.SCENE_RUNTIME_DIRECTORY??path.join(run,'work/module'));
+  11 | const overlay=process.env.SCENE_INPUT_OVERLAY?privateDirectory(process.env.SCENE_INPUT_OVERLAY):null;
+  12 | const out=path.join(run,'evidence/browser-'+tag);fs.mkdirSync(out,{recursive:true});const routes=new Map(),outcomes=[];
+    at privateDirectory (D:\VoSon\Code\web-3d-arch\tests\final-scene\browser.test.mjs:9:50)
+    at D:\VoSon\Code\web-3d-arch\tests\final-scene\browser.test.mjs:10:24
+ReferenceError: bindings is not defined
+
+   at tests\final-scene\types.test.mts:9
+
+   7 | declare const model:ModelLease;
+   8 | declare const control:Control;
+>  9 | const provider=createFinalSceneEvidence(bindings);
+     |                                         ^
+  10 | const persistedMappingProvider=createFinalSceneEvidence({...bindings,materialSourceIds:materialSourceIdsFromState,gateState:finalSceneGateState});void persistedMappingProvider;
+  11 | const ohm:Pick<ExportBindings,'finalScene'>={finalScene:provider.describe};void ohm;
+  12 | const reply=await provider.qualify({model,control});
+    at D:\VoSon\Code\web-3d-arch\tests\final-scene\types.test.mts:9:41
+AssertionError: host run must be explicitly scoped inside project
+
+   at tests\host\helpers.mjs:15
+
+  13 | export const dependency=fileURLToPath(new URL('../../',import.meta.url));
+  14 | const runRelative=run&&relative(dependency,resolve(run));
+> 15 | assert.ok(runRelative&&!isAbsolute(runRelative)&&!runRelative.startsWith('..')&&process.env.HOST_TEST_RUN_ID&&run.endsWith(process.env.HOST_TEST_RUN_ID),'host run must be explicitly scoped inside project');
+     |        ^
+  16 | export const {createBackend}=await import(pathToFileURL(join(dependency,'src/server/app.mjs')).href);
+  17 | export const {idp,defaultPolicy}=await import(pathToFileURL(join(dependency,'tests/server/helpers.mjs')).href);
+  18 | export const tlsRoot=process.env.HOST_TEST_TLS;
+    at D:\VoSon\Code\web-3d-arch\tests\host\helpers.mjs:15:8
+AssertionError: host run must be explicitly scoped inside project
+
+   at tests\host\helpers.mjs:15
+
+  13 | export const dependency=fileURLToPath(new URL('../../',import.meta.url));
+  14 | const runRelative=run&&relative(dependency,resolve(run));
+> 15 | assert.ok(runRelative&&!isAbsolute(runRelative)&&!runRelative.startsWith('..')&&process.env.HOST_TEST_RUN_ID&&run.endsWith(process.env.HOST_TEST_RUN_ID),'host run must be explicitly scoped inside project');
+     |        ^
+  16 | export const {createBackend}=await import(pathToFileURL(join(dependency,'src/server/app.mjs')).href);
+  17 | export const {idp,defaultPolicy}=await import(pathToFileURL(join(dependency,'tests/server/helpers.mjs')).href);
+  18 | export const tlsRoot=process.env.HOST_TEST_TLS;
+    at D:\VoSon\Code\web-3d-arch\tests\host\helpers.mjs:15:8
+AssertionError: host run must be explicitly scoped inside project
+
+   at tests\host\helpers.mjs:15
+
+  13 | export const dependency=fileURLToPath(new URL('../../',import.meta.url));
+  14 | const runRelative=run&&relative(dependency,resolve(run));
+> 15 | assert.ok(runRelative&&!isAbsolute(runRelative)&&!runRelative.startsWith('..')&&process.env.HOST_TEST_RUN_ID&&run.endsWith(process.env.HOST_TEST_RUN_ID),'host run must be explicitly scoped inside project');
+     |        ^
+  16 | export const {createBackend}=await import(pathToFileURL(join(dependency,'src/server/app.mjs')).href);
+  17 | export const {idp,defaultPolicy}=await import(pathToFileURL(join(dependency,'tests/server/helpers.mjs')).href);
+  18 | export const tlsRoot=process.env.HOST_TEST_TLS;
+    at D:\VoSon\Code\web-3d-arch\tests\host\helpers.mjs:15:8
+AssertionError: host run must be explicitly scoped inside project
+
+   at tests\host\helpers.mjs:15
+
+  13 | export const dependency=fileURLToPath(new URL('../../',import.meta.url));
+  14 | const runRelative=run&&relative(dependency,resolve(run));
+> 15 | assert.ok(runRelative&&!isAbsolute(runRelative)&&!runRelative.startsWith('..')&&process.env.HOST_TEST_RUN_ID&&run.endsWith(process.env.HOST_TEST_RUN_ID),'host run must be explicitly scoped inside project');
+     |        ^
+  16 | export const {createBackend}=await import(pathToFileURL(join(dependency,'src/server/app.mjs')).href);
+  17 | export const {idp,defaultPolicy}=await import(pathToFileURL(join(dependency,'tests/server/helpers.mjs')).href);
+  18 | export const tlsRoot=process.env.HOST_TEST_TLS;
+    at D:\VoSon\Code\web-3d-arch\tests\host\helpers.mjs:15:8
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module\arch-kernel.mjs' imported from D:\VoSon\Code\web-3d-arch\tests\integration\export-adapters.test.mjs
+
+   at tests\integration\export-adapters.test.mjs:21
+
+  19 | const {unzlibSync}=createRequire(new URL('../../src/printing/package.json',import.meta.url))('fflate');
+  20 | const modulePath=process.env.ARCH_EXPORT_TEST_MODULE??path.join(run,'work/module/arch-kernel.mjs');
+> 21 | const factory=(await import(pathToFileURL(modulePath))).default,M=await factory(),T=serviceTransport(M);
+     |                             ^
+  22 | const profiles={'export.3mf.bambu-project':await fixtureProfile(root,'bambu'),'export.3mf.snapmaker-project':await fixtureProfile(root,'u1')};
+  23 | const out=path.join(run,'evidence/export-app');await fs.mkdir(out,{recursive:true});
+  24 | const rejected=(f,code)=>assert.rejects(f,e=>{assert.equal(e.code,code,e.stack);return true;});
+    at D:\VoSon\Code\web-3d-arch\tests\integration\export-adapters.test.mjs:21:29
+Error: Project environment and ARCH_WASM_MODULE are required.
+
+   at tests\kernel\browser.test.mjs:13
+
+  11 | const run=process.env.PROJECT_REVIEW_RUN;
+  12 | const modulePath=process.env.ARCH_WASM_MODULE;
+> 13 | if(!run||!modulePath)throw new Error('Project environment and ARCH_WASM_MODULE are required.');
+     |                            ^
+  14 | const output=path.join(run,'evidence','browser-kernel');await mkdir(output,{recursive:true});
+  15 | const routes=new Map([
+  16 |   ['/src/core/engine-client.mjs',path.join(root,'src/core/engine-client.mjs')],
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\browser.test.mjs:13:28
+Error: Assigned run and ARCH_WASM_MODULE required
+
+   at tests\kernel\final-export-rpc.test.mjs:9
+
+   7 | import {createHash} from 'node:crypto';
+   8 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  9 | if(!run||!process.env.ARCH_WASM_MODULE)throw Error('Assigned run and ARCH_WASM_MODULE required');
+     |                                              ^
+  10 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),out=path.join(run,'evidence/final-export-rpc-'+stamp),work=path.join(run,'work/final-export-rpc-'+stamp);
+  11 | await mkdir(out,{recursive:true});await mkdir(work,{recursive:true});const routes=new Map(),bundle=path.join(work,'bundle');
+  12 | await build({configFile:false,root,cacheDir:path.join(run,'cache/vite-final-rpc'),logLevel:'warn',build:{target:'es2022',modulePreload:false,outDir:bundle,emptyOutDir:false,minify:false,
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\final-export-rpc.test.mjs:9:46
+Error: Project environment and ARCH_WASM_MODULE required.
+
+   at tests\kernel\harfbuzz-browser.test.mjs:12
+
+  10 | const root=fileURLToPath(new URL('../../',import.meta.url));
+  11 | const modulePath=process.env.ARCH_WASM_MODULE,run=process.env.PROJECT_REVIEW_RUN;
+> 12 | if(!modulePath||!run)throw new Error('Project environment and ARCH_WASM_MODULE required.');
+     |                            ^
+  13 | const output=path.join(run,'evidence','harfbuzz-browser');await mkdir(output,{recursive:true});
+  14 | const hash=value=>createHash('sha256').update(JSON.stringify(value)).digest('hex');
+  15 | const fontsURL=new URL('../../src/assets/fonts/fonts-cat.json',import.meta.url),colorURL=new URL('../../src/assets/emoji/color/fonts-cat.json',import.meta.url);
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\harfbuzz-browser.test.mjs:12:28
+Error: Project environment and ARCH_WASM_MODULE required.
+
+   at tests\kernel\harfbuzz.test.mjs:11
+
+   9 |
+  10 | const modulePath=process.env.ARCH_WASM_MODULE,run=process.env.PROJECT_REVIEW_RUN;
+> 11 | if(!modulePath||!run)throw new Error('Project environment and ARCH_WASM_MODULE required.');
+     |                            ^
+  12 | const engine=await (await import(pathToFileURL(modulePath).href)).default();
+  13 | unified.initializeHarfBuzz(engine);
+  14 | const catalogURL=new URL('../../src/assets/fonts/fonts-cat.json',import.meta.url);
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\harfbuzz.test.mjs:11:28
+Error: Set ARCH_NATIVE_BIN and run the project environment first.
+
+   at tests\kernel\native.test.mjs:10
+
+   8 | const binary=process.env.ARCH_NATIVE_BIN;
+   9 | const run=process.env.PROJECT_REVIEW_RUN;
+> 10 | if(!binary||!run)throw new Error('Set ARCH_NATIVE_BIN and run the project environment first.');
+     |                        ^
+  11 | const evidence=path.join(run,'evidence','native-oracle');
+  12 | await mkdir(evidence,{recursive:true});
+  13 | const near=(a,b)=>assert.ok(Math.abs(a-b)<=1e-8,`${a} != ${b}`);
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\native.test.mjs:10:24
+Error: Run environment and ARCH_WASM_MODULE required
+
+   at tests\kernel\printing-rpc.test.mjs:15
+
+  13 |
+  14 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+> 15 | if(!run||!process.env.ARCH_WASM_MODULE)throw Error('Run environment and ARCH_WASM_MODULE required');
+     |                                              ^
+  16 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),out=path.join(run,'evidence/printing-rpc-'+stamp);
+  17 | await mkdir(out,{recursive:true});
+  18 | const profile=await fixtureProfile(root,'bambu');
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\printing-rpc.test.mjs:15:46
+Error: Assigned run and ARCH_WASM_MODULE required
+
+   at tests\kernel\raster-rpc.test.mjs:7
+
+   5 | import{readSnapshot,inspectMesh,verticalIntersections}from'../oracles/mesh-oracle.mjs';
+   6 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  7 | if(!run||!process.env.ARCH_WASM_MODULE)throw Error('Assigned run and ARCH_WASM_MODULE required');
+     |                                              ^
+   8 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),out=path.join(run,'evidence/raster-rpc-'+stamp),work=path.join(run,'work/raster-rpc-'+stamp);
+   9 | await mkdir(out,{recursive:true});await mkdir(work,{recursive:true});
+  10 | const routes=new Map(),bundle=path.join(work,'bundle');
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\raster-rpc.test.mjs:7:46
+Error: Assigned run and root ARCH_WASM_MODULE required
+
+   at tests\kernel\source-composition.test.mjs:7
+
+   5 | import {fixtureData,mappedAssets} from '../text-app/fixture-data.mjs';
+   6 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  7 | if(!run||!process.env.ARCH_WASM_MODULE)throw Error('Assigned run and root ARCH_WASM_MODULE required');
+     |                                              ^
+   8 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),out=path.join(run,'evidence/source-composition-'+stamp),work=path.join(run,'work/source-composition-'+stamp);
+   9 | await mkdir(out,{recursive:true});await mkdir(work,{recursive:true});const fixture=await fixtureData(root),routes=new Map(),bundle=path.join(work,'bundle');
+  10 | await build({configFile:false,root,cacheDir:path.join(run,'cache/vite-source-composition'),logLevel:'warn',build:{target:'es2022',modulePreload:false,outDir:bundle,emptyOutDir:false,minify:false,
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\source-composition.test.mjs:7:46
+Error: Project environment, ARCH_NATIVE_BIN and ARCH_WASM_MODULE are required.
+
+   at tests\kernel\svg-source.test.mjs:10
+
+   8 |
+   9 | const run=process.env.PROJECT_REVIEW_RUN,binary=process.env.ARCH_NATIVE_BIN,modulePath=process.env.ARCH_WASM_MODULE;
+> 10 | if(!run||!binary||!modulePath)throw new Error('Project environment, ARCH_NATIVE_BIN and ARCH_WASM_MODULE are required.');
+     |                                     ^
+  11 | const output=path.join(run,'evidence','svg-source-oracle');await mkdir(output,{recursive:true});
+  12 | const engine=await (await import(pathToFileURL(modulePath).href)).default();
+  13 | const error=()=>new TextDecoder().decode(new Uint8Array(engine.HEAPU8.subarray(engine._arch_error_ptr(),engine._arch_error_ptr()+engine._arch_error_len())));
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\svg-source.test.mjs:10:37
+Error: Assigned run and ARCH_WASM_MODULE required
+
+   at tests\kernel\text-rpc.test.mjs:7
+
+   5 | import{fixtureData,mappedAssets}from'../text-app/fixture-data.mjs';
+   6 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  7 | if(!run||!process.env.ARCH_WASM_MODULE)throw Error('Assigned run and ARCH_WASM_MODULE required');
+     |                                              ^
+   8 | const stamp=new Date().toISOString().replace(/[:.]/g,'-'),out=path.join(run,'evidence/text-rpc-'+stamp),work=path.join(run,'work/text-rpc-'+stamp);
+   9 | await mkdir(out,{recursive:true});await mkdir(work,{recursive:true});
+  10 | const fixture=await fixtureData(root),routes=new Map();
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\text-rpc.test.mjs:7:46
+Error: Set ARCH_WASM_MODULE and project environment.
+
+   at tests\kernel\wasm.test.mjs:10
+
+   8 | const modulePath=process.env.ARCH_WASM_MODULE;
+   9 | const run=process.env.PROJECT_REVIEW_RUN;
+> 10 | if(!modulePath||!run)throw new Error('Set ARCH_WASM_MODULE and project environment.');
+     |                            ^
+  11 | const createModule=(await import(pathToFileURL(modulePath).href)).default;
+  12 | const module=await createModule();
+  13 | const error=()=>new TextDecoder().decode(module.HEAPU8.subarray(module._arch_error_ptr(),module._arch_error_ptr()+module._arch_error_len()));
+    at D:\VoSon\Code\web-3d-arch\tests\kernel\wasm.test.mjs:10:28
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\mesh-generated-base\native.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\mesh-generated-base\native.mjs:17:49
+Error: Own PROJECT_REVIEW_RUN and ARCH_KERNEL_MODULE required
+
+   at tests\native-source\runtime.test.mjs:9
+
+   7 | import{encodeOptions}from'../../src/core/raster-schema.mjs';
+   8 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  9 | if(!run||!process.env.ARCH_KERNEL_MODULE)throw Error('Own PROJECT_REVIEW_RUN and ARCH_KERNEL_MODULE required');
+     |                                                ^
+  10 | const fixtures=path.join(root,'tests/native-source/fixtures'),out=path.join(run,'evidence/node-source');await mkdir(out,{recursive:true});
+  11 | const hash=b=>createHash('sha256').update(b).digest('hex'),golden=JSON.parse(await readFile(path.join(fixtures,'clipper-viewport.json'),'utf8'));
+  12 | const M=await(await import(pathToFileURL(process.env.ARCH_KERNEL_MODULE))).default({print:()=>{},printErr:()=>{}});let g=0;
+    at D:\VoSon\Code\web-3d-arch\tests\native-source\runtime.test.mjs:9:48
+Error: Own PROJECT_REVIEW_RUN and ARCH_KERNEL_MODULE required
+
+   at tests\native-source\worker.test.mjs:4
+
+  2 | import{build}from'vite';import{chromium,firefox,webkit}from'playwright';import{extrusionOracle,frameOracle,geometryBytes}from'./oracles.mjs';
+  3 | import{source as productSVG,makeRequest}from'../product-runtime/fixtures.mjs';
+> 4 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN,modulePath=process.env.ARCH_KERNEL_MODULE;if(!run||!modulePath)throw Error('Own PROJECT_REVIEW_RUN and ARCH_KERNEL_MODULE required');
+    |                                                                                                                                                                     ^
+  5 | const out=path.join(run,'evidence/source-workers'),bundle=path.join(run,'work/source-worker-bundle'),hash=b=>createHash('sha256').update(b).digest('hex');await mkdir(out,{recursive:true});
+  6 | const cases=[];for(const name of ['combined-vietnamese-original','combined-vietnamese-adopted','shared-hole-accent','oo-multiline','nfd-accent','nfd-regular-multiline'])cases.push({name,svg:await readFile(path.join(root,'tests/native-source/fixtures',name+'.svg'),'utf8')});
+  7 | const golden=JSON.parse(await readFile(path.join(root,'tests/native-source/fixtures/clipper-viewport.json'),'utf8'));
+    at D:\VoSon\Code\web-3d-arch\tests\native-source\worker.test.mjs:4:165
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\runtime-test-module.json'
+
+   at tests\printing-app\browser.test.mjs:11
+
+   9 | const label=process.env.PRINTING_EVIDENCE_LABEL??'browser',publicRoot=resolve(run,'work/browser-'+label),evidence=resolve(run,'evidence/browser-'+label);
+  10 | await mkdir(publicRoot,{recursive:true});await mkdir(evidence,{recursive:true});
+> 11 | const pins=JSON.parse(await readFile(resolve(run,'inputs/runtime-test-module.json'),'utf8')),moduleFile=process.env.PRINTING_MODULE;
+     |                       ^
+  12 | assert.ok(moduleFile,'PRINTING_MODULE required');const moduleData=await readFile(moduleFile),wasmData=await readFile(moduleFile.replace(/\.mjs$/,'.wasm'));
+  13 | assert.equal(await sha256(moduleData),pins.moduleSha256);assert.equal(await sha256(wasmData),pins.wasmSha256);
+  14 | const {rolldown}=await import(pathToFileURL(resolve(repo,'.toolchain/app-runtime/node_modules/rolldown/dist/index.mjs')));
+    at D:\VoSon\Code\web-3d-arch\tests\printing-app\browser.test.mjs:11:23
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\runtime-test-module.json'
+
+   at tests\printing-app\runtime.test.mjs:11
+
+   9 | import {inspect3MF} from '../../src/printing/src/zip-inspect.mjs';
+  10 | const run=process.env.PROJECT_REVIEW_RUN,base=fileURLToPath(new URL('../../',import.meta.url));
+> 11 | const moduleFile=process.env.PRINTING_MODULE,manifest=JSON.parse(await readFile(resolve(run,'inputs/runtime-test-module.json'),'utf8'));
+     |                                                                  ^
+  12 | assert.ok(moduleFile,'explicit PRINTING_MODULE');const moduleBytes=await readFile(moduleFile),wasmBytes=await readFile(moduleFile.replace(/\.mjs$/,'.wasm'));
+  13 | assert.equal(await sha256(moduleBytes),manifest.moduleSha256);assert.equal(await sha256(wasmBytes),manifest.wasmSha256);
+  14 | const factory=(await import(pathToFileURL(moduleFile))).default;let factoryCalls=0;factoryCalls++;
+    at D:\VoSon\Code\web-3d-arch\tests\printing-app\runtime.test.mjs:11:66
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+Error: Own run and current ARCH_WASM_MODULE required
+
+   at tests\product-app\proposals.test.mjs:14
+
+  12 | import {namedTestAdapters,deferred} from '../app/test-doubles.mjs';
+  13 |
+> 14 | if(!process.env.ARCH_WASM_MODULE||!process.env.PROJECT_REVIEW_RUN)throw Error('Own run and current ARCH_WASM_MODULE required');
+     |                                                                         ^
+  15 | const moduleFactory=(await import(pathToFileURL(process.env.ARCH_WASM_MODULE))).default,encode=createMechanicsDomainAdapter(domain),utf8=new TextEncoder();
+  16 | // Explicit Node-only CAS store. History/document validation and root WASM are
+  17 | // real; this test does not qualify browser persistence or the production source compositor.
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\proposals.test.mjs:14:73
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\source-fixture-v2.json'
+
+   at tests\product-root\browser.test.mjs:8
+
+   6 | const hash=b=>createHash('sha256').update(b).digest('hex'),routes=new Map(),audits=new Map(),wasmReads=new Map(),captures=new Map();
+   7 | const modules=path.join(repo,'.toolchain/app-runtime/node_modules');assert.equal(JSON.parse(fs.readFileSync(path.join(modules,'playwright/package.json'))).version,'1.63.0');
+>  8 | const pw=await import(pathToFileURL(path.join(modules,'playwright/index.mjs'))),fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture-v2.json'))),out=path.join(run,'evidence/controller-browser-'+tag);fs.mkdirSync(out,{recursive:true});
+     |                                                                                                       ^
+   9 | function add(dir,prefix){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
+  10 |  const p=path.join(dir,e.name),url=prefix+'/'+e.name;if(e.name==='node_modules'||url==='/src/assets')continue;assert.ok(!e.isSymbolicLink());
+  11 |  if(e.isDirectory())add(p,url);else if(/\.(mjs|js|cjs)$/.test(e.name)||prefix.startsWith('/tests/')&&e.name.endsWith('.json'))routes.set(url,fs.readFileSync(p));
+    at D:\VoSon\Code\web-3d-arch\tests\product-root\browser.test.mjs:8:103
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module\arch-kernel.mjs' imported from D:\VoSon\Code\web-3d-arch\tests\product-runtime\export-authority.test.mjs
+
+   at tests\product-runtime\export-authority.test.mjs:5
+
+  3 | import {encodeFinalExportOptions,exportFinalFileBytes} from '../../src/kernel/final-scene-export/runtime-helper.mjs';
+  4 | import {modulePath} from './environment.mjs';
+> 5 | const hash=b=>createHash('sha256').update(b).digest('hex'),M=await(await import(pathToFileURL(modulePath))).default({print:()=>{},printErr:()=>{}}),ops=createProductOperations(M);let generation=0;
+    |                                                                                 ^
+  6 | const reset=()=>{assert.equal(M._arch_control_reset(++generation),1);return generation;};
+  7 | const bytes=id=>new Uint8Array(M.HEAPU8.subarray(M._arch_snapshot_ptr(id),M._arch_snapshot_ptr(id)+M._arch_snapshot_len(id)));
+  8 | function build(product,changes=[]){const packed=makeRequest(product,'noi',{sourceHash:hash(source),headHash:hash(JSON.stringify({product,changes})),changes}).packed,g=reset();return ops.buildRequest(ops.prepare({kind:'product',source:{kind:'svg',source},packed},g),g);}
+    at D:\VoSon\Code\web-3d-arch\tests\product-runtime\export-authority.test.mjs:5:81
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module\arch-kernel.mjs' imported from D:\VoSon\Code\web-3d-arch\tests\product-runtime\r2-root.test.mjs
+
+   at tests\product-runtime\r2-root.test.mjs:7
+
+   5 | import {run,modulePath} from './environment.mjs';
+   6 | const out=path.join(run,'evidence/r2-root');fs.mkdirSync(out,{recursive:true});
+>  7 | const M=await (await import(pathToFileURL(modulePath))).default({print:()=>{},printErr:()=>{}}),ops=createProductOperations(M);
+     |                             ^
+   8 | const hash=b=>createHash('sha256').update(b).digest('hex'),sourceHash=hash(source);let generation=0;
+   9 | const recipe=(product,{artMode='noi',...options}={})=>({kind:'product',source:{kind:'svg',source},packed:makeRequest(product,artMode,{sourceHash,headHash:hash(JSON.stringify({product,options,artMode})),...options}).packed});
+  10 | const build=r=>{const g=++generation;assert.equal(M._arch_control_reset(g),1);return ops.buildRequest(ops.prepare(r,g),g);};
+    at D:\VoSon\Code\web-3d-arch\tests\product-runtime\r2-root.test.mjs:7:29
+Error: Cannot find module 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\work\module\arch-kernel.mjs' imported from D:\VoSon\Code\web-3d-arch\tests\product-runtime\runtime.test.mjs
+
+   at tests\product-runtime\runtime.test.mjs:8
+
+   6 | import {run,modulePath} from './environment.mjs';
+   7 | const output=path.join(run,'evidence/node-wasm-product');fs.mkdirSync(output,{recursive:true});
+>  8 | const factory=(await import(pathToFileURL(modulePath))).default;
+     |                             ^
+   9 | const M=await factory({print:()=>{},printErr:()=>{}}),ops=createProductOperations(M);
+  10 | const sha=b=>createHash('sha256').update(b).digest('hex'),sourceHash=sha(source);
+  11 | let generation=0;const reset=()=>{const g=++generation;assert.equal(M._arch_control_reset(g),1);return g;};
+    at D:\VoSon\Code\web-3d-arch\tests\product-runtime\runtime.test.mjs:8:29
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\source-fixture.json'
+
+   at tests\product-source\browser.test.mjs:9
+
+   7 | assert.equal(JSON.parse(fs.readFileSync(path.join(modules,'playwright/package.json'))).version,'1.63.0');
+   8 | const pw=await import(pathToFileURL(path.join(modules,'playwright/index.mjs')));
+>  9 | const fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture.json'))),routes=new Map(),captures=new Map();
+     |                             ^
+  10 | const color=process.env.ARCH_BRIDGE_COLOR==='1',tag=process.env.ARCH_BRIDGE_TAG??'exploratory',suffix=(color?'source-color':'source-browser')+'-'+tag;
+  11 | const families=process.env.ARCH_BRIDGE_FAMILIES?.split(',');
+  12 | if(families){assert.equal(new Set(families).size,families.length);assert.ok(families.length>0&&families.every(f=>['svg','raster','text','emoji'].includes(f)),'Explicit supported source families required');}
+    at D:\VoSon\Code\web-3d-arch\tests\product-source\browser.test.mjs:9:29
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The expression evaluated to a falsy value:
+
+  assert.ok(['chromium', 'firefox', 'webkit'].includes(engine))
+
+
+   at tests\product-source\source-frame-browser.test.mjs:4
+
+  2 | import {inspectCapturedProduct} from './capture-oracle.mjs';
+  3 | const root=process.env.PROJECT_ROOT,run=process.env.PROJECT_REVIEW_RUN,base=path.resolve(import.meta.dirname,'../..'),engine=process.env.ARCH_BRIDGE_ENGINES;
+> 4 | assert.ok(['chromium','firefox','webkit'].includes(engine));
+    |        ^
+  5 | const tag=process.env.ARCH_BRIDGE_TAG??'initial';assert.match(tag,/^[a-z0-9-]{1,30}$/);
+  6 | const out=path.join(run,'evidence/asfr-worker-'+engine+'-'+tag);fs.mkdirSync(out,{recursive:true});
+  7 | const routes=new Map(),fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture.json')));
+    at D:\VoSon\Code\web-3d-arch\tests\product-source\source-frame-browser.test.mjs:4:8
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\product-app\harness.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\product-app\harness.mjs:17:49
+AssertionError: The input did not match the regular expression /\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/. Input:
+
+'D:/VoSon/Code/web-3d-arch/tmp/reviews/gemini/runs/20260909-gemini-quality-r2b'
+
+
+   at tests\mesh-generated-base\native.mjs:17
+
+  15 | export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
+  16 | const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
+> 17 | assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
+     |                                                 ^
+  18 | export const evidence=path.join(run,'evidence');fs.mkdirSync(evidence,{recursive:true});
+  19 | export const products=['keychain','clicky','strap','lego','charm'],styles=['noi','chim','phang','phang2'];
+  20 | export const svg='<svg xmlns="http://www.w3.org/2000/svg" width="40mm" height="30mm" viewBox="0 0 40 30"><path id="left" fill="#e04444" fill-rule="evenodd" d="M0 0H20V30H0Z M5 6H9V10H5Z"/><path id="right" fill="#3388ee" d="M20 0H40V30H20Z"/></svg>';
+    at D:\VoSon\Code\web-3d-arch\tests\mesh-generated-base\native.mjs:17:49
+ReferenceError: current is not defined
+
+   at tests\raster-app\types.test.mts:4
+
+  2 | import type {RecipeControl,ProductModelLease,SourceProposal,StandaloneRecipe} from './callback-contract.mjs';
+  3 | declare const current:RasterSourceAdapter,source:RasterSourceAdapter,c:RecipeControl,model:ProductModelLease;
+> 4 | const standalone:Promise<StandaloneRecipe>=current.prepareRecipe(c);
+    |                                            ^
+  5 | const result:Promise<ProductModelLease|SourceProposal>=source.prepareRecipe(c,async ready=>{
+  6 |  const coordinateKind:28=ready.coordinateKind;
+  7 |  const token:string=ready.nativeSource.token;
+    at D:\VoSon\Code\web-3d-arch\tests\raster-app\types.test.mts:4:44
+Error: Own PROJECT_REVIEW_RUN and explicit ARCH_KERNEL_MODULE required
+
+   at tests\runtime-bootstrap\integrity.worker.test.mjs:9
+
+   7 | import {createIntegrityHost} from './integrity-host.mjs';
+   8 | const root=fileURLToPath(new URL('../../',import.meta.url)),run=process.env.PROJECT_REVIEW_RUN;
+>  9 | if(!run||!process.env.ARCH_KERNEL_MODULE)throw Error('Own PROJECT_REVIEW_RUN and explicit ARCH_KERNEL_MODULE required');
+     |                                                ^
+  10 | const tag=process.env.ARCH_RUNTIME_TEST_TAG??'current';assert.match(tag,/^[a-zA-Z0-9_-]{1,24}$/);
+  11 | const host=await createIntegrityHost({root,run,modulePath:process.env.ARCH_KERNEL_MODULE,moduleHash:process.env.ARCH_KERNEL_MODULE_SHA256,wasmHash:process.env.ARCH_KERNEL_WASM_SHA256,tag});
+  12 | const output=path.join(run,'evidence/integrity-workers',tag);await mkdir(output,{recursive:true});
+    at D:\VoSon\Code\web-3d-arch\tests\runtime-bootstrap\integrity.worker.test.mjs:9:48
+Error: Explicit own review run required
+
+   at tools\assets\source-library\common.mjs:13
+
+  11 |  if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source tools/development/env.ps1 with assigned seat/RunId');
+  12 |  const root=fs.realpathSync(process.env.PROJECT_ROOT),run=safe(root,process.env.PROJECT_REVIEW_RUN);
+> 13 |  if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Explicit own review run required');return {root,run};
+     |                                                                                                                ^
+  14 | }
+  15 | export const readJSON=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+  16 | export function writeJSON(root,file,value){file=safe(root,file,{exists:false});fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,jsonBytes(value));}
+    at environment (D:\VoSon\Code\web-3d-arch\tools\assets\source-library\common.mjs:13:112)
+    at D:\VoSon\Code\web-3d-arch\tests\source-library\catalog.test.mjs:3:18
+Error: Explicit own review run required
+
+   at tools\assets\source-library\common.mjs:13
+
+  11 |  if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source tools/development/env.ps1 with assigned seat/RunId');
+  12 |  const root=fs.realpathSync(process.env.PROJECT_ROOT),run=safe(root,process.env.PROJECT_REVIEW_RUN);
+> 13 |  if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Explicit own review run required');return {root,run};
+     |                                                                                                                ^
+  14 | }
+  15 | export const readJSON=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+  16 | export function writeJSON(root,file,value){file=safe(root,file,{exists:false});fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,jsonBytes(value));}
+    at environment (D:\VoSon\Code\web-3d-arch\tools\assets\source-library\common.mjs:13:112)
+    at D:\VoSon\Code\web-3d-arch\tests\source-library\deploy.test.mjs:3:18
+Error: ENOENT: no such file or directory, open 'D:\VoSon\Code\web-3d-arch\tmp\reviews\gemini\runs\20260909-gemini-quality-r2b\inputs\source-fixture.json'
+
+   at tests\source-svg-export\browser.test.mjs:3
+
+  1 | import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';import http from 'node:http';
+  2 | const root=process.env.PROJECT_ROOT,run=process.env.PROJECT_REVIEW_RUN,base=path.resolve(import.meta.dirname,'../..'),label=process.env.SOURCE_SVG_LABEL??'browser-attempt';
+> 3 | const hash=b=>createHash('sha256').update(b).digest('hex'),fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture.json'))),pins=JSON.parse(fs.readFileSync(path.join(run,'inputs/runtime-api-production.json'))).module;
+    |                                                                                  ^
+  4 | const publicRoot=path.join(run,'work/browser-'+label);fs.mkdirSync(publicRoot,{recursive:true});
+  5 | const {rolldown}=await import(pathToFileURL(path.join(root,'.toolchain/app-runtime/node_modules/rolldown/dist/index.mjs')));
+  6 | const build=await rolldown({input:{browser:path.join(base,'tests/source-svg-export/browser-entry.mjs'),engine:path.join(base,'src/core/engine-worker.mjs')},platform:'browser'});
+    at D:\VoSon\Code\web-3d-arch\tests\source-svg-export\browser.test.mjs:3:82
+Error: Cannot find package '@xmldom/xmldom' imported from D:\VoSon\Code\web-3d-arch\src\integration\source-svg-export.mjs
+    at eval (<anonymous>:1:1)
+Error: Cannot find package '@xmldom/xmldom' imported from D:\VoSon\Code\web-3d-arch\src\integration\source-svg-export.mjs
+    at eval (<anonymous>:1:1)
+Error: Cannot find package '@xmldom/xmldom' imported from D:\VoSon\Code\web-3d-arch\src\integration\source-svg-export.mjs
+    at eval (<anonymous>:1:1)
+Error: Explicit in-repo run environment required
+
+   at tests\text-app\environment.mjs:8
+
+   6 | export async function environment(){
+   7 |   const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);
+>  8 |   if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Explicit in-repo run environment required');
+     |                                                                                                                 ^
+   9 |   const candidate=await realpath(fileURLToPath(new URL('../../',import.meta.url)));
+  10 |   if(!candidate.startsWith(root+path.sep)&&candidate!==root)throw Error('Candidate outside repo');
+  11 |   if(!process.env.ARCH_KERNEL_MODULE)throw Error('Set ARCH_KERNEL_MODULE to the existing ABI2 module inside the repo');
+    at environment (D:\VoSon\Code\web-3d-arch\tests\text-app\environment.mjs:8:113)
+    at D:\VoSon\Code\web-3d-arch\tests\text-app\browser.test.mjs:6:11
+Error: Explicit in-repo run environment required
+
+   at tests\text-app\environment.mjs:8
+
+   6 | export async function environment(){
+   7 |   const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);
+>  8 |   if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Explicit in-repo run environment required');
+     |                                                                                                                 ^
+   9 |   const candidate=await realpath(fileURLToPath(new URL('../../',import.meta.url)));
+  10 |   if(!candidate.startsWith(root+path.sep)&&candidate!==root)throw Error('Candidate outside repo');
+  11 |   if(!process.env.ARCH_KERNEL_MODULE)throw Error('Set ARCH_KERNEL_MODULE to the existing ABI2 module inside the repo');
+    at environment (D:\VoSon\Code\web-3d-arch\tests\text-app\environment.mjs:8:113)
+    at D:\VoSon\Code\web-3d-arch\tests\text-app\node.test.mjs:6:11
+ReferenceError: appOptions is not defined
+
+   at tests\text-app\types.test.mts:8
+
+   6 | const createApp:CreateTextAdapters=createTextAdapters,createWorker:CreateTextOperations=createTextOperations;
+   7 | declare const appOptions:TextAdapterOptions,workerOptions:TextOperationOptions,c:Control;
+>  8 | const app=createApp(appOptions),source:SourceAdapter=app;void source;
+     |                     ^
+   9 | const service=createWorker(workerOptions);
+  10 | const binding:GroupBinding={textId:'18446744073709551615',sourceId:'3',provenanceId:5n};
+  11 | await service.run({version:c.version,ticket:c.ticket,op:'prepare.text',groupBinding:binding},{isCurrent:t=>t.id===c.ticket.id});
+    at D:\VoSon\Code\web-3d-arch\tests\text-app\types.test.mts:8:21
+Error: Test run must be inside a repo seat room
+
+   at tests\text-source\test-environment.mjs:6
+
+  4 |   if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source project-env before running tests');
+  5 |   const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);
+> 6 |   if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Test run must be inside a repo seat room');
+    |                                                                                                                 ^
+  7 |   return {root,run};
+  8 | }
+  9 | export async function testModule(root){
+    at testEnvironment (D:\VoSon\Code\web-3d-arch\tests\text-source\test-environment.mjs:6:113)
+    at Module.testOutput (D:\VoSon\Code\web-3d-arch\tests\text-source\test-environment.mjs:18:20)
+    at D:\VoSon\Code\web-3d-arch\tests\text-source\bridge-client.test.mjs:77:17
+Error: Test run must be inside a repo seat room
+
+   at tests\text-source\test-environment.mjs:6
+
+  4 |   if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source project-env before running tests');
+  5 |   const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);
+> 6 |   if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Test run must be inside a repo seat room');
+    |                                                                                                                 ^
+  7 |   return {root,run};
+  8 | }
+  9 | export async function testModule(root){
+    at testEnvironment (D:\VoSon\Code\web-3d-arch\tests\text-source\test-environment.mjs:6:113)
+    at D:\VoSon\Code\web-3d-arch\tests\text-source\browser.test.mjs:8:18
+Error: Test run must be inside a repo seat room
+
+   at tests\text-source\test-environment.mjs:6
+
+  4 |   if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source project-env before running tests');
+  5 |   const root=await realpath(process.env.PROJECT_ROOT),run=await realpath(process.env.PROJECT_REVIEW_RUN);
+> 6 |   if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Test run must be inside a repo seat room');
+    |                                                                                                                 ^
+  7 |   return {root,run};
+  8 | }
+  9 | export async function testModule(root){
+    at testEnvironment (D:\VoSon\Code\web-3d-arch\tests\text-source\test-environment.mjs:6:113)
+    at D:\VoSon\Code\web-3d-arch\tests\text-source\node.test.mjs:8:18
+ReferenceError: factory is not defined
+
+   at tests\text-source\types.test.mts:5
+
+  3 | declare const factory:(bytes:Uint8Array,entry:FontCatalogEntry)=>Promise<FontSource>;
+  4 | declare const collections:Collection[];
+> 5 | const source=createTextSourceAdapter({readBytes:async()=>new Uint8Array([1]),createFontSource:factory,collections,renderer:createNativeColorRenderer({engine:'chromium',version:'153.0.8010.12'})});
+    |                                                                                               ^
+  6 | const command:TextCommand={version:VERSION,kind:'text',id:'job',expected:{sourceId:'s',revision:0},text:'Viá»‡t',font,size:{value:12,unit:'pt'},placement:{xMm:2},variations:{wght:600}};
+  7 | const prepared:PreparedSource=await source.prepare(command,{isCurrent:t=>t.revision===0});
+  8 | if(prepared.kind==='paths'){
+    at D:\VoSon\Code\web-3d-arch\tests\text-source\types.test.mts:5:95
+Error: Explicit run required
+
+   at tests\ui\request-boundary\support.mjs:6
+
+  4 | export function safe(root,value,exists=true){root=fs.realpathSync(root);const p=path.resolve(value);if(p!==root&&!p.startsWith(root+path.sep))throw Error('Outside authorized root');
+  5 |  for(let a=p;a!==root;a=path.dirname(a))if(fs.existsSync(a)&&fs.lstatSync(a).isSymbolicLink())throw Error('Reparse path');if(exists&&!fs.realpathSync(p).startsWith(root+path.sep)&&p!==root)throw Error('Resolved escape');return p;}
+> 6 | export function env(){if(!process.env.PROJECT_ROOT||!process.env.PROJECT_REVIEW_RUN)throw Error('Dot-source tools/development/env.ps1 first');const root=fs.realpathSync(process.env.PROJECT_ROOT),run=safe(root,process.env.PROJECT_REVIEW_RUN);if(!/^tmp[\\/]reviews[\\/](codex|opus|grok)[\\/]runs[\\/][A-Za-z0-9_-]+$/.test(path.relative(root,run)))throw Error('Explicit run required');return {root,run};}
+    |                                                                                                                                                                                                                                                                                                                                                                ^
+  7 | export function write(file,value){const {run}=env();safe(run,file,false);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,typeof value==='string'?value:JSON.stringify(value,null,2)+'\n');}
+  8 | export function walk(root){return fs.readdirSync(root,{withFileTypes:true}).flatMap(e=>{if(e.isSymbolicLink())throw Error('Reparse input');return e.isDirectory()?walk(path.join(root,e.name)):[path.join(root,e.name)];});}
+  9 | export function capture(candidate){
+    at env (D:\VoSon\Code\web-3d-arch\tests\ui\request-boundary\support.mjs:6:352)
+    at D:\VoSon\Code\web-3d-arch\tests\ui\request-boundary\pure.test.mjs:2:13
+TypeError: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+
+   at tests\viewport\adapters.test.mjs:10
+
+   8 | import {chromium,firefox,webkit} from 'playwright';
+   9 | import {readSTL,inspectMesh} from '../oracles/mesh-oracle.mjs';
+> 10 | const root=await realpath(fileURLToPath(new URL('../../',import.meta.url))),run=await realpath(process.env.PROJECT_REVIEW_RUN),modulePath=await realpath(process.env.ARCH_WASM_MODULE);
+     |                                                                                                                                                 ^
+  11 | for(const p of [run,modulePath]){const r=path.relative(root,p);assert.ok(r&&!path.isAbsolute(r)&&!r.startsWith('..'));}
+  12 | const dist=path.join(run,'work/adapter-harness'),output=path.join(run,'evidence/adapter-harness');await mkdir(output,{recursive:true});
+  13 | await build({configFile:false,root,publicDir:false,cacheDir:path.join(run,'cache/adapter-vite'),logLevel:'warn',build:{outDir:dist,emptyOutDir:false,minify:false,lib:{entry:path.join(root,'tests/viewport/adapters-harness.mjs'),formats:['es'],fileName:()=> 'adapters.mjs'}}});
+    at D:\VoSon\Code\web-3d-arch\tests\viewport\adapters.test.mjs:10:145
+TypeError: The "path" argument must be of type string or an instance of Buffer or URL. Received undefined
+
+   at tests\viewport\browser.test.mjs:10
+
+   8 | import {chromium,firefox,webkit} from 'playwright';
+   9 | const root=await realpath(fileURLToPath(new URL('../../',import.meta.url)));
+> 10 | const run=await realpath(process.env.PROJECT_REVIEW_RUN),modulePath=await realpath(process.env.ARCH_WASM_MODULE);
+     |                                                                           ^
+  11 | for(const target of [run,modulePath]){const relative=path.relative(root,target);assert.ok(relative&&!path.isAbsolute(relative)&&!relative.startsWith('..'));}
+  12 | const output=path.join(run,'evidence/viewport'),dist=path.join(run,'work/viewport-harness');await mkdir(output,{recursive:true});
+  13 | await build({configFile:false,root,publicDir:false,cacheDir:path.join(run,'cache/viewport-vite'),logLevel:'warn',
+    at D:\VoSon\Code\web-3d-arch\tests\viewport\browser.test.mjs:10:75
+Error: No tests found
+

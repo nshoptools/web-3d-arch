@@ -61,7 +61,12 @@ export class JobOperations {
   try{
    if(this.adapters.preparation?.qualifyModel){
     p.job.stage='Kiểm tra mô hình';this.emit();
-    await this.adapters.preparation.qualifyModel({...this.jobControl(p.job),model:p.record.lease});
+    // The model is already promoted and drawn. A qualification that cannot
+    // finish (watchdog, worker failure) leaves the verdict "unverified" and is
+    // reported as a problem to review, not as a failed build: the command that
+    // produced the model did succeed (Grok R-02).
+    try{await this.adapters.preparation.qualifyModel({...this.jobControl(p.job),model:p.record.lease});}
+    catch(e){if(p.job.abort.signal.aborted||!/^MESH_/.test(String(e?.code??'')))throw e;this.report(e);}
     this.jobGuard(p.job);assert(this.visible===p.record,'STALE_JOB');
    }
   }finally{this.finishJob(p.job);}
@@ -157,7 +162,7 @@ export class JobOperations {
    }
    this.jobGuard(job);await publish(output);
   }finally{if(prepared&&!proposalOwns)prepared.release?.();record?.release();this.finishJob(job);}
- });}
+ },'export:'+String(id));}
 
  clearExportReceipts(){this.exportReceipts.clear();this.receiptBytes=0;}
  recordExportReceipt(receipt){

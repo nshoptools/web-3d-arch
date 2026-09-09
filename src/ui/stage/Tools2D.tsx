@@ -232,7 +232,7 @@ export function Tools2D() {
 
             {showCutMode ? (
               <SelectField
-                label="Chế độ của Xóa, Đường cắt và Khung cắt"
+                label="Chế độ chung của Xóa, Đường cắt và Khung cắt"
                 value={editor.cutMode}
                 options={[
                   { value: 'merge', label: 'Gộp màu' },

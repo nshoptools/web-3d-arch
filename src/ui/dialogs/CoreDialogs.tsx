@@ -7,7 +7,7 @@ import { COMMANDS, GESTURE_ROWS, TOOLS_2D, VIEW_ACTIONS, type CommandDef } from 
 import { Button } from '../components/Button.tsx'
 import { Dialog } from '../components/Dialog.tsx'
 import { DiagnosticItem, DiagnosticList } from '../components/Feedback.tsx'
-import { formatBytes, formatDateTime, VERDICT_LABEL } from '../core/text.ts'
+import { diagnosticText, formatBytes, formatDateTime, VERDICT_LABEL } from '../core/text.ts'
 import {
   exportPrerequisite,
   exportReasonText,
@@ -30,6 +30,13 @@ const DISMISS_BUSY_REASON = 'Đang báo nhân bỏ đề xuất này.'
 const APPROVAL_IN_PROGRESS = 'APPROVAL_IN_PROGRESS'
 const STALE_CONFIRMATION = 'STALE_CONFIRMATION'
 const UNKNOWN_PROPOSAL = 'UNKNOWN_PROPOSAL'
+/**
+ * Refusals after which the proposal in this dialog no longer exists: the core
+ * consumed, retired or replaced it, or its inputs moved on. Retrying the same
+ * accept can only be refused again, so the dialog reports once and closes
+ * (Grok R-02: a stale-proposal dialog kept offering "Áp dụng thay đổi").
+ */
+const GONE_CODES = new Set([STALE_CONFIRMATION, UNKNOWN_PROPOSAL, 'PRODUCT_PROPOSAL_CONSUMED', 'PRODUCT_TRANSACTION_RETIRED', 'PROPOSAL_OUTPUT_CHANGED'])
 
 /**
  * A command the core refused pending confirmation. The dialog shows the change
@@ -125,6 +132,11 @@ export function ConfirmDialog({
     }
     // A fresh confirmation has already taken this dialog's place in the stack.
     if (result.confirmation) return
+    if (GONE_CODES.has(result.diagnostic.code)) {
+      actions.toast('warning', diagnosticText(result.diagnostic.code, result.diagnostic.message))
+      onClose()
+      return
+    }
     setFailure(result.diagnostic)
   })
 

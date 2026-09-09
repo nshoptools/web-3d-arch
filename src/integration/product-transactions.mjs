@@ -38,7 +38,7 @@ function describeChanges(records,product){
    case 'initialize-source-palette':add('palette-new','Nhận vùng màu từ nguồn làm vật liệu mới của sản phẩm.');break;
    case 'refresh-source-palette':add('palette-refresh','Cập nhật vùng màu theo nguồn mới; thiết lập bạn đã chỉnh được giữ.');break;
    case 'initialize-role':(shown&&!shown.includes(c.role)?others:roles).push(c.role);break;
-   case 'initialize-slot':add('slot','Gán khe filament logic cho vật liệu (chưa gắn với máy in cụ thể; đổi được ở khu Lớp màu).');break;
+   case 'initialize-slot':add('slot','Khe filament tạm gán theo thứ tự cho tới khi chọn máy in; đổi được ở khu Lớp màu.');break;
    default:lines.push({key:null,text:'Thay đổi khác do nhân đề xuất: '+canonicalJSON(c).slice(0,1900)});
   }
  }
