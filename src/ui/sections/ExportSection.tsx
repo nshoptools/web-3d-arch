@@ -100,7 +100,9 @@ export function ExportSection() {
     // passing geometry verdict — is the first button; test-only paths follow;
     // shut paths last. The published order is kept inside each rank.
     const rank = (option: ExportOption) =>
-      !option.enabled ? 2 : verdictApplies(exportPrerequisite(option)) && option.verdict !== 'pass' ? 1 : 0
+      (!option.enabled ? 4 : verdictApplies(exportPrerequisite(option)) && option.verdict !== 'pass' ? 2 : 0) +
+      // The files a printer takes (ZIP/STL/3MF) come before the section drawing.
+      (option.extension.toLowerCase().includes('svg') ? 1 : 0)
     byGroup.print = byGroup.print
       .map((option, index) => ({ option, index }))
       .sort((a, b) => rank(a.option) - rank(b.option) || a.index - b.index)

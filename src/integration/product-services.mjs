@@ -61,6 +61,11 @@ export function createProductApplicationServices({kernel,sourceLibrary,origin,co
  const exporter=createExportAdapters({operation:kernel.operation,kernelLeases:kernel.kernelLeases,context,
   finalScene:finalScene.describe,sourceSnapshot,viewport:frame,printing});
  function checkedScene(model){const current=context(),record=kernel.kernelLeases.get(model);return current&&record?finalScene.describe(record,current):unavailable('FINAL_SCENE_EVIDENCE_UNVERIFIED');}
+ // A lease whose qualification already failed (watchdog, worker) is not tried
+ // again by the background preparation: every retry was another two-minute job
+ // over the model. A rebuild makes a new lease and a fresh attempt.
+ const failedQualification=new WeakSet();
+ const qualifyOnce=async(model,control)=>{try{await finalScene.qualify({model,control});}catch(error){failedQualification.add(model);throw error;}};
  const preparation={
   async prepare(input){
    // Each provider checks the exact captured authority before publishing. Root
@@ -70,11 +75,11 @@ export function createProductApplicationServices({kernel,sourceLibrary,origin,co
    // is not a project problem, and it must not skip the printing refresh below.
    if(input.state.content.app.source){try{await sourceSnapshot.refresh({control:input});}catch(error){if(error?.code!=='SOURCE_SVG_REGIONS_REQUIRED')throw error;}}
    need(!input.signal.aborted,'CANCELLED');
-   if(input.model&&input.model.ticket.revision===input.ticket.revision&&checkedScene(input.model).status!=='ready')
-    await finalScene.qualify({model:input.model,control:input});
+   if(input.model&&input.model.ticket.revision===input.ticket.revision&&checkedScene(input.model).status!=='ready'&&!failedQualification.has(input.model))
+    await qualifyOnce(input.model,input);
    need(!input.signal.aborted,'CANCELLED');await printing.refresh({signal:input.signal});
   },
-  async qualifyModel(input){await finalScene.qualify({model:input.model,control:input});need(!input.signal.aborted,'CANCELLED');await printing.refresh({signal:input.signal});},
+  async qualifyModel(input){await qualifyOnce(input.model,input);need(!input.signal.aborted,'CANCELLED');await printing.refresh({signal:input.signal});},
   modelVerdict(model){const evidence=checkedScene(model);return evidence.status==='ready'?evidence.meshVerdict:evidence.verdict??'unverified';},
  };
  return Object.freeze({engine,source,meshTransactions:meshServices,exporter,printing,preparation,product,transactions,sourceContexts,sourceSnapshot,finalScene,

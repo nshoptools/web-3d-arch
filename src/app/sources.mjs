@@ -205,11 +205,11 @@ export class SourceOperations {
     if(deleted){target=original;expectedRevision=held.headRevision;}
     else{
      await this.enqueue(async()=>{this.guard(epoch);await this.open(original);await this.refreshLibrary();});
-     this.diagnostics=this.diagnostics.concat({code:'PACKAGE_PROJECT_EXISTS',message:PROJECT_MESSAGES.PACKAGE_PROJECT_EXISTS,severity:'warning'});this.emit();return;
+     this.note({code:'PACKAGE_PROJECT_EXISTS',message:PROJECT_MESSAGES.PACKAGE_PROJECT_EXISTS,severity:'warning'},'import:project');return;
     }
    }else note='PACKAGE_IMPORTED_AS_COPY';
    await this.enqueue(async()=>{this.guard(epoch);await importRescueCopy(this.store,bytes,{projectId:target,expectedRevision});this.guard(epoch);await this.open(target);await this.refreshLibrary();});
-   if(note){this.diagnostics=this.diagnostics.concat({code:note,message:PROJECT_MESSAGES[note],severity:'warning'});this.emit();}
+   if(note)this.note({code:note,message:PROJECT_MESSAGES[note],severity:'warning'},'import:project');
    return;
   }
   assert(['source','mesh','font'].includes(purpose),'IMPORT_PURPOSE');

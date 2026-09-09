@@ -24,19 +24,20 @@ này. Bản đầy đủ (45 ảnh trước, 60 ảnh sau, aria snapshot) ở ph
 | Bộ kiểm | Kết quả | Phòng phiên / log |
 | --- | --- | --- |
 | `npx tsc -p tsconfig.json` | đạt | — |
-| `tests/app/run.ps1 -Seat codex -Browsers chromium` | Node 0, types 0, browser 0 (đạt) ở ba lần chạy (`-app`, `-app2`, `-app3` trên mã cuối) | `20260909-hub-quality-r2-app3` |
-| Node trên mã cuối: `tests/app/*.node.test.mjs`, `tests/storage/*.node.test.mjs`, `tests/domain`, `tests/product-app`, `tests/raster-adoption` với nhân canonical `report/build/20260908-internal` | 117 đạt / 1 lỗi môi trường (`portability.node.test.mjs` cần cây dàn dựng của `run.ps1`, ở đó đạt) | `20260909-hub-quality-r2/evidence/tests/node-final.log` |
+| `tests/app/run.ps1 -Seat codex -Browsers chromium` | Node 0, types 0, browser 0 (đạt) ở các lần chạy `-app`, `-app2`, `-app3`, `-app5` (mã cuối); `-app4` lỗi Node 1 do một bảo vệ thiếu trong harness proposal, sửa ngay và chạy lại | `20260909-hub-quality-r2-app5` |
+| Node trên mã cuối: `tests/app/*.node.test.mjs`, `tests/storage/*.node.test.mjs`, `tests/domain`, `tests/product-app`, `tests/raster-adoption` với nhân canonical `report/build/20260908-internal` | 117 đạt / 1 lỗi môi trường (`portability.node.test.mjs` cần cây dàn dựng của `run.ps1`, ở đó đạt) | `20260909-hub-quality-r2/evidence/tests/node-final-3.log` |
 | `tests/storage/package-roundtrip.node.test.mjs` (thêm ca khôi phục dưới mã cũ) | 3/3 đạt | cùng trên |
 | `tests/ui/request-boundary/run.ps1 -Engines chromium` | đạt (hai lần, lần cuối trên mã cuối) | `20260909-hub-quality-r2-rb2` |
-| `tests/ui/export-consent/run.mjs` (Chromium, đủ nhóm; harness mở các nhóm gập trước khi điền) | 32/32 đạt (`ec4`, `ec5`, `ec6` trên mã cuối) | `20260909-hub-quality-r2-ec6` |
-| `tests/e2e/application.test.mjs` (Chromium, Firefox, WebKit) | hai lần đầu lỗi vì test và giao diện lệch nhãn (nút chuyển raster; nhãn “Chế độ chung…” — giao diện đổi lại cho khớp); lần cuối trên mã cuối đạt cả ba engine | `20260909-hub-quality-r2/evidence/tests/e2e-application-4.log` |
+| `tests/ui/export-consent/run.mjs` (Chromium, đủ nhóm; harness mở các nhóm gập trước khi điền) | 32/32 đạt (`ec4`…`ec7`, `ec7` trên mã cuối) | `20260909-hub-quality-r2-ec7` |
+| `tests/e2e/application.test.mjs` (Chromium, Firefox, WebKit) | hai lần đầu lỗi vì test và giao diện lệch nhãn (nút chuyển raster; nhãn “Chế độ chung…” — giao diện đổi lại cho khớp); hai lần sau trên mã cuối đạt cả ba engine | `20260909-hub-quality-r2/evidence/tests/e2e-application-5.log` |
 
 Chưa chạy: `tests/csg-controller/run.ps1` (input ghim candidate cũ, không kiểm cây
 hiện tại), `tests/product-acceptance` (cần gói release ghim). Firefox/WebKit của
 hai harness UI chưa chạy lại trong đợt này.
 
 Ảnh vòng 2 (sau khi sửa theo phản biện bản tích hợp) trong phòng Hub: `r6-01`…`r6-05`
-(emoji ba xác nhận rồi mô hình), `r5-04` (kéo thanh trượt một lần dựng).
+(emoji ba xác nhận rồi mô hình), `r5-04` (kéo thanh trượt một lần dựng), `r7-01`
+(lượt từ chối `.bin` rời dải sau khi SVG dựng xong), `r7-03` (emoji sau watchdog).
 
 ## Phản biện độc lập
 

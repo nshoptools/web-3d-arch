@@ -36,7 +36,7 @@ export class ProposalOperations {
   const releaseOnce=()=>{if(released)return;released=true;
    const next=this.pendingOperation,transferred=handoff===true&&ownedJob&&next&&next!==p&&next.control===control&&this.job===ownedJob&&!control.signal.aborted;
    if(!transferred)ownedJob?.abort.abort();try{release();}finally{if(ownedJob&&!transferred)this.finishJob(ownedJob);}};
-  const p={id:uuid(),kind,changes:data(changes),outputHash,verify,apply,release:releaseOnce,control,projectId:this.projectId,revision:this.doc.state.revision,headRevision:this.headRevision,epoch:this.epoch};
+  const p={id:uuid(),kind,changes:data(changes),outputHash,verify,apply,release:releaseOnce,control,projectId:this.projectId,revision:this.doc.state.revision,headRevision:this.headRevision,epoch:this.epoch,originScope:this.activeScope??null};
   this.pendingOperation=p;this.emit();const e=error('PROPOSAL_REQUIRED');
   e.confirmation={title:proposalTitle(kind),changes:p.changes,retry:{type:'proposal.accept',id:p.id,confirmed:true}};throw e;
  }
@@ -50,7 +50,7 @@ export class ProposalOperations {
    if(this.onlineSession)await this.preflight(p.epoch);
    this.guard(p.epoch);assert(this.pendingOperation===p&&this.doc.state.revision===p.revision&&this.headRevision===p.headRevision,'STALE_CONFIRMATION');
    // CAS publication in apply still checks cross-tab state. No unknown proposal is rerun with new defaults.
-   this.pendingOperation=null;return await p.apply();
+   this.pendingOperation=null;const value=await p.apply();if(p.originScope)this.retireRefusals(p.originScope);return value;
   }finally{
    if(this.pendingOperation===p)this.pendingOperation=null;
    if(this.acceptingProposal===p)this.acceptingProposal=null;

@@ -102,7 +102,12 @@ emoji còn ba xác nhận); lượt từ chối được xóa khỏi dải khi l
 công; toast khi mở gói của dự án còn sống nói đúng việc; nhóm in xếp đường xuất
 đạt kiểm lên đầu; thẻ nguồn emoji ghi “Emoji 😀”. Gemini vòng 2 chỉ chạy live
 được luồng SVG → dựng → Thông số → Xuất (ghi rõ trong báo cáo), F1–F3 `fixed`,
-không phát hiện mới. Chi tiết: `reports/HUB-QUALITY-R2.md` mục 7.
+không phát hiện mới. Grok kiểm lại có trọng tâm (vòng 2c, bản `2233a6d7`): emoji
+ba xác nhận, bấm Áp dụng hai lần không kẹt, luồng SVG/gói đều đứng; còn bốn mục
+nhỏ (lượt từ chối cũ chưa rời dải khi lệnh kết thúc qua hộp xác nhận, chuẩn bị
+nền kiểm lưới lại vô hạn sau watchdog, ghi chú gói sống sót sau khôi phục, nhãn
+giai đoạn `complete`) — Hub sửa cả bốn và tự kiểm lại live. Chi tiết:
+`reports/HUB-QUALITY-R2.md` mục 7.
 
 Chưa làm: gói website mới (lý do như trên); `tests/csg-controller/run.ps1` không
 chạy được trên cây hiện tại vì input ghim candidate cũ (luồng CSG được `tests/e2e`

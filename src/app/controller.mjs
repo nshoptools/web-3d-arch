@@ -49,12 +49,25 @@ export class AppController {
  /** A refusal is about the command that was refused. When a later command of the same scope succeeds,
   * the earlier refusal is no longer a problem to review (Grok R-01: a refused file stayed on the strip after a good import). */
  async result(fn,scope=null){
+  // Only refusals recorded before this command started retire on its success;
+  // a note the command itself adds (for example why a package opened the
+  // library copy) stays. The scope is also what a proposal raised inside this
+  // command inherits, so accepting that proposal retires the same refusals.
+  const before=scope?new Set(this.diagnostics):null,previous=this.activeScope;this.activeScope=scope;
   try{
    const value=await fn();
-   if(scope&&this.diagnostics.some(d=>diagnosticScopes.get(d)===scope)){this.diagnostics=this.diagnostics.filter(d=>diagnosticScopes.get(d)!==scope);this.emit();}
+   if(scope)this.retireRefusals(scope,before);
    return {ok:true,...value};
   }catch(e){try{await this.resetBarrier;}catch(reset){return this.report(reset,scope);}return this.report(e,scope);}
+  finally{this.activeScope=previous;}
  }
+ retireRefusals(scope,before=null){
+  if(!scope)return;
+  const kept=this.diagnostics.filter(d=>diagnosticScopes.get(d)!==scope||(before!==null&&!before.has(d)));
+  if(kept.length!==this.diagnostics.length){this.diagnostics=kept;this.emit();}
+ }
+ /** A problem the controller states itself (not a thrown refusal), with the scope whose next success retires it. */
+ note(d,scope=null){if(scope)diagnosticScopes.set(d,scope);this.diagnostics=this.diagnostics.slice(-19).concat(d);this.emit();}
  enqueue(fn){const epoch=this.epoch;const p=this.queue.then(()=>{assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(this.onlineSession)return this.preflight(epoch).then(()=>{this.guard(epoch);return fn();});return fn();});this.queue=p.catch(()=>{});return p;}
  editingAllowed(){const s=this.store?.status();return !!s&&!this.readOnly&&s.canEdit&&!s.writeBlocked&&!s.capabilities.database.readOnly;}
  guard(epoch=this.epoch){assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(!this.editingAllowed()){
