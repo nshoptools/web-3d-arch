@@ -76,7 +76,16 @@ const bindings=JSON.parse(await readFile(join(releasePublic,'release-bindings.js
 bindings.entry='/src/main.mjs';
 const bindingsBytes=Buffer.from(JSON.stringify(bindings));
 
-const accounts={a:f.a,b:f.b,owner:f.owner};
+const accounts={a:f.a,b:f.b,owner:f.owner},subjects={a:'member-a',b:'member-b',owner:'owner-subject'};
+// A fixture session expires like a real one (12 h absolute, 1 h idle), so a
+// sign-in signs the account in again instead of re-issuing the cookies minted
+// at start-up, which would be dead after an hour away from the page.
+async function freshLogin(who){
+ const client=accounts[who];
+ try{await client.login(subjects[who]);}
+ catch(error){console.error('dev login could not refresh the session for '+who+': '+(error?.message??error));}
+ return client;
+}
 function loginPage(client){
  // __Host- cookies are rejected without Secure; loopback http origins count as
  // secure contexts in Chromium and Firefox, so the flag is accepted here.
@@ -120,10 +129,10 @@ const vite=await createVite({
    const url=new URL(req.url,origin);const path=decodeURIComponent(url.pathname);
    if(path==='/release-bindings.json'){res.writeHead(200,{'Content-Type':'application/json','Content-Length':bindingsBytes.length,'Cache-Control':'no-store'});res.end(bindingsBytes);return;}
    if(path.startsWith('/__dev/login')){
-    const who=url.searchParams.get('as')??'a';const client=accounts[who];
-    if(!client){res.writeHead(404);res.end('unknown account');return;}
-    const {cookies,html}=loginPage(client);
-    res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Set-Cookie':cookies,'Cache-Control':'no-store'});res.end(html);return;
+    const who=url.searchParams.get('as')??'a';
+    if(!accounts[who]){res.writeHead(404);res.end('unknown account');return;}
+    void freshLogin(who).then(client=>{const {cookies,html}=loginPage(client);
+     res.writeHead(200,{'Content-Type':'text/html; charset=utf-8','Set-Cookie':cookies,'Cache-Control':'no-store'});res.end(html);});return;
    }
    if(path==='/'||path==='/index.html'||path.startsWith('/assets/')||path.startsWith('/src/')||path.startsWith('/@')||path.startsWith('/node_modules/')||path.startsWith('/api/')){next();return;}
    const file=join(releasePublic,path);
