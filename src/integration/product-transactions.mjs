@@ -5,13 +5,30 @@ import {recordProductRasterEdit} from './product-source-lineage.mjs';
 import {domainStateFingerprint} from '../storage/index.mjs';
 const VERSION='arch-app-adapters/1',PLAN='arch-product-transaction/1';
 const COMMANDS=new Set(['text.update','text.remove','material.update','material.reset','parameter.set','parameter.reset','project.product']);
+/** The logical filament slot a material takes once its colour changes. One slot carries one
+ * colour, so a material whose new colour differs from what shares its slot moves to the slot that
+ * already carries that colour, else to the lowest free logical slot — the rule the kernel applies
+ * when it assigns provisional slots — instead of the whole edit being refused with
+ * PRODUCT_SLOT_CONFLICT (Codex, release round 3: the body colour could not be changed at all,
+ * because every other role, including roles of other product types, shares its slot). A slot the
+ * person set in the same command is kept as given. */
+export function slotForColour(materials,self,color){
+ const taken=new Map();
+ for(const m of materials){if(m.id===self.id||m.slot===null||m.slot===undefined)continue;if(!taken.has(m.slot))taken.set(m.slot,new Set());taken.get(m.slot).add(String(m.color).toLowerCase());}
+ const colour=String(color).toLowerCase(),own=self.slot===null||self.slot===undefined?null:self.slot,shared=own===null?null:taken.get(own);
+ if(own!==null&&(!shared||(shared.size===1&&shared.has(colour))))return own;
+ const compatible=[...taken].find(([,colours])=>colours.size===1&&colours.has(colour));
+ if(compatible)return compatible[0];
+ return Array.from({length:16},(_,i)=>i+1).find(n=>!taken.has(n))??own;
+}
 /** The same validated command preview used by the controller, before any journal
  * entry. Profile, settings, export and source editing commands remain separate. */
 export function previewProductCommand(state,c){
  switch(c.type){
  case 'text.update':return contentEdit(state,a=>{a.text={...a.text,...data(c.values)};});
  case 'text.remove':return contentEdit(state,a=>{a.text=data(DEFAULT_TEXT);});
- case 'material.update':return contentEdit(state,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?parseDecimal(c[k]).value:c[k];m.overridden=true;});
+ case 'material.update':return contentEdit(state,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?parseDecimal(c[k]).value:c[k];m.overridden=true;
+  if(Object.hasOwn(c,'color')&&!Object.hasOwn(c,'slot'))m.slot=slotForColour(a.materials,m,m.color);});
  case 'material.reset':return contentEdit(state,a=>{const i=a.materials.findIndex(m=>m.id===c.id),m=a.materialDefaults.find(m=>m.id===c.id);assert(i>=0&&m,'MATERIAL_NOT_FOUND');a.materials[i]=data(m);});
  case 'parameter.set':return setParameter(state,c.id,c.value);
  case 'parameter.reset':return c.id==='layerH'?domainCommand(state,{id:'schedule.set',args:{layerHeight:0.2}}).state:domainCommand(state,{id:'parameters.reset',args:{ids:[c.id]}}).state;
