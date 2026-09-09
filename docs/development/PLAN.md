@@ -58,6 +58,25 @@ mức thấp ghi nhận chưa sửa: `JOB_BUSY` có thể làm mất đề xuấ
 (`src/app/jobs.mjs` resume); `secret.fill(0)` khi hủy/timeout có thể chạy song
 song với provider (`src/server/ai.mjs`).
 
+## Đợt hoàn thiện lần hai 09-09-2026 (Hub; Grok và Gemini phản biện)
+
+Đi lại toàn bộ luồng như người dùng trên `1adf6d79` (phòng
+`tmp/reviews/codex/runs/20260909-hub-quality-r2`, 45 ảnh), viết 14 hướng D1–D14,
+giao cả hai ghế phản biện độc lập rồi sửa: luồng ảnh/emoji tới mô hình (nút
+chính tự đổi theo bước nguồn), khôi phục gói dự án dưới mã gốc và dựng lại khi
+mở, sửa thông số/màu không qua hộp xác nhận, thẻ bận “chờ bạn trả lời”, thanh
+trên một hàng, khung bước 1 gọn, nhóm khung xem gập mặc định ở ≤1180, toast tự
+mất/gộp/xóa theo dự án, khu Lớp màu theo loại sản phẩm, khu Xuất theo việc, tên
+khối/vật liệu và mã lỗi bằng tiếng Việt, thư viện nói rõ ghi tự động. Hai ghế
+đồng ý 13/14 hướng; Grok bác D14 (đồng hồ dev-serve là công cụ, không phải UI)
+và sửa D1/D3/D10 theo hướng đã áp dụng; Gemini đồng ý cả 14.
+
+Kiểm đã chạy thật trên bản tích hợp: typecheck; `tests/app/run.ps1` Chromium
+(Node/types/browser đều 0); Node app/storage/product-app/domain/raster-adoption
+với nhân canonical; `tests/ui/export-consent` Chromium; `tests/ui/request-boundary`
+Chromium; `tests/e2e` ba engine (sau khi đổi nhãn nút chuyển raster trong test).
+Chi tiết và số liệu trong `reports/HUB-QUALITY-R2.md` của phòng Hub.
+
 ## Phần còn thiếu trước phát hành đủ v1
 
 1. Sửa trực tiếp vector theo mm chưa có adapter. Codex đang đóng khoảng trống này; sửa raster có xác nhận không được tính là đã làm vector.

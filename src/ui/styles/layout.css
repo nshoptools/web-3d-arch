@@ -183,6 +183,9 @@
     .topbar:not(.topbar--start) .topbar__steps .btn > span,
     .topbar:not(.topbar--start) .topbar__tools .btn > span { overflow-wrap: normal; }
     .topbar:not(.topbar--start) .topbar__project .chip { white-space: nowrap; flex: none; }
+    .topbar:not(.topbar--start) .topbar__steps .chip { white-space: nowrap; flex: none; }
+    .topbar:not(.topbar--start) .topbar__step-long,
+    .topbar:not(.topbar--start) .topbar__step-short { overflow: hidden; text-overflow: ellipsis; }
   }
   @media (width > 720px) {
     .canvas-controls { flex-wrap: nowrap; }

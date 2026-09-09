@@ -187,7 +187,12 @@ export function ExportSection() {
                 const prerequisite = exportPrerequisite(option)
                 const configuration = exportConfiguration(option)
                 const verdict = verdictApplies(prerequisite)
-                const risky = verdict && (option.verdict === 'fail' || option.verdict === 'unverified')
+                // "For checking" when the file is not something to print as it
+                // is: a geometry verdict that is not a pass, or a capture of a
+                // model that is behind the project (UI-C10).
+                const risky =
+                  (verdict && (option.verdict === 'fail' || option.verdict === 'unverified')) ||
+                  (prerequisite === 'renderer' && stale)
                 const label = option.enabled && risky ? 'Xuất để kiểm tra' : 'Xuất'
                 const fileName = fileNameOf(option)
                 const groupId = `export-config-${option.id}`
@@ -257,7 +262,8 @@ export function ExportSection() {
                         reason to disable the format. */}
                     {option.enabled && prerequisite === 'renderer' && stale ? (
                       <p className="muted" style={{ margin: 0, color: 'var(--warn)' }}>
-                        ⚠ Ảnh chụp lấy mô hình đang hiển thị, thuộc bản dựng cũ.
+                        ⚠ Ảnh chụp lấy mô hình đang hiển thị, thuộc bản dựng cũ. Tệp này không phải hình của
+                        thiết kế hiện tại.
                       </p>
                     ) : null}
                     {/* The settings a path publishes stay readable and correctable

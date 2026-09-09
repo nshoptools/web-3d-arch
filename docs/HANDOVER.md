@@ -57,6 +57,47 @@ theo đúng các bộ kiểm nhân (mechanics/final-scene/product-source/CSG), h
 khôi phục script đã ghim cho gói. Gói 08-09 vẫn chạy được như hướng dẫn trên,
 nhưng không chứa giao diện mới.
 
+## Cập nhật 09-09-2026 — đợt hoàn thiện sản phẩm lần hai (Hub; Grok và Gemini phản biện)
+
+Mã trên `main` sau `1adf6d79` (đợt này, xem `git log`). Những gì đổi và vì sao:
+
+- **Ảnh hoặc emoji đi tới được mô hình.** Trước đây chọn emoji rồi Dựng 3D chỉ ra
+  mã lỗi, nút chuyển raster biến mất sau lần chuyển đầu và không có lối tách vùng
+  màu. Nay nút hành động chính ở bước 1 tự đổi thành “Chuyển sang ảnh raster để
+  sửa” rồi “Tách vùng màu để dựng” (cùng lệnh `source.convert`, mỗi bước một xác
+  nhận); gợi ý ở khung và bảng công cụ gọi đúng tên nút; hộp xác nhận chuyển đổi
+  và tách vùng viết tiếng Việt. Sau tách vùng, nhân dựng mô hình ngay.
+- **Mở từ gói `.arch-project.zip` trả lại đúng dự án.** Gói được đặt lại dưới mã
+  dự án gốc khi mã đó trống hoặc chỉ còn bản ghi xóa (mọi ràng buộc nguồn, biên
+  nhận và chuẩn bị raster gắn với mã dự án nên vẫn hợp lệ; bản sao mã mới trước
+  đây không dựng được vì `PRODUCT_BINDINGS_STALE`). Dự án còn sống thì mở bản
+  trong thư viện và nói rõ; bản ghi cũ không đọc được mới tạo bản sao và cảnh báo.
+  Mở từ danh sách hoặc từ gói đều dựng lại mô hình ngay.
+- **Sửa thông số hoặc màu áp dụng thẳng.** Hộp xác nhận chỉ mở khi có quyết định
+  (nhập/chuyển nguồn, tách vùng màu, đổi loại, dùng chữ làm hình, chọn mặt/khe);
+  dòng đầu nói việc vừa làm (tệp nào, nguồn gì). Thẻ bận khi chờ trả lời ghi
+  “chờ bạn trả lời”, không “đang chạy”.
+- **Giao diện.** Thanh trên một hàng 56 px ở >1180; khung bước 1 gọn (ba dải gập,
+  cột công cụ, điều khiển khung ở góc, không lớp phủ khi chưa có nguồn); nhóm
+  Khung xem bước 2 gập mặc định ở ≤1180; toast tự mất, gộp trùng, xóa khi đổi dự
+  án, nằm trên hàng tab ở điện thoại; khu Lớp màu chỉ hàng của loại sản phẩm; khu
+  Xuất nhóm theo việc với cài đặt gập; tên khối và vật liệu bằng tiếng Việt; mã
+  lỗi có câu; thư viện nói rõ ghi tự động và đánh dấu Lưu.
+
+Bằng chứng trong `tmp/reviews/codex/runs/20260909-hub-quality-r2/` (ảnh
+`evidence/hub-walk`, kiểm `evidence/tests`, báo cáo `reports/HUB-QUALITY-R2.md`)
+và bản chắt lọc ở [testevidence/ui-quality-r2](testevidence/ui-quality-r2/README.md).
+Phản biện độc lập vòng 1 trên `1adf6d79`: Grok
+`tmp/reviews/grok/runs/20260909-grok-quality-r2/` (14 phát hiện) và Gemini
+`tmp/reviews/gemini/runs/20260909-gemini-quality-r2/` (3 phát hiện, 14 hướng); vòng
+2 trên bản tích hợp: `20260909-grok-quality-r2b` và `20260909-gemini-quality-r2b`.
+
+Chưa làm: gói website mới (lý do như trên); `tests/csg-controller/run.ps1` không
+chạy được trên cây hiện tại vì input ghim candidate cũ (luồng CSG được `tests/e2e`
+kiểm thay); bộ nghiệm thu `tests/product-acceptance` chưa chạy lại (cần gói
+release đã ghim). Máy chủ phát triển nay có đồng hồ chạy thật (`tools/development/dev-serve.mjs`),
+tránh “phiên hết hạn” giả sau 5 phút.
+
 ## Những gì cần giữ
 
 | Vị trí | Nội dung |

@@ -1,8 +1,8 @@
 {
- "version": 26,
- "updatedAt": "2026-09-09T09:20:00+00:00",
+ "version": 27,
+ "updatedAt": "2026-09-09T14:30:00+00:00",
  "releaseReady": false,
- "phase": "Hub release pass 2026-09-09: shell redesigned (start screen, single primary action), consent text and data-path fixes integrated; dev-server/harness tooling repaired; package rebuild blocked by kernel receipt pin (tools/kernel/build.ps1 changed after the canonical r4 build) Grok independent review 20260909-grok-ux-r1 handled: 15/16 findings fixed and re-verified (reopen rebuilds the model, worker module-fetch failure coded, phone header two rows, drawer closes on layout change/step 2, consent per product, internal ids off the main screen); F-15 kept by design.",
+ "phase": "Hub quality pass 2 2026-09-09 (Grok + Gemini independent reviews, both rounds): picture/emoji sources reach a model through a primary action that names the next source step; project packages restore under their own id and rebuild on open; parameter and colour edits apply without a consent dialog; waiting state named; one-row top bar, compact stage bands, folded viewport group, self-dismissing toasts, product-scoped materials, task-grouped export panel, Vietnamese names and diagnostics. Website package rebuild still blocked by the kernel receipt pin.",
  "agents": {
   "aiAdapters": {
    "id": "01a07d23-af29-7012-ba5f-4aed7b260563",

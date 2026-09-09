@@ -13,13 +13,16 @@ loại sản phẩm, một nút Tạo) và *Mở dự án đã lưu* (danh sách
 `.arch-project.zip`); không hiện rail/panel/stage, phím tắt khu vực và công cụ
 bị từ chối kèm lý do; chưa đăng nhập thì chỉ hiện thẻ đăng nhập. **Đang chỉnh
 sửa** (có dự án): giao diện tối, bảng thiết lập trái, khung thiết kế phải là vùng
-lớn nhất khi màn hình cho phép. Thanh trên 56 px; rail 74 px; panel 376 px,
-344 px ở ≤1400 px. Dùng CSS grid, `minmax(0,1fr)` cho stage. Gập panel bằng biến
+lớn nhất khi màn hình cho phép. Thanh trên 56 px, và ở >1180 px luôn một hàng:
+phần không vừa gập thành biểu tượng có tên trợ năng (tìm nhanh, mạng, nhãn bước
+ngắn) chứ không xuống hàng thứ hai, nên khung bên dưới không nhảy khi nút hành
+động chính xuất hiện hay biến mất; rail 74 px; panel 376 px, 344 px ở ≤1400 px. Dùng CSS grid, `minmax(0,1fr)` cho stage. Gập panel bằng biến
 chiều rộng ở desktop; mobile có trạng thái ngăn kéo riêng. Backdrop desktop
 `display:none`, không để phần tử trong grid vô hình sinh hàng.
 
 Thanh trên: logo/tên, tên dự án đang mở kèm trạng thái lưu, hai bước, tìm nhanh,
-trạng thái mạng, **một** nút hành động chính (Dựng 3D / Dựng lại / Xem mô hình /
+trạng thái mạng, **một** nút hành động chính (Chuyển sang ảnh raster / Tách vùng
+màu khi ảnh hoặc emoji chưa có vùng màu, rồi Dựng 3D / Dựng lại / Xem mô hình /
 Xuất file, tự đổi theo trạng thái), menu trợ giúp và menu tài khoản. Một hành động
 không xuất hiện ở hai nơi trên cùng màn hình; tải nguồn nằm ở khu Ảnh nguồn,
 khung xem trống, kéo thả, dán và Ctrl+O. Bước hiện tại/hoàn thành/chưa có nguồn
@@ -76,7 +79,12 @@ trên khối sáng/tối. Lớp phủ chỉ số trên trái, nhóm nút trên p
 nút tách tầng dưới phải; nền kính có fallback nền đặc. `pointer-events:none`
 chỉ dùng trên phần gợi ý trang trí, không áp lên nút/chú thích cần thao tác.
 
-Nhóm nút gập được, nhớ riêng; nhãn gập là button có tên và aria-expanded. Chỉ số
+Nhóm nút gập được, nhớ riêng; nhãn gập là button có tên và aria-expanded. Bước 1:
+ba dải gập (Chỉ số, Công cụ, Gợi ý) ở mép trên, cột công cụ bên phải, điều khiển
+khung (thu/phóng, vừa khung, so sánh) ở góc dưới phải; khi chưa có nguồn không
+có lớp phủ nào ngoài thẻ bắt đầu. Bước 2: nhóm Khung xem (kể cả bộ chọn khối)
+gập mặc định ở ≤1180 px và khi gập vẫn nêu tên khối đang chọn; nút của năng lực
+nhân không công bố thì không hiện. Chỉ số
 và toolbar không chồng nhau: desktop có khoảng cách tối thiểu 12 px, bề rộng được
 đo theo nội dung; ở ≤1180 px toolbar xuống dưới dải chỉ số. Nếu chỉ số cần cuộn,
 phải có dấu hiệu còn nội dung và thao tác bàn phím; không giấu thông tin trong
@@ -86,7 +94,8 @@ không chồng khi đổi ngôn ngữ/zoom.
 Trạng thái stage: chưa có nguồn thì phủ toàn khung với các lối bắt đầu (tải tệp,
 chữ, emoji, AI khi có kết nối);
 bận bước 1 là pill giữ vùng đang sửa; bận bước 2 phủ mờ nhưng nút Hủy vẫn thao tác
-được. Lỗi/cảnh báo nằm đáy trái và có vùng đọc lại lâu dài. Khi rỗng, các toolbar
+được. Khi nhân đang chờ trả lời trong hộp xác nhận, thẻ bận ghi “chờ bạn trả lời”
+thay vì “đang chạy” và không có nút Hủy riêng: Bỏ qua trong hộp là đường hủy. Lỗi/cảnh báo nằm đáy trái và có vùng đọc lại lâu dài. Khi rỗng, các toolbar
 không có nghĩa thực sự hidden/inert. Bận có tiến độ/công đoạn/job id; không khóa
 mất đường cứu/lưu dữ liệu độc lập.
 
@@ -95,7 +104,8 @@ nút góc 4; cảnh báo 5; rỗng 6; bận 7/8; vấu panel 9; popup 20; backdr
 panel trượt 60; tìm nhanh 200; toast 300; tooltip 400; skip link 999. Các giá trị
 là token, phải kiểm stacking context do transform/opacity/backdrop tạo ra.
 
-Hành động chính: bước 1 là Dựng 3D (hoặc Dựng lại / Xem mô hình đã dựng), bước 2
+Hành động chính: bước 1 là Dựng 3D (hoặc Dựng lại / Xem mô hình đã dựng; với ảnh
+hoặc emoji chưa có vùng màu là bước chuyển nguồn tương ứng), bước 2
 là mở lựa chọn xuất đang hợp lệ; ở bước 2 khi mô hình cũ có thêm nút Dựng lại.
 Tất cả nằm ở thanh trên, không có thanh việc kế tiếp riêng. Quay lại bước 1 bằng
 chip bước 1. Không cho “nút chính” ngầm chọn sai profile máy. Gợi ý ngữ cảnh nằm
@@ -113,6 +123,12 @@ Hàng tham số: nhãn, giá trị, đơn vị và control. Checkbox/select khô
 trị ở cột khác. Nhóm có màu/vạch/tiêu đề gập; lọc ẩn hẳn không khớp. Chip số lớp
 luôn thống nhất với nhân. Hai nút Áp dụng đầu/cuối nhóm khối nhập cùng một lệnh;
 khi dirty màu cam và có chữ “Chưa áp dụng”.
+
+Sửa thông số hoặc màu thuần được áp dụng và dựng lại ngay, không qua hộp xác
+nhận. Hộp xác nhận chỉ mở khi có quyết định của người dùng: nhập hoặc chuyển
+nguồn, tách vùng màu, đổi loại sản phẩm, dùng chữ làm hình, chọn mặt hay khe.
+Dòng đầu của hộp nói việc vừa làm bằng lời người dùng (tệp nào, nguồn gì); hai
+nút là Bỏ qua và Áp dụng thay đổi, nhật ký và hủy việc nằm trong chi tiết kỹ thuật.
 
 Hàng màu gồm swatch (mục tiêu 27 px), hex (78 px), phần trăm hoặc tên vai, NỀN nếu
 hợp lệ, khe (80 px), reset nếu có override; được wrap trên panel hẹp. Input color
@@ -136,8 +152,10 @@ Tìm nhanh dạng dialog, hộp tối đa 680 px, top mục tiêu 11vh, nhập +
 quả nhóm có giá trị và lý do disabled. Focus luôn nhìn thấy, kể cả ô nhập duy nhất.
 Trap focus cho modal, nền inert, Escape đóng, trả focus nơi mở; popup không modal
 không trap. Tooltip xuất hiện khi hover/focus, có Escape và không che thao tác.
-Toast có biến thể success/warning/error, lỗi quan trọng không chỉ tồn tại trong
-toast tự mất. Có thông báo được đọc bằng screen reader và vùng xem lại.
+Toast có biến thể success/warning/error; mọi toast tự mất (6 s thành công/thông
+tin, 12–14 s cảnh báo/lỗi), cùng câu gộp làm một, tối đa ba, xóa khi đổi dự án,
+ở ≤720 px nằm trên hàng tab; lỗi quan trọng không chỉ tồn tại trong toast tự
+mất mà còn trong nhật ký và dải vấn đề của khung. Có thông báo được đọc bằng screen reader và vùng xem lại.
 
 | Phím | Phạm vi và lệnh |
 | --- | --- |

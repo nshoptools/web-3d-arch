@@ -54,6 +54,9 @@ export type Commit = (raw: string) => Promise<CommitResult | null> | CommitResul
  * that was sent was still sent, and the core's answer to it stands; what this
  * refuses to do is repaint the field with it.
  */
+/** How long a slider may rest before its position is sent as one commit. */
+const SLIDE_SETTLE_MS = 180
+
 function useCommitOwner() {
   const commits = useRef(0)
   const edits = useRef(0)
@@ -255,6 +258,39 @@ export function NumberField({
   const shown = draft ?? value
   const disabled = Boolean(disabledReason)
 
+  /**
+   * A slider drag emits a value per pixel. Parameter edits are applied
+   * directly (no consent dialog), so each tick would be a rebuild of the
+   * model. The box follows every tick; the core hears the value the pointer
+   * settles on: after a short pause, or when the pointer is released.
+   */
+  const slideTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const slidePending = useRef<string | null>(null)
+  const flushSlide = () => {
+    if (slideTimer.current !== null) {
+      clearTimeout(slideTimer.current)
+      slideTimer.current = null
+    }
+    const raw = slidePending.current
+    slidePending.current = null
+    if (raw !== null) void commit(raw)
+  }
+  const slide = (raw: string) => {
+    // A newer position is an edit: an answer to an earlier tick must not
+    // repaint the box while the pointer is still moving.
+    owner.edited()
+    slidePending.current = raw
+    setDraft(raw)
+    if (slideTimer.current !== null) clearTimeout(slideTimer.current)
+    slideTimer.current = setTimeout(flushSlide, SLIDE_SETTLE_MS)
+  }
+  useEffect(
+    () => () => {
+      if (slideTimer.current !== null) clearTimeout(slideTimer.current)
+    },
+    [],
+  )
+
   const commit = async (raw: string) => {
     if (disabled) return
     if (raw === value) {
@@ -330,8 +366,10 @@ export function NumberField({
             value={sliderValue}
             aria-label={`${typeof label === 'string' ? label : 'Giá trị'} — thanh trượt`}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              void commit(event.target.value)
+              slide(event.target.value)
             }}
+            onPointerUp={flushSlide}
+            onBlur={flushSlide}
           />
         ) : null}
         <input
