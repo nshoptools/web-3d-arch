@@ -72,6 +72,9 @@ export class SourceOperations {
  }
  async sourceJob(factory,purpose,{operation='import',forceProposal=false,changes=[],sourceState=null,sourceCommand=null}={}){
   this.requireProject();const base=this.doc.state;
+  // The design the adoption was prepared against must be the one still open. A save writes a new head and a
+  // new document object around the same state; it does not retire the adoption (audit F-02, Codex round 3).
+  const sameDesign=()=>this.doc.state.revision===base.revision&&canonicalJSON(this.doc.state)===canonicalJSON(base);
   const renderingState=sourceState?validateState(data(sourceState)):data(base);
   if(sourceState){const withoutText=s=>{const v=data(s);delete v.content.app.text;return v;};assert(canonicalJSON(withoutText(renderingState))===canonicalJSON(withoutText(base)),'SOURCE_PROSPECTIVE_SCOPE');}
   const sourceContext=purpose==='font'?null:createSourceContext(operation,purpose==='mesh'?base.content.app.mesh:base.content.app.source);
@@ -115,9 +118,7 @@ export class SourceOperations {
     const reply=await a.prepareAdoption({...control,purpose:'source',operation,state:freeze(data(base)),source:freeze(data(desc)),
      materials:freeze(data(materials)),materialDefaults:freeze(data(materialDefaults)),
      assets:new Map([...map].map(([hash,asset])=>[hash,new Uint8Array(asset.bytes)]))});
-    // The design the adoption was prepared against must be the one still open. A save writes a new head
-    // and a new document object around the same state; it does not retire the adoption (audit F-02).
-    this.jobGuard(job);assert(this.doc.state.revision===base.revision&&canonicalJSON(this.doc.state)===canonicalJSON(base),'STALE_SOURCE_ADOPTION');
+    this.jobGuard(job);assert(sameDesign(),'STALE_SOURCE_ADOPTION');
     adopted=validateAdoption(reply,job.ticket,base,desc);desc.metadata=adopted.metadata;
    }
    // Source role is adopted atomically. Replacing a text design by an image
@@ -129,9 +130,9 @@ export class SourceOperations {
    this.jobGuard(job);
    if(confirmation)sourcePreparation({control,confirmation,source:desc});
    if(productTransaction){
-    const outputHash=await candidateHash(next,map),head=this.headRevision;this.jobGuard(job);
+    const outputHash=await candidateHash(next,map);this.jobGuard(job);
     const stage=async accepted=>{
-     this.jobGuard(job);assert(this.headRevision===head&&!this.pendingOperation&&this.doc.state===base,'STALE_CONFIRMATION');
+     this.jobGuard(job);assert(sameDesign()&&!this.pendingOperation,'STALE_CONFIRMATION');
      assert(await candidateHash(next,map)===outputHash,'PROPOSAL_OUTPUT_CHANGED');this.jobGuard(job);
      const source=data(desc);
      if(confirmation)source.metadata=boundedSourceMetadata({...source.metadata,confirmationReceipt:sourceReceipt({version:accepted.version,ticket:accepted.ticket,confirmation:accepted.confirmation,receipt:accepted.receipt},{control,confirmation,source:desc,acceptedAtRevision:next.revision})});
@@ -153,7 +154,7 @@ export class SourceOperations {
     return await stage(null);
    }
    if(needsProposal){
-    const outputHash=await candidateHash(next,map),head=this.headRevision;this.jobGuard(job);
+    const outputHash=await candidateHash(next,map);this.jobGuard(job);
     const apply=async()=>{
      let accepted=next;
      if(confirmation){
@@ -161,7 +162,7 @@ export class SourceOperations {
       const reply=await a.acceptProposal({...control,confirmation:freeze(data(confirmation)),source:freeze(data(desc)),
        assets:new Map([...map].map(([hash,asset])=>[hash,new Uint8Array(asset.bytes)])),acceptedAtRevision:next.revision});
       const receipt=sourceReceipt(reply,{control,confirmation,source:desc,acceptedAtRevision:next.revision});
-      this.jobGuard(job);assert(this.headRevision===head&&!this.pendingOperation,'STALE_CONFIRMATION');
+      this.jobGuard(job);assert(sameDesign()&&!this.pendingOperation,'STALE_CONFIRMATION');
       assert(await candidateHash(next,map)===outputHash,'PROPOSAL_OUTPUT_CHANGED');this.jobGuard(job);
       accepted=data(next);const source=purpose==='mesh'?accepted.content.app.mesh:accepted.content.app.source;
       source.metadata=adopted?boundedSourceMetadata({...source.metadata,confirmationReceipt:receipt}):{...source.metadata,confirmationReceipt:receipt};
