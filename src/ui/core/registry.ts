@@ -67,7 +67,7 @@ export const SECTIONS: readonly SectionDef[] = [
   {
     id: 'library',
     label: 'Thư viện',
-    sub: 'Dự án, sao lưu, cài đặt và trợ giúp',
+    sub: 'Tên, lưu, dự án đã lưu và sao lưu',
     color: 'var(--sec-library)',
     icon: 'library',
     key: '6',

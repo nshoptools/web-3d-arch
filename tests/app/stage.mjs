@@ -20,7 +20,8 @@ async function tree(dir,extensions){
   if(e.isDirectory())await tree(path,extensions);else if(extensions.has(extname(e.name)))sources.set(path,join(inputRoot,path));
  }
 }
-for(const dir of ['src/app','src/domain','src/storage','src/editing','src/contracts','src/server','src/input'])await tree(dir,code);
+// src/printing/src: src/app/printer-profiles.mjs validates imported profiles through it.
+for(const dir of ['src/app','src/domain','src/storage','src/editing','src/contracts','src/server','src/input','src/printing/src'])await tree(dir,code);
 for(const name of ['arch-view.mjs','three-viewport.mjs'])sources.set('src/viewport/'+name,join(inputRoot,'src/viewport',name));
 await tree('tests/app',new Set([...code,'.html','.ps1']));
 sources.set('tests/server/helpers.mjs',join(inputRoot,'tests/server/helpers.mjs'));

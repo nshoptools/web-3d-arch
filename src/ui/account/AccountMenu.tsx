@@ -3,6 +3,7 @@ import { useUiActions } from '../core/ui-state.tsx'
 import { CAP } from '../core/registry.ts'
 import { Button } from '../components/Button.tsx'
 import { Menu, type MenuItem } from '../components/Menu.tsx'
+import { userLabel } from '../core/text.ts'
 
 const STATUS_LABEL = {
   checking: 'Đang kiểm tra phiên',
@@ -122,10 +123,10 @@ export function AccountMenu() {
     <Menu
       label="Menu tài khoản"
       items={items}
-      trigger={{ size: 'small', icon: 'user', 'aria-label': `Menu tài khoản của ${user?.name ?? 'bạn'}` }}
+      trigger={{ size: 'small', icon: 'user', 'aria-label': `Menu tài khoản của ${userLabel(user)}` }}
     >
-      <span style={{ maxInlineSize: 120, overflow: 'hidden', textOverflow: 'ellipsis' }}>
-        {user?.name ?? 'Tài khoản'}
+      <span style={{ maxInlineSize: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {userLabel(user)}
       </span>
       {session.status === 'offline-lease' ? (
         <span className="chip chip--warn fc-border" style={{ marginInlineStart: 4 }}>

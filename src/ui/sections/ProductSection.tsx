@@ -4,7 +4,6 @@ import { useAsyncAction, useBridge, useCapability, useRunCommand, useSnapshot } 
 import { isGroupOpen, useUi, useUiActions } from '../core/ui-state.tsx'
 import { CAP, PRODUCTS } from '../core/registry.ts'
 import { useProjectGate } from '../core/project-gate.ts'
-import { CreateProjectCard } from './CreateProjectCard.tsx'
 import { Button } from '../components/Button.tsx'
 import { TextField } from '../components/Fields.tsx'
 import { CollapsibleGroup } from '../components/Group.tsx'
@@ -21,12 +20,6 @@ export function ProductSection() {
   const write = useCapability(CAP.projectWrite)
   const writeBlocked = gate.reason ?? (write.available ? null : write.reason)
   const product = snapshot.project.product
-  /**
-   * With no document open the controller falls back to its own default product.
-   * That is not the user's choice, so nothing is shown as chosen: the create
-   * card is where a product is picked for a project that does not exist yet.
-   */
-  const chosenProduct = gate.hasProject ? product : null
 
   const groupRef = useRef<HTMLDivElement>(null)
   const [presets, setPresets] = useState<PresetEntry[]>([])
@@ -106,17 +99,15 @@ export function ProductSection() {
 
   return (
     <div className="stack">
-      {gate.hasProject ? null : <CreateProjectCard idPrefix="w3a-create-product" />}
       <fieldset style={{ border: 0, margin: 0, padding: 0 }}>
         <legend className="field__label" style={{ paddingBlockEnd: 6 }}>
-          Loại sản phẩm{gate.hasProject ? '' : ' của dự án đang mở'}
+          Loại sản phẩm
         </legend>
         {/* Arrow keys move between the radios and select as they go, which is
-            what the radiogroup pattern requires; without it four of the five
-            options were unreachable from the keyboard. */}
+            what the radiogroup pattern requires. */}
         <div className="stack" ref={groupRef} role="radiogroup" aria-label="Loại sản phẩm">
           {PRODUCTS.map((item, index) => {
-            const selected = chosenProduct === item.id
+            const selected = product === item.id
             return (
               <button
                 key={item.id}
@@ -124,9 +115,7 @@ export function ProductSection() {
                 role="radio"
                 aria-checked={selected}
                 aria-disabled={writeBlocked ? true : undefined}
-                // With nothing chosen the first radio still has to be reachable,
-                // otherwise the whole group drops out of the tab order.
-                tabIndex={selected || (chosenProduct === null && index === 0) ? 0 : -1}
+                tabIndex={selected ? 0 : -1}
                 onKeyDown={(event: KeyboardEvent<HTMLButtonElement>) => {
                   const delta =
                     event.key === 'ArrowDown' || event.key === 'ArrowRight'
@@ -170,8 +159,8 @@ export function ProductSection() {
         </div>
       </fieldset>
       <p className="muted-3" style={{ margin: 0 }}>
-        Đổi loại là một giao dịch: nhân trả về phần thay đổi để bạn xem trước rồi mới cam kết, và
-        thao tác hoàn tác được. Giá trị bạn chọn tay được giữ lại nếu còn hợp lệ.
+        Đổi loại sản phẩm sẽ hỏi trước khi áp dụng và hoàn tác được. Giá trị bạn đã chọn tay được giữ
+        nếu còn hợp lệ.
       </p>
       {writeBlocked ? <span className="reason">{writeBlocked}</span> : null}
 
@@ -183,7 +172,7 @@ export function ProductSection() {
         count={
           allCount === null
             ? 'đang đếm…'
-            : `${presets.length} đang lọc / ${allCount} toàn bộ`
+            : `${presets.length} cho loại này / ${allCount} tổng`
         }
       >
         {presetError ? (
@@ -199,8 +188,7 @@ export function ProductSection() {
           <div className="empty">
             <strong className="empty__title">Loại này chưa có mẫu dựng sẵn</strong>
             <p className="muted" style={{ margin: 0 }}>
-              Bạn vẫn dựng thủ công được: đặt thông số ở khu Thông số rồi lưu lại thành mẫu của
-              riêng bạn.
+              Đặt thông số ở khu Thông số rồi lưu lại thành mẫu của riêng bạn bằng ô bên dưới.
             </p>
             <Button icon="sliders" onClick={() => actions.setSection('parameters', true)}>
               Mở khu Thông số
@@ -257,8 +245,8 @@ export function ProductSection() {
                     ) : null}
                     {armedApply ? (
                       <span className="muted-3" role="status">
-                        Áp mẫu thay bộ thông số hiện tại và là một bước hoàn tác được. Bấm lại trong
-                        4 giây để xác nhận.
+                        Áp mẫu thay bộ thông số hiện tại và hoàn tác được. Bấm lại trong 4 giây để
+                        xác nhận.
                       </span>
                     ) : null}
                   </div>
@@ -293,8 +281,7 @@ export function ProductSection() {
           </Button>
         </div>
         <p className="muted-3" style={{ margin: 0 }}>
-          Tổng tối đa 20 mẫu trên mọi loại (LIM-01). Áp dụng mẫu là lệnh tường minh, hoàn tác được,
-          và không đặt lại màu hay khe bạn đã chọn tay.
+          Tối đa 20 mẫu cho mọi loại. Áp dụng mẫu không đặt lại màu hay khe bạn đã chọn tay.
         </p>
       </CollapsibleGroup>
     </div>

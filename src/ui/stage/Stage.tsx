@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { useAsyncAction, useBridge, useRunCommand, useSnapshot } from '../core/bridge.tsx'
+import { useAsyncAction, useBridge, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
 import { isGroupOpen, useUi, useUiActions } from '../core/ui-state.tsx'
 import {
   hasProject,
@@ -8,6 +8,7 @@ import {
   NO_PROJECT_REASON,
   visibleModelNote,
 } from '../core/project-state.ts'
+import { CAP } from '../core/registry.ts'
 import { isTextEntryTarget } from '../core/dom.ts'
 import { MQ_MOBILE, useMediaQuery } from '../core/useMediaQuery.ts'
 import { ACCEPT_SOURCE, chooseFile } from '../core/file-dialog.ts'
@@ -43,6 +44,7 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   const actions = useUiActions()
   const { state } = useUi()
   const mobile = useMediaQuery(MQ_MOBILE)
+  const ai = useCapability(CAP.aiGenerate)
   const [host3d, setHost3d] = useState<HTMLDivElement | null>(null)
   const [dropActive, setDropActive] = useState(false)
   const { project, job, diagnostics } = snapshot
@@ -70,7 +72,6 @@ export function Stage({ inert = false }: { inert?: boolean }) {
     if (projectOpen) return false
     actions.announce(NO_PROJECT_REASON)
     actions.toast('warning', NO_PROJECT_REASON)
-    actions.setSection('source', true)
     return true
   }
 
@@ -88,7 +89,13 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   guardRef.current = refuseWithoutProject
   useEffect(() => {
     const onPaste = (event: ClipboardEvent) => {
+      if (event.defaultPrevented) return
       if (isTextEntryTarget(event.target)) return
+      // A modal layer owns the keyboard: the workspace is inert while a dialog
+      // is open (AppShell), and a paste aimed at that dialog must not start a
+      // background import that would cancel the job or proposal on screen.
+      const main = document.getElementById('w3a-main')
+      if (!main || main.closest('[inert]') || document.querySelector('[role="dialog"]')) return
       const file = event.clipboardData?.files?.[0]
       if (!file) return
       event.preventDefault()
@@ -105,17 +112,18 @@ export function Stage({ inert = false }: { inert?: boolean }) {
     return bridge.importFile(file, 'source')
   }, { success: 'Đã nhận tệp nguồn.' })
 
-  // Opens the source section and brings the requested block into view. The
-  // three starting paths must do three different things.
-  const goToSourceBlock = (anchorId: string) => {
+  // Opens the source section with the requested group unfolded and brings its
+  // first control into view. The starting paths must do different things.
+  const goToSourceBlock = (anchorId: string, groupId: string) => {
     actions.setSection('source', true)
+    actions.setGroupOpen(groupId, true)
     requestAnimationFrame(() => {
       const node = document.getElementById(anchorId)
       node?.scrollIntoView({ block: 'nearest' })
       const focusable =
         node instanceof HTMLButtonElement
           ? node
-          : (node?.querySelector<HTMLElement>('button, input, textarea, select') ?? null)
+          : (node?.querySelector<HTMLElement>('input, textarea, select, button:not(.group__head)') ?? null)
       focusable?.focus()
     })
   }
@@ -140,14 +148,14 @@ export function Stage({ inert = false }: { inert?: boolean }) {
             value:
               project.source?.widthMm !== undefined && project.source.heightMm !== undefined
                 ? `${formatNumber(project.source.widthMm)} × ${formatNumber(project.source.heightMm)} mm`
-                : 'do nhân báo',
+                : 'chưa có',
           },
           { label: 'Nguồn', value: project.source ? project.source.kind : 'chưa có' },
           {
             label: 'Ảnh sửa',
             value:
               project.sourceCanvas === null
-                ? 'chưa công bố'
+                ? 'chưa có'
                 : `bản ${project.sourceCanvas.revision}`,
           },
         ]
@@ -367,34 +375,16 @@ export function Stage({ inert = false }: { inert?: boolean }) {
             </div>
           </div>
 
-          {!projectOpen && !busy ? (
+          {/* The frame is empty until the project has a source. The card names
+              every way in, in the order most people take them; the workspace
+              itself only exists once a project is open (AppShell). */}
+          {!hasSource && !busy ? (
             <div className="stage-empty">
-              <div className="card fc-border" style={{ maxInlineSize: 460 }}>
-                <strong className="card__title">Chưa mở dự án nào</strong>
+              <div className="card fc-border" style={{ maxInlineSize: 500 }}>
+                <strong className="card__title">Thêm nguồn để bắt đầu thiết kế</strong>
                 <p className="muted" style={{ margin: 0 }}>
-                  Nguồn, thông số và màu đều thuộc về một dự án. Nhân từ chối mọi lệnh nguồn với mã
-                  PROJECT_REQUIRED cho tới khi có một dự án đang mở, nên hãy bắt đầu từ đó.
-                </p>
-                <div className="row">
-                  <Button
-                    variant="primary"
-                    icon="plus"
-                    onClick={() => goToSourceBlock('w3a-create-project')}
-                  >
-                    Tạo dự án và chọn loại sản phẩm
-                  </Button>
-                  <Button icon="library" onClick={() => actions.setSection('library', true)}>
-                    Mở dự án đã lưu
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ) : !hasSource && !busy ? (
-            <div className="stage-empty">
-              <div className="card fc-border" style={{ maxInlineSize: 460 }}>
-                <strong className="card__title">Khung thiết kế đang trống</strong>
-                <p className="muted" style={{ margin: 0 }}>
-                  Ba lối bắt đầu. Kéo thả tệp vào khung này cũng được.
+                  Kéo thả tệp vào khung này, dán bằng Ctrl+V, hoặc chọn một cách bên dưới. Ảnh, SVG,
+                  chữ hay emoji đều dùng được.
                 </p>
                 <div className="row">
                   <Button
@@ -403,14 +393,19 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                     disabled={pickSource.pending}
                     onClick={() => void pickSource.run()}
                   >
-                    {pickSource.pending ? 'Đang nhận…' : 'Tải nguồn'}
+                    {pickSource.pending ? 'Đang nhận…' : 'Tải ảnh hoặc SVG'}
                   </Button>
-                  <Button icon="sparkle" onClick={() => goToSourceBlock('w3a-source-emoji')}>
-                    Chọn emoji
-                  </Button>
-                  <Button icon="text" onClick={() => goToSourceBlock('w3a-source-text')}>
+                  <Button icon="text" onClick={() => goToSourceBlock('w3a-source-text', 'source-text')}>
                     Gõ chữ
                   </Button>
+                  <Button icon="sparkle" onClick={() => goToSourceBlock('w3a-source-emoji', 'source-emoji')}>
+                    Chọn emoji
+                  </Button>
+                  {ai.available ? (
+                    <Button icon="sparkle" onClick={() => actions.openDialog({ kind: 'ai-generate' })}>
+                      Tạo bằng AI
+                    </Button>
+                  ) : null}
                 </div>
               </div>
             </div>
@@ -451,13 +446,13 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                   </Button>
                   <Button
                     icon="save"
-                    onClick={() => void run({ type: 'project.save' }, { success: 'Đã gửi lệnh lưu.' })}
+                    onClick={() => void run({ type: 'project.save' }, { success: 'Đã lưu dự án.' })}
                   >
                     Lưu dự án
                   </Button>
                 </div>
                 <p className="muted-3" style={{ margin: 0 }}>
-                  Lưu và cứu dữ liệu vẫn dùng được trong khi nhân đang chạy.
+                  Lưu và xuất gói dự án vẫn dùng được trong khi đang xử lý.
                 </p>
               </div>
             </div>

@@ -104,7 +104,7 @@ export function parameterViews(state,canEdit){
  unit:layer?'layers':f.unit??null,...(f.domain.kind==='range'?{min:String(f.domain.min),max:String(f.domain.max)}:{}),
  ...(numeric?{step:String(f.ui.increment??0.000001)}:{}),...(f.type==='enum'?{options:f.domain.values.map(value=>({value,label:value}))}:auto?{options:[{value:'auto:'+value.mode,label:value.mode}]}:{}),
  advanced:f.ui.advanced,visible:true,enabled,...(!enabled?{reason:!canEdit?'Hãy đăng nhập và mở khóa dự án này trước khi đổi tham số.':!availability.applicable?'Tham số được giữ lại nhưng đang không có hiệu lực.':'Dung sai được chọn theo phiên bản qua chức năng của nhân, không sửa trực tiếp.'}:{}),
- overridden:entries[f.id]?.origin==='user',derivedLabel:f.type==='height'?String(domain.resolveFieldMm(state,f.id))+' mm; chưa xác minh hình học/độ khớp':f.verification.geometry};
+ overridden:entries[f.id]?.origin==='user',...(f.type==='height'?{derivedLabel:String(domain.resolveFieldMm(state,f.id))+' mm; chưa xác minh hình học/độ khớp'}:{})};
  });
 }
 export function setParameter(state,id,value){

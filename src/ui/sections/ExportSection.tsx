@@ -1,6 +1,6 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import type { ExportPrerequisite } from '../../contracts/app-bridge.ts'
-import { useAsyncAction, useBridge, useCapability, useSnapshot } from '../core/bridge.tsx'
+import { useAsyncAction, useBridge, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
 import { isGroupOpen, useUi, useUiActions } from '../core/ui-state.tsx'
 import { CAP } from '../core/registry.ts'
 import {
@@ -62,9 +62,21 @@ export function ExportSection() {
     [project.parameters],
   )
 
-  const runExport = useAsyncAction(async (id: string) => bridge.exportFile(id), {
-    announce: 'Đã gửi yêu cầu xuất tệp.',
+  const run = useRunCommand()
+  /** The last format that produced a file, so the section can say what a download does and does not do. */
+  const [exported, setExported] = useState<{ id: string; label: string } | null>(null)
+  const runExport = useAsyncAction(
+    async (id: string) => {
+      const result = await bridge.exportFile(id)
+      if (result.ok) setExported({ id, label: exports.find((option) => option.id === id)?.label ?? id })
+      return result
+    },
+    { announce: 'Đã gửi yêu cầu xuất tệp.' },
+  )
+  const saveProject = useAsyncAction(async () => {
+    await run({ type: 'project.save' }, { success: 'Đã lưu dự án.' })
   })
+  const unsaved = project.savedRevision !== project.revision
 
   // Which prerequisites this build actually publishes, in a stable order. Only
   // these are explained: the interface does not lecture about a gate that no
@@ -239,6 +251,33 @@ export function ExportSection() {
           })}
         </ul>
       )}
+
+      {/* A downloaded file is not a saved project: the two are different
+          things, and the sentence says which one just happened (audit). */}
+      {exported ? (
+        <div className={`card fc-border`} role="status" data-export-followup={unsaved ? 'unsaved' : 'saved'}>
+          <strong>Đã tải về: {exported.label}</strong>
+          <p className="muted" style={{ margin: 0 }}>
+            {unsaved
+              ? 'Tệp đã nằm trong thư mục tải về, nhưng dự án chưa được lưu. Lưu để giữ bản sửa này trong thư viện.'
+              : 'Tệp đã nằm trong thư mục tải về; dự án đã được lưu ở bản sửa hiện tại.'}
+          </p>
+          {unsaved ? (
+            <Button
+              size="small"
+              icon="save"
+              variant="primary"
+              keyHint="Ctrl S"
+              disabled={saveProject.pending}
+              disabledReason={writeBlocked}
+              reasonHidden
+              onClick={() => void saveProject.run()}
+            >
+              Lưu dự án
+            </Button>
+          ) : null}
+        </div>
+      ) : null}
 
       <ExportReceipts />
 

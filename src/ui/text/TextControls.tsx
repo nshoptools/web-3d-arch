@@ -15,6 +15,7 @@ import { useProjectGate } from '../core/project-gate.ts'
 import { Button } from '../components/Button.tsx'
 import { CheckField, NumberField, SelectField, TextField, type CommitResult } from '../components/Fields.tsx'
 import { CollapsibleGroup } from '../components/Group.tsx'
+import { diagnosticText } from '../core/text.ts'
 
 type NumericTextKey =
   | 'sizeMm'
@@ -101,7 +102,10 @@ export function TextControls({ place }: TextControlsProps) {
         }
       })
       .catch((error: unknown) => {
-        if (!cancelled) setFontError(error instanceof Error ? error.message : 'Không đọc được danh mục font.')
+        if (cancelled) return
+        // The core answers with a code (TEXT_CONTEXT, FONT_CATALOG_UNSUPPORTED…); a person reads a sentence.
+        const code = typeof (error as { code?: unknown })?.code === 'string' ? (error as { code: string }).code : null
+        setFontError(diagnosticText(code ?? 'FONT_CATALOG', 'Chưa đọc được danh mục font. Thử lại sau giây lát.'))
       })
     return () => {
       cancelled = true

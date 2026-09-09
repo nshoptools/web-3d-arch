@@ -52,8 +52,25 @@ export function mountApplication({element,origin=location.origin,deviceId,module
     ...(navigate?{navigate}:{}),...(fetchImpl?{fetchImpl}:{})});
   const unmount=mountApp(element,controller);
   const stopPreparation=productServices?scheduleApplicationPreparation(controller):()=>{};
-  const onOffline=()=>controller.setOnline(false);
-  const onOnline=()=>{controller.setOnline(true);void controller.initialize();};
+  // A network drop must not end the working session. The open project is
+  // remembered when the connection changes and reopened — by id, from local
+  // storage, only for the same signed-in person — once initialize() has
+  // re-established the session (which resets private state on purpose). The
+  // memo survives a failed attempt, so a browser that reports 'online' before
+  // the network is usable is retried on its next 'online' event (audit RO-04).
+  let resume=null;
+  const remember=()=>{const s=controller.getSnapshot();if(s.project.id&&s.session.user)resume={projectId:s.project.id,userId:s.session.user.id};};
+  const onOffline=()=>{remember();controller.setOnline(false);};
+  const onOnline=()=>{
+    remember();controller.setOnline(true);
+    void controller.initialize().then(result=>{
+      const memo=resume;if(!result?.ok||!memo)return;
+      const after=controller.getSnapshot();
+      if(after.session.status!=='signed-in'||after.session.user?.id!==memo.userId)return;
+      resume=null;if(after.project.id)return;
+      return controller.dispatch({type:'project.open',id:memo.projectId});
+    }).catch(()=>{});
+  };
   window.addEventListener('offline',onOffline);window.addEventListener('online',onOnline);
   const initialized=controller.initialize();
   let disposal=null;

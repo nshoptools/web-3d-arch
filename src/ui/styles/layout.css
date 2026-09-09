@@ -2,6 +2,10 @@
  * Layout — UI-01, UI-03, UI-06.
  * Mobile-first. Every breakpoint uses range syntax so a viewport that lands
  * exactly on 720 / 1023 / 1180 / 1400 matches one rule and only one rule.
+ *
+ * Two states share the shell: `data-mode="start"` (no project: top bar and the
+ * start screen) and `data-mode="workspace"` (top bar, rail, panel, stage, and
+ * the mobile tab bar under 720 px).
  */
 
 @layer layout {
@@ -22,16 +26,24 @@
     /* max-content, not auto: with a definite shell height an `auto` row is
        frozen at its min-content size when space runs short, and at 320 CSS px
        with 200% text that silently squeezes the header so the account menu and
-       the next-step button end up painted under the stage. A max-content row
+       the primary button end up painted under the stage. A max-content row
        keeps its content and lets the shell overflow its host instead, which is
        what the host's own scrollbar is for (UI-06). */
-    grid-template-rows: max-content minmax(220px, 1fr) max-content max-content;
+    grid-template-rows: max-content minmax(220px, 1fr) max-content;
     grid-template-areas:
       'top'
       'stage'
-      'next'
       'tabs';
     background: var(--b0);
+  }
+
+  /* The start screen has no rail, panel or tab bar at any width. */
+  .app[data-mode='start'] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: max-content minmax(0, 1fr);
+    grid-template-areas:
+      'top'
+      'stage';
   }
 
   /* Nothing above the shell may create a containing block for the fixed
@@ -42,7 +54,6 @@
   .app__rail { grid-area: rail; }
   .app__panel { grid-area: panel; }
   .app__stage { grid-area: stage; }
-  .app__next { grid-area: next; }
   .app__tabs { grid-area: tabs; }
 
   /* ---------------------------------------------------------------- topbar */
@@ -83,6 +94,32 @@
   .topbar__name { font-size: var(--fs-head); font-weight: 650; line-height: 1.2; }
   .topbar__sub { color: var(--t2); font-size: var(--fs-small); line-height: 1.2; }
 
+  /* The open project: its name and whether it is saved, as one control that
+     opens the library. Long names wrap inside the control instead of pushing
+     the header wider than the viewport. */
+  .topbar__project {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    max-inline-size: min(100%, 320px);
+    min-block-size: var(--target-min);
+    padding: 3px 9px;
+    border: 1px solid var(--ln);
+    border-radius: var(--r2);
+    background: var(--b2);
+    color: var(--t1);
+    text-align: start;
+    font-size: var(--fs-small);
+  }
+  .topbar__project:hover { background: var(--b3); border-color: var(--ln-control); }
+  .topbar__project-name {
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
   .topbar__steps {
     display: flex;
     align-items: center;
@@ -113,10 +150,15 @@
     overflow-wrap: anywhere;
   }
 
-  /* > 1400: brand subtitle visible. At or below it is hidden (UI-06). */
+  /* The brand subtitle only has room on the start screen and on wide
+     workspaces (UI-06). */
   .topbar__sub { display: none; }
-  @media (width > 1400px) {
-    .topbar__sub { display: block; }
+  .topbar--start .topbar__sub { display: block; }
+  @media (width <= 720px) {
+    .topbar--start .topbar__sub { display: none; }
+  }
+  @media (width <= 1400px) {
+    .topbar__help-label { display: none; }
   }
 
   /* ------------------------------------------------------------------ rail */
@@ -286,6 +328,46 @@
   /* Desktop keeps the backdrop fully out of the grid (UI-01). */
   .backdrop { display: none; }
 
+  /* ----------------------------------------------------------- start screen */
+
+  /* One scrolling page under the top bar. Two cards side by side where there
+     is room, one column otherwise; the content never exceeds a comfortable
+     reading width. */
+  .start {
+    min-inline-size: 0;
+    min-block-size: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 32px);
+    padding-block-end: calc(clamp(16px, 4vw, 40px) + env(safe-area-inset-bottom));
+  }
+  .start__inner {
+    max-inline-size: 1040px;
+    margin-inline: auto;
+    display: grid;
+    gap: 20px;
+  }
+  .start__inner--narrow { max-inline-size: 560px; }
+  .start__head { display: grid; gap: 6px; }
+  .start__title {
+    margin: 0;
+    font-size: calc(26px * var(--ui-scale));
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .start__lead { margin: 0; color: var(--t2); max-inline-size: 64ch; }
+  .start__grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  @media (width > 900px) {
+    .start__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  }
+  .start__card { padding: 16px; gap: 12px; }
+  .start__foot { display: flex; gap: 8px; flex-wrap: wrap; }
+
   /* ------------------------------------------------------------------ stage */
 
   .stage-wrap {
@@ -296,7 +378,8 @@
 
   .stage {
     position: absolute;
-    inset: var(--stage-gap) var(--stage-gap) 0;
+    inset: var(--stage-gap);
+    inset-block-end: max(var(--stage-gap), env(safe-area-inset-bottom));
     border: 1px solid var(--ln);
     border-radius: var(--r3);
     background: var(--stage);
@@ -489,7 +572,7 @@
   }
   .stage__bottom > * { pointer-events: auto; }
 
-  .stage__bottom-left { display: grid; gap: 8px; justify-items: start; min-inline-size: 0; }
+  .stage__bottom-left { display: grid; gap: 8px; justify-items: start; min-inline-size: 0; max-inline-size: min(560px, 100%); }
 
   /* At or below 1180 the toolbar drops under the readout strip (UI-03). */
   @media (width <= 1180px) {
@@ -527,6 +610,7 @@
     overflow-wrap: anywhere;
   }
 
+  /* The contextual hint lives in the stage at every width (UI-03). */
   .stage-hints { z-index: var(--z-readout); }
   .stage-tools { z-index: var(--z-ruler); }
   .stage-corner { z-index: var(--z-corner); }
@@ -567,33 +651,6 @@
     padding-block-start: clamp(8px, 12%, 56px);
   }
   .stage-busy--pill .stage-busy__card { pointer-events: auto; }
-
-  /* ---------------------------------------------------------------- nextbar */
-
-  .nextbar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-block-size: var(--nextbar-h);
-    padding: 8px 10px;
-    background: var(--b1);
-    border-top: 1px solid var(--ln);
-    flex-wrap: wrap; /* long hint text wraps instead of being clipped */
-  }
-
-  .nextbar__hint {
-    flex: 1 1 200px;
-    min-inline-size: 0;
-    color: var(--t2);
-    font-size: var(--fs-small);
-  }
-
-  /* Hints live on the bar above 1180 and inside the stage at or below it. */
-  .nextbar__hint { display: none; }
-  @media (width > 1180px) {
-    .nextbar__hint { display: block; }
-    .stage-hints { display: none; }
-  }
 
   /* ------------------------------------------------------------ mobile tabs */
 
@@ -639,16 +696,15 @@
   /* ============================================================= 720 -> up */
 
   @media (width > 720px) {
-    .app {
+    .app[data-mode='workspace'] {
       grid-template-columns: var(--rail-w) minmax(0, 1fr);
-      grid-template-rows: max-content minmax(220px, 1fr) max-content;
+      grid-template-rows: max-content minmax(220px, 1fr);
       grid-template-areas:
         'top top'
-        'rail stage'
-        'rail next';
+        'rail stage';
     }
 
-    .rail { display: flex; }
+    .app[data-mode='workspace'] .rail { display: flex; }
     .app__tabs { display: none; }
 
     /* 720 < w <= 1023: the panel slides in over the stage cell. It shares that
@@ -682,12 +738,11 @@
   /* ============================================================ 1023 -> up */
 
   @media (width > 1023px) {
-    .app {
+    .app[data-mode='workspace'] {
       grid-template-columns: var(--rail-w) var(--panel-w) minmax(0, 1fr);
       grid-template-areas:
         'top top top'
-        'rail panel stage'
-        'rail panel next';
+        'rail panel stage';
     }
 
     .panel {
@@ -741,6 +796,7 @@
     .panel-tab { display: none; }
     .topbar { gap: 6px; }
     .topbar__name { font-size: var(--fs-body); }
+    .topbar__project { max-inline-size: 100%; }
   }
 
   /* Short viewports and on-screen keyboards: the drawer must never eat the

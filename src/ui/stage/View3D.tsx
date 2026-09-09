@@ -1,8 +1,6 @@
 import { useCapabilities, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
 import { isGroupOpen, useUi, useUiActions } from '../core/ui-state.tsx'
 import { CAP, VIEW_ACTIONS } from '../core/registry.ts'
-import { modelIsStale } from '../core/project-state.ts'
-import { REBUILD_REASON } from '../core/step-nav.ts'
 import { Button } from '../components/Button.tsx'
 import { SelectField } from '../components/Fields.tsx'
 
@@ -21,7 +19,6 @@ export function View3D() {
   const writeBlocked = write.available ? null : write.reason
   const open = isGroupOpen(state, 'stage-view-group')
   const toolsOpen = isGroupOpen(state, 'stage-tools', true)
-  const stale = modelIsStale(snapshot.project)
   const visibleRevision = snapshot.project.visibleModelRevision
   const selection = snapshot.project.selection
   const blocks = snapshot.project.blocks
@@ -73,49 +70,36 @@ export function View3D() {
 
       {/* UI-C04: the selection lives in the snapshot. Contract 0.3 adds the
           block list and `selection.set`, so the keyboard can reach exactly the
-          same selection a click in the viewport would publish — one source of
-          truth, two ways in. */}
-      <div
-        className="card card--glass fc-border"
-        style={{ padding: 8, gap: 6, minInlineSize: 0, maxInlineSize: '100%' }}
-      >
-        <SelectField
-          inputId="w3a-block-select"
-          label="Khối đang chọn"
-          value={selection?.blockId ?? ''}
-          options={[
-            { value: '', label: '— không chọn khối nào' },
-            ...blocks.map((block) => ({
-              value: block.id,
-              label: `${block.label} · ${block.kind}`,
-            })),
-          ]}
-          disabledReason={
-            blocks.length === 0
-              ? 'Nhân chưa công bố khối nào trong bản dựng hiện tại.'
-              : (writeBlocked ?? null)
-          }
-          hint="Cùng một selection với thao tác bấm khối trong khung xem; giao diện chỉ gửi selection.set."
-          onChange={(value) => {
-            void run({ type: 'selection.set', blockId: value === '' ? null : value })
-          }}
-        />
-        <Button
-          size="small"
-          icon="cube"
-          disabledReason={
-            selection
-              ? null
-              : 'Nhân chưa công bố khối nào đang được chọn. Chọn một khối ở trên hoặc trong khung xem.'
-          }
-          onClick={() => {
-            if (!selection) return
-            actions.setBlockPopup({ x: 120, y: 120 })
-          }}
+          same selection a click in the viewport would publish. Drawn only when
+          the build published blocks: an empty control over the model is noise. */}
+      {blocks.length > 0 ? (
+        <div
+          className="card card--glass fc-border"
+          style={{ padding: 8, gap: 6, minInlineSize: 0, maxInlineSize: '100%' }}
         >
-          Chi tiết khối{selection ? `: ${selection.label}` : ''}
-        </Button>
-      </div>
+          <SelectField
+            inputId="w3a-block-select"
+            label="Khối đang chọn"
+            value={selection?.blockId ?? ''}
+            options={[
+              { value: '', label: '— không chọn khối nào' },
+              ...blocks.map((block) => ({
+                value: block.id,
+                label: `${block.label} · ${block.kind}`,
+              })),
+            ]}
+            disabledReason={writeBlocked ?? null}
+            onChange={(value) => {
+              void run({ type: 'selection.set', blockId: value === '' ? null : value })
+            }}
+          />
+          {selection ? (
+            <Button size="small" icon="cube" onClick={() => actions.setBlockPopup({ x: 120, y: 120 })}>
+              Chi tiết khối: {selection.label}
+            </Button>
+          ) : null}
+        </div>
+      ) : null}
 
       {!webgl.available ? (
         <span className="chip chip--warn fc-border">
@@ -123,23 +107,12 @@ export function View3D() {
         </span>
       ) : null}
 
-      {/* Two different numbers, published separately by contract 0.3 and shown
-          separately: `project.revision` is the document, `visibleModelRevision`
-          is the lease actually being drawn. Staleness is `visibleModelStale`,
-          not something inferred from which exports happen to be refused. */}
-      <span className="chip chip--muted fc-border">
-        Thế hệ tài liệu {snapshot.project.revision}
-      </span>
+      {/* Which build is on screen. `visibleModelRevision` is the lease being
+          drawn (contract 0.3); staleness is said once, in the readout band of
+          the stage and on the step chip, not repeated here. */}
       <span className="chip chip--muted fc-border" data-visible-model-revision={visibleRevision ?? 'none'}>
-        {visibleRevision === null
-          ? 'Chưa giữ mô hình nào'
-          : `Mô hình đang vẽ: bản sửa ${visibleRevision}`}
+        {visibleRevision === null ? 'Chưa giữ mô hình nào' : `Mô hình của bản sửa ${visibleRevision}`}
       </span>
-      {stale ? (
-        <span className="chip chip--warn fc-border" data-model-stale="true" title={REBUILD_REASON}>
-          Mô hình cũ · cần dựng lại
-        </span>
-      ) : null}
     </div>
   )
 }

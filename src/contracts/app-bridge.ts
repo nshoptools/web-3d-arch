@@ -134,6 +134,7 @@ export type AppCommand =
   | { type: 'text.remove' }
   | { type: 'material.update'; id: string; color?: string; slot?: number | null; excluded?: boolean; heightLayers?: string }
   | { type: 'material.reset'; id: string }
+  /** Presentation state: changes what the next gesture does, never the revision or the history. */
   | { type: 'editor.tool'; tool: ToolId }
   | { type: 'editor.settings'; values: { [key: string]: Json } }
   | { type: 'selection.set'; blockId: string | null }

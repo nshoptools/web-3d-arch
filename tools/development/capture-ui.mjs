@@ -80,18 +80,23 @@ await step('import-svg',async()=>{
  await openSection('Lớp màu');await shot('04-materials');
  await openSection('Thông số');await shot('05-parameters');
 });
+const closeDialogs=async()=>{for(let i=0;i<3&&await page.getByRole('dialog').count();i++){await page.keyboard.press('Escape');await page.waitForTimeout(200);}};
 await step('build',async()=>{
- const button=page.getByRole('banner').locator('[data-advance]').first();
- await button.click();await page.waitForTimeout(1500);await idle();await approveIfAsked('06-build');
- await page.locator('[data-step-chip="2"][aria-current="step"]').waitFor({timeout:90000});
+ // Accepting the source proposal may already have built the model and moved to
+ // step 2; only press the primary action when the workspace is still on step 1.
+ if(!await page.locator('[data-step-chip="2"][aria-current="step"]').count()){
+  const button=page.getByRole('banner').locator('[data-advance]').first();
+  await button.click();await page.waitForTimeout(1500);await idle();await approveIfAsked('06-build');
+ }
+ await page.locator('[data-step-chip="2"][aria-current="step"]').waitFor({timeout:90000});await closeDialogs();
  await page.waitForTimeout(1200);
  for(const width of[1440,1024,390])await shot('06-model',{width,height:width<500?844:900});
  await page.setViewportSize({width:1440,height:900});
 });
-await step('export',async()=>{await openSection('Xuất');await shot('07-export');});
-await step('library',async()=>{await openSection('Thư viện');await shot('08-library');});
+await step('export',async()=>{await closeDialogs();await openSection('Xuất');await shot('07-export');});
+await step('library',async()=>{await closeDialogs();await openSection('Thư viện');await shot('08-library');});
 await step('quick-search',async()=>{
- await page.keyboard.press('Escape');await page.getByRole('banner').getByRole('button',{name:/Tìm nhanh/}).first().focus();
+ await closeDialogs();await page.getByRole('banner').getByRole('button',{name:/Tìm nhanh/}).first().focus();
  await page.keyboard.press('Control+k');await page.getByRole('dialog').waitFor({timeout:10000});await shot('09-quick-search');await page.keyboard.press('Escape');
 });
 await step('account-menu',async()=>{await page.getByRole('button',{name:/^Menu tài khoản của/}).click();await shot('10-account-menu');await page.keyboard.press('Escape');});

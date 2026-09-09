@@ -19,16 +19,46 @@ export function previewProductCommand(state,c){
  default:assert(false,'PRODUCT_TRANSACTION_COMMAND');
  }
 }
+const ROLE_LABEL={body:'đế và thân',rim:'viền',artwork:'hình nguồn',skirt:'diềm',fastener:'chốt cài',text:'chữ',textBase:'đế chữ',stem:'trụ và gân',tray:'khay switch',region:'vùng nguồn'};
+const roleLabel=role=>ROLE_LABEL[role]??String(role);
+/** The consent dialog lists what will happen, in words. Records of the same kind are counted
+ * together; identifiers, tuples and hashes stay in the native plan and the log, not on screen. */
+function describeChanges(records){
+ const counts=new Map(),lines=[];
+ const add=(key,text)=>{const n=(counts.get(key)??0)+1;counts.set(key,n);if(n===1)lines.push({key,text});};
+ for(const c of records){
+  if(typeof c==='string'){lines.push({key:null,text:c});continue;}
+  switch(c.kind){
+   case 'initialize-source-palette':add('palette-new','Nhận vùng màu từ nguồn làm vật liệu mới của sản phẩm.');break;
+   case 'refresh-source-palette':add('palette-refresh','Cập nhật vùng màu theo nguồn mới; thiết lập bạn đã chỉnh được giữ.');break;
+   case 'initialize-role':lines.push({key:null,text:`Gán vai ${roleLabel(c.role)} với màu mặc định ${c.color}.`});break;
+   case 'initialize-slot':add('slot','Gán khe filament logic cho vật liệu (chưa gắn với máy in cụ thể; đổi được ở khu Lớp màu).');break;
+   default:lines.push({key:null,text:'Thay đổi khác do nhân đề xuất: '+canonicalJSON(c).slice(0,1900)});
+  }
+ }
+ return lines.map(l=>{const n=l.key?counts.get(l.key):1;return n>1?l.text.replace(/^(Nhận|Cập nhật|Gán khe filament logic cho) /,`$1 ${n} `):l.text;});
+}
+function describeProposal(c){
+ switch(c.kind){
+  case 'source-palette-rebind':return 'Cần bạn quyết định: một vùng màu của nguồn trước đây gắn với vật liệu bạn đã chỉnh tay; thiết lập cũ được giữ để bạn chọn lại.';
+  case 'bind-native-role':return `Cần bạn chọn vật liệu cho vai ${roleLabel(c.role)} (có ${c.candidates?.length??0} lựa chọn).`;
+  case 'material-slot-remap':return `Khe filament ${c.slot} đang có nhiều màu; cần bạn chọn lại khe cho các vật liệu này.`;
+  case 'resolve-region-height-datum':return 'Cần xác định mặt đáy thật của vùng nguồn trước khi đặt chiều cao riêng cho vùng đó.';
+  case 'resolve-text-datums':return 'Cần xác định các mặt chuẩn cho chữ (chiều cao và đế chữ) trên mô hình thật.';
+  case 'source-identity-rebind':return 'Nguồn đã đổi bản sửa; các vật liệu gắn với nguồn cũ cần được gắn lại.';
+  default:return 'Cần bạn quyết định: '+canonicalJSON(c).slice(0,1900);
+ }
+}
 export function createProductTransactions({sourceContexts,context}){
  assert(typeof sourceContexts?.prepareUpdate==='function'&&typeof context==='function','PRODUCT_TRANSACTION_BINDINGS');
  let epoch=1;const plans=new Set();
  function wrap(native){
-  const changes=[...native.bindingChanges.map(c=>typeof c==='string'?c:canonicalJSON(c)),
-   ...native.bindingProposals.map(c=>'Resolve binding: '+canonicalJSON(c)),
-   ...(native.faces.length?native.faces.map(f=>`Bind datum ${f.datum} of semantic ${f.semanticId} to actual face ${f.z0} mm, reference layer ${f.referenceLayer}`):[])];
+  const changes=[...describeChanges(native.bindingChanges),
+   ...native.bindingProposals.map(describeProposal),
+   ...(native.faces.length?native.faces.map(f=>`Gắn mặt chuẩn ${f.datum} của ${f.semanticId} vào mặt thật tại z = ${f.z0} mm (lớp tham chiếu ${f.referenceLayer}).`):[])];
   const preview=native.status==='proposal'?native.preview():null;
-  if(preview?.state.content.app.text.asSource)changes.push('Use checked text outlines as artwork source. Product size, art mode, artwork height, body and rim parameters govern manufacturing; overlay height/base/placement controls are retained inactive in this role.');
-  changes.push('Commit source bytes, material identities, text and layer references together; build a new model from this head');
+  if(preview?.state.content.app.text.asSource)changes.push('Dùng đường viền chữ đã kiểm làm hình nguồn. Kích thước sản phẩm, chế độ hình, chiều cao hình, thân và viền quyết định chế tạo; các điều khiển chiều cao, đế và vị trí của chữ được giữ nhưng không tác dụng trong vai này.');
+  changes.push('Chốt byte nguồn, vật liệu, chữ và các tham chiếu lớp cùng nhau, rồi dựng mô hình mới từ bản này.');
   assert(changes.length<=200&&changes.every(s=>s.length<=2000),'PRODUCT_TRANSACTION_DESCRIPTION_LIMIT');
   let retired=false;const release=()=>{if(!retired){retired=true;plans.delete(release);native.release();}};plans.add(release);
   return Object.freeze({...native,version:PLAN,changes:freeze(changes),release,

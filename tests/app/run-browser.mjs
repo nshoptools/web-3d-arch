@@ -20,7 +20,8 @@ const tls=createHTTPS({pfx:await readFile(await ownPath(run,join(stage.temporary
 const httpsOrigin='https://127.0.0.1:'+tls.address().port;await f.app.close();f.app=createBackend({...f.config,origin:httpsOrigin});await f.app.listen(0);
 const content=new Map(),hashes={};
 async function add(url,path){const full=await realpath(join(runtime,path));if(!full.startsWith(runtime+sep))throw Error('Whitelist escaped');const b=await readFile(full);const hash=createHash('sha256').update(b).digest('hex');check(stagedHashes.get(path)===hash,'STAGED_MODULE_CHANGED');content.set(url,b);hashes[path]=hash;}
-for(const dir of ['src/app','src/domain','src/storage','src/editing'])for(const name of await readdir(join(runtime,dir)))if(name.endsWith('.mjs'))await add('/'+dir+'/'+name,dir+'/'+name);
+// src/contracts (product-material extension) and src/printing/src (profile validator) are imported by src/app.
+for(const dir of ['src/app','src/domain','src/storage','src/editing','src/contracts','src/printing/src'])for(const name of await readdir(join(runtime,dir)))if(name.endsWith('.mjs'))await add('/'+dir+'/'+name,dir+'/'+name);
 for(const file of ['harness.html','browser-cases.mjs','test-doubles.mjs','online-policy.browser.mjs','source-approval.fixtures.mjs','source-alignment.browser.mjs','ui-contract.browser.mjs','source-adoption.browser.mjs','source-adoption.cases.mjs'])await add('/tests/app/'+file,'tests/app/'+file);
 await add('/src/core/png-encode.mjs','src/core/png-encode.mjs');
 await add('/src/viewport/arch-view.mjs','src/viewport/arch-view.mjs');await add('/src/viewport/three-viewport.mjs','src/viewport/three-viewport.mjs');

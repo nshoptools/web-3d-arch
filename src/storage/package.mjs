@@ -60,6 +60,11 @@ export async function inspectRescuePackage(input){
   }
   return {status:'importable',rawPackage,metadata,files,manifest:inspected.manifest};
 }
+/** True when a dependency asset is itself a rescue package (an earlier import kept whole). */
+export function isRescuePackage(bytes){
+  try{const meta=readStoredZip(bytes).get('package.json');if(!meta)return false;return parseJSON(decodeUTF8(meta),{exactNumbers:false})?.kind==='web-3d-arch.rescue-package';}
+  catch{return false;}
+}
 export async function importRescueCopy(store,input,{projectId,transactionId,signal}){
   identity(projectId,'destination project ID');
   const inspected=await inspectRescuePackage(input);
@@ -67,11 +72,22 @@ export async function importRescueCopy(store,input,{projectId,transactionId,sign
   const current=await store.load(projectId,{signal});
   check(current.status==='empty','IMPORT_TARGET_EXISTS','Import is copy-on-write into a new project ID.');
   const m=inspected.manifest;
-  const assets=m.assets.map(a=>({...a,bytes:inspected.files.get('assets/'+a.hash+'.bin')}));
+  // A complete package with no issues was verified file by file above and every one of those files
+  // lands in the copy as a first-class asset, so the ZIP itself is not kept: re-embedding it (and the
+  // ZIPs earlier copies embedded) doubled the next package on every export→import round until
+  // ZIP_BUDGET refused to write one (audit RO-01). An incomplete package, or one carrying issues,
+  // is still kept whole so nothing this version did not understand is lost.
+  const complete=inspected.metadata.complete===true&&inspected.metadata.issues.length===0;
+  const carried=m.assets.map(a=>({...a,bytes:inspected.files.get('assets/'+a.hash+'.bin')}));
+  const assets=complete?carried.filter(a=>!(a.kind==='dependency'&&isRescuePackage(a.bytes))):carried;
+  const dropped=new Set(carried.filter(a=>!assets.includes(a)).map(a=>a.hash));
+  const dependencies=new Set(m.dependencies.filter(h=>!dropped.has(h)));
   const backupHash=await sha256(inspected.rawPackage);
-  if(!assets.some(a=>a.hash===backupHash))assets.push({hash:backupHash,byteLength:inspected.rawPackage.length,kind:'dependency',bytes:inspected.rawPackage});
+  if(!complete&&!assets.some(a=>a.hash===backupHash)){assets.push({hash:backupHash,byteLength:inspected.rawPackage.length,kind:'dependency',bytes:inspected.rawPackage});dependencies.add(backupHash);}
+  // The document may still list the dropped ZIPs as retained assets from its own earlier imports.
+  const document=Array.isArray(m.document?.retainedAssets)&&dropped.size?{...m.document,retainedAssets:m.document.retainedAssets.filter(h=>!dropped.has(h))}:m.document;
   const result=await store.commit({projectId,transactionId,expectedRevision:0,engine:m.engine,domainSchemaVersion:m.domainSchemaVersion,
-    document:m.document,assets,sources:m.sources,dependencies:[...new Set([...m.dependencies,backupHash])],
+    document,assets,sources:m.sources,dependencies:[...dependencies],
     provenance:{importedFrom:{namespace:m.namespace,projectId:m.projectId,manifestHash:inspected.metadata.selectedManifestHash}}},{signal});
-  return {status:'imported-copy',...result,originalPackageHash:backupHash,sourceProjectId:m.projectId};
+  return {status:'imported-copy',...result,originalPackageHash:backupHash,originalPackageRetained:!complete,droppedNestedPackages:dropped.size,sourceProjectId:m.projectId};
 }

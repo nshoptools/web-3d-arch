@@ -683,6 +683,84 @@
   .diag__msg { color: var(--t1); overflow-wrap: anywhere; }
   .diag__detail { color: var(--t2); overflow-wrap: anywhere; }
 
+
+  /* ------------------------------------------------------- product picker */
+
+  /* The product-type choice of the start screen: one radio card per product,
+     label and one-line description, selection carried by a mark and a bar,
+     never by colour alone (UI-01). */
+  .pick { display: grid; gap: 8px; min-inline-size: 0; }
+  .pick__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    inline-size: 100%;
+    min-block-size: var(--btn-h);
+    padding: 10px 12px;
+    border: 1px solid var(--ln-control);
+    border-radius: var(--r2);
+    background: var(--b3);
+    color: var(--t1);
+    text-align: start;
+  }
+  .pick__item:hover { background: var(--b4); }
+  .pick__item[aria-checked='true'] {
+    border-color: var(--accent);
+    background: var(--b4);
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+  .pick__mark {
+    flex: none;
+    inline-size: 16px;
+    block-size: 16px;
+    margin-block-start: 3px;
+    border-radius: 50%;
+    border: 2px solid var(--ln-control);
+  }
+  .pick__item[aria-checked='true'] .pick__mark {
+    border-color: var(--accent);
+    background: radial-gradient(circle, var(--accent) 45%, transparent 52%);
+  }
+  .pick__text { display: grid; gap: 2px; min-inline-size: 0; }
+  .pick__label { font-weight: 600; }
+  .pick__sub { color: var(--t2); font-size: var(--fs-small); }
+  @media (pointer: coarse) { .pick__item { min-block-size: 44px; } }
+
+  /* ------------------------------------------------------- saved projects */
+
+  .project-row__thumb {
+    display: grid;
+    place-items: center;
+    inline-size: 40px;
+    block-size: 40px;
+    flex: none;
+    border-radius: var(--r1);
+    background: var(--b4);
+    color: var(--t2);
+    font-weight: 700;
+  }
+
+  /* --------------------------------------------------------- disclosure */
+
+  /* Secondary detail (limits, technical notes) folded behind a summary that is
+     a real control: reachable by keyboard, not only on hover (UI-05). */
+  .details { min-inline-size: 0; }
+  .details > summary {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-block-size: var(--target-min);
+    color: var(--t2);
+    font-size: var(--fs-small);
+    cursor: pointer;
+    list-style: none;
+  }
+  .details > summary::-webkit-details-marker { display: none; }
+  .details > summary::before { content: '▸'; font-size: 11px; }
+  .details[open] > summary { color: var(--t1); }
+  .details[open] > summary::before { content: '▾'; }
+  .details > :not(summary) { margin: 6px 0 0; }
+
   /* ---------------------------------------------------------------- misc */
 
   .kbd {

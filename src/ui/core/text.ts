@@ -132,3 +132,21 @@ export const DIAGNOSTIC_TEXT: Record<string, string> = {
 export function diagnosticText(code: string, message: string): string {
   return DIAGNOSTIC_TEXT[code] ?? message
 }
+
+/* --------------------------------------------------------------- account */
+
+const OPAQUE_IDENTIFIER = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
+/**
+ * What to call the signed-in person. The core publishes `name` as whatever the
+ * identity provider gave it, which for a synthetic or minimal account is the
+ * opaque subject or the internal id. An identifier is never a name on screen:
+ * fall back to the e-mail, then to the role.
+ */
+export function userLabel(user: { id: string; name: string; email: string; role: 'owner' | 'member'; subject?: string } | null): string {
+  if (!user) return 'Tài khoản'
+  const name = user.name?.trim() ?? ''
+  if (name && name !== user.id && name !== user.subject && !OPAQUE_IDENTIFIER.test(name)) return name
+  if (user.email) return user.email
+  return user.role === 'owner' ? 'Chủ nhóm' : 'Thành viên'
+}

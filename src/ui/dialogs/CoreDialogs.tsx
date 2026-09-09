@@ -16,6 +16,9 @@ import {
 } from '../core/project-state.ts'
 import { CONFIRM_ACCEPTED, confirmEffect } from './confirm-effect.ts'
 
+/** Refusal codes that only mean “this needs your consent”; they carry the dialog, they are not errors. */
+const CONSENT_CODES = new Set(['PROPOSAL_REQUIRED', 'PRODUCT_CONFIRMATION_REQUIRED', 'HISTORY_PRUNING_REQUIRED', 'CONFIRMATION_REQUIRED'])
+
 const BUSY_REASON = 'Đang chờ nhân trả lời lượt xác nhận này.'
 const DISMISS_BUSY_REASON = 'Đang báo nhân bỏ đề xuất này.'
 
@@ -218,7 +221,7 @@ export function ConfirmDialog({
       // belongs here. Escape and the backdrop otherwise go through the same
       // discard as the button — dismissing is one act, not three.
       onClose={busy ? () => undefined : () => void dismiss.run()}
-      description="Nhân liệt kê đúng các thay đổi dưới đây và chưa thực thi gì cả."
+      description="Những thay đổi dưới đây chỉ được thực hiện sau khi bạn xác nhận."
       footer={
         <>
           {/* Soft-disabled, not `disabled`: a disabled button loses focus, and
@@ -261,25 +264,39 @@ export function ConfirmDialog({
         </ul>
       )}
 
-      {retry.type === 'proposal.accept' ? (
-        <div className="field">
-          <span className="field__label">Mã đề xuất</span>
-          <code className="diag__code" data-proposal-id={retry.id}>
-            {retry.id}
-          </code>
-          <span className="muted-3">
-            Mã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi
-            thì nhân từ chối và bạn lấy đề xuất mới.
-          </span>
-        </div>
-      ) : null}
+      {/* A consent request is a question, not a failure: the code that carried
+          it is not shown as an error. Any other refusal is stated as the core
+          stated it. */}
+      {CONSENT_CODES.has(diagnostic.code) ? null : <DiagnosticItem diagnostic={diagnostic} />}
 
-      {/* The reason the command stopped, exactly as the core stated it. */}
-      <DiagnosticItem diagnostic={diagnostic} />
-
-      <p className="muted-3" style={{ margin: 0 }} data-confirm-effect={effect.scope}>
-        {effect.text}
-      </p>
+      <details className="details" data-confirm-effect={effect.scope}>
+        <summary>Chi tiết kỹ thuật</summary>
+        {retry.type === 'proposal.accept' ? (
+          <div className="field">
+            <span className="field__label">Mã đề xuất</span>
+            <code className="diag__code" data-proposal-id={retry.id}>
+              {retry.id}
+            </code>
+            <span className="muted-3">
+              Mã này gắn với đúng nguồn, lựa chọn và bản dự án nhân vừa đo; nếu một trong số đó đã đổi
+              thì nhân từ chối và bạn lấy đề xuất mới.
+            </span>
+          </div>
+        ) : null}
+        <p className="muted-3" style={{ margin: 0 }}>{effect.text}</p>
+        <p className="muted-3" style={{ margin: 0 }} data-dismiss-mode={proposalId ? 'discard' : 'close-only'}>
+          {proposalId
+            ? 'Đóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân ' +
+              'trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không ' +
+              'thêm bước lịch sử và không đổi bản sửa của dự án.'
+            : 'Lượt này chưa có mã đề xuất nào ở nhân, nên đóng hộp thoại chỉ là không xác nhận: ' +
+              'không có gì được thực thi và không có gì phải rút lại.'}
+          {job?.cancellable
+            ? ' Lượt đang chạy là việc riêng: nút “Hủy lượt đang chạy” gửi job.cancel, không thay cho bước bỏ đề xuất.'
+            : ''}{' '}
+          Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.
+        </p>
+      </details>
 
       {failure ? (
         <div className="stack" role="alert" data-confirm-failure={failure.code}>
@@ -337,18 +354,6 @@ export function ConfirmDialog({
           </Button>
         ) : null}
       </div>
-      <p className="muted-3" style={{ margin: 0 }} data-dismiss-mode={proposalId ? 'discard' : 'close-only'}>
-        {proposalId
-          ? 'Đóng hộp thoại sẽ gửi lệnh bỏ đề xuất (proposal.discard) đúng mã ở trên và chờ nhân ' +
-            'trả lời; hộp thoại chỉ đóng khi nhân xác nhận đã bỏ. Việc bỏ không thực thi gì, không ' +
-            'thêm bước lịch sử và không đổi bản sửa của dự án.'
-          : 'Lượt này chưa có mã đề xuất nào ở nhân, nên đóng hộp thoại chỉ là không xác nhận: ' +
-            'không có gì được thực thi và không có gì phải rút lại.'}
-        {job?.cancellable
-          ? ' Lượt đang chạy là việc riêng: nút “Hủy lượt đang chạy” gửi job.cancel, không thay cho bước bỏ đề xuất.'
-          : ''}{' '}
-        Lệnh dạng JSON nằm trong “Nhật ký và chẩn đoán”.
-      </p>
     </Dialog>
   )
 }

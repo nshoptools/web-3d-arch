@@ -5,6 +5,16 @@ import {candidateHash} from './proposals.mjs';
 import {configureExport} from './export-configuration.mjs';
 import {declaredFormats,exportContext} from './export-policy.mjs';
 import {PROJECT_MESSAGES,libraryReason} from './project-messages.mjs';
+/** The product switch consent, in words: what type changes and which settings the new type resets. */
+export function describeProductSwitch(from,to,diff){
+ const label=id=>{try{return domain.getField(id)?.ui?.label??id;}catch{return id;}};
+ const lines=['Loại sản phẩm: '+from+' → '+to+'.'];const seen=new Set();
+ for(const x of diff??[]){const path=String(x.path??'');if(path==='/revision'||path==='/product')continue;
+  const m=/^\/parameters\/([^/]+)/.exec(path);const text=m?'Thông số “'+label(m[1])+'” được đặt lại theo loại mới.':path.startsWith('/schedule')?'Lịch lớp in được đặt lại theo loại mới.':'Trường '+path+' thay đổi theo loại mới.';
+  if(!seen.has(text)){seen.add(text);lines.push(text);}}
+ if(lines.length===1)lines.push('Không có thông số nào cần đặt lại; giá trị bạn đã chọn tay vẫn hợp lệ.');
+ return lines.slice(0,200);
+}
 export const loadedAssets=loaded=>new Map((loaded.assets??[]).map(a=>[a.hash,{...a,bytes:new Uint8Array(a.bytes)}]));
 /** Library row that cannot be listed: `code` is the machine identifier, `reason` a Vietnamese sentence.
  * `transient` marks a failed read (I/O, abort, lock) that is retried on the next refresh rather than cached. */
@@ -35,7 +45,7 @@ export class ProjectOperations {
    }else{if(e.code==='CONFLICT')await this.recordConflict({projectId:id,transactionId,expectedRevision,epoch,error:e});throw e;}
   }
   // The generation is durable now: reflect it locally before any lease/lock check may reject this call.
-  assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');assert(ack.head,'COMMIT_ACK_INVALID');if(id!==this.projectId){this.projectContextGeneration++;this.clearExportReceipts();}this.doc=validateDocument(input.document);const kept=new Set([...Object.keys(this.doc.history.assets),...(this.doc.retainedAssets??[])]);this.assets=new Map([...candidate.assets].filter(([h])=>kept.has(h)));
+  assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');assert(ack.head,'COMMIT_ACK_INVALID');if(id!==this.projectId){this.projectContextGeneration++;this.clearExportReceipts();this.editorTool=null;}this.doc=validateDocument(input.document);const kept=new Set([...Object.keys(this.doc.history.assets),...(this.doc.retainedAssets??[])]);this.assets=new Map([...candidate.assets].filter(([h])=>kept.has(h)));
   for(const [hash,url]of this.urls)if(!kept.has(hash)){this.objectURLs.revokeObjectURL(url);this.urls.delete(hash);}this.projectId=id;this.headRevision=ack.head.revision;this.readOnly=false;
   // The acknowledged document/bytes were already verified by commit (or exact ack recovery).
   this.libraryCache.set(id,{revision:ack.head.revision,entry:this.doc.state.content.app.deleted?null:{id,name:this.doc.state.content.app.name,product:this.doc.state.product,updatedAt:this.doc.updatedAt,sizeBytes:input.assets.reduce((n,a)=>n+a.bytes.byteLength,0),backup:null}});
@@ -79,7 +89,7 @@ export class ProjectOperations {
   const assets=loadedAssets(loaded);let doc;try{doc=await verifyDocument(loaded.manifest.document,assets);}catch(e){this.rawImport={kind:'stored',projectId:id};throw e;}
   doc.retainedAssets=[...new Set([...(doc.retainedAssets??[]),...loaded.manifest.dependencies.filter(h=>!Object.hasOwn(doc.history.assets,h))])];
   assert(!doc.state.content.app.deleted,'PROJECT_DELETED');if(this.onlineSession)await this.preflight(epoch);this.guard(epoch);
-  this.job?.abort.abort();this.discardProposal();this.discardPreview();this.clearVisible();this.clearExportReceipts();this.projectContextGeneration++;this.doc=doc;this.assets=assets;this.projectId=id;this.headRevision=loaded.headRevision;this.selection=null;this.readOnly=false;this.pendingChange=null;
+  this.job?.abort.abort();this.discardProposal();this.discardPreview();this.clearVisible();this.clearExportReceipts();this.projectContextGeneration++;this.doc=doc;this.assets=assets;this.projectId=id;this.headRevision=loaded.headRevision;this.selection=null;this.editorTool=null;this.readOnly=false;this.pendingChange=null;
   if(loaded.recoveredPrevious){
    const head=loaded.head?.revision,opened=loaded.manifest?.revision;
    this.diagnostics=this.diagnostics.concat({code:'RECOVERED_PREVIOUS',message:PROJECT_MESSAGES.RECOVERED_PREVIOUS,severity:'warning',
@@ -89,6 +99,9 @@ export class ProjectOperations {
  }
  dispatch(command){return this.result(async()=>{
   assert(command&&typeof command.type==='string','COMMAND_REQUIRED');
+  // Choosing a tool changes what the next gesture does, not the design: it is held like the workspace step,
+  // so it never bumps the revision, adds an undo entry or makes the built model stale (audit RO-03).
+  if(command.type==='editor.tool'){this.requireProject();assert(['paint','line','curve','erase','cut','crop','heal'].includes(command.tool),'EDITOR_SCHEMA');this.editorTool=command.tool;this.emit();return;}
   if(command.type==='proposal.discard'){this.discardPendingProposal(command.id);return;}
   if(command.type==='proposal.accept'&&this.pendingOperation){await this.acceptOperation(command.id,command.confirmed);return;}
   if(command.type==='text.update'&&this.doc&&(command.values?.asSource??this.doc.state.content.app.text.asSource)===true&&this.adapters.productTransactions){await this.adoptTextSource(data(command));return;}
@@ -151,7 +164,7 @@ export class ProjectOperations {
    case 'project.rename':next=contentEdit(s,a=>{a.name=c.name;});break;
    case 'project.product':{
     const p=domainCommand(s,{id:'product.switch',args:{product:c.product}});
-    if(!c.confirmed&&c.product!==s.product){const id=uuid();const pending={id,kind:'edit',epoch,projectId:this.projectId,headRevision:this.headRevision,revision:s.revision,state:p.state,command:c,assets:new Map(this.assets),acceptPruning:false,outputHash:await candidateHash({state:p.state,command:c},this.assets)};this.guard(epoch);this.pendingChange=pending;this.emit();const e=error('PRODUCT_CONFIRMATION_REQUIRED');e.confirmation={title:'Switch product',changes:p.diff.filter(x=>x.path!=='/revision').map(x=>x.path),retry:{type:'proposal.accept',id,confirmed:true}};throw e;}
+    if(!c.confirmed&&c.product!==s.product){const id=uuid();const pending={id,kind:'edit',epoch,projectId:this.projectId,headRevision:this.headRevision,revision:s.revision,state:p.state,command:c,assets:new Map(this.assets),acceptPruning:false,outputHash:await candidateHash({state:p.state,command:c},this.assets)};this.guard(epoch);this.pendingChange=pending;this.emit();const e=error('PRODUCT_CONFIRMATION_REQUIRED');e.confirmation={title:'Đổi loại sản phẩm',changes:describeProductSwitch(s.product,c.product,p.diff),retry:{type:'proposal.accept',id,confirmed:true}};throw e;}
     next=p.state;break;
    }
    case 'parameter.set':next=setParameter(s,c.id,c.value);break;
@@ -159,7 +172,6 @@ export class ProjectOperations {
    case 'source.remove':next=contentEdit(s,(a,n)=>{a.source=null;n.sourceKind='none';});break;
    case 'text.update':next=contentEdit(s,a=>{a.text={...a.text,...data(c.values)};});break;
    case 'text.remove':next=contentEdit(s,a=>{a.text=data(DEFAULT_TEXT);});break;
-   case 'editor.tool':next=contentEdit(s,a=>{a.editor.tool=c.tool;});break;
    case 'editor.settings':next=contentEdit(s,a=>{a.editor={...a.editor,...data(c.values)};});break;
    case 'material.update':next=contentEdit(s,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?domain.parseDecimal(c[k]).value:c[k];m.overridden=true;});break;
    case 'material.reset':next=contentEdit(s,a=>{const i=a.materials.findIndex(m=>m.id===c.id),original=a.materialDefaults.find(m=>m.id===c.id);assert(i>=0&&original,'MATERIAL_NOT_FOUND');a.materials[i]=data(original);});break;

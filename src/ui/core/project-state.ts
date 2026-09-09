@@ -18,7 +18,7 @@ export function hasProject(project: ProjectView): boolean {
 }
 
 export const NO_PROJECT_REASON =
-  'Chưa có dự án nào đang mở. Tạo một dự án và chọn loại sản phẩm trước, rồi quay lại bước này.'
+  'Chưa mở dự án nào. Tạo dự án mới hoặc mở dự án đã lưu ở màn hình bắt đầu.'
 
 /**
  * Whether the core is publishing a *visible built model*.

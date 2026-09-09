@@ -20,9 +20,9 @@ import { ACCEPT_SOURCE, chooseFile } from './core/file-dialog.ts'
 import { TopBar } from './layout/TopBar.tsx'
 import { SectionTabs } from './layout/SectionTabs.tsx'
 import { Panel } from './layout/Panel.tsx'
-import { NextBar } from './layout/NextBar.tsx'
 import { Stage } from './stage/Stage.tsx'
 import { BlockPopup } from './stage/BlockPopup.tsx'
+import { StartScreen } from './start/StartScreen.tsx'
 import { QuickSearch } from './search/QuickSearch.tsx'
 import { DialogHost } from './dialogs/DialogHost.tsx'
 import { LiveRegions, Toasts } from './components/Feedback.tsx'
@@ -31,17 +31,11 @@ const SECTION_IDS = new Set<string>(SECTIONS.map((section) => section.id))
 const TOOL_IDS = new Set<string>(TOOLS_2D.map((tool) => tool.id))
 
 /**
- * Keyboard commands that reach the core through a project. The keyboard must
- * not walk around a gate the buttons apply — that is the same rule the section
- * rail already follows.
+ * Commands that still make sense on the start screen, before any project is
+ * open. Everything else acts on a project and is refused with the same reason
+ * the buttons give, so the keyboard never walks around a gate (UI-05).
  */
-const NEEDS_PROJECT = new Set([
-  'source.pick',
-  'step.next',
-  'history.undo',
-  'history.redo',
-  'project.save',
-])
+const WITHOUT_PROJECT = new Set(['app.shortcuts', 'app.diagnostics'])
 
 /** ACC-03/API allow 10..48 px; anything outside that is not applied blindly. */
 const FONT_SIZE_MIN = 10
@@ -56,6 +50,11 @@ function uiScaleFrom(raw: string | null): number {
   return clamped / FONT_SIZE_BASE
 }
 
+/**
+ * Two states, one shell (UI-01). With no project the start screen is the whole
+ * interface under the top bar; with a project the workspace — rail, panel,
+ * stage — takes its place. The core decides which, through `project.id`.
+ */
 export function AppShell() {
   const snapshot = useSnapshot()
   const bridge = useBridge()
@@ -72,7 +71,7 @@ export function AppShell() {
   const projectOpen = hasProject(snapshot.project)
 
   const modalOpen = state.dialogs.length > 0 || state.searchOpen
-  const drawerModal = compact && state.drawerOpen
+  const drawerModal = projectOpen && compact && state.drawerOpen
 
   const onCommand = useCallback(
     (commandId: string) => {
@@ -81,12 +80,7 @@ export function AppShell() {
         actions.announce(reason)
         actions.toast('warning', reason)
       }
-      if (
-        !projectOpen &&
-        (NEEDS_PROJECT.has(commandId) ||
-          commandId.startsWith('tool.') ||
-          commandId.startsWith('view.'))
-      ) {
+      if (!projectOpen && !WITHOUT_PROJECT.has(commandId) && !commandId.startsWith('account.')) {
         refuse(NO_PROJECT_REASON)
         return
       }
@@ -97,8 +91,7 @@ export function AppShell() {
         // cannot walk around it silently.
         const item = sectionNavItems(snapshot).find((entry) => entry.section.id === id)
         if (item?.disabledReason) {
-          actions.announce(item.disabledReason)
-          actions.toast('warning', item.disabledReason)
+          refuse(item.disabledReason)
           return
         }
         actions.setSection(id as WorkspaceSection, true)
@@ -119,11 +112,7 @@ export function AppShell() {
           if (!capability?.available) {
             // The key is bound, so the reason has to be spoken rather than
             // swallowed (UI-05).
-            const reason =
-              capability?.reason ??
-              `Nhân chưa công bố năng lực ${action.capability} trong snapshot hiện tại.`
-            actions.announce(reason)
-            actions.toast('warning', reason)
+            refuse(capability?.reason ?? `Khung xem chưa hỗ trợ thao tác “${action.label}” lúc này.`)
             return
           }
         }
@@ -161,9 +150,9 @@ export function AppShell() {
             })
           break
         case 'step.next':
-          // Exactly the primary button of the next-action bar, through the same
-          // hook: build, rebuild a stale model, open the model that exists, or
-          // open the valid export choices (FND-03, UI-03).
+          // Exactly the primary button of the top bar, through the same hook:
+          // build, rebuild a stale model, open the model that exists, or open
+          // the valid export choices (FND-03, UI-03).
           if (nav.advanceReason) refuse(nav.advanceReason)
           else nav.advance()
           break
@@ -174,7 +163,7 @@ export function AppShell() {
           void run({ type: 'history.redo' })
           break
         case 'project.save':
-          void run({ type: 'project.save' }, { success: 'Đã gửi lệnh lưu dự án.' })
+          void run({ type: 'project.save' }, { success: 'Đã lưu dự án.' })
           break
         case 'app.shortcuts':
           actions.openDialog({ kind: 'shortcuts' })
@@ -264,32 +253,38 @@ export function AppShell() {
           main?.scrollIntoView({ block: 'start' })
         }}
       >
-        Bỏ qua thanh điều hướng, tới khung thiết kế
+        {projectOpen ? 'Bỏ qua thanh điều hướng, tới khung thiết kế' : 'Bỏ qua thanh trên, tới phần bắt đầu'}
       </button>
 
       <div style={{ display: 'contents' }} {...(modalOpen ? { inert: true } : {})}>
         <div
           className="app"
+          data-mode={projectOpen ? 'workspace' : 'start'}
           data-step={step}
           data-section={state.section}
           data-panel-collapsed={state.panelCollapsed ? 'true' : 'false'}
         >
           <TopBar inert={backgroundInert} />
-          <SectionTabs variant="rail" inert={backgroundInert} />
-          <Panel />
-          <Stage inert={backgroundInert} />
-          <NextBar inert={backgroundInert} />
-          <SectionTabs variant="mobile" inert={backgroundInert} />
-          {drawerModal ? (
-            <button
-              type="button"
-              className="backdrop"
-              aria-label="Đóng bảng thiết lập"
-              onClick={() => actions.openDrawer(false)}
-            />
-          ) : null}
+          {projectOpen ? (
+            <>
+              <SectionTabs variant="rail" inert={backgroundInert} />
+              <Panel />
+              <Stage inert={backgroundInert} />
+              <SectionTabs variant="mobile" inert={backgroundInert} />
+              {drawerModal ? (
+                <button
+                  type="button"
+                  className="backdrop"
+                  aria-label="Đóng bảng thiết lập"
+                  onClick={() => actions.openDrawer(false)}
+                />
+              ) : null}
+            </>
+          ) : (
+            <StartScreen />
+          )}
         </div>
-        <BlockPopup />
+        {projectOpen ? <BlockPopup /> : null}
       </div>
 
       {state.searchOpen ? (

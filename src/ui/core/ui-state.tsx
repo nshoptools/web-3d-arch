@@ -74,13 +74,6 @@ export interface PopupPlacement {
   y: number
 }
 
-/**
- * Which source task the user was reaching for before the interface sent them
- * through "create a project first". It is a note about navigation, not a queued
- * command: nothing is dispatched on the user's behalf when the project appears.
- */
-export type SourceIntent = 'file' | 'emoji' | 'text' | 'none'
-
 export interface UiState {
   section: WorkspaceSection
   panelCollapsed: boolean
@@ -95,8 +88,6 @@ export interface UiState {
   armedDelete: string | null
   emojiHardPrintFilter: boolean
   blockPopup: PopupPlacement | null
-  /** The source task to open once a project exists (UI-03 two-step flow). */
-  sourceIntent: SourceIntent
   toasts: ToastItem[]
   log: LogItem[]
   dialogs: DialogEntry[]
@@ -118,7 +109,6 @@ export type UiAction =
   | { type: 'arm-delete'; key: string | null }
   | { type: 'emoji-hardprint'; value: boolean }
   | { type: 'block-popup'; value: PopupPlacement | null }
-  | { type: 'source-intent'; value: SourceIntent }
   | { type: 'toast-add'; toast: ToastItem }
   | { type: 'toast-remove'; id: string }
   | { type: 'log-add'; item: LogItem }
@@ -142,7 +132,6 @@ export const initialUiState: UiState = {
   armedDelete: null,
   emojiHardPrintFilter: false,
   blockPopup: null,
-  sourceIntent: 'file',
   toasts: [],
   log: [],
   dialogs: [],
@@ -193,8 +182,6 @@ export function uiReducer(state: UiState, action: UiAction): UiState {
       return { ...state, emojiHardPrintFilter: action.value }
     case 'block-popup':
       return { ...state, blockPopup: action.value }
-    case 'source-intent':
-      return { ...state, sourceIntent: action.value }
     case 'toast-add':
       return { ...state, toasts: [...state.toasts, action.toast].slice(-4) }
     case 'toast-remove':
@@ -288,7 +275,6 @@ export interface UiActions {
   armDelete: (key: string | null) => void
   setEmojiHardPrintFilter: (value: boolean) => void
   setBlockPopup: (value: PopupPlacement | null) => void
-  setSourceIntent: (value: SourceIntent) => void
   toast: (tone: Tone, text: string, detail?: string) => void
   dismissToast: (id: string) => void
   logEvent: (tone: Tone, text: string, options?: { detail?: string; code?: string }) => void
@@ -336,7 +322,6 @@ export function useUiActions(): UiActions {
       armDelete: (key) => dispatch({ type: 'arm-delete', key }),
       setEmojiHardPrintFilter: (value) => dispatch({ type: 'emoji-hardprint', value }),
       setBlockPopup: (value) => dispatch({ type: 'block-popup', value }),
-      setSourceIntent: (value) => dispatch({ type: 'source-intent', value }),
       toast: (tone, text, detail) =>
         dispatch({
           type: 'toast-add',
