@@ -13,6 +13,7 @@
 //
 // Everything it writes stays inside the repository under tmp/reviews/codex/runs.
 import {existsSync,mkdirSync,statSync,createReadStream,readFileSync} from 'node:fs';
+import {request as httpsRequest} from 'node:https';
 import {spawnSync} from 'node:child_process';
 import {readFile} from 'node:fs/promises';
 import {join,resolve,extname,dirname} from 'node:path';
@@ -80,10 +81,37 @@ const accounts={a:f.a,b:f.b,owner:f.owner},subjects={a:'member-a',b:'member-b',o
 // A fixture session expires like a real one (12 h absolute, 1 h idle), so a
 // sign-in signs the account in again instead of re-issuing the cookies minted
 // at start-up, which would be dead after an hour away from the page.
+//
+// The fixture client talks to `f.app.origin`, which is this server's public
+// HTTPS origin once the backend is bound to it, and Node's fetch refuses the
+// synthetic certificate. So the sign-in dance (auth start → test IdP → callback
+// → me) is made here through the Vite proxy with the certificate check off:
+// loopback only, the same path the browser takes.
+async function devRequest(method,path,jar,body){
+ const headers={Cookie:[...jar].map(([k,v])=>k+'='+v).join('; '),...(method==='GET'?{}:{'content-type':'application/json',Origin:origin})};
+ return new Promise((resolve,reject)=>{
+  const request=httpsRequest({host:'127.0.0.1',port,path,method,headers,rejectUnauthorized:false},response=>{
+   for(const value of response.headers['set-cookie']??[]){
+    const [kv,...attributes]=value.split(';'),i=kv.indexOf('='),name=kv.slice(0,i),cleared=attributes.some(a=>/^\s*max-age=0\s*$/i.test(a));
+    if(cleared)jar.delete(name);else jar.set(name,kv.slice(i+1));
+   }
+   const chunks=[];response.on('data',c=>chunks.push(c));response.on('end',()=>resolve({status:response.statusCode,text:Buffer.concat(chunks).toString('utf8')}));
+  });
+  request.on('error',reject);if(body!==undefined)request.write(JSON.stringify(body));request.end();
+ });
+}
 async function freshLogin(who){
  const client=accounts[who];
- try{await client.login(subjects[who]);}
- catch(error){console.error('dev login could not refresh the session for '+who+': '+(error?.message??error));}
+ try{
+  const jar=new Map();
+  const start=await devRequest('POST','/api/v1/auth/start',jar,{deviceId:client.deviceId});
+  if(start.status!==200)throw new Error('auth/start '+start.status+' '+start.text.slice(0,120));
+  const back=await devRequest('GET',f.idp.issue(subjects[who],JSON.parse(start.text).authorizationUrl),jar);
+  if(back.status!==303)throw new Error('callback '+back.status+' '+back.text.slice(0,120));
+  const me=await devRequest('GET','/api/v1/me',jar);
+  if(me.status!==200)throw new Error('me '+me.status+' '+me.text.slice(0,120));
+  client.cookies.clear();for(const [k,v] of jar)client.cookies.set(k,v);
+ }catch(error){console.error('dev login could not refresh the session for '+who+': '+(error?.message??error));}
  return client;
 }
 function loginPage(client){
