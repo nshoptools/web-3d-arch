@@ -26,6 +26,27 @@ Các số kiểm trên có phạm vi thành phần riêng, không cộng lại t
 
 Gói dùng thử cũ giữ nguyên trong lúc tạo gói mới từ mã đã tích hợp. Không gán bằng chứng nguồn mới cho gói cũ. TypeScript và năm phép kiểm JS tập trung đạt; cặp sản xuất được build lại bằng lệnh canonical trước đóng gói.
 
+## Đợt chuẩn bị phát hành 09-09-2026 (Hub, Grok phản biện)
+
+Đã tích hợp trên `main` sau `610d635b`: thiết kế lại shell (màn hình bắt đầu /
+không gian làm việc, một hành động chính, trợ giúp trên thanh trên, panel nguồn
+gập nhóm, overlay 3D gọn), câu tiếng Việt cho hộp xác nhận nhập nguồn và mọi
+lý do do bộ điều khiển công bố, các sửa dữ liệu F1–F4 (bản lưu trước, xung đột
+CAS, khóa sau khi ghi bền, thư viện đọc lại) và RO-01–RO-04 (gói cứu hộ lồng
+nhau, dán sau hộp thoại, chọn công cụ làm cũ mô hình, mất mạng mở lại dự án).
+Kiểm đã chạy thật: typecheck; 89 ca Node (app/domain/storage, gồm
+`data-safety` và `package-roundtrip`); `tests/app/run.ps1` 45 Node + 46 trình
+duyệt Chromium; harness UI xuất/xác nhận 32 ca Chromium; `tests/e2e`
+Chromium/Firefox/WebKit đạt; ảnh 15 trạng thái × 3 bề rộng.
+
+Chưa làm và vì sao: gói website mới chưa tạo được (biên lai nhân r4 ghim
+`tools/kernel/build.ps1` bản cũ; nhân dựng bằng script hiện tại chưa nghiệm
+thu); nghiệm thu G4 trên gói hợp nhất, OIDC/HTTPS thật, 3MF/slicer, CSG tổng
+quát, chữ NFD/COLRv1 giữ nguyên trạng thái các cổng riêng. Hai điểm phản biện
+mức thấp ghi nhận chưa sửa: `JOB_BUSY` có thể làm mất đề xuất xuất đã xác nhận
+(`src/app/jobs.mjs` resume); `secret.fill(0)` khi hủy/timeout có thể chạy song
+song với provider (`src/server/ai.mjs`).
+
 ## Phần còn thiếu trước phát hành đủ v1
 
 1. Sửa trực tiếp vector theo mm chưa có adapter. Codex đang đóng khoảng trống này; sửa raster có xác nhận không được tính là đã làm vector.

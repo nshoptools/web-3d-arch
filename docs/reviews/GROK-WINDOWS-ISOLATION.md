@@ -12,6 +12,15 @@ Windows, SHA-256:
 bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672
 ```
 
+Kiểm chứng lại ngày **2026-09-09** với Grok **1.0.24**, build **68e414c661e3**
+(binary tự cập nhật lúc 12:56 cùng ngày), SHA-256
+`4dc9038205649ec377ae37e09661e6083ee0a9776b2cc3019e7fc8dc74236ef5`: phép thử
+native cùng bộ kiểm (`verify-grok-isolation.ps1 -NativeGrok`, phòng
+`tmp/reviews/codex/runs/20260909-hub-grok-verify`) đạt; chưa đối chiếu từng dòng
+mã nguồn upstream của bản này, chỉ xác nhận cơ chế chuyển hướng vẫn giữ dữ liệu
+trong repo. Bản ghi trong
+[grok-isolation-verification.json](grok-isolation-verification.json).
+
 Danh sách binary được phép chạy nằm trong
 [grok-runtime.json](../../tools/reviews/grok-runtime.json).
 Đổi binary phải kiểm chứng lại; đổi model/effort theo

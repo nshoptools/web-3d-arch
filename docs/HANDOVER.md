@@ -17,6 +17,37 @@ Launcher kiểm đúng gói đã bàn giao rồi mở một cửa sổ Chromium 
 
 Thử luồng thông thường: tạo dự án móc khóa → nhập [SVG mẫu hai màu có lỗ](examples/hai-mau-co-lo.svg) → xác nhận các đề nghị thay đổi nếu có → dựng mô hình → kiểm mô hình → xuất STL. Cài đặt cá nhân có xuất/nhập JSON; bản sao cứu hộ tải dữ liệu dự án đã lưu. Mỗi mã PreviewRun mới tạo danh tính và kho thử nghiệm mới. Trước khi đóng, tải bản sao để nhập lại công việc ở lượt chạy tiếp theo. Đóng cửa sổ preview để dừng dịch vụ; launcher ghi kết quả dọn dẹp trong phòng chạy.
 
+## Cập nhật 09-09-2026 — đợt chuẩn bị phát hành của Hub
+
+Mã giao diện và bộ điều khiển đã đổi so với gói 08-09 (xem `git log` sau
+`610d635b`): màn hình bắt đầu riêng khi chưa mở dự án, thanh trên chỉ còn một
+nút hành động chính, hộp xác nhận nhập nguồn viết bằng câu tiếng Việt, và các
+sửa dữ liệu (gói cứu hộ không phình khi nhập lại, dán khi có hộp thoại không
+chạy ngầm, chọn công cụ vẽ không làm mô hình thành cũ, mở lại dự án khi mạng có
+lại). Bằng chứng ảnh trước/sau và kết quả kiểm nằm trong
+`tmp/reviews/codex/runs/20260909-hub-release-r1/` (ảnh: `evidence/ui-before`,
+`evidence/ui-after-r5`) và bản chắt lọc ở [testevidence/ui-release-r1](testevidence/ui-release-r1/README.md).
+
+Chạy giao diện hiện tại từ mã nguồn (không cần đóng gói lại) bằng máy chủ phát
+triển HTTPS loopback với chứng chỉ tổng hợp trong repo:
+
+```powershell
+node tools/development/dev-serve.mjs --port 5180
+```
+
+Mở `https://127.0.0.1:5180/__dev/login?as=a` (chấp nhận cảnh báo chứng chỉ;
+Playwright dùng `ignoreHTTPSErrors`). Ảnh các trạng thái tiêu biểu chụp bằng
+`node tools/development/capture-ui.mjs --out <phòng phiên>/evidence/ui`.
+
+**Gói website mới chưa được tạo.** Bộ kiểm build (`tools/application/cli.mjs
+prepare`) từ chối vì biên lai build nhân canonical (r4, 08-09) ghim
+`tools/kernel/build.ps1` ở bản cũ; bản script hiện tại (kèm tích hợp
+CSG/derived-guard) dựng ra một nhân khác (`module-hub-r1`, chưa qua nghiệm thu
+hình học). Trước khi đóng gói lại phải chọn một trong hai: nghiệm thu nhân mới
+theo đúng các bộ kiểm nhân (mechanics/final-scene/product-source/CSG), hoặc
+khôi phục script đã ghim cho gói. Gói 08-09 vẫn chạy được như hướng dẫn trên,
+nhưng không chứa giao diện mới.
+
 ## Những gì cần giữ
 
 | Vị trí | Nội dung |

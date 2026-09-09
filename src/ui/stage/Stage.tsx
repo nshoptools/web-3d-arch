@@ -132,7 +132,10 @@ export function Stage({ inert = false }: { inert?: boolean }) {
     await run({ type: 'job.cancel', id }, { announce: 'Đã gửi yêu cầu hủy.' })
   })
 
-  const problems = diagnostics.filter((item) => item.severity !== 'info')
+  // The strip is for what happened since the person last looked; the log keeps
+  // everything. Opening the log or pressing “Đã xem” marks the current list.
+  const seen = Math.min(state.diagnosticsSeen, diagnostics.length)
+  const problems = diagnostics.slice(seen).filter((item) => item.severity !== 'info')
 
   /**
    * One sentence for one fact: with no model the controller publishes no
@@ -331,9 +334,21 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                       </strong>
                       <Button
                         size="small"
-                        onClick={() => actions.openDialog({ kind: 'diagnostics' })}
+                        onClick={() => {
+                          actions.markDiagnosticsSeen(diagnostics.length)
+                          actions.openDialog({ kind: 'diagnostics' })
+                        }}
                       >
                         Mở nhật ký
+                      </Button>
+                      <Button
+                        size="small"
+                        variant="ghost"
+                        icon="check"
+                        aria-label="Đánh dấu các vấn đề này là đã xem"
+                        onClick={() => actions.markDiagnosticsSeen(diagnostics.length)}
+                      >
+                        Đã xem
                       </Button>
                     </div>
                     {/* The count and the way in stay; only the wording folds. */}

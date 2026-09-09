@@ -7,6 +7,13 @@
       "sha256": "bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672",
       "verified_at": "2026-09-07",
       "evidence": "docs/reviews/GROK-WINDOWS-ISOLATION.md"
+    },
+    {
+      "version": "1.0.24",
+      "build": "68e414c661e3",
+      "sha256": "4dc9038205649ec377ae37e09661e6083ee0a9776b2cc3019e7fc8dc74236ef5",
+      "verified_at": "2026-09-09",
+      "evidence": "docs/reviews/GROK-WINDOWS-ISOLATION.md"
     }
   ]
 }

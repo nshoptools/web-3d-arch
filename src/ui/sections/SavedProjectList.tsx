@@ -99,7 +99,7 @@ export function SavedProjectList({
                     reasonHidden
                     onClick={() => void openProject.run(entry.id)}
                   >
-                    {isOpen ? 'Mở lại' : 'Mở'}
+                    Mở
                   </Button>
                   <Button
                     size="small"

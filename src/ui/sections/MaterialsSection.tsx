@@ -17,6 +17,28 @@ const ROLE_LABEL: Record<MaterialView['role'], string> = {
   other: 'Khối khác',
 }
 
+/**
+ * What to call a material row. The core labels product roles by their id and
+ * adopted source regions by their key; a person reads the role's name and
+ * the region's number instead. The id stays available in the accessible name.
+ */
+const NATIVE_ROLE_LABEL: Record<string, string> = {
+  body: 'Đế và thân',
+  artwork: 'Hình nguồn',
+  rim: 'Viền',
+  skirt: 'Diềm',
+  fastener: 'Chốt cài',
+  stem: 'Trụ và gân',
+  tray: 'Khay switch',
+  text: 'Chữ',
+  textBase: 'Đế chữ',
+}
+function materialName(material: MaterialView): string {
+  const adopted = /^adopted:(\d+)$/.exec(material.label)
+  if (adopted) return `Vùng màu ${adopted[1]}`
+  return NATIVE_ROLE_LABEL[material.label] ?? material.label
+}
+
 /** MOD-02 / UI-C15: the cause comes from the core, never from a UI guess. */
 const CAUSE_LABEL: Record<NonNullable<MaterialView['excludedCause']>, string> = {
   background: 'được đặt làm NỀN',
@@ -89,7 +111,10 @@ function MaterialRow({
         />
 
         <span className="mrow__name">
-          {material.label}
+          {materialName(material)}
+          {materialName(material) !== material.label ? (
+            <span className="u-visually-hidden"> ({material.label})</span>
+          ) : null}
           <span className="muted-3"> · {ROLE_LABEL[material.role]}</span>
         </span>
 
@@ -258,15 +283,22 @@ export function MaterialsSection() {
     )
   }
 
+  // The product publishes two kinds of rows: the materials the build uses
+  // (`product.active`), and the source reader's own palette kept for identity
+  // (`product.active === false`). Both are the core's data; the second is
+  // reference material and is folded so the list a person edits is the list
+  // that reaches the printer.
+  const active = materials.filter((material) => material.product?.active !== false)
+  const reference = materials.filter((material) => material.product?.active === false)
+
   return (
     <div className="stack">
       <p className="muted" style={{ margin: 0 }}>
-        Thứ tự hàng do nhân sắp theo cao độ, diện tích rồi mã màu và ID. Giao diện không sắp lại
-        theo khe.
+        Thứ tự hàng do nhân sắp theo cao độ, diện tích rồi mã màu. Khe filament được đặt ở bước 2.
       </p>
 
-      <ul className="list-reset stack">
-        {materials.map((material) => (
+      <ul className="list-reset stack" data-material-rows="active">
+        {active.map((material) => (
           <MaterialRow
             key={material.id}
             material={material}
@@ -276,6 +308,26 @@ export function MaterialsSection() {
           />
         ))}
       </ul>
+
+      {reference.length > 0 ? (
+        <details className="details" data-material-rows="reference">
+          <summary>Bảng màu gốc của nguồn ({reference.length})</summary>
+          <p className="muted-3" style={{ margin: '4px 0 8px' }}>
+            Màu do bộ đọc nguồn công bố, giữ để đối chiếu; bản dựng dùng các hàng ở trên.
+          </p>
+          <ul className="list-reset stack">
+            {reference.map((material) => (
+              <MaterialRow
+                key={material.id}
+                material={material}
+                slots={printer.filamentSlots}
+                step={step}
+                writeBlocked={writeBlocked}
+              />
+            ))}
+          </ul>
+        </details>
+      ) : null}
 
       {clashes.length > 0 ? (
         <div className="slot-clash fc-border" role="status">

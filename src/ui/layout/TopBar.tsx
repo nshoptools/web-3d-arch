@@ -128,7 +128,7 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
           title={snapshot.online ? 'Đang trực tuyến' : 'Đang ngoại tuyến'}
         >
           <Icon name={snapshot.online ? 'online' : 'offline'} size={14} />
-          {snapshot.online ? 'Trực tuyến' : 'Ngoại tuyến'}
+          <span className="topbar__online-label">{snapshot.online ? 'Trực tuyến' : 'Ngoại tuyến'}</span>
         </span>
 
         {projectOpen && step === 2 && nav.modelStale ? (

@@ -88,6 +88,8 @@ export interface UiState {
   armedDelete: string | null
   emojiHardPrintFilter: boolean
   blockPopup: PopupPlacement | null
+  /** Diagnostics up to this count were reviewed; the stage strip shows only newer ones (the log keeps all). */
+  diagnosticsSeen: number
   toasts: ToastItem[]
   log: LogItem[]
   dialogs: DialogEntry[]
@@ -109,6 +111,7 @@ export type UiAction =
   | { type: 'arm-delete'; key: string | null }
   | { type: 'emoji-hardprint'; value: boolean }
   | { type: 'block-popup'; value: PopupPlacement | null }
+  | { type: 'diagnostics-seen'; count: number }
   | { type: 'toast-add'; toast: ToastItem }
   | { type: 'toast-remove'; id: string }
   | { type: 'log-add'; item: LogItem }
@@ -132,6 +135,7 @@ export const initialUiState: UiState = {
   armedDelete: null,
   emojiHardPrintFilter: false,
   blockPopup: null,
+  diagnosticsSeen: 0,
   toasts: [],
   log: [],
   dialogs: [],
@@ -182,6 +186,8 @@ export function uiReducer(state: UiState, action: UiAction): UiState {
       return { ...state, emojiHardPrintFilter: action.value }
     case 'block-popup':
       return { ...state, blockPopup: action.value }
+    case 'diagnostics-seen':
+      return { ...state, diagnosticsSeen: action.count }
     case 'toast-add':
       return { ...state, toasts: [...state.toasts, action.toast].slice(-4) }
     case 'toast-remove':
@@ -275,6 +281,7 @@ export interface UiActions {
   armDelete: (key: string | null) => void
   setEmojiHardPrintFilter: (value: boolean) => void
   setBlockPopup: (value: PopupPlacement | null) => void
+  markDiagnosticsSeen: (count: number) => void
   toast: (tone: Tone, text: string, detail?: string) => void
   dismissToast: (id: string) => void
   logEvent: (tone: Tone, text: string, options?: { detail?: string; code?: string }) => void
@@ -322,6 +329,7 @@ export function useUiActions(): UiActions {
       armDelete: (key) => dispatch({ type: 'arm-delete', key }),
       setEmojiHardPrintFilter: (value) => dispatch({ type: 'emoji-hardprint', value }),
       setBlockPopup: (value) => dispatch({ type: 'block-popup', value }),
+      markDiagnosticsSeen: (count) => dispatch({ type: 'diagnostics-seen', count }),
       toast: (tone, text, detail) =>
         dispatch({
           type: 'toast-add',

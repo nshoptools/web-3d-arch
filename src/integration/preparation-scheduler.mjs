@@ -16,7 +16,9 @@ export function scheduleApplicationPreparation(controller){
    catch(error){
     // A superseded job is already represented by the current state. Reporting
     // its late error would attach a previous account/project failure to this one.
-    if(!disposed&&same(current,identity())&&!['CANCELLED','STALE_JOB','ACCESS_CHANGED','PROJECT_LOCKED'].includes(error?.code))controller.report(error);
+    // Settings still loading or a signed-out session are prerequisites this
+    // scheduler waits for (they are part of `identity`), not problems to show.
+    if(!disposed&&same(current,identity())&&!['CANCELLED','STALE_JOB','ACCESS_CHANGED','PROJECT_LOCKED','PRINTING_SETTINGS_REQUIRED','PRINTING_SIGNED_OUT'].includes(error?.code))controller.report(error);
    }finally{running=false;changed();}
   });
  }

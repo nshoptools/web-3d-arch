@@ -50,5 +50,33 @@
     "Native subagents disabled; worktree mode not exposed",
     "Arbitrary shell, MCP/plugin or tool paths require separate output configuration",
     "New binary hashes require inspection and re-verification"
+  ],
+  "revalidations": [
+    {
+      "verified_at": "2026-09-09",
+      "status": "pass",
+      "binary": {
+        "version": "1.0.24",
+        "build": "68e414c661e3",
+        "sha256": "4dc9038205649ec377ae37e09661e6083ee0a9776b2cc3019e7fc8dc74236ef5"
+      },
+      "run": "tmp/reviews/codex/runs/20260909-hub-grok-verify",
+      "native_probe": {
+        "session_id": "01a08510-9430-78e2-b44e-ee364dc28f39",
+        "native_session_folder_verified": true,
+        "inference_requested": false,
+        "process_cwd": "Z:\\project",
+        "original_auth_unchanged": true,
+        "model_requested": "grok-4.6",
+        "effort_requested": "xhigh",
+        "expected_temp_folder": "tmp/reviews/codex/runs/20260909-hub-grok-verify/work/grok-drive/tmp/sessions/01a08510-9430-78e2-b44e-ee364dc28f39"
+      },
+      "checks": [
+        "Native Grok session folder created inside the run",
+        "Native /tmp write stays in the run",
+        "Repo alias, concurrency, exit-code/timeout, descendant cleanup, stale-run recovery, junction and traversal checks pass"
+      ],
+      "note": "Binary auto-updated to 1.0.24 on 2026-09-09 12:56 local; upstream source diff not reviewed line by line, mechanism re-verified by the same native probe."
+    }
   ]
 }

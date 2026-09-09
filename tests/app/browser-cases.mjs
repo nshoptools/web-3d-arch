@@ -117,7 +117,7 @@ const cases={
   adapters.source.ingest=async input=>({...await ingest(input),preview:{width:4,height:4,pixelSizeMm:0.25,png,mediaType:'image/png'}});
   adapters.editing=createRasterEditingAdapter({encodePNG:testPNG});ok(await c.importFile(svg()));
   equal(c.doc.state.sourceKind,'svg');assert(!c.doc.state.content.app.source.raster,'TEST_NO_IMPLICIT_CONVERSION');const canvas=c.getSnapshot().project.sourceCanvas;
-  equal(canvas.editable,false);assert(canvas.reason.includes('Convert this source to raster'),'TEST_CONVERSION_REASON');equal(canvas.pixelSizeMm,0.25);assert(canvas.currentUrl.startsWith('blob:'),'TEST_TRUSTED_PNG_URL');
+  equal(canvas.editable,false);assert(/chuyển nguồn này sang raster/i.test(canvas.reason),'TEST_CONVERSION_REASON');equal(canvas.pixelSizeMm,0.25);assert(canvas.currentUrl.startsWith('blob:'),'TEST_TRUSTED_PNG_URL');
   const previewHash=c.doc.state.content.app.source.preview.png;assert(c.doc.state.content.app.source.assetHashes.includes(previewHash),'TEST_PREVIEW_RETAINED');
   assert(c.doc.history.current.assetHashes.includes(previewHash),'TEST_PREVIEW_HISTORY');ok(await c.dispatch({type:'source.remove'}));equal(c.getSnapshot().project.sourceCanvas,null);ok(await c.dispatch({type:'history.undo'}));equal(c.doc.state.content.app.source.preview.png,previewHash);
   ok(await c.dispatch({type:'project.save'}));ok(await c.dispatch({type:'project.open',id:c.projectId}));equal(c.doc.state.content.app.source.preview.png,previewHash);equal(c.getSnapshot().project.sourceCanvas.editable,false);
@@ -136,11 +136,12 @@ const cases={
  async sourceProposalAndStaleAccept(){
   const {controller:c,adapters}=await fixture();ok(await c.importFile(svg()));const sourceHash=c.doc.state.content.app.source.raw.hash;
   const image={width:4,height:4,data:new Uint8ClampedArray(64)};image.data.fill(255);const preview=await testPNG(image);
-  adapters.source.convert=async({ticket})=>({version:'arch-app-adapters/1',ticket,kind:'raster',metadata:{testDouble:true,conversion:'explicit'},raster:{...image,pixelSizeMm:0.1,preview,previewMediaType:'image/png'}});
+  // A conversion keeps the source's kind and identity and attaches the raster (SOURCE_CONVERSION_IDENTITY in sources.mjs).
+  adapters.source.convert=async({ticket})=>({version:'arch-app-adapters/1',ticket,kind:'svg',metadata:{testDouble:true,conversion:'explicit'},raster:{...image,pixelSizeMm:0.1,preview,previewMediaType:'image/png'}});
   let proposed=bad(await c.dispatch({type:'source.convert',target:'raster'}),'PROPOSAL_REQUIRED'),head=c.headRevision;
   assert(proposed.confirmation.retry.type==='proposal.accept','TEST_PROPOSAL_ROUTE');equal(c.headRevision,head);equal(c.doc.state.sourceKind,'svg');
   ok(await c.dispatch({type:'parameter.set',id:'size',value:'52'}));bad(await c.dispatch(proposed.confirmation.retry),'STALE_CONFIRMATION');
-  proposed=bad(await c.dispatch({type:'source.convert',target:'raster'}),'PROPOSAL_REQUIRED');ok(await c.dispatch(proposed.confirmation.retry));equal(c.doc.state.sourceKind,'raster');equal(c.doc.state.content.app.source.raw.hash,sourceHash);
+  proposed=bad(await c.dispatch({type:'source.convert',target:'raster'}),'PROPOSAL_REQUIRED');ok(await c.dispatch(proposed.confirmation.retry));equal(c.doc.state.sourceKind,'svg');assert(c.doc.state.content.app.source.raster,'TEST_RASTER_ATTACHED');equal(c.doc.state.content.app.source.raw.hash,sourceHash);
   bad(await c.dispatch(proposed.confirmation.retry),'STALE_CONFIRMATION');
  },
  async modelAndExportProposal(){

@@ -144,7 +144,7 @@ export function createUIContractCases({fixture,ok,bad,equal,svg}){
   bad(await c.editSource(materialGesture),'SOURCE_REVISION_CONFLICT');equal(c.headRevision,afterMaterial);equal(edits,0);
   for(const p of c.getSnapshot().project.parameters)if(p.enabled)check(!Object.hasOwn(p,'reason'),'enabled parameter omits reason');else check(p.reason.trim(),'disabled parameter explains why');
   c.offset+=86400001;c.emit();
-  const snapshot=c.getSnapshot();equal(snapshot.project.sourceCanvas.editable,false);check(snapshot.project.sourceCanvas.reason.includes('Authorize'),'source lock reason reflects lease');
+  const snapshot=c.getSnapshot();equal(snapshot.project.sourceCanvas.editable,false);check(/đăng nhập|mở khóa/.test(snapshot.project.sourceCanvas.reason),'source lock reason reflects lease');
   const rescue=snapshot.exports.find(e=>e.id==='project');equal(rescue.enabled,true);check(!Object.hasOwn(rescue,'reason'),'expired authorized rescue remains available');
   for(const e of snapshot.exports)if(!e.enabled)check(e.reason.trim(),'disabled export explains why');
   const head=c.headRevision;ok(await c.exportFile('project'));check(controls.downloads.at(-1).bytes.length>0,'real rescue package bytes');equal(c.headRevision,head);

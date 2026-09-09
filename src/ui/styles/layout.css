@@ -797,6 +797,9 @@
     .topbar { gap: 6px; }
     .topbar__name { font-size: var(--fs-body); }
     .topbar__project { max-inline-size: 100%; }
+    /* Narrow: key hints and the network word fold; icons, names and states stay. */
+    .topbar .btn__key { display: none; }
+    .topbar__online-label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   }
 
   /* Short viewports and on-screen keyboards: the drawer must never eat the
