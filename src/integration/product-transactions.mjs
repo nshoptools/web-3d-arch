@@ -1,4 +1,4 @@
-import {contentEdit,domainCommand,setParameter,DEFAULT_TEXT,validateState} from '../app/documents.mjs';
+import {contentEdit,domainCommand,setParameter,DEFAULT_TEXT,validateState,productLabel} from '../app/documents.mjs';
 import {canonicalJSON,sha256,data,assert,freeze} from '../app/common.mjs';
 import {parseDecimal,getField} from '../domain/index.mjs';
 import {recordProductRasterEdit} from './product-source-lineage.mjs';
@@ -23,19 +23,27 @@ const ROLE_LABEL={body:'đế và thân',rim:'viền',artwork:'hình nguồn',sk
 const roleLabel=role=>ROLE_LABEL[role]??String(role);
 /** The consent dialog lists what will happen, in words. Records of the same kind are counted
  * together; identifiers, tuples and hashes stay in the native plan and the log, not on screen. */
-function describeChanges(records){
- const counts=new Map(),lines=[];
+/** The native roles that appear on each product's model. The plan initialises every role the
+ * kernel knows; the consent names only the ones the chosen product actually prints. */
+const PRODUCT_ROLES={keychain:['body','rim','artwork','text','textBase'],clicky:['body','stem','tray','artwork','text','textBase'],
+ strap:['body','rim','artwork','text','textBase'],lego:['body','rim','artwork','text','textBase'],charm:['body','rim','skirt','fastener','artwork','text','textBase']};
+const joinRoles=roles=>roles.map(roleLabel).join(', ');
+function describeChanges(records,product){
+ const counts=new Map(),lines=[],roles=[],others=[];
  const add=(key,text)=>{const n=(counts.get(key)??0)+1;counts.set(key,n);if(n===1)lines.push({key,text});};
+ const shown=PRODUCT_ROLES[product]??null;
  for(const c of records){
   if(typeof c==='string'){lines.push({key:null,text:c});continue;}
   switch(c.kind){
    case 'initialize-source-palette':add('palette-new','Nhận vùng màu từ nguồn làm vật liệu mới của sản phẩm.');break;
    case 'refresh-source-palette':add('palette-refresh','Cập nhật vùng màu theo nguồn mới; thiết lập bạn đã chỉnh được giữ.');break;
-   case 'initialize-role':lines.push({key:null,text:`Gán vai ${roleLabel(c.role)} với màu mặc định ${c.color}.`});break;
+   case 'initialize-role':(shown&&!shown.includes(c.role)?others:roles).push(c.role);break;
    case 'initialize-slot':add('slot','Gán khe filament logic cho vật liệu (chưa gắn với máy in cụ thể; đổi được ở khu Lớp màu).');break;
    default:lines.push({key:null,text:'Thay đổi khác do nhân đề xuất: '+canonicalJSON(c).slice(0,1900)});
   }
  }
+ if(roles.length)lines.push({key:null,text:`Đặt màu mặc định cho ${roles.length} phần của mô hình (${joinRoles(roles)}); đổi được ở khu Lớp màu.`});
+ if(others.length)lines.push({key:null,text:`Giữ sẵn màu mặc định cho ${others.length} phần chỉ dùng ở loại sản phẩm khác (${joinRoles(others)}); không xuất hiện trên mô hình này.`});
  return lines.map(l=>{const n=l.key?counts.get(l.key):1;return n>1?l.text.replace(/^(Nhận|Cập nhật|Gán khe filament logic cho) /,`$1 ${n} `):l.text;});
 }
 function describeProposal(c){
@@ -52,8 +60,8 @@ function describeProposal(c){
 export function createProductTransactions({sourceContexts,context}){
  assert(typeof sourceContexts?.prepareUpdate==='function'&&typeof context==='function','PRODUCT_TRANSACTION_BINDINGS');
  let epoch=1;const plans=new Set();
- function wrap(native){
-  const changes=[...describeChanges(native.bindingChanges),
+ function wrap(native,product,lead=[]){
+  const changes=[...lead,...describeChanges(native.bindingChanges,product),
    ...native.bindingProposals.map(describeProposal),
    ...(native.faces.length?native.faces.map(f=>`Gắn mặt chuẩn ${f.datum} của ${f.semanticId} vào mặt thật tại z = ${f.z0} mm (lớp tham chiếu ${f.referenceLayer}).`):[])];
   const preview=native.status==='proposal'?native.preview():null;
@@ -62,7 +70,7 @@ export function createProductTransactions({sourceContexts,context}){
   assert(changes.length<=200&&changes.every(s=>s.length<=2000),'PRODUCT_TRANSACTION_DESCRIPTION_LIMIT');
   let retired=false;const release=()=>{if(!retired){retired=true;plans.delete(release);native.release();}};plans.add(release);
   return Object.freeze({...native,version:PLAN,changes:freeze(changes),release,
-   async replan(control,index){assert(!retired,'PRODUCT_PROPOSAL_CONSUMED');try{return wrap(await native.replan(control,index));}finally{release();}},
+   async replan(control,index){assert(!retired,'PRODUCT_PROPOSAL_CONSUMED');try{return wrap(await native.replan(control,index),product);}finally{release();}},
    preview(){assert(!retired,'PRODUCT_PROPOSAL_CONSUMED');return native.preview();},
    async confirm(control){assert(!retired,'PRODUCT_PROPOSAL_CONSUMED');try{return await native.confirm(control);}finally{release();}}
   });
@@ -78,7 +86,7 @@ export function createProductTransactions({sourceContexts,context}){
   const payload={version:PLAN,status:'proposal',expected,proposedStateHash:await domainStateFingerprint(state),nativeHead:null,modelAvailable:false,diagnostics:prepared.diagnostics};
   const proposalHash=await sha256(canonicalJSON(payload));g();let used=false,retired=false;
   const release=()=>{retired=true;plans.delete(release);};plans.add(release);
-  return Object.freeze({...payload,proposalHash,changes:['Retain original artwork and approved render without a model','Raster segmentation needs a separate explicit conversion approval'],
+  return Object.freeze({...payload,proposalHash,changes:['Giữ ảnh gốc và bản dựng ảnh đã duyệt; chưa dựng mô hình từ ảnh này.','Tách vùng màu của ảnh raster là một bước riêng, cần bạn xác nhận chuyển đổi sau.'],
    preview(){g();assert(!used&&!retired,'PRODUCT_PROPOSAL_CONSUMED');return {state:data(state),assets:[]};},
    async confirm(c){assert(!used&&!retired,'PRODUCT_PROPOSAL_CONSUMED');used=true;try{g();assert(c.signal===control.signal&&canonicalJSON(c.ticket)===canonicalJSON(control.ticket),'PRODUCT_PROPOSAL_HEAD');return {version:'arch-product-source-update-commit/1',proposalHash,expected,state:data(state),assets:[],nativeReceipt:null,requiresAtomicCommit:true,requiresNativeRebuild:false};}finally{release();}},release});
  }
@@ -88,11 +96,15 @@ export function createProductTransactions({sourceContexts,context}){
   // a generated-source rebuild while the current mesh is still unapplied.
   handles:({state,command})=>!!state?.content?.app?.source&&COMMANDS.has(command?.type)&&
    !(['parameter.set','parameter.reset'].includes(command.type)&&getField(command.id).group==='imported_mesh'),
-  async prepareCommand(input){const prospectiveState=previewProductCommand(input.state,input.command);return wrap(await sourceContexts.prepareUpdate({...input,prospectiveState}));},
+  async prepareCommand(input){
+   const prospectiveState=previewProductCommand(input.state,input.command);
+   // A product switch is the one command whose consent must first say what changes type.
+   const lead=input.command.type==='project.product'?['Loại sản phẩm: '+productLabel(input.state.product)+' → '+productLabel(input.command.product)+'. Thông số riêng của loại mới được đặt lại; giá trị bạn đã chỉnh tay cho các thông số chung được giữ.']:[];
+   return wrap(await sourceContexts.prepareUpdate({...input,prospectiveState}),prospectiveState.product,lead);},
   async prepareAdoption(input){
    const source=input.source;
    if(source.raster&&!source.metadata.rasterPreparation||source.kind!=='svg'&&!source.raster&&!source.metadata.numericSvgHash)return deferred(input);
-   return wrap(await sourceContexts.prepareUpdate(input));
+   return wrap(await sourceContexts.prepareUpdate(input),input.state?.product);
   },
   reset(){epoch++;for(const release of [...plans])release();}
  });

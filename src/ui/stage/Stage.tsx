@@ -11,7 +11,7 @@ import {
 import { CAP } from '../core/registry.ts'
 import { isTextEntryTarget } from '../core/dom.ts'
 import { MQ_MOBILE, useMediaQuery } from '../core/useMediaQuery.ts'
-import { ACCEPT_SOURCE, chooseFile } from '../core/file-dialog.ts'
+import { ACCEPT_SOURCE, acceptedSourceFile, chooseFile } from '../core/file-dialog.ts'
 import { Button } from '../components/Button.tsx'
 import { Icon } from '../components/Icon.tsx'
 import { ProgressBar } from '../components/Feedback.tsx'
@@ -21,7 +21,7 @@ import { View3D } from './View3D.tsx'
 import { StageHints } from './StageHints.tsx'
 import { SourceCanvas, SourceImageRecovery } from './SourceCanvas.tsx'
 import { SourceCanvasProvider } from './source-canvas-state.tsx'
-import { formatNumber, VERDICT_LABEL } from '../core/text.ts'
+import { diagnosticText, formatNumber, jobStageText, jobStateText, VERDICT_LABEL } from '../core/text.ts'
 
 /**
  * The overlay bands of the stage float over the drawing surface. At 320 CSS px
@@ -87,6 +87,14 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   importRef.current = importDropped.run
   const guardRef = useRef(refuseWithoutProject)
   guardRef.current = refuseWithoutProject
+  /** A file of a kind the app does not read is refused in words before any job starts. */
+  const refuseFileType = (file: File) => {
+    const sentence = diagnosticText('SOURCE_FILE_TYPE', 'SOURCE_FILE_TYPE')
+    actions.toast('warning', sentence, file.name)
+    actions.announce(sentence)
+  }
+  const refuseRef = useRef(refuseFileType)
+  refuseRef.current = refuseFileType
   useEffect(() => {
     const onPaste = (event: ClipboardEvent) => {
       if (event.defaultPrevented) return
@@ -100,6 +108,10 @@ export function Stage({ inert = false }: { inert?: boolean }) {
       if (!file) return
       event.preventDefault()
       if (guardRef.current()) return
+      if (!acceptedSourceFile(file)) {
+        refuseRef.current(file)
+        return
+      }
       void importRef.current(file)
     }
     window.addEventListener('paste', onPaste)
@@ -234,7 +246,14 @@ export function Stage({ inert = false }: { inert?: boolean }) {
         setDropActive(false)
         const file = event.dataTransfer.files[0]
         if (!file) return
+        // The same gate as paste: a drop while a dialog owns the screen must
+        // not start a background import under the question being asked.
+        if (inert || document.querySelector('[role="dialog"]')) return
         if (refuseWithoutProject()) return
+        if (!acceptedSourceFile(file)) {
+          refuseFileType(file)
+          return
+        }
         void importDropped.run(file)
       }}
     >
@@ -442,11 +461,19 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                 style={{ maxInlineSize: 420, minInlineSize: 0 }}
               >
                 <div className="row">
-                  <strong className="grow">{job.stage}</strong>
-                  <span className="chip chip--muted fc-border">{job.state}</span>
+                  <strong className="grow">{jobStageText(job.stage)}</strong>
+                  <span className="chip chip--muted fc-border">{jobStateText(job.state)}</span>
                 </div>
-                <ProgressBar value={job.progress} label={`Tiến độ: ${job.stage}`} />
-                <div className="muted-3">Mã việc {job.id}</div>
+                <ProgressBar value={job.progress} label={`Tiến độ: ${jobStageText(job.stage)}`} />
+                {/* The job id is for the log and a bug report, not for the person
+                    waiting: it stays reachable, folded away. */}
+                <details className="details">
+                  <summary>Chi tiết kỹ thuật</summary>
+                  <div className="muted-3">
+                    Mã việc <code className="diag__code">{job.id}</code> · công đoạn{' '}
+                    <code className="diag__code">{job.stage}</code>
+                  </div>
+                </details>
                 <div className="row">
                   <Button
                     variant="danger"

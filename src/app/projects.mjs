@@ -1,6 +1,6 @@
 import * as domain from '../domain/index.mjs';
 import {assert,error,data,uuid,canonicalJSON} from './common.mjs';
-import {newDocument,validateState,validateDocument,verifyDocument,contentEdit,domainCommand,appendDocument,moveDocument,commitInventory,setParameter,DEFAULT_TEXT} from './documents.mjs';
+import {newDocument,validateState,validateDocument,verifyDocument,contentEdit,domainCommand,appendDocument,moveDocument,commitInventory,setParameter,DEFAULT_TEXT,productLabel} from './documents.mjs';
 import {candidateHash} from './proposals.mjs';
 import {configureExport} from './export-configuration.mjs';
 import {declaredFormats,exportContext} from './export-policy.mjs';
@@ -8,9 +8,10 @@ import {PROJECT_MESSAGES,libraryReason} from './project-messages.mjs';
 /** The product switch consent, in words: what type changes and which settings the new type resets. */
 export function describeProductSwitch(from,to,diff){
  const label=id=>{try{return domain.getField(id)?.ui?.label??id;}catch{return id;}};
- const lines=['Loại sản phẩm: '+from+' → '+to+'.'];const seen=new Set();
+ const lines=['Loại sản phẩm: '+productLabel(from)+' → '+productLabel(to)+'.'];const seen=new Set();
  for(const x of diff??[]){const path=String(x.path??'');if(path==='/revision'||path==='/product')continue;
-  const m=/^\/parameters\/([^/]+)/.exec(path);const text=m?'Thông số “'+label(m[1])+'” được đặt lại theo loại mới.':path.startsWith('/schedule')?'Lịch lớp in được đặt lại theo loại mới.':'Trường '+path+' thay đổi theo loại mới.';
+  // Parameters live under /parameters/common/<id> or /parameters/byProduct/<product>/<id>; the field id is what a person recognises.
+  const m=/^\/parameters\/(?:common|byProduct\/[^/]+)\/([^/]+)/.exec(path);const text=m?'Thông số “'+label(m[1])+'” được đặt lại theo loại mới.':path.startsWith('/schedule')?'Lịch lớp in được đặt lại theo loại mới.':'Một thiết lập khác thay đổi theo loại mới.';
   if(!seen.has(text)){seen.add(text);lines.push(text);}}
  if(lines.length===1)lines.push('Không có thông số nào cần đặt lại; giá trị bạn đã chọn tay vẫn hợp lệ.');
  return lines.slice(0,200);

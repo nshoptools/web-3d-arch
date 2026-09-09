@@ -200,7 +200,6 @@ function ExportFieldRow({ optionId, configuration, field, writeBlocked }: Export
             {...(field.hint ? { hint: field.hint } : {})}
             onChange={(checked) => void commitNow(checked)}
           />
-          <span className="prow__id">{field.id}</span>
         </div>
       </div>
     )
@@ -211,7 +210,6 @@ function ExportFieldRow({ optionId, configuration, field, writeBlocked }: Export
       <div {...rowProps}>
         <label className="prow__label" htmlFor={controlId}>
           {field.label}
-          <span className="prow__id"> · {field.id}</span>
         </label>
         <div className="prow__control">
           <SelectField
@@ -238,7 +236,6 @@ function ExportFieldRow({ optionId, configuration, field, writeBlocked }: Export
       <div {...rowProps}>
         <label className="prow__label" htmlFor={controlId}>
           {field.label}
-          <span className="prow__id"> · {field.id}</span>
         </label>
         <div className="prow__control">
           <NumberField
@@ -271,7 +268,6 @@ function ExportFieldRow({ optionId, configuration, field, writeBlocked }: Export
     <div {...rowProps}>
       <label className="prow__label" htmlFor={controlId}>
         {field.label}
-        <span className="prow__id"> · {field.id}</span>
       </label>
       <div className="prow__control">
         <DraftTextField

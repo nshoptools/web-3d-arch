@@ -22,7 +22,7 @@ Thanh trên: logo/tên, tên dự án đang mở kèm trạng thái lưu, hai b�
 trạng thái mạng, **một** nút hành động chính (Dựng 3D / Dựng lại / Xem mô hình /
 Xuất file, tự đổi theo trạng thái), menu trợ giúp và menu tài khoản. Một hành động
 không xuất hiện ở hai nơi trên cùng màn hình; tải nguồn nằm ở khu Ảnh nguồn,
-khung xem trống, kéo thả, dán và Ctrl+O. Bước hiện tại/hoàn thành/chưa có đầu vào
+khung xem trống, kéo thả, dán và Ctrl+O. Bước hiện tại/hoàn thành/chưa có nguồn
 phân biệt bằng chữ+biểu tượng+màu. Rail gồm icon + nhãn, vạch 3 px khu đang chọn;
 badge số màu, kết quả dựng và số dự án, không dùng dấu ✓ thay cho trạng thái mesh
 đã đạt. Rail và mobile tabs cùng registry; active/disabled/badge nhất quán.
@@ -165,7 +165,7 @@ label, palette và bảng phím được sinh cùng registry lệnh.
 | 1180 < w ≤ 1400 | Panel 344, ẩn phụ đề thương hiệu |
 | 1023 < w ≤ 1180 | Toolbar dưới chỉ số; mạng còn ở vùng trạng thái |
 | 720 < w ≤ 1023 | Rail+stage; panel fixed từ trái có backdrop; hai bước còn qua tiêu đề/nút tiếp |
-| w ≤ 720 | Tabs đáy, drawer dưới cao mục tiêu min(56dvh,470px); header 50; search button 38 |
+| w ≤ 720 | Tabs đáy, drawer dưới cao mục tiêu min(56dvh,470px); header hai hàng (hàng nhận diện: dấu hiệu, tên dự án + trạng thái lưu, tìm nhanh và tài khoản dạng icon có nhãn trợ năng — hai điều khiển icon-only duy nhất, chỉ ở bề rộng này —, mạng, trợ giúp; hàng việc: hai bước dạng ngắn và một hành động chính), mục tiêu ≤ 100 px; drawer đóng khi đổi bố cục hoặc khi dựng xong vào bước 2 |
 
 Các điểm đúng ranh giới áp một quy tắc duy nhất; viết mobile-first/range queries
 để tránh khe/chồng, không phụ thuộc lượng tử CSS 1/64 px của một engine. Thử cả

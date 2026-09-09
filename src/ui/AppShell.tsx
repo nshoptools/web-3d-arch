@@ -73,6 +73,29 @@ export function AppShell() {
   const modalOpen = state.dialogs.length > 0 || state.searchOpen
   const drawerModal = projectOpen && compact && state.drawerOpen
 
+  // The drawer flag is only meaningful on a compact layout. A rail click on the
+  // desktop sets it (the same reducer serves both), and without this it would
+  // survive a resize and cover the stage the moment the window narrows. The
+  // layout change itself closes it; a person re-opens it from the tabs.
+  useEffect(() => {
+    actions.openDrawer(false)
+  }, [actions, compact])
+
+  // A build that lands on step 2 is the moment to look at the model, not at
+  // the source panel: on a compact layout the drawer is closed for it (UI-03).
+  useEffect(() => {
+    if (compact && step === 2) actions.openDrawer(false)
+  }, [actions, compact, step])
+
+  // "No project is open" is answered the moment one is: the toast that said it
+  // must not sit on top of the project it is now wrong about.
+  useEffect(() => {
+    if (!projectOpen) return
+    for (const toast of state.toasts) {
+      if (toast.text === NO_PROJECT_REASON) actions.dismissToast(toast.id)
+    }
+  }, [actions, projectOpen, state.toasts])
+
   const onCommand = useCallback(
     (commandId: string) => {
       // One gate, stated the same way for every route into it.

@@ -120,24 +120,6 @@ export function StartScreen() {
           </section>
         </div>
 
-        <footer className="start__foot">
-          <Button
-            size="small"
-            variant="ghost"
-            icon="help"
-            onClick={() => actions.openDialog({ kind: 'shortcuts' })}
-          >
-            Bảng phím tắt
-          </Button>
-          <Button
-            size="small"
-            variant="ghost"
-            icon="info"
-            onClick={() => actions.openDialog({ kind: 'about' })}
-          >
-            Giới thiệu và giấy phép
-          </Button>
-        </footer>
       </div>
     </main>
   )

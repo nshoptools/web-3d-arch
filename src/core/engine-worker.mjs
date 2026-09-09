@@ -75,6 +75,14 @@ function productRecipe(request){
   }
   return buildProductRecipe(engine,request,request.transportGeneration);
 }
+
+/** A part of the engine that is fetched on demand. A network drop or a stale deployment makes
+ * that fetch fail with a browser sentence and a URL; the client sees one code instead, and the
+ * next request starts a fresh worker so the load is retried once the network is back. The
+ * import() calls keep literal specifiers so the bundler can see and emit the chunks. */
+function moduleUnavailable(error){
+  const failure=new Error('ENGINE_MODULE_UNAVAILABLE');failure.code='ENGINE_MODULE_UNAVAILABLE';failure.cause=error;throw failure;
+}
 self.onmessage=async({data})=>{
   if(!data||typeof data!=='object')return;
   try{
@@ -94,7 +102,7 @@ self.onmessage=async({data})=>{
       engine=loaded.engine;
       if(engine._arch_abi_version()!==2||!(engine.HEAPU8.buffer instanceof SharedArrayBuffer))throw new Error('CORE_ABI_MISMATCH');
       if(data.textConfig){
-        const {createEngineTextService}=await import('./engine-text-service.mjs');
+        const {createEngineTextService}=await import('./engine-text-service.mjs').catch(moduleUnavailable);
         textService=createEngineTextService(engine,data.textConfig,{origin:self.location.origin});
         if(data.textRendererAvailable&&data.textConfig.runtime?.engine==='webkit'&&!textService.capabilities.canvas2d){
           const port=await new Promise(resolve=>{
@@ -104,7 +112,7 @@ self.onmessage=async({data})=>{
         }
       }
       if(engine._arch_raster_prepare_encoded){
-        const {createRasterOperations,createRasterDispatcher}=await import('./raster-operations.mjs');
+        const {createRasterOperations,createRasterDispatcher}=await import('./raster-operations.mjs').catch(moduleUnavailable);
         rasterRPC=createRasterDispatcher(createRasterOperations(engine));
       }
       ready=true;
@@ -233,7 +241,7 @@ self.onmessage=async({data})=>{
         postMessage({type:'running',requestId,memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()});
         await new Promise(resolve=>setTimeout(resolve,0));
         id=buildSVG(request,generation);if(!id)throw new Error(errorText()||'PREVIEW_FAILED');
-        const {previewPlanarSnapshot}=await import('./source-preview.mjs');
+        const {previewPlanarSnapshot}=await import('./source-preview.mjs').catch(moduleUnavailable);
         const preview=await previewPlanarSnapshot(new Uint8Array(engine.HEAPU8.buffer,engine._arch_snapshot_ptr(id),engine._arch_snapshot_len(id)),{resolution,includeRGBA});
         if(Atomics.load(new Int32Array(engine.HEAPU8.buffer,engine._arch_control_ptr(),4),3)===generation)throw new Error('CANCELLED');
         postMessage({type:'source-preview',requestId,generation,preview,metadata:metadataFor(id),memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()},[preview.png.buffer,...(preview.rgba?[preview.rgba.buffer]:[])]);
@@ -250,7 +258,7 @@ self.onmessage=async({data})=>{
       try{
         postMessage({type:'running',requestId,memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()});
         await new Promise(resolve=>setTimeout(resolve,0));
-        const {applySourceFrame}=await import('./source-frame.mjs');
+        const {applySourceFrame}=await import('./source-frame.mjs').catch(moduleUnavailable);
         unpublished=applySourceFrame(engine,snapshotId,snapshotGeneration,request,generation);
         if(Atomics.load(new Int32Array(engine.HEAPU8.buffer,engine._arch_control_ptr(),4),3)===generation)throw new Error('CANCELLED');
         const metadata=metadataFor(unpublished);

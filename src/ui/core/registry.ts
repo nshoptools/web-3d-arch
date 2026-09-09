@@ -209,7 +209,7 @@ export const VIEW_ACTIONS: readonly ViewActionDef[] = [
 
 export const PRODUCTS: readonly { id: ProductId; label: string; sub: string }[] = [
   { id: 'keychain', label: 'Móc khóa', sub: 'Tấm 2,5D có lỗ móc và gờ.' },
-  { id: 'clicky', label: 'Keycap', sub: 'Trụ tương thích kiểu MX và khay switch.' },
+  { id: 'clicky', label: 'Nắp phím keycap', sub: 'Trụ tương thích kiểu MX và khay switch.' },
   { id: 'strap', label: 'Dây đeo', sub: 'Lỗ luồn dây và slot.' },
   { id: 'lego', label: 'Ngàm khối', sub: 'Lưới lỗ ngàm, rãnh và tai gióng.' },
   { id: 'charm', label: 'Charm cài dép', sub: 'Nút cài, cổ và vành.' },
@@ -419,6 +419,7 @@ export const CAP = {
   memberAdmin: 'account.member-admin',
   systemPolicy: 'account.system-policy',
   meshImport: 'mesh.import',
+  geometryBuild: 'geometry.build',
 } as const
 
 export type CapabilityId = (typeof CAP)[keyof typeof CAP]

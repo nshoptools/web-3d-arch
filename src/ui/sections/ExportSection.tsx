@@ -134,6 +134,33 @@ export function ExportSection() {
         </div>
       ) : null}
 
+      {/* A downloaded file is not a saved project: the two are different
+          things, and the sentence says which one just happened (audit). */}
+      {exported ? (
+        <div className={`card fc-border`} role="status" data-export-followup={unsaved ? 'unsaved' : 'saved'}>
+          <strong>Đã tải về: {exported.label}</strong>
+          <p className="muted" style={{ margin: 0 }}>
+            {unsaved
+              ? 'Tệp đã nằm trong thư mục tải về, nhưng dự án chưa được lưu. Lưu để giữ bản sửa này trong thư viện.'
+              : 'Tệp đã nằm trong thư mục tải về; dự án đã được lưu ở bản sửa hiện tại.'}
+          </p>
+          {unsaved ? (
+            <Button
+              size="small"
+              icon="save"
+              variant="primary"
+              keyHint="Ctrl S"
+              disabled={saveProject.pending}
+              disabledReason={writeBlocked}
+              reasonHidden
+              onClick={() => void saveProject.run()}
+            >
+              Lưu dự án
+            </Button>
+          ) : null}
+        </div>
+      ) : null}
+
       {exports.length === 0 ? (
         <div className="empty">
           <strong className="empty__title">Chưa có đường xuất nào được công bố</strong>
@@ -152,6 +179,7 @@ export function ExportSection() {
             return (
               <li
                 key={option.id}
+                data-export-id={option.id}
                 className="card fc-border"
                 style={{ padding: 10 }}
                 data-export-option={option.id}
@@ -176,7 +204,6 @@ export function ExportSection() {
                     {VERDICT_LABEL[option.verdict]}
                   </span>
                 </div>
-                <div className="prow__id">{option.id}</div>
                 {/* Each format states its own gate. A source SVG is not shut
                     because no mesh exists, and a renderer capture is not shut
                     because the mesh is behind the document — contract 0.3 gives
@@ -251,33 +278,6 @@ export function ExportSection() {
           })}
         </ul>
       )}
-
-      {/* A downloaded file is not a saved project: the two are different
-          things, and the sentence says which one just happened (audit). */}
-      {exported ? (
-        <div className={`card fc-border`} role="status" data-export-followup={unsaved ? 'unsaved' : 'saved'}>
-          <strong>Đã tải về: {exported.label}</strong>
-          <p className="muted" style={{ margin: 0 }}>
-            {unsaved
-              ? 'Tệp đã nằm trong thư mục tải về, nhưng dự án chưa được lưu. Lưu để giữ bản sửa này trong thư viện.'
-              : 'Tệp đã nằm trong thư mục tải về; dự án đã được lưu ở bản sửa hiện tại.'}
-          </p>
-          {unsaved ? (
-            <Button
-              size="small"
-              icon="save"
-              variant="primary"
-              keyHint="Ctrl S"
-              disabled={saveProject.pending}
-              disabledReason={writeBlocked}
-              reasonHidden
-              onClick={() => void saveProject.run()}
-            >
-              Lưu dự án
-            </Button>
-          ) : null}
-        </div>
-      ) : null}
 
       <ExportReceipts />
 

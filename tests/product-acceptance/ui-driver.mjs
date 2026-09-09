@@ -56,7 +56,7 @@ export class ProductUI {
   const revision=await this.page.locator('.card').filter({has:this.page.getByRole('textbox',{name:'Tên dự án',exact:true})}).innerText();
   const prior=Number(revision.match(/Bản sửa (\d+)/)[1]);
   await this.tab('Thông số');
-  const row=this.page.locator('.prow').filter({has:this.page.locator('.prow__id').filter({hasText:new RegExp('(?:· |^)'+id+'$')})});
+  const row=this.page.locator('.prow[data-parameter-id="'+id+'"]');
   await row.waitFor({timeout:this.timeout});const input=row.locator('input:not([type="range"])').first();await input.fill(String(value));await input.press('Enter');await input.blur();await this.tab('Thư viện');
   await this.page.waitForFunction(prior=>Array.from(document.querySelectorAll('.card')).some(e=>{const m=e.innerText.match(/Bản sửa (\d+)/);return m&&Number(m[1])>prior;}),prior,{timeout:this.timeout});
   return input;

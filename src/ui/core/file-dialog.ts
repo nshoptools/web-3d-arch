@@ -34,6 +34,21 @@ export function chooseFile(accept: string): Promise<File | null> {
 }
 
 export const ACCEPT_SOURCE = 'image/png,image/jpeg,image/webp,image/svg+xml,.png,.jpg,.jpeg,.webp,.svg'
+
+const SOURCE_TYPES = new Set(['image/png', 'image/jpeg', 'image/webp', 'image/svg+xml'])
+const SOURCE_EXTENSIONS = /\.(png|jpe?g|webp|svg)$/i
+
+/**
+ * Whether a dropped or pasted file is of a kind the source import reads. The
+ * chooser already filters by ACCEPT_SOURCE; drop and paste have no filter, so a
+ * text file or a ZIP would otherwise start a job only to be refused by the core
+ * with a format code. The check is by declared type or extension — the core
+ * still verifies the bytes.
+ */
+export function acceptedSourceFile(file: File): boolean {
+  if (file.type && SOURCE_TYPES.has(file.type.toLowerCase())) return true
+  return SOURCE_EXTENSIONS.test(file.name)
+}
 export const ACCEPT_MESH = '.stl,.obj,model/stl,model/obj'
 export const ACCEPT_PROJECT = '.zip,application/zip'
 export const ACCEPT_FONT = '.ttf,.otf,font/ttf,font/otf'

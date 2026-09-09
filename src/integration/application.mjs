@@ -58,18 +58,31 @@ export function mountApplication({element,origin=location.origin,deviceId,module
   // re-established the session (which resets private state on purpose). The
   // memo survives a failed attempt, so a browser that reports 'online' before
   // the network is usable is retried on its next 'online' event (audit RO-04).
-  let resume=null;
+  let resume=null,reconnecting=null,again=false;
   const remember=()=>{const s=controller.getSnapshot();if(s.project.id&&s.session.user)resume={projectId:s.project.id,userId:s.session.user.id};};
   const onOffline=()=>{remember();controller.setOnline(false);};
+  // 'online' can fire more than once for one reconnection (a flapping link, or a browser
+  // that fires it on both the network change and the page's own event). One initialize()
+  // runs at a time; an event that arrives meanwhile is replayed once the first has settled,
+  // so a session established by the first is not invalidated by the second.
   const onOnline=()=>{
     remember();controller.setOnline(true);
-    void controller.initialize().then(result=>{
+    if(reconnecting){again=true;return;}
+    reconnect();
+  };
+  const reconnect=()=>{
+    reconnecting=controller.initialize().then(result=>{
       const memo=resume;if(!result?.ok||!memo)return;
       const after=controller.getSnapshot();
       if(after.session.status!=='signed-in'||after.session.user?.id!==memo.userId)return;
       resume=null;if(after.project.id)return;
-      return controller.dispatch({type:'project.open',id:memo.projectId});
-    }).catch(()=>{});
+      return controller.dispatch({type:'project.open',id:memo.projectId}).then(opened=>{
+        // The model is not stored with the project; reopening rebuilds it from the saved state,
+        // as the start screen does, so the person is back where the connection dropped.
+        const s=controller.getSnapshot();
+        if(opened?.ok&&s.project.id===memo.projectId&&s.project.source&&s.capabilities.some(c=>c.id==='geometry.build'&&c.available))return controller.dispatch({type:'geometry.build'});
+      });
+    }).catch(()=>{}).then(()=>{reconnecting=null;if(again){again=false;if(resume)reconnect();}});
   };
   window.addEventListener('offline',onOffline);window.addEventListener('online',onOnline);
   const initialized=controller.initialize();

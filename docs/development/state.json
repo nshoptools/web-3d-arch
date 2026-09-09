@@ -1,8 +1,8 @@
 {
  "version": 26,
- "updatedAt": "2026-09-09T08:10:00+00:00",
+ "updatedAt": "2026-09-09T09:20:00+00:00",
  "releaseReady": false,
- "phase": "Hub release pass 2026-09-09: shell redesigned (start screen, single primary action), consent text and data-path fixes integrated; dev-server/harness tooling repaired; package rebuild blocked by kernel receipt pin (tools/kernel/build.ps1 changed after the canonical r4 build)",
+ "phase": "Hub release pass 2026-09-09: shell redesigned (start screen, single primary action), consent text and data-path fixes integrated; dev-server/harness tooling repaired; package rebuild blocked by kernel receipt pin (tools/kernel/build.ps1 changed after the canonical r4 build) Grok independent review 20260909-grok-ux-r1 handled: 15/16 findings fixed and re-verified (reopen rebuilds the model, worker module-fetch failure coded, phone header two rows, drawer closes on layout change/step 2, consent per product, internal ids off the main screen); F-15 kept by design.",
  "agents": {
   "aiAdapters": {
    "id": "01a07d23-af29-7012-ba5f-4aed7b260563",
@@ -1908,19 +1908,26 @@
    "run": "tmp/reviews/codex/runs/20260909-hub-release-r1",
    "evidence": {
     "uiBefore": "evidence/ui-before",
-    "uiAfter": "evidence/ui-after-r5",
-    "reconnectProbe": "work/probe/online-recovery-probe.mjs"
+    "uiAfter": "evidence/ui-after-r6",
+    "reconnectProbe": "work/probe/online-recovery-probe.mjs",
+    "grokFixesProbe": "work/probe/grok-findings-probe.mjs -> evidence/grok-fixes-r6"
    },
    "suites": {
     "nodeApp+domain+storage": "89 pass",
-    "testsApp run.ps1 chromium": "45 node + 46 browser pass (run 20260909-hub-app-r6)",
-    "uiExportConsent chromium": "32 pass (run 20260909-hub-ui-consent-r2)",
-    "e2eApplication": "chromium pass (run 20260909-hub-e2e-r1); firefox+webkit pass (run 20260909-hub-e2e-r2)",
+    "testsApp run.ps1 chromium": "45 node + 46 browser pass (runs 20260909-hub-app-r6, 20260909-hub-app-r7 after the Grok round)",
+    "uiExportConsent chromium": "32 pass (runs 20260909-hub-ui-consent-r2, 20260909-hub-ui-consent-r3 after the Grok round)",
+    "e2eApplication": "chromium pass (run 20260909-hub-e2e-r1); firefox+webkit pass (run 20260909-hub-e2e-r2); after the Grok round: Chromium, Firefox, WebKit đều đạt (phiên `20260909-hub-e2e-r5`, chạy riêng trên mã cuối, chứng chỉ tổng hợp sinh trong phòng phiên). Phiên r3 trước đó lỗi vì worker gói `import()` bằng chuỗi biến nên bundler không phát chunk — đã sửa giữ chuỗi cố định; r4 Chromium lỗi vì chứng chỉ nằm ngoài phòng phiên (môi trường chạy, không phải mã), Firefox/WebKit đạt",
     "packageRoundtrip": "2 pass"
    },
    "blockers": [
     "Application package rebuild: engine build receipt pins tools/kernel/build.ps1 at the 09-08 r4 version; current script (committed in the handover tree) produces a different, unqualified kernel (module-hub-r1, 6.26 MB wasm vs 5.81 MB). Qualify the rebuilt kernel or restore the pinned script before packaging."
-   ]
+   ],
+   "grokReview": {
+    "run": "tmp/reviews/grok/runs/20260909-grok-ux-r1",
+    "verdict": "Cần sửa (16 findings, 4 high)",
+    "handled": "F-01..F-14 and F-16 fixed and re-verified by probe; F-15 kept by design (cancel through the dialog is the designated path)",
+    "report": "tmp/reviews/codex/runs/20260909-hub-release-r1/reports/HUB-RELEASE-R1.md"
+   }
   }
  }
 }

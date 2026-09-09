@@ -30,7 +30,6 @@ export function SourceSection() {
   const source = snapshot.project.source
   const write = useCapability(CAP.projectWrite)
   const ai = useCapability(CAP.aiGenerate)
-  const clipboard = useCapability(CAP.clipboard)
   const writeBlocked = write.available ? null : write.reason
 
   const groupOpen = (id: string, fallback = true) => isGroupOpen(state, id, fallback)
@@ -128,7 +127,6 @@ export function SourceSection() {
           Ảnh PNG, JPG, WebP; SVG; hoặc lưới STL, OBJ. Kéo thả vào khung xem hay dán bằng Ctrl+V
           cũng được.
         </p>
-        {!clipboard.available ? <span className="reason">Dán: {clipboard.reason}</span> : null}
         <details className="details">
           <summary>Giới hạn kích thước tệp</summary>
           <p className="muted-3">

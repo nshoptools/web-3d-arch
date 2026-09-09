@@ -103,7 +103,7 @@ export function useStepNavigation(): StepNavigation {
       if (step === target) return 'đang mở'
       if (!projectOpen) return 'chưa có dự án'
       if (target === 1) return 'quay lại được'
-      if (!hasSource) return 'chưa có đầu vào'
+      if (!hasSource) return 'chưa có nguồn'
       if (!hasModel) return 'chưa dựng'
       return stale ? 'cần dựng lại' : 'đã dựng'
     },

@@ -77,6 +77,12 @@ export class JobOperations {
    if(this.adapters.printing){const printers=data(await this.adapters.printing.list());this.jobGuard(job);this.printers=printers;this.emit();}
    await a.prepare({...this.jobControl(job),state:freeze(data(this.doc.state)),assets:new Map([...this.assets].map(([h,a])=>[h,new Uint8Array(a.bytes)])),model});
    this.jobGuard(job);assert((this.visible?.lease??null)===model,'STALE_JOB');
+  }catch(e){
+   // A preparation retired by a newer job or by a session change is not a problem to show: each
+   // adapter names its own cancellation (SOURCE_SVG_CANCELLED, RASTER_CANCELLED, …) and every one
+   // of them means only that this job was aborted. The scheduler ignores CANCELLED (Grok F-03).
+   if(job.abort.signal.aborted&&e?.code!=='PROPOSAL_REQUIRED')throw error('CANCELLED');
+   throw e;
   }finally{this.finishJob(job);}
  }
  previewBuild(){return this.result(()=>this.build(false));}

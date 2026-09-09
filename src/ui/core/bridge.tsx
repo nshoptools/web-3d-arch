@@ -146,8 +146,13 @@ export function useResultHandler() {
 
       if (options.toastOnError !== false) {
         // The code stays on screen as the detail, so the sentence never hides
-        // which refusal it is.
-        actions.toast(tone, spoken, diagnostic.detail ?? diagnostic.code)
+        // which refusal it is — unless the sentence *is* the code, in which
+        // case printing it twice says nothing more.
+        actions.toast(
+          tone,
+          spoken,
+          diagnostic.detail ?? (spoken === diagnostic.code ? undefined : diagnostic.code),
+        )
       }
       // A REAUTH refusal keeps its code and message, and additionally opens the
       // one door that can resolve it. Nothing is retried automatically.

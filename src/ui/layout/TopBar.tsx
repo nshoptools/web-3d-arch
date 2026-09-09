@@ -1,5 +1,6 @@
 import { useRunCommand, useSnapshot } from '../core/bridge.tsx'
-import { useUiActions } from '../core/ui-state.tsx'
+import { useUi, useUiActions } from '../core/ui-state.tsx'
+import { MQ_COMPACT, useMediaQuery } from '../core/useMediaQuery.ts'
 import { useStepNavigation } from '../core/step-nav.ts'
 import { hasProject } from '../core/project-state.ts'
 import { Button } from '../components/Button.tsx'
@@ -10,6 +11,11 @@ import { HelpMenu } from './HelpMenu.tsx'
 const STEP_LABEL: Record<1 | 2, string> = {
   1: 'Nguồn & màu',
   2: 'Mô hình 3D',
+}
+/** The same two steps at phone width, where the long words cost a whole row. */
+const STEP_SHORT: Record<1 | 2, string> = {
+  1: 'Nguồn',
+  2: '3D',
 }
 
 /**
@@ -30,6 +36,14 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
   const projectOpen = hasProject(project)
   const step = nav.step
   const unsaved = projectOpen && project.savedRevision !== project.revision
+  const { state } = useUi()
+  const compact = useMediaQuery(MQ_COMPACT)
+  // With the export panel already on screen, its per-format buttons are the
+  // action; a second "export" button here would be the same action twice on
+  // one screen (UI-01). The bar keeps the shortcut binding, not the button.
+  const panelShowsExport =
+    state.section === 'export' && (compact ? state.drawerOpen : !state.panelCollapsed)
+  const showAdvance = projectOpen && !(nav.advanceKind === 'export' && panelShowsExport)
 
   return (
     <header className={`topbar app__top fc-border${projectOpen ? '' : ' topbar--start'}`} inert={inert}>
@@ -92,8 +106,11 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
                     title={value === 1 && step === 2 ? nav.backNote : undefined}
                     onClick={() => nav.goToStep(value)}
                   >
-                    <span>
+                    <span className="topbar__step-long">
                       Bước {value} · {STEP_LABEL[value]}
+                    </span>
+                    <span className="topbar__step-short" aria-hidden="true">
+                      {value} · {STEP_SHORT[value]}
                     </span>
                     {/* UI-01: the state is carried by a word as well as by the
                         icon and the colour, never by colour alone. */}
@@ -118,8 +135,9 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
             keyHint="Ctrl K"
             onClick={() => actions.openSearch(true)}
             aria-keyshortcuts="Control+K"
+            aria-label="Tìm nhanh"
           >
-            Tìm nhanh
+            <span className="topbar__search-label">Tìm nhanh</span>
           </Button>
         ) : null}
 
@@ -137,13 +155,14 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
             icon="cube"
             disabledReason={nav.busy ? 'Nhân đang chạy một việc. Chờ xong hoặc bấm Hủy trong khung xem.' : null}
             reasonHidden
+            data-rebuild="true"
             onClick={() => void run({ type: 'geometry.build' }, { announce: 'Đã gửi lệnh dựng lại 3D.' })}
           >
             Dựng lại 3D
           </Button>
         ) : null}
 
-        {projectOpen ? (
+        {showAdvance ? (
           // One action, whatever the step needs next: build, rebuild a stale
           // model, open the model that already exists, or export. The label says
           // which, so the button never lies about what it does. The shortcut is

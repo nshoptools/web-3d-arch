@@ -77,7 +77,7 @@ export function ParameterRow({ parameter, writeBlocked }: ParameterRowProps) {
   if (parameter.kind === 'boolean') {
     // A checkbox carries its own value; no second column repeats it (UI-04).
     return (
-      <div className="prow" data-overridden={parameter.overridden}>
+      <div className="prow" data-overridden={parameter.overridden} data-parameter-id={parameter.id}>
         <div className="prow__full">
           <CheckField
             inputId={controlId}
@@ -87,7 +87,6 @@ export function ParameterRow({ parameter, writeBlocked }: ParameterRowProps) {
             {...(parameter.derivedLabel ? { hint: parameter.derivedLabel } : {})}
             onChange={(checked) => void commit(checked)}
           />
-          <span className="prow__id">{parameter.id}</span>
         </div>
         {parameter.overridden ? <div className="prow__control">{reset}</div> : null}
       </div>
@@ -96,10 +95,9 @@ export function ParameterRow({ parameter, writeBlocked }: ParameterRowProps) {
 
   if (parameter.kind === 'select') {
     return (
-      <div className="prow" data-overridden={parameter.overridden}>
+      <div className="prow" data-overridden={parameter.overridden} data-parameter-id={parameter.id}>
         <label className="prow__label" htmlFor={controlId}>
           {parameter.label}
-          <span className="prow__id"> · {parameter.id}</span>
         </label>
         <div className="prow__control">
           <SelectField
@@ -124,10 +122,9 @@ export function ParameterRow({ parameter, writeBlocked }: ParameterRowProps) {
   }
 
   return (
-    <div className="prow" data-overridden={parameter.overridden}>
+    <div className="prow" data-overridden={parameter.overridden} data-parameter-id={parameter.id}>
       <label className="prow__label" htmlFor={controlId}>
         {parameter.label}
-        <span className="prow__id"> · {parameter.id}</span>
       </label>
       <div className="prow__control">
         <NumberField

@@ -125,9 +125,7 @@ export function AccountMenu() {
       items={items}
       trigger={{ size: 'small', icon: 'user', 'aria-label': `Menu tài khoản của ${userLabel(user)}` }}
     >
-      <span style={{ maxInlineSize: 140, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-        {userLabel(user)}
-      </span>
+      <span className="topbar__account-name">{userLabel(user)}</span>
       {session.status === 'offline-lease' ? (
         <span className="chip chip--warn fc-border" style={{ marginInlineStart: 4 }}>
           ngoại tuyến

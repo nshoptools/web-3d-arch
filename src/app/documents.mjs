@@ -6,6 +6,13 @@ import {validateProductMaterialExtension} from '../contracts/product-material.mj
 export const DEFAULT_TEXT=freeze({text:'',fontId:'',sizeMm:'10',heightLayers:'5',baseWidthMm:'0',baseThicknessLayers:'5',baseRadiusMm:'0',bend:'0',letterSpacing:'0',lineSpacing:'1',baseEnabled:false,bevelEnabled:false,asSource:false,xMm:'0',yMm:'0',placement:'on-model',sizeUnit:'mm',sizeDisplay:'10'});
 export const DEFAULT_EDITOR=freeze({tool:'paint',colorMaterialId:null,cutMode:'merge',strokeWidthPx:'3',healAuto:true,healAllGaps:false,healThresholdMm:'0.2'});
 export const APP_KIND='web-3d-arch.app-document';
+/** Product names as a person reads them; ids stay in the state and the log. */
+export const PRODUCT_LABEL=Object.freeze({keychain:'Móc khóa',clicky:'Nắp phím keycap',strap:'Dây đeo',lego:'Ngàm khối',charm:'Charm cài dép'});
+export const productLabel=id=>PRODUCT_LABEL[id]??String(id);
+/** Enumerated values as the interface shows them; the value itself is what the schema stores. */
+const ENUM_LABEL=Object.freeze({silhouette:'Theo đường viền hình',round:'Bo góc',circle:'Tròn',square:'Vuông',tron:'Bo tròn',vat:'Vát',bac:'Bậc',
+ noi:'Nổi',chim:'Chìm',phang:'Phẳng',phang2:'Phẳng hai mặt',hinh:'Hình',chu:'Chữ',du:'Đủ',nua:'Một nửa',tu:'Một phần tư',roi:'Rời',lien:'Liền',ngang:'Ngang',doc:'Dọc',them:'Thêm vào',han:'Hàn liền',tru:'Trừ đi'});
+const enumLabel=value=>ENUM_LABEL[value]??String(value);
 export function appContent(name='Untitled'){return {version:1,name,step:1,source:null,mesh:null,text:data(DEFAULT_TEXT),materials:[],materialDefaults:[],editor:data(DEFAULT_EDITOR),printerId:null,deleted:false};}
 export function validateState(s){
  s=domain.validateProject(s);const a=s.content.app;
@@ -53,7 +60,7 @@ async function addSnapshot(state,assets,snapshots){
  return snapshotReference(state,{assetHashes:[hash,...usedAssets(state)]});
 }
 export async function newDocument(product,assets=new Map(),name){
- const state=validateState(domain.createProject({product,content:{app:appContent(name)}})),snapshots={};
+ const state=validateState(domain.createProject({product,content:{app:appContent(name??productLabel(product)+' mới')}})),snapshots={};
  const current=await addSnapshot(state,assets,snapshots);
  return {document:{kind:APP_KIND,version:1,state,history:createHistory(current,{assets:[...assets.values()].map(({hash,byteLength})=>({hash,byteLength}))}),snapshots,savedRevision:null},assets};
 }
@@ -101,8 +108,8 @@ export function parameterViews(state,canEdit){
  const numeric=f.type==='decimal'||f.type==='height',auto=f.type==='height'&&value?.heightMode==='auto',layer=f.type==='height'&&value?.heightMode==='layers';
  return {id:f.id,label:f.ui.label,group:f.group,kind:f.type==='boolean'?'boolean':f.type==='enum'||auto?'select':'number',
  value:typeof value==='boolean'?value:auto?'auto:'+value.mode:layer?String(value.layers):f.type==='height'?String(value.mm):f.type==='tolerance'?'':String(value),
- unit:layer?'layers':f.unit??null,...(f.domain.kind==='range'?{min:String(f.domain.min),max:String(f.domain.max)}:{}),
- ...(numeric?{step:String(f.ui.increment??0.000001)}:{}),...(f.type==='enum'?{options:f.domain.values.map(value=>({value,label:value}))}:auto?{options:[{value:'auto:'+value.mode,label:value.mode}]}:{}),
+ unit:layer?'layers':f.unit==='dimensionless'||f.unit==='candidate-index'?null:f.unit??null,...(f.domain.kind==='range'?{min:String(f.domain.min),max:String(f.domain.max)}:{}),
+ ...(numeric?{step:String(f.ui.increment??0.000001)}:{}),...(f.type==='enum'?{options:f.domain.values.map(value=>({value,label:enumLabel(value)}))}:auto?{options:[{value:'auto:'+value.mode,label:'Tự động ('+value.mode+')'}]}:{}),
  advanced:f.ui.advanced,visible:true,enabled,...(!enabled?{reason:!canEdit?'Hãy đăng nhập và mở khóa dự án này trước khi đổi tham số.':!availability.applicable?'Tham số được giữ lại nhưng đang không có hiệu lực.':'Dung sai được chọn theo phiên bản qua chức năng của nhân, không sửa trực tiếp.'}:{}),
  overridden:entries[f.id]?.origin==='user',...(f.type==='height'?{derivedLabel:String(domain.resolveFieldMm(state,f.id))+' mm; chưa xác minh hình học/độ khớp'}:{})};
  });

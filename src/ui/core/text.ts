@@ -126,6 +126,75 @@ export const DIAGNOSTIC_TEXT: Record<string, string> = {
   APPROVAL_IN_PROGRESS:
     'Nhân đã bắt đầu áp dụng đề xuất này, nên không rút lại được nữa. Chờ nhân trả lời lượt áp dụng.',
   UNKNOWN_PROPOSAL: 'Đề xuất này không còn hiệu lực ở nhân.',
+  // Import refusals: the kernel names the format problem; the person needs the
+  // sentence that says which kinds of file are accepted.
+  RASTER_UNSUPPORTED_FORMAT:
+    'Tệp này không phải ảnh PNG, JPG hay WebP mà ứng dụng đọc được. Chọn một ảnh, một tệp SVG hoặc một lưới STL/OBJ.',
+  RASTER_DECODE_FAILED: 'Ảnh này bị hỏng hoặc dùng cách mã hóa mà ứng dụng không đọc được.',
+  RASTER_SOURCE_LIMIT: 'Ảnh vượt giới hạn kích thước tệp nên bị từ chối trước khi ghi; dự án giữ nguyên.',
+  RASTER_DIMENSION_LIMIT: 'Ảnh có kích thước điểm ảnh vượt giới hạn nhân xử lý được.',
+  RASTER_PIXEL_LIMIT: 'Ảnh có quá nhiều điểm ảnh so với giới hạn của nhân.',
+  SOURCE_KIND: 'Tệp này không thuộc loại nguồn ứng dụng nhận (ảnh, SVG, chữ, emoji hoặc lưới).',
+  SOURCE_CONVERSION_UNSUPPORTED: 'Nguồn hiện tại không chuyển được sang dạng đó.',
+  SOURCE_FILE_TYPE:
+    'Tệp này không phải ảnh PNG, JPG, WebP, tệp SVG hay lưới STL/OBJ, nên không được nhận làm nguồn.',
+  MESH_UNSUPPORTED_FORMAT: 'Tệp lưới này không phải STL hay OBJ mà ứng dụng đọc được.',
+  // The engine runs in a worker that fetches parts of itself on demand.
+  ENGINE_MODULE_UNAVAILABLE:
+    'Không tải được một phần của nhân xử lý, thường vì mất mạng giữa chừng. Khi có mạng lại, thao tác tiếp theo sẽ tự tải lại.',
+  ENGINE_INIT_TIMEOUT: 'Nhân xử lý không khởi động kịp. Thử lại thao tác; nếu vẫn vậy, tải lại trang.',
+  ENGINE_CRASH: 'Nhân xử lý bị dừng đột ngột. Thao tác tiếp theo sẽ khởi động lại nhân.',
+  CORE_UNAVAILABLE: 'Trình duyệt này không cấp bộ nhớ dùng chung cho nhân xử lý, nên chưa dựng được mô hình.',
+  JOB_BUSY: 'Nhân đang chạy một việc khác. Chờ xong hoặc bấm Hủy trong khung xem rồi thử lại.',
+  // Each adapter names its own cancellation; to a person they are one sentence.
+  SOURCE_SVG_CANCELLED: 'Lượt dựng ảnh SVG đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
+  RASTER_CANCELLED: 'Lượt xử lý ảnh đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
+  PRODUCT_CANCELLED: 'Lượt cập nhật sản phẩm đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
+  MESH_CANCELLED: 'Lượt xử lý khối nhập đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
+  GENERATED_BASE_CANCELLED: 'Lượt dựng đế đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
+  PREPARATION_BUSY: 'Nhân đang bận chuẩn bị dữ liệu. Thử lại sau vài giây.',
+}
+
+/**
+ * What the busy overlay says a job is doing. The core keeps short keys for the
+ * stages it owns (tests and the log depend on them); a person reads a sentence.
+ * A stage the table does not know is already a sentence from the core.
+ */
+export const JOB_STAGE_TEXT: Record<string, string> = {
+  build: 'Dựng mô hình 3D',
+  export: 'Tạo tệp xuất',
+  'export receipt': 'Tạo biên lai xuất',
+  import: 'Nhận tệp nguồn',
+  source: 'Nhận nguồn',
+  preview: 'Chuẩn bị mô hình để xem',
+  'geometry confirmation': 'Chờ bạn xác nhận thông số hình học',
+  'source confirmation': 'Chờ bạn xác nhận nguồn',
+  'Source and datum confirmation': 'Chờ bạn xác nhận nguồn và mặt chuẩn',
+  'Prepare product update': 'Chuẩn bị cập nhật sản phẩm',
+  'Prepare source datums': 'Chuẩn bị mặt chuẩn cho nguồn',
+  'Probe explicitly selected face': 'Dò mặt đã chọn',
+  'edit-source': 'Sửa ảnh nguồn',
+  'raster-prepare': 'Chuẩn bị ảnh raster',
+  'worker-build': 'Nhân đang dựng hình',
+  'qualify-snapshot': 'Kiểm tra mô hình',
+  'qualify-union': 'Kiểm tra khối ghép',
+  'qualify-whole-union': 'Kiểm tra toàn bộ khối ghép',
+  'export-validate': 'Kiểm tra tệp xuất',
+  running: 'Nhân đang chạy',
+  'shape-run': 'Dựng chữ',
+}
+
+export const JOB_STATE_TEXT: Record<string, string> = {
+  running: 'đang chạy',
+  cancelling: 'đang hủy',
+}
+
+export function jobStageText(stage: string): string {
+  return JOB_STAGE_TEXT[stage] ?? stage
+}
+
+export function jobStateText(state: string): string {
+  return JOB_STATE_TEXT[state] ?? state
 }
 
 /** The sentence to show a person, with the core's own message as the fallback. */

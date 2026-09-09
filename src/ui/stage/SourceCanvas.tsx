@@ -607,7 +607,7 @@ export function SourceCanvas() {
           <div className="card fc-border srccanvas__notice-card">
             <strong className="card__title">Chưa có ảnh nguồn để sửa</strong>
             <p className="muted" style={{ margin: 0 }}>
-              Nhân chưa công bố <code>project.sourceCanvas</code>. Bảy công cụ sửa vùng chỉ chạy trên
+              Nhân chưa chuẩn bị xong ảnh raster cho nguồn này. Bảy công cụ sửa vùng chỉ chạy trên
               ảnh raster mà nhân đã chuẩn bị; giao diện không tự dựng ảnh thay cho nguồn của bạn.
             </p>
           </div>

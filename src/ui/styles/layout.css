@@ -135,7 +135,14 @@
     max-inline-size: 100%;
   }
   .topbar__steps > li { min-inline-size: 0; max-inline-size: 100%; }
+  .topbar__step-short { display: none; }
   .topbar__spacer { flex: 1 1 12px; min-width: 0; }
+  .topbar__account-name {
+    max-inline-size: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   .topbar__tools { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-inline-size: 0; max-inline-size: 100%; }
 
   /* Long labels inside a header control wrap instead of forcing a scrollbar. */
@@ -366,8 +373,6 @@
     .start__grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
   }
   .start__card { padding: 16px; gap: 12px; }
-  .start__foot { display: flex; gap: 8px; flex-wrap: wrap; }
-
   /* ------------------------------------------------------------------ stage */
 
   .stage-wrap {
@@ -794,12 +799,57 @@
     }
 
     .panel-tab { display: none; }
-    .topbar { gap: 6px; }
+    .topbar {
+      gap: 6px;
+      padding-block: 4px;
+      padding-inline-start: max(8px, env(safe-area-inset-left));
+      padding-inline-end: max(8px, env(safe-area-inset-right));
+    }
+    /* The project chip shrinks by its name, never by folding its save state. */
+    .topbar__project-name { flex: 1 1 auto; }
+    .topbar__project .chip { flex: 0 0 auto; white-space: nowrap; }
+    .topbar:not(.topbar--start) .topbar__spacer { display: none; }
+    /* What the identity row gives up so the project name keeps its words:
+       the folder glyph on the project chip and the tail of a long account name. */
+    .topbar:not(.topbar--start) .topbar__project > svg { display: none; }
+    /* The account trigger keeps its accessible name ("Menu tài khoản của …")
+       and the person glyph; the visible name folds so the project name can
+       stay readable. Together with the search button these are the only two
+       icon-only controls of the interface, both at phone width only. */
+    .topbar:not(.topbar--start) .topbar__account-name {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
     .topbar__name { font-size: var(--fs-body); }
-    .topbar__project { max-inline-size: 100%; }
-    /* Narrow: key hints and the network word fold; icons, names and states stay. */
+    .topbar__project { max-inline-size: calc(100% - 44px); }
+    /* Narrow: key hints and the network word fold; icons, names and states stay.
+       In the workspace the product name folds too (the mark keeps the identity)
+       and the two steps use their short words, so the bar is three rows at
+       most on a 390 px phone instead of five (UI-06). */
     .topbar .btn__key { display: none; }
     .topbar__online-label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .topbar:not(.topbar--start) .topbar__names { display: none; }
+    .topbar__step-long { display: none; }
+    .topbar__step-short { display: inline; }
+    .topbar__search-label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .topbar__steps { gap: 4px; }
+    /* Two rows, not five: the identity row (mark, project, search, network,
+       help, account) and the work row (two steps, primary action). The tools
+       wrapper dissolves so its buttons can take their place in the flow. */
+    .topbar:not(.topbar--start) .topbar__tools { display: contents; }
+    .topbar:not(.topbar--start) .topbar__tools > * { order: 4; }
+    .topbar:not(.topbar--start) .topbar__brand { order: 0; }
+    .topbar:not(.topbar--start) .topbar__project { order: 1; flex: 1 1 96px; min-inline-size: 0; max-inline-size: none; }
+    .topbar:not(.topbar--start) .topbar__tools > .btn[aria-keyshortcuts='Control+K'] { order: 2; }
+    .topbar:not(.topbar--start) .topbar__tools > .chip { order: 3; }
+    .topbar:not(.topbar--start) .topbar__steps { order: 6; }
+    .topbar:not(.topbar--start) .topbar__spacer { order: 7; }
+    .topbar:not(.topbar--start) .topbar__tools > .btn[data-advance],
+    .topbar:not(.topbar--start) .topbar__tools > .btn[data-rebuild] { order: 8; }
   }
 
   /* Short viewports and on-screen keyboards: the drawer must never eat the
@@ -820,6 +870,18 @@
    layout rule can raise a component's floor. The global compact size is left
    alone for every other surface. */
 @layer overrides {
+  /* Phone header (UI-06): the current step is already marked by aria-current,
+     colour and the chevron; its status chip is the one word that can go so
+     both steps and the primary action share a row. The other step keeps its
+     word. `.chip` sets display in `components`, so the rule lives here. */
+  @media (width <= 720px) {
+    .topbar__steps .btn[aria-current='step'] .chip { display: none; }
+    /* The step icons repeat what the words say (the other step's chip names
+       its state; the current one is aria-current); at phone width they are
+       the 40 px that keep the primary action off a third row. */
+    .topbar__steps .btn { padding-inline: 8px; }
+    .topbar__steps .btn > svg { display: none; }
+  }
   .stage__bar .btn {
     min-block-size: 32px;
     min-inline-size: 32px;

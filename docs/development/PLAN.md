@@ -39,6 +39,17 @@ Kiểm đã chạy thật: typecheck; 89 ca Node (app/domain/storage, gồm
 duyệt Chromium; harness UI xuất/xác nhận 32 ca Chromium; `tests/e2e`
 Chromium/Firefox/WebKit đạt; ảnh 15 trạng thái × 3 bề rộng.
 
+Sau phản biện Grok (`20260909-grok-ux-r1`, 16 phát hiện): sửa 15 mục — overlay
+bận và dải cảnh báo bằng câu tiếng Việt (mã việc/mã lỗi gập lại), mở dự án đã
+lưu dựng lại mô hình ngay, lỗi nạp module worker khi mất mạng có mã và tự thử
+lại, job chuẩn bị bị hủy không lên dải cảnh báo, sự kiện `online` lặp được gộp,
+drawer đóng khi đổi bố cục/vào bước 2, thanh trên hai hàng ở ≤720 (UI-06 cập
+nhật), hộp xác nhận gom vai theo loại sản phẩm, id thông số/xuất rời màn hình
+chính, tên mặc định theo loại, thả tệp khi có hộp thoại bị chặn, tệp không phải
+ảnh bị từ chối với câu rõ; giữ F-15 (hủy qua hộp thoại là đường được chỉ định).
+Kiểm lại: typecheck, 89 ca Node, `tests/app` r7, harness xuất/xác nhận r3, e2e,
+probe 14 phát hiện và probe mất mạng đều đạt (chi tiết trong phòng phiên Hub).
+
 Chưa làm và vì sao: gói website mới chưa tạo được (biên lai nhân r4 ghim
 `tools/kernel/build.ps1` bản cũ; nhân dựng bằng script hiện tại chưa nghiệm
 thu); nghiệm thu G4 trên gói hợp nhất, OIDC/HTTPS thật, 3MF/slicer, CSG tổng

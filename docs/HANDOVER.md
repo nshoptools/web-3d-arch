@@ -26,7 +26,16 @@ sửa dữ liệu (gói cứu hộ không phình khi nhập lại, dán khi có 
 chạy ngầm, chọn công cụ vẽ không làm mô hình thành cũ, mở lại dự án khi mạng có
 lại). Bằng chứng ảnh trước/sau và kết quả kiểm nằm trong
 `tmp/reviews/codex/runs/20260909-hub-release-r1/` (ảnh: `evidence/ui-before`,
-`evidence/ui-after-r5`) và bản chắt lọc ở [testevidence/ui-release-r1](testevidence/ui-release-r1/README.md).
+`evidence/ui-after-r5`, `evidence/ui-after-r6`, `evidence/grok-fixes-r6`) và bản
+chắt lọc ở [testevidence/ui-release-r1](testevidence/ui-release-r1/README.md).
+
+Phản biện độc lập Grok (`tmp/reviews/grok/runs/20260909-grok-ux-r1/reports/REVIEW.md`)
+nêu 16 phát hiện; Hub sửa 15 (đáng chú ý: mở dự án đã lưu dựng lại mô hình ngay
+vì mô hình không được lưu cùng dự án; lỗi nạp module của worker khi mất mạng
+thành mã có câu và tự thử lại; drawer đóng khi đổi bố cục/vào bước 2; thanh trên
+hai hàng ở ≤720; hộp xác nhận gom vai theo loại sản phẩm; id nội bộ rời khỏi
+màn hình chính; tệp không phải ảnh bị từ chối ngay khi thả/dán) và giữ F-15 có
+lý do. Bảng đối chiếu và kiểm lại ở `reports/HUB-RELEASE-R1.md` trong phòng phiên Hub.
 
 Chạy giao diện hiện tại từ mã nguồn (không cần đóng gói lại) bằng máy chủ phát
 triển HTTPS loopback với chứng chỉ tổng hợp trong repo:

@@ -3,6 +3,7 @@ import type { Diagnostic, ProductId } from '../../contracts/app-bridge.ts'
 import { useAsyncAction, useCapability, useRunCommand } from '../core/bridge.tsx'
 import { useUiActions } from '../core/ui-state.tsx'
 import { CAP, PRODUCTS } from '../core/registry.ts'
+import { MQ_COMPACT, useMediaQuery } from '../core/useMediaQuery.ts'
 import { Button } from '../components/Button.tsx'
 import { SelectField } from '../components/Fields.tsx'
 import { diagnosticText } from '../core/text.ts'
@@ -37,6 +38,7 @@ export function CreateProjectCard({
   const write = useCapability(CAP.projectWrite)
   const writeBlocked = write.available ? null : write.reason
   const groupRef = useRef<HTMLDivElement>(null)
+  const compact = useMediaQuery(MQ_COMPACT)
 
   const [product, setProduct] = useState<ProductId>(PRODUCTS[0]?.id ?? 'keychain')
   const [failure, setFailure] = useState<Diagnostic | null>(null)
@@ -48,10 +50,15 @@ export function CreateProjectCard({
       actions.announce('Đã tạo dự án mới. Thêm ảnh, chữ hoặc emoji để bắt đầu.')
       // The workspace opens on the source section; the file chooser is not
       // opened from here because the click already spent its user activation.
-      actions.setSection('source', true)
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => document.getElementById(FIRST_TASK_ANCHOR)?.focus()),
-      )
+      // On a compact layout the panel is a drawer that would cover the stage,
+      // and the stage's own empty card offers the same first actions — so the
+      // drawer stays closed there and the stage is what the person sees.
+      actions.setSection('source', !compact)
+      if (!compact) {
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => document.getElementById(FIRST_TASK_ANCHOR)?.focus()),
+        )
+      }
       return
     }
     // A confirmation is already a dialog; only a plain refusal belongs inline.
