@@ -6,7 +6,7 @@ import {createPNGEncoder} from '../core/png-client.mjs';
 import {createBrowserDownload} from './download.mjs';
 import {createApplicationSources} from './source-compositor.mjs';
 import {createEngineTextRenderer} from '../core/engine-text-renderer.mjs';
-import {applicationContext} from './application-context.mjs';
+import {applicationContext,applicationSettings} from './application-context.mjs';
 import {createProductApplicationServices} from './product-services.mjs';
 import {scheduleApplicationPreparation} from './preparation-scheduler.mjs';
 import './application.css';
@@ -36,7 +36,7 @@ export function mountApplication({element,origin=location.origin,deviceId,module
     onDiagnostic:diagnostic=>controller?.report(Object.assign(new Error(diagnostic.message??diagnostic.code),diagnostic)),
     onCapabilitiesChanged:()=>controller?.emit()});
   const productServices=productProcessing?createProductApplicationServices({...productProcessing,kernel,sourceLibrary,origin,context,viewport,encodePNG:png,
-    settings:()=>controller?.session.user?{userId:controller.session.user.id,sessionKey:controller.epoch,settings:controller.remote.settings}:null,
+    settings:()=>applicationSettings(controller),
     onChange:()=>controller?.emit()}):null;
   const adapters={engine:productServices?.engine??kernel.engine,source:productServices?.source??sources?.source??kernel.source,
     exporter:productServices?.exporter??kernel.exporter,viewport,editing,download:delivery,

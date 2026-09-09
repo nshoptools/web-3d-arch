@@ -23,6 +23,8 @@ export interface CommitResult {
   message?: string
   /** The draft awaits explicit consent; it is neither committed nor invalid. */
   awaitingConfirmation?: true
+  /** The turn was cancelled or replaced by a newer one: no verdict on the value, nothing to complain about. */
+  superseded?: true
 }
 
 /**
@@ -313,6 +315,11 @@ export function NumberField({
       setError(null)
     } else if (result.awaitingConfirmation) {
       setError(null)
+    } else if (result.superseded) {
+      // No verdict on the value itself: show what the snapshot holds again.
+      setDraft(null)
+      onDraftReset?.()
+      setError(null)
     } else {
       setDraft(raw)
       setError(result.message ?? 'Giá trị bị từ chối.')
@@ -506,7 +513,7 @@ export function TextField({
       void Promise.resolve(onCommit(value)).then((result) => {
         if (!owner.owns(ticket)) return
         if (!result) return
-        setCommitError(result.ok || result.awaitingConfirmation ? null : (result.message ?? 'Giá trị bị từ chối.'))
+        setCommitError(result.ok || result.awaitingConfirmation || result.superseded ? null : (result.message ?? 'Giá trị bị từ chối.'))
       })
     },
   }
@@ -756,6 +763,11 @@ export function DraftTextField({
       onDraftReset?.()
       setError(null)
     } else if (result.awaitingConfirmation) {
+      setError(null)
+    } else if (result.superseded) {
+      // No verdict on the value itself: show what the snapshot holds again.
+      setDraft(null)
+      onDraftReset?.()
       setError(null)
     } else {
       setDraft(raw)

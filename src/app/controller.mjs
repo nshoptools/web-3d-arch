@@ -26,7 +26,7 @@ export class AppController {
   this.offset=0;this.lastNow=0;this.timeAnchor=this.clock();this.clockMark=globalThis.performance.now();this.resetBarrier=Promise.resolve();this.storagePolicy={backend:'prefer-opfs',allowIDBFallback:true,fallbackWhen:['unsupported','verification-failed'],...storagePolicy};
   this.onlineSession=null;this.listeners=new Set();this.epoch=0;this.version=0;this.queue=Promise.resolve();this.store=null;this.doc=null;this.assets=new Map();this.projectId='';this.headRevision=0;
   this.session={status:'checking',user:null,deviceMode};this.workspaceStep=1;this.online=true;this.diagnostics=[];this.library=[];this.libraryCache=new Map();this.unrecognizedProjects=[];this.printers=[];this.selection=null;this.editorTool=null;this.job=null;this.generation=0;this.visible=null;this.preview=null;this.pendingChange=null;this.urls=new Map();this.closed=false;this.readOnly=false;this.rawImport=null;this.conflicts=[];this.truncated=false;
-  this.exportReceipts=new Map();this.receiptBytes=0;this.projectContextGeneration=0;
+  this.exportReceipts=new Map();this.receiptBytes=0;this.projectContextGeneration=0;this.diagnosticSequence=0;
   this.storageEstimate={usedBytes:0,quotaBytes:null,estimate:true,warning:'Chưa ước tính được dung lượng lưu trữ.'};
   this.api=new ApiClient({origin,fetchImpl,onAuthLost:()=>this.invalidate('expired',{rescue:!!this.onlineSession}),
    onAccessFailure:()=>this.onlineSession?this.invalidate('expired',{rescue:true}):undefined});
@@ -45,7 +45,7 @@ export class AppController {
  report(e,scope=null){if(e.code==='HISTORY_PRUNING_REQUIRED'&&this.pendingChange)e.confirmation={title:'Giảm lịch sử được giữ lại',changes:['Giữ bản chụp hiện tại; cắt bớt các giao dịch cũ nhất để về trong hạn mức.'],retry:{type:'proposal.accept',id:this.pendingChange.id,confirmed:true}};const d=diagnostic(e);
   // A refusal that carries a confirmation is a question shown in a dialog, not a problem to keep on the warning strip after it was answered.
   if(scope)diagnosticScopes.set(d,scope);
-  if(!e.confirmation)this.diagnostics=this.diagnostics.slice(-19).concat(d);this.emit();return {ok:false,diagnostic:d,...(e.confirmation?{confirmation:e.confirmation}:{})};}
+  if(!e.confirmation)this.record(d);this.emit();return {ok:false,diagnostic:d,...(e.confirmation?{confirmation:e.confirmation}:{})};}
  /** A refusal is about the command that was refused. When a later command of the same scope succeeds,
   * the earlier refusal is no longer a problem to review (Grok R-01: a refused file stayed on the strip after a good import). */
  async result(fn,scope=null){
@@ -67,7 +67,11 @@ export class AppController {
   if(kept.length!==this.diagnostics.length){this.diagnostics=kept;this.emit();}
  }
  /** A problem the controller states itself (not a thrown refusal), with the scope whose next success retires it. */
- note(d,scope=null){if(scope)diagnosticScopes.set(d,scope);this.diagnostics=this.diagnostics.slice(-19).concat(d);this.emit();}
+ note(d,scope=null){if(scope)diagnosticScopes.set(d,scope);this.record(d);this.emit();}
+ /** Append one diagnostic with its place in the session's sequence, keeping the newest twenty. The
+  * sequence is what "đã xem" is measured against: a bounded list that rolls over cannot use its length
+  * as the identity of an entry (audit F-06: the twenty-first problem never showed on the strip). */
+ record(d){d.sequence=++this.diagnosticSequence;this.diagnostics=this.diagnostics.slice(-19).concat(d);}
  enqueue(fn){const epoch=this.epoch;const p=this.queue.then(()=>{assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(this.onlineSession)return this.preflight(epoch).then(()=>{this.guard(epoch);return fn();});return fn();});this.queue=p.catch(()=>{});return p;}
  editingAllowed(){const s=this.store?.status();return !!s&&!this.readOnly&&s.canEdit&&!s.writeBlocked&&!s.capabilities.database.readOnly;}
  guard(epoch=this.epoch){assert(epoch===this.epoch&&!this.closed,'ACCESS_CHANGED');if(!this.editingAllowed()){

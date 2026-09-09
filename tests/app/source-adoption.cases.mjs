@@ -109,7 +109,13 @@ export const adoptionCases={
    const pending=c.importFile(svg());await entered.promise;
    if(action==='cancel')ok(await c.dispatch({type:'job.cancel',id:c.job.id}));
    else if(action==='parameter')ok(await c.dispatch({type:'parameter.set',id:'size',value:'51'}));
-   else if(action==='save')ok(await c.dispatch({type:'project.save'}));
+   else if(action==='save'){
+    // A save changes nothing about the design: the adoption in flight is not obsolete, it lands on
+    // top of the saved head and leaves the project with unsaved changes (audit F-02).
+    ok(await c.dispatch({type:'project.save'}));const saved=c.doc.savedRevision;check(!captured.signal.aborted,'save keeps the adoption running');
+    release.resolve();ok(await pending);check(!!c.doc.state.content.app.source&&c.doc.state.revision===saved+1&&c.doc.savedRevision===saved,'adoption lands after the save');
+    check(!c.pendingOperation&&!c.job,'no orphan proposal/job');outcomes.push({action,code:'ok'});continue;
+   }
    else if(action==='project')ok(await c.dispatch({type:'project.create',product:'charm'}));
    else ok(await c.importFile(svg()));
    const committed=mark(c);release.resolve();const rejected=bad(await pending);same(c,committed);check(captured.signal.aborted,'obsolete control aborted');outcomes.push({action,code:rejected.diagnostic.code});

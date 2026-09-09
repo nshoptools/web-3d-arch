@@ -99,7 +99,7 @@ export function SavedProjectList({
                     icon="folder"
                     variant={isOpen ? 'default' : 'primary'}
                     disabled={openProject.pending}
-                    disabledReason={writeBlocked}
+                    disabledReason={writeBlocked ?? (isOpen ? 'Dự án này đang mở.' : null)}
                     reasonHidden
                     onClick={() => void openProject.run(entry.id)}
                   >

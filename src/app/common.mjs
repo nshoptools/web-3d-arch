@@ -9,10 +9,15 @@ export const decode=bytes=>new TextDecoder('utf-8',{fatal:true}).decode(bytes);
 export const uuid=()=>crypto.randomUUID();
 export function error(code,message=code,details={}) {return Object.assign(new Error(message),{code,details});}
 export function assert(ok,code,details){if(!ok)throw error(code,code,details);}
+/** A turn that was cancelled or replaced by a newer one. It says nothing about the design: the person
+ * cancelled it, or a newer command of theirs carries the state now. Such a diagnostic stays in the log as
+ * information and off the warning strip; a rebuild that succeeded must not announce "three errors". */
+const PREEMPTED=/^(?:[A-Z0-9]+_)*(?:CANCELLED|SUPERSEDED)$|^ABORTED$/;
 export function diagnostic(e){
  const code=typeof e.code==='string'?e.code:(e.name==='AbortError'?'CANCELLED':e.name??'APP_OPERATION_FAILED');
  const message=Object.hasOwn(PROFILE_MESSAGES,code)?PROFILE_MESSAGES[code]:Object.hasOwn(EXPORT_MESSAGES,code)?EXPORT_MESSAGES[code]:Object.hasOwn(APP_MESSAGES,code)?APP_MESSAGES[code]:typeof e.code==='string'?code:'Thao tác của ứng dụng thất bại.';
- return {code,message,severity:'error',...(e.requestId?{detail:'Yêu cầu '+e.requestId}:{})};
+ const detail=[typeof e.detail==='string'&&e.detail?e.detail.slice(0,512):null,e.requestId?'Yêu cầu '+e.requestId:null].filter(Boolean).join(' · ');
+ return {code,message,severity:PREEMPTED.test(code)?'info':'error',...(detail?{detail}:{})};
 }
 export function freeze(v){if(v&&typeof v==='object'&&!ArrayBuffer.isView(v)){Object.values(v).forEach(freeze);Object.freeze(v);}return v;}
 export function data(v){return cloneJSON(v);}

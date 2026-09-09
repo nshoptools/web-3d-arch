@@ -13,6 +13,7 @@ export const EXPORT_MESSAGES=Object.freeze({
  EXPORT_FILENAME_BUDGET:'Tên tệp vượt giới hạn byte của định dạng; hãy đặt tên ngắn hơn.',
  EXPORT_PATTERN_DOWN_REST:'Hướng hoa văn xuống yêu cầu đặt đáy trên bàn.',
  EXPORT_SECTION_RANGE:'Cao độ kết thúc phải lớn hơn cao độ bắt đầu.',
+ EXPORT_SECTION_STEP:'Khoảng từ cao độ bắt đầu đến kết thúc phải chia hết cho bước, để mặt cắt cuối nằm đúng trên lưới bước; ví dụ bước 0,25 cho 0–1 mm, hoặc kết thúc 0,9 mm cho bước 0,3.',
  EXPORT_SECTION_BUDGET:'Dãy vượt giới hạn 256 mặt cắt; hãy tăng bước hoặc giảm khoảng cao độ.',
  EXPORT_RECEIPT_NOT_FOUND:'Hồ sơ không còn trong phiên hiện hành hoặc không có metadata để tải.',
  EXPORT_RECEIPT_IDENTITY:'Hồ sơ không khớp byte hoặc bản sửa dự án; tệp chưa được tải.',

@@ -15,6 +15,7 @@ using namespace Lib3MF;
 namespace {
 constexpr uint32_t MAX_VERTICES=1000000, MAX_FACES=2000000, MAX_PARTS=128, MAX_MATERIALS=64;
 constexpr uint32_t MAX_OUTPUT=64u*1024u*1024u;
+constexpr double READBACK_TEXT_TOLERANCE_MM=2e-6;
 struct Part { PMeshObject mesh; std::vector<sPosition> vertices; std::vector<sTriangle> faces; uint32_t material; };
 struct Context {
   PWrapper wrapper; PModel model; PBaseMaterialGroup materials; PComponentsObject assembly;
@@ -180,7 +181,13 @@ static void validateWritten(Context& c,const std::vector<uint8_t>& bytes){
     std::vector<sPosition> rv;std::vector<sTriangle> rf;
     mesh->GetVertices(rv);mesh->GetTriangleIndices(rf);
     require(rv.size()==expected.vertices.size()&&rf.size()==expected.faces.size(),"READBACK_MESH_COUNTS");
-    for(size_t i=0;i<rv.size();++i)for(int k=0;k<3;++k)require(rv[i].m_Coordinates[k]==expected.vertices[i].m_Coordinates[k],"READBACK_VERTICES");
+    // lib3MF serialises the float32 coordinates as decimal text with six places (its writer default).
+    // Below 16 mm the float32 grid is finer than that text, so the value read back can land on the
+    // neighbouring float, at most one ulp (< 2e-6 mm) away; above 16 mm the text is exact. That is
+    // the writer's own quantisation, inside the 0.001 mm float budget already declared, not a
+    // corrupted file, so the read-back is held to that quantum instead of bit equality (audit R3:
+    // every real scene failed with READBACK_VERTICES; only integer-and-half fixtures passed).
+    for(size_t i=0;i<rv.size();++i)for(int k=0;k<3;++k)require(std::abs(double(rv[i].m_Coordinates[k])-double(expected.vertices[i].m_Coordinates[k]))<=READBACK_TEXT_TOLERANCE_MM,"READBACK_VERTICES");
     for(size_t i=0;i<rf.size();++i)for(int k=0;k<3;++k)require(rf[i].m_Indices[k]==expected.faces[i].m_Indices[k],"READBACK_FACES");
     uint32_t pid=0,index=0;require(mesh->GetObjectLevelProperty(pid,index)&&pid==materialId&&index==c.propertyIds.at(expected.material),"READBACK_MATERIAL");
     topology(rv,rf);

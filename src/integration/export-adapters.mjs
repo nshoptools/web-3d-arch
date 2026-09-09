@@ -51,6 +51,7 @@ const REASONS=Object.freeze({
  EXPORT_STATE_STALE:'Nội dung dự án đã đổi trong lúc xuất. Hãy xuất lại sau khi nội dung hiện tại được lưu.',
  EXPORT_PROVIDER_STALE:'Nguồn, hồ sơ đã chọn hoặc khung hình đã đổi trong lúc xuất. Hãy xuất lại lựa chọn hiện tại.',
  EXPORT_OPTIONS_STALE:'Tùy chọn xuất đã đổi trong lúc tạo tệp. Hãy xuất lại với tùy chọn hiện tại.',
+ EXPORT_SECTION_STEP:'Khoảng cao độ của dãy mặt cắt phải chia hết cho bước. Hãy sửa cấu hình mặt cắt rồi xuất lại.',
  INVALID_SERIALIZATION:'Dịch vụ không trả về tệp hợp lệ hoàn chỉnh. Chưa có tệp nào được công bố; hãy sửa lỗi nguồn hoặc dịch vụ rồi thử lại.',
  CANCELLED:'Đã hủy xuất. Mô hình hiện tại được giữ nguyên.',
 });
@@ -99,7 +100,9 @@ function optionsFor(format,value){
   need(['mm','in'].includes(s.units)&&['front','back'].includes(s.side)&&['black','material'].includes(s.color),'EXPORT_SECTION_POLICY');
   if(s.mode==='single')need(Number.isFinite(s.zMm)&&Math.abs(s.zMm)<=10000&&Math.abs(s.zMm*1e6-Math.round(s.zMm*1e6))<=1e-6&&['startMm','endMm','stepMm'].every(k=>s[k]===undefined),'EXPORT_SECTION_RANGE');
   else {need(s.mode==='sequence'&&s.zMm===undefined&&[s.startMm,s.endMm,s.stepMm].every(n=>Number.isFinite(n)&&Math.abs(n)<=10000)&&s.endMm>s.startMm&&s.stepMm>=.000001,'EXPORT_SECTION_RANGE');
-   need([s.startMm,s.endMm,s.stepMm].every(n=>Math.abs(n*1e6-Math.round(n*1e6))<=1e-5)&&Math.floor((s.endMm-s.startMm)/s.stepMm+1e-9)+1<=256,'EXPORT_SECTION_BUDGET');}
+   need([s.startMm,s.endMm,s.stepMm].every(n=>Math.abs(n*1e6-Math.round(n*1e6))<=1e-5)&&Math.floor((s.endMm-s.startMm)/s.stepMm+1e-9)+1<=256,'EXPORT_SECTION_BUDGET');
+   // Same rule as the native writer (SECTION_RANGE_STEP), in exact micro-millimetre integers.
+   need(Math.round((s.endMm-s.startMm)*1e6)%Math.round(s.stepMm*1e6)===0,'EXPORT_SECTION_STEP');}
  }
  if(format.id==='svg-color')need(out.units==='source'&&out.side==='source'&&out.color==='source','EXPORT_SOURCE_POLICY');
  return out;

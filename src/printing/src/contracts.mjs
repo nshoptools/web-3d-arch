@@ -1,5 +1,5 @@
 export class PrintingError extends Error {
-  constructor(code, detail = '') { super(detail ? code + ': ' + detail : code); this.name='PrintingError'; this.code=code; }
+  constructor(code, detail = '') { super(detail ? code + ': ' + detail : code); this.name='PrintingError'; this.code=code; if(detail) this.detail=String(detail).slice(0,512); }
 }
 export function check(ok, code, detail) { if (!ok) throw new PrintingError(code, detail); }
 export function dataOnly(x, depth=0) {

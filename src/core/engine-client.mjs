@@ -120,7 +120,8 @@ export class EngineClient {
           let proposal=data.proposal?Object.freeze({...data.proposal,epoch}):null;
           if(active.cancelled&&proposal?.id){worker.postMessage({type:'product-release-proposal',id:proposal.id});proposal=null;}
           if(proposal)this.productProposals.set(proposal.id,proposal);
-          this.finish(false,new EngineError(active.cancelled?'CANCELLED':data.code,proposal));return;
+          const failed=new EngineError(active.cancelled?'CANCELLED':data.code,proposal);if(typeof data.detail==='string'&&data.detail)failed.detail=data.detail.slice(0,512);
+          this.finish(false,failed);return;
         }
         if(data.type==='raster-source'){
           if(active.cancelled||data.generation!==active.generation||!['source-raster-prepare','source-raster-confirm'].includes(active.type)){

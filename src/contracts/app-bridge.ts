@@ -4,7 +4,8 @@ export type WorkspaceSection = 'source' | 'product' | 'materials' | 'parameters'
 export type ToolId = 'paint' | 'line' | 'curve' | 'erase' | 'cut' | 'crop' | 'heal';
 export type Verdict = 'pass' | 'fail' | 'unverified' | 'unsupported';
 export type Json = null | boolean | number | string | Json[] | { [key: string]: Json };
-export interface Diagnostic { code: string; message: string; severity: 'info' | 'warning' | 'error'; detail?: string; requirementId?: string; }
+/** `sequence` is the entry's place in the session, monotonic; the list is bounded and rolls over, so a reader marks what it has seen by sequence, never by index or length. */
+export interface Diagnostic { code: string; message: string; severity: 'info' | 'warning' | 'error'; detail?: string; requirementId?: string; sequence?: number; }
 export type CapabilityId = 'project.write' | 'viewport.webgl' | 'viewport.center-bed' | 'ai.generate' | 'printer.list' | 'storage.mirror' | 'source.emoji' | 'source.font-import' | 'source.clipboard' | 'account.member-admin' | 'account.system-policy' | 'mesh.import';
 export interface Capability { id: CapabilityId | (string & {}); available: boolean; reason?: string; }
 export interface SettingView { key: string; scope: 'system' | 'user' | 'device' | 'project'; value: Json; effectiveFrom: 'default' | 'system' | 'user' | 'device' | 'project'; policyBlocked?: boolean; reason?: string; }
@@ -99,7 +100,8 @@ export interface ExportReceiptView {
 export interface ExportOption {
   id: string; label: string; extension: string; enabled: boolean; reason?: string; reasonCode?: string; verdict: Verdict; prerequisite?: ExportPrerequisite;
   /** Saved project flags; this exact project revision fences an edit. */
-  configuration?: {projectRevision: number; fields: ExportFieldView[]};
+  /** `warning`: the values are kept but the path will refuse them as they stand (for example a section sequence off its step grid). */
+  configuration?: {projectRevision: number; warning?: string; fields: ExportFieldView[]};
 }
 export interface AppSnapshot {
   contractVersion: '0.3'; environment: 'prototype' | 'application'; version: string;

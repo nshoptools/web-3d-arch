@@ -34,7 +34,10 @@ export function createThreeViewportAdapter({ThreeViewport,onSelection=()=>{},onD
  let viewport=null,printer=null;
  return {version:VERSION,capabilities:[{id:'viewport.webgl',available:false,reason:'Khung 3D chưa được gắn hoặc kiểm tra.'},{id:'viewport.center-bed',available:false,reason:'Hãy chọn hồ sơ bàn in đã kiểm chứng trước khi căn giữa.'}],
   attach(host){
-   assert(!viewport,'VIEWPORT_ALREADY_ATTACHED');viewport=new ThreeViewport(host,{onSelection,onDiagnostic});if(printer)viewport.setPrinter(printer);
+   assert(!viewport,'VIEWPORT_ALREADY_ATTACHED');
+   try{viewport=new ThreeViewport(host,{onSelection,onDiagnostic});}
+   catch(e){this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:false,reason:'Trình duyệt này không tạo được khung 3D (WebGL). Ô số, lệnh dựng và xuất hình học vẫn dùng được.'}:c);onCapabilitiesChanged();throw e;}
+   if(printer)viewport.setPrinter(printer);
    this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:true}:c);onCapabilitiesChanged();
    const attached=viewport;let detached=false;return ()=>{if(detached)return;detached=true;attached.dispose();if(viewport!==attached)return;viewport=null;this.capabilities=this.capabilities.map(c=>c.id==='viewport.webgl'?{id:c.id,available:false,reason:'Khung 3D đã được tháo.'}:c);onCapabilitiesChanged();};
   },

@@ -160,9 +160,13 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   })
 
   // The strip is for what happened since the person last looked; the log keeps
-  // everything. Opening the log or pressing “Đã xem” marks the current list.
-  const seen = Math.min(state.diagnosticsSeen, diagnostics.length)
-  const problems = diagnostics.slice(seen).filter((item) => item.severity !== 'info')
+  // everything. Opening the log or pressing “Đã xem” marks the newest entry by
+  // its sequence number: the list is bounded and rolls over, so its length
+  // cannot say which entries are new (audit F-06).
+  const latestSequence = diagnostics.reduce((max, item) => Math.max(max, item.sequence ?? 0), 0)
+  const problems = diagnostics.filter(
+    (item) => item.severity !== 'info' && (item.sequence ?? 0) > state.diagnosticsSeen,
+  )
   // The newest one is the one about what the person just did.
   const firstProblem = problems.at(-1) ?? null
 
@@ -368,7 +372,7 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                         <Button
                           size="small"
                           onClick={() => {
-                            actions.markDiagnosticsSeen(diagnostics.length)
+                            actions.markDiagnosticsSeen(latestSequence)
                             actions.openDialog({ kind: 'diagnostics' })
                           }}
                         >
@@ -379,7 +383,7 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                           variant="ghost"
                           icon="check"
                           aria-label="Đánh dấu các vấn đề này là đã xem"
-                          onClick={() => actions.markDiagnosticsSeen(diagnostics.length)}
+                          onClick={() => actions.markDiagnosticsSeen(latestSequence)}
                         >
                           Đã xem
                         </Button>

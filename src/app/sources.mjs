@@ -71,7 +71,7 @@ export class SourceOperations {
   return {width:r.width,height:r.height,pixelSizeMm:r.pixelSizeMm,rgba:raw.hash,preview:preview.hash,originalPreview:original??preview.hash};
  }
  async sourceJob(factory,purpose,{operation='import',forceProposal=false,changes=[],sourceState=null,sourceCommand=null}={}){
-  this.requireProject();const base=this.doc.state,baseHead=this.headRevision;
+  this.requireProject();const base=this.doc.state;
   const renderingState=sourceState?validateState(data(sourceState)):data(base);
   if(sourceState){const withoutText=s=>{const v=data(s);delete v.content.app.text;return v;};assert(canonicalJSON(withoutText(renderingState))===canonicalJSON(withoutText(base)),'SOURCE_PROSPECTIVE_SCOPE');}
   const sourceContext=purpose==='font'?null:createSourceContext(operation,purpose==='mesh'?base.content.app.mesh:base.content.app.source);
@@ -115,7 +115,9 @@ export class SourceOperations {
     const reply=await a.prepareAdoption({...control,purpose:'source',operation,state:freeze(data(base)),source:freeze(data(desc)),
      materials:freeze(data(materials)),materialDefaults:freeze(data(materialDefaults)),
      assets:new Map([...map].map(([hash,asset])=>[hash,new Uint8Array(asset.bytes)]))});
-    this.jobGuard(job);assert(this.doc.state===base&&this.headRevision===baseHead,'STALE_SOURCE_ADOPTION');
+    // The design the adoption was prepared against must be the one still open. A save writes a new head
+    // and a new document object around the same state; it does not retire the adoption (audit F-02).
+    this.jobGuard(job);assert(this.doc.state.revision===base.revision&&canonicalJSON(this.doc.state)===canonicalJSON(base),'STALE_SOURCE_ADOPTION');
     adopted=validateAdoption(reply,job.ticket,base,desc);desc.metadata=adopted.metadata;
    }
    // Source role is adopted atomically. Replacing a text design by an image

@@ -89,6 +89,13 @@ export function ExportConfiguration({ option, configuration, writeBlocked, open:
             writeBlocked={writeBlocked}
           />
         ))}
+        {/* What the fields cannot say one at a time: the values are kept, the path
+            refuses them as they stand, and the sentence says what to change. */}
+        {configuration.warning ? (
+          <p className="muted" style={{ margin: 0, color: 'var(--warn)' }} role="status" data-export-config-warning>
+            ⚠ {configuration.warning}
+          </p>
+        ) : null}
         <p className="muted-3" style={{ margin: 0 }}>
           Thuộc riêng đường xuất “{option.label}”; lưu vào dự án như một lần sửa.
         </p>

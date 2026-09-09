@@ -67,10 +67,21 @@ export function validateExportConfiguration(saved){
  keys(saved.formats,Object.keys(FORMATS),[]);for(const [id,values]of Object.entries(saved.formats))validateFields(id,values);
  return saved;
 }
+/** The one thing the fields cannot say one at a time. The native writer refuses a sequence whose length is
+ * not a whole number of steps (SECTION_RANGE_STEP) and never moves the end for you. Checking that on each
+ * field commit would trap a person editing end and step in either order, and would make a saved project
+ * with such values fail to open; so the values are kept, the view says so beside the fields as soon as they
+ * disagree, and the export path refuses with EXPORT_SECTION_STEP before any rebuild (audit F-05). */
+export const SECTION_STEP_WARNING='Khoảng từ cao độ bắt đầu đến kết thúc chưa chia hết cho bước, nên mặt cắt cuối không nằm trên lưới bước và đường xuất này sẽ bị từ chối. Hãy sửa bước hoặc cao độ kết thúc; ví dụ bước 0,25 cho 0–1 mm, hoặc kết thúc 0,9 mm cho bước 0,3.';
+export function sectionWarning(id,values){
+ if(id!=='svg-section'||values.sectionMode!=='sequence')return null;
+ const a=decimalUnits(values.startMm),b=decimalUnits(values.endMm),step=decimalUnits(values.stepMm);
+ return b>a&&step>0n&&(b-a)%step!==0n?SECTION_STEP_WARNING:null;
+}
 export function exportConfigurationView(id,state,canEdit){
  if(!supported(id)||!state)return undefined;
- const values=effective(id,state);
- return {projectRevision:state.revision,fields:schema(id,'Mô hình').map(({locked,...field})=>{
+ const values=effective(id,state),warning=sectionWarning(id,values);
+ return {projectRevision:state.revision,...(warning?{warning}:{}),fields:schema(id,'Mô hình').map(({locked,...field})=>{
   const inactive=id==='svg-section'&&(field.id==='zMm'?values.sectionMode!=='single':['startMm','endMm','stepMm'].includes(field.id)?values.sectionMode!=='sequence':false);
   const enabled=!!canEdit&&!locked&&!inactive;
   return {...field,value:values[field.id],enabled,...(!enabled?{reason:!canEdit?'Cần quyền sửa dự án.':locked?'Đường xuất này giữ hệ chế tạo gốc.':'Trường được giữ cho chế độ mặt cắt tương ứng.'}:{})};

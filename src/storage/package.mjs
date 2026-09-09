@@ -60,11 +60,19 @@ export async function inspectRescuePackage(input){
   }
   return {status:'importable',rawPackage,metadata,files,manifest:inspected.manifest};
 }
-/** True when a dependency asset is itself a rescue package (an earlier import kept whole). */
-export function isRescuePackage(bytes){
-  try{const meta=readStoredZip(bytes).get('package.json');if(!meta)return false;return parseJSON(decodeUTF8(meta),{exactNumbers:false})?.kind==='web-3d-arch.rescue-package';}
-  catch{return false;}
+/** The metadata header of a rescue package, or null when the bytes are not one (an earlier import kept whole). */
+export function rescuePackageMetadata(bytes){
+  try{const meta=readStoredZip(bytes).get('package.json');if(!meta)return null;const header=parseJSON(decodeUTF8(meta),{exactNumbers:false});return header?.kind==='web-3d-arch.rescue-package'?header:null;}
+  catch{return null;}
 }
+/** True when a dependency asset is itself a rescue package. */
+export function isRescuePackage(bytes){return rescuePackageMetadata(bytes)!==null;}
+/** A nested package whose every file was verified into the copy that carried it: nothing in it is
+ * unreadable anywhere else, so re-embedding it only doubled each later package (audit RO-01). An
+ * incomplete nested package, or one carrying issues, was kept because this version could not read part
+ * of it; that part lives nowhere else, so it travels on whatever the outer package says about itself
+ * (audit F-03). */
+export function redundantNestedPackage(bytes){const meta=rescuePackageMetadata(bytes);return !!meta&&meta.complete===true&&Array.isArray(meta.issues)&&meta.issues.length===0;}
 export async function importRescueCopy(store,input,{projectId,transactionId,signal,expectedRevision=0}){
   identity(projectId,'destination project ID');
   const inspected=await inspectRescuePackage(input);
@@ -80,12 +88,13 @@ export async function importRescueCopy(store,input,{projectId,transactionId,sign
   const m=inspected.manifest;
   // A complete package with no issues was verified file by file above and every one of those files
   // lands in the copy as a first-class asset, so the ZIP itself is not kept: re-embedding it (and the
-  // ZIPs earlier copies embedded) doubled the next package on every export→import round until
+  // redundant ZIPs earlier copies embedded) doubled the next package on every export→import round until
   // ZIP_BUDGET refused to write one (audit RO-01). An incomplete package, or one carrying issues,
-  // is still kept whole so nothing this version did not understand is lost.
+  // is still kept whole so nothing this version did not understand is lost — and a nested package
+  // that was kept for that reason is never dropped because the package around it is complete.
   const complete=inspected.metadata.complete===true&&inspected.metadata.issues.length===0;
   const carried=m.assets.map(a=>({...a,bytes:inspected.files.get('assets/'+a.hash+'.bin')}));
-  const assets=complete?carried.filter(a=>!(a.kind==='dependency'&&isRescuePackage(a.bytes))):carried;
+  const assets=complete?carried.filter(a=>!(a.kind==='dependency'&&redundantNestedPackage(a.bytes))):carried;
   const dropped=new Set(carried.filter(a=>!assets.includes(a)).map(a=>a.hash));
   const dependencies=new Set(m.dependencies.filter(h=>!dropped.has(h)));
   const backupHash=await sha256(inspected.rawPackage);

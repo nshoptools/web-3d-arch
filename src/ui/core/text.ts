@@ -99,6 +99,10 @@ export const SEVERITY_LABEL = {
  * words, and a code the table does not know keeps the core's own message.
  */
 export const DIAGNOSTIC_TEXT: Record<string, string> = {
+  WEBGL_UNAVAILABLE:
+    'Trình duyệt này không tạo được khung 3D (WebGL). Mô hình vẫn được dựng, kiểm và xuất; chỉ không xem được trong khung.',
+  EXPORT_SECTION_STEP:
+    'Khoảng cao độ của dãy mặt cắt phải chia hết cho bước; ví dụ bước 0,25 cho 0–1 mm, hoặc kết thúc 0,9 mm cho bước 0,3.',
   PROJECT_REQUIRED:
     'Chưa có dự án nào đang mở, nên nhân không nhận lệnh này. Tạo hoặc mở một dự án trước.',
   PROJECT_LOCKED:

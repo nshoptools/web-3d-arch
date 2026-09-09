@@ -38,8 +38,9 @@ function errorText(){
   // metadata (<=512 bytes); copy just those bytes, never the mesh snapshot.
   return new TextDecoder().decode(new Uint8Array(engine.HEAPU8.subarray(engine._arch_error_ptr(),engine._arch_error_ptr()+engine._arch_error_len())));
 }
-function failure(requestId,code,proposal=null){
-  try{postMessage({type:'failed',requestId,code,proposal});}
+function failure(requestId,code,proposal=null,detail=null){
+  // `detail` is the native writer's own sentence (lib3mf, arch3mf), bounded; the code alone said nothing a person could act on.
+  try{postMessage({type:'failed',requestId,code,proposal,...(detail?{detail}:{})});}
   catch(error){if(proposal?.id)engine._arch_product_proposal_release(proposal.id);throw error;}
 }
 function buildSVG(request,generation){
@@ -391,6 +392,6 @@ self.onmessage=async({data})=>{
     // Preserve only these final-file diagnostics; every other RPC/error keeps its existing code.
     const finalReason=data.type==='export-final'&&error.code==='INVALID_SERIALIZATION'&&
       /^INVALID_SERIALIZATION:(STL_FLOAT_COLLISION|SECTION_SUBGRID_RAW_EDGE)$/.exec(error.message??'');
-    failure(data.requestId??null,finalReason&&finalReason[0]===error.message?finalReason[1]:error.code||error.message||'ENGINE_FAILURE',error.proposal??null);
+    failure(data.requestId??null,finalReason&&finalReason[0]===error.message?finalReason[1]:error.code||error.message||'ENGINE_FAILURE',error.proposal??null,typeof error.detail==='string'&&error.detail?error.detail.slice(0,512):null);
   }
 };

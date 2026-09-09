@@ -36,13 +36,16 @@ export class ProjectOperations {
  }
  async persist(candidate,{id=this.projectId,expectedRevision=this.headRevision,signal,epoch=this.epoch}={}){
   this.guard(epoch);const transactionId=uuid(),store=this.store;
+  // Whether this commit changes the design. Every edit, undo/redo, delete and create bumps the state
+  // revision or opens another id; recording the design as saved (project.save) keeps both.
+  const designChanged=id!==this.projectId||!this.doc||candidate.document.state.revision!==this.doc.state.revision;
   const input={projectId:id,expectedRevision,transactionId,engine:this.adapters.engine?.identity??{id:'domain-only',version:'1'},domainSchemaVersion:1,document:{...candidate.document,title:candidate.document.state.content.app.name,controllerVersion:1,updatedAt:new Date(this.now()).toISOString()},assets:commitInventory(candidate.document,candidate.assets),provenance:{}};
   let ack;
   try{ack=await store.commit(input,{signal});}
   catch(e){
    if(epoch!==this.epoch)throw error('ACCESS_CHANGED');let loaded;try{loaded=await store.load(id);}catch{}
    if(loaded?.status==='editable'&&loaded.head.transactionId===transactionId&&canonicalJSON(loaded.manifest.document)===canonicalJSON(input.document)){
-    ack={head:loaded.head};this.diagnostics=this.diagnostics.concat({code:'COMMIT_ACK_RECOVERED',message:PROJECT_MESSAGES.COMMIT_ACK_RECOVERED,severity:'warning'});
+    ack={head:loaded.head};this.record({code:'COMMIT_ACK_RECOVERED',message:PROJECT_MESSAGES.COMMIT_ACK_RECOVERED,severity:'warning'});
    }else{if(e.code==='CONFLICT')await this.recordConflict({projectId:id,transactionId,expectedRevision,epoch,error:e});throw e;}
   }
   // The generation is durable now: reflect it locally before any lease/lock check may reject this call.
@@ -50,13 +53,20 @@ export class ProjectOperations {
   for(const [hash,url]of this.urls)if(!kept.has(hash)){this.objectURLs.revokeObjectURL(url);this.urls.delete(hash);}this.projectId=id;this.headRevision=ack.head.revision;this.readOnly=false;
   // The acknowledged document/bytes were already verified by commit (or exact ack recovery).
   this.libraryCache.set(id,{revision:ack.head.revision,entry:this.doc.state.content.app.deleted?null:{id,name:this.doc.state.content.app.name,product:this.doc.state.product,updatedAt:this.doc.updatedAt,sizeBytes:input.assets.reduce((n,a)=>n+a.bytes.byteLength,0),backup:null}});
-  if(candidate.pruned?.length)this.truncated=true;this.pendingChange=null;this.discardProposal();this.job?.abort.abort();this.discardPreview();this.selection=null;
-  if(ack.supersededRetained)this.diagnostics=this.diagnostics.concat({code:'SUPERSEDED_GENERATION_RETAINED',message:PROJECT_MESSAGES.SUPERSEDED_GENERATION_RETAINED,severity:'warning',detail:'Bản '+ack.supersededRetained.revision+' được giữ lại với mã '+ack.supersededRetained.transactionId+'.'});
+  if(candidate.pruned?.length)this.truncated=true;
+  // A changed design retires what was computed or asked about the previous one: the running job, the
+  // preview, the pending consent and the selection. A save that changes nothing about the design keeps
+  // them (audit F-02: "Lưu dự án" on the busy card cancelled the very build it sat next to and left the
+  // model "chưa kiểm"); a pending consent pinned to the head just replaced moves to the new head, since
+  // it still asks the same question about the same design.
+  if(designChanged){this.pendingChange=null;this.discardProposal();this.job?.abort.abort();this.discardPreview();this.selection=null;}
+  else for(const pending of [this.pendingChange,this.pendingOperation])if(pending&&pending.headRevision===expectedRevision)pending.headRevision=ack.head.revision;
+  if(ack.supersededRetained)this.record({code:'SUPERSEDED_GENERATION_RETAINED',message:PROJECT_MESSAGES.SUPERSEDED_GENERATION_RETAINED,severity:'warning',detail:'Bản '+ack.supersededRetained.revision+' được giữ lại với mã '+ack.supersededRetained.transactionId+'.'});
   this.emit();
   try{this.guard(epoch);}
   catch(e){
    // Durable commit, then the lease/lock check failed: local state already matches storage, so say so instead of implying a rollback.
-   this.diagnostics=this.diagnostics.concat({code:'COMMIT_DURABLE_BEFORE_LOCK',message:PROJECT_MESSAGES.COMMIT_DURABLE_BEFORE_LOCK,severity:'warning'});
+   this.record({code:'COMMIT_DURABLE_BEFORE_LOCK',message:PROJECT_MESSAGES.COMMIT_DURABLE_BEFORE_LOCK,severity:'warning'});
    e.details={...(e.details??{}),committed:true,headRevision:ack.head.revision};this.emit();throw e;
   }
   try{await this.refreshLibrary();}catch(e){this.report(e);}return ack;
@@ -93,7 +103,7 @@ export class ProjectOperations {
   this.job?.abort.abort();this.discardProposal();this.discardPreview();this.clearVisible();this.clearExportReceipts();this.projectContextGeneration++;this.doc=doc;this.assets=assets;this.projectId=id;this.headRevision=loaded.headRevision;this.selection=null;this.editorTool=null;this.readOnly=false;this.pendingChange=null;
   if(loaded.recoveredPrevious){
    const head=loaded.head?.revision,opened=loaded.manifest?.revision;
-   this.diagnostics=this.diagnostics.concat({code:'RECOVERED_PREVIOUS',message:PROJECT_MESSAGES.RECOVERED_PREVIOUS,severity:'warning',
+   this.record({code:'RECOVERED_PREVIOUS',message:PROJECT_MESSAGES.RECOVERED_PREVIOUS,severity:'warning',
     ...(Number.isInteger(head)?{detail:'Bản lưu '+head+' không đọc được'+(Number.isInteger(opened)?'; đã mở bản '+opened:'')+'.'}:{})});
   }
   this.emit();

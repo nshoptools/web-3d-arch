@@ -88,7 +88,7 @@ export interface UiState {
   armedDelete: string | null
   emojiHardPrintFilter: boolean
   blockPopup: PopupPlacement | null
-  /** Diagnostics up to this count were reviewed; the stage strip shows only newer ones (the log keeps all). */
+  /** Diagnostics up to this sequence number were reviewed; the stage strip shows only newer ones (the log keeps all). */
   diagnosticsSeen: number
   toasts: ToastItem[]
   log: LogItem[]

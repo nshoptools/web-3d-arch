@@ -2,7 +2,7 @@ import { useId } from 'react'
 import type { ParameterView } from '../../contracts/app-bridge.ts'
 import { useRunCommand } from '../core/bridge.tsx'
 import { Button } from '../components/Button.tsx'
-import { CheckField, NumberField, SelectField } from '../components/Fields.tsx'
+import { CheckField, NumberField, SelectField, type CommitResult } from '../components/Fields.tsx'
 
 /** The eleven groups of 06-danh-muc-thong-so.md, plus the export flags. */
 export const GROUP_LABEL: Record<string, string> = {
@@ -96,12 +96,16 @@ export function ParameterRow({ parameter, writeBlocked }: ParameterRowProps) {
   const step = parameter.step === EPSILON_STEP ? undefined : parameter.step
   const derived = derivedValue(parameter.derivedLabel)
 
-  const commit = async (value: string | boolean) => {
+  const commit = async (value: string | boolean): Promise<CommitResult> => {
     const result = await run(
       { type: 'parameter.set', id: parameter.id, value },
       { toastOnError: false },
     )
-    return result.ok ? { ok: true } : { ok: false, message: result.diagnostic.message }
+    if (result.ok) return { ok: true }
+    // A turn the core cancelled or replaced with a newer one says nothing about
+    // the value: the box goes back to what the snapshot holds, without a complaint.
+    if (result.diagnostic.severity === 'info') return { ok: false, superseded: true }
+    return { ok: false, message: result.diagnostic.message }
   }
 
   const reset = (

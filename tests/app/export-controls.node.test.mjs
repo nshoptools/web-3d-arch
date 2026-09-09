@@ -1,7 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createAppController} from '../../src/app/controller.mjs';
 import {newDocument,verifyDocument,validateState,contentEdit} from '../../src/app/documents.mjs';
-import {configureExport,exportOptionsFor,exportConfigurationView,validateExportConfiguration} from '../../src/app/export-configuration.mjs';
+import {configureExport,exportOptionsFor,exportConfigurationView,validateExportConfiguration,SECTION_STEP_WARNING} from '../../src/app/export-configuration.mjs';
+import {createExportAdapters} from '../../src/integration/export-adapters.mjs';
 import {sha256,uuid,VERSION} from '../../src/app/common.mjs';
 import {namedTestAdapters,deferred} from './test-doubles.mjs';
 import {applicationContext} from '../../src/integration/application-context.mjs';
@@ -73,6 +74,31 @@ test('configuration commit is CAS/history data; malformed, stale or unknown comm
  const corrupt=structuredClone(c.doc.state);corrupt.content.app.exportOptions.formats['stl-union'].invented=true;assert.throws(()=>validateState(corrupt));
  assert.throws(()=>validateExportConfiguration({version:2,formats:{}}),{code:'EXPORT_CONFIGURATION_VERSION'});
 });
+
+test('F-05: a section sequence off its step grid is kept, warned about beside the fields and refused by the export path',async()=>{
+ const {document}=await newDocument('keychain');
+ const change=(s,field,value,id='svg-section')=>contentEdit(s,a=>{a.exportOptions=configureExport(s,{id,projectRevision:s.revision,field,value});});
+ const warning=s=>exportConfigurationView('svg-section',s,true).warning??null;
+ let s=change(document.state,'sectionMode','sequence');assert.equal(warning(s),null,'0–1 mm by 0.2 is on the grid');
+ // A person edits end and step one at a time, in either order: no order is trapped by a per-field check.
+ s=change(s,'stepMm','0.3');assert.equal(warning(s),SECTION_STEP_WARNING,'1 mm is not a whole number of 0.3 steps');
+ assert.equal(exportOptionsFor('svg-section',s).section.stepMm,.3,'the value is kept as typed');
+ s=change(s,'endMm','0.9');assert.equal(warning(s),null,'0–0.9 by 0.3 lands on the grid');
+ s=change(s,'startMm','-0.6');assert.equal(warning(s),null,'-0.6–0.9 by 0.3 lands on the grid');
+ s=change(s,'startMm','-0,5');assert.equal(warning(s),SECTION_STEP_WARNING,'a decimal comma is read the same way');
+ assert.throws(()=>change(s,'stepMm','0.003'),{code:'EXPORT_SECTION_BUDGET'},'the sample budget is still refused at the field');
+ assert.equal(warning(document.state),null,'a single section has no grid');
+ // A saved project with such values still opens, and the export path is what refuses them.
+ const saved=validateExportConfiguration(s.content.app.exportOptions);assert.equal(Number(saved.formats['svg-section'].startMm.replace(',','.')),-0.5);
+ assert.equal(sectionGate(exportOptionsFor('svg-section',s)).reasonCode,'EXPORT_SECTION_STEP','the export path refuses the off-grid sequence before any model or rebuild');
+ assert.equal(sectionGate(exportOptionsFor('svg-section',change(s,'startMm','-0.6'))).reasonCode,'NO_SNAPSHOT','on the grid, only the missing model shuts the path');
+});
+/** The real export adapters' own option check, reached through the formats they publish: a refused option is a shut path with that reason. */
+function sectionGate(options){
+ const context={state:{revision:1},userId:'TEST-user',projectId:'TEST-project',sessionKey:'0:0',headHash:'a'.repeat(64),model:null,exportOptions:{'svg-section':options}};
+ const exporter=createExportAdapters({operation:async()=>{throw Error('TEST: never reached');},kernelLeases:new WeakMap(),context:()=>context});
+ return exporter.formats({state:{revision:1},model:null}).find(f=>f.id==='svg-section');
+}
 
 test('receipt owns actual bytes/hash/revision/warnings; metadata download is exact and project scoped',async t=>{
  const f=await fixture(t),c=f.c;ok(await f.configure('inspection',true));await f.build();ok(await c.exportFile('stl-union'));

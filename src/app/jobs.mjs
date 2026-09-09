@@ -181,7 +181,11 @@ export class JobOperations {
 
  async deliver(bytes,mimeType,filename,signal){assert(this.adapters.download?.save,'DOWNLOAD_ADAPTER_REQUIRED');assert(!signal.aborted,'CANCELLED');await this.adapters.download.save({bytes:new Uint8Array(bytes),mimeType,filename,signal});}
  attachViewport(element){
-  const a=adapter(this.adapters.viewport),detach=a.attach(element);let detached=false;
+  const a=adapter(this.adapters.viewport);let detach;
+  // A renderer that cannot start (no WebGL) is a diagnostic, not the end of the interface: the
+  // document, the model and every geometry export stay usable; the frame says why it is blank (audit R-01).
+  try{detach=a.attach(element);}catch(e){this.report(e);return ()=>{};}
+  let detached=false;
   const release=()=>{if(detached)return;detached=true;try{detach();}finally{this.emit();}};
   try{if(this.visible)a.setModel({lease:this.visible.lease,revision:this.visible.lease.ticket.revision,blocks:this.visible.lease.blocks});a.setSelection(this.selection);this.emit();return release;}catch(e){release();throw e;}
  }

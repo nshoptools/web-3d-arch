@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {openProjectStore} from '../../src/storage/store.mjs';
-import {exportRescuePackage,importRescueCopy,isRescuePackage} from '../../src/storage/package.mjs';
+import {exportRescuePackage,importRescueCopy,isRescuePackage,rescuePackageMetadata} from '../../src/storage/package.mjs';
 import {readStoredZip,writeStoredZip} from '../../src/storage/zip.mjs';
 import {encoder,decodeUTF8,parseJSON,canonicalJSON} from '../../src/storage/common.mjs';
 import {createMemoryIndexedDB} from '../app/memory-indexeddb.mjs';
@@ -54,6 +54,33 @@ test('RO-01: an incomplete package is still kept whole so nothing unread is lost
  const loaded=await store.load('partial-copy');
  assert.ok(loaded.manifest.dependencies.includes(imported.originalPackageHash),'an incomplete package is retained as a dependency');
  assert.ok(loaded.assets.some(a=>a.hash===imported.originalPackageHash&&isRescuePackage(a.bytes)));
+});
+
+test('F-03: a nested package kept for its unread bytes survives an import of a complete package around it',async()=>{
+ const store=await storeFixture();
+ await store.commit(generation('origin'));
+ const pkg=await exportRescuePackage(store,'origin');
+ const files=readStoredZip(pkg.bytes);const meta=parseJSON(decodeUTF8(files.get('package.json')));meta.complete=false;meta.issues=[{code:'TEST_PARTIAL'}];
+ files.set('package.json',encoder.encode(canonicalJSON(meta)));
+ const partial=writeStoredZip([...files.entries()].map(([name,bytes])=>({name,bytes})));
+ const inner=await importRescueCopy(store,partial,{projectId:'partial-copy',transactionId:'tx-'+crypto.randomUUID()});
+ assert.equal(inner.originalPackageRetained,true);
+ let projectId='partial-copy';const sizes=[];
+ for(let round=0;round<3;round++){
+  const outer=await exportRescuePackage(store,projectId);sizes.push(outer.bytes.length);
+  assert.equal(outer.metadata.complete,true,'the outer package is complete: every file of the copy is readable');
+  const copyId='outer-copy-'+round;
+  const imported=await importRescueCopy(store,outer.bytes,{projectId:copyId,transactionId:'tx-'+crypto.randomUUID()});
+  assert.equal(imported.status,'imported-copy');assert.equal(imported.originalPackageRetained,false,'the complete outer package itself is not re-embedded');
+  assert.equal(imported.droppedNestedPackages,0,'the incomplete nested package is not dropped');
+  const loaded=await store.load(copyId);
+  assert.ok(loaded.manifest.dependencies.includes(inner.originalPackageHash),'the incomplete package stays a dependency');
+  const kept=loaded.assets.filter(a=>a.kind==='dependency'&&isRescuePackage(a.bytes));
+  assert.equal(kept.length,1,'exactly one nested package: the one kept for its unread bytes');
+  assert.equal(kept[0].hash,inner.originalPackageHash);assert.equal(rescuePackageMetadata(kept[0].bytes).complete,false);
+  projectId=copyId;
+ }
+ for(const size of sizes)assert.ok(Math.abs(size-sizes[0])<=2048,'carrying the kept package does not grow the rounds: '+JSON.stringify(sizes));
 });
 
 test('restore: a deleted project reopened from its own package keeps its id and its document',async()=>{
