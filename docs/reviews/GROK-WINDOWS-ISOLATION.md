@@ -21,6 +21,15 @@ mã nguồn upstream của bản này, chỉ xác nhận cơ chế chuyển hư�
 trong repo. Bản ghi trong
 [grok-isolation-verification.json](grok-isolation-verification.json).
 
+Kiểm chứng lại ngày **2026-09-10** với Grok **1.0.25**, build **f7e67d6988e2**
+(binary tự cập nhật lúc 04:30 cùng ngày; bản 1.0.24 còn ở `grok.exe.old`), SHA-256
+`387b2b192fd5c82919d8302ebf46fb4a369d14d8bde1c629c815b0b0c5a40efc`: cùng phép thử native
+(`verify-grok-isolation.ps1 -NativeGrok`, phòng `tmp/reviews/codex/runs/20260910-hub-grok-verify`)
+đạt; upstream không công bố ghi chú phát hành cho bản này (kho GitHub không có
+release, `CHANGELOG.md` cục bộ dừng ở 1.0.13), nên chỉ xác nhận cơ chế chuyển hướng
+vẫn giữ dữ liệu trong repo như bản 1.0.24. Bản ghi trong
+[grok-isolation-verification.json](grok-isolation-verification.json).
+
 Danh sách binary được phép chạy nằm trong
 [grok-runtime.json](../../tools/reviews/grok-runtime.json).
 Đổi binary phải kiểm chứng lại; đổi model/effort theo

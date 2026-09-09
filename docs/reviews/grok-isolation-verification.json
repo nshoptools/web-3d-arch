@@ -77,6 +77,33 @@
         "Repo alias, concurrency, exit-code/timeout, descendant cleanup, stale-run recovery, junction and traversal checks pass"
       ],
       "note": "Binary auto-updated to 1.0.24 on 2026-09-09 12:56 local; upstream source diff not reviewed line by line, mechanism re-verified by the same native probe."
+    },
+    {
+      "verified_at": "2026-09-10",
+      "status": "pass",
+      "binary": {
+        "version": "1.0.25",
+        "build": "f7e67d6988e2",
+        "sha256": "387b2b192fd5c82919d8302ebf46fb4a369d14d8bde1c629c815b0b0c5a40efc"
+      },
+      "run": "tmp/reviews/codex/runs/20260910-hub-grok-verify",
+      "native_probe": {
+        "session_id": "01a08841-13ab-79b2-a79d-85623a80198d",
+        "native_session_folder_verified": true,
+        "inference_requested": false,
+        "process_cwd": "Z:\\project",
+        "original_auth_unchanged": true,
+        "model_requested": "grok-4.6",
+        "effort_requested": "xhigh",
+        "expected_temp_folder": "tmp/reviews/codex/runs/20260910-hub-grok-verify/work/grok-drive/tmp/sessions/01a08841-13ab-79b2-a79d-85623a80198d"
+      },
+      "checks": [
+        "Native Grok session folder created inside the run",
+        "Native /tmp write stays in the run",
+        "Repo alias, concurrency, exit-code/timeout, descendant cleanup, stale-run recovery, junction and traversal checks pass",
+        "Project environment verification: 22 paths pass"
+      ],
+      "note": "Binary auto-updated to 1.0.25 on 2026-09-10 04:30 local (previous 1.0.24 kept as grok.exe.old). Upstream publishes no release notes for this build (GitHub xai-org/grok-build has no releases; local CHANGELOG.md stops at 1.0.13); mechanism re-verified by the same native probe, as for 1.0.24."
     }
   ]
 }
