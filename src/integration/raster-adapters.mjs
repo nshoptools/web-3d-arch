@@ -91,10 +91,18 @@ async function verifyStoredBuffers(receipt,assets) {
   return buffers;
 }
 function confirmationFor(receipt) {return {kind:'raster',version:CONFIRMATION,approvalHash:receipt.approvalHash,proposalHash:receipt.proposalHash};}
+/** The reasons the pipeline names for its approximations, as sentences; an unknown code is shown as the code. */
+const REASON_TEXT=Object.freeze({
+  shared_boundary_geometry_approximation:'Đường ranh giữa hai vùng màu kề nhau được xấp xỉ theo lưới điểm ảnh.',
+  partial_alpha_conversion:'Điểm ảnh trong suốt một phần được quy về đặc hoặc trong suốt hẳn.',
+  opaque_rgb_median_denoise:'Màu đặc được lọc nhiễu bằng trung vị trước khi tách vùng.',
+  palette_color_approximation:'Màu được quy về bảng màu gần nhất; sắc độ trung gian không giữ nguyên.',
+  small_region_merge:'Vùng quá nhỏ để in được gộp vào vùng kề nó.',
+});
 function changesFor(readable) {
-  const changes=['Prepare material regions from pixels using '+readable.semantics+'. Confirm this exact derived geometry before manufacturing.'];
-  changes.push(...readable.confirmationReasons.map(x=>x.slice(0,1500)));
-  changes.push('Processing pixel size is not printer accuracy. Original bytes and editable pre-processing RGBA are retained.');
+  const changes=['Tách ảnh thành các vùng vật liệu từ điểm ảnh (quy tắc '+readable.semantics+'). Hình học dẫn xuất này là thứ sẽ được dựng và in, nên cần bạn xác nhận đúng bản này.'];
+  changes.push(...readable.confirmationReasons.map(x=>REASON_TEXT[x]??('Xấp xỉ: '+x.slice(0,1500))));
+  changes.push('Cỡ điểm ảnh xử lý không phải độ chính xác của máy in. Byte gốc và ảnh RGBA trước xử lý vẫn được giữ để sửa.');
   return [...new Set(changes)].slice(0,40);
 }
 function stableSummary(s,m) {

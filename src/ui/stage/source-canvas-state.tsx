@@ -412,7 +412,7 @@ export function SourceCanvasProvider({ children }: { children: ReactNode }) {
    */
   const submitBlockedReason = useMemo(() => {
     if (!canvas) {
-      return 'Nhân chưa công bố ảnh nguồn có thể sửa cho dự án này (project.sourceCanvas đang trống).'
+      return 'Chưa có ảnh raster để sửa cho nguồn này.'
     }
     if (!canvas.editable) {
       return canvas.reason ?? 'Nhân báo nguồn này chưa sửa được nhưng không nêu lý do cụ thể.'

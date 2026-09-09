@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';import path from 'node:path';import {write} from './support.mjs';
+import assert from 'node:assert/strict';import path from 'node:path';import {write,openFolds} from './support.mjs';
 export async function extraCases(page,record,out,engine){
 const row=id=>page.locator('[data-export-field="'+id+'"] input'),read=()=>page.evaluate(()=>window.review.read()),update=p=>page.evaluate(p=>window.review.update(p),p);
 const settle=(id,result,rejected=false)=>page.evaluate(({id,result,rejected})=>window.review.settle(id,result,rejected),{id,result,rejected});
@@ -7,7 +7,7 @@ const rejection=message=>({ok:false,diagnostic:{code:'REVIEW_REFUSAL',message,se
 const confirmation=id=>({...rejection(id),confirmation:{title:'Conversion '+id,changes:['Explicit conversion '+id],retry:{type:'proposal.accept',id,confirmed:true}}});
 const receipt=(id,verdict='pass',inspection=false)=>({id,formatId:'captured-format-'+id,filename:'Đồ án tiếng Việt — mẫu kiểm tra — '+id+'.stl',byteLength:2097153,sha256:'0123456789abcdef'.repeat(4),projectRevision:0,createdAt:'2026-09-08T08:00:00.000Z',verdict,inspection,warnings:['Giữ nguyên cảnh báo hình học: vùng giao nhau chưa kiểm.'],metadataAvailable:true});
 async function shot(id){const p=path.join(out,engine+'-'+id+'.png');await page.screenshot({path:p});return p}
-async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());try{const observed=await fn()??{};await record({id,name,pass:true,observed})}catch(e){const observed=await read();const p=await shot(id);write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),observed,evidence:p})}}
+async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());await openFolds(page);try{const observed=await fn()??{};await record({id,name,pass:true,observed})}catch(e){const observed=await read();const p=await shot(id);write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),observed,evidence:p})}}
 await check('R01','optional, empty and historical receipts preserve declared facts',async()=>{
 await update({exportReceipts:undefined});assert.equal(await page.locator('[data-export-receipts]').count(),0);await update({exportReceipts:[]});assert.equal(await page.locator('[data-export-receipts="0"]').count(),1);
 const records=['pass','fail','unverified','unsupported'].map((v,i)=>receipt('R'+i,v,i%2===1));await update({project:{revision:9,visibleModelRevision:0,visibleModelStale:true},exportReceipts:records});

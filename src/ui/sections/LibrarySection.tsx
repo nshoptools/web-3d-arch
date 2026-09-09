@@ -5,6 +5,7 @@ import { CAP } from '../core/registry.ts'
 import { projectIdentity } from '../core/identity.ts'
 import { exportReasonText, findRescueExport } from '../core/project-state.ts'
 import { ACCEPT_PROJECT, chooseFile } from '../core/file-dialog.ts'
+import { useRebuildAfterOpen } from '../core/open-project.ts'
 import { Button } from '../components/Button.tsx'
 import { TextField } from '../components/Fields.tsx'
 import { CollapsibleGroup } from '../components/Group.tsx'
@@ -45,11 +46,14 @@ export function LibrarySection() {
     await run({ type: 'project.save' }, { success: 'Đã lưu dự án.' })
   })
 
+  const rebuild = useRebuildAfterOpen()
   const importProject = useAsyncAction(
     async () => {
       const file = await chooseFile(ACCEPT_PROJECT)
       if (!file) return
-      return bridge.importFile(file, 'project')
+      const result = await bridge.importFile(file, 'project')
+      if (result.ok) await rebuild()
+      return result
     },
     { success: 'Đã mở gói dự án.' },
   )
@@ -99,11 +103,13 @@ export function LibrarySection() {
         />
         <div className="row">
           <span className={`chip ${unsaved ? 'chip--warn' : 'chip--ok'} fc-border`}>
-            {unsaved ? 'Có thay đổi chưa lưu' : 'Đã lưu'}
+            {unsaved ? 'Chưa đánh dấu Lưu' : 'Đã lưu'}
           </span>
           <span className="muted-3">
-            Bản sửa {project.revision}
-            {project.savedRevision === null ? ' · chưa từng lưu' : ` · đã lưu ${project.savedRevision}`}
+            Bản sửa {project.revision} · đã ghi tự động trên trình duyệt này
+            {project.savedRevision === null
+              ? ' · chưa đánh dấu Lưu lần nào'
+              : ` · bản đã lưu: ${project.savedRevision}`}
           </span>
         </div>
         <Button
@@ -123,7 +129,7 @@ export function LibrarySection() {
       </div>
 
       <CollapsibleGroup
-        title="Dự án đã lưu"
+        title="Dự án trên trình duyệt này"
         color="var(--sec-library)"
         open={isGroupOpen(state, 'library-list')}
         onToggle={() => actions.setGroupOpen('library-list', !isGroupOpen(state, 'library-list'))}

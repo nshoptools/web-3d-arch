@@ -19,18 +19,26 @@ const TOAST_PREFIX: Record<ToastItem['tone'], string> = {
   info: 'Thông tin',
 }
 
-/** Success and info fade; warnings and errors wait for the user (UI-05). */
-const AUTO_DISMISS_MS = 6000
+/**
+ * Every message fades on its own, refusals more slowly than confirmations. A
+ * warning or an error never lives only here: the log and the diagnostics strip
+ * keep it (UI-05), so a stale refusal does not sit on the tab bar or the drawer
+ * of a phone until someone finds its close button (Grok F-05, F-10).
+ */
+const AUTO_DISMISS_MS: Record<ToastItem['tone'], number> = {
+  success: 6000,
+  info: 6000,
+  warning: 12000,
+  error: 14000,
+}
 
 function Toast({ toast }: { toast: ToastItem }) {
   const actions = useUiActions()
-  const transient = toast.tone === 'success' || toast.tone === 'info'
 
   useEffect(() => {
-    if (!transient) return
-    const timer = setTimeout(() => actions.dismissToast(toast.id), AUTO_DISMISS_MS)
+    const timer = setTimeout(() => actions.dismissToast(toast.id), AUTO_DISMISS_MS[toast.tone])
     return () => clearTimeout(timer)
-  }, [actions, toast.id, transient])
+  }, [actions, toast.id, toast.tone])
 
   return (
     <div className={`toast toast--${toast.tone} fc-border`}>

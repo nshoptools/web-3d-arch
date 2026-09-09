@@ -577,6 +577,16 @@
     justify-items: end;
     max-inline-size: min(380px, calc(100vw - 24px));
   }
+  /* On a phone the workspace ends in the section tab bar; a message that
+     landed on top of it would take the tabs away with it (UI-06). */
+  @media (width <= 720px) {
+    .ui-scale-host:has(.app[data-mode='workspace']) .toasts {
+      inset-block-end: calc(72px + env(safe-area-inset-bottom));
+      inset-inline: 12px;
+      justify-items: stretch;
+      max-inline-size: none;
+    }
+  }
   .toast {
     display: flex;
     align-items: flex-start;

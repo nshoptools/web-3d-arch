@@ -20,11 +20,12 @@ import {
   hasVisibleModel,
   modelIsStale,
   NO_PROJECT_REASON,
+  sourceNextStep,
   visibleModelNote,
 } from './project-state.ts'
 
 /** What the primary "go on" control will do when it is pressed. */
-export type AdvanceKind = 'create-project' | 'build' | 'rebuild' | 'open-step2' | 'export'
+export type AdvanceKind = 'create-project' | 'source-step' | 'build' | 'rebuild' | 'open-step2' | 'export'
 
 export interface StepNavigation {
   step: 1 | 2
@@ -127,26 +128,37 @@ export function useStepNavigation(): StepNavigation {
     [actions, run, step, stepReason],
   )
 
+  // A picture that still needs its raster or its colour regions cannot be
+  // built, so the one primary control offers that step under its own name
+  // instead of a build the core would refuse (Grok F-01).
+  const nextStep = sourceNextStep(project)
+  const nextStepKind = nextStep?.kind ?? null
+  const nextStepLabel = nextStep?.label ?? null
+  const nextStepVerb = nextStep?.verb ?? null
   const advanceKind: AdvanceKind = !projectOpen
     ? 'create-project'
     : step === 2
       ? 'export'
-      : !hasModel
-        ? 'build'
-        : stale
-          ? 'rebuild'
-          : 'open-step2'
+      : nextStepKind !== null
+        ? 'source-step'
+        : !hasModel
+          ? 'build'
+          : stale
+            ? 'rebuild'
+            : 'open-step2'
 
   const advanceLabel =
     advanceKind === 'create-project'
       ? 'Tạo dự án'
       : advanceKind === 'export'
         ? 'Xuất file'
-        : advanceKind === 'build'
-          ? 'Dựng 3D'
-          : advanceKind === 'rebuild'
-            ? 'Dựng lại 3D'
-            : 'Xem mô hình đã dựng'
+        : advanceKind === 'source-step'
+          ? (nextStepLabel ?? 'Chuyển sang ảnh raster để sửa')
+          : advanceKind === 'build'
+            ? 'Dựng 3D'
+            : advanceKind === 'rebuild'
+              ? 'Dựng lại 3D'
+              : 'Xem mô hình đã dựng'
 
   const advanceReason =
     advanceKind === 'create-project'
@@ -185,8 +197,15 @@ export function useStepNavigation(): StepNavigation {
       goToStep(2)
       return
     }
+    if (advanceKind === 'source-step') {
+      void run(
+        { type: 'source.convert', target: 'raster' },
+        { announce: `Đã gửi yêu cầu ${nextStepVerb ?? 'chuyển nguồn'}; nhân sẽ hỏi xác nhận.` },
+      )
+      return
+    }
     void run({ type: 'geometry.build' }, { announce: 'Đã gửi lệnh dựng 3D.' })
-  }, [actions, advanceKind, goToStep, projectOpen, run, step])
+  }, [actions, advanceKind, goToStep, nextStepVerb, projectOpen, run, step])
 
   return useMemo(
     () => ({

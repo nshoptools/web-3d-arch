@@ -65,12 +65,18 @@ export function isRescuePackage(bytes){
   try{const meta=readStoredZip(bytes).get('package.json');if(!meta)return false;return parseJSON(decodeUTF8(meta),{exactNumbers:false})?.kind==='web-3d-arch.rescue-package';}
   catch{return false;}
 }
-export async function importRescueCopy(store,input,{projectId,transactionId,signal}){
+export async function importRescueCopy(store,input,{projectId,transactionId,signal,expectedRevision=0}){
   identity(projectId,'destination project ID');
   const inspected=await inspectRescuePackage(input);
   if(inspected.status==='read-only')return inspected;
   const current=await store.load(projectId,{signal});
-  check(current.status==='empty','IMPORT_TARGET_EXISTS','Import is copy-on-write into a new project ID.');
+  // Copy-on-write into an empty ID by default. A caller that names the head it
+  // is replacing restores the package over that generation of the *same* ID
+  // instead: a deleted project reopened from its own package keeps its
+  // identity, so every record inside the document that names the project
+  // (source bindings, receipts, preparations) stays valid.
+  if(expectedRevision===0)check(current.status==='empty','IMPORT_TARGET_EXISTS','Import is copy-on-write into a new project ID.');
+  else check(current.status==='editable'&&current.headRevision===expectedRevision,'IMPORT_TARGET_MOVED','The destination changed since it was inspected; load it again before restoring.');
   const m=inspected.manifest;
   // A complete package with no issues was verified file by file above and every one of those files
   // lands in the copy as a first-class asset, so the ZIP itself is not kept: re-embedding it (and the
@@ -86,8 +92,8 @@ export async function importRescueCopy(store,input,{projectId,transactionId,sign
   if(!complete&&!assets.some(a=>a.hash===backupHash)){assets.push({hash:backupHash,byteLength:inspected.rawPackage.length,kind:'dependency',bytes:inspected.rawPackage});dependencies.add(backupHash);}
   // The document may still list the dropped ZIPs as retained assets from its own earlier imports.
   const document=Array.isArray(m.document?.retainedAssets)&&dropped.size?{...m.document,retainedAssets:m.document.retainedAssets.filter(h=>!dropped.has(h))}:m.document;
-  const result=await store.commit({projectId,transactionId,expectedRevision:0,engine:m.engine,domainSchemaVersion:m.domainSchemaVersion,
+  const result=await store.commit({projectId,transactionId,expectedRevision,engine:m.engine,domainSchemaVersion:m.domainSchemaVersion,
     document,assets,sources:m.sources,dependencies:[...dependencies],
     provenance:{importedFrom:{namespace:m.namespace,projectId:m.projectId,manifestHash:inspected.metadata.selectedManifestHash}}},{signal});
-  return {status:'imported-copy',...result,originalPackageHash:backupHash,originalPackageRetained:!complete,droppedNestedPackages:dropped.size,sourceProjectId:m.projectId};
+  return {status:expectedRevision===0?'imported-copy':'restored',...result,originalPackageHash:backupHash,originalPackageRetained:!complete,droppedNestedPackages:dropped.size,sourceProjectId:m.projectId};
 }

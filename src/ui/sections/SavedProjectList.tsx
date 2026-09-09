@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { useAsyncAction, useBridge, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
+import { useAsyncAction, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
 import { useUi, useUiActions } from '../core/ui-state.tsx'
 import { CAP, PRODUCTS } from '../core/registry.ts'
+import { useRebuildAfterOpen } from '../core/open-project.ts'
 import { Button } from '../components/Button.tsx'
 import { formatBytes, formatDateTime } from '../core/text.ts'
 
@@ -26,8 +27,7 @@ export function SavedProjectList({
   const actions = useUiActions()
   const { state } = useUi()
   const write = useCapability(CAP.projectWrite)
-  const build = useCapability(CAP.geometryBuild)
-  const bridge = useBridge()
+  const rebuild = useRebuildAfterOpen()
   const writeBlocked = write.available ? null : write.reason
   const { library, storage, project } = snapshot
 
@@ -37,17 +37,10 @@ export function SavedProjectList({
     return () => clearTimeout(timer)
   }, [actions, state.armedDelete])
 
-  // A saved project holds its source and settings; the built model is not
-  // stored with it, so reopening lands on step 1 with "not built yet" and the
-  // model the person last exported is nowhere on screen (Grok F-02). Opening
-  // therefore rebuilds it right away from the saved state — the same command
-  // the "Dựng 3D" button sends, with the same consent dialogs if the core asks.
   const openProject = useAsyncAction(async (id: string) => {
     const result = await run({ type: 'project.open', id }, { announce: 'Đã mở dự án.' })
     if (!result?.ok) return
-    const opened = bridge.getSnapshot()
-    if (opened.project.id !== id || !opened.project.source || !build.available) return
-    await run({ type: 'geometry.build' }, { announce: 'Đang dựng lại mô hình từ bản đã lưu.' })
+    await rebuild(id)
   })
 
   const deleteProject = useAsyncAction(async (id: string) => {

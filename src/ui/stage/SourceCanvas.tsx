@@ -20,6 +20,7 @@ import {
 import { useUiActions } from '../core/ui-state.tsx'
 import { useAsyncAction, useCapability, useRunCommand, useSnapshot } from '../core/bridge.tsx'
 import { CAP } from '../core/registry.ts'
+import { sourceNextStep } from '../core/project-state.ts'
 import { Button } from '../components/Button.tsx'
 import { TOOLS_2D } from '../core/registry.ts'
 import { formatNumber } from '../core/text.ts'
@@ -602,7 +603,7 @@ export function SourceCanvas() {
         ) : null}
       </div>
 
-      {published === null ? (
+      {published === null && snapshot.project.source !== null ? (
         <div className="srccanvas__notice" data-notice="no-canvas">
           <div className="card fc-border srccanvas__notice-card">
             <strong className="card__title">Chưa có ảnh nguồn để sửa</strong>
@@ -619,14 +620,9 @@ export function SourceCanvas() {
           in the stage's empty-state slot, so there is exactly one thing on
           screen to read and exactly one place the recovery controls live. */}
 
-      {published !== null && !published.editable ? (
-        <div className="srccanvas__banner">
-          <span className="chip chip--warn fc-border" style={{ whiteSpace: 'normal' }}>
-            Chỉ xem: {published.reason ?? 'nhân chưa nêu lý do cụ thể.'}
-          </span>
-          <ConvertSource />
-        </div>
-      ) : null}
+      {/* A source that cannot be painted on yet is said in the tool band of
+          the stage, next to the tools it unlocks (Tools2D), not in a banner
+          floated over the readouts. */}
     </div>
   )
 }
@@ -742,10 +738,8 @@ export function SourceImageRecovery() {
             along rather than being sealed off behind the failure. */}
         {canvas.editable ? null : (
           <>
-            <span className="reason">
-              Chỉ xem: {canvas.reason ?? 'nhân chưa nêu lý do cụ thể.'}
-            </span>
-            <ConvertSource />
+            <span className="reason">Chỉ xem: {canvas.reason ?? 'nhân chưa nêu lý do cụ thể.'}</span>
+            <ConvertSource compact reason={null} />
           </>
         )}
         <span className="muted-3">
@@ -766,27 +760,41 @@ export function SourceImageRecovery() {
  * converted until that confirmation comes back through the shared dialog, and a
  * proposal whose inputs have moved on is refused rather than replayed.
  */
-function ConvertSource() {
+export function ConvertSource({ compact = false, reason = null }: { compact?: boolean; reason?: string | null }) {
+  const snapshot = useSnapshot()
   const run = useRunCommand()
   const write = useCapability(CAP.projectWrite)
   const convert = useAsyncAction(async () => {
     await run({ type: 'source.convert', target: 'raster' })
   })
+  // The same command twice, under two names: first the editable raster, then
+  // the colour regions of that raster. The label says which one is next, and
+  // the top bar's primary control uses the same words (`sourceNextStep`).
+  const next = sourceNextStep(snapshot.project)
+  const segment = next?.kind === 'segment'
+  const label = next?.label ?? 'Chuyển sang ảnh raster để sửa'
+  const note = segment
+    ? 'Nhân tách ảnh thành các vùng màu và trả về kết quả trước; chưa có gì đổi cho tới khi bạn xác nhận. Ảnh gốc vẫn được giữ.'
+    : 'Nhân trả về phần thay đổi trước; chưa có gì được chuyển cho tới khi bạn xác nhận. Byte gốc của nguồn vector hoặc font vẫn được giữ riêng.'
   return (
-    <div className="stack" style={{ marginBlockStart: 6 }}>
+    <div className="stack" style={{ marginBlockStart: compact ? 0 : 6, gap: 4 }}>
       <Button
         size="small"
         icon="refresh"
+        variant="primary"
+        data-convert-source={segment ? 'segment' : 'raster'}
         disabled={convert.pending}
         disabledReason={write.available ? null : write.reason}
+        title={reason ? `${reason} ${note}` : note}
         onClick={() => void convert.run()}
       >
-        {convert.pending ? 'Đang hỏi nhân…' : 'Chuyển nguồn sang ảnh raster để sửa'}
+        {convert.pending ? 'Đang hỏi nhân…' : label}
       </Button>
-      <span className="muted-3" style={{ maxInlineSize: 340 }}>
-        Nhân trả về phần thay đổi trước; chưa có gì được chuyển cho tới khi bạn xác nhận. Byte gốc
-        của nguồn vector hoặc font vẫn được giữ riêng.
-      </span>
+      {compact ? null : (
+        <span className="muted-3" style={{ maxInlineSize: 340 }}>
+          {note}
+        </span>
+      )}
     </div>
   )
 }

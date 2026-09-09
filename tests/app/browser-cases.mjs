@@ -29,7 +29,14 @@ const cases={
   ok(await c.dispatch({type:'history.undo'}));bad(await c.exportFile('stl'),'STALE_REVISION');ok(await c.dispatch({type:'geometry.build'}));ok(await c.dispatch({type:'project.save'}));
   const id=c.projectId,state=canonicalJSON(c.doc.state),head=c.headRevision;ok(await c.dispatch({type:'project.open',id}));equal(canonicalJSON(c.doc.state),state);equal(c.headRevision,head);equal(c.doc.state.content.app.source.raw.hash,sourceHash);
   ok(await c.dispatch({type:'geometry.build'}));ok(await c.exportFile('stl'));equal(new DataView(controls.downloads.at(-1).bytes.buffer).getUint32(80,true),12);
-  ok(await c.exportFile('project'));const packageBytes=controls.downloads.at(-1).bytes;ok(await c.importFile(new File([packageBytes],'copy.arch-project.zip'),'project'));assert(c.projectId!==id,'TEST_COPY');equal(c.doc.state.content.app.source.raw.hash,sourceHash);
+  ok(await c.exportFile('project'));const packageBytes=controls.downloads.at(-1).bytes;
+  // A package of a project that is still in the library opens that project (same id, no copy) and says so.
+  ok(await c.importFile(new File([packageBytes],'copy.arch-project.zip'),'project'));equal(c.projectId,id);equal(c.doc.state.content.app.source.raw.hash,sourceHash);
+  assert(c.getSnapshot().diagnostics.some(d=>d.code==='PACKAGE_PROJECT_EXISTS'),'TEST_PACKAGE_EXISTS_DIAGNOSTIC');
+  // After the project is deleted, the package restores it under its own id, with the document it carried, and the model rebuilds.
+  ok(await c.dispatch({type:'project.delete',id,confirmed:true}));equal(c.projectId,'');
+  ok(await c.importFile(new File([packageBytes],'restore.arch-project.zip'),'project'));equal(c.projectId,id);equal(canonicalJSON(c.doc.state),state);equal(c.doc.state.content.app.source.raw.hash,sourceHash);
+  assert(c.library.some(entry=>entry.id===id),'TEST_RESTORED_LISTED');ok(await c.dispatch({type:'geometry.build'}));
   return {head,stlBytes:684,sourceHash,analyticalKernel:true,backend:c.store.capabilities.selectedBackend,storageCapabilities:c.store.capabilities,leaseCapability:c.leaseCapability};
  },
  async multiStepHistoryAtomic(){

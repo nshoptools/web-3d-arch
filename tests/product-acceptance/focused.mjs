@@ -56,7 +56,7 @@ try{
   const bytes=Buffer.from(vietnameseNFD);await ui.importFile({name:'vietnamese-nfd.txt',mimeType:'text/plain',buffer:bytes});if(await page.getByRole('dialog').count())await ui.approve();
   const r=await rescue('text-file');assert.equal(r.state.content.app.source?.kind,'text');assert.equal(r.state.content.app.source.raw.hash,sha256(bytes));
   assert.ok([...r.files.values()].some(b=>b.equals(bytes)),'original exact NFD bytes retained');
-  await ui.tab('Ảnh nguồn');await page.getByRole('button',{name:'Chuyển nguồn sang ảnh raster để sửa',exact:true}).click();await ui.approve();
+  await ui.tab('Ảnh nguồn');await page.getByRole('button',{name:'Chuyển sang ảnh raster để sửa',exact:true}).click();await ui.approve();
   const converted=await rescue('text-converted');assert.equal(converted.state.content.app.source.raw.hash,sha256(bytes));const model=await ui.build();
   return {model,source:r.state.content.app.source,converted:converted.state.content.app.source,assets:r.manifest.assets,textCodepoints:Array.from(vietnameseNFD,c=>c.codePointAt(0).toString(16))};
  });
@@ -67,7 +67,7 @@ try{
   await page.getByRole('searchbox',{name:'Tìm emoji',exact:true}).fill('1F600');
   const item=page.getByRole('listbox',{name:'Lưới emoji',exact:true}).getByRole('option').first();await item.waitFor();const selection=await item.getAttribute('aria-label');await item.click();
   await ui.waitRevision(prior);const r=await rescue('color-source');assert.equal(r.state.content.app.source?.kind,'emoji');
-  await ui.tab('Ảnh nguồn');await page.getByRole('button',{name:'Chuyển nguồn sang ảnh raster để sửa',exact:true}).click();await ui.approve();
+  await ui.tab('Ảnh nguồn');await page.getByRole('button',{name:'Chuyển sang ảnh raster để sửa',exact:true}).click();await ui.approve();
   const converted=await rescue('color-converted');assert.equal(converted.state.content.app.source.raw.hash,r.state.content.app.source.raw.hash);
   const model=await ui.build();return {selection,model,source:r.state.content.app.source,converted:converted.state.content.app.source,assets:r.manifest.assets};
  });

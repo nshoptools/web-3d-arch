@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';import path from 'node:path';import {write} from './support.mjs';
+import assert from 'node:assert/strict';import path from 'node:path';import {write,openFolds} from './support.mjs';
 export async function cases(page,record,out,engine){
 const row=id=>page.locator('[data-export-field="'+id+'"] input'),read=()=>page.evaluate(()=>window.review.read());
 const publish=(revision,values={})=>page.evaluate(({revision,values})=>window.review.publish(revision,values),{revision,values});
@@ -6,7 +6,7 @@ const update=patch=>page.evaluate(p=>window.review.update(p),patch),settle=(id,r
 const calls=async()=>(await read()).calls.filter(c=>c.method==='dispatch'||c.method==='exportFile'),last=async()=>{const v=await calls();assert.ok(v.length);return v.at(-1)};
 const refusal=message=>({ok:false,diagnostic:{code:'REVIEW_REFUSAL',message,severity:'error'}});
 const confirm=id=>({...refusal('Confirmation '+id),confirmation:{title:'Conversion '+id,changes:['Change geometry for '+id],retry:{type:'proposal.accept',id,confirmed:true}}});
-async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());let observed={};try{observed=await fn()??{};await record({id,name,pass:true,observed})}catch(e){observed={...observed,...await read()};const png=path.join(out,engine+'-'+id+'.png');await page.screenshot({path:png});write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),evidence:png,observed})}}
+async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());await openFolds(page);let observed={};try{observed=await fn()??{};await record({id,name,pass:true,observed})}catch(e){observed={...observed,...await read()};const png=path.join(out,engine+'-'+id+'.png');await page.screenshot({path:png});write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),evidence:png,observed})}}
 await check('L01','raw decimal and text drafts retain first-dirty revision and current rejection',async()=>{
 await row('errorMm').fill('0,005000000');await publish(3);await row('errorMm').fill('0,006000000 tail');await row('errorMm').press('Enter');let c=await last();assert.equal(c.input.value,'0,006000000 tail');assert.equal(c.input.projectRevision,0);await settle(c.id,refusal('REJECT_EXACT_RAW'));assert.equal(await row('errorMm').inputValue(),'0,006000000 tail');assert.equal(await row('errorMm').getAttribute('aria-invalid'),'true');
 await row('errorMm').press('Escape');await row('filename').fill('Đồ án / <không sửa>');await publish(4);await row('filename').press('Enter');c=await last();assert.equal(c.input.value,'Đồ án / <không sửa>');assert.equal(c.input.projectRevision,3);return {calls:await calls()}

@@ -33,7 +33,9 @@ export function ExportReceipts() {
   const { state } = useUi()
   const actions = useUiActions()
   const receipts = snapshot.exportReceipts
-  const open = isGroupOpen(state, 'export-receipts')
+  // Folded until there is a record to show; then open, so a fresh download's
+  // record is on screen without a click.
+  const open = isGroupOpen(state, 'export-receipts', (receipts?.length ?? 0) > 0)
 
   // A build that publishes no receipts key at all keeps the older interface:
   // the member is additive, and its absence is not an empty session.
@@ -48,15 +50,10 @@ export function ExportReceipts() {
       count={`${receipts.length} hồ sơ`}
     >
       <div className="stack" data-export-receipts={receipts.length}>
-        <p className="muted" style={{ margin: 0 }}>
-          Đây là những gì nhân ghi lại cho các lượt xuất của phiên truy cập và dự án đang mở. Tải hồ
-          sơ về để lưu cùng tệp: danh sách này không tự tồn tại sau khi bạn đóng dự án, đổi dự án
-          hoặc đăng xuất.
-        </p>
         <p className="muted-3" style={{ margin: 0 }}>
-          Có hồ sơ nghĩa là nhân đã ghi bytes và ghi lại kết quả kiểm của lượt đó. Giao diện không
-          biết hệ điều hành đã lưu tệp ở đâu hay đã lưu chưa, và không có dòng nào ở đây nói tệp in
-          được.
+          Nhân ghi lại từng lượt xuất của phiên này (byte, kết quả kiểm, cảnh báo). Danh sách không
+          tự tồn tại sau khi đóng dự án hoặc đăng xuất; tải hồ sơ về để lưu cùng tệp. Giao diện không
+          biết hệ điều hành đã lưu tệp ở đâu, và hồ sơ không nói tệp in được.
         </p>
         {receipts.length === 0 ? (
           <div className="empty">

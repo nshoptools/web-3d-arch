@@ -1,12 +1,23 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "scope": "review",
   "seats": {
     "gemini": {
-      "model": "gemini-2.5-pro",
+      "model": "gemini-3.1-pro-preview",
       "effort": "high",
-      "command": ["pwsh", "-NoProfile", "-File", "tools/agents/start-gemini.ps1"]
+      "approval_mode": "yolo",
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "tools/agents/start-gemini.ps1"
+      ],
+      "verification": {
+        "date": "2026-09-09",
+        "source": "Vertex AI project of the repository .gemini/.env, Gemini CLI 0.59.0; probes in tmp/reviews/codex/runs/20260909-hub-quality-r2/evidence/gemini-probe-*.json",
+        "result": "gemini-3.1-pro-preview answers and reports itself in stats.models; gemini-3.5-pro and gemini-3.1-pro return 404 on this project; gemini-2.5-pro still answers but is the older model"
+      }
     },
     "codex": {
       "model": "gpt-6-astra",
@@ -20,7 +31,12 @@
       "effort": "max",
       "fast_mode": false,
       "scope": "all-project-invocations-including-development-review-resume-fork-and-subagents",
-      "command": ["pwsh", "-NoProfile", "-File", "tools/agents/start-opus.ps1"],
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "tools/agents/start-opus.ps1"
+      ],
       "user_constraints": {
         "recorded_at": "2026-09-08",
         "do_not_invoke": true,
@@ -32,7 +48,12 @@
     "grok": {
       "model": "grok-4.6",
       "effort": "xhigh",
-      "command": ["pwsh", "-NoProfile", "-File", "tools/reviews/start-grok.ps1"],
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-File",
+        "tools/reviews/start-grok.ps1"
+      ],
       "runtime_config": "tools/reviews/grok-runtime.json",
       "isolation_guide": "docs/reviews/GROK-WINDOWS-ISOLATION.md"
     }

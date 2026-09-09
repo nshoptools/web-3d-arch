@@ -2,8 +2,28 @@ import {VERSION,assert,error,data,freeze,assertTicket,canonicalJSON,sha256} from
 import {validateState} from './documents.mjs';
 import {candidateHash} from './proposals.mjs';
 import {domainStateFingerprint} from '../storage/index.mjs';
+/** Whether a prepared product update carries something only the person can decide.
+ * Adoption plans (import, conversion, emoji, text as source) never come through here:
+ * their consent stays explicit in prepareProductAdoption. */
+export function productDecisionRequired(plan,command){
+ if(plan.status!=='proposal')return true;
+ if((plan.bindingProposals?.length??0)>0||(plan.faces?.length??0)>0||(plan.planeChoices?.length??0)>0)return true;
+ if(command.type==='project.product')return true;
+ if(command.type==='text.update'&&command.values&&Object.hasOwn(command.values,'asSource'))return true;
+ return false;
+}
 /** Controller ownership only. The integration plan supplies all native semantics;
  * the controller seals and publishes exactly the approved state and asset set. */
+const SOURCE_KIND_LABEL={svg:'hình vector SVG',raster:'ảnh',emoji:'emoji',text:'chữ'};
+/** The first line of a source-import consent: what was received, in the person's words, before the core's list of bindings (Grok F-04). */
+function adoptionIntro(command,source,operation){
+ if(operation!=='import'||!source)return null;
+ if(command?.type==='text.update')return 'Dùng khối chữ hiện tại làm nguồn của dự án.';
+ if(command?.type!=='source.import')return null;
+ if(source.kind==='emoji')return 'Dùng emoji đã chọn làm nguồn của dự án.';
+ if(source.kind==='text')return `Đọc tệp “${source.name}” làm chữ và dùng làm nguồn của dự án.`;
+ return `Nhận “${source.name}” làm nguồn ${SOURCE_KIND_LABEL[source.kind]??source.kind} của dự án.`;
+}
 export class ProductTransactionOperations {
  async adoptTextSource(command){
   this.requireProject();const next=validateState({...data(this.doc.state),content:{...data(this.doc.state.content),app:{...data(this.doc.state.content.app),text:{...data(this.doc.state.content.app.text),...data(command.values),asSource:true}}}});
@@ -16,19 +36,19 @@ export class ProductTransactionOperations {
   try{
    if(this.onlineSession){await this.preflight(job.epoch,job.abort.signal);this.jobGuard(job);}
    const plan=await this.adapters.productTransactions.prepareCommand({control,state,assets:new Map([...map].map(([h,a])=>[h,new Uint8Array(a.bytes)])),command:data(command)});
-   await this.proposeProductTransaction({plan,job,control,map,command});
+   await this.proposeProductTransaction({plan,job,control,map,command,adoption:false});
   }finally{if(this.pendingOperation?.control!==control)this.finishJob(job);}
  }
  async prepareProductAdoption({source,materials,materialDefaults,map,operation,command,sourceAuthority,text}){
-  const state=freeze(data(this.doc.state)),job=this.startJob('Prepare source datums'),control=this.jobControl(job);
+  const state=freeze(data(this.doc.state)),job=this.startJob('Prepare source datums'),control=this.jobControl(job),intro=adoptionIntro(command,source,operation);
   try{
    if(this.onlineSession){await this.preflight(job.epoch,job.abort.signal);this.jobGuard(job);}
    const plan=await this.adapters.productTransactions.prepareAdoption({control,state,source:freeze(data(source)),materials:freeze(data(materials)),materialDefaults:freeze(data(materialDefaults)),
     operation,sourceAuthority,text,assets:new Map([...map].map(([h,a])=>[h,new Uint8Array(a.bytes)]))});
-   await this.proposeProductTransaction({plan,job,control,map,command});
+   await this.proposeProductTransaction({plan,job,control,map,command,adoption:true,intro});
   }finally{if(this.pendingOperation?.control!==control)this.finishJob(job);}
  }
- async proposeProductTransaction({plan,job,control,map,command}){
+ async proposeProductTransaction({plan,job,control,map,command,adoption=true,intro=null}){
   let proposalOwns=false;
   try{
    this.jobGuard(job);assert(plan?.version==='arch-product-transaction/1'&&typeof plan.preview==='function'&&typeof plan.confirm==='function'&&typeof plan.release==='function','PRODUCT_TRANSACTION_ADAPTER');
@@ -47,7 +67,7 @@ export class ProductTransactionOperations {
      'Dò lại hình học dự kiến trước khi lưu nguồn/vật liệu; cần thêm một lần xác nhận mốc chuẩn.'
     ],outputHash,verify:()=>candidateHash(output,map),apply:async()=>{
      this.jobGuard(job);this.finishJob(job);const nextJob=this.startJob('Probe explicitly selected face'),nextControl=this.jobControl(nextJob);
-     try{const nextPlan=await plan.replan(nextControl,selected.index);return await this.proposeProductTransaction({plan:nextPlan,job:nextJob,control:nextControl,map,command});}
+     try{const nextPlan=await plan.replan(nextControl,selected.index);return await this.proposeProductTransaction({plan:nextPlan,job:nextJob,control:nextControl,map,command,adoption,intro});}
      finally{if(this.pendingOperation?.control!==nextControl)this.finishJob(nextJob);}
     },release:()=>{plan.release();this.finishJob(job);}});}catch(e){if(e.code==='PROPOSAL_REQUIRED')proposalOwns=true;throw e;}
    }
@@ -58,25 +78,38 @@ export class ProductTransactionOperations {
    const head=data(plan.nativeHead),proposalHash=plan.proposalHash;
    assert(/^[a-f0-9]{64}$/.test(proposalHash),'PRODUCT_TRANSACTION_PROPOSAL_HASH');
    const sealed={state:next,nativeHead:head,proposalHash,command:data(command)},outputHash=await candidateHash(sealed,staged);this.jobGuard(job);
+   const apply=async()=>{
+    this.jobGuard(job);const reply=await plan.confirm(control);this.jobGuard(job);
+    assert(reply?.version==='arch-product-source-update-commit/1'&&reply.proposalHash===proposalHash&&reply.requiresAtomicCommit===true,'PRODUCT_TRANSACTION_COMMIT');
+    assert(canonicalJSON(reply.expected)===canonicalJSON(plan.expected)&&canonicalJSON(reply.state)===canonicalJSON(next),'PRODUCT_TRANSACTION_COMMIT_CHANGED');
+    const accepted=new Map(map),confirmedHashes=[];
+    for(const asset of reply.assets){const ref=await this.addAsset(asset.bytes,asset.kind,accepted);assert(ref.hash===asset.sha256,'PRODUCT_TRANSACTION_ASSET_HASH');confirmedHashes.push(ref.hash);}
+    assert(canonicalJSON(confirmedHashes.sort())===canonicalJSON(extraHashes.sort())&&await candidateHash(sealed,accepted)===outputHash,'PRODUCT_TRANSACTION_COMMIT_CHANGED');this.jobGuard(job);
+    // A receipt is evidence, never an executable replay or a replacement state.
+    assert(reply.nativeReceipt===null||reply.nativeReceipt instanceof Uint8Array&&reply.nativeReceipt.length>0&&reply.nativeReceipt.length<=4096&&head!==null,'PRODUCT_TRANSACTION_RECEIPT');
+    const nativeReceipt=reply.nativeReceipt===null?null:{version:'arch-native-confirmation-evidence/1',sha256:await sha256(reply.nativeReceipt),bytes:reply.nativeReceipt.length};
+    assert(canonicalJSON(nativeReceipt).length<=1048576,'PRODUCT_TRANSACTION_RECEIPT_LIMIT');
+    await this.enqueue(()=>{this.jobGuard(job);return this.edit(next,{type:'product.atomic-update',command:data(command),proposalHash,nativeHead:head,nativeReceipt},{assets:accepted,signal:job.abort.signal});});
+    this.finishJob(job);
+    if(reply.requiresNativeRebuild)return this.build(true);
+   };
+   const release=()=>{plan.release();this.finishJob(job);};
+   // Consent is asked when the plan holds a decision the person has to make: a
+   // material rebinding proposal, a manufacturing face to fix, a product-type
+   // switch, or the text block changing its role as the source. An ordinary
+   // edit — a size, a colour, a text field — whose plan carries no such decision
+   // commits at once as the same single atomic, undoable transaction and then
+   // rebuilds; a dialog listing only "commit and rebuild" was a question with
+   // one answer, asked on every slider step (Hub quality round 2, D3).
+   if(!adoption&&!productDecisionRequired(plan,command)){
+    job.stage='Apply product update';this.emit();
+    try{await apply();}catch(e){if(e.code!=='PROPOSAL_REQUIRED')release();throw e;}
+    return;
+   }
    job.stage='Source and datum confirmation';
    try{
-    await this.proposeOperation({kind:'product source update',changes:plan.changes,control,outputHash,
-     verify:()=>candidateHash(sealed,staged),
-     apply:async()=>{
-      this.jobGuard(job);const reply=await plan.confirm(control);this.jobGuard(job);
-      assert(reply?.version==='arch-product-source-update-commit/1'&&reply.proposalHash===proposalHash&&reply.requiresAtomicCommit===true,'PRODUCT_TRANSACTION_COMMIT');
-      assert(canonicalJSON(reply.expected)===canonicalJSON(plan.expected)&&canonicalJSON(reply.state)===canonicalJSON(next),'PRODUCT_TRANSACTION_COMMIT_CHANGED');
-      const accepted=new Map(map),confirmedHashes=[];
-      for(const asset of reply.assets){const ref=await this.addAsset(asset.bytes,asset.kind,accepted);assert(ref.hash===asset.sha256,'PRODUCT_TRANSACTION_ASSET_HASH');confirmedHashes.push(ref.hash);}
-      assert(canonicalJSON(confirmedHashes.sort())===canonicalJSON(extraHashes.sort())&&await candidateHash(sealed,accepted)===outputHash,'PRODUCT_TRANSACTION_COMMIT_CHANGED');this.jobGuard(job);
-      // A receipt is evidence, never an executable replay or a replacement state.
-      assert(reply.nativeReceipt===null||reply.nativeReceipt instanceof Uint8Array&&reply.nativeReceipt.length>0&&reply.nativeReceipt.length<=4096&&head!==null,'PRODUCT_TRANSACTION_RECEIPT');
-      const nativeReceipt=reply.nativeReceipt===null?null:{version:'arch-native-confirmation-evidence/1',sha256:await sha256(reply.nativeReceipt),bytes:reply.nativeReceipt.length};
-      assert(canonicalJSON(nativeReceipt).length<=1048576,'PRODUCT_TRANSACTION_RECEIPT_LIMIT');
-      await this.enqueue(()=>{this.jobGuard(job);return this.edit(next,{type:'product.atomic-update',command:data(command),proposalHash,nativeHead:head,nativeReceipt},{assets:accepted,signal:job.abort.signal});});
-      this.finishJob(job);
-      if(reply.requiresNativeRebuild)return this.build(true);
-     },release:()=>{plan.release();this.finishJob(job);}});
+    await this.proposeOperation({kind:'product source update',changes:intro?[intro,...plan.changes]:plan.changes,control,outputHash,
+     verify:()=>candidateHash(sealed,staged),apply,release});
    }catch(e){if(e.code==='PROPOSAL_REQUIRED')proposalOwns=true;throw e;}
   }finally{if(!proposalOwns)plan?.release?.();}
  }

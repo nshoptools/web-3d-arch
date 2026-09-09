@@ -164,9 +164,38 @@
   @media (width <= 720px) {
     .topbar--start .topbar__sub { display: none; }
   }
+  /* When the tools wrap onto a second row (720 < w <= 1180) they sit at the
+     end of that row, under the account menu, not under the brand. */
+  .topbar__tools { margin-inline-start: auto; }
+  /* Above 1180 the bar is one row whatever the section: what does not fit
+     folds into an icon with an accessible name, never onto a second row, so
+     the frame below never moves when the primary action comes and goes. */
+  @media (width > 1180px) {
+    .topbar:not(.topbar--start) { flex-wrap: nowrap; }
+    .topbar:not(.topbar--start) .topbar__steps { flex-wrap: nowrap; }
+    .topbar:not(.topbar--start) .topbar__tools { flex-wrap: nowrap; flex: none; }
+    .topbar:not(.topbar--start) .topbar__project { flex: 0 1 auto; }
+    .topbar:not(.topbar--start) .topbar__brand { flex: none; }
+    /* One line per control: a step chip or the primary action never folds
+       its own words onto a second line here, so the bar keeps its 56 px. */
+    .topbar:not(.topbar--start) .topbar__steps .btn,
+    .topbar:not(.topbar--start) .topbar__tools .btn { flex-wrap: nowrap; white-space: nowrap; }
+    .topbar:not(.topbar--start) .topbar__steps .btn > span,
+    .topbar:not(.topbar--start) .topbar__tools .btn > span { overflow-wrap: normal; }
+    .topbar:not(.topbar--start) .topbar__project .chip { white-space: nowrap; flex: none; }
+  }
+  @media (width > 720px) {
+    .canvas-controls { flex-wrap: nowrap; }
+  }
   @media (width <= 1400px) {
     .topbar__help-label { display: none; }
+    .topbar:not(.topbar--start) .topbar__search-label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .topbar:not(.topbar--start) .topbar__online[data-online='true'] .topbar__online-label { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .topbar:not(.topbar--start) .topbar__step-long { display: none; }
+    .topbar:not(.topbar--start) .topbar__step-short { display: inline; }
+    .topbar:not(.topbar--start) .topbar__project { max-inline-size: min(100%, 220px); }
   }
+  .topbar__step-status { margin-inline-start: 4px; }
 
   /* ------------------------------------------------------------------ rail */
 
@@ -468,17 +497,6 @@
     z-index: var(--z-label);
   }
 
-  /* The banner shares the top-left corner with the readout strip of the layer
-     above it, and it carries the one control that makes a vector source
-     editable — so it has to win that overlap, not lose it silently. */
-  .srccanvas__banner {
-    position: absolute;
-    inset-block-start: 8px;
-    inset-inline-start: 8px;
-    max-inline-size: min(360px, calc(100% - 16px));
-    z-index: var(--z-warning);
-  }
-
   /* The backdrop dims the drawing surface, and that is *all* it does. It takes
      no pointer events and carries no z-index of its own, so it can neither
      swallow a click aimed at a control on the layer above nor paint over one:
@@ -578,6 +596,19 @@
   .stage__bottom > * { pointer-events: auto; }
 
   .stage__bottom-left { display: grid; gap: 8px; justify-items: start; min-inline-size: 0; max-inline-size: min(560px, 100%); }
+  .stage__top-left { display: grid; gap: 8px; justify-items: start; align-content: start; min-inline-size: 0; max-inline-size: min(560px, 100%); }
+  .stage-tools { min-inline-size: 0; }
+
+  /* The frame's own zoom control, in the corner like a map's. */
+  .canvas-controls { align-items: center; gap: 4px; }
+  .canvas-controls .field { gap: 0; }
+  .canvas-controls .select { inline-size: auto; min-block-size: var(--target-min); padding-block: 2px; font-size: var(--fs-small); }
+  .tools2d .toolbar { align-items: center; }
+  .tools2d__options { max-inline-size: 100%; }
+  .tools2d .group { background: var(--glass-solid); }
+  @supports (backdrop-filter: blur(2px)) {
+    .tools2d .group { background: var(--glass); }
+  }
 
   /* At or below 1180 the toolbar drops under the readout strip (UI-03). */
   @media (width <= 1180px) {

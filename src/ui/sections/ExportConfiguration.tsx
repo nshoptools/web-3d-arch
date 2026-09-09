@@ -44,22 +44,29 @@ export interface ExportConfigurationProps {
   configuration: ExportConfigurationView
   /** Why no project edit can be committed at all, or null. */
   writeBlocked: string | null
+  /** The caller owns the fold when it lays the settings out under its own row. */
+  open?: boolean
+  onToggle?: () => void
 }
 
-export function ExportConfiguration({ option, configuration, writeBlocked }: ExportConfigurationProps) {
+export function ExportConfiguration({ option, configuration, writeBlocked, open: openProp, onToggle }: ExportConfigurationProps) {
   const { state } = useUi()
   const actions = useUiActions()
   const groupId = `export-config-${option.id}`
-  const open = isGroupOpen(state, groupId)
+  const open = openProp ?? isGroupOpen(state, groupId)
   const { fields } = configuration
   const contextKey = useProjectContextKey()
 
   return (
     <CollapsibleGroup
-      title="Cài đặt của đường xuất này"
+      title={
+        <>
+          Cài đặt<span className="u-visually-hidden"> của đường xuất này</span>
+        </>
+      }
       color="var(--sec-export)"
       open={open}
-      onToggle={() => actions.setGroupOpen(groupId, !open)}
+      onToggle={onToggle ?? (() => actions.setGroupOpen(groupId, !open))}
       count={`${fields.length} thiết lập`}
     >
       <div
@@ -83,8 +90,7 @@ export function ExportConfiguration({ option, configuration, writeBlocked }: Exp
           />
         ))}
         <p className="muted-3" style={{ margin: 0 }}>
-          Thiết lập ở đây thuộc riêng đường xuất “{option.label}”. Giao diện gửi nguyên văn thứ bạn
-          nhập; nhân là nơi kiểm, đổi đơn vị nếu cần và lưu vào dự án.
+          Thuộc riêng đường xuất “{option.label}”; lưu vào dự án như một lần sửa.
         </p>
       </div>
     </CollapsibleGroup>

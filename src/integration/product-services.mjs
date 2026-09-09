@@ -65,7 +65,10 @@ export function createProductApplicationServices({kernel,sourceLibrary,origin,co
   async prepare(input){
    // Each provider checks the exact captured authority before publishing. Root
    // calls remain sequential so native generations and source leases stay owned.
-   if(input.state.content.app.source)await sourceSnapshot.refresh({control:input});
+   // A source whose colour regions are not adopted yet has no SVG snapshot to
+   // prepare: the export gate says so on the SVG option itself, so the refusal
+   // is not a project problem, and it must not skip the printing refresh below.
+   if(input.state.content.app.source){try{await sourceSnapshot.refresh({control:input});}catch(error){if(error?.code!=='SOURCE_SVG_REGIONS_REQUIRED')throw error;}}
    need(!input.signal.aborted,'CANCELLED');
    if(input.model&&input.model.ticket.revision===input.ticket.revision&&checkedScene(input.model).status!=='ready')
     await finalScene.qualify({model:input.model,control:input});

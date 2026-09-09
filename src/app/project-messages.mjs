@@ -12,7 +12,9 @@ export const PROJECT_MESSAGES=Object.freeze({
  UNSUPPORTED_HEAD_VERSION:'Bản ghi dự án dùng phiên bản lưu trữ chưa được hỗ trợ; dữ liệu được giữ nguyên để xuất bản sao thô.',
  UNSUPPORTED_MANIFEST_VERSION:'Bản ghi dự án dùng phiên bản lưu trữ chưa được hỗ trợ; dữ liệu được giữ nguyên để xuất bản sao thô.',
  UNSUPPORTED_DATABASE_VERSION:'Cơ sở dữ liệu cục bộ có phiên bản chưa được hỗ trợ; dự án chỉ đọc và có thể xuất bản sao thô.',
- PROJECT_UNRECOGNIZED:'Không nhận dạng được dự án này; dữ liệu được giữ nguyên và có thể xuất bản sao thô.'
+ PROJECT_UNRECOGNIZED:'Không nhận dạng được dự án này; dữ liệu được giữ nguyên và có thể xuất bản sao thô.',
+ PACKAGE_PROJECT_EXISTS:'Dự án trong gói vẫn còn trong thư viện nên đã mở bản trong thư viện, không nhập lại từ gói. Muốn dùng đúng bản trong gói: xóa dự án trong thư viện rồi mở gói lần nữa.',
+ PACKAGE_IMPORTED_AS_COPY:'Bản ghi cũ của dự án này không đọc được nên gói được mở thành bản sao có mã mới. Nguồn của bản sao cần được nhập lại (Thay bằng tệp khác) trước khi dựng mô hình.'
 });
 /** Human reason for a library row that could not be listed: transient reads are retried, stored-data problems are cached. */
 export function libraryReason(code,transient){

@@ -120,7 +120,7 @@ for(const [engine,type]of Object.entries({chromium,firefox,webkit}))test(`APP in
     await writeFile(path.join(evidence,engine+'-'+exported.name),archive);
     await phase('convert-and-edit-via-ui');
     await page.locator('[data-step-chip="1"]').click();
-    await page.getByRole('button',{name:'Chuyển nguồn sang ảnh raster để sửa',exact:true}).click();
+    await page.getByRole('button',{name:'Chuyển sang ảnh raster để sửa',exact:true}).click();
     await page.getByRole('dialog').waitFor();
     await page.getByRole('dialog').getByRole('button',{name:'Áp dụng thay đổi',exact:true}).click();
     await page.waitForFunction(()=>applicationTest.controller.getSnapshot().project.sourceCanvas?.editable&&!applicationTest.controller.getSnapshot().job,undefined,{timeout:45000});

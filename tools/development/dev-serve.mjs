@@ -57,6 +57,15 @@ const {createBackend}=await import(pathToFileURL(join(root,'src/server/app.mjs')
 const after=[];
 const f=await setup({after(fn){after.push(fn);}});
 f.provider.metadata.models[0].qualities=['test'];f.provider.metadata.models[0].sizes=['1x1'];f.provider.metadata.prices.currency='USD';
+// The fixture clock is frozen for deterministic tests. The application persists a
+// monotonic "last seen" watermark from serverTime and treats a server clock more
+// than five minutes behind it as a rollback (src/storage/access.mjs), which locks
+// the store into rescue mode: with a frozen backend every reload after a session
+// longer than five minutes showed "Phiên đã hết hạn". Keep the fixture's base
+// time (its sessions and the IdP were minted at it) and advance it in real time.
+const clockBase=f.clock(),clockStarted=Date.now();
+const clockTicker=setInterval(()=>f.setTime(clockBase+(Date.now()-clockStarted)),250);
+clockTicker.unref();after.push(()=>clearInterval(clockTicker));
 await f.app.close();
 f.app=createBackend({...f.config,origin});
 const backend=await f.app.listen(0);

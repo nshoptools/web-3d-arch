@@ -55,3 +55,19 @@ test('RO-01: an incomplete package is still kept whole so nothing unread is lost
  assert.ok(loaded.manifest.dependencies.includes(imported.originalPackageHash),'an incomplete package is retained as a dependency');
  assert.ok(loaded.assets.some(a=>a.hash===imported.originalPackageHash&&isRescuePackage(a.bytes)));
 });
+
+test('restore: a deleted project reopened from its own package keeps its id and its document',async()=>{
+ const store=await storeFixture();
+ await store.commit(generation('keep'));
+ const pkg=await exportRescuePackage(store,'keep');
+ // A second generation stands in for the deletion record the app writes over a deleted project.
+ await store.commit({...generation('keep'),expectedRevision:1,transactionId:'tx-'+crypto.randomUUID(),document:{title:'Đã xóa',revision:2,retainedAssets:[]}});
+ assert.equal((await store.load('keep')).headRevision,2);
+ await assert.rejects(()=>importRescueCopy(store,pkg.bytes,{projectId:'keep',transactionId:'tx-'+crypto.randomUUID()}),e=>e.code==='IMPORT_TARGET_EXISTS');
+ await assert.rejects(()=>importRescueCopy(store,pkg.bytes,{projectId:'keep',transactionId:'tx-'+crypto.randomUUID(),expectedRevision:1}),e=>e.code==='IMPORT_TARGET_MOVED');
+ const restored=await importRescueCopy(store,pkg.bytes,{projectId:'keep',transactionId:'tx-'+crypto.randomUUID(),expectedRevision:2});
+ assert.equal(restored.status,'restored');
+ const loaded=await store.load('keep');
+ assert.equal(loaded.status,'editable');assert.equal(loaded.headRevision,3);assert.equal(loaded.manifest.document.title,'Dự án gốc');
+ assert.equal(loaded.assets.find(a=>a.kind==='source')?.bytes.length,source.length,'the source bytes come back with the restore');
+});

@@ -96,6 +96,14 @@ export function AppShell() {
     }
   }, [actions, projectOpen, state.toasts])
 
+  // A message is about the project it was shown on. When another project takes
+  // the screen (open, create, delete, package), what was said about the previous
+  // one goes with it; the log keeps every line (Grok F-10).
+  const projectId = snapshot.project.id
+  useEffect(() => {
+    actions.clearToasts()
+  }, [actions, projectId])
+
   const onCommand = useCallback(
     (commandId: string) => {
       // One gate, stated the same way for every route into it.

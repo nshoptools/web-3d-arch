@@ -12,7 +12,7 @@ const STEP_LABEL: Record<1 | 2, string> = {
   1: 'Nguồn & màu',
   2: 'Mô hình 3D',
 }
-/** The same two steps at phone width, where the long words cost a whole row. */
+/** The same two steps where the long words cost a whole row (≤ 1400 px). */
 const STEP_SHORT: Record<1 | 2, string> = {
   1: 'Nguồn',
   2: '3D',
@@ -26,6 +26,10 @@ const STEP_SHORT: Record<1 | 2, string> = {
  * the two step chips, quick search and exactly one primary action — the thing
  * to do next (build, rebuild, open the model, export). No action here is
  * repeated elsewhere on the same screen.
+ *
+ * Above 1180 px the bar is one row and its height never changes: what does
+ * not fit folds into an icon with an accessible name, never onto a second
+ * row, so switching sections never moves the frame below it (UI-01).
  */
 export function TopBar({ inert = false }: { inert?: boolean }) {
   const snapshot = useSnapshot()
@@ -103,7 +107,11 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
                               ? 'check'
                               : 'chevronLeft'
                     }
-                    title={value === 1 && step === 2 ? nav.backNote : undefined}
+                    title={
+                      value === 1 && step === 2
+                        ? nav.backNote
+                        : `Bước ${value} · ${STEP_LABEL[value]} · ${status}`
+                    }
                     onClick={() => nav.goToStep(value)}
                   >
                     <span className="topbar__step-long">
@@ -114,9 +122,7 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
                     </span>
                     {/* UI-01: the state is carried by a word as well as by the
                         icon and the colour, never by colour alone. */}
-                    <span className="chip chip--muted fc-border" style={{ marginInlineStart: 4 }}>
-                      {status}
-                    </span>
+                    <span className="chip chip--muted fc-border topbar__step-status">{status}</span>
                   </Button>
                 </li>
               )
@@ -136,14 +142,17 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
             onClick={() => actions.openSearch(true)}
             aria-keyshortcuts="Control+K"
             aria-label="Tìm nhanh"
+            title="Tìm nhanh thông số, lệnh, mẫu, công cụ (Ctrl K)"
           >
             <span className="topbar__search-label">Tìm nhanh</span>
           </Button>
         ) : null}
 
         <span
-          className={`chip ${snapshot.online ? 'chip--ok' : 'chip--warn'} fc-border`}
+          className={`chip ${snapshot.online ? 'chip--ok' : 'chip--warn'} fc-border topbar__online`}
+          data-online={snapshot.online ? 'true' : 'false'}
           title={snapshot.online ? 'Đang trực tuyến' : 'Đang ngoại tuyến'}
+          role="status"
         >
           <Icon name={snapshot.online ? 'online' : 'offline'} size={14} />
           <span className="topbar__online-label">{snapshot.online ? 'Trực tuyến' : 'Ngoại tuyến'}</span>
@@ -175,7 +184,9 @@ export function TopBar({ inert = false }: { inert?: boolean }) {
                 ? 'chevronRight'
                 : nav.advanceKind === 'export'
                   ? 'download'
-                  : 'cube'
+                  : nav.advanceKind === 'source-step'
+                    ? 'refresh'
+                    : 'cube'
             }
             keyHint="Ctrl ⏎"
             aria-keyshortcuts="Control+Enter"

@@ -105,7 +105,7 @@ export function ProductSection() {
         </legend>
         {/* Arrow keys move between the radios and select as they go, which is
             what the radiogroup pattern requires. */}
-        <div className="stack" ref={groupRef} role="radiogroup" aria-label="Loại sản phẩm">
+        <div className="pick" ref={groupRef} role="radiogroup" aria-label="Loại sản phẩm">
           {PRODUCTS.map((item, index) => {
             const selected = product === item.id
             return (
@@ -134,24 +134,17 @@ export function ProductSection() {
                     void changeProduct.run(target.id)
                   }
                 }}
-                className="btn fc-border"
-                style={{
-                  justifyContent: 'flex-start',
-                  textAlign: 'start',
-                  paddingBlock: 8,
-                  borderColor: selected ? 'var(--sec-product)' : undefined,
-                }}
+                className="pick__item fc-border"
+                data-product={item.id}
                 onClick={() => {
                   if (writeBlocked || selected) return
                   void changeProduct.run(item.id)
                 }}
               >
-                <span style={{ display: 'grid', gap: 2 }}>
-                  <span>
-                    {selected ? '● ' : '○ '}
-                    {item.label}
-                  </span>
-                  <span className="muted-3">{item.sub}</span>
+                <span className="pick__mark" aria-hidden="true" />
+                <span className="pick__text">
+                  <span className="pick__label">{item.label}</span>
+                  <span className="pick__sub">{item.sub}</span>
                 </span>
               </button>
             )

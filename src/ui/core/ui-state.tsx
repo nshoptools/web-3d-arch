@@ -114,6 +114,7 @@ export type UiAction =
   | { type: 'diagnostics-seen'; count: number }
   | { type: 'toast-add'; toast: ToastItem }
   | { type: 'toast-remove'; id: string }
+  | { type: 'toast-clear' }
   | { type: 'log-add'; item: LogItem }
   | { type: 'log-clear' }
   | { type: 'dialog-open'; entry: DialogEntry }
@@ -188,10 +189,19 @@ export function uiReducer(state: UiState, action: UiAction): UiState {
       return { ...state, blockPopup: action.value }
     case 'diagnostics-seen':
       return { ...state, diagnosticsSeen: action.count }
-    case 'toast-add':
-      return { ...state, toasts: [...state.toasts, action.toast].slice(-4) }
+    case 'toast-add': {
+      // The same sentence twice is one message: a repeated refusal replaces its
+      // earlier copy instead of stacking under it, and the stack never grows
+      // past three so it cannot bury the tab bar on a phone.
+      const kept = state.toasts.filter(
+        (toast) => !(toast.tone === action.toast.tone && toast.text === action.toast.text),
+      )
+      return { ...state, toasts: [...kept, action.toast].slice(-3) }
+    }
     case 'toast-remove':
       return { ...state, toasts: state.toasts.filter((toast) => toast.id !== action.id) }
+    case 'toast-clear':
+      return state.toasts.length === 0 ? state : { ...state, toasts: [] }
     case 'log-add':
       return { ...state, log: [action.item, ...state.log].slice(0, 200) }
     case 'log-clear':
@@ -284,6 +294,8 @@ export interface UiActions {
   markDiagnosticsSeen: (count: number) => void
   toast: (tone: Tone, text: string, detail?: string) => void
   dismissToast: (id: string) => void
+  /** Every message on screen at once; the log keeps them. */
+  clearToasts: () => void
   logEvent: (tone: Tone, text: string, options?: { detail?: string; code?: string }) => void
   clearLog: () => void
   openDialog: (spec: DialogSpec) => void
@@ -336,6 +348,7 @@ export function useUiActions(): UiActions {
           toast: { id: uid('toast'), tone, text, ...(detail ? { detail } : {}) },
         }),
       dismissToast: (id) => dispatch({ type: 'toast-remove', id }),
+      clearToasts: () => dispatch({ type: 'toast-clear' }),
       logEvent,
       clearLog: () => dispatch({ type: 'log-clear' }),
       openDialog: (spec) => dispatch({ type: 'dialog-open', entry: { id: uid('dlg'), spec } }),

@@ -2,6 +2,7 @@ import { useAsyncAction, useBridge, useCapability, useSnapshot } from '../core/b
 import { useUiActions } from '../core/ui-state.tsx'
 import { CAP } from '../core/registry.ts'
 import { ACCEPT_PROJECT, chooseFile } from '../core/file-dialog.ts'
+import { useRebuildAfterOpen } from '../core/open-project.ts'
 import { Button } from '../components/Button.tsx'
 import { CreateProjectCard } from '../sections/CreateProjectCard.tsx'
 import { SavedProjectList } from '../sections/SavedProjectList.tsx'
@@ -24,11 +25,14 @@ export function StartScreen() {
   const writeBlocked = write.available ? null : write.reason
   const { session, library } = snapshot
 
+  const rebuild = useRebuildAfterOpen()
   const importProject = useAsyncAction(
     async () => {
       const file = await chooseFile(ACCEPT_PROJECT)
       if (!file) return
-      return bridge.importFile(file, 'project')
+      const result = await bridge.importFile(file, 'project')
+      if (result.ok) await rebuild()
+      return result
     },
     { success: 'Đã mở gói dự án.', announce: 'Đã mở gói dự án.' },
   )

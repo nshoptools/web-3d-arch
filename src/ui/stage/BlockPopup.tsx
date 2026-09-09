@@ -8,6 +8,7 @@ import { Button } from '../components/Button.tsx'
 import { NumberField, SelectField } from '../components/Fields.tsx'
 import { Icon } from '../components/Icon.tsx'
 import { TextControls } from '../text/TextControls.tsx'
+import { materialName, selectionName } from '../core/names.ts'
 
 const DEFAULT_POSITION = { x: 120, y: 120 }
 
@@ -57,8 +58,11 @@ export function BlockPopup() {
 
   if (!open || !selection) return null
 
-  const material = snapshot.project.materials.find((item) => item.id === selection.blockId) ?? null
+  const block = snapshot.project.blocks.find((item) => item.id === selection.blockId) ?? null
+  const material =
+    snapshot.project.materials.find((item) => item.id === (block?.materialId ?? selection.blockId)) ?? null
   const isTextBlock = selection.kind === 'text'
+  const title = selectionName(snapshot.project) ?? selection.label
 
   const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (mobile) return
@@ -91,7 +95,7 @@ export function BlockPopup() {
       ref={ref}
       className="popup fc-border"
       role="dialog"
-      aria-label={`Khối ${selection.label}`}
+      aria-label={`Khối ${title}`}
       data-shortcut-scope="local"
       style={mobile ? undefined : { insetInlineStart: position.x, insetBlockStart: position.y }}
     >
@@ -104,8 +108,8 @@ export function BlockPopup() {
         onDoubleClick={() => setPosition(DEFAULT_POSITION)}
       >
         <Icon name="drag" size={15} />
-        <span className="popup__title">{selection.label}</span>
-        <span className="chip chip--muted fc-border">phạm vi: khối</span>
+        <span className="popup__title">{title}</span>
+        <span className="chip chip--muted fc-border">chỉ khối này</span>
         <Button
           size="small"
           variant="ghost"
@@ -124,12 +128,6 @@ export function BlockPopup() {
           </p>
         </div>
 
-        <div className="row">
-          <span className="muted">ID khối</span>
-          <code className="diag__code">{selection.blockId}</code>
-          <span className="chip chip--muted fc-border">{selection.kind}</span>
-        </div>
-
         {material ? (
           <>
             <div className="row">
@@ -138,7 +136,7 @@ export function BlockPopup() {
                 style={{ background: material.color, display: 'inline-block' }}
                 aria-hidden="true"
               />
-              <span className="grow">{material.label}</span>
+              <span className="grow">{materialName(material)}</span>
               <code className="diag__code">{material.color}</code>
             </div>
             <SelectField
@@ -208,6 +206,14 @@ export function BlockPopup() {
             <TextControls place="popup" />
           </>
         ) : null}
+
+        <details className="details">
+          <summary>Chi tiết kỹ thuật</summary>
+          <div className="muted-3">
+            Mã khối <code className="diag__code">{selection.blockId}</code> · loại{' '}
+            <code className="diag__code">{selection.kind}</code>
+          </div>
+        </details>
       </div>
     </div>
   )

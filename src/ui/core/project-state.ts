@@ -17,6 +17,33 @@ export function hasProject(project: ProjectView): boolean {
   return project.id !== ''
 }
 
+/**
+ * The step a picture or an emoji still needs before anything can be built.
+ *
+ * A picture comes in as it is. Until its colour regions are separated there is
+ * nothing to paint on and nothing to build, and the core refuses the build with
+ * PRODUCT_SOURCE_CONVERSION_REQUIRED. Both steps are the same command
+ * (`source.convert`), each with its own consent: first the editable raster,
+ * then the region separation of that raster. `materialCount` is the field that
+ * says the regions exist; the canvas being editable says the raster does.
+ */
+export interface SourceNextStep {
+  kind: 'convert' | 'segment'
+  /** The button label, the same wherever the step is offered. */
+  label: string
+  /** The step as a verb phrase, for sentences about it. */
+  verb: string
+}
+
+export function sourceNextStep(project: ProjectView): SourceNextStep | null {
+  const source = project.source
+  if (source === null || project.stats.materialCount > 0) return null
+  const editable = project.sourceCanvas !== null && project.sourceCanvas.editable
+  if (editable) return { kind: 'segment', label: 'Tách vùng màu để dựng', verb: 'tách vùng màu' }
+  if (source.kind !== 'raster' && source.kind !== 'emoji') return null
+  return { kind: 'convert', label: 'Chuyển sang ảnh raster để sửa', verb: 'chuyển sang ảnh raster' }
+}
+
 export const NO_PROJECT_REASON =
   'Chưa mở dự án nào. Tạo dự án mới hoặc mở dự án đã lưu ở màn hình bắt đầu.'
 

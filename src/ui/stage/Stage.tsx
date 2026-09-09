@@ -16,12 +16,12 @@ import { Button } from '../components/Button.tsx'
 import { Icon } from '../components/Icon.tsx'
 import { ProgressBar } from '../components/Feedback.tsx'
 import { PanelTab } from '../layout/Panel.tsx'
-import { Tools2D } from './Tools2D.tsx'
+import { CanvasControls, Tools2D } from './Tools2D.tsx'
 import { View3D } from './View3D.tsx'
 import { StageHints } from './StageHints.tsx'
 import { SourceCanvas, SourceImageRecovery } from './SourceCanvas.tsx'
 import { SourceCanvasProvider } from './source-canvas-state.tsx'
-import { diagnosticText, formatNumber, jobStageText, jobStateText, VERDICT_LABEL } from '../core/text.ts'
+import { diagnosticText, formatNumber, jobStageText, jobStateText, VERDICT_SHORT } from '../core/text.ts'
 
 /**
  * The overlay bands of the stage float over the drawing surface. At 320 CSS px
@@ -36,6 +36,16 @@ interface BandDef {
   defaultOpen: boolean
   open: boolean
 }
+
+const SOURCE_KIND_LABEL: Record<string, string> = {
+  raster: 'ảnh',
+  svg: 'SVG',
+  text: 'chữ',
+  emoji: 'emoji',
+}
+
+/** Job stages in which the core is waiting for the person, not working. */
+const WAITING_STAGES = new Set(['source confirmation', 'geometry confirmation', 'Source and datum confirmation'])
 
 export function Stage({ inert = false }: { inert?: boolean }) {
   const snapshot = useSnapshot()
@@ -54,6 +64,11 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   const hasModel = hasVisibleModel(project)
   const modelStale = modelIsStale(project)
   const busy = job !== null
+  // The core keeps the job open while it waits for an answer in the consent
+  // dialog. That is the person's turn, not the machine's: the card says so
+  // instead of "running", and offers no cancel next to a dialog that already
+  // has "Bỏ qua" (Grok F-07).
+  const waiting = job !== null && WAITING_STAGES.has(job.stage)
 
   /**
    * `attachViewport` is the bridge's own 3D renderer host and nothing else: the
@@ -148,6 +163,8 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   // everything. Opening the log or pressing “Đã xem” marks the current list.
   const seen = Math.min(state.diagnosticsSeen, diagnostics.length)
   const problems = diagnostics.slice(seen).filter((item) => item.severity !== 'info')
+  // The newest one is the one about what the person just did.
+  const firstProblem = problems.at(-1) ?? null
 
   /**
    * One sentence for one fact: with no model the controller publishes no
@@ -165,14 +182,13 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                 ? `${formatNumber(project.source.widthMm)} × ${formatNumber(project.source.heightMm)} mm`
                 : 'chưa có',
           },
-          { label: 'Nguồn', value: project.source ? project.source.kind : 'chưa có' },
           {
-            label: 'Ảnh sửa',
-            value:
-              project.sourceCanvas === null
-                ? 'chưa có'
-                : `bản ${project.sourceCanvas.revision}`,
+            label: 'Nguồn',
+            value: project.source ? (SOURCE_KIND_LABEL[project.source.kind] ?? project.source.kind) : 'chưa có',
           },
+          ...(project.sourceCanvas !== null && project.sourceCanvas.revision > 0
+            ? [{ label: 'Ảnh sửa', value: `bản ${project.sourceCanvas.revision}` }]
+            : []),
         ]
       : [
           {
@@ -186,7 +202,7 @@ export function Stage({ inert = false }: { inert?: boolean }) {
             label: 'Tam giác',
             value: hasModel ? formatNumber(project.stats.triangles ?? 0, 0) : NOT_BUILT,
           },
-          { label: 'Kiểm mesh', value: hasModel ? VERDICT_LABEL[project.stats.verdict] : NOT_BUILT },
+          { label: 'Kiểm mesh', value: hasModel ? VERDICT_SHORT[project.stats.verdict] : NOT_BUILT },
         ]
 
   // Every band folds; on a narrow viewport the two that carry the most text
@@ -206,17 +222,6 @@ export function Stage({ inert = false }: { inert?: boolean }) {
       defaultOpen: true,
       open: isGroupOpen(state, 'stage-tools', true),
     },
-    ...(step === 1
-      ? [
-          {
-            id: 'w3a-canvas-controls',
-            label: 'Khung ảnh và tọa độ',
-            group: 'stage-canvas-controls',
-            defaultOpen: !mobile,
-            open: isGroupOpen(state, 'stage-canvas-controls', !mobile),
-          },
-        ]
-      : []),
     {
       id: 'w3a-stage-hints',
       label: 'Gợi ý',
@@ -227,6 +232,12 @@ export function Stage({ inert = false }: { inert?: boolean }) {
   ]
   const bandOpen = (group: string) => bands.find((band) => band.group === group)?.open ?? true
   const allCollapsed = bands.every((band) => !band.open)
+
+  // Before the first source there is nothing to measure, nothing to paint on
+  // and nothing to hint at: the frame carries the ways in and nothing else, so
+  // the person is not looking at a wall of dimmed controls (UI-03).
+  const frameEmpty = step === 1 && !hasSource
+  const toolsInert = step === 1 ? !hasSource : !hasModel
 
   return (
     <main
@@ -259,7 +270,7 @@ export function Stage({ inert = false }: { inert?: boolean }) {
     >
       <PanelTab />
       <SourceCanvasProvider>
-        <div className="stage fc-border" data-drop={dropActive ? 'true' : 'false'}>
+        <div className="stage fc-border" data-drop={dropActive ? 'true' : 'false'} data-frame={frameEmpty ? 'empty' : 'source'}>
           {step === 1 ? (
             <SourceCanvas />
           ) : (
@@ -272,142 +283,148 @@ export function Stage({ inert = false }: { inert?: boolean }) {
             />
           )}
 
-          <div className="stage__layer" data-bands={allCollapsed ? 'collapsed' : 'open'}>
-            {/* Always visible, never inert: the way back to anything folded. */}
-            <div
-              className="stage__bar"
-              role="group"
-              aria-label="Thu gọn hoặc mở các dải thông tin của khung xem"
-            >
-              {bands.map((band) => (
-                <button
-                  key={band.id}
-                  type="button"
-                  className="btn btn--small btn--ghost fc-border"
-                  aria-expanded={band.open}
-                  aria-controls={band.id}
-                  aria-label={band.label}
-                  title={band.label}
-                  data-band={band.group}
-                  onClick={() => actions.setGroupOpen(band.group, !band.open)}
-                >
-                  <Icon name={band.open ? 'chevronDown' : 'chevronRight'} size={14} />
-                  {/* The label folds away on a narrow viewport; the accessible
-                      name stays on the button either way. */}
-                  <span className="stage__bar-label">{band.label}</span>
-                </button>
-              ))}
-            </div>
-
-            <div className="stage__top">
+          {!frameEmpty ? (
+            <div className="stage__layer" data-bands={allCollapsed ? 'collapsed' : 'open'}>
+              {/* Always visible, never inert: the way back to anything folded. */}
               <div
-                id="w3a-stage-readouts"
-                className="readouts"
+                className="stage__bar"
                 role="group"
-                aria-label="Chỉ số khung xem"
-                hidden={!bandOpen('stage-readouts')}
+                aria-label="Thu gọn hoặc mở các dải thông tin của khung xem"
               >
-                {readouts.map((item) => (
-                  <span key={item.label} className="chip chip--glass fc-border">
-                    <span className="muted-3">{item.label}</span>
-                    {item.value}
-                  </span>
+                {bands.map((band) => (
+                  <button
+                    key={band.id}
+                    type="button"
+                    className="btn btn--small btn--ghost fc-border"
+                    aria-expanded={band.open}
+                    aria-controls={band.id}
+                    aria-label={band.label}
+                    title={band.label}
+                    data-band={band.group}
+                    onClick={() => actions.setGroupOpen(band.group, !band.open)}
+                  >
+                    <Icon name={band.open ? 'chevronDown' : 'chevronRight'} size={14} />
+                    {/* The label folds away on a narrow viewport; the accessible
+                        name stays on the button either way. */}
+                    <span className="stage__bar-label">{band.label}</span>
+                  </button>
                 ))}
               </div>
-              {/* Job state is never foldable: it is the one thing that explains
-                  why the picture on screen is not the current one. */}
-              {busy ? (
-                <span className="chip chip--warn fc-border">Kết quả cũ · đang cập nhật</span>
-              ) : null}
-              {/* The other reason the picture is not the current one, and the
-                  one that survives after the job ends: the numbers above were
-                  measured on the retained lease, and contract 0.3 publishes
-                  which revision that is. Not foldable either — a size and a
-                  mesh verdict read as facts about the design on screen. */}
-              {step === 2 && modelStale ? (
-                <span
-                  className="chip chip--warn fc-border"
-                  data-readout-stale="true"
-                  title={visibleModelNote(project) ?? undefined}
-                >
-                  Chỉ số của mô hình cũ · bản sửa {project.visibleModelRevision}
-                </span>
-              ) : null}
-              {/* UI-03: when the stage is empty the toolbars mean nothing, so
-                  they are inert rather than merely covered. Step 2 depends on a
-                  model, not on a source. */}
-              <div className="stage-tools" inert={step === 1 ? !hasSource : !hasModel}>
-                {step === 1 ? <Tools2D /> : <View3D />}
-              </div>
-            </div>
 
-            <div className="stage__spacer" aria-hidden="true" />
-
-            <div className="stage__bottom">
-              <div className="stage__bottom-left">
-                {problems.length > 0 ? (
-                  <div className="stage-warnings card card--glass fc-border" style={{ padding: 8, maxInlineSize: 'min(420px, 100%)' }}>
-                    <div className="row">
-                      <strong style={{ color: problems[0]?.severity === 'error' ? 'var(--err)' : 'var(--warn)' }}>
-                        {problems.length} vấn đề cần xem
-                      </strong>
-                      <Button
-                        size="small"
-                        onClick={() => {
-                          actions.markDiagnosticsSeen(diagnostics.length)
-                          actions.openDialog({ kind: 'diagnostics' })
-                        }}
-                      >
-                        Mở nhật ký
-                      </Button>
-                      <Button
-                        size="small"
-                        variant="ghost"
-                        icon="check"
-                        aria-label="Đánh dấu các vấn đề này là đã xem"
-                        onClick={() => actions.markDiagnosticsSeen(diagnostics.length)}
-                      >
-                        Đã xem
-                      </Button>
-                    </div>
-                    {/* The count and the way in stay; only the wording folds. */}
-                    {bandOpen('stage-hints') ? (
-                      <p className="muted" style={{ margin: 0 }}>
-                        {problems[0]?.message}
-                      </p>
-                    ) : null}
+              <div className="stage__top">
+                <div className="stage__top-left">
+                  <div
+                    id="w3a-stage-readouts"
+                    className="readouts"
+                    role="group"
+                    aria-label="Chỉ số khung xem"
+                    hidden={!bandOpen('stage-readouts')}
+                  >
+                    {readouts.map((item) => (
+                      <span key={item.label} className="chip chip--glass fc-border">
+                        <span className="muted-3">{item.label}</span>
+                        {item.value}
+                      </span>
+                    ))}
                   </div>
-                ) : null}
-                <div
-                  className="stage-hints"
-                  id="w3a-stage-hints"
-                  hidden={!bandOpen('stage-hints')}
-                >
-                  <StageHints />
+                  {/* Job state is never foldable: it is the one thing that explains
+                      why the picture on screen is not the current one. */}
+                  {busy ? (
+                    <span className="chip chip--warn fc-border">Kết quả cũ · đang cập nhật</span>
+                  ) : null}
+                  {/* The other reason the picture is not the current one, and the
+                      one that survives after the job ends: the numbers above were
+                      measured on the retained lease, and contract 0.3 publishes
+                      which revision that is. Not foldable either — a size and a
+                      mesh verdict read as facts about the design on screen. */}
+                  {step === 2 && modelStale ? (
+                    <span
+                      className="chip chip--warn fc-border"
+                      data-readout-stale="true"
+                      title={visibleModelNote(project) ?? undefined}
+                    >
+                      Chỉ số của mô hình cũ · bản sửa {project.visibleModelRevision}
+                    </span>
+                  ) : null}
+                </div>
+                {/* UI-03: when the stage is empty the toolbars mean nothing, so
+                    they are inert rather than merely covered. Step 2 depends on a
+                    model, not on a source. */}
+                <div id="w3a-stage-tools" className="stage-tools" inert={toolsInert} hidden={!bandOpen('stage-tools')}>
+                  {step === 1 ? <Tools2D /> : <View3D />}
                 </div>
               </div>
 
-              {/* Folds with the tool band: it is a tool, and at 320 px every
-                  row it keeps is a row the drawing surface loses. */}
-              <div
-                className="stage-corner"
-                hidden={!bandOpen('stage-tools')}
-                inert={step === 1 ? !hasSource : !hasModel}
-              >
-                <Button
-                  size="small"
-                  icon="explode"
-                  disabledReason={
-                    step === 2 ? null : 'Tách tầng chỉ có ở bước 2, sau khi đã dựng mô hình.'
-                  }
-                  reasonHidden
-                  onClick={() => void run({ type: 'viewport.action', action: 'explode' })}
+              <div className="stage__spacer" aria-hidden="true" />
+
+              <div className="stage__bottom">
+                <div className="stage__bottom-left">
+                  {problems.length > 0 && firstProblem ? (
+                    <div className="stage-warnings card card--glass fc-border" style={{ padding: 8, maxInlineSize: 'min(460px, 100%)' }} role="status">
+                      <div className="row">
+                        <strong style={{ color: firstProblem.severity === 'error' ? 'var(--err)' : 'var(--warn)' }}>
+                          {problems.length === 1 ? 'Một vấn đề cần xem' : `${problems.length} vấn đề cần xem`}
+                        </strong>
+                        <Button
+                          size="small"
+                          onClick={() => {
+                            actions.markDiagnosticsSeen(diagnostics.length)
+                            actions.openDialog({ kind: 'diagnostics' })
+                          }}
+                        >
+                          Mở nhật ký
+                        </Button>
+                        <Button
+                          size="small"
+                          variant="ghost"
+                          icon="check"
+                          aria-label="Đánh dấu các vấn đề này là đã xem"
+                          onClick={() => actions.markDiagnosticsSeen(diagnostics.length)}
+                        >
+                          Đã xem
+                        </Button>
+                      </div>
+                      {/* The count and the way in stay; only the wording folds.
+                          The sentence is the one the person can act on; the
+                          code stays in the log. */}
+                      {bandOpen('stage-hints') ? (
+                        <p className="muted" style={{ margin: 0 }} data-problem-code={firstProblem.code}>
+                          {diagnosticText(firstProblem.code, firstProblem.message)}
+                        </p>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  <div
+                    className="stage-hints"
+                    id="w3a-stage-hints"
+                    hidden={!bandOpen('stage-hints')}
+                  >
+                    <StageHints />
+                  </div>
+                </div>
+
+                {/* Folds with the tool band: it is a tool, and at 320 px every
+                    row it keeps is a row the drawing surface loses. */}
+                <div
+                  className="stage-corner"
+                  hidden={!bandOpen('stage-tools')}
+                  inert={toolsInert}
                 >
-                  Tách tầng
-                </Button>
+                  {step === 1 ? (
+                    <CanvasControls />
+                  ) : (
+                    <Button
+                      size="small"
+                      icon="explode"
+                      onClick={() => void run({ type: 'viewport.action', action: 'explode' })}
+                    >
+                      Tách tầng
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
 
           {/* The frame is empty until the project has a source. The card names
               every way in, in the order most people take them; the workspace
@@ -462,7 +479,12 @@ export function Stage({ inert = false }: { inert?: boolean }) {
               >
                 <div className="row">
                   <strong className="grow">{jobStageText(job.stage)}</strong>
-                  <span className="chip chip--muted fc-border">{jobStateText(job.state)}</span>
+                  <span
+                    className={`chip fc-border ${waiting ? 'chip--warn' : 'chip--muted'}`}
+                    data-job-waiting={waiting ? 'true' : 'false'}
+                  >
+                    {waiting ? 'chờ bạn trả lời' : jobStateText(job.state)}
+                  </span>
                 </div>
                 <ProgressBar value={job.progress} label={`Tiến độ: ${jobStageText(job.stage)}`} />
                 {/* The job id is for the log and a bug report, not for the person
@@ -475,17 +497,21 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                   </div>
                 </details>
                 <div className="row">
-                  <Button
-                    variant="danger"
-                    icon="cancel"
-                    disabled={cancelJob.pending}
-                    disabledReason={
-                      job.cancellable ? null : 'Công đoạn này đã qua mốc hủy được của nhân.'
-                    }
-                    onClick={() => void cancelJob.run(job.id)}
-                  >
-                    {job.state === 'cancelling' ? 'Đang hủy…' : 'Hủy'}
-                  </Button>
+                  {waiting ? (
+                    <span className="muted-3">Trả lời trong hộp xác nhận: Áp dụng hoặc Bỏ qua.</span>
+                  ) : (
+                    <Button
+                      variant="danger"
+                      icon="cancel"
+                      disabled={cancelJob.pending}
+                      disabledReason={
+                        job.cancellable ? null : 'Công đoạn này đã qua mốc hủy được của nhân.'
+                      }
+                      onClick={() => void cancelJob.run(job.id)}
+                    >
+                      {job.state === 'cancelling' ? 'Đang hủy…' : 'Hủy'}
+                    </Button>
+                  )}
                   <Button
                     icon="save"
                     onClick={() => void run({ type: 'project.save' }, { success: 'Đã lưu dự án.' })}

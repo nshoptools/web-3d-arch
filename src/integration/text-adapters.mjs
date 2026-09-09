@@ -96,9 +96,9 @@ export function createTextAdapters({catalog,invoke,context}){
       result.metadata.sourceConversion=copy(preparation);
       pending={preparation:copy(preparation),confirmation:copy(confirmation)};
       return {status:'proposal',result,confirmation,changes:[
-        'Convert the retained source to '+v.width+'×'+v.height+' sRGB RGBA8 for editing.',
-        'Retain original bytes, text, font/artwork hashes and variation records.',
-        'Sampling can change small features; material color reduction and manufacturing accuracy remain unverified.',
+        'Chuyển nguồn đã giữ thành ảnh '+v.width+'×'+v.height+' điểm (sRGB, RGBA8) để sửa.',
+        'Giữ nguyên byte gốc, chữ, hash của font/hình và các bản ghi biến thể.',
+        'Lấy mẫu có thể làm đổi chi tiết nhỏ; việc giảm màu vật liệu và độ chính xác chế tạo chưa được kiểm chứng.',
       ]};
     }
     return result;

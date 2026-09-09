@@ -1,6 +1,7 @@
 import {VERSION,assert,error,data,uuid,sha256,canonicalJSON,decode,parseJSON,boundedBytes,fileName,adapter,sameOrigin,freeze,assertTicket,keys,utf8} from './common.mjs';
 import {inspectRescuePackage,importRescueCopy} from '../storage/index.mjs';
-import {contentEdit,validateState,verifyDocument} from './documents.mjs';
+import {contentEdit,validateState,validateDocument,verifyDocument} from './documents.mjs';
+import {PROJECT_MESSAGES} from './project-messages.mjs';
 import {boundedSourceMetadata,sourceConfirmation,sourceReceipt,createSourceContext,sourcePreparation} from './source-approval.mjs';
 import {candidateHash} from './proposals.mjs';
 import {validateProductMaterialExtension} from '../contracts/product-material.mjs';
@@ -189,7 +190,27 @@ export class SourceOperations {
    const inspected=await inspectRescuePackage(bytes);if(inspected.status==='read-only')throw error('PROJECT_READ_ONLY');
    const assets=new Map(inspected.manifest.assets.map(a=>[a.hash,{...a,bytes:inspected.files.get('assets/'+a.hash+'.bin')}]));
    await verifyDocument(inspected.manifest.document,assets);this.guard(epoch);
-   await this.enqueue(async()=>{this.guard(epoch);const copyId=uuid();await importRescueCopy(this.store,bytes,{projectId:copyId});this.guard(epoch);await this.open(copyId);await this.refreshLibrary();});return;
+   // The package carries the project's own id, and the document inside is bound
+   // to it: source bindings, confirmation receipts and raster preparations all
+   // name the project. A copy under a fresh id opens, but nothing in it can be
+   // rebuilt (PRODUCT_BINDINGS_STALE). So the package goes back under its own
+   // id when that id is free or holds only the deletion record; a project still
+   // live under that id is opened as it is; and only an unreadable record
+   // leaves the copy-on-write path as the last resort, said as a diagnostic.
+   const original=inspected.manifest.projectId;let target=uuid(),expectedRevision=0,note=null;
+   const held=await this.store.load(original);this.guard(epoch);
+   if(held.status==='empty')target=original;
+   else if(held.status==='editable'){
+    let deleted=false;try{deleted=validateDocument(held.manifest.document).state.content.app.deleted===true;}catch{deleted=false;}
+    if(deleted){target=original;expectedRevision=held.headRevision;}
+    else{
+     await this.enqueue(async()=>{this.guard(epoch);await this.open(original);await this.refreshLibrary();});
+     this.diagnostics=this.diagnostics.concat({code:'PACKAGE_PROJECT_EXISTS',message:PROJECT_MESSAGES.PACKAGE_PROJECT_EXISTS,severity:'warning'});this.emit();return;
+    }
+   }else note='PACKAGE_IMPORTED_AS_COPY';
+   await this.enqueue(async()=>{this.guard(epoch);await importRescueCopy(this.store,bytes,{projectId:target,expectedRevision});this.guard(epoch);await this.open(target);await this.refreshLibrary();});
+   if(note){this.diagnostics=this.diagnostics.concat({code:note,message:PROJECT_MESSAGES[note],severity:'warning'});this.emit();}
+   return;
   }
   assert(['source','mesh','font'].includes(purpose),'IMPORT_PURPOSE');
   await this.sourceJob(async()=>({file:{name:file.name,mediaType:file.type,bytes}}),purpose);
@@ -214,7 +235,35 @@ export class SourceOperations {
   }finally{this.finishJob(job);}
  });}
  url(hash){if(!hash)return undefined;if(!this.urls.has(hash)){const a=this.assets.get(hash);if(!a)return undefined;this.urls.set(hash,this.objectURLs.createObjectURL(new Blob([a.bytes],{type:'image/png'})));}return this.urls.get(hash);}
- async queryEmoji(query,collectionId,offset){const a=adapter(this.adapters.source);assert(a.queryEmoji,'EMOJI_UNSUPPORTED');const result=await a.queryEmoji(query,collectionId,offset);for(const e of result.entries)e.previewUrl=sameOrigin(this.origin,e.previewUrl).href;return result;}
+ async queryEmoji(query,collectionId,offset){
+  const a=adapter(this.adapters.source);assert(a.queryEmoji,'EMOJI_UNSUPPORTED');
+  const publish=result=>{for(const e of result.entries)e.previewUrl=sameOrigin(this.origin,e.previewUrl).href;return result;};
+  // SRC-02: "Yêu thích" and "Gần đây" are the person's own lists, kept in the
+  // account settings (`favorites`, `recent`) rather than in the catalogue. Each
+  // pick names its entry by id inside a real collection, so it is resolved
+  // through the catalogue and carries the catalogue's preview and label.
+  if(collectionId==='favorite'||collectionId==='recent'){
+   const picks=(this.remote?.settings?.values?.[collectionId==='favorite'?'favorites':'recent']??[]).filter(p=>p&&typeof p.id==='string'&&typeof p.collectionId==='string');
+   const q=String(query??'').trim().toLowerCase(),entries=[];let collections=null;
+   for(const pick of picks){
+    let found=null;
+    try{const r=await a.queryEmoji(pick.id,pick.collectionId,0);collections??=r.collections;found=r.entries.find(e=>e.id===pick.id)??null;}catch{}
+    if(found&&(!q||`${found.label} ${found.id} ${found.text}`.toLowerCase().includes(q)))entries.push(found);
+   }
+   if(!collections){try{collections=(await a.queryEmoji('',undefined,0)).collections;}catch{collections=[];}}
+   const start=Math.max(0,Number(offset)||0);
+   return publish({entries:entries.slice(start,start+64),total:entries.length,collections});
+  }
+  return publish(await a.queryEmoji(query,collectionId,offset));
+ }
+ /** The recent list is what the person picked, kept before the source consent so a discarded pick still counts as recent. */
+ async rememberEmoji(id,collectionId){
+  try{
+   if(!this.online||this.session.status!=='signed-in'||!this.api?.userId||!this.remote?.settings)return;
+   const recent=(this.remote.settings.values.recent??[]).filter(p=>!(p?.id===id&&p?.collectionId===collectionId));
+   await this.remote.settingsUpdate({recent:[{id,collectionId},...recent].slice(0,27)});
+  }catch{}
+ }
  async queryFonts(query){const a=adapter(this.adapters.source);assert(a.queryFonts,'FONT_CATALOG_UNSUPPORTED');return a.queryFonts(query);}
- selectEmoji(id,collectionId){return this.result(()=>this.sourceJob(async control=>{const a=adapter(this.adapters.source);assert(a.selectEmoji,'EMOJI_UNSUPPORTED');return a.selectEmoji({...control,id,collectionId});},'source'));}
+ selectEmoji(id,collectionId){return this.result(async()=>{await this.rememberEmoji(id,collectionId);return this.sourceJob(async control=>{const a=adapter(this.adapters.source);assert(a.selectEmoji,'EMOJI_UNSUPPORTED');return a.selectEmoji({...control,id,collectionId});},'source');});}
 }

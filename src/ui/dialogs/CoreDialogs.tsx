@@ -11,8 +11,8 @@ import { formatBytes, formatDateTime, VERDICT_LABEL } from '../core/text.ts'
 import {
   exportPrerequisite,
   exportReasonText,
+  isRescueExport,
   PREREQUISITE_LABEL,
-  PREREQUISITE_NOTE,
 } from '../core/project-state.ts'
 import { CONFIRM_ACCEPTED, confirmEffect } from './confirm-effect.ts'
 
@@ -231,7 +231,7 @@ export function ConfirmDialog({
             reasonHidden
             onClick={() => void dismiss.run()}
           >
-            {dismiss.pending ? 'Đang báo nhân bỏ đề xuất…' : 'Đóng, chưa xác nhận'}
+            {dismiss.pending ? 'Đang bỏ…' : 'Bỏ qua'}
           </Button>
           <Button
             variant="primary"
@@ -271,6 +271,33 @@ export function ConfirmDialog({
 
       <details className="details" data-confirm-effect={effect.scope}>
         <summary>Chi tiết kỹ thuật</summary>
+        <div className="row" style={{ marginBlockEnd: 6 }}>
+          <Button
+            size="small"
+            icon="dots"
+            onClick={() => actions.openDialog({ kind: 'diagnostics' })}
+          >
+            Mở nhật ký và chẩn đoán
+          </Button>
+          {job?.cancellable ? (
+            <Button
+              size="small"
+              variant="danger"
+              icon="cancel"
+              disabledReason={busy ? BUSY_REASON : null}
+              reasonHidden
+              onClick={() => {
+                // Cancelling the running job is a different act from dismissing
+                // the proposal, so it does not close the dialog on its own: the
+                // dismissal still goes through `proposal.discard` and still waits
+                // for the core to confirm it.
+                void run({ type: 'job.cancel', id: job.id }, { announce: 'Đã gửi yêu cầu hủy.' })
+              }}
+            >
+              Hủy lượt đang chạy
+            </Button>
+          ) : null}
+        </div>
         {retry.type === 'proposal.accept' ? (
           <div className="field">
             <span className="field__label">Mã đề xuất</span>
@@ -327,33 +354,6 @@ export function ConfirmDialog({
         </div>
       ) : null}
 
-      <div className="row">
-        <Button
-          size="small"
-          icon="dots"
-          onClick={() => actions.openDialog({ kind: 'diagnostics' })}
-        >
-          Mở nhật ký và chẩn đoán
-        </Button>
-        {job?.cancellable ? (
-          <Button
-            size="small"
-            variant="danger"
-            icon="cancel"
-            disabledReason={busy ? BUSY_REASON : null}
-            reasonHidden
-            onClick={() => {
-              // Cancelling the running job is a different act from dismissing
-              // the proposal, so it does not close the dialog on its own: the
-              // dismissal still goes through `proposal.discard` and still waits
-              // for the core to confirm it.
-              void run({ type: 'job.cancel', id: job.id }, { announce: 'Đã gửi yêu cầu hủy.' })
-            }}
-          >
-            Hủy lượt đang chạy
-          </Button>
-        ) : null}
-      </div>
     </Dialog>
   )
 }
@@ -533,15 +533,22 @@ export function ExportChoiceDialog({ onClose }: { onClose: () => void }) {
   const runExport = useAsyncAction(async (id: string) => bridge.exportFile(id), {
     announce: 'Đã gửi yêu cầu xuất tệp.',
   })
-  const enabled = snapshot.exports.filter((option) => option.enabled)
-  const blocked = snapshot.exports.filter((option) => !option.enabled)
+  // The rescue package and the settings file are not ways to export the
+  // model; they live in the library and the account menu.
+  const listed = snapshot.exports.filter((option) => {
+    const prerequisite = exportPrerequisite(option)
+    return !isRescueExport(option) && option.id !== 'settings' && prerequisite !== 'account-settings' && prerequisite !== 'project-bytes'
+  })
+  const enabled = listed.filter((option) => option.enabled)
+  const blocked = listed.filter((option) => !option.enabled)
+  const meshVerdict = (option: (typeof listed)[number]) => exportPrerequisite(option) === 'matching-model'
 
   return (
     <Dialog
-      title="Chọn đường xuất"
+      title="Xuất file"
       wide
       onClose={onClose}
-      description="Chỉ các đường xuất đang hợp lệ mới bấm được. Không có lựa chọn mặc định ngầm theo tên máy."
+      description="Chọn định dạng. Cài đặt của từng đường xuất nằm ở khu Xuất file."
       footer={
         <Button variant="primary" onClick={onClose}>
           Đóng
@@ -549,36 +556,43 @@ export function ExportChoiceDialog({ onClose }: { onClose: () => void }) {
       }
     >
       <section className="stack">
-        <h3 style={{ margin: 0 }}>Đang hợp lệ ({enabled.length})</h3>
-        {enabled.length === 0 ? <p className="muted">Không có đường xuất nào hợp lệ.</p> : null}
-        {enabled.map((option) => (
-          <div
-            key={option.id}
-            className="row"
-            data-export-option={option.id}
-            data-export-prerequisite={exportPrerequisite(option)}
-          >
-            <span className="grow">
-              {option.label} <span className="muted-3">{option.extension}</span>
-            </span>
-            <span className="chip chip--muted fc-border">
-              {PREREQUISITE_LABEL[exportPrerequisite(option)]}
-            </span>
-            <span className="chip chip--muted fc-border">{VERDICT_LABEL[option.verdict]}</span>
-            <Button
-              icon="download"
-              disabled={runExport.pending}
-              onClick={() => void runExport.run(option.id)}
+        {enabled.length === 0 ? <p className="muted">Chưa có đường xuất nào sẵn sàng.</p> : null}
+        {enabled.map((option) => {
+          const risky = meshVerdict(option) && option.verdict !== 'pass'
+          return (
+            <div
+              key={option.id}
+              className="row"
+              data-export-option={option.id}
+              data-export-prerequisite={exportPrerequisite(option)}
             >
-              {option.verdict === 'pass' ? 'Xuất' : 'Xuất để kiểm tra'}
-            </Button>
-          </div>
-        ))}
+              <span className="grow">
+                {option.label} <span className="muted-3">{option.extension}</span>
+              </span>
+              <span className="chip chip--muted fc-border">
+                {PREREQUISITE_LABEL[exportPrerequisite(option)]}
+              </span>
+              {meshVerdict(option) ? (
+                <span className={`chip ${option.verdict === 'pass' ? 'chip--ok' : 'chip--muted'} fc-border`}>
+                  {VERDICT_LABEL[option.verdict]}
+                </span>
+              ) : null}
+              <Button
+                icon="download"
+                variant={risky ? 'default' : 'primary'}
+                disabled={runExport.pending}
+                onClick={() => void runExport.run(option.id)}
+              >
+                {risky ? 'Xuất để kiểm tra' : 'Xuất'}
+              </Button>
+            </div>
+          )
+        })}
       </section>
 
       {blocked.length > 0 ? (
         <section className="stack">
-          <h3 style={{ margin: 0 }}>Đang bị chặn ({blocked.length})</h3>
+          <h3 style={{ margin: 0 }}>Chưa xuất được ({blocked.length})</h3>
           {blocked.map((option) => (
             <div
               key={option.id}
@@ -588,13 +602,11 @@ export function ExportChoiceDialog({ onClose }: { onClose: () => void }) {
             >
               <div className="diag__head">
                 <span className="diag__sev">{option.label}</span>
-                <code className="diag__code">{option.id}</code>
-                {option.reasonCode ? <code className="diag__code">{option.reasonCode}</code> : null}
+                <span className="muted-3">{option.extension}</span>
               </div>
               <div className="diag__msg">
                 {exportReasonText(option, 'Nhân không nêu lý do cụ thể.')}
               </div>
-              <div className="diag__detail">{PREREQUISITE_NOTE[exportPrerequisite(option)]}</div>
             </div>
           ))}
         </section>

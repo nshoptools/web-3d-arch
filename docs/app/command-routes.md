@@ -23,7 +23,7 @@ Base is same-origin /api/v1. ApiClient bounds decoded bytes, rejects API redirec
 | project.save/open/delete | Atomic save; verified load/recovery; recoverable tombstone retaining previous generation, no unsolicited permanent purge |
 | preset save/delete/apply; emoji.favorite | Presets/favorites in per-user settings with ETag; apply validated project transaction |
 | importFile source/mesh/font | Bounded original bytes → actual source adapter → typed immutable assets; mesh applies only when injected engine declares support |
-| importFile project/settings/preset | Strict bounded parse/deep budget/version/schema checks; rescue package import is copy-on-write to a new project ID |
+| importFile project/settings/preset | Strict bounded parse/deep budget/version/schema checks; rescue package import restores the project under its own ID when that ID is free or deleted (project-bound bindings stay valid), opens the live project when it still exists, and copies to a new ID only when the old record is unreadable |
 | geometry.build / editSource | Actual injected native engine / default existing editing Dedicated Worker; no pixel algorithms or JSON meshes in controller |
 | selection.set / viewport.action / attachViewport | Actual viewport adapter, validated block IDs, placement proposal without manufacturing-coordinate mutation, remount replay |
 | exportFile | Existing main rescue package implementation, settings export endpoint, or actual native exporter; file delivery injected, stale visible-model gate |

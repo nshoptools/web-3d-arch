@@ -83,4 +83,4 @@ export function confirmEffect(command: AppCommand): ConfirmEffect {
 }
 
 /** Neutral wording for the success toast: the core accepted, nothing more. */
-export const CONFIRM_ACCEPTED = 'Nhân đã nhận xác nhận.'
+export const CONFIRM_ACCEPTED = 'Đã áp dụng thay đổi.'

@@ -45,7 +45,13 @@ export function formatBytes(bytes: number): string {
 export function formatDateTime(iso: string): string {
   const parsed = new Date(iso)
   if (Number.isNaN(parsed.getTime())) return iso
-  return new Intl.DateTimeFormat('vi-VN', { dateStyle: 'short', timeStyle: 'short' }).format(parsed)
+  return new Intl.DateTimeFormat('vi-VN', {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(parsed)
 }
 
 /** Masks a secret for display. The full value never leaves the entry form. */
@@ -57,6 +63,14 @@ export function maskSecret(value: string): string {
 export const VERDICT_LABEL = {
   pass: 'đã kiểm đạt',
   fail: 'kiểm không đạt',
+  unverified: 'chưa kiểm',
+  unsupported: 'chưa hỗ trợ',
+} as const
+
+/** The verdict after a label that already says what was checked ("Kiểm mesh: đạt"). */
+export const VERDICT_SHORT = {
+  pass: 'đạt',
+  fail: 'không đạt',
   unverified: 'chưa kiểm',
   unsupported: 'chưa hỗ trợ',
 } as const
@@ -153,6 +167,38 @@ export const DIAGNOSTIC_TEXT: Record<string, string> = {
   MESH_CANCELLED: 'Lượt xử lý khối nhập đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
   GENERATED_BASE_CANCELLED: 'Lượt dựng đế đã bị hủy vì có thao tác mới hoặc phiên thay đổi.',
   PREPARATION_BUSY: 'Nhân đang bận chuẩn bị dữ liệu. Thử lại sau vài giây.',
+  // Product pipeline refusals: what stopped, and what to do next.
+  PRODUCT_SOURCE_CONVERSION_REQUIRED:
+    'Nguồn này chưa được tách thành vùng màu nên chưa dựng được. Bấm nút bước tiếp trên thanh trên (“Chuyển sang ảnh raster để sửa”, rồi “Tách vùng màu để dựng”) và xác nhận từng bước.',
+  SOURCE_SVG_REGIONS_REQUIRED:
+    'Nguồn chưa có vùng màu đã xác nhận nên chưa dựng hay xuất SVG được. Bấm nút bước tiếp trên thanh trên và xác nhận để nhân tách vùng màu.',
+  RASTER_SEGMENTATION_APPROVAL_REQUIRED:
+    'Ảnh raster cần được tách vùng màu và bạn xác nhận kết quả trước khi dựng mô hình.',
+  SOURCE_NUMERIC_OUTLINES_UNAVAILABLE:
+    'Nguồn này chưa có đường viền số để dựng. Chuyển sang ảnh raster để sửa và tách vùng, hoặc chọn nguồn SVG.',
+  PRODUCT_TEXT_OUTLINES_UNAVAILABLE:
+    'Chữ chưa dựng được vì nguồn hiện tại là ảnh raster chưa tách vùng. Chuyển nguồn sang ảnh raster và xác nhận trước, hoặc bỏ chữ.',
+  PRODUCT_UPDATE_BINDINGS_BLOCKED:
+    'Nhân không gắn được vùng màu và vật liệu cho thay đổi này. Mở nhật ký để xem chi tiết; dự án giữ nguyên.',
+  PRODUCT_DATUM_PROPOSAL_BLOCKED:
+    'Nhân không chốt được mặt chuẩn cho thay đổi này với lịch lớp hiện tại. Đổi chiều cao lớp hoặc dày đế rồi thử lại; dự án giữ nguyên.',
+  PRODUCT_DATUM_PROBE_BLOCKED: 'Nhân chưa dò được mặt chuẩn cho thay đổi này. Dự án giữ nguyên.',
+  PRODUCT_ADOPTION_BLOCKED: 'Nhân không nhận được nguồn này cho sản phẩm. Mở nhật ký để xem lý do; dự án giữ nguyên.',
+  PRODUCT_ADOPTION_DECISION_REQUIRED: 'Nguồn này cần bạn quyết định cách gắn vùng màu trước khi nhận.',
+  PRODUCT_TRANSACTION_RETIRED: 'Thay đổi này bị hủy vì dự án hoặc phiên đã đổi trong lúc chuẩn bị. Thao tác lại.',
+  PRODUCT_PROPOSAL_CONSUMED: 'Đề xuất này đã được dùng hoặc đã hủy. Thao tác lại để lấy đề xuất mới.',
+  PRODUCT_TEXT_SOURCE_FRAME_UNSUPPORTED:
+    'Khối chữ đặt bên cạnh mô hình đang nằm ngoài vùng nhân hỗ trợ (tọa độ âm). Đưa vị trí X, Y về giá trị không âm.',
+  PRODUCT_TEXT_ABSOLUTE_BASE_WIDTH_UNAVAILABLE: 'Bản dựng này chưa hỗ trợ đế chữ có bề rộng riêng. Đặt “Rộng đế chữ” về 0.',
+  PRODUCT_REGION_HEIGHT_INACTIVE:
+    'Chiều cao riêng của vùng chỉ có tác dụng khi kiểu hoạ tiết là Nổi và “Tách màu theo tầng cao” đang bật.',
+  TEXT_REQUIRED: 'Chưa có nội dung chữ để dùng làm hình.',
+  MESH_REPLAY_COMMIT_REQUIRED: 'Khối nhập cần được áp dụng lại trước khi dựng.',
+  BUILD_PREVIEW_REQUIRED: 'Chưa có bản dựng xem trước để chốt.',
+  SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT:
+    'Kiểu hoạ tiết Chìm cần mặt đáy trùng với đường bao của hình; nhân từ chối dựng. Chọn kiểu Nổi hoặc Phẳng.',
+  CHAMFER_MOUTH_EDGE_BUDGET: 'Hình quá chi tiết cho phần vát của loại sản phẩm này; nhân từ chối dựng. Giảm chi tiết hoặc tăng kích thước.',
+  GROOVE_EDGE_RESOURCE_LIMIT: 'Hình quá chi tiết cho rãnh ngàm; nhân từ chối dựng. Giảm chi tiết hoặc tăng kích thước.',
 }
 
 /**
@@ -171,6 +217,7 @@ export const JOB_STAGE_TEXT: Record<string, string> = {
   'source confirmation': 'Chờ bạn xác nhận nguồn',
   'Source and datum confirmation': 'Chờ bạn xác nhận nguồn và mặt chuẩn',
   'Prepare product update': 'Chuẩn bị cập nhật sản phẩm',
+  'Apply product update': 'Áp dụng thay đổi và dựng lại',
   'Prepare source datums': 'Chuẩn bị mặt chuẩn cho nguồn',
   'Probe explicitly selected face': 'Dò mặt đã chọn',
   'edit-source': 'Sửa ảnh nguồn',

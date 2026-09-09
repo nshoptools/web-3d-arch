@@ -5,6 +5,7 @@ import { useUiActions } from '../core/ui-state.tsx'
 import { useProjectGate } from '../core/project-gate.ts'
 import { useFocusTrap } from '../core/useFocusTrap.ts'
 import { COMMANDS, SECTIONS, TOOLS_2D } from '../core/registry.ts'
+import { materialName } from '../core/names.ts'
 import { matchesAllWords } from '../core/text.ts'
 import { Button } from '../components/Button.tsx'
 
@@ -110,7 +111,7 @@ export function QuickSearch({ onClose, onCommand }: QuickSearchProps) {
       list.push({
         id: `param:${parameter.id}`,
         group: 'Thông số',
-        label: `${parameter.label} · ${parameter.id}`,
+        label: parameter.label,
         value: typeof parameter.value === 'boolean' ? (parameter.value ? 'bật' : 'tắt') : parameter.value,
         ...(parameter.visible
           ? parameter.enabled
@@ -129,7 +130,7 @@ export function QuickSearch({ onClose, onCommand }: QuickSearchProps) {
       list.push({
         id: `material:${material.id}`,
         group: 'Lớp màu và khe',
-        label: `${material.label} · ${material.color}`,
+        label: `${materialName(material)} · ${material.color}`,
         value: material.slot === null ? 'chưa gán khe' : `khe ${material.slot}`,
         run: () => {
           actions.setSection('materials', true)
@@ -168,7 +169,7 @@ export function QuickSearch({ onClose, onCommand }: QuickSearchProps) {
   }, [actions, gate.reason, onCommand, presets, run, snapshot])
 
   const filtered = useMemo(
-    () => results.filter((result) => matchesAllWords(`${result.label} ${result.group} ${result.value ?? ''}`, query)),
+    () => results.filter((result) => matchesAllWords(`${result.label} ${result.group} ${result.value ?? ''} ${result.id}`, query)),
     [query, results],
   )
 

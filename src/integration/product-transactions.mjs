@@ -42,8 +42,11 @@ function describeChanges(records,product){
    default:lines.push({key:null,text:'Thay đổi khác do nhân đề xuất: '+canonicalJSON(c).slice(0,1900)});
   }
  }
- if(roles.length)lines.push({key:null,text:`Đặt màu mặc định cho ${roles.length} phần của mô hình (${joinRoles(roles)}); đổi được ở khu Lớp màu.`});
- if(others.length)lines.push({key:null,text:`Giữ sẵn màu mặc định cho ${others.length} phần chỉ dùng ở loại sản phẩm khác (${joinRoles(others)}); không xuất hiện trên mô hình này.`});
+ // One sentence for the parts of this model; the roles of the other product
+ // types are kept ready but are not this model's, so they get a clause, not a
+ // bullet of their own (Grok F-07).
+ if(roles.length)lines.push({key:null,text:`Đặt màu mặc định cho ${roles.length} phần của mô hình (${joinRoles(roles)})${others.length?`, giữ sẵn ${others.length} phần chỉ dùng ở loại sản phẩm khác`:''}; đổi được ở khu Lớp màu.`});
+ else if(others.length)lines.push({key:null,text:`Giữ sẵn màu mặc định cho ${others.length} phần chỉ dùng ở loại sản phẩm khác (${joinRoles(others)}); không xuất hiện trên mô hình này.`});
  return lines.map(l=>{const n=l.key?counts.get(l.key):1;return n>1?l.text.replace(/^(Nhận|Cập nhật|Gán khe filament logic cho) /,`$1 ${n} `):l.text;});
 }
 function describeProposal(c){
@@ -86,7 +89,7 @@ export function createProductTransactions({sourceContexts,context}){
   const payload={version:PLAN,status:'proposal',expected,proposedStateHash:await domainStateFingerprint(state),nativeHead:null,modelAvailable:false,diagnostics:prepared.diagnostics};
   const proposalHash=await sha256(canonicalJSON(payload));g();let used=false,retired=false;
   const release=()=>{retired=true;plans.delete(release);};plans.add(release);
-  return Object.freeze({...payload,proposalHash,changes:['Giữ ảnh gốc và bản dựng ảnh đã duyệt; chưa dựng mô hình từ ảnh này.','Tách vùng màu của ảnh raster là một bước riêng, cần bạn xác nhận chuyển đổi sau.'],
+  return Object.freeze({...payload,proposalHash,changes:['Giữ ảnh gốc và bản dựng ảnh đã duyệt; chưa dựng mô hình từ ảnh này.','Tách vùng màu là bước riêng: sau khi áp dụng, bấm nút bước tiếp trên thanh trên (“Chuyển sang ảnh raster để sửa” hoặc “Tách vùng màu để dựng”) và xác nhận.'],
    preview(){g();assert(!used&&!retired,'PRODUCT_PROPOSAL_CONSUMED');return {state:data(state),assets:[]};},
    async confirm(c){assert(!used&&!retired,'PRODUCT_PROPOSAL_CONSUMED');used=true;try{g();assert(c.signal===control.signal&&canonicalJSON(c.ticket)===canonicalJSON(control.ticket),'PRODUCT_PROPOSAL_HEAD');return {version:'arch-product-source-update-commit/1',proposalHash,expected,state:data(state),assets:[],nativeReceipt:null,requiresAtomicCommit:true,requiresNativeRebuild:false};}finally{release();}},release});
  }

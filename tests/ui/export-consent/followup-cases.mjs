@@ -1,9 +1,9 @@
-import assert from 'node:assert/strict';import path from 'node:path';import {write} from './support.mjs';
+import assert from 'node:assert/strict';import path from 'node:path';import {write,openFolds} from './support.mjs';
 export async function followupCases(page,record,out,engine){
 const row=id=>page.locator('[data-export-field="'+id+'"] input'),read=()=>page.evaluate(()=>window.review.read());const commands=async()=>(await read()).calls.filter(c=>c.method==='dispatch'||c.method==='exportFile');
 const publish=(revision,values={})=>page.evaluate(({revision,values})=>window.review.publish(revision,values),{revision,values}),settle=(id,result,rejected=false)=>page.evaluate(({id,result,rejected})=>window.review.settle(id,result,rejected),{id,result,rejected});
 const fail=(code,message)=>({ok:false,diagnostic:{code,message,severity:'error'}});
-async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());try{const observed=await fn();await record({id,name,pass:true,observed})}catch(e){const observed=await read();const png=path.join(out,engine+'-'+id+'.png');await page.screenshot({path:png});write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),observed,evidence:png})}}
+async function check(id,name,fn){await page.setViewportSize({width:1280,height:900});await page.evaluate(()=>window.review.reset());await openFolds(page);try{const observed=await fn();await record({id,name,pass:true,observed})}catch(e){const observed=await read();const png=path.join(out,engine+'-'+id+'.png');await page.screenshot({path:png});write(path.join(out,engine+'-'+id+'-state.json'),observed);await record({id,name,pass:false,error:String(e.stack),observed,evidence:png})}}
 await check('F01','same-value numeric Enter sends no command and releases the old revision',async()=>{
 await row('errorMm').fill('0.009');await publish(4);await row('errorMm').fill('0.004');await row('errorMm').press('Enter');assert.equal((await commands()).length,0);await row('errorMm').fill('0.006');await row('errorMm').press('Enter');const next=(await commands()).at(-1);assert.equal(next.input.projectRevision,4);assert.equal(next.input.value,'0.006');return {next}
 });

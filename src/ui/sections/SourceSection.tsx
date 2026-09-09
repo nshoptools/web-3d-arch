@@ -54,8 +54,7 @@ export function SourceSection() {
         // The three ways in are offered once, on the empty frame of the stage;
         // the panel only says which groups below do the same thing.
         <p className="muted" style={{ margin: 0 }} data-source-empty="true">
-          Chưa có nguồn thiết kế. Chọn tệp, gõ chữ hoặc chọn emoji ở các nhóm bên dưới; kéo thả tệp
-          vào khung xem cũng được.
+          Chưa có nguồn. Chọn một cách bên dưới.
         </p>
       ) : (
         <div className="card fc-border">
@@ -142,7 +141,6 @@ export function SourceSection() {
           color="var(--sec-source)"
           open={groupOpen('source-text', source?.kind === 'text')}
           onToggle={() => toggle('source-text', source?.kind === 'text')}
-          count="font, cỡ, đế và vị trí"
         >
           <TextControls place="panel" />
         </CollapsibleGroup>
