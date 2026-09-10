@@ -214,6 +214,9 @@ nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát h
   giữ làm điều kiện chặn phát hành cho luồng emoji; **F-03.1** vẫn là bất đồng còn lại với
   Codex, ghi rõ thay vì bỏ qua.
 
+Hai ghế phản biện **bốn vòng** trong đợt này (trên `7be8248f`, `e084512a`, `bfb8f113`, `8ecf354f`);
+vòng cuối cả hai **đạt, 0 phát hiện**, và hai khuyến nghị hồi quy của họ đã được thực hiện.
+
 Hai bộ kiểm hỏng sẵn, **không** được làm xanh bằng cách sửa kỳ vọng, mỗi bộ có đối chứng
 chứng minh đã hỏng trước vòng này: `tests/product-source` (`native-refusals.json` ghim theo
 nhân `f13bdd2b…`, nhân hiện tại dựng được các ca text/emoji nên danh sách chặn rỗng) và
