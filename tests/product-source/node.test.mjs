@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createServer} from 'node:http';
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createServer} from 'node:http';import {createHash} from 'node:crypto';
 import {M,client,operation,dispatcher,setLive,noOwned,transportLog,manufacturingPreview} from '../product-app/harness.mjs';
 import {createApplicationSources} from '../../src/integration/source-compositor.mjs';
 import {createEngineTextService} from '../../src/core/engine-text-service.mjs';
@@ -50,10 +50,19 @@ test('Real source compositor and product bridge: root Node WASM SVG/raster/text/
   fs.writeFileSync(path.join(out,id+'.arch'),bytes);fs.writeFileSync(path.join(out,id+'.json'),JSON.stringify({row,semantics,bindings,oracles,state,assetHashes:[...(assets?.keys()??[])]},null,2));
  }});
  if(process.env.ARCH_BRIDGE_MATRIX==='1'&&!process.env.ARCH_BRIDGE_FAMILIES){
-  const expected=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'native-refusals.json'))).cases;
+  // What the native side refuses belongs to a particular kernel, so the record is read by the hash
+  // of the kernel actually under test. A kernel nobody has looked at yet fails here rather than
+  // borrowing another kernel's record; the observation is written out to be looked at and added.
+  const pin=JSON.parse(fs.readFileSync(path.join(import.meta.dirname,'native-refusals.json')));
+  assert.equal(pin.version,'arch-product-source-test-refusals/2');
+  const wasmSha256=createHash('sha256').update(fs.readFileSync(path.join(run,'work/module/arch-kernel.wasm'))).digest('hex');
   const observed=result.negatives.filter(r=>r.code==='PRODUCT_NATIVE_BLOCKED').map(r=>({id:r.id,code:r.code,diagnostics:r.details.diagnostics.filter(d=>d.code<100),sourceVerdict:r.details.sourceVerdict,mechanicsVerdict:r.details.mechanicsVerdict}));
-  assert.deepEqual(observed,expected,'Native rejection changed: re-investigate; do not count as successful geometry');
-  assert.equal(result.trace.length,60);assert.equal(result.qualification,'partial-native-blockers');
+  const record={wasmSha256,models:result.trace.length,qualification:result.qualification,cases:observed};
+  fs.writeFileSync(path.join(out,'native-refusals-observed.json'),JSON.stringify(record,null,2));
+  const known=pin.kernels.find(k=>k.wasmSha256===wasmSha256);
+  assert.ok(known,'No native-refusal record for kernel '+wasmSha256+'. Read '+path.join(out,'native-refusals-observed.json')+', check the models it did build, and add that kernel to tests/product-source/native-refusals.json.');
+  assert.deepEqual(observed,known.cases,'Native rejection changed: re-investigate; do not count as successful geometry');
+  assert.equal(result.trace.length,known.models);assert.equal(result.qualification,known.qualification);
  }
  noOwned();const gens=transportLog.filter(x=>x.generation).map(x=>x.generation);assert.ok(gens.every((g,i)=>!i||g>gens[i-1]));
  fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify({...result,versions,transportLog,node:process.versions.node,liveBilling:false,independentReview:false},null,2));

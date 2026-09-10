@@ -1,295 +1,317 @@
 {
-  "version": "arch-product-source-test-refusals/1",
-  "mechanicsSemantics": 3,
-  "sourceSemantics": 2,
-  "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
-  "qualification": "Known native model blockers; not a claim those product cases build",
-  "cases": [
+ "version": "arch-product-source-test-refusals/2",
+ "mechanicsSemantics": 3,
+ "sourceSemantics": 2,
+ "qualification": "Known native model blockers; not a claim those product cases build",
+ "note": "What the native side actually refused, per kernel. A record of observation, not a claim that the listed product cases build. Kernels differ in what they refuse, so the record is keyed by the WASM hash and a kernel that is not listed fails the suite until someone looks at what changed and adds it.",
+ "kernels": [
+  {
+   "wasmSha256": "f13bdd2b5b778ac0f2ec70fb2d43052de68e7d415d03218bea6f0a09718e40a9",
+   "note": "the kernel this suite was first pinned against",
+   "models": 60,
+   "qualification": "partial-native-blockers",
+   "cases": [
     {
-      "id": "text-keychain-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-keychain-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-clicky-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-clicky-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-strap-noi",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-strap-noi",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-strap-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-strap-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-strap-phang",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-strap-phang",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-strap-phang2",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-strap-phang2",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-lego-noi",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-lego-noi",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-lego-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-lego-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-lego-phang",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-lego-phang",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-lego-phang2",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-lego-phang2",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "text-charm-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "text-charm-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-keychain-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-keychain-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-clicky-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-clicky-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-strap-noi",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-strap-noi",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-strap-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-strap-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-strap-phang",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-strap-phang",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-strap-phang2",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 78,
-          "message": "CHAMFER_MOUTH_EDGE_BUDGET"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-strap-phang2",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 78,
+       "message": "CHAMFER_MOUTH_EDGE_BUDGET"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-lego-noi",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-lego-noi",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-lego-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-lego-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-lego-phang",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-lego-phang",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-lego-phang2",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "GROOVE_EDGE_RESOURCE_LIMIT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-lego-phang2",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "GROOVE_EDGE_RESOURCE_LIMIT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     },
     {
-      "id": "emoji-charm-chim",
-      "code": "PRODUCT_NATIVE_BLOCKED",
-      "diagnostics": [
-        {
-          "code": 1,
-          "fieldId": 0,
-          "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
-        }
-      ],
-      "sourceVerdict": 0,
-      "mechanicsVerdict": 1
+     "id": "emoji-charm-chim",
+     "code": "PRODUCT_NATIVE_BLOCKED",
+     "diagnostics": [
+      {
+       "code": 1,
+       "fieldId": 0,
+       "message": "SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT"
+      }
+     ],
+     "sourceVerdict": 0,
+     "mechanicsVerdict": 1
     }
-  ]
+   ]
+  },
+  {
+   "wasmSha256": "064f52946188df285fc1328e7e2607a7cbdb174a82f85eded2e949a71f4c1b3c",
+   "note": "packaged release 20260908-internal; the twenty-two text and emoji cases the earlier kernel refused with SOURCE_BOTTOM_SUPPORT_MUST_MATCH_FOOTPRINT now build, and each built model passed this suite's own mesh oracles",
+   "models": 82,
+   "qualification": "complete-fixtures",
+   "cases": []
+  },
+  {
+   "wasmSha256": "7986ced15a62db8d9d1451c1bb17a26e800388210a9ecda0d9532e1ad7f03d46",
+   "note": "rebuilt from source with the native 3MF read-back tolerance; not qualified and not packaged, recorded so the suite can run against the packaging candidate",
+   "models": 82,
+   "qualification": "complete-fixtures",
+   "cases": []
+  }
+ ]
 }
