@@ -174,6 +174,12 @@ nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát h
   ghi sau bản sửa mới nêu trục nguồn. Ảnh nhập vào không có bản ghi đó, còn chữ/emoji ghi affine
   điểm‑ảnh‑sang‑nguồn chứ không phải khung, và cả hai đều dựng xuôi nên vẫn được đặt như thường.
   Hồi quy: ca «a raster the old renderer derived from an SVG keeps the model it always built».
+  Codex phản biện lại bản sửa này và **đóng** mục đó: dựng cùng state bằng mã trước và mã sau cho
+  mesh trùng **SHA-256** của mảng đỉnh/tam giác/bảng phần, kể cả với một raster cũ đã **sửa tay**
+  rồi phân vùng lại và đóng gói bằng mã cũ. **Còn mở**: nếu ai đó sửa metadata **ngoài** luồng ứng
+  dụng (xóa `preview.frame`, hoặc xóa riêng `sourceAxis`) thì bản dựng lật lại; nên đổi quy tắc
+  thành “ảnh do chính ứng dụng dựng mặc định là quy ước cũ trừ khi bản ghi nêu trục mới”, tức thêm
+  điều kiện “dẫn xuất (`rasterPreparation.input.origin`) mà thiếu `preview.frame`”.
 - **Hình bị lật dọc so với nguồn (Codex R3-C02, P1) — đã sửa tận gốc.** Nhân phân giải SVG
   theo viewport của SVG (X phải, **Y xuống**) và dựng ngữ cảnh raster theo lưới điểm ảnh
   (cũng Y xuống), còn mọi tầng sau — vỏ SVG của chữ, biên xem trước, `source_assembly`, xuất
