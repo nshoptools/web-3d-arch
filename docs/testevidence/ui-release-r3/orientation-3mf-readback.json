@@ -1,0 +1,24 @@
+{
+ "source": "orientation-mark-top-right.svg (blue #0099cc top-right, orange #ee7733 bottom-left)",
+ "kernel": "rebuilt from current source with the native 3MF read-back tolerance; NOT qualified and NOT packaged",
+ "export": "3MF Bambu project, inspection mode, sealed internal printer profile, live application",
+ "reader": "Python 3.13 stdlib: ZIP + XML, per object the material it points at and its Y extent",
+ "result": [
+  "entries ['3D/3dmodel.model', 'Metadata/printing-manifest.json', 'Metadata/project_settings.config', 'Metadata/model_settings.config', '[Content_Types].xml', '_rels/.rels', '3D/_rels/3dmodel.model.rels']",
+  "unit millimeter",
+  "materials {('1', '0'): ('body', '#30353BFF'), ('1', '1'): ('adopted:3', '#EE7733FF'), ('1', '2'): ('adopted:2', '#0099CCFF')}",
+  "object 3 material ('body', '#30353BFF') x [-24.0, 24.0] y [-12.75, 12.75] centroidY 0.0",
+  "object 4 material ('adopted:3', '#EE7733FF') x [-20.25, -9.0] y [-9.0, -2.25] centroidY -5.625",
+  "object 5 material ('body', '#30353BFF') x [-22.5, 22.5] y [-11.25, 11.25] centroidY 0.0",
+  "object 6 material ('adopted:2', '#0099CCFF') x [13.5, 20.25] y [2.25, 9.0] centroidY 5.625",
+  "object 7 material ('body', '#30353BFF') x [-4.0, 4.0] y [12.75, 19.25] centroidY 15.691",
+  "model_settings extruders: ['1', '2', '3']",
+  "filament_colour lines: []"
+ ],
+ "verdict": "Colours match the interface and the orientation matches the source: the blue mark is at y +2.25..+9.0 mm (top) and x 13.5..20.25 mm (right); the orange mark is at y -9.0..-2.25 mm (bottom) and x -20.25..-9.0 mm (left).",
+ "qualification": {
+  "slicer": "unverified (no Bambu Studio / SnapmakerOrca on this machine)",
+  "physicalPrint": "not attempted",
+  "kernel": "unqualified"
+ }
+}

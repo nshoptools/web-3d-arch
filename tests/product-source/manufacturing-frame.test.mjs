@@ -1,11 +1,18 @@
 import test from 'node:test';import assert from 'node:assert/strict';
+import fs from 'node:fs';import path from 'node:path';import {createServer} from 'node:http';
 import {M,client,operation,dispatcher,raster,svgState,rasterState,setLive,controlFor,noOwned,transportLog,manufacturingPreview} from '../product-app/harness.mjs';
 import {createProductSourceContexts} from '../../src/integration/product-source-contexts.mjs';
 import {createProductAdapters} from '../../src/integration/product-adapters.mjs';
+import {createTextAdapters} from '../../src/integration/text-adapters.mjs';
+import {createSourceCatalog} from '../../src/integration/source-catalog.mjs';
+import {createEngineTextService} from '../../src/core/engine-text-service.mjs';
+import {createSourceContext} from '../../src/app/source-approval.mjs';
 import {readProductSemantics} from '../../src/core/product-operations.mjs';
 import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
 import {manufacturingFrame,SourceFrameError} from '../../src/core/source-frame.mjs';
 import {readSnapshot} from '../oracles/mesh-oracle.mjs';
+import {sha256,canonicalJSON} from '../../src/storage/common.mjs';
+import {validateState} from '../../src/app/documents.mjs';
 import {partMesh,inside} from '../../src/kernel/source-assembly/tests/oracles/spatial-oracle.mjs';
 
 // Codex release round 3, R3-C02: an SVG or raster artwork came out mirrored top
@@ -24,10 +31,18 @@ Object.assign(client,{worker:{testTransport:true},memory:M.HEAPU8.buffer,onRetir
  async rasterRegistry(method,request){transportLog.push({registry:method});return dispatcher.dispatch(method,request);}});
 let live;const set=v=>{live={sessionKey:'manufacturing-frame:1',...v};setLive(live);};
 const kernel={operation,ensureRuntime:async()=>client,kernelLeases:new WeakMap()};
-// No text in these projects: the text service is a stub that must not be reached.
-const bridge=createProductSourceContexts({kernel,sources:{source:{ingest(){throw new Error('TEXT_SERVICE_UNUSED');}},raster:raster.source},context:()=>live});
+// The real text producer on this Module, for the one case that puts text beside the artwork.
+const run=process.env.PROJECT_REVIEW_RUN,fixture=JSON.parse(fs.readFileSync(path.join(run,'inputs/source-fixture.json')));
+const server=createServer((req,res)=>{const h=req.url.slice(1);if(!fixture.actualAssets.some(r=>r.sha256===h)){res.writeHead(404);res.end();return;}res.end(fs.readFileSync(path.join(run,'inputs/library',h)));});
+await new Promise(r=>server.listen(0,'127.0.0.1',r));
+const origin='http://127.0.0.1:'+server.address().port,assetURLs=fixture.assetRecords.map(r=>({...r,url:origin+'/'+r.sha256}));
+const catalog=createSourceCatalog({catalog:fixture.catalog,assetURLs,origin});
+const service=createEngineTextService(M,{catalog:fixture.catalog,assetURLs,origin,runtime:{engine:'node',version:process.versions.node}},{origin});
+client.textOperation=(request,{generation})=>{assert.equal(M._arch_control_reset(generation),1);return service.run(request,{generation,signal:new AbortController().signal,onProgress:()=>{},isCurrent:t=>t.revision===live.state.revision});};
+const text=createTextAdapters({catalog,context:()=>live,invoke:(request,c)=>operation(c,(_,generation)=>{assert.equal(M._arch_control_reset(generation),1);return service.run(request,{generation,signal:c.signal,onProgress:()=>{},isCurrent:t=>t.revision===live.state.revision});})});
+const bridge=createProductSourceContexts({kernel,sources:{source:text,text,raster:raster.source},context:()=>live});
 const product=createProductAdapters({operation,kernelLeases:kernel.kernelLeases,context:()=>live,withPreparedSource:bridge.withPreparedSource});
-test.after(async()=>{await product.reset();bridge.reset();await raster.reset();noOwned();});
+test.after(async()=>{await product.reset();bridge.reset();text.reset();service.dispose();await raster.reset();await new Promise(r=>{server.closeAllConnections();server.close(r);});noOwned();});
 /** Adoption through the real bridge, so the bindings carry the bridge's own region identity. */
 const adopt=({state,source,assets})=>{
  set({state,userId:'user-a',projectId:'project-persistent',assetsMap:assets});
@@ -117,6 +132,37 @@ test('raster artwork is assembled upright: the pixel hole near the top row is ab
   assert.ok(log.some(e=>e.method==='raster.buildSourceContext')&&log.some(e=>e.method==='sourceFrame'),'the registered raster context went through the native source frame');
   // rasterState: 64×48 px, hole x 8..13, y 9..15 (pixel rows count down from the top).
   assertUpright(artworkMeshes(model,'raster-region:0'),frame,{x:11*frame.mmPerPixelX,yFromTop:12.5*frame.mmPerPixelY});
+ }finally{model.release();}
+ noOwned();
+});
+
+test('text beside the artwork keeps its own absolute place while the artwork is placed upright',async()=>{
+ // The two frames meet here: the artwork context is reflected into the manufacturing frame,
+ // the text wrapper is already Y up and is only translated. The text must not move with the
+ // reflection, and the artwork must still be upright.
+ const f=await svgState('keychain','noi',undefined,{adopt:async({state,source,assets})=>{
+  Object.assign(state.content.app.text,{text:'I',placement:'beside',xMm:'-30',yMm:'-24',sizeMm:'4',sizeDisplay:'4',baseEnabled:true,baseRadiusMm:'0',baseThicknessLayers:'2',heightLayers:'3'});
+  set({state,userId:'user-a',projectId:'project-persistent',assetsMap:assets});
+  const c={...controlFor(state),sourceContext:source.metadata.sourceContext};
+  const capture=await bridge.captureArtifacts(c);
+  for(const a of capture.assets){const h=await sha256(a.bytes);assets.set(h,a.bytes);if(!source.assetHashes.includes(h))source.assetHashes.push(h);}
+  source.metadata.productArtifacts={version:'arch-product-artifacts/1',overlay:capture.overlay,sourceTextStateHash:await sha256(canonicalJSON(state.content.app.text))};
+  return bridge.prepareAdoption({...c,state,source,assets,purpose:'source',operation:'import',materials:[],materialDefaults:[]});
+ }});
+ set({state:f.state,userId:'user-a',projectId:'project-persistent',assetsMap:f.assets});
+ const model=await product.engine.build({...controlFor(f.state),...f});
+ try{
+  assert.ok(model.blocks.some(b=>b.kind==='text'||b.role==='text'),'the text block is in the model: '+JSON.stringify(model.blocks.map(b=>b.kind??b.role)));
+  assertUpright(artworkMeshes(model,'left'),{widthMm:40,heightMm:30},HOLE);
+  // The text was asked for at x −30, y −24 mm and stays there: below and left of the artwork,
+  // which the assembly centres on the origin.
+  const snapshot=readSnapshot(model.bytes()),sem=readProductSemantics(kernel.kernelLeases.get(model).root.metadata.semanticBytes);
+  // ArchMechRole: 0 body, 1 artwork, …, 7 text, 8 text base.
+ const textParts=sem.parts.filter(p=>p.role===7||p.role===8);
+  assert.ok(textParts.length>0,'text parts in the semantics table');
+  const ys=textParts.flatMap(p=>partMesh(snapshot,p.meshPart).vertices.map(v=>v[1]));
+  const xs=textParts.flatMap(p=>partMesh(snapshot,p.meshPart).vertices.map(v=>v[0]));
+  assert.ok(Math.max(...ys)<0&&Math.max(...xs)<0,'beside text stays at its own negative coordinates: '+JSON.stringify({x:[Math.min(...xs),Math.max(...xs)],y:[Math.min(...ys),Math.max(...ys)]}));
  }finally{model.release();}
  noOwned();
 });
