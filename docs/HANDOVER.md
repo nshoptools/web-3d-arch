@@ -196,7 +196,8 @@ Hai bộ kiểm hỏng sẵn, **không** được làm xanh bằng cách sửa k
 chứng minh đã hỏng trước vòng này: `tests/product-source` (`native-refusals.json` ghim theo
 nhân `f13bdd2b…`, nhân hiện tại dựng được các ca text/emoji nên danh sách chặn rỗng) và
 `tests/source-svg-export` ca 14 (`PRODUCT_ADOPTION_DECISION_REQUIRED` thay vì
-`PRODUCT_MATERIAL_ID_CONFLICT`). Cả hai phải xử lý trước khi đóng gói nhân mới.
+`PRODUCT_MATERIAL_ID_CONFLICT`; hỏng y hệt khi hoàn nguyên `src` về `48e69abc`, tức trước toàn
+bộ đợt này). Cả hai phải xử lý trước khi đóng gói nhân mới.
 
 ## Những gì cần giữ
 
