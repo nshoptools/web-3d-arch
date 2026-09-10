@@ -407,14 +407,22 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
   * it were Y up, and the build path did not reflect, so the two cancelled and the
   * model matched the drawing. Reflecting those saved pixels now would turn a
   * correct saved project upside down (Codex R3B-C01). Such a render is the only
-  * artwork that must not be placed, and it is recognisable: the conversion
-  * recorded its preview frame, and only frames written after the fix name the
-  * source axis. Imported pictures carry no such frame, and text or emoji renders
-  * record a pixel-to-source affine instead of a frame; both are upright and are
-  * placed like any other artwork. */
+  * artwork that must not be placed, and it is recognisable from what the
+  * conversion recorded about its own render.
+  *
+  * The question asked of the record is "did this render honour the source's own
+  * Y-down axis?", and only a frame that says so earns the reflection. Anything
+  * else - the frames written before the fix, which name no axis at all, a frame
+  * that records the Y-up sampling itself, or a record damaged outside this
+  * application - is treated as the old convention, because that is what every
+  * saved project actually holds and because the answer preserves the model such a
+  * project already builds. Two conversion paths record the frame in different
+  * places, so both are read (Grok, round 3c). Imported pictures carry no frame at
+  * all, and text or emoji renders record a pixel-to-source affine instead; both
+  * are upright and are placed like any other artwork. */
  function mirroredDerivedRaster(source){
-  const frame=source?.metadata?.preview?.frame;
-  return !!frame&&frame.kind==='manufacturing-bounds'&&frame.sourceAxis===undefined;
+  const metadata=source?.metadata,frame=metadata?.preview?.frame??metadata?.frame;
+  return !!frame&&frame.kind==='manufacturing-bounds'&&frame.sourceAxis!=='x-right-y-down';
  }
  function sealedRasterFrame(packet){
   validatePacket(packet);const s=decodeSummary(packet.buffers.find(r=>r.kind===1).bytes);

@@ -178,8 +178,13 @@ nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát h
   mesh trùng **SHA-256** của mảng đỉnh/tam giác/bảng phần, kể cả với một raster cũ đã **sửa tay**
   rồi phân vùng lại và đóng gói bằng mã cũ. **Còn mở**: nếu ai đó sửa metadata **ngoài** luồng ứng
   dụng (xóa `preview.frame`, hoặc xóa riêng `sourceAxis`) thì bản dựng lật lại; nên đổi quy tắc
-  thành “ảnh do chính ứng dụng dựng mặc định là quy ước cũ trừ khi bản ghi nêu trục mới”, tức thêm
-  điều kiện “dẫn xuất (`rasterPreparation.input.origin`) mà thiếu `preview.frame`”.
+  thành “ảnh do chính ứng dụng dựng mặc định là quy ước cũ trừ khi bản ghi nêu trục mới”. Grok
+  phản biện cùng bản sửa bằng dữ liệu cũ **tự dựng** (không dùng fixture của Codex) và cũng đóng
+  mục này, đồng thời chỉ ra hai chỗ cần chắc hơn: đường chuyển đổi thứ hai ghi khung ở
+  `metadata.frame` chứ không phải `metadata.preview.frame`, và `sourceAxis: null` không khớp phép
+  so `=== undefined`. **Đã sửa theo**: quy tắc đọc cả hai chỗ ghi khung và chỉ đặt khung khi bản
+  ghi khẳng định lượt dựng tôn trọng trục Y-xuống của nguồn; mọi bản ghi khác được coi là quy ước
+  cũ, tức giữ mô hình mà dự án cũ vẫn dựng.
 - **Hình bị lật dọc so với nguồn (Codex R3-C02, P1) — đã sửa tận gốc.** Nhân phân giải SVG
   theo viewport của SVG (X phải, **Y xuống**) và dựng ngữ cảnh raster theo lưới điểm ảnh
   (cũng Y xuống), còn mọi tầng sau — vỏ SVG của chữ, biên xem trước, `source_assembly`, xuất

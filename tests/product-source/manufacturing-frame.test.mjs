@@ -189,15 +189,25 @@ test('a raster the old renderer derived from an SVG keeps the model it always bu
   const ys=meshes.map(m=>m.vertices.reduce((n,v)=>Math.max(n,v[1]),-Infinity));
   return {ys,scale,ty};
  };
- // The second arm feeds the same mirrored pixels with a frame that claims the new convention. It is
- // not an artefact the application can produce; it is here to show the decision is read from the
- // record rather than guessed from the pixels.
- for(const [name,frame,expectBlueAbove] of [['legacy render, frame without an axis',legacyFrame,true],
-   ['a render that names its axis',{...legacyFrame,sourceAxis:'x-right-y-down'},false]]){
+ // Only a record that says the render honoured the source's Y-down axis earns the reflection. The
+ // arms below are the two conversion paths' recording places, the frames written before the fix,
+ // a record damaged outside the application, and the affirming record itself. The last arm feeds
+ // mirrored pixels with an affirming frame: not an artefact the application can produce, it is here
+ // to show the decision is read from the record rather than guessed from the pixels.
+ const arms=[
+  ['frame recorded under preview, no axis named',{preview:{frame:legacyFrame}},true],
+  ['frame recorded at the top level, no axis named',{frame:legacyFrame},true],
+  ['a record whose axis was removed outside the application',{preview:{frame:{...legacyFrame,sourceAxis:null}}},true],
+  ['a record that says the render sampled Y up',{preview:{frame:{...legacyFrame,sourceAxis:'x-right-y-up'}}},true],
+  ['a record that says the render honoured the Y-down source',{preview:{frame:{...legacyFrame,sourceAxis:'x-right-y-down'}}},false],
+ ];
+ for(const [name,recorded,expectBlueAbove] of arms){
   const f=await rasterState('keychain','noi',{pixels:legacy,adopt:async({state,source,assets})=>{
    // The conversion records the preview frame on the source; that record is the only thing
    // that says which renderer made these pixels.
-   source.metadata.preview={sha256:await sha256(new Uint8Array(legacy.data)),renderer:{id:'arch-engine-planar-preview',version:'scanline-2x2-v1'},frame};
+   const renderer={id:'arch-engine-planar-preview',version:'scanline-2x2-v1'};
+   if(recorded.preview)source.metadata.preview={sha256:await sha256(new Uint8Array(legacy.data)),renderer,...recorded.preview};
+   if(recorded.frame)source.metadata.frame=recorded.frame;
    set({state,userId:'user-a',projectId:'project-persistent',assetsMap:assets});
    return bridge.prepareAdoption({...controlFor(state),state,source,assets,purpose:'source',operation:'import',sourceContext:source.metadata.sourceContext,materials:[],materialDefaults:[]});
   }});
