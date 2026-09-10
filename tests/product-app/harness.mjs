@@ -155,11 +155,16 @@ function adopted(state,source,assets,a){
  state.content.app.source=source;state.content.app.materials=structuredClone(a.materials);state.content.app.materialDefaults=structuredClone(a.materialDefaults);state.revision++;
  return {state:validateState(state),assets};
 }
-export async function rasterState(product='keychain',style='noi',{adopt=null}={}){
+/** `pixels` replaces the built-in artwork with caller-supplied RGBA, for cases that need a
+ * particular picture (an asymmetric mark, or one a previous version of the renderer produced). */
+export async function rasterState(product='keychain',style='noi',{adopt=null,pixels=null}={}){
  const state=base(product,style,'raster');live={...live,state};
- const rgba=new Uint8ClampedArray(64*48*4);
- for(let y=0;y<48;y++)for(let x=0;x<64;x++){if(x>=8&&x<14&&y>=9&&y<16)continue;rgba.set(x<32?[224,68,68,255]:[51,136,238,255],4*(y*64+x));}
- const bytes=await encodeRasterPNG({width:64,height:48,data:rgba}),rawHash=await sha256(bytes),c=controlFor(state);
+ const width=pixels?.width??64,height=pixels?.height??48;
+ let rgba;
+ if(pixels)rgba=new Uint8ClampedArray(pixels.data);
+ else{rgba=new Uint8ClampedArray(64*48*4);
+  for(let y=0;y<48;y++)for(let x=0;x<64;x++){if(x>=8&&x<14&&y>=9&&y<16)continue;rgba.set(x<32?[224,68,68,255]:[51,136,238,255],4*(y*64+x));}}
+ const bytes=await encodeRasterPNG({width,height,data:rgba}),rawHash=await sha256(bytes),c=controlFor(state);
  const sourceContext={version:'arch-source-context/1',operation:'import',id:'source-durable-art',revision:0,predecessor:null};
  const reply=await raster.source.ingest({...c,state,file:{name:'synthetic.png',mediaType:'image/png',bytes},purpose:'source',sourceContext});
  assert.equal(reply.status,'proposal');const result=reply.result,assets=new Map([[rawHash,bytes]]);

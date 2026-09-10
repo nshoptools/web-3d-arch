@@ -166,6 +166,14 @@ nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát h
 
 **Vòng sửa sau phản biện** (bảng phân xử từng mục ở mục 5–6 của báo cáo Hub):
 
+- **Raster mà chính ứng dụng dựng từ SVG bằng bản trước (Codex R3B-C01, P1) — đã sửa.** Bản
+  dựng ảnh cũ lấy mẫu viewport Y-xuống như thể Y-lên, nên **điểm ảnh đã lưu bị lật**; đường dựng
+  cũ không phản chiếu nên hai lỗi triệt tiêu nhau và mô hình khớp bản vẽ. Phản chiếu số điểm ảnh
+  đó bây giờ sẽ lật ngược một dự án cũ đang đúng. Nay đúng loại ảnh đó **không** được đặt khung:
+  nhận ra bằng chính bản ghi của lượt chuyển đổi (`source.metadata.preview.frame`), vì chỉ khung
+  ghi sau bản sửa mới nêu trục nguồn. Ảnh nhập vào không có bản ghi đó, còn chữ/emoji ghi affine
+  điểm‑ảnh‑sang‑nguồn chứ không phải khung, và cả hai đều dựng xuôi nên vẫn được đặt như thường.
+  Hồi quy: ca «a raster the old renderer derived from an SVG keeps the model it always built».
 - **Hình bị lật dọc so với nguồn (Codex R3-C02, P1) — đã sửa tận gốc.** Nhân phân giải SVG
   theo viewport của SVG (X phải, **Y xuống**) và dựng ngữ cảnh raster theo lưới điểm ảnh
   (cũng Y xuống), còn mọi tầng sau — vỏ SVG của chữ, biên xem trước, `source_assembly`, xuất
@@ -183,7 +191,10 @@ nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát h
 - **Cảnh báo lúc nhận mesh không có `sequence` nên mất khỏi dải (Codex R3-C09)**; mọi chẩn
   đoán nay đi qua `record()`.
 - **Byte fixture đổi khi checkout trên Windows (Codex R3-C10)**: `.gitattributes` giữ
-  `tests/fixtures/**` nguyên byte.
+  `tests/fixtures/**` nguyên byte. Thuộc tính mới **không tự ghi lại** tệp đã nằm sẵn trong một
+  bản checkout cũ; bản checkout nào còn CRLF thì chữa bằng
+  `git reset HEAD -- tests/fixtures && git checkout -- tests/fixtures` (kiểm bằng kích thước:
+  Bambu 43.485 byte, U1 25.487 byte).
 - **Dải hiện mã máy `LIB3MF_TRANSACTION` (Grok G-R3-02)**: có câu tiếng Việt và in thêm chi
   tiết native để gửi kèm khi báo lỗi. **Mở gói trùng thư viện (G-R3-03)** là kết cục hợp lệ,
   chuyển khỏi dải sang nhật ký.

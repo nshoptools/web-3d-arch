@@ -402,6 +402,20 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
   if(!token)for(const [key,value]of Object.entries(original.metadata))need(same(result.metadata[key],value),'PRODUCT_SOURCE_FRAME_PROVENANCE');
   alive();return result;
  }
+ /** A raster this application rendered from an SVG before the source frame was
+  * settled holds mirrored pixels: that renderer sampled a Y-down viewport as if
+  * it were Y up, and the build path did not reflect, so the two cancelled and the
+  * model matched the drawing. Reflecting those saved pixels now would turn a
+  * correct saved project upside down (Codex R3B-C01). Such a render is the only
+  * artwork that must not be placed, and it is recognisable: the conversion
+  * recorded its preview frame, and only frames written after the fix name the
+  * source axis. Imported pictures carry no such frame, and text or emoji renders
+  * record a pixel-to-source affine instead of a frame; both are upright and are
+  * placed like any other artwork. */
+ function mirroredDerivedRaster(source){
+  const frame=source?.metadata?.preview?.frame;
+  return !!frame&&frame.kind==='manufacturing-bounds'&&frame.sourceAxis===undefined;
+ }
  function sealedRasterFrame(packet){
   validatePacket(packet);const s=decodeSummary(packet.buffers.find(r=>r.kind===1).bytes);
   return freeze({version:'arch-raster-frame/1',widthPx:s.inputWidth,heightPx:s.inputHeight,processedWidthPx:s.width,processedHeightPx:s.height,
@@ -505,7 +519,7 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
       // The pixel grid is X right/Y down; ASFR/1 reflects the registered context
       // into the manufacturing frame. The bundle transport predates the frame
       // ABI and hands the context over as it is.
-      if(frameTransport==='source-frame/1'){
+      if(frameTransport==='source-frame/1'&&!mirroredDerivedRaster(source)){
        const framed=await placeContext({kind:'raster-token',token,epoch:ownerEpoch},{manufacturing:{heightMm:sealedRasterFrame(ready.packet).heightMm}},canonical.sourceHash,mutate,retain,alive);
        reference=()=>{alive();return {kind:'snapshot',id:framed.id,generation:framed.generation,epoch:ownerEpoch};};
       }

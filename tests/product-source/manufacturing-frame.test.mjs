@@ -9,6 +9,7 @@ import {createEngineTextService} from '../../src/core/engine-text-service.mjs';
 import {createSourceContext} from '../../src/app/source-approval.mjs';
 import {readProductSemantics} from '../../src/core/product-operations.mjs';
 import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
+import {encodeRasterPNG} from '../../src/core/png-encode.mjs';
 import {manufacturingFrame,SourceFrameError} from '../../src/core/source-frame.mjs';
 import {readSnapshot} from '../oracles/mesh-oracle.mjs';
 import {sha256,canonicalJSON} from '../../src/storage/common.mjs';
@@ -165,4 +166,53 @@ test('text beside the artwork keeps its own absolute place while the artwork is 
   assert.ok(Math.max(...ys)<0&&Math.max(...xs)<0,'beside text stays at its own negative coordinates: '+JSON.stringify({x:[Math.min(...xs),Math.max(...xs)],y:[Math.min(...ys),Math.max(...ys)]}));
  }finally{model.release();}
  noOwned();
+});
+
+// The one artwork that must NOT be placed: a raster this application rendered from an SVG before
+// the frame was settled. That renderer sampled a Y-down viewport as if it were Y up, so its saved
+// pixels are mirrored, and the build path did not reflect, which cancelled out. Reflecting them now
+// would turn a correct saved project upside down (Codex R3B-C01).
+test('a raster the old renderer derived from an SVG keeps the model it always built',async()=>{
+ const marks='<svg xmlns="http://www.w3.org/2000/svg" width="20mm" height="10mm" viewBox="0 0 20 10"><path fill="#30353b" d="M0 0H20V10H0Z"/><path fill="#0099cc" d="M16 1H19V4H16Z"/><path fill="#ee7733" d="M1 6H6V9H1Z"/></svg>';
+ const lease=await operation(controlFor({revision:0,content:{app:{}}}),(a,g)=>a.build({kind:'svg',source:marks,thicknessMm:.2,toleranceMm:.004},{generation:g}));
+ let legacy,legacyFrame;
+ try{
+  // Exactly what the old renderer produced: no source axis named, so Y-up sampling.
+  const p=await previewPlanarSnapshot(lease.bytes(),{resolution:64,includeRGBA:true});
+  legacy={data:p.rgba,width:p.width,height:p.height};
+  const {sourceAxis,...withoutAxis}=p.frame;legacyFrame=withoutAxis;
+  assert.equal(sourceAxis,'x-right-y-up');
+ }finally{lease.release();}
+ const blueTop=(meshes,transform)=>{
+  const [scale,,,,,ty]=transform;
+  // The drawing has blue at the top; the saved pixels have it at the bottom.
+  const ys=meshes.map(m=>m.vertices.reduce((n,v)=>Math.max(n,v[1]),-Infinity));
+  return {ys,scale,ty};
+ };
+ // The second arm feeds the same mirrored pixels with a frame that claims the new convention. It is
+ // not an artefact the application can produce; it is here to show the decision is read from the
+ // record rather than guessed from the pixels.
+ for(const [name,frame,expectBlueAbove] of [['legacy render, frame without an axis',legacyFrame,true],
+   ['a render that names its axis',{...legacyFrame,sourceAxis:'x-right-y-down'},false]]){
+  const f=await rasterState('keychain','noi',{pixels:legacy,adopt:async({state,source,assets})=>{
+   // The conversion records the preview frame on the source; that record is the only thing
+   // that says which renderer made these pixels.
+   source.metadata.preview={sha256:await sha256(new Uint8Array(legacy.data)),renderer:{id:'arch-engine-planar-preview',version:'scanline-2x2-v1'},frame};
+   set({state,userId:'user-a',projectId:'project-persistent',assetsMap:assets});
+   return bridge.prepareAdoption({...controlFor(state),state,source,assets,purpose:'source',operation:'import',sourceContext:source.metadata.sourceContext,materials:[],materialDefaults:[]});
+  }});
+  set({state:f.state,userId:'user-a',projectId:'project-persistent',assetsMap:f.assets});
+  const model=await product.engine.build({...controlFor(f.state),...f});
+  try{
+   const snapshot=readSnapshot(model.bytes()),sem=readProductSemantics(kernel.kernelLeases.get(model).root.metadata.semanticBytes);
+   const meshes=snapshot.parts.map(part=>partMesh(snapshot,part));
+   const centre=index=>{const v=meshes[index].vertices;return v.reduce((n,p)=>n+p[1],0)/v.length;};
+   const colour=index=>(snapshot.parts[index].color>>>8).toString(16).padStart(6,'0');
+   const art=sem.parts.filter(p=>p.role===1).map(p=>({colour:colour(p.meshPart),y:centre(p.meshPart)}));
+   const blue=art.find(a=>a.colour==='0099cc'),orange=art.find(a=>a.colour==='ee7733');
+   assert.ok(blue&&orange,name+': both marks are in the model '+JSON.stringify(art));
+   assert.equal(blue.y>orange.y,expectBlueAbove,name+': '+JSON.stringify({blue:blue.y,orange:orange.y}));
+  }finally{model.release();}
+  noOwned();
+ }
 });

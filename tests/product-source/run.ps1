@@ -9,12 +9,12 @@ $env:PRODUCT_APP_MODULE=Join-Path $env:PROJECT_REVIEW_RUN 'work/module/arch-kern
 $env:ARCH_BRIDGE_MATRIX='1'
 $env:ARCH_BRIDGE_DISCOVER='1'
 $env:ARCH_BRIDGE_TAG='final'
+& node --test (Join-Path $PSScriptRoot 'manufacturing-frame.test.mjs') 2>&1 | Tee-Object -FilePath (Join-Path $env:PROJECT_REVIEW_RUN 'evidence/manufacturing-frame-main.log')
+if($LASTEXITCODE -ne 0){throw 'Manufacturing frame orientation failed'}
 & node --test (Join-Path $PSScriptRoot 'node.test.mjs') 2>&1 | Tee-Object -FilePath (Join-Path $env:PROJECT_REVIEW_RUN 'evidence/source-node-main.log')
 if($LASTEXITCODE -ne 0){throw 'Product source Node matrix failed'}
 & node --test (Join-Path $PSScriptRoot 'artifact-boundaries.test.mjs') 2>&1 | Tee-Object -FilePath (Join-Path $env:PROJECT_REVIEW_RUN 'evidence/artifact-boundaries-main.log')
 if($LASTEXITCODE -ne 0){throw 'Product source artifact boundary failed'}
-& node --test (Join-Path $PSScriptRoot 'manufacturing-frame.test.mjs') 2>&1 | Tee-Object -FilePath (Join-Path $env:PROJECT_REVIEW_RUN 'evidence/manufacturing-frame-main.log')
-if($LASTEXITCODE -ne 0){throw 'Manufacturing frame orientation failed'}
 if($Browsers){
  foreach($SourceColor in @('0','1')){
   $env:ARCH_BRIDGE_COLOR=$SourceColor
