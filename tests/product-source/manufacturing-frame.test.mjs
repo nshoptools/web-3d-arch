@@ -175,13 +175,17 @@ test('text beside the artwork keeps its own absolute place while the artwork is 
 test('a raster the old renderer derived from an SVG keeps the model it always built',async()=>{
  const marks='<svg xmlns="http://www.w3.org/2000/svg" width="20mm" height="10mm" viewBox="0 0 20 10"><path fill="#30353b" d="M0 0H20V10H0Z"/><path fill="#0099cc" d="M16 1H19V4H16Z"/><path fill="#ee7733" d="M1 6H6V9H1Z"/></svg>';
  const lease=await operation(controlFor({revision:0,content:{app:{}}}),(a,g)=>a.build({kind:'svg',source:marks,thicknessMm:.2,toleranceMm:.004},{generation:g}));
- let legacy,legacyFrame;
+ let legacy,legacyFrame,modern,modernFrame;
  try{
   // Exactly what the old renderer produced: no source axis named, so Y-up sampling.
   const p=await previewPlanarSnapshot(lease.bytes(),{resolution:64,includeRGBA:true});
   legacy={data:p.rgba,width:p.width,height:p.height};
   const {sourceAxis,...withoutAxis}=p.frame;legacyFrame=withoutAxis;
   assert.equal(sourceAxis,'x-right-y-up');
+  // What a conversion writes today: the viewport's own axis named, pixels upright.
+  const q=await previewPlanarSnapshot(lease.bytes(),{resolution:64,includeRGBA:true,sourceAxis:'x-right-y-down',sourceHeightMm:lease.metadata.heightMm});
+  modern={data:q.rgba,width:q.width,height:q.height};modernFrame=q.frame;
+  assert.equal(modernFrame.sourceAxis,'x-right-y-down');
  }finally{lease.release();}
  const blueTop=(meshes,transform)=>{
   const [scale,,,,,ty]=transform;
@@ -194,19 +198,25 @@ test('a raster the old renderer derived from an SVG keeps the model it always bu
  // a record damaged outside the application, and the affirming record itself. The last arm feeds
  // mirrored pixels with an affirming frame: not an artefact the application can produce, it is here
  // to show the decision is read from the record rather than guessed from the pixels.
+ // The last arm is the one that proves producer and consumer agree: pixels from a conversion done
+ // the way conversions are done now, with the record that conversion writes, must build the drawing.
+ // The arms before it hold the old pixels, so an affirming record is expected to reflect them
+ // (both seats, round 3d, asked for the affirming top-level arm and this end-to-end one).
  const arms=[
-  ['frame recorded under preview, no axis named',{preview:{frame:legacyFrame}},true],
-  ['frame recorded at the top level, no axis named',{frame:legacyFrame},true],
-  ['a record whose axis was removed outside the application',{preview:{frame:{...legacyFrame,sourceAxis:null}}},true],
-  ['a record that says the render sampled Y up',{preview:{frame:{...legacyFrame,sourceAxis:'x-right-y-up'}}},true],
-  ['a record that says the render honoured the Y-down source',{preview:{frame:{...legacyFrame,sourceAxis:'x-right-y-down'}}},false],
+  ['frame recorded under preview, no axis named',{preview:{frame:legacyFrame}},legacy,true],
+  ['frame recorded at the top level, no axis named',{frame:legacyFrame},legacy,true],
+  ['a record whose axis was removed outside the application',{preview:{frame:{...legacyFrame,sourceAxis:null}}},legacy,true],
+  ['a record that says the render sampled Y up',{preview:{frame:{...legacyFrame,sourceAxis:'x-right-y-up'}}},legacy,true],
+  ['a record under preview that honours the Y-down source',{preview:{frame:modernFrame}},legacy,false],
+  ['a record at the top level that honours the Y-down source',{frame:modernFrame},legacy,false],
+  ['a conversion done the way conversions are done now, end to end',{preview:{frame:modernFrame}},modern,true],
  ];
- for(const [name,recorded,expectBlueAbove] of arms){
-  const f=await rasterState('keychain','noi',{pixels:legacy,adopt:async({state,source,assets})=>{
+ for(const [name,recorded,pixels,expectBlueAbove] of arms){
+  const f=await rasterState('keychain','noi',{pixels,adopt:async({state,source,assets})=>{
    // The conversion records the preview frame on the source; that record is the only thing
    // that says which renderer made these pixels.
    const renderer={id:'arch-engine-planar-preview',version:'scanline-2x2-v1'};
-   if(recorded.preview)source.metadata.preview={sha256:await sha256(new Uint8Array(legacy.data)),renderer,...recorded.preview};
+   if(recorded.preview)source.metadata.preview={sha256:await sha256(new Uint8Array(pixels.data)),renderer,...recorded.preview};
    if(recorded.frame)source.metadata.frame=recorded.frame;
    set({state,userId:'user-a',projectId:'project-persistent',assetsMap:assets});
    return bridge.prepareAdoption({...controlFor(state),state,source,assets,purpose:'source',operation:'import',sourceContext:source.metadata.sourceContext,materials:[],materialDefaults:[]});
