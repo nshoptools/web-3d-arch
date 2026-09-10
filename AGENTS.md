@@ -53,6 +53,40 @@ triển khai, đọc [phạm vi và thứ tự khởi động](docs/development/
 - Chỉ xóa đầu ra do mình tạo; kiểm tra đích trong repo trước khi xóa/move đệ quy.
   Không xóa hoặc ghi đè công việc của người khác.
 
+## Junction đệ quy trong `tmp/reviews` — bẫy khi đóng gói
+
+Test `SEC-01` tại `tests/host/https.test.mjs:91` **cố ý** tạo junction trỏ ngược
+từ web root về thư mục cha của chính nó — `symlinkSync(f.root, join(f.webroot,
+'escape'), 'junction')` — để kiểm chứng `createHost()` từ chối manifest thoát ra
+ngoài web root. Vì `webroot = root/public-build`, đường dẫn thành vòng lặp vô hạn
+`public-build/escape/public-build/escape/...`. Fixture sinh bằng
+`mkdtempSync(join(run, 'evidence', label + '-'))` (`tests/host/helpers.mjs:22`)
+và **không có bước dọn**, nên mỗi lượt chạy SEC-01 để lại thêm một bộ vĩnh viễn
+trong `evidence/` của phiên đó.
+
+**Junction này là fixture bảo mật bắt buộc — không xóa nó khỏi test.**
+
+- `tar.exe` của Windows (bsdtar/libarchive) coi junction là thư mục thật và **đi
+  xuyên qua** nó. Ngày 2026-09-10 một lệnh `tar -czf … -C <repo> .` đã lặp 8 tầng,
+  cho ra gói 3,31 GB mà 88,9% là rác đệ quy và **không chứa một file mã nguồn nào**
+  (`src/` chỉ còn đúng một entry thư mục rỗng), rồi chết vì đường dẫn vượt giới hạn.
+  Đường dẫn sâu nhất đo được 1.388 ký tự, so với giới hạn 260 của Windows.
+- Không đóng gói hay sao chép cây làm việc bằng `tar`, `zip`, `robocopy` hoặc trình
+  backup. Dùng `git archive`, `git bundle` hoặc `git clone`: git không đi vào thư
+  mục đã ignore nên miễn nhiễm, và `tmp/reviews/*/runs/*` đã nằm trong `.gitignore`.
+- Nếu buộc phải duyệt cây, loại trừ reparse point: `robocopy /XJ`,
+  `tar --exclude=./tmp`, hoặc bỏ qua thư mục có thuộc tính `ReparsePoint`.
+- Đếm reparse point bằng lệnh đi xuyên (`dir /al /s`) cho số **sai lệch rất lớn**,
+  vì cùng một junction bị liệt kê lại ở mỗi tầng lồng — cách đó từng báo 583 trong
+  khi số thật là 22. Phải duyệt thủ công và không đi xuyên. Thực trạng 2026-09-10:
+  22 junction thư mục toàn repo, trong đó 4 `escape` đệ quy thuộc 2 phiên cũ.
+- Xóa junction chỉ gỡ liên kết, không đụng dữ liệu đích, và không ảnh hưởng test
+  (mỗi lượt chạy tự tạo fixture mới). Nhưng nó sẽ xuất hiện lại ở lượt SEC-01 kế
+  tiếp: đây là dọn dẹp một lần, không phải bản vá.
+- Hai junction sau là hạ tầng hợp lệ, **không được xóa**:
+  `node_modules` → `.toolchain/app-runtime/node_modules` và
+  `src/printing/node_modules` → `.toolchain/printing-js/node_modules`.
+
 ## Cấu hình ghế review — bắt buộc và có cập nhật
 
 Trước khi gọi, tiếp tục hoặc fork bất kỳ ghế review nào (kể cả agent con),
