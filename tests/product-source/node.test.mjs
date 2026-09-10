@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createServer} from 'node:http';
-import {M,client,operation,dispatcher,setLive,noOwned,transportLog} from '../product-app/harness.mjs';
+import {M,client,operation,dispatcher,setLive,noOwned,transportLog,manufacturingPreview} from '../product-app/harness.mjs';
 import {createApplicationSources} from '../../src/integration/source-compositor.mjs';
 import {createEngineTextService} from '../../src/core/engine-text-service.mjs';
 import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
@@ -16,7 +16,7 @@ const assetURLs=fixture.assetRecords.map(r=>({...r,url:origin+'/library/'+r.sha2
 };
 assert.deepEqual(versions,{mechanicsAbi:2,mechanicsSemantics:3,sourceAbi:1,sourceSemantics:2,datumExtension:1});
 let live;const driver={get:()=>live,set(v){live={sessionKey:'test-session-1',...v};setLive(v);}};
-Object.assign(client,{worker:{testTransport:true},memory:M.HEAPU8.buffer,serviceCapabilities:{raster:true,geometryVersions:versions},onRetirement:()=>()=>{},
+Object.assign(client,{worker:{testTransport:true},memory:M.HEAPU8.buffer,serviceCapabilities:{raster:true,sourceFrameVersion:M._arch_source_frame_version(),geometryVersions:versions},onRetirement:()=>()=>{},
  async rasterOperation(method,request,{generation}){
   assert.equal(M._arch_control_reset(generation),1);transportLog.push({method:'raster.'+method,generation});
   return dispatcher.dispatch(method,request,{generation});
@@ -30,7 +30,7 @@ client.textOperation=async(request,{generation})=>{
 const kernel={operation,ensureRuntime:async()=>client,kernelLeases:new WeakMap(),
  async svgPreview(input,file,{resolution=64,includeRGBA=false,longEdgeMm=0}={}){
   const lease=await operation(input,(a,g)=>a.build({kind:'svg',source:new TextDecoder().decode(file.bytes),thicknessMm:.2,toleranceMm:.004,longEdgeMm},{generation:g}));
-  try{const p=await previewPlanarSnapshot(lease.bytes(),{resolution,includeRGBA});
+  try{const p=await manufacturingPreview(lease,{resolution,includeRGBA});
    return {version:'arch-app-adapters/1',ticket:structuredClone(input.ticket),kind:'svg',metadata:{...lease.metadata,previewDerivation:p.derivation,frame:p.frame},
     materials:p.colors.map((color,i)=>({id:'source-'+color.slice(1),label:'Color '+i,color,slot:null,role:'region',overridden:false,backgroundEligible:true,excluded:false})),
     preview:{width:p.width,height:p.height,pixelSizeMm:p.pixelSizeMm,png:p.png,mediaType:'image/png'},

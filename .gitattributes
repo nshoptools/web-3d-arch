@@ -10,3 +10,7 @@
 *.woff2 binary
 # Preserve upstream text byte-for-byte for checksum verification on Windows.
 src/assets/** -text
+# Test fixtures are identified by SHA-256 pins (slicer profiles, reference 3MF,
+# corpus): keep every byte as committed, whatever the platform's line-ending
+# policy is (Codex release round 3, R3-C10).
+tests/fixtures/** -text

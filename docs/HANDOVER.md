@@ -161,7 +161,42 @@ asset cho phép; cây `.toolchain/clipper2-derived` lệch pin (`unified-pins.js
 
 Phản biện độc lập trên commit của đợt: Codex (`tmp/reviews/codex/runs/20260910-codex-release-r3`)
 và Grok (`tmp/reviews/grok/runs/20260910-grok-release-r3`, binary 1.0.25 chấp nhận sau bộ kiểm
-cô lập). {{SEAT_VERDICTS}}
+cô lập). Cả hai nộp báo cáo: Codex 10 phát hiện (2 mức P1), Grok 4 (1 mức P1). Cả hai xác
+nhận độc lập rằng gói 08-09 không xuất được 3MF, trùng phát hiện của Hub.
+
+**Vòng sửa sau phản biện** (bảng phân xử từng mục ở mục 5–6 của báo cáo Hub):
+
+- **Hình bị lật dọc so với nguồn (Codex R3-C02, P1) — đã sửa tận gốc.** Nhân phân giải SVG
+  theo viewport của SVG (X phải, **Y xuống**) và dựng ngữ cảnh raster theo lưới điểm ảnh
+  (cũng Y xuống), còn mọi tầng sau — vỏ SVG của chữ, biên xem trước, `source_assembly`, xuất
+  mặt cắt — là hệ chế tạo **Y lên**; không chỗ nào lật một lần, nên ảnh SVG/raster ra ngược
+  còn chữ thì đúng. Nay biên ngữ cảnh sản phẩm đặt mỗi ngữ cảnh hình nguồn vào hệ chế tạo
+  bằng chính API khung nguồn của nhân với đúng một phép phản chiếu `[1,0,0,-1,0,heightMm]`;
+  danh tính vùng vẫn tính trên lease chưa đặt nên dự án cũ không phải gán lại vùng; vỏ chữ
+  không đụng tới. Xem trước lúc nhập khai báo trục nguồn nên ảnh nguồn, mô hình và tệp xuất
+  cùng hướng. **Dự án đã lưu sẽ dựng lại theo hướng đã sửa** (khác mô hình cũ của chính nó —
+  đó là nội dung bản sửa); màu và ràng buộc vùng không phải gán lại; tệp đã xuất trước đây
+  giữ hướng cũ và nên xuất lại. Hồi quy: `tests/product-source/manufacturing-frame.test.mjs`.
+- **Đổi nguồn sang emoji trên dự án đã dựng thì mất nút tách màu (Codex R3-C07)** — bước còn
+  thiếu nay đọc từ ràng buộc của chính nguồn hiện hành (`project.source.conversion`), không
+  từ số vật liệu của mô hình cũ.
+- **Cảnh báo lúc nhận mesh không có `sequence` nên mất khỏi dải (Codex R3-C09)**; mọi chẩn
+  đoán nay đi qua `record()`.
+- **Byte fixture đổi khi checkout trên Windows (Codex R3-C10)**: `.gitattributes` giữ
+  `tests/fixtures/**` nguyên byte.
+- **Dải hiện mã máy `LIB3MF_TRANSACTION` (Grok G-R3-02)**: có câu tiếng Việt và in thêm chi
+  tiết native để gửi kèm khi báo lỗi. **Mở gói trùng thư viện (G-R3-03)** là kết cục hợp lệ,
+  chuyển khỏi dải sang nhật ký.
+- Không sửa, có lý do: **hủy do người dùng** vẫn ở mức thông tin (G-R3-04 — thẻ bận biến mất
+  đã là phản hồi); **kiểm mesh của emoji chạm watchdog 120 s** (Codex R3-C08) là hiệu năng,
+  giữ làm điều kiện chặn phát hành cho luồng emoji; **F-03.1** vẫn là bất đồng còn lại với
+  Codex, ghi rõ thay vì bỏ qua.
+
+Hai bộ kiểm hỏng sẵn, **không** được làm xanh bằng cách sửa kỳ vọng, mỗi bộ có đối chứng
+chứng minh đã hỏng trước vòng này: `tests/product-source` (`native-refusals.json` ghim theo
+nhân `f13bdd2b…`, nhân hiện tại dựng được các ca text/emoji nên danh sách chặn rỗng) và
+`tests/source-svg-export` ca 14 (`PRODUCT_ADOPTION_DECISION_REQUIRED` thay vì
+`PRODUCT_MATERIAL_ID_CONFLICT`). Cả hai phải xử lý trước khi đóng gói nhân mới.
 
 ## Những gì cần giữ
 

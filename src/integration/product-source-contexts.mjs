@@ -7,6 +7,7 @@ import {domainStateFingerprint} from '../storage/history.mjs';
 import {readArchSnapshot} from '../viewport/arch-view.mjs';
 import {validatePacket,decodeSummary} from '../core/raster-schema.mjs';
 import {checkControl,checkedSourceContext} from './source-catalog.mjs';
+import {manufacturingFrame} from '../core/source-frame.mjs';
 
 export const PRODUCT_SOURCE_CONTEXTS_VERSION='arch-product-source-contexts/1';
 export const PRODUCT_SOURCE_LIMITS=Object.freeze({
@@ -366,28 +367,39 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
    height:record(133,t.baseEnabled?b:0,h),baseHeight:record(134,0,b)}],eyeletTextKey:null,contextTextKeys:{'text:primary':'text:primary'}};
  }
 
- async function placeContext(original,translationNm,sourceHash,mutate,retain,alive){
-  if(!translationNm)return original;
+ /** Places a context lease with the native source-frame extension: a translation
+  * for an overlay (text beside the artwork), or the one reflection that turns a
+  * parsed SVG or raster context (X right, Y down) into the manufacturing frame
+  * (Y up), the frame of the text wrapper, the preview, the assembly and every
+  * export. A raster context is addressed by its registry token and has no
+  * client-side bytes or metadata, so only its result is checked. */
+ async function placeContext(original,{translationNm=null,manufacturing=null}={},sourceHash,mutate,retain,alive){
+  if(!translationNm&&!manufacturing)return original;
   need(frameTransport==='source-frame/1','PRODUCT_FRAME_TRANSPORT');
-  const expected=translationNm.map(v=>coordinate(BigInt(v))),matrix=[1,0,0,1,...expected.map(v=>Number(v)/1000000)];
+  need(!(translationNm&&manufacturing),'PRODUCT_SOURCE_FRAME_SCOPE');
+  const token=original?.kind==='raster-token',placement=manufacturing?manufacturingFrame({sourceHash,heightMm:manufacturing.heightMm}):null;
+  const expectedNm=placement?placement.translationNm:translationNm.map(v=>String(coordinate(BigInt(v)))),linear=placement?placement.linearMatrix:[1,0,0,1],
+   matrix=placement?placement.request.matrix:[1,0,0,1,...expectedNm.map(v=>Number(v)/1000000)];
   const result=await mutate((client,generation)=>{
    need(client.serviceCapabilities?.sourceFrameVersion===1&&typeof client.sourceFrame==='function','PRODUCT_SOURCE_FRAME_CAPABILITY_REQUIRED');
    return client.sourceFrame(original,{version:'arch-source-frame/1',sourceHash,matrix},{generation});
   });
   retain(result);alive();
   const frame=result.metadata?.sourceFrame;
-  need(result.epoch===original.epoch&&result.id!==original.id&&result.metadata.sourceHash===sourceHash&&
-   frame?.version==='arch-source-frame/1'&&same(frame.requestedMatrix,matrix)&&same(frame.linearMatrix,[1,0,0,1])&&
-   Array.isArray(frame.translationGrid)&&same(frame.translationGrid.map(String),translationNm)&&
+  need(result.epoch===original.epoch&&(token||result.id!==original.id)&&result.metadata.sourceHash===sourceHash&&
+   frame?.version==='arch-source-frame/1'&&same(frame.requestedMatrix,matrix)&&same(frame.linearMatrix,linear)&&
+   Array.isArray(frame.translationGrid)&&same(frame.translationGrid.map(String),expectedNm)&&
    frame.gridScalePerMm===1000000&&frame.rounding==='binary64-exact-nearest-ties-even/1'&&
    frame.translationErrorUpperMmPerAxis===.0000005&&frame.totalErrorBoundMm===null&&
-   frame.sourceSnapshotId===original.id&&frame.sourceSnapshotGeneration===original.generation,
+   (token?result.metadata.kind==='raster-source-context'&&result.metadata.heightMm===manufacturing.heightMm
+    :frame.sourceSnapshotId===original.id&&frame.sourceSnapshotGeneration===original.generation)&&
+   (!placement||result.metadata.planarContextOnly===true&&result.metadata.sourceAssemblyRequired===true),
    'PRODUCT_SOURCE_FRAME_RESULT');
-  need(result.bytes().length<=PRODUCT_SOURCE_LIMITS.snapshotBytes&&original.bytes().length<=PRODUCT_SOURCE_LIMITS.snapshotBytes,"PRODUCT_SOURCE_SNAPSHOT_LIMIT");
-  const resultBytes=new Uint8Array(result.bytes()),originalBytes=new Uint8Array(original.bytes());
-  need(await sha256(resultBytes)===hash(frame.geometrySha256)&&await sha256(originalBytes)===hash(frame.sourceSnapshotSha256),'PRODUCT_SOURCE_FRAME_HASH');
-  hash(frame.sourceMetadataSha256);hash(frame.requestSha256);
-  for(const [key,value]of Object.entries(original.metadata))need(same(result.metadata[key],value),'PRODUCT_SOURCE_FRAME_PROVENANCE');
+  need(result.bytes().length<=PRODUCT_SOURCE_LIMITS.snapshotBytes&&(token||original.bytes().length<=PRODUCT_SOURCE_LIMITS.snapshotBytes),"PRODUCT_SOURCE_SNAPSHOT_LIMIT");
+  const resultBytes=new Uint8Array(result.bytes());
+  need(await sha256(resultBytes)===hash(frame.geometrySha256)&&(token||await sha256(new Uint8Array(original.bytes()))===hash(frame.sourceSnapshotSha256)),'PRODUCT_SOURCE_FRAME_HASH');
+  hash(frame.sourceMetadataSha256);hash(frame.requestSha256);hash(frame.sourceSnapshotSha256);
+  if(!token)for(const [key,value]of Object.entries(original.metadata))need(same(result.metadata[key],value),'PRODUCT_SOURCE_FRAME_PROVENANCE');
   alive();return result;
  }
  function sealedRasterFrame(packet){
@@ -414,16 +426,21 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
   const alive=()=>{check();need(record.live&&owner.epoch===ownerEpoch,'PRODUCT_SOURCE_RETIRED');for(const l of borrows)l.bytes();};
   const run=input.run??(invoke=>kernel.operation(c,invoke));
   const mutate=fn=>run((current,generation)=>{need(current===owner&&current.epoch===ownerEpoch,'PRODUCT_SOURCE_OWNER_CHANGED');alive();return fn(current,generation);});
+  const retain=l=>{borrows.push(l);cleanup.push(()=>l.release());};
   async function svgContext(spec){
    const b=assets.get(spec.sourceHash);need(b&&b.length>0&&b.length<=PRODUCT_SOURCE_LIMITS.svgBytes,'PRODUCT_SOURCE_SVG_LIMIT');
    let lease=await mutate((client,generation)=>client.build({kind:'svg',source:dec.decode(b),thicknessMm:.2,longEdgeMm:0,toleranceMm:tolerance},{generation}));
-   const retain=l=>{borrows.push(l);cleanup.push(()=>l.release());};retain(lease);alive();
-   if(spec.translationNm&&frameTransport==='source-frame/1')lease=await placeContext(lease,spec.translationNm,spec.sourceHash,mutate,retain,alive);
+   retain(lease);alive();
+   if(spec.translationNm&&frameTransport==='source-frame/1')lease=await placeContext(lease,{translationNm:spec.translationNm},spec.sourceHash,mutate,retain,alive);
    need(lease.epoch===ownerEpoch,'PRODUCT_SOURCE_OWNER_CHANGED');
    const bytes=lease.bytes(),d=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
    need(bytes.length>=80,'PRODUCT_SOURCE_SNAPSHOT_LIMIT');
    charge({points:d.getUint32(32,true),contours:d.getUint32(36,true),indices:d.getUint32(40,true),snapshotBytes:bytes.length});
    const canonical=await sourceGeometry({bytes,metadata:lease.metadata,...spec,...(frameTransport==='source-frame/1'?{translationNm:['0','0']}:{}),control:c});alive();
+   // Region identity (geometry hashes, native keys) stays in the source's own
+   // frame; only the lease the assembly consumes is reflected into the
+   // manufacturing frame. Text-derived wrappers are already there.
+   if(spec.manufacturing&&frameTransport==='source-frame/1')lease=await placeContext(lease,{manufacturing:{heightMm:lease.metadata.heightMm}},spec.sourceHash,mutate,retain,alive);
    const ref=()=>{alive();return {kind:'snapshot',id:lease.id,generation:lease.generation,epoch:ownerEpoch,...(spec.translationNm&&frameTransport==='product-context-bundle/2'?{translationNm:copy(spec.translationNm)}:{})};};
    return {canonical,ref};
   }
@@ -475,7 +492,7 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
      chargeRaster(ready.packet);
      const canonical=await rasterSourceGeometry({packet:ready.packet,key:'art',sourceHash:rasterContextHash(source,ready.preparation),derivationHash:ready.preparation.approvalHash,control:c});
      let reference=()=>{alive();return {...ready.nativeSource};};
-     if(extras.length&&!ready.contextBuilt){
+     if(frameTransport==='source-frame/1'||extras.length&&!ready.contextBuilt){
       // Existing accepted-token RPC -> registered SourceContext. This performs
       // no segmentation/confirmation and preserves the full indexed graph.
       need(typeof owner.rasterOperation==='function'&&typeof owner.rasterRegistry==='function','PRODUCT_RASTER_CONTEXT_RPC_REQUIRED');
@@ -485,6 +502,13 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
       const token=contextReply.token;cleanup.push(async()=>{if(owner.epoch===ownerEpoch)await owner.rasterRegistry('release',{token},{epoch:ownerEpoch});});
       alive();need(contextReply.kind==='raster-source-context'&&contextReply.sourceAssemblyRequired===true,'PRODUCT_RASTER_CONTEXT_REPLY');
       reference=()=>{alive();return {kind:'raster-token',token,epoch:ownerEpoch};};
+      // The pixel grid is X right/Y down; ASFR/1 reflects the registered context
+      // into the manufacturing frame. The bundle transport predates the frame
+      // ABI and hands the context over as it is.
+      if(frameTransport==='source-frame/1'){
+       const framed=await placeContext({kind:'raster-token',token,epoch:ownerEpoch},{manufacturing:{heightMm:sealedRasterFrame(ready.packet).heightMm}},canonical.sourceHash,mutate,retain,alive);
+       reference=()=>{alive();return {kind:'snapshot',id:framed.id,generation:framed.generation,epoch:ownerEpoch};};
+      }
      }
      return finish({canonical,ref:reference},extras,ready.receipt,input.domainRecord.records.filter(r=>r.fieldId>=1&&r.fieldId<=7).sort((a,b)=>a.fieldId-b.fieldId));
     };
@@ -501,7 +525,10 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
    }
    const numeric=source.kind==='svg'?source.raw.hash:source.metadata.numericSvgHash;
    need(numeric&&source.assetHashes.includes(numeric),'PRODUCT_TEXT_OUTLINES_UNAVAILABLE');
-   const art=await svgContext({key:'art',sourceHash:numeric,derivationHash:source.kind==='svg'?null:hash(source.metadata.productArtifacts?.art?.derivationHash??source.metadata.artifactHash)});
+   // A raw SVG file is parsed X right/Y down and is reflected into the
+   // manufacturing frame; a text or emoji numeric SVG comes through the
+   // manufacturing wrapper and is already Y up.
+   const art=await svgContext({key:'art',sourceHash:numeric,derivationHash:source.kind==='svg'?null:hash(source.metadata.productArtifacts?.art?.derivationHash??source.metadata.artifactHash),manufacturing:source.kind==='svg'});
    return await finish(art,extras,null);
   }finally{
    record.live=false;active.delete(record);
@@ -751,7 +778,7 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
     need(client===owner,'PRODUCT_SOURCE_OWNER_CHANGED');
     return client.build({kind:'svg',source:dec.decode(bytes),thicknessMm:.2,longEdgeMm:0,toleranceMm:input.toleranceMm??.001},{generation});
    });leases.push(lease);guard();
-   if(translationNm&&frameTransport==='source-frame/1')lease=await placeContext(lease,translationNm,sourceHash,fn=>kernel.operation(g.c,(client,generation)=>{need(client===owner,'PRODUCT_SOURCE_OWNER_CHANGED');return fn(client,generation);}),l=>leases.push(l),guard);
+   if(translationNm&&frameTransport==='source-frame/1')lease=await placeContext(lease,{translationNm},sourceHash,fn=>kernel.operation(g.c,(client,generation)=>{need(client===owner,'PRODUCT_SOURCE_OWNER_CHANGED');return fn(client,generation);}),l=>leases.push(l),guard);
    const canonical=await sourceGeometry({bytes:lease.bytes(),metadata:lease.metadata,key:contextKey,sourceHash,derivationHash,translationNm:frameTransport==='source-frame/1'?undefined:translationNm,includeRings:true,control:g.c});
    points+=canonical.regions.reduce((n,r)=>n+r.ringsNm.reduce((n,r)=>n+r.length,0),0);need(points<=PRODUCT_SOURCE_LIMITS.points,'PRODUCT_SOURCE_AGGREGATE_LIMIT');
    const entry={...canonical,kind:'svg',coordinateFrame:frame==='manufacturing'?'manufacturing-xy-mm':'parser-viewport-mm',

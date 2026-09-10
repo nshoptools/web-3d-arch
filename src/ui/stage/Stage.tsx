@@ -394,6 +394,13 @@ export function Stage({ inert = false }: { inert?: boolean }) {
                       {bandOpen('stage-hints') ? (
                         <p className="muted" style={{ margin: 0 }} data-problem-code={firstProblem.code}>
                           {diagnosticText(firstProblem.code, firstProblem.message)}
+                          {firstProblem.detail ? (
+                            // The native detail is what a bug report needs; the log keeps it too (Grok G-R3-02).
+                            <>
+                              <br />
+                              <span data-problem-detail={firstProblem.detail}>Mã chi tiết: {firstProblem.detail}</span>
+                            </>
+                          ) : null}
                         </p>
                       ) : null}
                     </div>

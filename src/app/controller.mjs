@@ -3,7 +3,7 @@ import {ApiClient,verifyOnlineLease,isVerifiedLease} from './http.mjs';
 import {AuthenticatedOnlineSession} from './session-policy.mjs';
 import {RemoteServices,userView} from './remote.mjs';
 import {VERSION,assert,error,data,freeze,diagnostic,adapter,capable,sameOrigin,moneyText} from './common.mjs';
-import {parameterViews,DEFAULT_EDITOR,DEFAULT_TEXT} from './documents.mjs';
+import {parameterViews,DEFAULT_EDITOR,DEFAULT_TEXT,sourceConversion} from './documents.mjs';
 import {ProjectOperations} from './projects.mjs';
 import {JobOperations} from './jobs.mjs';
 import {MeshTransactionOperations} from './mesh-transactions.mjs';
@@ -170,7 +170,7 @@ export class AppController {
   const s=this.doc?.state,a=s?.content.app,canEdit=this.editingAllowed(),r=a?.source?.raster,p=a?.source?.preview,display=r??p,cost=this.doc?historyCost(this.doc.history):null;
   const current=this.visible?.lease,matching=!!current&&current.ticket.projectId===this.projectId&&current.ticket.revision===s?.revision;
   const providers=this.remote?.registry()??[],printer=this.printers.find(p=>p.id===a?.printerId);
-  const source=a?.source?{id:a.source.id,name:a.source.name,kind:a.source.kind,...(display?{previewUrl:this.url(r?.preview??p.png),widthMm:display.width*display.pixelSizeMm,heightMm:display.height*display.pixelSizeMm}:{})}:null;
+  const source=a?.source?{id:a.source.id,name:a.source.name,kind:a.source.kind,conversion:sourceConversion(a.source),...(display?{previewUrl:this.url(r?.preview??p.png),widthMm:display.width*display.pixelSizeMm,heightMm:display.height*display.pixelSizeMm}:{})}:null;
   const caps=[cap('project.write',canEdit,'Cần người dùng đã đăng nhập và kho dữ liệu cho phép ghi.'),cap('viewport.webgl',capable(this.adapters.viewport,'viewport.webgl')),cap('viewport.center-bed',capable(this.adapters.viewport,'viewport.center-bed')),cap('ai.generate',this.online&&providers.some(p=>p.available)),cap('printer.list',!!this.adapters.printing&&this.printers.length>0),cap('storage.mirror',capable(this.adapters.mirror,'storage.mirror')),cap('source.emoji',capable(this.adapters.source,'source.emoji')),cap('source.font-import',capable(this.adapters.source,'source.font-import')),cap('source.clipboard',capable(this.adapters.source,'source.clipboard')),cap('account.member-admin',this.session.status==='signed-in'&&this.session.user?.role==='owner'),cap('account.system-policy',this.session.status==='signed-in'&&this.session.user?.role==='owner'),cap('mesh.import',capable(this.adapters.source,'mesh.import')),cap('geometry.build',capable(this.adapters.engine,'geometry.build')),cap('source.edit',canEdit&&!!r&&capable(this.adapters.editing,'source.edit'))];
   const context=exportContext(s,current,capable(this.adapters.viewport,'viewport.webgl'));
   let formats=[];try{formats=s&&this.adapters.exporter?declaredFormats(this.adapters.exporter,context):[];}catch{}

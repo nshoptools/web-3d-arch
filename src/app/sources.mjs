@@ -208,7 +208,9 @@ export class SourceOperations {
     if(deleted){target=original;expectedRevision=held.headRevision;}
     else{
      await this.enqueue(async()=>{this.guard(epoch);await this.open(original);await this.refreshLibrary();});
-     this.note({code:'PACKAGE_PROJECT_EXISTS',message:PROJECT_MESSAGES.PACKAGE_PROJECT_EXISTS,severity:'warning'},'import:project');return;
+     // The package opened the library copy, which is a stated outcome with its own
+     // sentence, not a problem to review; it stays in the log (Grok G-R3-03).
+     this.note({code:'PACKAGE_PROJECT_EXISTS',message:PROJECT_MESSAGES.PACKAGE_PROJECT_EXISTS,severity:'info'},'import:project');return;
     }
    }else note='PACKAGE_IMPORTED_AS_COPY';
    await this.enqueue(async()=>{this.guard(epoch);await importRescueCopy(this.store,bytes,{projectId:target,expectedRevision});this.guard(epoch);await this.open(target);await this.refreshLibrary();});

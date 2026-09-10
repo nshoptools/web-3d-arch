@@ -37,11 +37,21 @@ export interface SourceNextStep {
 
 export function sourceNextStep(project: ProjectView): SourceNextStep | null {
   const source = project.source
-  if (source === null || project.stats.materialCount > 0) return null
+  if (source === null) return null
+  const SEGMENT: SourceNextStep = { kind: 'segment', label: 'Tách vùng màu để dựng', verb: 'tách vùng màu' }
+  const CONVERT: SourceNextStep = { kind: 'convert', label: 'Chuyển sang ảnh raster để sửa', verb: 'chuyển sang ảnh raster' }
+  // The core says what the *current* source still needs from its own product
+  // bindings. Materials or a model left by an earlier source are no evidence:
+  // an emoji chosen over a built SVG kept its four regions and lost its steps
+  // (Codex R3-C07).
+  if (source.conversion !== undefined) {
+    return source.conversion === 'segment' ? SEGMENT : source.conversion === 'raster' ? CONVERT : null
+  }
+  if (project.stats.materialCount > 0) return null
   const editable = project.sourceCanvas !== null && project.sourceCanvas.editable
-  if (editable) return { kind: 'segment', label: 'Tách vùng màu để dựng', verb: 'tách vùng màu' }
+  if (editable) return SEGMENT
   if (source.kind !== 'raster' && source.kind !== 'emoji') return null
-  return { kind: 'convert', label: 'Chuyển sang ảnh raster để sửa', verb: 'chuyển sang ảnh raster' }
+  return CONVERT
 }
 
 export const NO_PROJECT_REASON =

@@ -123,3 +123,14 @@ export function setParameter(state,id,value){
  }
  return domainCommand(state,{id:'parameters.set',args:{changes:[{id,value}]}}).state;
 }
+
+/** The source-conversion step a source still needs before a model can be built,
+ * read from its own product bindings: a raster (or a bitmap emoji) waits for a
+ * render into an editable raster, then for the separation into colour regions;
+ * a source with canonical regions needs nothing. Materials or a model left by an
+ * earlier source say nothing about the current one (Codex R3-C07). */
+export function sourceConversion(source){
+ const b=source?.metadata?.productBindings;
+ if(b?.version!=='arch-product-bindings-pending/1')return null;
+ return b.reason==='RASTER_SEGMENTATION_APPROVAL_REQUIRED'?'segment':'raster';
+}

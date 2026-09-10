@@ -234,33 +234,43 @@ self.onmessage=async({data})=>{
     }
     if(data.type==='source-preview'){
       if(building)throw new Error('BUILD_IN_PROGRESS');
-      const {requestId,generation,request,resolution,includeRGBA}=data;
+      const {requestId,generation,request,resolution,includeRGBA}=data,sourceAxis=data.sourceAxis??'x-right-y-up';
       if(!Number.isInteger(generation)||generation<1||generation>0xfffffffe||request?.kind!=='svg'||typeof includeRGBA!=='boolean')throw new Error('PREVIEW_REQUEST');
+      if(sourceAxis!=='x-right-y-up'&&sourceAxis!=='x-right-y-down')throw new Error('PREVIEW_SOURCE_AXIS');
       if(!engine._arch_control_reset(generation))throw new Error(errorText()||'GENERATION_RANGE');
       building=true;let id=0;
       try{
         postMessage({type:'running',requestId,memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()});
         await new Promise(resolve=>setTimeout(resolve,0));
         id=buildSVG(request,generation);if(!id)throw new Error(errorText()||'PREVIEW_FAILED');
+        const metadata=metadataFor(id);
+        // A parsed SVG is X right/Y down; the preview, like the model and the
+        // exports, shows the manufacturing frame (Y up), so the caller names the axis.
         const {previewPlanarSnapshot}=await import('./source-preview.mjs').catch(moduleUnavailable);
-        const preview=await previewPlanarSnapshot(new Uint8Array(engine.HEAPU8.buffer,engine._arch_snapshot_ptr(id),engine._arch_snapshot_len(id)),{resolution,includeRGBA});
+        const preview=await previewPlanarSnapshot(new Uint8Array(engine.HEAPU8.buffer,engine._arch_snapshot_ptr(id),engine._arch_snapshot_len(id)),
+          {resolution,includeRGBA,sourceAxis,...(sourceAxis==='x-right-y-down'?{sourceHeightMm:metadata?.heightMm}:{})});
         if(Atomics.load(new Int32Array(engine.HEAPU8.buffer,engine._arch_control_ptr(),4),3)===generation)throw new Error('CANCELLED');
-        postMessage({type:'source-preview',requestId,generation,preview,metadata:metadataFor(id),memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()},[preview.png.buffer,...(preview.rgba?[preview.rgba.buffer]:[])]);
+        postMessage({type:'source-preview',requestId,generation,preview,metadata,memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()},[preview.png.buffer,...(preview.rgba?[preview.rgba.buffer]:[])]);
       }finally{if(id)engine._arch_snapshot_release(id);completeRootJob();}
       return;
     }
     if(data.type==='source-frame'){
       if(building)throw new Error('BUILD_IN_PROGRESS');
-      const {requestId,generation,snapshotId,snapshotGeneration,request}=data;
+      const {requestId,generation,snapshotId,snapshotGeneration,rasterToken,request}=data;
       if(!Number.isInteger(generation)||generation<1||generation>0xfffffffe)throw new Error('GENERATION_RANGE');
       if(engine._arch_source_frame_version?.()!==1)throw new Error('SOURCE_FRAME_ABI');
+      if(rasterToken!==undefined&&(typeof rasterToken!=='string'||!rasterToken||!rasterRPC))throw new Error('SOURCE_FRAME_HANDLE');
       if(!engine._arch_control_reset(generation))throw new Error(errorText()||'GENERATION_RANGE');
       building=true;let unpublished=0;
       try{
         postMessage({type:'running',requestId,memory:engine.HEAPU8.buffer,controlOffset:engine._arch_control_ptr()});
         await new Promise(resolve=>setTimeout(resolve,0));
         const {applySourceFrame}=await import('./source-frame.mjs').catch(moduleUnavailable);
-        unpublished=applySourceFrame(engine,snapshotId,snapshotGeneration,request,generation);
+        // A raster source context is addressed by its registry token; the borrow
+        // is synchronous and the framed result is an ordinary owned snapshot.
+        unpublished=rasterToken!==undefined
+          ?rasterRPC.withSourceReference(rasterToken,ref=>{if(ref.kind!=='snapshot')throw new Error('SOURCE_FRAME_KIND');return applySourceFrame(engine,ref.id,ref.generation,request,generation);})
+          :applySourceFrame(engine,snapshotId,snapshotGeneration,request,generation);
         if(Atomics.load(new Int32Array(engine.HEAPU8.buffer,engine._arch_control_ptr(),4),3)===generation)throw new Error('CANCELLED');
         const metadata=metadataFor(unpublished);
         postMessage({type:'snapshot',requestId,generation,id:unpublished,metadata,memory:engine.HEAPU8.buffer,

@@ -101,6 +101,10 @@ export const SEVERITY_LABEL = {
 export const DIAGNOSTIC_TEXT: Record<string, string> = {
   WEBGL_UNAVAILABLE:
     'Trình duyệt này không tạo được khung 3D (WebGL). Mô hình vẫn được dựng, kiểm và xuất; chỉ không xem được trong khung.',
+  LIB3MF_TRANSACTION:
+    'Bộ ghi 3MF từ chối mô hình này nên chưa tạo được tệp 3MF; mô hình và các tệp STL không bị ảnh hưởng. Mã chi tiết bên dưới là điều cần gửi khi báo lỗi.',
+  EXPORT_3MF_UNAVAILABLE:
+    'Nhân hiện tại không xuất được 3MF. Tệp STL theo vật liệu vẫn xuất được.',
   EXPORT_SECTION_STEP:
     'Khoảng cao độ của dãy mặt cắt phải chia hết cho bước; ví dụ bước 0,25 cho 0–1 mm, hoặc kết thúc 0,9 mm cho bước 0,3.',
   PROJECT_REQUIRED:

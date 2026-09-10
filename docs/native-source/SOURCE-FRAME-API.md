@@ -32,6 +32,27 @@ product or bundled contexts are rejected.
 `serviceCapabilities.sourceFrameVersion === 1` is obtained from the same Module
 version getter and validated by the client, never inferred from method presence.
 
+A registered raster source context (rasterOperation `buildSourceContext`) has
+no client-side lease; pass its token instead of a lease:
+`engine.sourceFrame({kind:'raster-token', token, epoch}, request, {generation})`.
+The Worker borrows the context synchronously through the raster registry and
+frames its snapshot; the result is an ordinary owned snapshot lease.
+
+## Manufacturing orientation of artwork
+
+The manufacturing frame is X right, Y up, printed face toward +Z: the text
+wrapper (`manufacturingTextSVG`), the preview bounds, the source assembly and
+the section export all use it. A parsed SVG keeps its viewport frame (X right,
+Y down) and a raster context keeps its pixel grid (X right, Y down). The
+product-context layer therefore places every raw SVG and raster art context
+with one reflection, `[1,0,0,-1,0,heightMm]` (`src/core/source-frame.mjs`
+`manufacturingFrame`), before the assembly consumes it; text-derived numeric
+SVG wrappers are already Y up and are not reflected. Region identity (native
+keys, geometry hashes, adoption bindings) is still computed in the source's own
+frame; only the lease handed to the assembly is placed. The SVG import preview
+samples the parsed viewport with `sourceAxis:'x-right-y-down'` so the picture,
+the raster made from it and the model share one orientation.
+
 ## Registered wire and exports
 
 `uint32_t arch_source_frame_version(void)` => 1.

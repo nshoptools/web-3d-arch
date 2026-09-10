@@ -12,6 +12,8 @@ import {createRasterAdapters,rasterOptionsForState} from '../../src/integration/
 import {bufferMap,validatePacket} from '../../src/core/raster-schema.mjs';
 import {readSnapshot} from '../oracles/mesh-oracle.mjs';
 import {encodeRasterPNG} from '../../src/core/png-encode.mjs';
+import {applySourceFrame} from '../../src/core/source-frame.mjs';
+import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
 export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
 const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
 assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
@@ -83,6 +85,22 @@ export const client={
    }else request=prepare(s);
    const p=ops.probeRequest(request,g);return {...p,epoch:this.epoch};
  },
+ /** Real ASFR/1 frame on this Module: an owned SVG lease, or a registered raster
+  * source context addressed by its dispatcher token, as the Worker resolves it. */
+ async sourceFrame(original,request,{generation:g}){
+  reset(g,'sourceFrame');
+  const apply=(id,sg)=>applySourceFrame(M,id,sg,request,g);
+  let id;
+  if(original?.kind==='raster-token'){assert.equal(original.epoch,this.epoch);id=dispatcher.withSourceReference(original.token,ref=>{assert.equal(ref.kind,'snapshot','a registered context, not an accepted raster');return apply(ref.id,ref.generation);});}
+  else{assert.ok(this.roots.has(original),'framed lease must be owned');id=apply(original.id,original.generation);}
+  const metadata=JSON.parse(text.decode(M.HEAPU8.slice(M._arch_metadata_ptr(id),M._arch_metadata_ptr(id)+M._arch_metadata_len(id))));
+  let released=false;
+  const lease={id,generation:g,epoch:this.epoch,metadata,
+   bytes:()=>{assert.ok(!released,'test root released');return new Uint8Array(M.HEAPU8.buffer,M._arch_snapshot_ptr(id),M._arch_snapshot_len(id));},
+   release:()=>{if(!released){released=true;client.roots.delete(lease);nativeSources.delete(id);assert.equal(M._arch_snapshot_release(id),1);}}};
+  if(nativeSources.has(original?.id))recordFramedNativeSource(original,lease,request);
+  this.roots.add(lease);return lease;
+ },
  releaseProductProposal(p){ops.releaseProposal(p.id);},
  async confirmProduct(p,current,{generation:g}){reset(g,'confirmProduct');return ops.confirm(p.id,p.descriptor,current,g);}
 };
@@ -103,3 +121,8 @@ export function controlFor(state=live.state,options={}){
 controlFor.serial=0;
 
 export function noOwned(){assert.equal(client.roots.size,0);assert.equal(M._arch_raster_owned_bytes(),0);}
+/** The adapter's preview of a parsed SVG file (kernel-adapters/engine-worker):
+ * the viewport is X right/Y down, the picture shows the manufacturing frame. */
+export function manufacturingPreview(lease,{resolution=64,includeRGBA=false}={}){
+ return previewPlanarSnapshot(lease.bytes(),{resolution,includeRGBA,sourceAxis:'x-right-y-down',sourceHeightMm:lease.metadata.heightMm});
+}

@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';import {createServer} from 'node:http';
-import {M,client,operation,dispatcher,setLive,noOwned,transportLog,recordFramedNativeSource,forgetNativeSource} from './native.mjs';
+import {M,client,operation,dispatcher,setLive,noOwned,transportLog,recordFramedNativeSource,forgetNativeSource,manufacturingPreview} from './native.mjs';
 import {createEngineTextService} from '../../src/core/engine-text-service.mjs';
 import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
 import {sourceGeometry} from '../../src/integration/product-source-contexts.mjs';
@@ -19,8 +19,8 @@ Object.assign(client,{worker:{testTransport:true},memory:M.HEAPU8.buffer,onRetir
  async rasterRegistry(method,request){transportLog.push({registry:method});return dispatcher.dispatch(method,request);},
  async textOperation(request,{generation}){assert.equal(M._arch_control_reset(generation),1);transportLog.push({method:'text.'+request.op,generation});return service.run(request,{generation,signal:new AbortController().signal,onProgress:()=>{},isCurrent:t=>!!live&&t.projectId===live.projectId&&t.revision===live.state.revision});},
  async sourceFrame(original,request,{generation}){
-  assert.ok(client.roots.has(original));assert.equal(M._arch_control_reset(generation),1);transportLog.push({method:'sourceFrame',generation});
-  const id=applySourceFrame(M,original.id,original.generation,request,generation);let released=false;
+  const token=original?.kind==='raster-token';if(!token)assert.ok(client.roots.has(original));assert.equal(M._arch_control_reset(generation),1);transportLog.push({method:'sourceFrame',generation});
+  const id=token?dispatcher.withSourceReference(original.token,ref=>{assert.equal(ref.kind,'snapshot');return applySourceFrame(M,ref.id,ref.generation,request,generation);}):applySourceFrame(M,original.id,original.generation,request,generation);let released=false;
   const metadata=JSON.parse(new TextDecoder().decode(M.HEAPU8.slice(M._arch_metadata_ptr(id),M._arch_metadata_ptr(id)+M._arch_metadata_len(id))));
   const lease={id,generation,epoch:client.epoch,metadata,bytes(){assert.ok(!released);return new Uint8Array(M.HEAPU8.buffer,M._arch_snapshot_ptr(id),M._arch_snapshot_len(id));},release(){if(!released){released=true;client.roots.delete(lease);forgetNativeSource(id);assert.equal(M._arch_snapshot_release(id),1);}}};client.roots.add(lease);recordFramedNativeSource(original,lease,request);
   const geometry=await sourceGeometry({bytes:new Uint8Array(lease.bytes()),metadata,key:'diagnostic',sourceHash:request.sourceHash,includeRings:true});
@@ -34,7 +34,7 @@ Object.assign(client,{worker:{testTransport:true},memory:M.HEAPU8.buffer,onRetir
 });
 export const kernel={operation,ensureRuntime:async()=>client,kernelLeases:new WeakMap(),async svgPreview(input,file,{resolution=64,includeRGBA=false,longEdgeMm=0}={}){
  const lease=await operation(input,(a,g)=>a.build({kind:'svg',source:new TextDecoder().decode(file.bytes),thicknessMm:.2,toleranceMm:.004,longEdgeMm},{generation:g}));
- try{const p=await previewPlanarSnapshot(lease.bytes(),{resolution,includeRGBA});return {version:'arch-app-adapters/1',ticket:structuredClone(input.ticket),kind:'svg',metadata:{...lease.metadata,previewDerivation:p.derivation,frame:p.frame},
+ try{const p=await manufacturingPreview(lease,{resolution,includeRGBA});return {version:'arch-app-adapters/1',ticket:structuredClone(input.ticket),kind:'svg',metadata:{...lease.metadata,previewDerivation:p.derivation,frame:p.frame},
   materials:p.colors.map((color,i)=>({id:'source-'+color.slice(1),label:'Color '+i,color,slot:null,role:'region',overridden:false,backgroundEligible:true,excluded:false})),preview:{width:p.width,height:p.height,pixelSizeMm:p.pixelSizeMm,png:p.png,mediaType:'image/png'},
   ...(includeRGBA?{raster:{width:p.width,height:p.height,data:p.rgba,pixelSizeMm:p.pixelSizeMm,preview:p.png,previewMediaType:'image/png'}}:{})};}finally{lease.release();}
 }};

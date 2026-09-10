@@ -45,8 +45,16 @@ function sampleRegions(regions,width,height) {
  * Two samples per axis produce coverage without a platform canvas dependency.
  * Tiny features can be subpixel; conversion remains explicit and unqualified.
  * Caller retains the temporary ARCH lease until this Promise resolves. */
-export async function previewPlanarSnapshot(bytes,{resolution=520,includeRGBA=false}={}) {
+export async function previewPlanarSnapshot(bytes,{resolution=520,includeRGBA=false,sourceAxis='x-right-y-up',sourceHeightMm=null}={}) {
   requireValue(Number.isInteger(resolution)&&resolution>=32&&resolution<=1280,'PREVIEW_RESOLUTION');
+  // The contours are in the manufacturing frame (X right, Y up: text wrappers,
+  // framed contexts) unless the caller says they are a parsed SVG viewport (X
+  // right, Y down). The picture always shows the manufacturing frame, so a
+  // Y-down source is drawn as its author drew it and its top row is the
+  // viewport height above the manufacturing origin.
+  requireValue(sourceAxis==='x-right-y-up'||sourceAxis==='x-right-y-down','PREVIEW_SOURCE_AXIS');
+  const reflected=sourceAxis==='x-right-y-down';
+  requireValue(!reflected||typeof sourceHeightMm==='number'&&Number.isFinite(sourceHeightMm)&&sourceHeightMm>0&&sourceHeightMm<=10000,'PREVIEW_SOURCE_HEIGHT');
   const snapshot=readArchSnapshot(bytes),data=new DataView(bytes.buffer,bytes.byteOffset,bytes.byteLength);
   requireValue(snapshot.bounds&&snapshot.parts.length>0,'PREVIEW_EMPTY');
   const u=offset=>data.getUint32(offset,true),pointCount=u(32),contourCount=u(36),indexCount=u(40);
@@ -55,7 +63,9 @@ export async function previewPlanarSnapshot(bytes,{resolution=520,includeRGBA=fa
   const pixelSizeMm=Math.max(sizeX,sizeY)/resolution;
   const width=Math.max(1,Math.ceil(sizeX/pixelSizeMm-1e-9)),height=Math.max(1,Math.ceil(sizeY/pixelSizeMm-1e-9));
   requireValue(width<=1280&&height<=1280,'PREVIEW_SIZE');
-  const left=snapshot.bounds.min[0],top=snapshot.bounds.max[1],colors=[],regions=[];
+  const left=snapshot.bounds.min[0],colors=[],regions=[];
+  const rowOf=reflected?y=>2*(y-snapshot.bounds.min[1])/pixelSizeMm:y=>2*(snapshot.bounds.max[1]-y)/pixelSizeMm;
+  const topMm=reflected?sourceHeightMm-snapshot.bounds.min[1]:snapshot.bounds.max[1];
   let previousContourEnd=0;
   for(const part of snapshot.parts) {
     requireValue(part.contourCount>0&&part.contourStart===previousContourEnd,'PREVIEW_PLANAR_REQUIRED');previousContourEnd+=part.contourCount;
@@ -69,7 +79,7 @@ export async function previewPlanarSnapshot(bytes,{resolution=520,includeRGBA=fa
         const point=u(indexOffset+4*(start+i));requireValue(point<pointCount,'PREVIEW_POINT');const offset=pointOffset+point*16;
         const x=Number(data.getBigInt64(offset,true))/1e6,y=Number(data.getBigInt64(offset+8,true))/1e6;
         requireValue(Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x)<=10000&&Math.abs(y)<=10000,'PREVIEW_COORDINATE');
-        ring.push([2*(x-left)/pixelSizeMm,2*(top-y)/pixelSizeMm]);
+        ring.push([2*(x-left)/pixelSizeMm,rowOf(y)]);
       }
       rings.push(ring);
     }
@@ -86,7 +96,7 @@ export async function previewPlanarSnapshot(bytes,{resolution=520,includeRGBA=fa
   // All shared views were consumed synchronously. Encoding reads owned RGBA.
   const png=await encodeRasterPNG({width,height,data:rgba});
   return {version:1,width,height,pixelSizeMm,png,mediaType:'image/png',...(includeRGBA?{rgba}:{}),colors,
-    frame:{kind:'manufacturing-bounds',leftMm:left,topMm:top,widthMm:sizeX,heightMm:sizeY,yDirection:'down'},
+    frame:{kind:'manufacturing-bounds',leftMm:left,topMm,widthMm:sizeX,heightMm:sizeY,yDirection:'down',sourceAxis},
     derivation:{kind:'opaque-canonical-contours-scanline-2x2-v1',resolution,includesPixelAntialias:true,
       sourceGeometryChanged:false,totalErrorBoundMm:null,topologyPreservation:'unverified'}};
 }

@@ -93,6 +93,14 @@ nút Mở); phát hiện và sửa trong nguồn native lỗi đọc lại 3MF (
 Chi tiết ở [HANDOVER](../HANDOVER.md) và
 [testevidence/ui-release-r3](../testevidence/ui-release-r3/README.md).
 
+Sau phản biện của hai ghế, sửa tiếp: hình SVG/raster bị **lật dọc** so với nguồn (nhân phân
+giải theo Y xuống, hệ chế tạo là Y lên; nay biên ngữ cảnh sản phẩm đặt khung một lần bằng API
+khung nguồn của nhân); bước còn thiếu của nguồn đọc từ ràng buộc của chính nguồn hiện hành nên
+đổi sang emoji trên dự án đã dựng không còn kẹt; mọi chẩn đoán đi qua `record()`; byte fixture
+giữ nguyên khi checkout trên Windows; dải chẩn đoán có câu tiếng Việt và chi tiết native cho
+lỗi ghi 3MF; mở gói trùng thư viện chuyển khỏi dải. Giữ nguyên có lý do: hủy do người dùng ở
+mức thông tin, watchdog kiểm mesh của emoji (điều kiện chặn), F-03.1.
+
 ## Phần còn thiếu trước phát hành đủ v1
 
 1. Sửa trực tiếp vector theo mm chưa có adapter. Codex đang đóng khoảng trống này; sửa raster có xác nhận không được tính là đã làm vector.

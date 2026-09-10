@@ -1,6 +1,6 @@
 import {handleMeshMessage,releaseLateMeshResult} from '../mesh-import/src/root-client.mjs';
 import {checkedEngineIntegrity,checkedRuntimeProof} from './runtime-integrity.mjs';
-import {encodeSourceFrame} from './source-frame.mjs';
+import {encodeSourceFrame,checkSourceFrameRequest} from './source-frame.mjs';
 
 export class EngineError extends Error {
   constructor(code,proposal=null){super(code);this.name='EngineError';this.code=code;this.proposal=proposal;}
@@ -280,8 +280,12 @@ export class EngineClient {
     if(typeof callback!=='function')throw new EngineError('RETIREMENT_CALLBACK');
     this.retirementListeners.add(callback);return()=>this.retirementListeners.delete(callback);
   }
-  previewSVG(request,{generation,resolution=520,includeRGBA=false}={}){
-    return this.operation({type:'source-preview',request,resolution,includeRGBA},generation);
+  /** `sourceAxis` names the frame of the parsed SVG ('x-right-y-down' for a
+   * raw SVG file); the preview always shows the manufacturing frame (Y up), the
+   * orientation the model, the exports and the source thumbnail share. */
+  previewSVG(request,{generation,resolution=520,includeRGBA=false,sourceAxis='x-right-y-up'}={}){
+    if(sourceAxis!=='x-right-y-up'&&sourceAxis!=='x-right-y-down')throw new EngineError('PREVIEW_SOURCE_AXIS');
+    return this.operation({type:'source-preview',request,resolution,includeRGBA,sourceAxis},generation);
   }
   exportSTL(lease,part,{generation}={}){
     this.assertSnapshot(lease);
@@ -307,6 +311,14 @@ export class EngineClient {
     return this.operation({type:'export-final',snapshotId:lease.id,snapshotGeneration:lease.generation,request},generation,lease.epoch);
   }
   sourceFrame(lease,options,{generation}={}){
+    if(lease?.kind==='raster-token'){
+      // A registered raster source context lives in the Worker's raster registry;
+      // the Worker resolves the token to its snapshot and frames that.
+      if(this.serviceCapabilities?.sourceFrameVersion!==1)throw new EngineError('SOURCE_FRAME_ABI');
+      if(typeof lease.token!=='string'||!lease.token||lease.epoch!==this.epoch)throw new EngineError('SNAPSHOT_RETIRED');
+      const request=captureRequest(options);checkSourceFrameRequest(request);
+      return this.operation({type:'source-frame',rasterToken:lease.token,request},generation,lease.epoch);
+    }
     this.assertSnapshot(lease);
     if(this.serviceCapabilities?.sourceFrameVersion!==1)throw new EngineError('SOURCE_FRAME_ABI');
     const request=captureRequest(options);encodeSourceFrame(lease.id,lease.generation,request);

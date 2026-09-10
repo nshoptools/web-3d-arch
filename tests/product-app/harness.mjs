@@ -12,6 +12,8 @@ import {createRasterAdapters,rasterOptionsForState} from '../../src/integration/
 import {bufferMap,validatePacket} from '../../src/core/raster-schema.mjs';
 import {readSnapshot} from '../oracles/mesh-oracle.mjs';
 import {encodeRasterPNG} from '../../src/core/png-encode.mjs';
+import {applySourceFrame} from '../../src/core/source-frame.mjs';
+import {previewPlanarSnapshot} from '../../src/core/source-preview.mjs';
 export const run=fs.realpathSync(process.env.PROJECT_REVIEW_RUN??'INVALID');
 const repo=fs.realpathSync(process.env.PROJECT_ROOT??'INVALID');
 assert.ok(run.startsWith(repo+path.sep));assert.match(run.replaceAll('\\','/'),/\/tmp\/reviews\/(codex|opus|grok)\/runs\/[A-Za-z0-9_-]+$/);
@@ -83,6 +85,22 @@ export const client={
    }else request=prepare(s);
    const p=ops.probeRequest(request,g);return {...p,epoch:this.epoch};
  },
+ /** Real ASFR/1 frame on this Module: an owned SVG lease, or a registered raster
+  * source context addressed by its dispatcher token, as the Worker resolves it. */
+ async sourceFrame(original,request,{generation:g}){
+  reset(g,'sourceFrame');
+  const apply=(id,sg)=>applySourceFrame(M,id,sg,request,g);
+  let id;
+  if(original?.kind==='raster-token'){assert.equal(original.epoch,this.epoch);id=dispatcher.withSourceReference(original.token,ref=>{assert.equal(ref.kind,'snapshot','a registered context, not an accepted raster');return apply(ref.id,ref.generation);});}
+  else{assert.ok(this.roots.has(original),'framed lease must be owned');id=apply(original.id,original.generation);}
+  const metadata=JSON.parse(text.decode(M.HEAPU8.slice(M._arch_metadata_ptr(id),M._arch_metadata_ptr(id)+M._arch_metadata_len(id))));
+  let released=false;
+  const lease={id,generation:g,epoch:this.epoch,metadata,
+   bytes:()=>{assert.ok(!released,'test root released');return new Uint8Array(M.HEAPU8.buffer,M._arch_snapshot_ptr(id),M._arch_snapshot_len(id));},
+   release:()=>{if(!released){released=true;client.roots.delete(lease);nativeSources.delete(id);assert.equal(M._arch_snapshot_release(id),1);}}};
+  if(nativeSources.has(original?.id))recordFramedNativeSource(original,lease,request);
+  this.roots.add(lease);return lease;
+ },
  releaseProductProposal(p){ops.releaseProposal(p.id);},
  async confirmProduct(p,current,{generation:g}){reset(g,'confirmProduct');return ops.confirm(p.id,p.descriptor,current,g);}
 };
@@ -120,14 +138,24 @@ function ledger(source,keys){
   regions:keys.map((nativeKey,i)=>({sourceKey:['authored-west','authored-east'][i],contextKey:'art',nativeKey,materialId:['paint-west','paint-east'][i],textKey:null,height:null})),
   roles:Object.fromEntries(PRODUCT_ROLES.map(role=>[role,'mat-'+role])),texts:[],eyeletTextKey:null,sourceToleranceMm:.001,textStateHash:null};
 }
-export async function svgState(product='keychain',style='noi',content=svg){
+/** `adopt({state,source,assets})` returns a product adoption (bindings and
+ * materials) made by the caller's bridge; without it the harness ledger for its
+ * own preparation path is attached. */
+export async function svgState(product='keychain',style='noi',content=svg,{adopt=null}={}){
  const state=base(product,style,'svg'),bytes=enc.encode(content),h=await sha256(bytes),sourceContext={version:'arch-source-context/1',operation:'import',id:'source-durable-art',revision:0,predecessor:null};
  const source={id:sourceContext.id,revision:0,kind:'svg',name:'art.svg',mediaType:'image/svg+xml',raw:{hash:h,byteLength:bytes.length},assetHashes:[h],metadata:{sourceContext}};
+ const assets=new Map([[h,bytes]]);
+ if(adopt)return adopted(state,source,assets,await adopt({state,source,assets}));
  source.metadata.productBindings=ledger(source,['left','right']);
  state.content.app.source=source;state.content.app.materials=materials();state.revision++;
- return {state:validateState(state),assets:new Map([[h,bytes]])};
+ return {state:validateState(state),assets};
 }
-export async function rasterState(product='keychain',style='noi'){
+function adopted(state,source,assets,a){
+ source.metadata.productBindings=structuredClone(a.productBindings);
+ state.content.app.source=source;state.content.app.materials=structuredClone(a.materials);state.content.app.materialDefaults=structuredClone(a.materialDefaults);state.revision++;
+ return {state:validateState(state),assets};
+}
+export async function rasterState(product='keychain',style='noi',{adopt=null}={}){
  const state=base(product,style,'raster');live={...live,state};
  const rgba=new Uint8ClampedArray(64*48*4);
  for(let y=0;y<48;y++)for(let x=0;x<64;x++){if(x>=8&&x<14&&y>=9&&y<16)continue;rgba.set(x<32?[224,68,68,255]:[51,136,238,255],4*(y*64+x));}
@@ -141,6 +169,7 @@ export async function rasterState(product='keychain',style='noi'){
    rgba:await sha256(result.raster.data),preview:await sha256(result.raster.preview),originalPreview:await sha256(result.raster.preview),pixelSizeMm:result.raster.pixelSizeMm}};
  const acceptance=await raster.source.acceptProposal({...c,state,sourceContext,source,assets,confirmation:reply.confirmation,acceptedAtRevision:state.revision+1});
  source.metadata.confirmationReceipt=acceptance.receipt;
+ if(adopt)return adopted(state,source,assets,await adopt({state,source,assets}));
  source.metadata.productBindings=ledger(source,['raster-region:0','raster-region:1']);
  // Tie derivation to existing verified preparation independently of raw hash.
  source.metadata.productBindings.contexts[0].derivationHash=result.metadata.rasterPreparation.approvalHash;
@@ -230,4 +259,9 @@ export async function adoptState(f){
  state.content.app.materials=structuredClone(result.materials);state.content.app.materialDefaults=structuredClone(result.materialDefaults);state.sourceKind=source.kind;state.revision++;
  const assets=new Map(f.assets);
  return {state:validateState(state),assets,adoption:result,canonicalContexts};
+}
+/** The adapter's preview of a parsed SVG file (kernel-adapters/engine-worker):
+ * the viewport is X right/Y down, the picture shows the manufacturing frame. */
+export function manufacturingPreview(lease,{resolution=64,includeRGBA=false}={}){
+ return previewPlanarSnapshot(lease.bytes(),{resolution,includeRGBA,sourceAxis:'x-right-y-down',sourceHeightMm:lease.metadata.heightMm});
 }

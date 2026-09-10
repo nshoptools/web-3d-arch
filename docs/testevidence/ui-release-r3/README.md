@@ -13,6 +13,9 @@ của đợt này trên `main`.
 | `release-kernel-3mf-failure.json` | Với nhân gói 08-09, sau khi cổng 3MF mở (F-01 đã sửa), lệnh xuất 3MF Bambu thất bại `LIB3MF_TRANSACTION`, chi tiết native `READBACK_VERTICES`. |
 | `dev-kernel-3mf-exported-1440.png` | Cùng luồng với nhân dựng lại từ nguồn hiện tại (kèm dung sai đọc lại trong `arch3mf.cpp`): tệp 3MF tải về, không lỗi. Nhân này chưa nghiệm thu; không phải gói phát hành. |
 | `dev-kernel-3mf-readback.json` | Đọc lại 3MF bằng Python stdlib: 4 đối tượng lưới + assembly, đơn vị mm, `displaycolor` ba vật liệu đúng màu trên giao diện, `extruder` từng phần = khe, `filament_colour` theo khe, thể tích từng phần khớp ZIP STL (2.443,72 / 320,0 / 268,8 mm³). |
+| `orientation-mark-top-right.svg` | Mẫu bất đối xứng của Hub: ô xanh `#0099cc` ở **góc trên phải**, ô cam `#ee7733` ở **góc dưới trái**. |
+| `before-orientation-top-view-1440.png` / `after-orientation-top-view-1440.png` | “Nhìn từ trên” của mô hình dựng từ mẫu đó. Trước: xanh ở **dưới phải** (lật dọc so với nguồn). Sau: xanh ở **trên phải**, đúng nguồn. |
+| `orientation-stl-readback.json` | Đọc lại ZIP STL bằng Python stdlib, trọng tâm theo diện tích từng khe. Trước: xanh `y = −5,625 mm`, cam `y = +5,625 mm`. Sau: xanh `y = +5,625`, cam `y = −5,625`; biên, số tam giác và transform xuất (đơn vị) không đổi. |
 | `dev-kernel-3mf-prusa-slicer-info.txt` | PrusaSlicer 2.9.6 `--info` đọc đủ bốn đối tượng, `manifold = yes`, thể tích khớp (bộ đọc thứ ba, không phải slicer đích). |
 
 Kiểm tự động của đợt: typecheck; 125 ca Node (`tests/app`, `tests/storage`, `tests/printing-app`,

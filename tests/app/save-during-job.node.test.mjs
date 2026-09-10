@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createAppController} from '../../src/app/controller.mjs';
-import {diagnostic,sha256,uuid} from '../../src/app/common.mjs';
-import {verifyDocument} from '../../src/app/documents.mjs';
+import {diagnostic,sha256,uuid,VERSION} from '../../src/app/common.mjs';
+import {verifyDocument,sourceConversion} from '../../src/app/documents.mjs';
 import {createThreeViewportAdapter} from '../../src/app/parent-adapters.mjs';
 import {ViewportError} from '../../src/viewport/arch-view.mjs';
 import {effectiveValues} from '../../src/domain/index.mjs';
@@ -114,4 +114,27 @@ test('R-01: a renderer that cannot start is reported and the interface keeps its
  const adapter=createThreeViewportAdapter({ThreeViewport:class{constructor(){throw new ViewportError('WEBGL_UNAVAILABLE');}}});
  assert.throws(()=>adapter.attach({}),{code:'WEBGL_UNAVAILABLE'});
  const capability=adapter.capabilities.find(x=>x.id==='viewport.webgl');assert.equal(capability.available,false);assert.match(capability.reason,/WebGL/);
+});
+
+test('R3-C09: a warning raised while a mesh transaction adopts its model is numbered like every other diagnostic',async t=>{
+ const {c}=await fixture(t);
+ ok(await c.dispatch({type:'geometry.build'}));
+ const previous=c.visible;assert.ok(previous,'a model is held');
+ previous.release=()=>{throw new Error('TEST_RELEASE_FAILURE');};
+ const expected=c.meshHost().current();
+ // A second model of the same test double, at the current revision, standing in for the applied mesh.
+ const model={...previous.lease,ticket:{...previous.lease.ticket,revision:c.doc.state.revision},release(){}};
+ assert.equal(c.adoptMesh({expected,candidate:null,model,head:null}),true);
+ const seen=c.getSnapshot().diagnostics.at(-1);
+ assert.equal(seen.code,'PREVIOUS_MODEL_RELEASE_FAILED');assert.equal(seen.severity,'warning');
+ assert.ok(Number.isInteger(seen.sequence)&&seen.sequence>0,'the strip filters by sequence; an unnumbered entry would never be shown');
+ assert.equal(seen.sequence,c.diagnosticSequence);
+});
+
+test('R3-C07: the step a source still needs comes from its own bindings, not from what an earlier source left behind',()=>{
+ const pending=(reason)=>({metadata:{productBindings:{version:'arch-product-bindings-pending/1',reason,requiredAction:'source.convert-raster'}}});
+ assert.equal(sourceConversion(pending('SOURCE_NUMERIC_OUTLINES_UNAVAILABLE')),'raster','a bitmap emoji over a built SVG still needs its raster');
+ assert.equal(sourceConversion(pending('RASTER_SEGMENTATION_APPROVAL_REQUIRED')),'segment','an approved raster still needs its colour regions');
+ assert.equal(sourceConversion({metadata:{productBindings:{version:'arch-product-bindings/1',regions:[]}}}),null,'canonical regions: nothing left to do');
+ assert.equal(sourceConversion({metadata:{}}),null);assert.equal(sourceConversion(null),null);
 });

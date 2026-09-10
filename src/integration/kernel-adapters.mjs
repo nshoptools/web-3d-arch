@@ -59,7 +59,10 @@ export function createKernelAdapters({moduleURL,workerURL,engineIntegrity=null,s
   async function svgPreview(input,file,{resolution=520,includeRGBA=false,longEdgeMm=0}={}){
     requireValue(file.bytes instanceof Uint8Array&&file.bytes.length<=1048576,'SVG_BYTE_BUDGET');
     const source=utf8.decode(file.bytes);
-    const result=await operation(input,(current,id)=>current.previewSVG({kind:'svg',source,thicknessMm:.2,longEdgeMm,toleranceMm:.004},{generation:id,resolution,includeRGBA}));
+    // An SVG file is parsed X right/Y down; it is previewed in the manufacturing
+    // frame (Y up), the orientation of the model and every export, and a raster
+    // made from that preview keeps it.
+    const result=await operation(input,(current,id)=>current.previewSVG({kind:'svg',source,thicknessMm:.2,longEdgeMm,toleranceMm:.004},{generation:id,resolution,includeRGBA,sourceAxis:'x-right-y-down'}));
     requireValue(!input.signal.aborted,'CANCELLED');const p=result.preview;
     return {version:VERSION,ticket:clone(input.ticket),kind:'svg',metadata:{...result.metadata,previewDerivation:p.derivation,frame:p.frame},
       materials:p.colors.map((color,index)=>({id:'source-'+color.slice(1),label:'Màu '+(index+1),color,slot:null,role:'region',overridden:false,backgroundEligible:true,excluded:false})),

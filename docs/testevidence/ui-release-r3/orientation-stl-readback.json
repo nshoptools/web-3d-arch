@@ -1,0 +1,46 @@
+{
+ "source": "orientation-mark-top-right.svg",
+ "sourceDescription": "20x10 mm SVG: background #30353b, a #0099cc mark at the TOP-RIGHT of the picture (viewBox y 1..4), a #ee7733 mark at the BOTTOM-LEFT (viewBox y 6..9).",
+ "reader": "Python 3.13 stdlib: binary STL triangle scan, area-weighted centroid; STL frame is X right, Y up seen from above, as slicers show the bed.",
+ "export": "ZIP STL per slot, inspection mode (the custom mark sample is not mesh-qualified), packaged 08-09 kernel, live application on the development server.",
+ "before": {
+  "commit": "7be8248f",
+  "rows": [
+   {
+    "file": "Móc khóa mới--slot-1--30353bff.stl",
+    "line": "triangles 1908 bounds [-24.0, -12.75, 0.0] [24.0, 19.25, 3.2] centroid [-0.018, 0.657, 1.515]"
+   },
+   {
+    "file": "Móc khóa mới--slot-2--ee7733ff.stl",
+    "line": "triangles 12 bounds [-20.25, 2.25, 2.4] [-9.0, 9.0, 3.2] centroid [-14.625, 5.625, 2.8]"
+   },
+   {
+    "file": "Móc khóa mới--slot-3--0099ccff.stl",
+    "line": "triangles 12 bounds [13.5, -9.0, 2.4] [20.25, -2.25, 3.2] centroid [16.875, -5.625, 2.8]"
+   }
+  ],
+  "verdict": "MIRRORED: the blue mark drawn at the top sits at y = -5.625 mm (below the centre) and the orange one drawn at the bottom sits at y = +5.625 mm."
+ },
+ "after": {
+  "commit": "working tree of the post-critique fix",
+  "rows": [
+   {
+    "file": "Móc khóa mới--slot-1--30353bff.stl",
+    "line": "triangles 1908 bounds [-24.0, -12.75, 0.0] [24.0, 19.25, 3.2] centroid [-0.018, 0.631, 1.515]"
+   },
+   {
+    "file": "Móc khóa mới--slot-2--0099ccff.stl",
+    "line": "triangles 12 bounds [13.5, 2.25, 2.4] [20.25, 9.0, 3.2] centroid [16.875, 5.625, 2.8]"
+   },
+   {
+    "file": "Móc khóa mới--slot-3--ee7733ff.stl",
+    "line": "triangles 12 bounds [-20.25, -9.0, 2.4] [-9.0, -2.25, 3.2] centroid [-14.625, -5.625, 2.8]"
+   }
+  ],
+  "verdict": "FAITHFUL: blue y = +5.625 mm (top), orange y = -5.625 mm (bottom); X unchanged; bounds, triangle counts and the export transform (identity) unchanged."
+ },
+ "qualification": {
+  "slicer": "unverified (no Bambu Studio / SnapmakerOrca on this machine)",
+  "physicalPrint": "not attempted"
+ }
+}

@@ -43,7 +43,11 @@ export interface ProjectView {
   id: string; name: string; revision: number; savedRevision: number | null; product: ProductId;
   /** Domain revision of the retained displayed model; null before build/open. Never transport generation. */
   visibleModelRevision: number | null; visibleModelStale: boolean;
-  step: 1 | 2; source: null | { id: string; name: string; kind: 'raster' | 'svg' | 'text' | 'emoji'; previewUrl?: string; widthMm?: number; heightMm?: number; };
+  /** `conversion`: the source-conversion step this source still needs before a
+   * model can be built ('raster' = render to an editable raster, 'segment' =
+   * separate the raster into colour regions), from its own product bindings;
+   * null once it has canonical regions. */
+  step: 1 | 2; source: null | { id: string; name: string; kind: 'raster' | 'svg' | 'text' | 'emoji'; conversion?: 'raster' | 'segment' | null; previewUrl?: string; widthMm?: number; heightMm?: number; };
   parameters: ParameterView[]; materials: MaterialView[]; text: TextView;
   canUndo: boolean; canRedo: boolean; sourceCanvas: SourceCanvasView | null;
   history: { undoCount: number; redoCount: number; payloadBytes: number; truncated: boolean };

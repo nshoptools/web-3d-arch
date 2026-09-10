@@ -18,7 +18,8 @@ export class MeshTransactionOperations {
   const previous=this.visible;this.doc=document;this.assets=assets;this.visible=this.retain(model);this.headRevision=head?.revision??this.headRevision;this.preview=null;this.selection=null;this.workspaceStep=2;this.pendingChange=null;this.readOnly=false;this.clearExportReceipts();
   if(candidate?.pruned?.length)this.truncated=true;
   // No throwing work after taking the primary model lease.
-  try{previous?.release();}catch{this.diagnostics.push({code:'PREVIOUS_MODEL_RELEASE_FAILED',message:'Mô hình mới đã lưu; không giải phóng được một bộ đệm cũ.',severity:'warning'});}
+  // Every diagnostic goes through record(): it numbers the entry, which is how the strip tells new from seen (Codex R3-C09).
+  try{previous?.release();}catch{this.record({code:'PREVIOUS_MODEL_RELEASE_FAILED',message:'Mô hình mới đã lưu; không giải phóng được một bộ đệm cũ.',severity:'warning'});}
   try{this.libraryCache.delete(this.projectId);this.emit();}catch{}
   return true;
  }
