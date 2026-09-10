@@ -165,6 +165,25 @@ export async function rasterSourceGeometry({packet,key:contextKey='art',sourceHa
  tick(c);return freeze({key:contextKey,sourceHash,derivationHash,regions:out});
 }
 
+/** Which hash names a raster context. The identity the project is bound to, so
+ * anything that re-derives that context - adoption, a build, the source SVG
+ * export - has to ask the same question rather than assume the original file
+ * (Codex R3B-C03: the exporter assumed it, and refused every edited raster).
+ *
+ * Match native RASP -> canonical_source: encoded bytes and a confirmed artwork
+ * render retain the original source identity. Plain RGBA, which includes an
+ * ordinary raster the person has painted on, uses its current RGBA hash. The
+ * preparation still binds both hashes, render consent and the retained bytes. */
+export function rasterContextHash(source,preparation){
+ const input=preparation?.input;
+ need(input&&input.originalHash===source.raw.hash&&input.rgbaHash===source.raster.rgba&&['encoded','rgba'].includes(input.mode),'PRODUCT_RASTER_PREPARATION_CONTEXT');
+ if(input.origin!==null&&input.origin!==undefined){
+  need(input.mode==='rgba'&&input.origin.sourceHash===input.originalHash,'PRODUCT_RASTER_RENDER_ORIGIN');
+  return hash(input.origin.sourceHash);
+ }
+ return hash(input.mode==='encoded'?input.originalHash:input.rgbaHash);
+}
+
 /** Exact affine from the root text producer's numeric SVG viewport. The
  * affine group retains all path/curve bytes. Only a new checked wrapper is added;
  * it is parsed by the same native SVG parser, never displayed as dynamic SVG.
@@ -200,7 +219,11 @@ export async function manufacturingTextSVG(svg,svgExport,{overlay=false}={}){
   ...(translationNm?{translationNm,translationInputMm:[left,bottom],
    translationQuantization:{rule:'nearest-ties-even-serialized-decimal-nm',signedDeltaMm:translationNm.map((n,i)=>Number(n)/1e6-[left,bottom][i]),boundMm:Math.SQRT2*.5e-6},
    canonicalTranslationErrorBoundMm:0}:{} )};
- return {bytes,descriptor:{...payload,sha256:await sha256(bytes),derivationHash:await sha256(canonicalJSON(payload))}};
+ // The viewport is returned so that anything re-verifying this wrapper reads the
+ // one contract instead of keeping a second copy of the framing arithmetic
+ // (Codex R3B-C02: the source SVG exporter's copy knew only the untranslated form).
+ return {bytes,descriptor:{...payload,sha256:await sha256(bytes),derivationHash:await sha256(canonicalJSON(payload))},
+  viewport:freeze({width,height,box:freeze([...box]),body,combined:freeze([...combined]),transform:freeze([...transform]),translationNm:translationNm?freeze([...translationNm]):null})};
 }
 
 /** One parent runtime and scheduler. The source services are the existing
@@ -237,19 +260,6 @@ export function createProductSourceContexts({kernel,sources,context,resolveTextB
   const s=bounded(source,262144,'PRODUCT_SOURCE_DESCRIPTOR_BUDGET'),sc=s.metadata?.sourceContext;
   need(['svg','raster','text','emoji'].includes(s.kind)&&sc?.version==='arch-source-context/1'&&sc.id===s.id&&sc.revision===s.revision,'PRODUCT_SOURCE_CONTEXT');
   key(s.id);integer(s.revision,0,Number.MAX_SAFE_INTEGER-1,'PRODUCT_SOURCE_REVISION');hash(s.raw?.hash);return s;
- }
- function rasterContextHash(source,preparation){
-  const input=preparation?.input;
-  need(input&&input.originalHash===source.raw.hash&&input.rgbaHash===source.raster.rgba&&['encoded','rgba'].includes(input.mode),'PRODUCT_RASTER_PREPARATION_CONTEXT');
-  // Match native RASP -> canonical_source: encoded bytes and a confirmed
-  // artwork render retain the original source identity. Plain RGBA (including
-  // edits of an ordinary raster) uses its current RGBA hash. The preparation
-  // still binds both hashes, render consent and the full retained source bytes.
-  if(input.origin!==null&&input.origin!==undefined){
-   need(input.mode==='rgba'&&input.origin.sourceHash===input.originalHash,'PRODUCT_RASTER_RENDER_ORIGIN');
-   return hash(input.origin.sourceHash);
-  }
-  return hash(input.mode==='encoded'?input.originalHash:input.rgbaHash);
  }
  async function packetFor(s,assets,g){
   const p=s.metadata.rasterPreparation;need(p?.version==='arch-raster-receipt/1'&&p.runtimeAbi===1&&p.documentSchema===2,'PRODUCT_RASTER_PREPARATION_REQUIRED');

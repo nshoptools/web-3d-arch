@@ -20,14 +20,22 @@ export async function scenario({kernel,sources,driver}){
  e.control=operation=>({version:APP,ticket:{id:'source-'+ ++e.n,userId:e.userId,projectId:e.projectId,revision:e.state.revision,generation:e.n},signal:new AbortController().signal,onProgress:()=>{},...(operation?{sourceContext:createSourceContext(operation,e.state.content.app.source)}:{})});
  e.bridge=createProductSourceContexts({kernel,sources,context:driver.get});e.provider=createSourceSVGExport({kernel,sources,context:driver.get});
  e.exporter=createExportAdapters({operation:kernel.operation,kernelLeases:kernel.kernelLeases,context:driver.get,sourceSnapshot:e.provider});
- e.adopt=async(reply,file,c)=>{
+ /** `acceptDecision` stands in for the person confirming a region decision the bridge asks for:
+  * the plan it returns is exactly what confirming would commit. Without it, adoption refuses, which
+  * is the designed behaviour and what the blocker case below checks. */
+ e.adopt=async(reply,file,c,{acceptDecision=false}={})=>{
   const r=reply.result??reply,raw=await writer.addAsset(file.bytes,'source',e.records),hashes=[raw.hash];
   for(const a of r.assets??[])hashes.push((await writer.addAsset(a.bytes,a.kind,e.records)).hash);
   const raster=r.raster?await writer.rasterDescriptor(r.raster,e.records):null,preview=r.preview?await writer.previewDescriptor(r.preview,e.records):null;
   if(raster)hashes.push(raster.rgba,raster.preview,raster.originalPreview);if(preview)hashes.push(preview.png);
   const source={id:c.sourceContext.id,revision:c.sourceContext.revision,kind:r.kind,name:file.name,mediaType:file.mediaType,raw,assetHashes:[...new Set(hashes)],metadata:{...clone(r.metadata),sourceContext:clone(c.sourceContext)},...(raster?{raster}:{}),...(preview?{preview}:{})};
   await e.sync();const adoptionInput={...c,purpose:'source',operation:c.sourceContext.operation,source,state:clone(e.state),assets:e.assets(),materials:r.materials??e.state.content.app.materials,materialDefaults:r.materials??e.state.content.app.materialDefaults};
-  const d=await e.bridge.prepareAdoption(adoptionInput);
+  const d=await e.bridge.prepareAdoption(adoptionInput).catch(async error=>{
+   if(!acceptDecision||error?.code!=='PRODUCT_ADOPTION_DECISION_REQUIRED')throw error;
+   const plan=await e.bridge.prepareAdoptionPlan(adoptionInput);
+   need(plan.status==='proposal','a decision was required, so a proposal is expected');
+   return plan;
+  });
   source.metadata.productBindings=clone(d.productBindings);
   if(reply.confirmation){const receipt=await e.bridge.source.acceptProposal({...c,state:clone(e.state),source,assets:e.assets(),confirmation:reply.confirmation,acceptedAtRevision:e.state.revision+1});source.metadata.confirmationReceipt=sourceReceipt(receipt,{control:c,confirmation:reply.confirmation,source,acceptedAtRevision:e.state.revision+1});}
   e.state=clone(e.state);e.state.revision++;e.state.sourceKind=source.kind;e.state.content.app.source=source;e.state.content.app.materials=clone(d.materials);e.state.content.app.materialDefaults=clone(d.materialDefaults);e.state=validateState(e.state);await e.sync();e.file=file;return source;
@@ -43,7 +51,7 @@ export async function scenario({kernel,sources,driver}){
   }
   return e.adopt(reply,file,c);
  };
- e.convert=async()=>{const c=e.control('convert'),source=e.state.content.app.source,r=await e.bridge.source.convert({...c,target:'raster',source,state:clone(e.state),assets:e.assets()});need(r.status==='proposal','real explicit source proposal required');return e.adopt(r,e.file,c);};
+ e.convert=async(options={})=>{const c=e.control('convert'),source=e.state.content.app.source,r=await e.bridge.source.convert({...c,target:'raster',source,state:clone(e.state),assets:e.assets()});need(r.status==='proposal','real explicit source proposal required');return e.adopt(r,e.file,c,options);};
  e.update=async fn=>{e.state=clone(e.state);fn(e.state);e.state.revision++;await e.sync();};
  e.refresh=()=>e.provider.refresh({control:e.control()});
  e.export=()=>e.exporter.export({...e.control(),state:e.state,model:null,renderer:{available:false},formatId:'svg-color',prerequisite:'committed-source',assets:e.assets()});

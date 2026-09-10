@@ -84,8 +84,58 @@ test('finite plain JSON, accessors, prototype/cycle and dependency/resource limi
  }
  driver.set(e.live);
 }));
+// Codex R3B-C02: text beside the artwork at negative millimetres was refused outright, because the
+// re-verification here kept its own copy of the framing arithmetic and knew only the untranslated
+// form the producer writes. It now calls the producer, and the document spans the union of artwork
+// and overlay instead of a viewport pinned at zero, which would cut the text off on the left.
+test('text beside the artwork at negative millimetres exports, and the document reaches it',async()=>{
+ const e=await scenario({kernel,sources,driver});
+ try{
+  e.state=clone(e.state);Object.assign(e.state.content.app.text,{text:'F',xMm:'-30',yMm:'-15',placement:'beside',baseEnabled:false});
+  e.state.revision++;await e.sync();
+  await e.ingest('svg');
+  await e.refresh();
+  const out=await e.export(),svg=text(out.bytes);
+  const box=/viewBox="([^"]+)"/.exec(svg)[1].split(' ').map(Number);
+  assert.equal(box.length,4);
+  assert.ok(box[0]<0,'the viewport reaches left of the artwork for text at a negative x: '+box.join(' '));
+  assert.ok(box[0]+box[2]>=40&&box[1]+box[3]>=30,'it still covers the whole artwork: '+box.join(' '));
+  assert.match(svg,/id="red"/);assert.match(svg,/translate\(0 /);
+  save('svg-text-overlay-negative',out);
+ }finally{await e.close();}
+});
+
 test('SVG plus committed real text overlay preserves both curve sources before 3D',async()=>{
  const e=await scenario({kernel,sources,driver});try{await e.ingest('svg',{overlay:true});await e.refresh();const out=await e.export();assert.equal(out.status,undefined);assert.match(text(out.bytes),/id="red"/);assert.match(text(out.bytes),/translate\(0 /);assert.match(text(out.bytes),/[CQ]/);save('svg-text-overlay',out);}finally{await e.close();}
+});
+
+// Codex R3B-C03: after a real edit, the project is bound to the edited pixels, but this exporter
+// identified the raster context by the file the picture came from, so it refused every edited
+// raster. Both sides now ask the same question. Accepting the region decision is what the
+// application does when the person confirms the proposal; the plan carries the bindings it commits.
+test('a raster that was edited and separated again still exports its source SVG',async()=>{
+ const {createEditor}=await import('../../src/editing/index.mjs');const {encodeRasterPNG}=await import('../../src/core/png-encode.mjs');
+ const e=await scenario({kernel,sources,driver});
+ try{
+  await e.ingest('raster');await e.refresh();
+  const src=e.state.content.app.source,r=src.raster,old=e.records.get(r.rgba).bytes;
+  const editor=await createEditor({source:{id:src.id,hash:src.raw.hash,adapterId:'arch-source-svg-test',adapterVersion:'1'},image:{width:r.width,height:r.height,data:old,colorSpace:'srgb',alphaMode:'straight'}});
+  const result=await editor.apply({version:'arch-raster-edit/1',id:'erase-for-export',expected:editor.token(),tool:'erase',points:[{x:10,y:8},{x:13,y:8}],width:3});
+  assert.ok(result.changedPixels>0,'the edit changed pixels');
+  const rgba=new Uint8Array(result.image.data),h=await sha256(rgba);
+  const png=await encodeRasterPNG({width:r.width,height:r.height,data:new Uint8ClampedArray(rgba)}),p=await sha256(png);
+  e.records.set(h,{hash:h,byteLength:rgba.length,bytes:rgba,kind:'derived'});e.records.set(p,{hash:p,byteLength:png.length,bytes:png,kind:'derived'});
+  await e.update(s=>{s.content.app.source.raster.rgba=h;s.content.app.source.raster.preview=p;s.content.app.source.assetHashes.push(h,p);});
+  // Separate the edited picture again, confirming the region decision the bridge asks for.
+  await e.convert({acceptDecision:true});
+  const bound=e.state.content.app.source;
+  assert.notEqual(bound.metadata.productBindings.contexts[0].sha256,bound.raw.hash,
+   'an edited raster is identified by its pixels, not by the file it came from');
+  await e.refresh();
+  const out=await e.export();assert.equal(out.status,undefined);
+  assert.match(text(out.bytes),/data-scope="committed-source-regions"/);
+  save('raster-edited-source-svg',out);
+ }finally{await e.close();}
 });
 
 test('actual erase preserves original and reports default adoption blocker without material fallback',async()=>{
@@ -99,9 +149,21 @@ test('actual erase preserves original and reports default adoption blocker witho
   e.records.set(h,{hash:h,byteLength:rgba.length,bytes:rgba,kind:'derived'});e.records.set(p,{hash:p,byteLength:png.length,bytes:png,kind:'derived'});await e.update(s=>{s.content.app.source.raster.rgba=h;s.content.app.source.raster.preview=p;s.content.app.source.assetHashes.push(h,p);});
   await assert.rejects(e.refresh(),{code:'RASTER_SOURCE_CONVERSION_REQUIRED'});
   const dir=path.join(process.env.PROJECT_REVIEW_RUN,'evidence/source-cases-'+process.env.SOURCE_SVG_LABEL);fs.mkdirSync(dir,{recursive:true});
-  let failure=null;try{await e.convert();}catch(error){assert.equal(error.code,'PRODUCT_MATERIAL_ID_CONFLICT');failure=error.code;}
+  // The erase retires a colour region, so adoption asks the person to decide what becomes of the
+  // bindings that region held, and refuses to decide on its own. The blocker is checked by what it
+  // carries rather than by one code string: the earlier expectation named a material-id conflict,
+  // which is a different refusal and not the one this flow reaches (Hub, release round 3).
+  let failure=null;try{await e.convert();}catch(error){
+   assert.equal(error.code,'PRODUCT_ADOPTION_DECISION_REQUIRED');
+   const plan=error.details?.plan;
+   assert.equal(plan?.status,'proposal');
+   assert.ok(plan.proposals.some(x=>x.kind==='source-identity-rebind'&&x.requiresExplicitDecision===true),
+    'the refusal is the region decision, not a material fallback: '+JSON.stringify(plan.proposals.map(x=>x.kind)));
+   assert.equal(plan.diagnostics.length,0,'nothing is blocked; a decision is pending');
+   failure={code:error.code,proposals:plan.proposals.map(x=>x.kind)};
+  }
   if(failure){assert.notEqual(e.provider.describe(e.live).status,'ready');assert.equal(e.state.content.app.source.raw.hash,src.raw.hash);assert.equal(e.state.content.app.source.revision,src.revision);
-   fs.writeFileSync(path.join(dir,'edited-raster-result.json'),JSON.stringify({status:'blocked-upstream',code:failure,originalHash:src.raw.hash,retainedOriginalHash:e.state.content.app.source.raw.hash,beforeRGBAHash:r.rgba,afterRGBAHash:h,changedPixels:result.changedPixels,noExportPublished:true,noMaterialFallback:true},null,2));return;}
+   fs.writeFileSync(path.join(dir,'edited-raster-result.json'),JSON.stringify({status:'blocked-upstream',code:failure.code,proposals:failure.proposals,originalHash:src.raw.hash,retainedOriginalHash:e.state.content.app.source.raw.hash,beforeRGBAHash:r.rgba,afterRGBAHash:h,changedPixels:result.changedPixels,noExportPublished:true,noMaterialFallback:true},null,2));return;}
   const refreshed=await e.refresh(),out=await e.export();
   assert.notEqual(out.metadata.sha256,before.metadata.sha256);assert.equal(e.state.content.app.source.raw.hash,src.raw.hash);assert.equal(e.state.content.app.source.revision,src.revision+1);assert.equal(refreshed.descriptor.provenance.originalBytesPreserved,true);save('edited-raster',out);
   fs.writeFileSync(path.join(dir,'edited-raster-result.json'),JSON.stringify({status:'exported',originalHash:src.raw.hash,retainedOriginalHash:e.state.content.app.source.raw.hash,noMaterialFallback:true},null,2));

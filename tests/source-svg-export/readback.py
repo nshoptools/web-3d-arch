@@ -70,7 +70,10 @@ try:
  edited=json.loads((cases/'edited-raster-result.json').read_text())
  check(edited['noMaterialFallback'] and edited['originalHash']==edited['retainedOriginalHash'],'edited original retained without material fallback')
  if edited['status']=='blocked-upstream':
-  check(edited['code']=='PRODUCT_MATERIAL_ID_CONFLICT' and edited['noExportPublished'] and not (cases/'edited-raster.svg').exists(),'upstream blocker does not publish stale SVG')
+   # The erase retires a colour region, so the refusal is the region decision the person has to make.
+  # Checked by what the blocker carries, not by one code string: a material-id conflict is a
+  # different refusal and is not the one this flow reaches.
+  check(edited['code']=='PRODUCT_ADOPTION_DECISION_REQUIRED' and 'source-identity-rebind' in edited['proposals'] and edited['noExportPublished'] and not (cases/'edited-raster.svg').exists(),'upstream blocker does not publish stale SVG')
   check(edited['changedPixels']>0 and edited['beforeRGBAHash']!=edited['afterRGBAHash'],'actual erase changed working pixels')
  else:
   read(cases/'edited-raster.svg');check((cases/'edited-raster.svg').read_bytes()!=(initial/'raster.svg').read_bytes(),'default edited graph output differs')

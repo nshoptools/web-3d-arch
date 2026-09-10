@@ -1,6 +1,6 @@
 import {canonicalJSON,cloneJSON,sha256} from '../storage/common.mjs';
 import {domainStateFingerprint} from '../storage/history.mjs';
-import {sourceGeometry,rasterSourceGeometry} from './product-source-contexts.mjs';
+import {sourceGeometry,rasterSourceGeometry,manufacturingTextSVG,rasterContextHash} from './product-source-contexts.mjs';
 import {deriveProductIdentities} from './product-adapters.mjs';
 import {validateProductMaterialExtension} from '../contracts/product-material.mjs';
 import {validatePacket,readableSummary} from '../core/raster-schema.mjs';
@@ -75,18 +75,20 @@ function packetRings(packet){
  const b=new Map(packet.buffers.map(r=>[r.kind,r.bytes])),dv=k=>new DataView(b.get(k).buffer,b.get(k).byteOffset,b.get(k).byteLength),l=dv(13),i=dv(14),p=dv(28),out=new Map();let count=0;
  for(let o=0;o<l.byteLength;o+=16){const start=l.getUint32(o,true),size=l.getUint32(o+4,true),region=l.getUint32(o+8,true),r=[];for(let k=0;k<size-1;k++){const at=i.getUint32(4*(start+k),true)*16;r.push([p.getBigInt64(at,true),p.getBigInt64(at+8,true)]);}count+=r.length;need(count<=SOURCE_SVG_LIMITS.points,'SOURCE_SVG_LIMIT');const key='raster-region:'+region;if(!out.has(key))out.set(key,[]);out.get(key).push(r);}return out;
 }
-/** Checked serialization framing only; matches existing captured manufacturingTextSVG.
- * No shaping/path grammar/boolean is reimplemented. Fresh producer bytes are mandatory. */
+/** Re-verification of a captured text wrapper. The framing arithmetic is the
+ * producer's, called here rather than copied, so the two cannot drift apart: the
+ * copy that used to live here knew only the untranslated form and refused every
+ * overlay placed at negative millimetres (Codex R3B-C02). Fresh producer bytes
+ * are still mandatory and the refusal vocabulary of this exporter is kept. */
 async function textFrame(svg,exportFrame,stored,overlay){
- safeSVG(svg);const text=dec.decode(svg),m=/^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg" width="([^"]+)mm" height="([^"]+)mm" viewBox="([^"]+)">/.exec(text);
- need(m&&text.endsWith('</svg>')&&exportFrame?.status==='ready','SOURCE_SVG_DERIVED_CHANGED');const w=Number(m[1]),h=Number(m[2]),box=m[3].split(' ').map(Number),restore=exportFrame.parserViewportToSourceMm;
- need(w>0&&h>0&&w<=10000&&h<=10000&&box.length===4&&box.every(Number.isFinite)&&box[2]===w&&box[3]===h&&same(restore,[1,0,0,-1,box[0],-box[1]]),'SOURCE_SVG_DERIVED_CHANGED');
- const t=overlay?restore:[1,0,0,-1,0,h],width=t[4]+w+1,height=t[5]+1,combined=[1,0,0,-1,t[4]-box[0],t[5]+box[1]];
- need(t[4]>=0&&t[5]-h>=0&&width<=10000&&height<=10000,'SOURCE_SVG_DERIVED_CHANGED');
- const body=text.slice(m[0].length,-6),framed=enc.encode('<svg xmlns="'+NS+'" width="'+width+'mm" height="'+height+'mm" viewBox="0 0 '+width+' '+height+'"><g transform="matrix('+combined.join(' ')+')">'+body+'</g></svg>');
- const payload={version:'arch-text-manufacturing-frame/1',originalNumericSvgHash:await sha256(svg),transform:t,mode:overlay?'absolute-overlay':'source-art-normalized-origin',originalFrame:restore,sourceGeometryChanged:false,totalErrorBoundMm:null};
- const frame={...payload,sha256:await sha256(framed),derivationHash:await sha256(canonicalJSON(payload))};need(same(frame,stored),'SOURCE_SVG_DERIVED_CHANGED');
- return {bytes:framed,original:svg,frame,box,body,outputMatrix:[1,0,0,-1,box[0],box[1]+h]};
+ safeSVG(svg);
+ let framed=null;
+ try{framed=await manufacturingTextSVG(svg,exportFrame,{overlay});}catch{framed=null;}
+ need(framed&&same(framed.descriptor,stored),'SOURCE_SVG_DERIVED_CHANGED');
+ const {box,body,translationNm}=framed.viewport;
+ return {bytes:framed.bytes,original:svg,frame:framed.descriptor,box:[...box],body,
+  translationNm:translationNm?[...translationNm]:null,
+  outputMatrix:[1,0,0,-1,box[0],box[1]+box[3]]};
 }
 function regionDocument(rows,frame,provenance){
  let s='<svg xmlns="'+NS+'" width="'+frame.width+'mm" height="'+frame.height+'mm" viewBox="'+frame.box.join(' ')+'" data-scope="committed-source-regions"><metadata>'+xml(canonicalJSON(provenance))+'</metadata>';
@@ -136,7 +138,9 @@ export function createSourceSVGExport({context,kernel,sources}={}){
     need(svg.length<=SOURCE_SVG_LIMITS.sourceBytes,'SOURCE_SVG_LIMIT');safeSVG(svg);const sourceHash=await sha256(svg);check();
     const l=await operation((client,generation)=>client.build({kind:'svg',source:dec.decode(svg),thicknessMm:.2,longEdgeMm:0,toleranceMm:b.sourceToleranceMm},{generation}));
     try{check();need(l.epoch===s.ownerEpoch,'SOURCE_SVG_RUNTIME');const live=l.bytes();need(live instanceof Uint8Array&&live.length<=SOURCE_SVG_LIMITS.dependencyBytes,'SOURCE_SVG_LIMIT');const copy=new Uint8Array(live),metadata=data(l.metadata),rings=snapshotRings(copy);
-     const canonical=await sourceGeometry({bytes:copy,metadata,key,sourceHash,derivationHash,control:c});check();
+     // A wrapper the producer had to move into a positive viewport carries its
+     // translation; the regions the project is bound to are the translated ones.
+     const canonical=await sourceGeometry({bytes:copy,metadata,key,sourceHash,derivationHash,...(framing?.translationNm?{translationNm:framing.translationNm}:{}),control:c});check();
      const result={canonical,rings,bytes:svg,metadata,framing};contexts.push(result);proofs.push({key,sourceHash,derivationHash,geometry:canonical.regions,importLedger:metadata.importLedger});return result;
     }finally{l.release();}
    }
@@ -161,13 +165,16 @@ export function createSourceSVGExport({context,kernel,sources}={}){
    let art,frame;
    if(source.raster){
     const r=await sources.raster.prepareRecipe({...c,state:s.state,assets:s.assets});check();need(r?.status==='ready'&&r.packet,'SOURCE_SVG_REGIONS_REQUIRED');
-    const canonical=await rasterSourceGeometry({packet:r.packet,key:'art',sourceHash:source.raw.hash,derivationHash:r.preparation.approvalHash,control:c});check();
+    // The context identity is the one the project was bound with, which for an edited
+    // raster is its current pixels, not the file it came from (Codex R3B-C03).
+    const rasterHash=rasterContextHash(source,r.preparation);
+    const canonical=await rasterSourceGeometry({packet:r.packet,key:'art',sourceHash:rasterHash,derivationHash:r.preparation.approvalHash,control:c});check();
     const actual=validatePacket(r.packet),{accepted:_accepted,status:_status,...stable}=readableSummary(actual.summary,actual.metadata);
     need(same(stable,r.preparation.summary),'SOURCE_SVG_DERIVED_CHANGED');
     art={canonical,rings:packetRings(r.packet),raster:r};contexts.push(art);const width=actual.summary.widthMm,height=actual.summary.heightMm;
     need(width>0&&height>0&&width<=10000&&height<=10000,'SOURCE_SVG_LIMIT');// Kind28 is already source X-right/Y-down; reflecting it would invert raster edits.
     frame={width,height,box:[0,0,width,height],matrix:[1,0,0,1,0,0]};
-    proofs.push({key:'art',sourceHash:source.raw.hash,derivationHash:r.preparation.approvalHash,geometry:canonical.regions,rasterReceipt:data(r.receipt),replayed:true});
+    proofs.push({key:'art',sourceHash:rasterHash,originalHash:source.raw.hash,derivationHash:r.preparation.approvalHash,geometry:canonical.regions,rasterReceipt:data(r.receipt),replayed:true});
    }else if(source.kind==='svg'){
     art=await vector('art',s.assets.get(source.raw.hash),null);const width=art.metadata.widthMm,height=art.metadata.heightMm;
     need(width>0&&height>0&&width<=10000&&height<=10000,'SOURCE_SVG_LIMIT');frame={width,height,box:[0,0,width,height],matrix:[1,0,0,1,0,0]};
@@ -206,8 +213,14 @@ export function createSourceSVGExport({context,kernel,sources}={}){
    else if(!changed&&!source.raster&&contexts.length===2&&source.kind==='svg'){
     const original=safeSVG(art.bytes).documentElement;original.setAttribute('x','0');original.setAttribute('y','0');original.setAttribute('width',frame.width);original.setAttribute('height',frame.height);
     const overlayText=contexts[1].framing;const serializer=new XMLSerializer();
-    const box=[0,Math.min(0,frame.height+overlayText.box[1]),Math.max(frame.width,overlayText.box[0]+overlayText.box[2]),Math.max(frame.height,frame.height+overlayText.box[1]+overlayText.box[3])];
-    box[3]-=box[1];output=enc.encode('<svg xmlns="'+NS+'" width="'+box[2]+'mm" height="'+box[3]+'mm" viewBox="'+box.join(' ')+'">'+serializer.serializeToString(original)+'<g transform="translate(0 '+frame.height+')">'+overlayText.body+'</g></svg>');
+    // The artwork sits at [0,0,W,H] and the overlay is drawn below it, so the document
+    // spans the union of the two. Text placed at negative millimetres reaches left of the
+    // artwork and below it; a viewport pinned at zero would simply cut it off.
+    const ob=overlayText.box,minX=Math.min(0,ob[0]),minY=Math.min(0,frame.height+ob[1]);
+    const maxX=Math.max(frame.width,ob[0]+ob[2]),maxY=Math.max(frame.height,frame.height+ob[1]+ob[3]);
+    const box=[minX,minY,maxX-minX,maxY-minY];
+    need(box[2]>0&&box[3]>0&&box[2]<=20000&&box[3]<=20000,'SOURCE_SVG_LIMIT');
+    output=enc.encode('<svg xmlns="'+NS+'" width="'+box[2]+'mm" height="'+box[3]+'mm" viewBox="'+box.join(' ')+'">'+serializer.serializeToString(original)+'<g transform="translate(0 '+frame.height+')">'+overlayText.body+'</g></svg>');
     provenance.route='retained-svg-plus-reshaped-overlay';
    }else{
     // Extend the source viewport for retained overlay placement; do not clip by model size.
