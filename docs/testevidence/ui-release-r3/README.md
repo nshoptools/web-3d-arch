@@ -17,6 +17,8 @@ của đợt này trên `main`.
 | `before-orientation-top-view-1440.png` / `after-orientation-top-view-1440.png` | “Nhìn từ trên” của mô hình dựng từ mẫu đó. Trước: xanh ở **dưới phải** (lật dọc so với nguồn). Sau: xanh ở **trên phải**, đúng nguồn. |
 | `orientation-stl-readback.json` | Đọc lại ZIP STL bằng Python stdlib, trọng tâm theo diện tích từng khe. Trước: xanh `y = −5,625 mm`, cam `y = +5,625 mm`. Sau: xanh `y = +5,625`, cam `y = −5,625`; biên, số tam giác và transform xuất (đơn vị) không đổi. |
 | `orientation-3mf-readback.json` | Cùng mẫu bất đối xứng, xuất 3MF Bambu bằng **nhân dựng lại** (nhân gói không xuất được 3MF). Đọc lại: màu đúng ba vật liệu trên giao diện, ô xanh ở `y +2,25…+9,0 mm` (trên) và `x 13,5…20,25` (phải), ô cam ở `y −9,0…−2,25` (dưới) và `x −20,25…−9,0` (trái) — khớp nguồn. |
+| `after-3mf-failure-strip-1440.png` | Dải cảnh báo sau khi bộ ghi 3MF của gói 08-09 từ chối: câu tiếng Việt + “Mã chi tiết: READBACK_VERTICES” thay cho mã máy trần (Grok G-R3-02 đã sửa). |
+| `webkit-storage-probe.json` | Vì sao bộ kiểm trình duyệt hỏng ở WebKit: phiên và `deviceId` bình thường ở cả ba engine; ở bản WebKit này `navigator.storage.getDirectory()` ném `UnknownError` nên ứng dụng từ chối mở kho (cố ý, để không tách dữ liệu ra hai nơi). Không phải kết luận về Safari thật. |
 | `dev-kernel-3mf-prusa-slicer-info.txt` | PrusaSlicer 2.9.6 `--info` đọc đủ bốn đối tượng, `manifold = yes`, thể tích khớp (bộ đọc thứ ba, không phải slicer đích). |
 
 Kiểm tự động của đợt: typecheck; 125 ca Node (`tests/app`, `tests/storage`, `tests/printing-app`,

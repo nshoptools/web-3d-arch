@@ -105,6 +105,8 @@ export const DIAGNOSTIC_TEXT: Record<string, string> = {
     'Bộ ghi 3MF từ chối mô hình này nên chưa tạo được tệp 3MF; mô hình và các tệp STL không bị ảnh hưởng. Mã chi tiết bên dưới là điều cần gửi khi báo lỗi.',
   EXPORT_3MF_UNAVAILABLE:
     'Nhân hiện tại không xuất được 3MF. Tệp STL theo vật liệu vẫn xuất được.',
+  BYTE_STORE_UNAVAILABLE:
+    'Trình duyệt này không cho ứng dụng mở kho tệp riêng của nó, nên chưa mở hay lưu được dự án ở đây. Ứng dụng cố ý không tự chuyển sang kho dự phòng: làm vậy có thể để dữ liệu nằm ở hai nơi và trông như mất dự án. Hãy thử trình duyệt khác, hoặc thoát chế độ duyệt riêng tư rồi mở lại.',
   EXPORT_SECTION_STEP:
     'Khoảng cao độ của dãy mặt cắt phải chia hết cho bước; ví dụ bước 0,25 cho 0–1 mm, hoặc kết thúc 0,9 mm cho bước 0,3.',
   PROJECT_REQUIRED:

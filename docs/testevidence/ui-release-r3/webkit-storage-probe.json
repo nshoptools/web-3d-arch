@@ -1,0 +1,12 @@
+{
+ "question": "Why does the application browser suite fail under WebKit?",
+ "method": "Playwright WebKit/Chromium/Firefox from .toolchain, against the development server on this machine; the dev sign-in, then the suite harness page, then a storage probe.",
+ "findings": [
+  "The session is fine in all three engines: /api/v1/me answers 200 with the same deviceId, so DEVICE_REQUIRED was not a session or cookie problem.",
+  "On the harness page, Chromium builds a fixture; WebKit refuses with BYTE_STORE_UNAVAILABLE.",
+  "Storage probe: in this WebKit build navigator.storage.getDirectory() throws UnknownError (\"operation failed for an unknown transient reason\"); IndexedDB opens normally. Chromium and Firefox return an OPFS root and pass the write probe."
+ ],
+ "productBehaviour": "src/storage/bytes.mjs categorises that failure as policy-or-io-blocked, which the application policy (fallbackWhen: unsupported, verification-failed) deliberately does not treat as a reason to fall back to IndexedDB: silently moving to a second store could strand what is already in OPFS and look like lost projects. The refusal is by design; only the sentence the person reads was missing, and is now in DIAGNOSTIC_TEXT.",
+ "notVerified": "Whether desktop Safari behaves like this Playwright WebKit build. No Safari on this machine. Nothing here is a claim about Safari.",
+ "consequence": "The WebKit run of tests/app/run.ps1 cannot open a store, so its cases fail for that reason, not for the behaviour they test."
+}
