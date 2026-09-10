@@ -119,6 +119,11 @@ hoặc effort khác theo quy tắc nâng cấp; chỉ thay ràng buộc này khi
 chứng và tự kết luận trước khi đọc kết luận ghế khác. Không tự khởi chạy ghế khác
 chỉ vì có phòng review. Review không mặc nhiên cho phép sửa mã sản phẩm.
 
+Trước khi soạn bản giao việc cho một ghế, Hub đọc
+[cách giao việc cho ghế review](docs/reviews/HUB-BRIEFING.md): chọn giữa phản biện
+và bài mở theo việc Hub **đã có lời giải hay chưa**, giữ lại phân tích của mình
+trong bài mở, và tự tái hiện hoặc tự đo trước khi nhận hay bác một phát hiện.
+
 ## Font, emoji và thư viện
 
 - Giữ byte gốc từ nguồn chính thức, pin revision/version, lưu SHA-256 và giấy phép
