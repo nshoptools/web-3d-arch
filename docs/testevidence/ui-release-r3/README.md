@@ -20,6 +20,7 @@ của đợt này trên `main`.
 | `after-3mf-failure-strip-1440.png` | Dải cảnh báo sau khi bộ ghi 3MF của gói 08-09 từ chối: câu tiếng Việt + “Mã chi tiết: READBACK_VERTICES” thay cho mã máy trần (Grok G-R3-02 đã sửa). |
 | `webkit-storage-probe.json` | Vì sao bộ kiểm trình duyệt hỏng ở WebKit: phiên và `deviceId` bình thường ở cả ba engine; ở bản WebKit này `navigator.storage.getDirectory()` ném `UnknownError` nên ứng dụng từ chối mở kho (cố ý, để không tách dữ liệu ra hai nơi). Không phải kết luận về Safari thật. |
 | `webkit-store-refusal-1440.png` | Chính màn hình người dùng thấy ở WebKit: trang bắt đầu mở bình thường, bấm “Tạo dự án” thì bị từ chối kèm câu giải thích mới. |
+| `legacy-converted-source-canvas-1440.png` / `legacy-converted-raster.json` | Dự án cũ có SVG đã chuyển thành raster bằng bản trước (fixture của ghế Codex): điểm ảnh đã lưu bị lật và khung xem nguồn cho thấy điều đó, nhưng mô hình và ZIP STL dựng ra **đúng như bản cũ vẫn dựng** (ô xanh `y +11,25…+18 mm`). |
 | `dev-kernel-3mf-prusa-slicer-info.txt` | PrusaSlicer 2.9.6 `--info` đọc đủ bốn đối tượng, `manifold = yes`, thể tích khớp (bộ đọc thứ ba, không phải slicer đích). |
 
 Kiểm tự động của đợt: typecheck; 125 ca Node (`tests/app`, `tests/storage`, `tests/printing-app`,

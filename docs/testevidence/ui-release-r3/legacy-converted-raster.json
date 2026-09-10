@@ -1,0 +1,13 @@
+{
+ "question": "Does a project whose SVG was converted to a raster by the previous version still build the model it always built?",
+ "fixture": "legacy-converted-svg.arch-project.zip, built by the Codex seat with the 7be8248f code: ingest plus one convert, packaged through that version's own snapshot and manifest API.",
+ "storedPixels": "Mirrored, and visibly so: the source canvas of the opened project shows the F upside down with the blue square at the bottom right (legacy-converted-source-canvas-1440.png). That is what the old renderer wrote, and it is the project data.",
+ "marker": "source.metadata.preview.frame = {kind:'manufacturing-bounds', leftMm:0, topMm:45, widthMm:45, heightMm:45, yDirection:'down'} with no sourceAxis, which is how a render from before the fix is recognised.",
+ "measured": {
+  "blueSquareY_baseline_7be8248f": "+11.25 to +18 mm (Codex)",
+  "blueSquareY_before_this_fix_e084512a": "-18 to -11.25 mm (Codex)",
+  "blueSquareY_after_this_fix": "+11.25 to +18 mm (Hub, live through the interface, STL read back with the Python standard library)"
+ },
+ "method": "Open the package in the running application, approve the pending colour separation and the three-region source update, build, export the STL zip, read each slot back and take an area-weighted centroid and bounds.",
+ "verdict": "The saved project builds what it always built. Its source canvas still shows the pixels it stored, which is its data, not the build."
+}
