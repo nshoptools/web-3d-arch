@@ -19,6 +19,7 @@ của đợt này trên `main`.
 | `orientation-3mf-readback.json` | Cùng mẫu bất đối xứng, xuất 3MF Bambu bằng **nhân dựng lại** (nhân gói không xuất được 3MF). Đọc lại: màu đúng ba vật liệu trên giao diện, ô xanh ở `y +2,25…+9,0 mm` (trên) và `x 13,5…20,25` (phải), ô cam ở `y −9,0…−2,25` (dưới) và `x −20,25…−9,0` (trái) — khớp nguồn. |
 | `after-3mf-failure-strip-1440.png` | Dải cảnh báo sau khi bộ ghi 3MF của gói 08-09 từ chối: câu tiếng Việt + “Mã chi tiết: READBACK_VERTICES” thay cho mã máy trần (Grok G-R3-02 đã sửa). |
 | `webkit-storage-probe.json` | Vì sao bộ kiểm trình duyệt hỏng ở WebKit: phiên và `deviceId` bình thường ở cả ba engine; ở bản WebKit này `navigator.storage.getDirectory()` ném `UnknownError` nên ứng dụng từ chối mở kho (cố ý, để không tách dữ liệu ra hai nơi). Không phải kết luận về Safari thật. |
+| `webkit-store-refusal-1440.png` | Chính màn hình người dùng thấy ở WebKit: trang bắt đầu mở bình thường, bấm “Tạo dự án” thì bị từ chối kèm câu giải thích mới. |
 | `dev-kernel-3mf-prusa-slicer-info.txt` | PrusaSlicer 2.9.6 `--info` đọc đủ bốn đối tượng, `manifold = yes`, thể tích khớp (bộ đọc thứ ba, không phải slicer đích). |
 
 Kiểm tự động của đợt: typecheck; 125 ca Node (`tests/app`, `tests/storage`, `tests/printing-app`,

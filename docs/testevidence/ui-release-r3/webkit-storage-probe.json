@@ -8,5 +8,6 @@
  ],
  "productBehaviour": "src/storage/bytes.mjs categorises that failure as policy-or-io-blocked, which the application policy (fallbackWhen: unsupported, verification-failed) deliberately does not treat as a reason to fall back to IndexedDB: silently moving to a second store could strand what is already in OPFS and look like lost projects. The refusal is by design; only the sentence the person reads was missing, and is now in DIAGNOSTIC_TEXT.",
  "notVerified": "Whether desktop Safari behaves like this Playwright WebKit build. No Safari on this machine. Nothing here is a claim about Safari.",
- "consequence": "The WebKit run of tests/app/run.ps1 cannot open a store, so its cases fail for that reason, not for the behaviour they test."
+ "consequence": "The WebKit run of tests/app/run.ps1 cannot open a store, so its cases fail for that reason, not for the behaviour they test.",
+ "whatThePersonSees": "The start screen loads normally in WebKit; creating a project is refused with \"Không tạo được dự án\" and, after this round, a Vietnamese sentence explaining that the browser will not let the application open its own file store and why it does not silently use a second one (webkit-store-refusal-1440.png)."
 }
