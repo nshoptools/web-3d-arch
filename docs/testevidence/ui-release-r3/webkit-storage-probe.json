@@ -9,5 +9,46 @@
  "productBehaviour": "src/storage/bytes.mjs categorises that failure as policy-or-io-blocked, which the application policy (fallbackWhen: unsupported, verification-failed) deliberately does not treat as a reason to fall back to IndexedDB: silently moving to a second store could strand what is already in OPFS and look like lost projects. The refusal is by design; only the sentence the person reads was missing, and is now in DIAGNOSTIC_TEXT.",
  "notVerified": "Whether desktop Safari behaves like this Playwright WebKit build. No Safari on this machine. Nothing here is a claim about Safari.",
  "consequence": "The WebKit run of tests/app/run.ps1 cannot open a store, so its cases fail for that reason, not for the behaviour they test.",
- "whatThePersonSees": "The start screen loads normally in WebKit; creating a project is refused with \"Không tạo được dự án\" and, after this round, a Vietnamese sentence explaining that the browser will not let the application open its own file store and why it does not silently use a second one (webkit-store-refusal-1440.png)."
+ "whatThePersonSees": "The start screen loads normally in WebKit; creating a project is refused with \"Không tạo được dự án\" and, after this round, a Vietnamese sentence explaining that the browser will not let the application open its own file store and why it does not silently use a second one (webkit-store-refusal-1440.png).",
+ "browserSuiteRun": {
+  "command": "tests/app/run.ps1 -Seat codex -Browsers webkit, on this round's commit",
+  "engine": "26.6",
+  "result": {
+   "pass": 44,
+   "fail": 2,
+   "unavailable": 4
+  },
+  "capabilitiesUnavailable": [
+   {
+    "id": "storage.opfs",
+    "why": "verification-failed"
+   },
+   {
+    "id": "lease.ed25519.default-offline",
+    "why": "NotSupportedError"
+   },
+   {
+    "id": "storage.opfs",
+    "why": "verification-failed"
+   },
+   {
+    "id": "lease.ed25519",
+    "why": null
+   }
+  ],
+  "failingCases": [
+   {
+    "name": "staleCancelFailurePreservesModel",
+    "expected": "STALE_JOB",
+    "observed": "CANCELLED"
+   },
+   {
+    "name": "expiryRescueAndWrongUser",
+    "expected": "PROJECT_LOCKED",
+    "observed": "ONLINE_SESSION_REQUIRED"
+   }
+  ],
+  "reading": "The application works in this WebKit build for 44 of 46 behaviours. OPFS fails its own write-close-read probe (0 bytes back), the store files that as verification-failed, and the policy does allow the IndexedDB fallback for that category, which is why the suite runs at all. Two cases end on a different error code than Chromium, and the offline lease has no Ed25519 here.",
+  "correction": "An earlier note in this project said the WebKit run failed 23 cases with DEVICE_REQUIRED. That is not reproducible on this commit and is withdrawn: the session and device id are healthy in WebKit, and the storage path is what differs."
+ }
 }
