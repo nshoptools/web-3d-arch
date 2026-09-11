@@ -101,6 +101,35 @@ giữ nguyên khi checkout trên Windows; dải chẩn đoán có câu tiếng V
 lỗi ghi 3MF; mở gói trùng thư viện chuyển khỏi dải. Giữ nguyên có lý do: hủy do người dùng ở
 mức thông tin, watchdog kiểm mesh của emoji (điều kiện chặn), F-03.1.
 
+## Cửa sổ quá độ của việc cấp khe filament (chốt 11-09-2026)
+
+Từ `292c288b`, thứ tự part và khe không còn phụ thuộc UUID mỗi lần nhập. Nhưng khoá cấp khe
+vẫn là **màu tăng dần** (`rgba-ascending-lowest-compatible-v1`), không phải khoá đã chốt sau
+ba vòng tranh luận là `zFirst` → khối cấu trúc → hex. Khoá đúng cần bộ tính theo kế hoạch
+hình học, tức tám gói việc chưa làm.
+
+Chủ dự án chốt **mốc theo sự kiện**, không theo số dự án hay số ngày: cả Codex và Grok đều
+từ chối đưa con số vì trên máy này không ai đếm được dự án thật. Mốc là **sự kiện nào đến
+trước**, xét **trước khi hành động**:
+
+1. Hub xét tiếp nhận gói thay bản dùng thử 08-09 — trước khi ứng viên đó đi tới bàn giao;
+2. có yêu cầu lưu một lần cấp hoặc đổi khe tự động theo màu vào dự án/revision **ngoài danh
+   sách đã đóng băng**.
+
+Tại mốc: nếu bộ tính hình học đã có oracle và kiểm tích hợp thì dùng khoá đã chốt cho **cấp
+mới**; nếu chưa thì **dừng** nhận cấp khe tự động theo màu ngoài danh sách cũ, khe mới phải
+do người dùng quyết định tường minh, và giữ lại thao tác/gói phụ thuộc nếu đường tường minh
+chưa đủ. Không tự gia hạn vì "chưa kịp làm"; muốn ngoại lệ phải có quyết định mới của chủ dự
+án trên sổ đã đo.
+
+Điều kiện và sổ đếm ở [slot-transition.json](slot-transition.json). **Sổ chưa đo không phải
+sổ bằng không**: thiếu kiểm kê thì giữ việc tiếp nhận lại. Không đếm bằng số lần thấy chuỗi
+tên chính sách — marker đó được ghi cả khi adoption giữ nguyên khe cũ.
+
+Khe đã lưu không bao giờ được migrate. Số khe là **quy ước nạp khay**, không phải thứ tự máy
+in ra: slicer tự chọn thứ tự đùn lớp đầu theo diện tích contour, và gói xuất của dự án không
+ghi `first_layer_print_sequence`.
+
 ## Phần còn thiếu trước phát hành đủ v1
 
 1. Sửa trực tiếp vector theo mm chưa có adapter. Codex đang đóng khoảng trống này; sửa raster có xác nhận không được tính là đã làm vector.

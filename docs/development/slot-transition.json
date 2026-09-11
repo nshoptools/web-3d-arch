@@ -1,0 +1,63 @@
+{
+  "version": "arch-slot-transition/1",
+  "status": "policy-approved-census-unmeasured-recorder-not-implemented",
+  "approval": {
+    "decidedBy": "project-owner",
+    "decidedOn": "2026-09-11",
+    "basis": "Hub adjudication of the Codex and Grok open briefs; both seats declined to name a project count or a date because neither is measurable on this machine, and both proposed an event gate instead."
+  },
+  "baselineCommit": "292c288b6f84850ccb9c0762184bfbe1d786424f",
+  "policy": "rgba-ascending-lowest-compatible-v1",
+  "policyIsNotPrintOrder": "Slot numbers are a tray-loading convention. The slicer picks the first-layer sequence itself from contour area, and this package writes no first_layer_print_sequence for it to follow.",
+  "accountableOperator": "Hub",
+  "recorder": "Codex",
+  "census": {
+    "status": "unmeasured",
+    "frozenAt": null,
+    "profilesAndOrigins": null,
+    "projects": null,
+    "projectRevisionPairs": null,
+    "members": null,
+    "reason": "No live project store has been enumerated. A missing census is not a census of zero, and must hold admission rather than permit it."
+  },
+  "checkpoint": {
+    "rule": "whichever-happens-first-evaluated-before-the-action",
+    "events": [
+      "Hub considers admitting the replacement for the 2026-09-08 internal package, carrying the kernel slot/part fix at 292c288b, before that candidate reaches handover",
+      "a request to persist a new automatic colour-based slot mapping into a project or revision outside the frozen cohort"
+    ],
+    "newAutomaticMappingsOutsideFrozenCohortAllowed": 0,
+    "unknownCensusAction": "hold-admission",
+    "doesNotOpenANewWindow": [
+      "renaming the candidate",
+      "a new RunId",
+      "another gate still being unfinished",
+      "a build made only to test inside a session room, which is not a handover"
+    ]
+  },
+  "atCheckpoint": {
+    "qualifiedGeometricPlanner": "allocate new slots by zFirst, then structural block, then hex; preserve saved slots and explicit user choices; do not equate the result with print order",
+    "plannerMissingOrUnqualified": "stop accepting automatic colour-based allocation outside the frozen cohort; new slots must be decided explicitly by the person; if that path is not implemented and verified, hold the dependent operation or package rather than letting the colour allocator continue",
+    "automaticRenewal": false,
+    "extensionRequires": "a new explicit owner decision, taken on a measured census, with a newly closed scope"
+  },
+  "eventFields": [
+    "decisionId", "projectId", "projectRevision", "headRevision", "stateHash",
+    "sourceHash", "scheduleHash", "slotMapBeforeSHA256", "slotMapAfterSHA256",
+    "applicationRevision", "wasmSHA256", "allocatorPolicySHA256",
+    "origin", "committedAt", "receiptPath", "receiptSHA256"
+  ],
+  "eventOrigins": ["automatic-adoption", "automatic-color-edit", "manual", "replay", "fixture"],
+  "countRules": {
+    "projects": "distinct real projectId with committed automatic slot changes",
+    "revisions": "distinct real (projectId, projectRevision) with committed automatic slot changes",
+    "rebuildSameRevision": "do not increment",
+    "newSourceSameProject": "new revision if the automatic mapping changes; not a new project",
+    "copyAsNewProject": "new project",
+    "failedOrPending": "record attempts separately; do not count as committed",
+    "replayWithoutAllocation": "separate replay record",
+    "fixture": "separate named corpus; never counted as real project evidence"
+  },
+  "doNotCountBy": "Counting occurrences of the string rgba-ascending-lowest-compatible-v1 does not measure this. Adoption writes that marker even when it preserves an existing slot, and a colour edit moves a slot through a different path. It traces which policy ran; it is not a counter.",
+  "events": []
+}
