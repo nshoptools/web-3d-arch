@@ -13,7 +13,10 @@ From repository root, use PowerShell 7 and installed repository dependencies. Su
 & <candidate>/tests/csg-controller/run.ps1 -RunId <new-own-run> -InputPath <pinned-ready-input.json> -Label <new-label>
 ```
 
-Input fields: authorization parent-composition-ready; scope actual-controller-test-only; testFixtures true; printing false; sourceRoot containing the composed src tree, package.json, tsconfig.json and tools/application/{engine,core}.mjs; engine.module and engine.wasm with file/bytes/sha256; libraryReleaseRoot and libraryReleaseSHA256 for original pinned library bytes only. No old release entry/core/WASM is reused. The optional librarySnapshot field in ready-r4 is provenance metadata; this runner still copies and verifies all library bytes through the pinned release manifest.
+Input fields: authorization parent-composition-ready; scope actual-controller-test-only; testFixtures and
+printing, each asserted against the module's actual exports (`arch_test_fixture` and `arch3mf_abi_version`)
+rather than fixed by this document — earlier runs paired testFixtures true with printing false, and a
+production pair declaring the reverse is accepted by the same check (measured 2026-09-11); sourceRoot containing the composed src tree, package.json, tsconfig.json and tools/application/{engine,core}.mjs; engine.module and engine.wasm with file/bytes/sha256; libraryReleaseRoot and libraryReleaseSHA256 for original pinned library bytes only. No old release entry/core/WASM is reused. The optional librarySnapshot field in ready-r4 is provenance metadata; this runner still copies and verifies all library bytes through the pinned release manifest.
 
 ResumeStage requires an immutable stage.json and a fresh label. It reuses the exact previously compiled product while capturing the current Node test driver. It cannot exercise a new parent product fix. A source or module change requires a fresh source snapshot and build.
 

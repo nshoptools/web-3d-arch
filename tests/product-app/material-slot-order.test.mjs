@@ -93,3 +93,23 @@ test('a document written before slot intent existed keeps the wider meaning',asy
  Object.assign(west,{overridden:true,slot:null});delete west.slotOverridden;
  assert.ok(blocked(await prepareBindings(next)),'no flag on disk falls back to overridden');
 });
+
+// A rescue package can restore a project whose artwork slots are missing while the role slots
+// survive. Adoption fills only the missing ones, by the colour policy, which can seat them
+// differently from the siblings that kept theirs — Codex measured 7 of 16 such states changing
+// both slot and mesh. That refill is an automatic colour mapping, governed by the window in
+// docs/development/slot-transition.json. What is locked here is the half that is settled: a slot
+// still on disk is never moved, whoever assigned it.
+test('a rescue state missing some slots keeps every slot it still has',async()=>{
+ const request=input('rescue-partial'),first=await prepareBindings(request),next=committed(request,first);
+ const west=next.state.content.app.materials.find(m=>m.product.sourceKey==='authored:art:west');
+ const east=next.state.content.app.materials.find(m=>m.product.sourceKey==='authored:art:east');
+ const kept=next.state.content.app.materials
+  .filter(m=>m.slot!==null&&m.id!==west.id&&m.id!==east.id).map(m=>({id:m.id,slot:m.slot}));
+ assert.ok(kept.length>0,'the rescue state must still carry slots worth protecting');
+ for(const m of [west,east]){m.slot=null;m.slotOverridden=false;}
+ const after=await prepareBindings(next);
+ assert.equal(after.status,'ready');
+ for(const k of kept)assert.equal(after.materials.find(m=>m.id===k.id).slot,k.slot,'a saved slot is never moved');
+ for(const m of [west,east])assert.notEqual(after.materials.find(x=>x.id===m.id).slot,null,'a missing slot is filled again');
+});
