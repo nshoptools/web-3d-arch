@@ -137,3 +137,19 @@ export function sourceConversion(source){
  if(b?.version!=='arch-product-bindings-pending/1')return null;
  return b.reason==='RASTER_SEGMENTATION_APPROVAL_REQUIRED'?'segment':'raster';
 }
+/** The logical filament slot a material takes once its colour changes. One slot carries one
+ * colour, so a material whose new colour differs from what shares its slot moves to the slot that
+ * already carries that colour, else to the lowest free logical slot — the rule the kernel applies
+ * when it assigns provisional slots — instead of the whole edit being refused with
+ * PRODUCT_SLOT_CONFLICT (Codex, release round 3: the body colour could not be changed at all,
+ * because every other role, including roles of other product types, shares its slot). A slot the
+ * person set in the same command is kept as given. */
+export function slotForColour(materials,self,color){
+ const taken=new Map();
+ for(const m of materials){if(m.id===self.id||m.slot===null||m.slot===undefined)continue;if(!taken.has(m.slot))taken.set(m.slot,new Set());taken.get(m.slot).add(String(m.color).toLowerCase());}
+ const colour=String(color).toLowerCase(),own=self.slot===null||self.slot===undefined?null:self.slot,shared=own===null?null:taken.get(own);
+ if(own!==null&&(!shared||(shared.size===1&&shared.has(colour))))return own;
+ const compatible=[...taken].find(([,colours])=>colours.size===1&&colours.has(colour));
+ if(compatible)return compatible[0];
+ return Array.from({length:16},(_,i)=>i+1).find(n=>!taken.has(n))??own;
+}

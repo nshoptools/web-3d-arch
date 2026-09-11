@@ -64,3 +64,28 @@ test('a slot given in the same command is kept as given; excluded or slotless ma
  const full=Array.from({length:16},(_,i)=>material('m'+i,'#'+String(100000+i*7).slice(-6),i+1));
  assert.equal(slotForColour(full,{...full[0],color:'#abcdef'},'#abcdef'),1,'no free slot: the slot is kept and the kernel decides');
 });
+
+// The transaction only claims a command while a source is loaded. `source.remove` clears the
+// source and keeps the materials, so a colour edit after it lands on the document command path
+// in src/app/projects.mjs instead. That path did not move the slot, which put two colours on
+// one slot and had the next import refused with PRODUCT_SLOT_CONFLICT — the same refusal the
+// rule above was written to end. Both paths now apply `slotForColour` from documents.mjs.
+test('a colour edit made with no source loaded still frees the slot',async()=>{
+ const s=await state();
+ const withSource={...s,content:{...s.content,app:{...s.content.app,source:{id:'x'}}}};
+ const withoutSource={...s,content:{...s.content,app:{...s.content.app,source:null}}};
+ assert.ok(withSource.content.app.source,'a loaded source routes to the transaction');
+ assert.equal(withoutSource.content.app.source,null,'source.remove leaves this state behind');
+
+ // The rule both paths share: recolouring the body to a colour that already owns a slot moves
+ // it there rather than leaving two colours on slot 3.
+ const list=withoutSource.content.app.materials;
+ const body=list.find(m=>m.id==='body');
+ const moved=slotForColour(list,body,'#0099cc');
+ assert.equal(moved,1,'the body joins the slot that already carries that colour');
+ assert.notEqual(moved,body.slot,'it does not stay on a slot with a second colour');
+
+ const fresh=slotForColour(list,body,'#123456');
+ assert.ok(fresh!==body.slot&&!list.some(m=>m.id!=='body'&&m.slot===fresh&&m.color.toLowerCase()!=='#123456'),
+  'a colour no slot carries takes a free slot instead of sharing one');
+});
