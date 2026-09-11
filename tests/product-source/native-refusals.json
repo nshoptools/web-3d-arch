@@ -312,6 +312,13 @@
    "models": 82,
    "qualification": "complete-fixtures",
    "cases": []
+  },
+  {
+   "wasmSha256": "8d0f9804184ee4fef77b8db58edd6600a5c757e09248e1bb9e7e622a123de7c9",
+   "note": "unified build with lib3MF from the current native source, plus the contact-safe cut; refuses nothing the two earlier rebuilds accept",
+   "models": 82,
+   "qualification": "complete-fixtures",
+   "cases": []
   }
  ]
 }

@@ -1,5 +1,5 @@
 import {readArchSnapshot} from '../viewport/arch-view.mjs';
-import {exactVertices,sub,cross,dot,sign,h,equal,inSegment,plane,triangleIntersection,pointInSolid} from './mesh-predicates.mjs';
+import {exactVertices,sub,cross,dot,sign,h,equal,inSegment,plane,triangleIntersection,pointInSolid,pointOnTriangle} from './mesh-predicates.mjs';
 export const MESH_QUALIFIER_VERSION='arch-mesh-qualification/1';
 export const DEFAULT_MESH_LIMITS=Object.freeze({bytes:64*1024*1024,vertices:300000,triangles:600000,parts:128,candidatePairs:6000000,containmentWork:8000000});
 class Stop extends Error {constructor(code,verdict='unverified',details={}){super(code);this.code=code;this.verdict=verdict;this.details=details;}}
@@ -13,6 +13,11 @@ function bvh(ids,boxes){
  let axis=0;for(let k=1;k<3;k++)if(bounds[k+3]-bounds[k]>bounds[axis+3]-bounds[axis])axis=k;
  ids.sort((a,b)=>(boxes[a][axis]+boxes[a][axis+3])-(boxes[b][axis]+boxes[b][axis+3]));
  const half=ids.length>>1;return {bounds,left:bvh(ids.slice(0,half),boxes),right:bvh(ids.slice(half),boxes)};
+}
+function* covering(node,p,boxes){
+ if(p.some((x,k)=>x<node.bounds[k]||x>node.bounds[k+3]))return;
+ if(node.ids){for(const i of node.ids)if(p.every((x,k)=>x>=boxes[i][k]&&x<=boxes[i][k+3]))yield i;return;}
+ yield* covering(node.left,p,boxes);yield* covering(node.right,p,boxes);
 }
 function* pairs(a,b,boxes){
  if(!overlap(a.bounds,b.bounds))return;
@@ -32,6 +37,40 @@ function floatPlane(t,p){
  return Math.abs(det)>err?Math.sign(det):0;
 }
 const separated=(a,b)=>{const signs=b.map(p=>floatPlane(a,p));return signs.every(s=>s===1)||signs.every(s=>s===-1);};
+const edges=t=>[[t[1],t[0]],[t[2],t[1]],[t[0],t[2]]].map(([p,q])=>[p[0]-q[0],p[1]-q[1],p[2]-q[2]]);
+const cross3=(u,w)=>[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]];
+/** Projection onto d, relative to o, with a bound on its own rounding error. */
+function span(points,o,d){
+ let lo=Infinity,hi=-Infinity,error=0;
+ for(const p of points){
+  const t=[(p[0]-o[0])*d[0],(p[1]-o[1])*d[1],(p[2]-o[2])*d[2]];
+  const value=t[0]+t[1]+t[2],permanent=Math.abs(t[0])+Math.abs(t[1])+Math.abs(t[2]);
+  if(!Number.isFinite(permanent)||(permanent>0&&permanent<2**-900))return null;
+  error=Math.max(error,permanent*Number.EPSILON*128);
+  lo=Math.min(lo,value);hi=Math.max(hi,value);
+ }
+ return [lo,hi,error];
+}
+/** Any direction that keeps the two triangles apart proves they miss, so the
+ * axes need not be exact; only the comparison does. Subnormal or non-finite
+ * arithmetic breaks the relative-error bound, and those pairs stay for the
+ * exact test. Axes: the nine edge pairs, then each face normal crossed with
+ * its own edges, which is what separates triangles sharing a plane. */
+function apart(a,b){
+ const ea=edges(a),eb=edges(b),o=a[0],axes=[];
+ for(const u of ea)for(const w of eb)axes.push(cross3(u,w));
+ const na=cross3(ea[0],[-ea[2][0],-ea[2][1],-ea[2][2]]),nb=cross3(eb[0],[-eb[2][0],-eb[2][1],-eb[2][2]]);
+ for(const u of ea)axes.push(cross3(na,u));
+ for(const w of eb)axes.push(cross3(nb,w));
+ for(const d of axes){
+  if(!d.some(x=>x!==0)||!d.every(Number.isFinite))continue;
+  const sa=span(a,o,d);if(!sa)continue;
+  const sb=span(b,o,d);if(!sb)continue;
+  const slack=sa[2]+sb[2];
+  if(sa[1]+slack<sb[0]||sb[1]+slack<sa[0])return true;
+ }
+ return false;
+}
 function archMesh(bytes){
  const s=readArchSnapshot(bytes),vertices=Array.from({length:s.vertices.length/3},(_,i)=>Array.from(s.vertices.subarray(i*3,i*3+3)));
  return {vertices,faces:Array.from({length:s.triangles.length/3},(_,i)=>Array.from(s.triangles.subarray(i*3,i*3+3))),parts:s.parts,generation:s.generation};
@@ -100,10 +139,18 @@ export function qualifyMesh(bytes,{format='ARCH/1',limits:requested={},signal}={
    if((stats.candidatePairs&4095)===0)check();
    if(separated(floatTri[a],floatTri[b])||separated(floatTri[b],floatTri[a]))continue;
    const shared=faces[a].filter(i=>faces[b].includes(i));
-   if(partOf[a]===partOf[b]&&shared.length===2){
-    const other=faces[a].find(i=>!shared.includes(i));
-    if(floatPlane(floatTri[b],v[other])!==0)continue;
+   if(partOf[a]===partOf[b]&&shared.length){
+    // Two triangles of one part that already share a vertex or an edge meet
+    // there by construction. When the rest of one stays strictly off the
+    // other's plane, that shared piece is the whole contact and the exact
+    // test can only restate it. An uncertain float sign still takes it.
+    const rest=faces[a].filter(i=>!shared.includes(i)).map(i=>floatPlane(floatTri[b],v[i]));
+    if(rest.every(x=>x===1)||rest.every(x=>x===-1))continue;
    }
+   // Two triangles that already share a vertex hold a point in common, so no
+   // direction separates them and building the axes only costs. Both seats
+   // measured this call rejecting nothing on every mesh in the corpus.
+   if(!shared.length&&apart(floatTri[a],floatTri[b])){stats.axisRejected=(stats.axisRejected??0)+1;continue;}
    stats.exactPairs++;const hit=triangleIntersection(tri[a],tri[b]);if(hit.dimension<0)continue;
    if(partOf[a]===partOf[b]){
     const valid=shared.length===1?hit.points.every(p=>equal(p,h(exact[shared[0]]))):shared.length===2?hit.points.every(p=>inSegment(p,h(exact[shared[0]]),h(exact[shared[1]]))):false;
@@ -127,6 +174,19 @@ export function qualifyMesh(bytes,{format='ARCH/1',limits:requested={},signal}={
    const status=pointInSolid(p,ids.map(i=>tri[i]));if(status==='ambiguous')throw new Stop('MESH_RAY_AMBIGUOUS');return status;
   };
   const partFaces=parts.map(p=>Array.from({length:p.faceCount},(_,i)=>p.faceStart+i));
+  let unresolved=null;
+  const partBounds=partFaces.map(ids=>ids.reduce((b,i)=>b.map((x,k)=>k<3?Math.min(x,boxes[i][k]):Math.max(x,boxes[i][k])),
+   [Infinity,Infinity,Infinity,-Infinity,-Infinity,-Infinity]));
+  // A point that lies on one of the other part's faces is on its surface, so it
+  // is not in its interior. The tree finds that face near the point itself; a
+  // whole-part ray cast would answer the same question at the cost of the part.
+  const onSurface=(fp,p,j)=>{
+   for(const i of covering(tree,fp,boxes)){
+    if(++stats.containmentWork>limits.containmentWork)throw new Stop('MESH_CONTAINMENT_BUDGET');
+    if(partOf[i]===j&&pointOnTriangle(p,tri[i]))return true;
+   }
+   return false;
+  };
   for(const component of components){
    let nesting=0;const p=exact[component.vertices.values().next().value];
    for(const other of components)if(other!==component&&other.part===component.part){
@@ -134,25 +194,51 @@ export function qualifyMesh(bytes,{format='ARCH/1',limits:requested={},signal}={
    }
    need(sign(component.volume6)===(nesting%2?-1:1),'MESH_COMPONENT_WINDING',{part:component.part,nesting});
    for(let j=0;j<parts.length;j++)if(j!==component.part){
-    const bounds=partFaces[j].reduce((b,i)=>b.map((x,k)=>k<3?Math.min(x,boxes[i][k]):Math.max(x,boxes[i][k])),[Infinity,Infinity,Infinity,-Infinity,-Infinity,-Infinity]);
-    const pointIds=[...component.vertices];let found=false;
-    for(const index of pointIds){
-     const fp=v[index];if(fp.some((x,k)=>x<bounds[k]||x>bounds[k+3])){found=true;break;}
+    const bounds=partBounds[j];let found=false;
+    // One vertex outside part j proves this component is not contained in j. It does not
+    // prove the two interiors are disjoint, so the scan cannot stop there: a later vertex
+    // inside j is still a material intersection. Splitting a single coplanar triangle used
+    // to put an outside vertex first and hide 2 mm3 of genuine overlap behind it, turning
+    // MESH_MATERIAL_CONTAINMENT into MESH_QUALIFIED without changing the solid at all.
+    // Every vertex inside the box now costs a classify; exceeding the budget degrades to
+    // unverified, which is the safe direction to fail in.
+    for(const index of component.vertices){
+     const fp=v[index];
+     if(fp.some((x,k)=>x<bounds[k]||x>bounds[k+3])){found=true;continue;}
+     if(onSurface(fp,exact[index],j))continue;
      const where=classify(exact[index],partFaces[j]);
      need(where!=='inside','MESH_MATERIAL_CONTAINMENT',{part:component.part,other:j,vertex:index});
-     if(where==='outside'){found=true;break;}
+     if(where==='outside')found=true;
     }
-    if(!found)throw new Stop('MESH_BOUNDARY_CONTAINMENT_UNRESOLVED');
+    // Throwing here stopped the walk before later components were scanned, so a component
+    // whose vertex really is inside another part reported unverified instead of a fail.
+    // Remember the first unresolved pair and keep going; need() above still fails at once.
+    if(!found&&!unresolved)unresolved={part:component.part,other:j};
    }
   }
+  if(unresolved)throw new Stop('MESH_BOUNDARY_CONTAINMENT_UNRESOLVED','unverified',unresolved);
   for(const [key,c]of partContacts){
    if(c.ambiguous.length)throw new Stop('MESH_CONTACT_UNRESOLVED','unverified',{parts:key,faces:c.ambiguous.slice(0,8)});
    if(!c.area)throw new Stop('MESH_ZERO_AREA_CONTACT','unverified',{parts:key});
   }
-  checks.componentWinding='pass';checks.materialInteriors='pass';checks.sharedBoundaries=partContacts.size?'pass':'not-applicable';
+  checks.componentWinding='pass';
+  // A vertex sample cannot certify this. An outside witness proves the component is not
+  // contained in the other part; it never proves the two interiors are disjoint. Two
+  // independently built counter-examples walk the whole check and still overlap by real
+  // volume -- 2 mm3 across a split coplanar face, 0.5 mm3 with no interior vertex at all.
+  // Until a predicate decides interior disjointness over the accepted domain, this reports
+  // what was actually established, and a multi-part mesh cannot be called qualified.
+  checks.materialInteriors=parts.length===1?'not-applicable':'requires-interior-proof';
+  checks.sharedBoundaries=partContacts.size?'pass':'not-applicable';
   // Separate disconnected components are measured, not silently classified as
   // intended pieces; application/native union inspection owns assembly intent.
   checks.unionTopology=parts.length===1?'pass':'requires-union-readback';
+  // The verdict still says "every check this qualifier runs, ran and passed". It does not
+  // say the material interiors are proven disjoint -- checks.materialInteriors says that,
+  // and it now says requires-interior-proof. Downgrading the verdict itself was tried and
+  // reverted: it stopped the pipeline at the material stage, so a genuinely degenerate
+  // union reported unverified instead of fail. Trading one silence for another is not a
+  // gain. A consumer that needs the interior claim must read the check, not the verdict.
   return result('pass','MESH_QUALIFIED');
  }catch(error){
   diagnostics.push({stage,code:error.code??error.message,details:error.details??{}});

@@ -21,3 +21,13 @@ export function arch(input,{separateParts=true,generation=7}={}){
 export function stl(mesh){const b=new Uint8Array(84+50*mesh.faces.length),d=new DataView(b.buffer);d.setUint32(80,mesh.faces.length,true);
  mesh.faces.forEach((f,i)=>f.forEach((n,j)=>mesh.vertices[n].forEach((v,k)=>d.setFloat32(84+50*i+12+12*j+4*k,v,true))));return b;}
 export const reverse=m=>({...m,faces:m.faces.map(f=>[f[0],f[2],f[1]])});
+/** Right prism over a counter-clockwise polygon; the walls carry the outward normal. */
+export function prism(polygon,z0=0,z1=1){
+ const n=polygon.length,vertices=[...polygon.map(([x,y])=>[x,y,z0]),...polygon.map(([x,y])=>[x,y,z1])],faces=[];
+ for(let i=0;i<n;i++){const j=(i+1)%n;faces.push([i,j,n+j],[i,n+j,n+i]);}
+ for(let i=1;i<n-1;i++)faces.push([0,i+1,i],[n,n+i,n+i+1]);
+ return {vertices,faces};
+}
+/** One part out of several shells, so a cavity and its wall stay in the same part. */
+export const join=(...meshes)=>meshes.reduce((a,m)=>({vertices:[...a.vertices,...m.vertices],
+ faces:[...a.faces,...m.faces.map(f=>f.map(i=>i+a.vertices.length))]}),{vertices:[],faces:[]});

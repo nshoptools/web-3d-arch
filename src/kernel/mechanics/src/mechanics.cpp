@@ -298,7 +298,21 @@ struct Builder {
     need(pieces.size()<MAX_PARTS,"PART_LIMIT");pieces.push_back({std::move(mesh),f,role,group,mat?*mat:material(role)});
   }
   Manifold group(uint32_t group_id){std::vector<Manifold> ms;for(auto& p:pieces)if(p.group==group_id)ms.push_back(p.mesh);return evaluate(Manifold::BatchBoolean(ms,manifold::OpType::Add));}
-  void cut(const Manifold& tool,uint32_t group_id){for(auto& p:pieces)if(p.group==group_id)p.mesh-=tool;}
+  void cut(const Manifold& tool,uint32_t group_id){
+    // A failed Manifold is empty too, so IsEmpty() alone would drop an errored cutter and
+    // make the whole cut a silent no-op. Subtracting used to carry that error to the part.
+    const auto checked=evaluate(tool);
+    if(checked.IsEmpty())return;
+    const auto b=checked.BoundingBox();
+    for(auto& p:pieces)if(p.group==group_id&&!p.mesh.IsEmpty()){
+      const auto a=p.mesh.BoundingBox();
+      // Closed-solid subtraction cannot change a part when the boxes have no
+      // common interior. Preserve its boundary exactly in that case.
+      // Deliberately no epsilon and no volume threshold.
+      if(a.max.x<=b.min.x||b.max.x<=a.min.x||a.max.y<=b.min.y||b.max.y<=a.min.y||a.max.z<=b.min.z||b.max.z<=a.min.z)continue;
+      p.mesh-=checked;
+    }
+  }
   void initialize();
   void source_body();
   void source_bevel();

@@ -70,6 +70,11 @@ export function triangleIntersection(a,b){
  return {dimension:c>0?-1:c===0?0:1,points:c>0?[]:c===0?[lo]:[lo,hi],coplanar:false,
   cutsA:da.some(v=>v>0n)&&da.some(v=>v<0n),cutsB:db.some(v=>v>0n)&&db.some(v=>v<0n)};
 }
+/** Exact: the point lies on the closed triangle, edges and corners included. */
+export function pointOnTriangle(point,tri){
+ if(plane(tri,point)!==0n)return false;
+ return inside(h(point),tri.map(h),projectAxes(tri));
+}
 export function pointInSolid(point,triangles,{maxRays=12}={}){
  // Bounded deterministic generic rays; any edge/vertex hit retries, never votes.
  const dirs=[[1n,37n,101n],[103n,29n,7n],[13n,1n,89n],[53n,61n,1n],[17n,43n,127n],[131n,19n,31n],[47n,113n,5n],[11n,107n,71n],[73n,23n,109n],[79n,97n,41n],[59n,137n,83n],[139n,149n,157n]];
