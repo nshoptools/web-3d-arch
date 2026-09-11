@@ -241,8 +241,13 @@ void Builder::geometry(){
     auto&list=a.text_group?text:main;for(auto&b:list)if(b.in->text_group==a.text_group)need(intersect(shape,b.shape).Area()<=ZERO,"CANONICAL_REGION_OVERLAP",0,a.semantic_id);
     list.push_back({shape,&a,m});if(!a.text_group)A=add(A,shape);
   }
-  std::sort(main.begin(),main.end(),[](auto&a,auto&b){return a.in->semantic_id<b.in->semantic_id;});
-  std::sort(text.begin(),text.end(),[](auto&a,auto&b){return a.in->semantic_id<b.in->semantic_id;});
+  // Order by ring_start, not semantic_id. Both keys make the result independent of the
+  // order the host happens to pass regions in, which tests/run.mjs `stable-reorder` locks.
+  // But semantic_id embeds the per-import source UUID, so it gave two identical colour
+  // regions a different part order — and a different filament slot — on every re-import
+  // of the same artwork. ring_start indexes the contour array, so it follows the drawing.
+  std::sort(main.begin(),main.end(),[](auto&a,auto&b){return a.in->ring_start<b.in->ring_start;});
+  std::sort(text.begin(),text.end(),[](auto&a,auto&b){return a.in->ring_start<b.in->ring_start;});
   Polygons outers;for(const auto&poly:A.ToPolygons()){double area=0;for(size_t i=0;i<poly.size();i++)area+=poly[i].x*poly[(i+1)%poly.size()].y-poly[i].y*poly[(i+1)%poly.size()].x;if(area>0)outers.push_back(poly);}
   CrossSection filled(outers,CrossSection::FillRule::NonZero);auto holes=sub(filled,A);auto bounds=A.Bounds();double w=bounds.Size().x,h=bounds.Size().y,pad=v[AM_F_offset],rad=v[AM_F_cornerR];
   switch(int(v[AM_F_outline])){
@@ -296,7 +301,12 @@ void Builder::compose(){
   for(auto&c:cells)top=std::max(top,c.hi);
 }
 void Builder::texts(){
-  std::vector<const ArchSourceText*>groups;for(uint32_t i=0;i<r.text_count;i++)groups.push_back(r.texts+i);std::sort(groups.begin(),groups.end(),[](auto*a,auto*b){return a->semantic_id<b->semantic_id;});
+  std::vector<const ArchSourceText*>groups;for(uint32_t i=0;i<r.text_count;i++)groups.push_back(r.texts+i);
+  // A text group owns no contours itself, so rank it by the first contour of its regions —
+  // the same drawing-order key the artwork uses, and for the same reason: semantic_id
+  // carries the per-import UUID. An empty group ties here and fails TEXT_GROUP_EMPTY below.
+  auto firstRing=[&](const ArchSourceText*g){uint32_t k=UINT32_MAX;for(auto&a:text)if(a.in->text_group==g->semantic_id)k=std::min(k,a.in->ring_start);return k;};
+  std::stable_sort(groups.begin(),groups.end(),[&](auto*a,auto*b){return firstRing(a)<firstRing(b);});
   auto original=cells;
   for(auto*g:groups){
     need(g->placement<=1&&g->base_on<=1&&finite(g->base_pad)&&g->base_pad>=0&&g->base_pad<=8&&finite(g->base_round)&&g->base_round>=0&&g->base_round<=14,"TEXT_SETTINGS",0,g->semantic_id);

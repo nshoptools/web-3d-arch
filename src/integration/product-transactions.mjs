@@ -28,6 +28,9 @@ export function previewProductCommand(state,c){
  case 'text.update':return contentEdit(state,a=>{a.text={...a.text,...data(c.values)};});
  case 'text.remove':return contentEdit(state,a=>{a.text=data(DEFAULT_TEXT);});
  case 'material.update':return contentEdit(state,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?parseDecimal(c[k]).value:c[k];m.overridden=true;
+  // Only naming a slot claims one. A colour edit still moves the slot below, but that move is
+  // the machine keeping one colour per slot, not the person choosing a tray number.
+  m.slotOverridden=Object.hasOwn(c,'slot')?true:m.slotOverridden??false;
   if(Object.hasOwn(c,'color')&&!Object.hasOwn(c,'slot'))m.slot=slotForColour(a.materials,m,m.color);});
  case 'material.reset':return contentEdit(state,a=>{const i=a.materials.findIndex(m=>m.id===c.id),m=a.materialDefaults.find(m=>m.id===c.id);assert(i>=0&&m,'MATERIAL_NOT_FOUND');a.materials[i]=data(m);});
  case 'parameter.set':return setParameter(state,c.id,c.value);

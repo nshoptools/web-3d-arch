@@ -23,7 +23,10 @@ export function validateState(s){
  for(const m of [...a.materials,...a.materialDefaults])if(m.product!==undefined)validateProductMaterialExtension(m.product);
  validateText(a.text);validateEditor(a.editor);
  assert(new Set(a.materials.map(m=>m.id)).size===a.materials.length,'MATERIAL_IDS');
- for(const m of a.materials){assert(typeof m.excluded==='boolean'&&typeof m.overridden==='boolean'&&['region','body','text','textBase','stem','tray','other'].includes(m.role),'MATERIAL_SCHEMA');assert(typeof m.id==='string'&&/^#[0-9a-f]{6}$/i.test(m.color),'MATERIAL_SCHEMA');assert(m.slot===null||Number.isInteger(m.slot)&&m.slot>=1&&m.slot<=64,'MATERIAL_SLOT');if(m.heightLayers!==undefined)assert(Number.isSafeInteger(m.heightLayers)&&m.heightLayers>0&&m.heightLayers<=1000000,'MATERIAL_HEIGHT');}
+ for(const m of a.materials){assert(typeof m.excluded==='boolean'&&typeof m.overridden==='boolean'&&['region','body','text','textBase','stem','tray','other'].includes(m.role),'MATERIAL_SCHEMA');assert(typeof m.id==='string'&&/^#[0-9a-f]{6}$/i.test(m.color),'MATERIAL_SCHEMA');assert(m.slot===null||Number.isInteger(m.slot)&&m.slot>=1&&m.slot<=64,'MATERIAL_SLOT');if(m.heightLayers!==undefined)assert(Number.isSafeInteger(m.heightLayers)&&m.heightLayers>0&&m.heightLayers<=1000000,'MATERIAL_HEIGHT');
+  // Absent on documents written before slot intent was recorded separately; those fall back
+  // to `overridden`, so a slot the person chose then is still never re-allocated.
+  if(m.slotOverridden!==undefined)assert(typeof m.slotOverridden==='boolean','MATERIAL_SCHEMA');}
  for(const desc of [a.source,a.mesh].filter(Boolean)){
   assert(typeof desc.id==='string'&&typeof desc.name==='string'&&Array.isArray(desc.assetHashes)&&desc.assetHashes.every(h=>/^[a-f0-9]{64}$/.test(h)),'SOURCE_SCHEMA');
   assert(desc.raw&&/^[a-f0-9]{64}$/.test(desc.raw.hash)&&Number.isSafeInteger(desc.raw.byteLength),'SOURCE_SCHEMA');

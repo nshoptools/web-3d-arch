@@ -359,7 +359,13 @@ export function MaterialsSection() {
       ) : null}
 
       <p className="muted-3" style={{ margin: 0 }}>
-        Thứ tự hàng do nhân sắp theo cao độ rồi diện tích. Một màu không đương nhiên là một lớp in.
+        Hàng xếp theo thứ tự vùng nguồn rồi tới các vai. Một màu không đương nhiên là một lớp in.
+      </p>
+      <p className="muted-3" style={{ margin: '4px 0 0' }}>
+        Số khe lúc nhận nguồn được đặt tạm theo màu, để lần nhập lại cùng một tệp cho cùng kết
+        quả. Đó là quy ước nạp khay, <strong>không phải thứ tự máy in ra</strong>: máy cắt lớp tự
+        chọn thứ tự đùn của lớp đầu, và gói xuất của ứng dụng không ghi thứ tự đó. Bạn đổi khe thì
+        lựa chọn của bạn được giữ.
       </p>
       {writeBlocked ? <span className="reason">{writeBlocked}</span> : null}
     </div>

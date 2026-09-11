@@ -184,7 +184,7 @@ export class ProjectOperations {
    case 'text.update':next=contentEdit(s,a=>{a.text={...a.text,...data(c.values)};});break;
    case 'text.remove':next=contentEdit(s,a=>{a.text=data(DEFAULT_TEXT);});break;
    case 'editor.settings':next=contentEdit(s,a=>{a.editor={...a.editor,...data(c.values)};});break;
-   case 'material.update':next=contentEdit(s,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?domain.parseDecimal(c[k]).value:c[k];m.overridden=true;});break;
+   case 'material.update':next=contentEdit(s,a=>{const m=a.materials.find(m=>m.id===c.id);assert(m,'MATERIAL_NOT_FOUND');for(const k of ['color','slot','excluded','heightLayers'])if(Object.hasOwn(c,k))m[k]=k==='heightLayers'?domain.parseDecimal(c[k]).value:c[k];m.overridden=true;m.slotOverridden=Object.hasOwn(c,'slot')?true:m.slotOverridden??false;});break;
    case 'material.reset':next=contentEdit(s,a=>{const i=a.materials.findIndex(m=>m.id===c.id),original=a.materialDefaults.find(m=>m.id===c.id);assert(i>=0&&original,'MATERIAL_NOT_FOUND');a.materials[i]=data(original);});break;
    case 'printer.select':assert(this.printers.some(p=>p.id===c.id),'PRINTER_NOT_FOUND');next=contentEdit(s,a=>{a.printerId=c.id;});break;
 

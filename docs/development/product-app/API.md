@@ -53,6 +53,8 @@ PRODUCT_MATERIAL_DEFAULTS is a NEW proposed, versioned material policy in this d
 
 Auto slot:null is explicitly initialized, recorded in changes, choosing an already compatible single-color logical slot or the lowest empty slot1..16. Existing non-null slots are preserved. User slot:null blocks. Same slot/different colors returns PRODUCT_SLOT_CONFLICT plus a material-slot-remap proposal listing affected IDs and available slots; the helper never repairs an existing choice automatically. Capacity exhaustion blocks. These are MATERIAL slots; no printer profile, extruder count, filament, nozzle, accuracy or fit is inferred. Unselected printer remains null.
 
+Initial automatic allocation uses ascending normalized RGB colors, choosing the lowest numbered compatible slot when more than one exists. Project/source UUIDs, derived material IDs and record order do not affect this choice. Equal colors may share a logical slot while retaining distinct durable material identities. `adoptionProvenance.slotAllocation` records `rgba-ascending-lowest-compatible-v1` for this policy. Existing saved slots, including automatic assignments from an earlier policy, are retained; there is no automatic migration of a saved design or its height bands.
+
 No region height record is needed without an override: effective artH remains native authority. material.heightLayers requires an explicit matching mode2 record with actual datum/reference. Missing records produce a resolve-region-height-datum proposal with referenceLayer:null, never a guessed zero. Text height/base layer controls similarly need a checked text record; initializer returns a datum proposal when absent.
 
 ## Shared scheduler and borrowed sources

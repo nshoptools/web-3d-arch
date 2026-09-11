@@ -17,6 +17,12 @@ const VERSION='arch-app-adapters/1',BINDINGS='arch-product-bindings/1',CONTEXTS=
 const hashPattern=/^[a-f0-9]{64}$/,encode=new TextEncoder();
 const encodeDomain=createMechanicsDomainAdapter(domain);
 const ART_HEIGHT_FIELD=FIELD_MAP.find(f=>f.id==='artH').abiId;
+/** Whether the person picked this material's slot number themselves. `overridden` cannot stand
+ * in for that: it is also set by a colour, height or exclusion edit, and a colour edit moves the
+ * slot on its own (`slotForColour`) without the person ever naming a number. A document written
+ * before this flag existed has no value, and falls back to the older, wider meaning so that a
+ * saved choice is never re-allocated. */
+const slotChosen=m=>m.slotOverridden??m.overridden;
 export class ProductAppError extends Error {
  constructor(code,details={}){super(code);this.name='ProductAppError';this.code=code;this.details=details;}
 }
@@ -705,7 +711,7 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
  };
  const table=unique(previousMaterials,'previous'),defaultTable=unique(previousDefaults,'previous-defaults');
  const incoming=unique(json(sourceMaterials),'incoming'),incomingDefaults=unique(json(sourceMaterialDefaults??sourceMaterials),'incoming-defaults');
- const paletteRows=[],paletteRouting=new Map(),materialKeys=['id','label','color','slot','role','overridden','backgroundEligible','excluded','areaPercent','heightLayers','excludedReason','excludedCause','product'];
+ const paletteRows=[],paletteRouting=new Map(),materialKeys=['id','label','color','slot','role','overridden','slotOverridden','backgroundEligible','excluded','areaPercent','heightLayers','excludedReason','excludedCause','product'];
  const comparable=m=>{const {id,product,areaPercent,...rest}=m;return rest;};
  const tupleFor=async id=>(await deriveProductIdentities({projectId,sourceId:source.id,keys:[{kind:'material-key',key:id}]}))[0];
  const lineage=oldSource?.id===source.id&&oldSource.raw?.hash===source.raw.hash&&(
@@ -818,14 +824,14 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
    const materialKey=(await deriveProductIdentities({projectId,sourceId:source.id,keys:[{kind:'material-key',key:'region:'+sourceKey}]}))[0];
    const materialId=previous?.materialId??paletteRouting.get(r.materialId)??r.materialId??'product-material-'+materialKey.id;
    let m=table.get(materialId),color='#'+(r.rgba>>>8).toString(16).padStart(6,'0');
-   if(!m)m={id:materialId,label:r.authoredKey??sourceKey,color,slot:null,role:'region',overridden:false,backgroundEligible:true,excluded:false};
+   if(!m)m={id:materialId,label:r.authoredKey??sourceKey,color,slot:null,role:'region',overridden:false,slotOverridden:false,backgroundEligible:true,excluded:false};
    else {
     if(m.product)need(same(m.product.identityTuple,materialKey.tuple),'PRODUCT_MATERIAL_ID_CONFLICT',{id:materialId,reason:'region-identity-tuple'});
     if(!m.overridden)m={...m,color};
    }
    m={...m,backgroundEligible:m.backgroundEligible??true,product:{version:'arch-product-material/1',active:true,origin:m.overridden?'user':'source',sourceId:source.id,sourceKey,nativeRole:'artwork',identityTuple:materialKey.tuple}};
    table.set(materialId,m);
-   if(!defaultTable.has(materialId))defaultTable.set(materialId,{...m,color,slot:null,overridden:false});
+   if(!defaultTable.has(materialId))defaultTable.set(materialId,{...m,color,slot:null,overridden:false,slotOverridden:false});
    const heightRecord=previous?.height??null;
    if(m.heightLayers!==undefined&&(!heightRecord||!(heightRecord.mode===2||forDatumProbe&&heightRecord.mode===5)||heightRecord.layerCount!==m.heightLayers)){
     diagnostics.push({code:'PRODUCT_REGION_DATUM_REQUIRED',sourceKey,materialId});
@@ -847,19 +853,19 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
   const id=previousRoles[role]??(candidates.length===1?candidates[0].id:null)??'product-role-'+key.id;
   let m=table.get(id);
   if(!m){
-   m={id,label:role,color:defaults.products[state.product][role].color.toLowerCase(),slot:null,role:roleView(role),overridden:false,backgroundEligible:false,excluded:false};
+   m={id,label:role,color:defaults.products[state.product][role].color.toLowerCase(),slot:null,role:roleView(role),overridden:false,slotOverridden:false,backgroundEligible:false,excluded:false};
    changes.push({kind:'initialize-role',role,materialId:id,color:m.color,origin:'auto'});
   }
   // Rebuild and product switch preserve common valid values. New defaults only
   // fill missing roles; explicit reset-to-default is a separate domain action.
   m={...m,backgroundEligible:m.backgroundEligible??false,product:{version:'arch-product-material/1',active:true,origin:m.overridden?'user':'auto',nativeRole:role,identityTuple:m.product?.identityTuple??key.tuple}};
-  table.set(id,m);roles[role]=id;if(!defaultTable.has(id))defaultTable.set(id,{...m,color:defaults.products[state.product][role].color.toLowerCase(),slot:null,overridden:false});
+  table.set(id,m);roles[role]=id;if(!defaultTable.has(id))defaultTable.set(id,{...m,color:defaults.products[state.product][role].color.toLowerCase(),slot:null,overridden:false,slotOverridden:false});
  }
  const used=new Set([...Object.values(roles),...regions.map(r=>r.materialId)]);
  const slotColors=new Map();
  for(const id of used){
   const m=table.get(id);need(/^#[a-f0-9]{6}$/i.test(m.color)&&typeof m.overridden==='boolean','PRODUCT_MATERIAL_SCHEMA');
-  if(m.slot===null){if(m.overridden)diagnostics.push({code:'PRODUCT_USER_SLOT_UNRESOLVED',materialId:id});continue;}
+  if(m.slot===null){if(slotChosen(m))diagnostics.push({code:'PRODUCT_USER_SLOT_UNRESOLVED',materialId:id});continue;}
   int(m.slot,1,16,'PRODUCT_MATERIAL_SLOT');
   if(!slotColors.has(m.slot))slotColors.set(m.slot,new Map());
   const colors=slotColors.get(m.slot),color=m.color.toLowerCase();
@@ -870,11 +876,17 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
   diagnostics.push({code:'PRODUCT_SLOT_CONFLICT',slot,materials:items});
   proposals.push({kind:'material-slot-remap',slot,materials:items,availableSlots:Array.from({length:16},(_,i)=>i+1).filter(n=>!slotColors.has(n)),requiresExplicitDecision:true});
  }
- for(const id of [...used].sort()){
-  const m=table.get(id);if(m.slot!==null||m.overridden)continue;
+ // A material ID names a material; it does not decide which slot that material starts in.
+ // Those IDs hash the per-import source UUID, so allocating in ID order handed the same
+ // two colours slots 1 and 2 at random on every import. Allocate by colour instead, and
+ // take the lowest compatible slot rather than the first one the map happens to yield.
+ // This order is a tray-loading convention, not the order the printer extrudes in: a slicer
+ // picks the first-layer sequence itself, and this package writes no first-layer sequence.
+ for(const id of [...used].sort((a,b)=>{const ca=table.get(a).color.toLowerCase(),cb=table.get(b).color.toLowerCase();return ca<cb?-1:ca>cb?1:0;})){
+  const m=table.get(id);if(m.slot!==null||slotChosen(m))continue;
   const color=m.color.toLowerCase();
-  const compatible=[...slotColors].find(([,colors])=>colors.size===1&&colors.has(color));
-  const slot=compatible?.[0]??Array.from({length:16},(_,i)=>i+1).find(n=>!slotColors.has(n));
+  const compatible=[...slotColors].filter(([,colors])=>colors.size===1&&colors.has(color)).map(([n])=>n).sort((a,b)=>a-b);
+  const slot=compatible[0]??Array.from({length:16},(_,i)=>i+1).find(n=>!slotColors.has(n));
   if(slot===undefined){diagnostics.push({code:'PRODUCT_MATERIAL_SLOT_CAPACITY',materialId:id,logicalLimit:16,printerQualified:false});continue;}
   m.slot=slot;if(!slotColors.has(slot))slotColors.set(slot,new Map([[color,[]]]));slotColors.get(slot).get(color).push(id);
   const d=defaultTable.get(id);if(d&&!d.overridden&&d.slot===null)defaultTable.set(id,{...d,slot});
@@ -905,7 +917,7 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
   sourceToleranceMm,textStateHash:activeText?await sha256(canonicalJSON(state.content.app.text)):null,nextRegionSerial:serial,
   retiredRegions:[...(old?.retiredRegions??[]),...retired],
   adoptionProvenance:{version:'arch-product-adoption/1',defaultsHash:await sha256(canonicalJSON(defaults)),defaultsProvenance:defaults.provenance,
-   identityAllocation:'source-scoped monotonic serial assigned once at adoption; no array-index identity',matches:matchRows,sourcePalette:paletteRows,nextPaletteSerial:paletteSerial,printerQualification:'unverified'}};
+   identityAllocation:'source-scoped monotonic serial assigned once at adoption; no array-index identity',slotAllocation:'rgba-ascending-lowest-compatible-v1',matches:matchRows,sourcePalette:paletteRows,nextPaletteSerial:paletteSerial,printerQualification:'unverified'}};
  if(activeText&&!state.content.app.text.asSource&&!texts.length){
   diagnostics.push({code:'PRODUCT_TEXT_DATUM_REQUIRED'});
   proposals.push({kind:'resolve-text-datums',heightLayers:state.content.app.text.heightLayers,baseThicknessLayers:state.content.app.text.baseThicknessLayers,
@@ -918,7 +930,7 @@ export async function prepareBindings({projectId,state,source,canonicalContexts,
  need(encode.encode(canonicalJSON(sourceMetadata)).length<=65536,'PRODUCT_SOURCE_METADATA_BUDGET');
  const materials=[...table.values()];
  const materialDefaults=materials.map(m=>{
-  const d=defaultTable.get(m.id)??{...m,overridden:false};
+  const d=defaultTable.get(m.id)??{...m,overridden:false,slotOverridden:false};
   return {...d,backgroundEligible:d.backgroundEligible??m.backgroundEligible,product:{...m.product,origin:'auto'}};
  });
  for(const m of [...materials,...materialDefaults])validateProductMaterialExtension(m.product);
