@@ -41,7 +41,7 @@ export async function run(){
   await vc.reset();trace.push({case:'real-validator-worker-valid-invalid-cancel',status:'pass'});
   for(const name of ['keychain','clicky','strap','lego','charm']){
    const f=await (await fetch('/fixtures/'+name+'.json')).json(),assets=new Map(f.assets.map(([h,b])=>[h,new Uint8Array(b)]));
-   live={userId:'user-a',projectId:'project-persistent',state:f.state,model:null,sessionKey:{},headHash:await domainStateFingerprint(f.state)};
+   live={userId:'user-a',projectId:'project-persistent',state:f.state,model:null,sessionKey:'final-scene-session-1',headHash:await domainStateFingerprint(f.state)};
    let model;const start=performance.now();
    try{
     model=await product.engine.build({...control(),state:f.state,assets});live.model=model;
@@ -59,7 +59,9 @@ export async function run(){
     need(digest===tableHash&&table.bindings.length===f.state.content.app.materials.length,'FULL_MATERIAL_TABLE');
     need(evidence.describe(record,live)===r.evidence,'EXACT_CACHED_EVIDENCE');
     const after=model.bytes();need(before.every((b,i)=>b===after[i]),'ROOT_MUTATED');
-    const saved=live.sessionKey;live.sessionKey={};need(evidence.describe(record,live).status!=='ready','SESSION_INVALIDATION');live.sessionKey=saved;
+    // A different session, not a malformed one: the product requires the key to be a string
+    // (product-adapters name()), so an object made this throw before it could describe anything.
+    const saved=live.sessionKey;live.sessionKey='final-scene-session-2';need(evidence.describe(record,live).status!=='ready','SESSION_INVALIDATION');live.sessionKey=saved;
     gateSerial++;need(evidence.describe(record,live).status!=='ready','GATE_INVALIDATION');
     trace.push({case:name,status:materialOnly?'material-only':'pass',snapshotSha256:r.evidence.snapshotSha256,snapshot:proof.snapshot,materialReadback:proof.materialReadback,union:proof.union,materialTableDigest:digest,projectScheduleHash:r.evidence.projectScheduleHash,materialCount:new Set(r.evidence.parts.map(p=>p.materialId)).size,milliseconds:performance.now()-start});
     model.release();need(evidence.describe(record,live).status!=='ready','RELEASE_INVALIDATION');model=null;

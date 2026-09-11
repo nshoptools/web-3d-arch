@@ -110,8 +110,10 @@ giai đoạn `complete`) — Hub sửa cả bốn và tự kiểm lại live. Ch
 `reports/HUB-QUALITY-R2.md` mục 7.
 
 Chưa làm: gói website mới (lý do như trên); `tests/csg-controller/run.ps1` không
-chạy được trên cây hiện tại vì input ghim candidate cũ (luồng CSG được `tests/e2e`
-kiểm thay); bộ nghiệm thu `tests/product-acceptance` chưa chạy lại (cần gói
+chạy được trên cây hiện tại vì input ghim candidate cũ — và **không** có bộ nào kiểm
+thay: `tests/e2e` không chạm tới CSG (11-09, tìm `csg|union|subtract|mesh.import`
+trong `tests/e2e`: 0 kết quả), nên câu "luồng CSG được `tests/e2e` kiểm thay" ở bản
+trước là sai và đã bỏ; bộ nghiệm thu `tests/product-acceptance` chưa chạy lại (cần gói
 release đã ghim). Máy chủ phát triển nay có đồng hồ chạy thật (`tools/development/dev-serve.mjs`),
 tránh “phiên hết hạn” giả sau 5 phút.
 

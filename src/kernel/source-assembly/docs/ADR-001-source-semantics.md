@@ -27,7 +27,9 @@ same A, P and exact interval planes. Missing geometry is never filled by a fallb
 
 Noi splitObj permits explicit per-region artH overrides. Inactive overrides remain
 in caller data and receive diagnostics. layerBand assigns increasing heights by
-sorted (slot, RGBA, semantic ID) material rank, equal materials share a band. The
+sorted (slot, RGBA) material rank, equal materials share a band. Semantic ID is not part
+of that key: it carries the per-import source UUID, which would put the import back into the
+height. The
 rank-th automatic top is rank * artH above the art datum (for layers: one span of
 rank * count, so the first layer occurs once). Explicit object heights win.
 bandCore fills each column below its colored cap with body material; cap thickness
